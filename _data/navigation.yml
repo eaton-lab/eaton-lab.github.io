@@ -1,0 +1,15 @@
+# Site navigation links
+- title: News/Posts
+  url: /articles
+
+- title: Research
+  url: /research/
+
+- title: People
+  url: /people/
+
+- title: Publications
+  url: /publications/
+
+#- title: Search
+#  url: /search/

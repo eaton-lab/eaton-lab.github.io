@@ -1,0 +1,24 @@
+<jqcloud words="words" width="500" height="350" steps="7"></jqcloud>
+
+<script>
+  var app = angular.module('app', [
+    'angular-jqcloud'
+  ]);
+
+  app.controller('controller', function($scope) {
+    $scope.words = [/* ... */];
+  });
+</script>
+
+var words = [
+  {text: "Lorem", weight: 13},
+  {text: "Ipsum", weight: 10.5},
+  {text: "Dolor", weight: 9.4},
+  {text: "Sit", weight: 8},
+  {text: "Amet", weight: 6.2},
+  {text: "Consectetur", weight: 5},
+  {text: "Adipiscing", weight: 5},
+  /* ... */
+];
+
+$('#demo').jQCloud(words);
