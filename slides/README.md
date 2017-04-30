@@ -3,7 +3,7 @@
 ```
 eaton-lab.github.io/  
 |
-+-- slideshows/  
++-- slides/
     +-- reveal.js/  
     |
     +-- slideshow_1/  
@@ -30,12 +30,21 @@ This will create index.slides.html and serve it on localhost.
 jupyter-nbconvert notebook.ipynb --to slides --output index --post serve
 ```
 
-### hosting on github
+### Hosting it on github
 This will write the slides.html file with the path to the local version 
 of reveal.js set (shown in the file tree at the top of page). I also 
 rename the html file to index.html before pushing to github.
 
 ```bash
+## writes slides
 jupyter-nbconvert notebook.ipynb --to slides --reveal-prefix=../reveal.js --output index
+
+## make an index
 mv index.slides.html index.html
 ```
+
+After pushing to github you can then view the slides at 
+[http://github.com/eaton-lab.github.io/slides/notebook](http://github.com/eaton-lab.github.io/slides/notebook)
+
+
+
