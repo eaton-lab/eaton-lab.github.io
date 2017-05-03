@@ -11885,7 +11885,7 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="The-big-problem-in-phylogenetic-inference:-too-many-trees.">The big problem in phylogenetic inference: too many trees.<a class="anchor-link" href="#The-big-problem-in-phylogenetic-inference:-too-many-trees.">&#182;</a></h3><p>There are $(2n-3)!!$ possible rooted binary topologies to explain relationships among n samples. The size of <strong>tree space</strong> quickly becomes too large to search exhaustively.</p>
-<p><img src="../slide-images/N-topologies.png" alt="n-topologies"></p>
+<p><img width=500 src="../slide-images/N-topologies.png"></p>
 
 </div>
 </div>
@@ -11900,7 +11900,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11930,30 +11930,6 @@ $L = \prod_{j=1}^N{ln~L(j)}$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Full-genomes">Full genomes<a class="anchor-link" href="#Full-genomes">&#182;</a></h3><p>Early phylogenomic studies typically compared few species (often model organisms) for which full genome data was available. The primary difficulties with using full genome data is in identifying proper phylogenetic markers. Many genomic regions are <em>difficult to align</em>, and it is <em>difficult to identify homology</em> between genes. For this reason, many studies with full genomes restrict phylogenetic analyses to the use of transcriptomes.</p>
-<h4 id="Example-full-genome-papers:">Example full genome papers:<a class="anchor-link" href="#Example-full-genome-papers:">&#182;</a></h4><ul>
-<li>Dunn et al. </li>
-<li>Plants</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../slide-images/tree-inference.png" alt="tree-inference"></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Many-sequences-and-many-taxa">Many sequences and many taxa<a class="anchor-link" href="#Many-sequences-and-many-taxa">&#182;</a></h3><p>Example links.</p>
 
 </div>
 </div>
@@ -11969,22 +11945,100 @@ $L = \prod_{j=1}^N{ln~L(j)}$
 
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Models">Models<a class="anchor-link" href="#Models">&#182;</a></h1>
+<h3 id="Reduced-representation-genome-methods">Reduced-representation genome methods<a class="anchor-link" href="#Reduced-representation-genome-methods">&#182;</a></h3><p>Recently methods for subsampling the genome for phyogenomic methods have become popular. By sequencing a smaller proportion of the genome is it possible to more efficiently gather phylogenomic data from a larger number of samples. Regions are targeted either randomly (e.g., RAD-seq), generically (e.g., ultra-conserved elements), or specifically for a taxon (e.g., transcriptomes or targeted sequencing).</p>
+
 </div>
 </div>
-</div>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Phylogenetic-invariants">Phylogenetic invariants<a class="anchor-link" href="#Phylogenetic-invariants">&#182;</a></h3><p>This is an old method that has recently been revived to great popularity. It is a <em>non-parametric</em> method, meaning that it does not aim to infer parameters to fit a model. Instead, it uses a <em>geometric model</em> called the <span style="color:darkcyan">general Markov model</span>.</p>
+<h3 id="Comparisons">Comparisons<a class="anchor-link" href="#Comparisons">&#182;</a></h3><p>Number of loci:</p>
+<ul>
+<li>RAD &gt; UCE &gt; transcriptomes</li>
+</ul>
+<p>Number of SNPs:</p>
+<ul>
+<li>RAD  &gt; UCE &gt; transcriptomes</li>
+</ul>
+<p>Informativeness of individual loci (gene trees):</p>
+<ul>
+<li>transcriptomes &gt; UCE &gt; RAD</li>
+</ul>
+<p>Assembly difficulty/error:</p>
+<ul>
+<li>transcriptomes &gt; UCE &gt; RAD</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Species-tree-inference">Species tree inference<a class="anchor-link" href="#Species-tree-inference">&#182;</a></h2><p><img width=500 src="../slide-images/tree-inference.png"></p>
+<p><span class="align-right">
+    <a href="http://onlinelibrary.wiley.com/doi/10.1111/nyas.12747/abstract">Liu et al. 2015</a>
+</span></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Concatenation-methods">Concatenation methods<a class="anchor-link" href="#Concatenation-methods">&#182;</a></h3><p>Concatenation continues to be the most popular method for phylogenetic inference. All data is analyzed simultaneously (although genes can be partitioned to be fit under different models). <strong>It is fast</strong> and mostly accurate. However, <em>statistically inconsistent</em> and can therefore give an <em>incorrect topology</em> when ILS is high, and it will consistently yield branch length errors (inflation) especially near the tips of the tree because it does not properly account for heterozygosity.</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Species-tree-methods">Species tree methods<a class="anchor-link" href="#Species-tree-methods">&#182;</a></h3><p>It was recognized long ago that gene trees do not always match the species tree. This can be caused by many factors, including horizontal gene transfer, gene duplication, hybridization, and incomplete lineage sorting. Early methods to overcome this problem focused on <em>minimizing deep coalescences</em> (ILS) but newer methods now implement more advanced statistical models.</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-multispecies-coalescent">The multispecies coalescent<a class="anchor-link" href="#The-multispecies-coalescent">&#182;</a></h3><p>The coalescent is a mathematical model for the random joining of sampled gene lineages and they are followed back in time. The waiting time for coalescent events follows an exponential distribution, with a parameter that depends on the size of the underlying population. This gives a way of computing the probability associated with coalescent events within the branches of a species tree.</p>
+<p>Ideally, gene trees are <strong>jointly estimated</strong> with the species tree. This is implemented in BEST, starBEAST, BPP, and other software. However, this method is very computation intensive and very slow. Limited to few taxa (~10).</p>
+<p>Alternatively, two-step processes infer the gene trees first and then estimate a species tree afterwards by concordance among the gene trees. This is implemented in a variety of ways by software like ASTRAL, STAR, STEAC, BUCKy.</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Phylogenetic-invariants">Phylogenetic invariants<a class="anchor-link" href="#Phylogenetic-invariants">&#182;</a></h3><p>This is an old method that has recently been revived to great popularity. It is a <em>non-parametric</em> method, meaning that it does not aim to infer parameters to fit a model. Instead, it uses a <em>geometric model</em> called the <span style="color:darkcyan">general Markov model</span>. This is the basis of the <em>SVDquartets</em> method <a href="http://bioinformatics.oxfordjournals.org/content/30/23/3317.short">Chifman &amp; Kubatko 2014</a> and <em>tetrad</em> (Eaton unpublished).</p>
+<p>Theory resources:</p>
+<ul>
+<li>Cavender &amp; Felsenstein (1987)</li>
+<li>Lake (1987)</li>
+<li>Eriksson (2008)</li>
+<li>Allman &amp; Rhodes (2007)</li>
+</ul>
 
 </div>
 </div>
