@@ -15,8 +15,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <!-- General and theme style sheets -->
-<link rel="stylesheet" href="reveal.js/css/reveal.css">
-<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="../reveal.js//css/reveal.css">
+<link rel="stylesheet" href="../reveal.js//css/theme/simple.css" id="theme">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -24,14 +24,14 @@ if( window.location.search.match( /print-pdf/gi ) ) {
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'reveal.js/css/print/pdf.css';
+        link.href = '../reveal.js//css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
 }
 
 </script>
 
 <!--[if lt IE 9]>
-<script src="reveal.js/lib/js/html5shiv.js"></script>
+<script src="../reveal.js//lib/js/html5shiv.js"></script>
 <![endif]-->
 
 <!-- Loading the mathjax macro -->
@@ -11879,7 +11879,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-problem-of-phylogenetic-inference">The problem of phylogenetic inference<a class="anchor-link" href="#The-problem-of-phylogenetic-inference">&#182;</a></h3><p>There are $n(n-1)$ possible topologies to explain relationships among n samples. The size of <strong>tree space</strong> quickly becomes too large to search exhaustively. <img src="../slide-images/N-topologies.png" alt="n-topologies"></p>
+<h3 id="The-problem-of-phylogenetic-inference">The problem of phylogenetic inference<a class="anchor-link" href="#The-problem-of-phylogenetic-inference">&#182;</a></h3><p>There are $(2n-3)!!$ possible rooted binary topologies to explain relationships among n samples. The size of <strong>tree space</strong> quickly becomes too large to search exhaustively. <img src="../slide-images/N-topologies.png" alt="n-topologies"></p>
 
 </div>
 </div>
@@ -11912,18 +11912,15 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../slide-images/tree-inference.png" alt="tree-inference"></p>
 
 </div>
 </div>
-</div>
-
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -11942,7 +11939,7 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="The-influence-of-missing-data">The influence of missing data<a class="anchor-link" href="#The-influence-of-missing-data">&#182;</a></h3><p>In large-scale <strong>megaphylogenies</strong> -- data mined matrices of few traditional markers across thousands of taxa -- missing data often ranges up to &gt;90%.</p>
 <p>In large-scale <strong>sub-genomic</strong> data sets, like RAD-seq, the proportion of missing data often ranges between 10-90%.</p>
-<p>Importantly, the first type of problem is more sensitive to the problem of <strong>terraces in phylogenetic tree space</strong>, where many taxa in the phylogeny share no information, whereas in the latter there is typically still significant phylogenetic information for all taxa.</p>
+<p>Importantly, the first type of problem is more sensitive to the problem of <em>terraces in phylogenetic tree space</em> <a href="http://science.sciencemag.org/content/333/6041/448.long">Sanderson et al. 2012</a>, where many taxa in the phylogeny share no information, whereas in the latter there is typically still significant phylogenetic information for all taxa.</p>
 
 </div>
 </div>
@@ -12005,8 +12002,8 @@ require(
       waitSeconds: 15
     },
     [
-      "reveal.js/lib/js/head.min.js",
-      "reveal.js/js/reveal.js"
+      "../reveal.js//lib/js/head.min.js",
+      "../reveal.js//js/reveal.js"
     ],
 
     function(head, Reveal){
@@ -12022,9 +12019,9 @@ require(
 
             // Optional libraries used to extend on reveal.js
             dependencies: [
-                { src: "reveal.js/lib/js/classList.js",
+                { src: "../reveal.js//lib/js/classList.js",
                   condition: function() { return !document.body.classList; } },
-                { src: "reveal.js/plugin/notes/notes.js",
+                { src: "../reveal.js//plugin/notes/notes.js",
                   async: true,
                   condition: function() { return !!document.body.classList; } }
             ]
