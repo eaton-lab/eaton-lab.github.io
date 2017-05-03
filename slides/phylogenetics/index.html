@@ -11869,35 +11869,61 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Phylogenetic methods are continually advancing, both in terms of the <span style="color:darkorange">speed</span> of analyses as well as in the <span style="color:darkcyan">statistical models</span> that are applied.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-problem-of-phylogenetic-inference">The problem of phylogenetic inference<a class="anchor-link" href="#The-problem-of-phylogenetic-inference">&#182;</a></h3><p>There are $(2n-3)!!$ possible rooted binary topologies to explain relationships among n samples. The size of <strong>tree space</strong> quickly becomes too large to search exhaustively. <img src="../slide-images/N-topologies.png" alt="n-topologies"></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Large-numbers-of-taxa">Large numbers of taxa<a class="anchor-link" href="#Large-numbers-of-taxa">&#182;</a></h3><p>The <em>mega-phylogeny</em> approach <a href="https://bmcevolbiol.biomedcentral.com/articles/10.1186/1471-2148-9-37">(Smith et al. 2008)</a> and related methods describe an approach of mining data from online resources to assemble large <em>supermatrices</em> that contain few traditional markers (e.g., COI, cytB, ITS) sampled across hundreds or thousands of taxa.</p>
-<h4 id="Typical-software:">Typical software:<a class="anchor-link" href="#Typical-software:">&#182;</a></h4><ul>
-<li>raxml (fast &amp; memory-efficient ML inference)  </li>
-<li>exabayes (less-fast, more more-memory efficient Bayesian inference)  </li>
+<p>Phylogenetic methods are continually advancing, both in terms of the <span style="color:darkorange">speed</span> of analyses as well as in the <span style="color:darkcyan">statistical models</span> that are applied. Increasingly, it is apparent that different phylogenomic regoins can yield <em>heterogeneous signals</em> that must be accomodated in our models, including variation in :</p>
+<ul>
+<li>base composition</li>
+<li>evolutionary rate</li>
+<li>topology</li>
 </ul>
 
 </div>
 </div>
 </div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-big-problem-in-phylogenetic-inference:-too-many-trees.">The big problem in phylogenetic inference: too many trees.<a class="anchor-link" href="#The-big-problem-in-phylogenetic-inference:-too-many-trees.">&#182;</a></h3><p>There are $(2n-3)!!$ possible rooted binary topologies to explain relationships among n samples. The size of <strong>tree space</strong> quickly becomes too large to search exhaustively.</p>
+<p><img src="../slide-images/N-topologies.png" alt="n-topologies"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Large-numbers-of-taxa">Large numbers of taxa<a class="anchor-link" href="#Large-numbers-of-taxa">&#182;</a></h3><p>The first trees to include <em>thousands</em> of taxa were generated using <em>mega-phylogeny</em> approaches <a href="https://bmcevolbiol.biomedcentral.com/articles/10.1186/1471-2148-9-37">(Smith et al. 2008)</a> which use data mining to assemble large <em>supermatrices</em> that contain few traditional markers (e.g., COI, cytB, ITS) sampled across many taxa. Recent examples include the large bird tree <a href="birdtree.org">Jetz et al. 2012</a>.</p>
+<p><img width=400 src="../slide-images/Bird-megaphylogeny.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Likelihood-calculation:">Likelihood calculation:<a class="anchor-link" href="#Likelihood-calculation:">&#182;</a></h3><p>Maximum likelihood is the most commonly used statistical method for calculating the probability of a tree. In ML tree inference the goal is to <strong>optimize</strong> the likelihood of the data given a defined model $P(D|M)$, by estimating the parameters of the model. More complex models have more parameters to estimate.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The likelihood of the full tree is the product of the likelihood at each site. The more <em>unique site patterns</em> there are in an alignment, the longer the calculation takes.</p>
+<p><br></p>
+<center>
+$L = \prod_{j=1}^N{ln~L(j)}$
+</center>
+</div>
+</div>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11950,33 +11976,6 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Models">Models<a class="anchor-link" href="#Models">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Likelihood-calculation:-how-likely-is-a-tree">Likelihood calculation: how likely is a tree<a class="anchor-link" href="#Likelihood-calculation:-how-likely-is-a-tree">&#182;</a></h3><p>Maximum likelihood is a method of <strong>optimizing</strong> the likelihood of the data given a defined model $P(D|M)$, and is done by estimating the parameters of the model. Different models have different numbers of parameters.</p>
-<ul>
-<li>Jukes-Cantor (JC) = 1 parameter (simple)</li>
-<li>General time-reversible (GTR) = 6 parametes (complex)</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Calculation">Calculation<a class="anchor-link" href="#Calculation">&#182;</a></h3><p>The likelihood of the full tree is the product of the likelihood at each site.</p>
-<p><br></p>
-<center>
-$L = \prod_{j=1}^N{ln~L(j)}$
-</center>
 </div>
 </div>
 </div>
