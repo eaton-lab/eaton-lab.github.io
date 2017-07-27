@@ -11907,7 +11907,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Available-assembly-software">Available assembly software<a class="anchor-link" href="#Available-assembly-software">&#182;</a></h1><ol>
+<h3 id="Available-assembly-software">Available assembly software<a class="anchor-link" href="#Available-assembly-software">&#182;</a></h3><ol>
 <li>Standard reference-mapping approaches (BWA + Picard + GATK + ...)</li>
 <li><a href="http://catchenlab.life.illinois.edu/stacks/">STACKS</a> </li>
 <li><a href="http://github.com/dereneaton/pyrad">pyRAD</a>)</li>
@@ -11994,16 +11994,19 @@ a.anchor-link {
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">## example argument entry to conda</span>
 <span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="o">&lt;</span><span class="n">channel</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">package</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
 
-<span class="c1">## install software</span>
+<span class="c1">## install software from my channels</span>
 <span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">ipyrad</span> <span class="n">ipyrad</span>
 <span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">eaton</span><span class="o">-</span><span class="n">lab</span> <span class="n">toytree</span>
+
+<span class="c1">## a commonly used channel is bioconda</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">bioconda</span> <span class="n">raxml</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12013,7 +12016,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12055,63 +12058,6 @@ a.anchor-link {
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">cat</span> <span class="n">params</span><span class="o">-</span><span class="n">tutorial</span><span class="o">.</span><span class="n">txt</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>------- ipyrad params file (v.0.7.5)--------------------------------------------
-tutorial                       ## [0] [assembly_name]: Assembly name. Used to name output directories for assembly steps
-./                             ## [1] [project_dir]: Project dir (made in curdir if not present)
-                               ## [2] [raw_fastq_path]: Location of raw non-demultiplexed fastq files
-                               ## [3] [barcodes_path]: Location of barcodes file
-                               ## [4] [sorted_fastq_path]: Location of demultiplexed/sorted fastq files
-denovo                         ## [5] [assembly_method]: Assembly method (denovo, reference, denovo+reference, denovo-reference)
-                               ## [6] [reference_sequence]: Location of reference sequence file
-rad                            ## [7] [datatype]: Datatype (see docs): rad, gbs, ddrad, etc.
-TGCAG,                         ## [8] [restriction_overhang]: Restriction overhang (cut1,) or (cut1, cut2)
-5                              ## [9] [max_low_qual_bases]: Max low quality base calls (Q&lt;20) in a read
-33                             ## [10] [phred_Qscore_offset]: phred Q score offset (33 is default and very standard)
-6                              ## [11] [mindepth_statistical]: Min depth for statistical base calling
-6                              ## [12] [mindepth_majrule]: Min depth for majority-rule base calling
-10000                          ## [13] [maxdepth]: Max cluster depth within samples
-0.85                           ## [14] [clust_threshold]: Clustering threshold for de novo assembly
-0                              ## [15] [max_barcode_mismatch]: Max number of allowable mismatches in barcodes
-0                              ## [16] [filter_adapters]: Filter for adapters/primers (1 or 2=stricter)
-35                             ## [17] [filter_min_trim_len]: Min length of reads after adapter trim
-2                              ## [18] [max_alleles_consens]: Max alleles per site in consensus sequences
-5, 5                           ## [19] [max_Ns_consens]: Max N&#39;s (uncalled bases) in consensus (R1, R2)
-8, 8                           ## [20] [max_Hs_consens]: Max Hs (heterozygotes) in consensus (R1, R2)
-4                              ## [21] [min_samples_locus]: Min # samples per locus for output
-20, 20                         ## [22] [max_SNPs_locus]: Max # SNPs per locus (R1, R2)
-8, 8                           ## [23] [max_Indels_locus]: Max # of indels per locus (R1, R2)
-0.5                            ## [24] [max_shared_Hs_locus]: Max # heterozygous sites per locus (R1, R2)
-0, 0, 0, 0                     ## [25] [trim_reads]: Trim raw read edges (R1&gt;, &lt;R1, R2&gt;, &lt;R2) (see docs)
-0, 0, 0, 0                     ## [26] [trim_loci]: Trim locus edges (see docs) (R1&gt;, &lt;R1, R2&gt;, &lt;R2)
-p, s, v                        ## [27] [output_formats]: Output formats (see docs)
-                               ## [28] [pop_assign_file]: Path to population assignment file</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12122,19 +12068,26 @@ p, s, v                        ## [27] [output_formats]: Output formats (see doc
 
 </div>
 </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img  src="../slide-images/MBL-4-input.png"></p>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img  src="../slide-images/MBL-3-outline.png"></p>
 
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
