@@ -11868,12 +11868,18 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Skills-in-this-course:">Skills in this course:<a class="anchor-link" href="#Skills-in-this-course:">&#182;</a></h3><ul>
+<h3 id="Course-outline:">Course outline:<a class="anchor-link" href="#Course-outline:">&#182;</a></h3><ul>
 <li>introduction to RAD-seq assembly</li>
-<li>ipyrad command line (CLI)</li>
-<li>ipyrad Python code (API)</li>
-<li>introduction to jupyter</li>
+<li>ipyrad installation and command line (CLI)</li>
+<li>simulated data examples</li>
+<li>&lt; take a break &gt;</li>
+</ul>
+<hr>
+<ul>
+<li>introduction to Python and jupyter</li>
 <li>introduction to parallel computing in Python</li>
+<li>ipyrad Python code (API) and the ipyrad environment</li>
+<li>empirical data examples</li>
 </ul>
 
 </div>
@@ -11895,7 +11901,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11908,6 +11914,15 @@ a.anchor-link {
 <li><a href="http://www.maizegenetics.net/tassel">TASSEL-UNEAK</a></li>
 <li><a href="http://ipyrad.readthedocs.io">ipyrad</a></li>
 </ol>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Advantages-to-using-ipyrad-over-the-other-methods:">Advantages to using ipyrad over the other methods:<a class="anchor-link" href="#Advantages-to-using-ipyrad-over-the-other-methods:">&#182;</a></h3><ol>
 <li>Provides denovo, reference, and denovo-reference hybrid assembly methods</li>
 <li>Includes alignment steps to allow for indel variation </li>
@@ -11925,11 +11940,80 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="ipyrad-online-documentation">ipyrad online documentation<a class="anchor-link" href="#ipyrad-online-documentation">&#182;</a></h2><p><img src="../slide-images/MBL-1.png"></p>
+<h3 id="Important-differences-of-large-effect:">Important differences of large effect:<a class="anchor-link" href="#Important-differences-of-large-effect:">&#182;</a></h3><ul>
+<li>Indels are present (loci are <em>split</em> b/c variation looks like frame-shift)</li>
+<li>reads are different lengths (from trimming or different sequencing runs)</li>
+<li>ipyrad treats paired-reads as a linked haplotype (Stacks treats them as two separate loci)</li>
+<li>ipyrad clusters with reverse-complement matching (e.g., pairGBS data)</li>
+<li>parallelization over multiple hosts/nodes is easy.</li>
+</ul>
 
 </div>
 </div>
 </div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="ipyrad-online-documentation">ipyrad online documentation<a class="anchor-link" href="#ipyrad-online-documentation">&#182;</a></h2><p><img src="../slide-images/MBL-1.png"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Installation">Installation<a class="anchor-link" href="#Installation">&#182;</a></h2><p>We will use the <code>conda</code> tool to install all of our software <strong>locally</strong>.</p>
+<p><img src="../slide-images/MBL-2-installation.png"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Common-mistakes-when-installing-conda">Common mistakes when installing conda<a class="anchor-link" href="#Common-mistakes-when-installing-conda">&#182;</a></h3><ul>
+<li>not checking OSX versus Linux</li>
+<li>not answering yes when it asks if you want to install</li>
+<li>not calling '<code>source ~/.bashrc</code>' after installation</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">## example argument entry to conda</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="o">&lt;</span><span class="n">channel</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">package</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+
+<span class="c1">## install software</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">ipyrad</span> <span class="n">ipyrad</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">eaton</span><span class="o">-</span><span class="n">lab</span> <span class="n">toytree</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We'll return to conda later to install more software.</p>
+
+</div>
+</div>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11945,9 +12029,7 @@ a.anchor-link {
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span>%%bash
-
-ipyrad -n tutorial
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">ipyrad</span> <span class="o">-</span><span class="n">n</span> <span class="n">tutorial</span>
 </pre></div>
 
 </div>
@@ -11978,9 +12060,7 @@ ipyrad -n tutorial
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span>%%bash
-
-cat params-tutorial.txt
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">cat</span> <span class="n">params</span><span class="o">-</span><span class="n">tutorial</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 
 </div>
@@ -12042,19 +12122,6 @@ p, s, v                        ## [27] [output_formats]: Output formats (see doc
 
 </div>
 </div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
