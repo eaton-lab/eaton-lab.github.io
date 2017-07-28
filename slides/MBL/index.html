@@ -11868,18 +11868,20 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Course-outline:">Course outline:<a class="anchor-link" href="#Course-outline:">&#182;</a></h3><ul>
+<h3 id="Course-outline:">Course outline:<a class="anchor-link" href="#Course-outline:">&#182;</a></h3><h4 id="part-I">part I<a class="anchor-link" href="#part-I">&#182;</a></h4><ul>
 <li>introduction to RAD-seq assembly</li>
 <li>ipyrad installation and command line (CLI)</li>
-<li>fast simulated data examples with CLI</li>
+<li>introductory tutorial with CLI</li>
 <li>In depth look at the parameters</li>
+<li>advanced tutorial with CLI</li>
 </ul>
 <hr>
-<ul>
-<li>introduction to Python and jupyter</li>
+<h4 id="part-II">part II<a class="anchor-link" href="#part-II">&#182;</a></h4><ul>
+<li>introduction to Python, jupyter, and reproducible analyses</li>
 <li>introduction to parallel computing in Python</li>
 <li>ipyrad Python code (API) and the ipyrad environment</li>
 <li>empirical data examples</li>
+<li>empirical downstream analysis examples</li>
 </ul>
 
 </div>
@@ -11923,6 +11925,16 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-general-workflow:">The general workflow:<a class="anchor-link" href="#The-general-workflow:">&#182;</a></h3><p>image ...</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Advantages-to-using-ipyrad-over-the-other-methods:">Advantages to using ipyrad over the other methods:<a class="anchor-link" href="#Advantages-to-using-ipyrad-over-the-other-methods:">&#182;</a></h3><ol>
 <li>Provides denovo, reference, and denovo-reference hybrid assembly methods</li>
 <li>Includes alignment steps to allow for indel variation </li>
@@ -11957,7 +11969,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="ipyrad-installation-and-command-line">ipyrad installation and command line<a class="anchor-link" href="#ipyrad-installation-and-command-line">&#182;</a></h2><h4 id="ipyrad-online-documentation">ipyrad online documentation<a class="anchor-link" href="#ipyrad-online-documentation">&#182;</a></h4><p><img src="../slide-images/MBL-1.png"></p>
+<h2 id="ipyrad-installation-and-command-line">ipyrad installation and command line<a class="anchor-link" href="#ipyrad-installation-and-command-line">&#182;</a></h2><h4 id="ipyrad-online-documentation"><a href="https://ipyrad.rtfd.io">ipyrad online documentation</a><a class="anchor-link" href="#ipyrad-online-documentation">&#182;</a></h4><p><img src="../slide-images/MBL-1.png"></p>
 
 </div>
 </div>
@@ -12033,8 +12045,8 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Entering-parameters">Entering parameters<a class="anchor-link" href="#Entering-parameters">&#182;</a></h3><p>Use a text-editor, such as <code>nano</code>, to enter new values into the params file.
-<img  src="../slide-images/start-ipyrad.gif"></p>
+<h3 id="Entering-parameters">Entering parameters<a class="anchor-link" href="#Entering-parameters">&#182;</a></h3><p>Create an empty params file with default values by calling ipyrad with the -n command.</p>
+<p><img  src="../slide-images/start-ipyrad.gif"></p>
 
 </div>
 </div>
@@ -12055,7 +12067,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img  src="../slide-images/MBL-4-input.png"></p>
+<p><img  src="../slide-images/MBL-input.png"></p>
 
 </div>
 </div>
@@ -12065,7 +12077,17 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img  src="../slide-images/MBL-3-outline.png"></p>
+<p><img  src="../slide-images/MBL-outline.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img  src="../slide-images/MBL-params.png"></p>
 
 </div>
 </div>
@@ -12085,6 +12107,96 @@ a.anchor-link {
 
 </div>
 </div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Running-jupyter-notebook-locally">Running jupyter-notebook locally<a class="anchor-link" href="#Running-jupyter-notebook-locally">&#182;</a></h3><p>When you call jupyter from a terminal it will <strong>start a notebook server</strong>, which you can access through your browser to send and receive data with computing kernels to run code and display its output (e.g., Python, R, Julia, or bash).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">## call this command from a terminal on your laptop</span>
+<span class="n">jupyter</span><span class="o">-</span><span class="n">notebook</span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Running-jupyter-notebooks-remotely">Running jupyter-notebooks remotely<a class="anchor-link" href="#Running-jupyter-notebooks-remotely">&#182;</a></h3><p>This can be a little tricky, but once you figure it out it is very rewarding. You can leave the notebook running on a cluster, and connect to when you want to run analyses, disconnect, and reconnect later. The link here provides a more in-depth description with a short video tutorial (with sound) (<a href="http://ipyrad.readthedocs.io/HPC_Tunnel.html">http://ipyrad.readthedocs.io/HPC_Tunnel.html</a>).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">## first, let&#39;s make a password for our notebook</span>
+<span class="n">jupyter</span><span class="o">-</span><span class="n">notebook</span> <span class="n">password</span>
+
+<span class="c1">## Next, launch a notebook server with this command</span>
+<span class="n">jupyter</span><span class="o">-</span><span class="n">notebook</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">browser</span> <span class="o">--</span><span class="n">ip</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">hostname</span> <span class="o">-</span><span class="n">i</span><span class="p">)</span> <span class="o">--</span><span class="n">port</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">shuf</span> <span class="o">-</span><span class="n">i8000</span><span class="o">-</span><span class="mi">9999</span> <span class="o">-</span><span class="n">n1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Look at the output of the notebook server, it will list a port number that was randomly selected (this is to avoid ya'll using the same port) and it will show an ip address (e.g., 127.0.1.1).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">## on your laptop (local) call this command</span>
+<span class="c1">## ssh -N -L port:ip:port user@login</span>
+<span class="n">ssh</span> <span class="o">-</span><span class="n">N</span> <span class="o">-</span><span class="n">L</span> <span class="mi">8888</span><span class="p">:</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">1.1</span><span class="p">:</span><span class="mi">8888</span> <span class="n">deaton</span><span class="nd">@class05.jbpc</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mbl</span><span class="o">.</span><span class="n">edu</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">## on your laptop (local) open a browser to:</span>
+<span class="n">localhost</span><span class="p">:</span><span class="mi">8888</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
