@@ -11925,7 +11925,14 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-general-workflow:">The general workflow:<a class="anchor-link" href="#The-general-workflow:">&#182;</a></h3><p>image ...</p>
+<h3 id="The-general-workflow:">The general workflow:<a class="anchor-link" href="#The-general-workflow:">&#182;</a></h3><ul>
+<li>Separate reads among sampled individuals based on a barcode or index.</li>
+<li>Trim and filter reads based on quality and adapter contamination.</li>
+<li>Identify alleles or read copies based on sequence similarity (clustering or mapping).</li>
+<li>Make consensus base and haplotype calls based on clustered reads.</li>
+<li>Identify orthology by clustering haplotypes across samples.</li>
+<li>filter for paralogs, junk, etc. and write output files.</li>
+</ul>
 
 </div>
 </div>
@@ -11936,8 +11943,8 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Advantages-to-using-ipyrad-over-the-other-methods:">Advantages to using ipyrad over the other methods:<a class="anchor-link" href="#Advantages-to-using-ipyrad-over-the-other-methods:">&#182;</a></h3><ol>
-<li>Provides denovo, reference, and denovo-reference hybrid assembly methods</li>
-<li>Includes alignment steps to allow for indel variation </li>
+<li>Provides denovo, reference, and denovo+reference hybrid assembly methods.</li>
+<li>Includes alignment steps to allow for indel variation.</li>
 <li>Fast and massively parallelizable (hundreds/thousands of cores)</li>
 <li>Low memory footprint, e.g., compared to stacks.</li>
 <li>Branching methods support reproducibility and exploring parameter settings</li>
@@ -11956,7 +11963,8 @@ a.anchor-link {
 <li>Indels are present (loci are <em>split</em> b/c variation looks like frame-shift)</li>
 <li>reads are different lengths (from trimming or different sequencing runs)</li>
 <li>ipyrad treats paired-reads as a linked haplotype (Stacks treats them as two separate loci)</li>
-<li>ipyrad clusters with reverse-complement matching (e.g., pairGBS data)</li>
+<li>ipyrad can trim &amp; filter your data appropriately for the datatype.</li>
+<li>ipyrad can cluster with reverse-complement matching (e.g., pairGBS data)</li>
 <li>parallelization over multiple hosts/nodes is easy.</li>
 </ul>
 <p><img src="../slide-images/MBL-pyrad-split.png"></p>
@@ -11969,7 +11977,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.-ipyrad-installation-and-command-line">2. ipyrad installation and command line<a class="anchor-link" href="#2.-ipyrad-installation-and-command-line">&#182;</a></h2><h4 id="ipyrad-online-documentation"><a href="https://ipyrad.rtfd.io">ipyrad online documentation</a><a class="anchor-link" href="#ipyrad-online-documentation">&#182;</a></h4><p><img src="../slide-images/MBL-1.png"></p>
+<h2 id="2.-ipyrad-installation-and-command-line">2. ipyrad installation and command line<a class="anchor-link" href="#2.-ipyrad-installation-and-command-line">&#182;</a></h2><h4 id="ipyrad-online-documentation"><a href="http://ipyrad.readthedocs.io">ipyrad online documentation</a><a class="anchor-link" href="#ipyrad-online-documentation">&#182;</a></h4><p><img src="../slide-images/MBL-1.png"></p>
 
 </div>
 </div>
