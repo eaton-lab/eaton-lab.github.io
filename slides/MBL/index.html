@@ -11868,21 +11868,21 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Course-outline:">Course outline:<a class="anchor-link" href="#Course-outline:">&#182;</a></h3><h4 id="part-I">part I<a class="anchor-link" href="#part-I">&#182;</a></h4><ul>
+<h3 id="Course-outline:">Course outline:<a class="anchor-link" href="#Course-outline:">&#182;</a></h3><h4 id="part-I">part I<a class="anchor-link" href="#part-I">&#182;</a></h4><ol>
 <li>introduction to RAD-seq assembly</li>
 <li>ipyrad installation and command line (CLI)</li>
 <li>introductory tutorial with CLI</li>
 <li>In depth look at the parameters</li>
 <li>advanced tutorial with CLI</li>
-</ul>
+</ol>
 <hr>
-<h4 id="part-II">part II<a class="anchor-link" href="#part-II">&#182;</a></h4><ul>
+<h4 id="part-II">part II<a class="anchor-link" href="#part-II">&#182;</a></h4><ol>
 <li>introduction to Python, jupyter, and reproducible analyses</li>
 <li>introduction to parallel computing in Python</li>
 <li>ipyrad Python code (API) and the ipyrad environment</li>
 <li>empirical data examples</li>
 <li>empirical downstream analysis examples</li>
-</ul>
+</ol>
 
 </div>
 </div>
@@ -11892,7 +11892,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Introduction-to-RAD-seq-assembly">Introduction to RAD-seq assembly<a class="anchor-link" href="#Introduction-to-RAD-seq-assembly">&#182;</a></h3><ul>
+<h3 id="1.-Introduction-to-RAD-seq-assembly">1. Introduction to RAD-seq assembly<a class="anchor-link" href="#1.-Introduction-to-RAD-seq-assembly">&#182;</a></h3><ul>
 <li>Short reads (usually 50-150bp) single or paired.</li>
 <li>Loci usually align perfectly, not <em>tiled</em> into contigs.</li>
 <li>SNP data including full sequence data.</li>
@@ -11969,7 +11969,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="ipyrad-installation-and-command-line">ipyrad installation and command line<a class="anchor-link" href="#ipyrad-installation-and-command-line">&#182;</a></h2><h4 id="ipyrad-online-documentation"><a href="https://ipyrad.rtfd.io">ipyrad online documentation</a><a class="anchor-link" href="#ipyrad-online-documentation">&#182;</a></h4><p><img src="../slide-images/MBL-1.png"></p>
+<h2 id="2.-ipyrad-installation-and-command-line">2. ipyrad installation and command line<a class="anchor-link" href="#2.-ipyrad-installation-and-command-line">&#182;</a></h2><h4 id="ipyrad-online-documentation"><a href="https://ipyrad.rtfd.io">ipyrad online documentation</a><a class="anchor-link" href="#ipyrad-online-documentation">&#182;</a></h4><p><img src="../slide-images/MBL-1.png"></p>
 
 </div>
 </div>
@@ -12029,7 +12029,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12107,6 +12107,16 @@ a.anchor-link {
 
 </div>
 </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.-Introductory-tutorials">3. Introductory tutorials<a class="anchor-link" href="#3.-Introductory-tutorials">&#182;</a></h2><p><img  src="../slide-images/MBL-tut1.png"></p>
+
+</div>
+</div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -12123,7 +12133,7 @@ a.anchor-link {
 <h4 id="But-is-it-fast-enough?">But is it fast enough?<a class="anchor-link" href="#But-is-it-fast-enough?">&#182;</a></h4><ul>
 <li>Scripting language (The glue that ties together higher level code)</li>
 </ul>
-<p>See a great Pycon keynote address on this topic <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=3&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwiHv_GnjqzVAhWLND4KHT1kB1cQtwIIMjAC&amp;url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DZyjCqQEUa8o&amp;usg=AFQjCNFVp3hjD-5_-tsUmmCkmtAZBPuspA">here</a></p>
+<p>See a great Pycon keynote address on this topic <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=3&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwiHv_GnjqzVAhWLND4KHT1kB1cQtwIIMjAC&amp;url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DZyjCqQEUa8o&amp;usg=AFQjCNFVp3hjD-5_-tsUmmCkmtAZBPuspA">here</a> (I mean, watch it later if you're interested.)</p>
 
 </div>
 </div>
@@ -12135,8 +12145,9 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="What-should-reproducible-science-look-like?">What should reproducible science look like?<a class="anchor-link" href="#What-should-reproducible-science-look-like?">&#182;</a></h2><ul>
 <li>Easy to reproduce the software environment &amp; versioning (e.g., conda)</li>
-<li>Easy to access the original data (e.g., online archives)</li>
-<li>Easy to read and understand code (markdown documentation)</li>
+<li>Not using a GUI (unfortunately)</li>
+<li>Easy to access the original data (e.g., directly from online archives)</li>
+<li>Easy to read and understand code (markdown documentation and clean code)</li>
 <li>Parameters of methods/software are displayed (not hidden)</li>
 <li>Easily accessible (e.g., Github, Zenodo)</li>
 <li>Executable </li>
@@ -12293,13 +12304,16 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">ipyrad</span> <span class="kn">as</span> <span class="nn">ip</span>
 <span class="kn">import</span> <span class="nn">ipyparallel</span> <span class="kn">as</span> <span class="nn">ipp</span>
 
+<span class="c1">## connect to client</span>
 <span class="n">ipyclient</span> <span class="o">=</span> <span class="n">ipp</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
+
+<span class="c1">## print client info</span>
 <span class="n">ip</span><span class="o">.</span><span class="n">cluster_info</span><span class="p">(</span><span class="n">ipyclient</span><span class="p">)</span>
 </pre></div>
 
@@ -12323,13 +12337,149 @@ a.anchor-link {
 </div>
 </div>
 
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The general approach is to distribute work among the kernels (engines), wait for them to finish, and then collect the results. All of this happens under the hood in ipyrad, but a simple understanding of it helps to understand how to easily parallelize <em>any</em> type of code within a jupyter-notebook.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span>
+
+<span class="c1">## send a job to the cluster</span>
+<span class="n">async</span> <span class="o">=</span> <span class="n">ipyclient</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="c1">## wait for job to finish before leaving loop</span>
+<span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">async</span><span class="o">.</span><span class="n">ready</span><span class="p">():</span>
+        <span class="k">break</span>
+        
+<span class="c1">## print result</span>
+<span class="k">print</span> <span class="s1">&#39;result is&#39;</span><span class="p">,</span> <span class="n">async</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>result is 20
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-ipyrad-API">The ipyrad API<a class="anchor-link" href="#The-ipyrad-API">&#182;</a></h2>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">## an Assembly object</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">ip</span><span class="o">.</span><span class="n">Assembly</span><span class="p">(</span><span class="s2">&quot;example&quot;</span><span class="p">)</span>
+
+<span class="c1">## the parameters</span>
+<span class="n">data</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="s2">&quot;sorted_fastq_data&quot;</span><span class="p">,</span> <span class="s2">&quot;/class/&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Empirical-data-examples">Empirical data examples<a class="anchor-link" href="#Empirical-data-examples">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Empirical-downstream-analyses">Empirical downstream analyses<a class="anchor-link" href="#Empirical-downstream-analyses">&#182;</a></h2><p>The ipyrad analysis toolkit provides additional downstream formatting and filtering of data sets, as well as wrapper tools that allow running external software in efficient and reproducible ways.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">## the general design of analysis tools</span>
+<span class="kn">import</span> <span class="nn">ipyrad.analysis</span> <span class="kn">as</span> <span class="nn">ipa</span>
+
+<span class="c1">## initate an analysis object with a name, data file, and other args</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">ipa</span><span class="o">.</span><span class="n">raxml</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;example&quot;</span><span class="p">,</span> 
+    <span class="n">data</span><span class="o">=</span><span class="s2">&quot;analysis-ipyrad/output.phy&quot;</span><span class="p">,</span>
+    <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+<span class="c1">## see and change the object.params</span>
+<span class="n">r</span><span class="o">.</span><span class="n">params</span>
+
+<span class="c1">## run command to execute the code or send to client</span>
+<span class="n">r</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">ipyclient</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="useful-examples">useful examples<a class="anchor-link" href="#useful-examples">&#182;</a></h3><ul>
+<li>iterating over K values in structure and replicates within Ks</li>
+<li>iterating over priors in BPP, and replicates, or doing thermodynamic integration</li>
+<li>or, simply saving yourself time in typing the same arguments many times (e.g., raxml)</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">ipa</span><span class="o">.</span><span class="n">structure</span><span class="p">(</span>
 </pre></div>
 
 </div>
