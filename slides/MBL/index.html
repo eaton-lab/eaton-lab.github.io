@@ -12191,7 +12191,6 @@ a.anchor-link {
 <p>An example we will reproduce today:<br>
 <a href="http://nbviewer.jupyter.org/github/dereneaton/ipyrad/blob/master/tests/cookbook-empirical-API-1-pedicularis.ipynb">http://nbviewer.jupyter.org/github/dereneaton/ipyrad/blob/master/tests/cookbook-empirical-API-1-pedicularis.ipynb</a></p>
 <p>Published examples from my own work:<br>
-<a href="https://github.com/dereneaton/ficus-rad">https://github.com/dereneaton/ficus-rad</a><br>
 <a href="https://github.com/dereneaton/RADmissing">https://github.com/dereneaton/RADmissing</a><br>
 <a href="https://github.com/dereneaton/virentes">https://github.com/dereneaton/virentes</a></p>
 
@@ -12275,7 +12274,7 @@ a.anchor-link {
 </div>
 </div>
 
-</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12285,13 +12284,13 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="ipyparallel----interactive-parallel-computing-in-Python">ipyparallel -- interactive parallel computing in Python<a class="anchor-link" href="#ipyparallel----interactive-parallel-computing-in-Python">&#182;</a></h3><p>ipyrad makes use of the ipyparallel library for large-scale parallel computing.</p>
+<h3 id="introduction-to-parallel-computing-in-Python">introduction to parallel computing in Python<a class="anchor-link" href="#introduction-to-parallel-computing-in-Python">&#182;</a></h3><p>ipyrad makes use of the ipyparallel library for large-scale parallel computing which is particularly designed for <em>interactive</em> parallel computing in jupyter notebooks.</p>
 
 </div>
 </div>
@@ -12308,7 +12307,7 @@ a.anchor-link {
 <span class="n">ipcluster</span> <span class="n">start</span> <span class="o">--</span><span class="n">n</span><span class="o">=</span><span class="mi">4</span>
 
 <span class="c1">## start a cluster with a specific name and settings</span>
-<span class="n">ipcluster</span> <span class="n">start</span> <span class="o">--</span><span class="n">profile</span><span class="o">=</span><span class="s1">&#39;deren&#39;</span>
+<span class="n">ipcluster</span> <span class="n">start</span> <span class="o">--</span><span class="n">n</span><span class="o">=</span><span class="mi">4</span> <span class="o">--</span><span class="n">profile</span><span class="o">=</span><span class="s1">&#39;deren&#39;</span>
 
 <span class="c1">## start a cluster that will connect to all cores on multiple hosts</span>
 <span class="n">ipcluster</span> <span class="n">start</span> <span class="o">--</span><span class="n">n</span><span class="o">=</span><span class="mi">80</span> <span class="o">--</span><span class="n">engines</span><span class="o">=</span><span class="n">MPI</span> <span class="o">--</span><span class="n">ip</span><span class="o">=*</span> 
@@ -12434,23 +12433,53 @@ a.anchor-link {
 <span class="n">data</span> <span class="o">=</span> <span class="n">ip</span><span class="o">.</span><span class="n">Assembly</span><span class="p">(</span><span class="s2">&quot;example&quot;</span><span class="p">)</span>
 
 <span class="c1">## the parameters</span>
-<span class="n">data</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="s2">&quot;sorted_fastq_data&quot;</span><span class="p">,</span> <span class="s2">&quot;/class/&quot;</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="s2">&quot;sorted_fastq_data&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;/class/molevol-shared/ipyrad-tutorial/fastqs-Ped/*.gz&quot;</span><span class="p">)</span>
+
+<span class="c1">## run the analysis on a specific cluster</span>
+<span class="n">data</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">ipyclient</span><span class="o">=</span><span class="n">ipyclient</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">## branch and subsample</span>
+<span class="n">subsamples</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">samples</span> <span class="k">if</span> <span class="s2">&quot;prz&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">i</span><span class="p">]</span>
+<span class="n">sub</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">branch</span><span class="p">(</span><span class="s2">&quot;sub&quot;</span><span class="p">,</span> <span class="n">subsamples</span><span class="o">=</span><span class="n">subsamples</span><span class="p">)</span>
+
+<span class="c1">## branch and change params over a range of values</span>
+<span class="n">assemblies</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">ct</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.80</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">]:</span>
+    <span class="n">newname</span> <span class="o">=</span> <span class="s2">&quot;clust_{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ct</span><span class="p">)</span>
+    <span class="n">newdata</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">branch</span><span class="p">(</span><span class="n">newname</span><span class="p">)</span>
+    <span class="n">newdata</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="s2">&quot;clust_threshold&quot;</span><span class="p">,</span> <span class="n">ct</span><span class="p">)</span>
+    <span class="n">assemblies</span><span class="p">[</span><span class="n">newname</span><span class="p">]</span> <span class="o">=</span> <span class="n">newdata</span>
+</pre></div>
+
 </div>
+</div>
+</div>
+
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Empirical-data-examples">Empirical data examples<a class="anchor-link" href="#Empirical-data-examples">&#182;</a></h2>
+<h2 id="Empirical-data-examples">Empirical data examples<a class="anchor-link" href="#Empirical-data-examples">&#182;</a></h2><p>Open the link below for one of the following notebook. They're very similar, the first is a group of plants, the second is a group of birds, so choose your favorite. We will then each <strong>create a new notebook from scratch</strong> by copy/pasting code from these notebooks to produce our own new analysis notebook (run either on your laptop or on the cluster).</p>
+<p><a href="http://nbviewer.jupyter.org/github/dereneaton/ipyrad/blob/master/tests/cookbook-empirical-API-1-pedicularis.ipynb">Pedicularis ipyrad API notebook</a></p>
+<p><a href="http://nbviewer.jupyter.org/github/dereneaton/ipyrad/blob/master/tests/cookbook-empirical-API-2-Finches.ipynb">Finch ipyrad API notebook</a></p>
+
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12486,7 +12515,7 @@ a.anchor-link {
 </div>
 </div>
 
-</div>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12500,19 +12529,16 @@ a.anchor-link {
 
 </div>
 </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">ipa</span><span class="o">.</span><span class="n">structure</span><span class="p">(</span>
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Success">Success<a class="anchor-link" href="#Success">&#182;</a></h3><p>You are now ready to go on and assemble RAD-seq data sets to your very specific and particular needs, and to keep a very detailed record of what you did to share with your friends and cruel reviewers.</p>
 
 </div>
 </div>
-</div>
-
 </div></section></section>
 </div>
 </div>
