@@ -12475,8 +12475,9 @@ a.anchor-link {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">## split an Assembly into two groups</span>
-<span class="n">data1</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">branch</span><span class="p">(</span><span class="s2">&quot;data1&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">samples</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
-<span class="n">data2</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">branch</span><span class="p">(</span><span class="s2">&quot;data2&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">samples</span><span class="p">[</span><span class="mi">5</span><span class="p">:])</span>
+<span class="n">allsamples</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">samples</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">branch</span><span class="p">(</span><span class="s2">&quot;data1&quot;</span><span class="p">,</span> <span class="n">allsamples</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">branch</span><span class="p">(</span><span class="s2">&quot;data2&quot;</span><span class="p">,</span> <span class="n">allsamples</span><span class="p">[</span><span class="mi">5</span><span class="p">:])</span>
 
 <span class="c1">## set different params on each assembly</span>
 <span class="n">data1</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="s2">&quot;mindepth_statistical&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
