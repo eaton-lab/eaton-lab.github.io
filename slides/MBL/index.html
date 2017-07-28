@@ -12107,23 +12107,55 @@ a.anchor-link {
 
 </div>
 </div>
-</div>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Python,-jupyter,-and-reproducible-science">Python, jupyter, and reproducible science<a class="anchor-link" href="#Python,-jupyter,-and-reproducible-science">&#182;</a></h2><p>... notes from Pycon here...</p>
+<h2 id="Python,-jupyter,-and-reproducible-science">Python, jupyter, and reproducible science<a class="anchor-link" href="#Python,-jupyter,-and-reproducible-science">&#182;</a></h2><ul>
+<li>Widely used in big-data science (Google, Facebook, Github, etc.)</li>
+<li>Many libraries linking compiled code (e.g., Numpy, Scipy, Theano)</li>
+<li>Easy integration with databases (e.g., HDF5, MYSQL)</li>
+<li>Just-in-time compilation (Numba library) </li>
+<li>Easy code-sharing/reproducibility/exploring with Jupyter</li>
+</ul>
+<h4 id="But-is-it-fast-enough?">But is it fast enough?<a class="anchor-link" href="#But-is-it-fast-enough?">&#182;</a></h4><ul>
+<li>Scripting language (The glue that ties together higher level code)</li>
+</ul>
+<p>See a great Pycon keynote address on this topic <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=3&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwiHv_GnjqzVAhWLND4KHT1kB1cQtwIIMjAC&amp;url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DZyjCqQEUa8o&amp;usg=AFQjCNFVp3hjD-5_-tsUmmCkmtAZBPuspA">here</a></p>
 
 </div>
 </div>
-</div>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>An example Github repo (linked)</p>
+<h2 id="What-should-reproducible-science-look-like?">What should reproducible science look like?<a class="anchor-link" href="#What-should-reproducible-science-look-like?">&#182;</a></h2><ul>
+<li>Easy to reproduce the software environment &amp; versioning (e.g., conda)</li>
+<li>Easy to access the original data (e.g., online archives)</li>
+<li>Easy to read and understand code (markdown documentation)</li>
+<li>Parameters of methods/software are displayed (not hidden)</li>
+<li>Easily accessible (e.g., Github, Zenodo)</li>
+<li>Executable </li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>An example we will reproduce today:<br>
+<a href="http://nbviewer.jupyter.org/github/dereneaton/ipyrad/blob/master/tests/cookbook-empirical-API-1-pedicularis.ipynb">http://nbviewer.jupyter.org/github/dereneaton/ipyrad/blob/master/tests/cookbook-empirical-API-1-pedicularis.ipynb</a></p>
+<p>Published examples from my own work:<br>
+<a href="https://github.com/dereneaton/ficus-rad">https://github.com/dereneaton/ficus-rad</a><br>
+<a href="https://github.com/dereneaton/RADmissing">https://github.com/dereneaton/RADmissing</a><br>
+<a href="https://github.com/dereneaton/virentes">https://github.com/dereneaton/virentes</a></p>
 
 </div>
 </div>
@@ -12157,7 +12189,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Running-jupyter-notebooks-remotely">Running jupyter-notebooks remotely<a class="anchor-link" href="#Running-jupyter-notebooks-remotely">&#182;</a></h3><p>This can be a little tricky, but once you figure it out it is very rewarding. You can leave the notebook running on a cluster, and connect to when you want to run analyses, disconnect, and reconnect later. The link here provides a more in-depth description with a short video tutorial (with sound) (<a href="http://ipyrad.readthedocs.io/HPC_Tunnel.html">http://ipyrad.readthedocs.io/HPC_Tunnel.html</a>).</p>
+<h3 id="Running-jupyter-notebooks-remotely">Running jupyter-notebooks remotely<a class="anchor-link" href="#Running-jupyter-notebooks-remotely">&#182;</a></h3><p>This can be a little tricky, but once you figure it out it is very rewarding. You can leave the notebook running on a cluster, and connect to when you want to run analyses, disconnect, and reconnect later. <a href="http://ipyrad.readthedocs.io/HPC_Tunnel.html">This link</a> provides a more in-depth description with a short video tutorial (with sound) for doing this same thing through a job submission script on a cluster. But for now, just run the commands below on the MBL cluster.</p>
 <p><span style="color:red"> This should be run on the cluster (remote) </span></p>
 
 </div>
@@ -12211,15 +12243,6 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="on-your-laptop-(local)-open-a-browser-to:-localhost:8888">on your laptop (local) open a browser to: localhost:8888<a class="anchor-link" href="#on-your-laptop-(local)-open-a-browser-to:-localhost:8888">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p><img  src="../slide-images/MBL-jdash.png"></p>
 
 </div>
@@ -12257,7 +12280,7 @@ a.anchor-link {
 </div>
 </div>
 
-</div>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12270,7 +12293,7 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">ipyrad</span> <span class="kn">as</span> <span class="nn">ip</span>
@@ -12292,37 +12315,24 @@ a.anchor-link {
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Waiting for connection file: ~/.ipython/profile_default/security/ipcontroller-client.json
+<pre>host compute node: [4 cores] on oud
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">IOError</span>                                   Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-21-58c3dc39597b&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">import</span> ipyparallel <span class="ansi-green-fg">as</span> ipp
-<span class="ansi-green-intense-fg ansi-bold">      3</span> 
-<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span>ipyclient <span class="ansi-blue-fg">=</span> ipp<span class="ansi-blue-fg">.</span>Client<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> ip<span class="ansi-blue-fg">.</span>cluster_info<span class="ansi-blue-fg">(</span>ipyclient<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/home/deren/miniconda2/lib/python2.7/site-packages/ipyparallel/client/client.pyc</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, url_file, profile, profile_dir, ipython_dir, context, debug, sshserver, sshkey, password, paramiko, timeout, cluster_id, **extra_args)</span>
-<span class="ansi-green-intense-fg ansi-bold">    395</span>                         no_file_msg<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    396</span>                     ])
-<span class="ansi-green-fg">--&gt; 397</span><span class="ansi-red-fg">                     </span><span class="ansi-green-fg">raise</span> IOError<span class="ansi-blue-fg">(</span>msg<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    398</span>         <span class="ansi-green-fg">if</span> url_file <span class="ansi-green-fg">is</span> None<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    399</span>             <span class="ansi-green-fg">raise</span> IOError<span class="ansi-blue-fg">(</span>no_file_msg<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">IOError</span>: Connection file &#39;~/.ipython/profile_default/security/ipcontroller-client.json&#39; not found.
-You have attempted to connect to an IPython Cluster but no Controller could be found.
-Please double-check your configuration and ensure that a cluster is running.</pre>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
 </div>
 </div>
 
