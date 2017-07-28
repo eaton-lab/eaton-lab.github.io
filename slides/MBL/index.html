@@ -12433,6 +12433,7 @@ a.anchor-link {
 <span class="n">data</span> <span class="o">=</span> <span class="n">ip</span><span class="o">.</span><span class="n">Assembly</span><span class="p">(</span><span class="s2">&quot;example&quot;</span><span class="p">)</span>
 
 <span class="c1">## the parameters</span>
+<span class="n">data</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="s2">&quot;project_dir&quot;</span><span class="p">,</span> <span class="s2">&quot;tutorial&quot;</span><span class="p">)</span>
 <span class="n">data</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="s2">&quot;sorted_fastq_data&quot;</span><span class="p">,</span> 
                 <span class="s2">&quot;/class/molevol-shared/ipyrad-tutorial/fastqs-Ped/*.gz&quot;</span><span class="p">)</span>
 
@@ -12461,6 +12462,33 @@ a.anchor-link {
     <span class="n">newdata</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">branch</span><span class="p">(</span><span class="n">newname</span><span class="p">)</span>
     <span class="n">newdata</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="s2">&quot;clust_threshold&quot;</span><span class="p">,</span> <span class="n">ct</span><span class="p">)</span>
     <span class="n">assemblies</span><span class="p">[</span><span class="n">newname</span><span class="p">]</span> <span class="o">=</span> <span class="n">newdata</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">## split an Assembly into two groups</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">branch</span><span class="p">(</span><span class="s2">&quot;data1&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">samples</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">branch</span><span class="p">(</span><span class="s2">&quot;data2&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">samples</span><span class="p">[</span><span class="mi">5</span><span class="p">:])</span>
+
+<span class="c1">## set different params on each assembly</span>
+<span class="n">data1</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="s2">&quot;mindepth_statistical&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">data2</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="s2">&quot;mindepth_statistical&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="c1">## run each Assembly </span>
+<span class="n">data1</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;5&quot;</span><span class="p">)</span>
+<span class="n">data2</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;5&quot;</span><span class="p">)</span>
+
+<span class="c1">## merge the samples back into a single Assembly</span>
+<span class="n">full</span> <span class="o">=</span> <span class="n">ip</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="s2">&quot;full&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">])</span>
+<span class="n">full</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;67&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
