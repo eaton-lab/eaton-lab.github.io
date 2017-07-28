@@ -11869,10 +11869,10 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Course-outline:">Course outline:<a class="anchor-link" href="#Course-outline:">&#182;</a></h3><ul>
-<li><a href="#Introduction-to-RAD-seq-assembly">introduction to RAD-seq assembly</a></li>
-<li><a href="#ipyrad-installation-and-command-line">ipyrad installation and command line (CLI)</a>  </li>
-<li><a href="#fast simulated data examples with CLI">fast simulated data examples with CLI</a></li>
-<li><a href="#In depth look at the parameters">In depth look at the parameters</a></li>
+<li>introduction to RAD-seq assembly</li>
+<li>ipyrad installation and command line (CLI)</li>
+<li>fast simulated data examples with CLI</li>
+<li>In depth look at the parameters</li>
 </ul>
 <hr>
 <ul>
@@ -11901,7 +11901,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11967,7 +11967,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Installation">Installation<a class="anchor-link" href="#Installation">&#182;</a></h2><p>We will use the <code>conda</code> tool to install all of our software <strong>locally</strong>.</p>
+<h2 id="Installation">Installation<a class="anchor-link" href="#Installation">&#182;</a></h2><p>We will use the <code>conda</code> software installation tool to install all of our software <strong>locally</strong>.</p>
 <p><img src="../slide-images/MBL-2-installation.png"></p>
 
 </div>
@@ -11979,9 +11979,9 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Common-mistakes-when-installing-conda">Common mistakes when installing conda<a class="anchor-link" href="#Common-mistakes-when-installing-conda">&#182;</a></h3><ul>
-<li>not checking OSX versus Linux</li>
-<li>not answering yes when it asks if you want to install</li>
-<li>not calling '<code>source ~/.bashrc</code>' after installation</li>
+<li>make sure you choose the correct version (OSX vs Linux)</li>
+<li>make sure you answer yes when it asks if you want to install it</li>
+<li>make sure you call '<code>source ~/.bashrc</code>' after installation</li>
 </ul>
 
 </div>
@@ -12000,7 +12000,7 @@ a.anchor-link {
 <span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">eaton</span><span class="o">-</span><span class="n">lab</span> <span class="n">toytree</span>
 
 <span class="c1">## install raxml from the commonly used channel bioconda</span>
-<span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">bioconda</span> <span class="n">raxml</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">bioconda</span> <span class="n">entrez</span><span class="o">-</span><span class="n">direct</span> <span class="n">sratools</span>
 </pre></div>
 
 </div>
@@ -12028,36 +12028,16 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">ipyrad</span> <span class="o">-</span><span class="n">n</span> <span class="n">tutorial</span>
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Entering-parameters">Entering parameters<a class="anchor-link" href="#Entering-parameters">&#182;</a></h3><p>Use a text-editor, such as <code>nano</code>, to enter new values into the params file.
+<img  src="../slide-images/start-ipyrad.gif"></p>
 
 </div>
 </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-  New file &#39;params-tutorial.txt&#39; created in /home/deren/websites/eaton-lab/slides/MBL
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -12069,7 +12049,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12079,7 +12059,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12089,13 +12069,13 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Running-ipyrad">Running ipyrad<a class="anchor-link" href="#Running-ipyrad">&#182;</a></h3><ul>
+<h3 id="Running-ipyrad-(command-line)">Running ipyrad (command line)<a class="anchor-link" href="#Running-ipyrad-(command-line)">&#182;</a></h3><ul>
 <li>You must <em>always</em> specify a params file with <code>-p</code>. </li>
 <li>To run steps of the assembly use <code>-s</code>. </li>
 <li>To see a stats summary use <code>-r</code></li>
