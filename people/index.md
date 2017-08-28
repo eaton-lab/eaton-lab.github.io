@@ -7,37 +7,65 @@ image:
   credit:
 ---
 
-The Eaton lab is currently looking to recruit motivated post-docs, Ph.D,
-Masters, and undergraduate students. If you are interested in joining the lab
-please see the section below titled [joining the lab](#joining-the-lab).
+The Eaton lab is looking to recruit motivated post-docs, Ph.D,
+Masters, and Undergraduate students to work on plant, ecology and evolution,
+and computational genomics research. If you are interested in joining the lab
+follow this link ([joining the lab](#joining-the-lab)) and contact us.
 
 ### PI: Deren Eaton
 
-I earned my undergraduate degree at the University of Minnesota where I studied
-plant eco-physiology in Jeannine Cavender-Bares' lab. After graduating I worked
-for a year with Annie Schmitt's lab at Brown University. I then completed my
-Ph.D. at the University of Chicago where I studied genomics and phylogenetics
-with my major adviser Rick Ree at the Field Museum. I then went on to do a
-postdoc in Michael Donoghue's lab at Yale University
-before finally starting in E3B at Columbia in the summer of 2017.
+<p>
+<a href="https://c1.staticflickr.com/6/5323/31076258402_63f8612588_z.jpg">
+    <img src="https://c1.staticflickr.com/6/5323/31076258402_63f8612588_z.jpg" 
+     alt="image"
+     align='right' 
+     hspace='20'
+     width="300px">
+</a>
+
+Deren is an Assistant Professor in E3B at Columbia University. 
+He is an evolutionary biologist and botanist with broad interests 
+in plant biodiversity -- from the scale of global patterns and community assembly, to 
+speciation and genetic variation. Deren's research is rooted in organismal biology
+and has included substantial fieldwork in the Tibetan plateau and cloud forests of Central and South America. His work also focuses on the development of methods for
+analyzing genomic data and performing statistical comparative tests among species.
+He is also major advocate for reproducible science. Deren completed a 
+postdoc at Yale University in 2017; earned his PhD in 2014 from the University of Chicago; and his BA in 2007 from the University of Minnesota.
+</p>
 
 contact: [de2356@columbia.edu](mailto:de2356@columbia.edu)
 
-<figure>
+<!-- figure>
 	<a href="https://c1.staticflickr.com/6/5323/31076258402_63f8612588_z.jpg">
-    <img src="https://c1.staticflickr.com/6/5323/31076258402_63f8612588_z.jpg" alt="image">
+    <img src="https://c1.staticflickr.com/6/5323/31076258402_63f8612588_z.jpg" 
+    alt="image"
+    width="400px"
+    >
   </a>
 	<figcaption> Deren enjoying a killer torta in Mexico City</figcaption>
-</figure>
+</figure -->
 
 ### Post-docs
-... coming soon.
-<!-- Sandra Hoffberg will be joining the lab this fall as an NSF-funded post-doc
-to work on developing large-scale genotyping and bioinformatic methods for
-studying plant germplasm databases. Sandra comes to us from the Mauricio lab
-at the University of Georgia where she studied fine-scale phylogeography of
-invasive plant species including *Wisteria*, and developed the hybrid RAD-seq
-and sequence capture approach RADcap. -->
+
+<p>
+<a href="../images/Sandra-photo.jpg">
+    <img src="../images/Sandra-photo.jpg" alt="" width="250px" align='right'>
+	</a>
+Sandra Hoffberg joined the lab in 2017 as an NSF Postdoctoral Fellow.
+Sandra's work is focused on developing resources to simplify and expediate
+large-scale genotyping and bioinformatic analyses of germplasm databases
+(i.e., seed databases). Her work combines genomics, phylogenetics, and 
+functional trait evolution, including the study of herbicide resistance, 
+and invasiveness. Sandra completed her PhD in 2017 at the University of 
+Georgia. 
+</p>
+
+<!-- a href="../images/Sandra-photo.jpg">
+    <img src="../images/Sandra-photo.jpg" 
+         alt="" 
+         width="250px" 
+         align='right'>
+</a -->
 
 
 ### Graduate Students
