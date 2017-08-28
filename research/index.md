@@ -36,9 +36,21 @@ interference play in shaping *Pedicularis* evolution.
 
 
 <figure class="third">
-	<a href="/images/pedics/P-p-batang.jpg"><img src="/images/pedics/P-p-batang.jpg" alt="image"></a>
-	<a href="/images/pedics/P-p-fetisowii.jpg"><img src="/images/pedics/P-p-fetisowii.jpg" alt="image"></a>  
-	<a href="/images/pedics/P-p-lachnoglossa.jpg"><img src="/images/pedics/P-p-lachnoglossa.jpg" alt="image"></a>    
+	<a href="/images/pedics/P-p-batang.jpg">
+		<img src="/images/pedics/P-p-batang.jpg" 
+		alt="image"
+		width='200px'>
+	</a>
+	<a href="/images/pedics/P-p-fetisowii.jpg">
+		<img src="/images/pedics/P-p-fetisowii.jpg" 
+		alt="image"
+		width="200px">
+	</a>  
+	<a href="/images/pedics/P-p-lachnoglossa.jpg">
+		<img src="/images/pedics/P-p-lachnoglossa.jpg"
+		alt="image"
+		width="200px">
+	</a>    
   <figcaption>Floral diversity in <em>Pedicularis</em> of the Hengduan Mountains.</figcaption>
 </figure>
 
@@ -59,9 +71,21 @@ studies to understand species relationships and the processes underlying this
 apparent pattern of replicated evolution.
 
 <figure class="third">
-	<a href="/images/viburnies/acutifolium.jpg"><img src="/images/viburnies/acutifolium.jpg" alt="image"></a>
-	<a href="/images/viburnies/hybrid.jpg"><img src="/images/viburnies/hybrid.jpg" alt="image"></a>
-	<a href="/images/viburnies/sulcatum.jpg"><img src="/images/viburnies/sulcatum.jpg" alt="image"></a>  
+	<a href="/images/viburnies/acutifolium.jpg">
+		<img src="/images/viburnies/acutifolium.jpg"
+		alt="image"
+		width="200px">
+	</a>
+	<a href="/images/viburnies/hybrid.jpg">
+		<img src="/images/viburnies/hybrid.jpg"
+		alt="image"
+		width="200px">
+	</a>
+	<a href="/images/viburnies/sulcatum.jpg">
+		<img src="/images/viburnies/sulcatum.jpg"
+		alt="image"
+		width="200px">
+	</a>  
   <figcaption><em>Viburnum acutifolium</em>, a hybrid, and <em>V. sulcatum</em> from Oaxaca, Mexico.</figcaption>
 </figure>
 
