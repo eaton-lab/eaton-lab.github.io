@@ -46,7 +46,7 @@
   padding: 0;
 	text-transform: uppercase;
 	@include font-size(16);
-	font-weight: 600;
+	font-weight: 400;
 
   a {
     color: $text-color;
@@ -83,9 +83,9 @@ span + .entry-title {
 
 .entry-title {
 	font-family: $alt-font;
-	font-style: italic;
-	@include font-size(26,yes,26);  //36
-	font-weight: 400;
+	// font-style: italic;
+	@include font-size(36,yes,36); //36
+	font-weight: 300;
 	line-height: 1;
 	letter-spacing: -1px;
 
@@ -94,12 +94,13 @@ span + .entry-title {
 		text-decoration: underline;
 	}
 
+	// this is seen in the research page "Welcome" 
 	@include media($medium) {
-		@include font-size(32,yes,32);  //54
+		@include font-size(36,yes,36);  //54
 	}
 
 	@include media($large) {
-		@include font-size(44,yes,44);  //68, 72
+		@include font-size(36,yes,36);  //68, 72
 	}
 }
 
@@ -108,10 +109,11 @@ span + .entry-subtitle {
 	margin-top: 0;
 }
 
+// this is seen in the research page section subtitles
 .entry-subtitle {
 	font-family: $alt-font;
-	font-style: italic;
-	@include font-size(22,yes,22);
+	font-style: light; // italic;
+	@include font-size(26,yes,26);
 	font-weight: 300;
 	line-height: 1;
 	letter-spacing: -1px; //-3px;
@@ -123,11 +125,11 @@ span + .entry-subtitle {
 	}
 
 	@include media($medium) {
-		@include font-size(26,yes,26);
+		@include font-size(30,yes,30);
 	}
 
 	@include media($large) {
-		@include font-size(32,yes,32);
+		@include font-size(34,yes,34);
 	}
 }
 
@@ -176,14 +178,17 @@ span + .entry-subtitle {
 .bio-photo {
 	display: none;
 
+	
 	@include media($large) {
 		display: block;
 		width: 125px;
 		height: 125px;
-		margin-bottom: 10px;
+		margin-top: 45px;
+		margin-bottom: 20px;
 		@include rounded(125px);
 		@include clearfix;
 	}
+	
 }
 
 

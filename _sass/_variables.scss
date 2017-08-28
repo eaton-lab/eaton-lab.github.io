@@ -1,14 +1,16 @@
 // TYPOGRAPHY ================================================
-$base-font                : 'source-sans-pro', sans-serif;
+// $base-font             : 'source-sans-pro', sans-serif;
+// $base-font                : 'Open Sans', sans-serif;
+$base-font                : 'ubuntu', sans-serif;
 $heading-font             : $base-font;
 $caption-font             : $base-font;
 $code-font                : 'source-code-pro', monospace;
-$alt-font                 : 'volkhov', serif;
+// $alt-font                 : 'volkhov', serif;
+$alt-font                 : 'ubuntu', sans-serif;
 
-$doc-font-size            : 16;
-$doc-line-height          : 24;
-
-$border-radius            : 3px;
+$doc-font-size            : 18;
+$doc-line-height          : 24; //24;
+$border-radius            : 5px;
 
 
 // set-up the body font-size / line-height
@@ -20,15 +22,16 @@ body {
 
 // COLORS =====================================================
 $body-color               : #fff;
-$text-color               : #383838; //#222;
-$base-color               : #383838; //#343434;
+$text-color               : #262626; //#383838; //#222;
+$base-color               : #383838; //00b2b3; // (highlighted text bg color)
 $comp-color               : adjust-hue($base-color, 180);
 $border-color             : #ddd;
 $white                    : #fff;
-$black                    : #383838; //#000;
+$black                    : #262626; //#383838; //#000;
 $accent-color             : $black;
-$link-color               : #00b2b3; //262626; //#00b2b3; //#222;
-$link-visited-color       : #262626; //#ff867E;
+$link-color               : #377574; //484848; //009ea2; //00b2b3; //262626; //#00b2b3; //#222;
+$link-hover-color         : #808080; // adjust-hue($link-color, 180);
+$link-visited-color       : #007d81; //#ff867E;
 
 $table-border-color       : $border-color;
 $table-border             : 1px solid $table-border-color;

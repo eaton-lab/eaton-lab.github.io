@@ -99,12 +99,14 @@ a {
 
 	&:visited {
 		/*color: lighten($link-color, 20); */
-		/*color: $link-visited-color; */
-		color: darken($link-color, 10);
+		// color: darken($link-color, 10);
+		color: $link-visited-color;
 	}
 
 	&:hover {
-		color: lighten($link-color, 5);
+		// color: lighten($link-color, 5);
+		// color: darken($link-color, 25);
+		color: $link-hover-color;
 	}
 
 	&:focus {

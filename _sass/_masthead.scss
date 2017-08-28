@@ -37,8 +37,8 @@
   img {
     width: 100px;
     height: 100px;
-    @include animation-duration(1s);
-    @include animation-delay(.05s);
+    @include animation-duration(1.3s);  // don't last too long
+    @include animation-delay(0.35s);    // give it time to load
     border: 2px solid $white;
     @include rounded(100px); /* crops in a circle */
 
@@ -62,7 +62,7 @@
 
 .site-title {
   margin-bottom: 0;
-  @include animation-duration(1s);
+  @include animation-duration(1.5s);
   @include animation-delay(.75s);
 
   a {
@@ -75,10 +75,10 @@
    ========================================================================== */
 
 .site-description {
-  margin-top: 0;
+  margin-top: 12;
   font-family: $alt-font;
   @include font-size(16);
-  font-weight: 400;
+  font-weight: 300;
   font-style: italic;
   @include animation-duration(1s);
   @include animation-delay(1s);
