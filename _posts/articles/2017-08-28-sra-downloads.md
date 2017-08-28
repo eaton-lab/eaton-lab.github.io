@@ -280,35 +280,20 @@ SampelName provided by the study authors.
 ```
 
 ```yaml
-           Run    spots spots_with_mates                ScientificName  
-0   SRR1754715   696994                0           Pedicularis superba   
-1   SRR1754720  1452316                0       Pedicularis thamnophila   
-2   SRR1754721  2199613                0  Pedicularis cyathophylloides   
-3   SRR1754722  2199740                0  Pedicularis cyathophylloides   
-4   SRR1754723   822263                0               Pedicularis rex   
-5   SRR1754724  1707942                0               Pedicularis rex   
-6   SRR1754725  1391175                0               Pedicularis rex   
-7   SRR1754726  1409843                0               Pedicularis rex   
-8   SRR1754727  1002923                0       Pedicularis przewalskii   
-9   SRR1754728   636625                0       Pedicularis thamnophila   
-10  SRR1754729   964244                0       Pedicularis przewalskii   
-11  SRR1754730  1253109                0      Pedicularis cyathophylla   
-12  SRR1754731  1803858                0               Pedicularis rex   
-
-                SampleName  
-0            29154_superba  
-1             30556_thamno  
-2   41954_cyathophylloides  
-3   41478_cyathophylloides  
-4                39618_rex  
-5                40578_rex  
-6                38362_rex  
-7                35855_rex  
-8        33588_przewalskii  
-9             33413_thamno  
-10       32082_przewalskii  
-11      30686_cyathophylla  
-12               35236_rex
+           Run    spots spots_with_mates                ScientificName              SampleName  
+0   SRR1754715   696994                0           Pedicularis superba           29154_superba  
+1   SRR1754720  1452316                0       Pedicularis thamnophila            30556_thamno  
+2   SRR1754721  2199613                0  Pedicularis cyathophylloides  41954_cyathophylloides  
+3   SRR1754722  2199740                0  Pedicularis cyathophylloides  41478_cyathophylloides  
+4   SRR1754723   822263                0               Pedicularis rex               39618_rex  
+5   SRR1754724  1707942                0               Pedicularis rex               40578_rex  
+6   SRR1754725  1391175                0               Pedicularis rex               38362_rex  
+7   SRR1754726  1409843                0               Pedicularis rex               35855_rex  
+8   SRR1754727  1002923                0       Pedicularis przewalskii       33588_przewalskii  
+9   SRR1754728   636625                0       Pedicularis thamnophila            33413_thamno  
+10  SRR1754729   964244                0       Pedicularis przewalskii       32082_przewalskii  
+11  SRR1754730  1253109                0      Pedicularis cyathophylla      30686_cyathophylla  
+12  SRR1754731  1803858                0               Pedicularis rex               35236_rex
 ```
 
 To download the data we will use the `.run()` command, following the design
@@ -355,15 +340,15 @@ total 1.1G
 ```
 
 et voilà. A huge benefit of this approach is hidden under the hood, which is 
-that we automatically set the location for the `.sra` files to be stored in the
-"workdir" location that you set, and we remove them right after they are finished
-being converted into .fastq files. Therefore you will never run into problems 
-with hidden sra files filling up your drive space. 
+that we automatically temporarily set the location for the `.sra` files to be
+downloaded in the "workdir" location that you set, and we remove them right 
+after they are converted into .fastq files. Therefore you will never run 
+into problems with hidden sra files filling up your drive space that often 
+counfounds sra-tools users.
 
 Another strength of this approach is that you can clearly see and show 
 the full meta-data from which the files are being drawn, nicely displayed 
-as a Pandas DataFrame, and then access and manipulate the names of those 
-files with the single run command. And of course
-being in Python you can make it all look very nice in a jupyter-notebook. 
-
+as a Pandas DataFrame. This is a great thing to stick right at the beginning of
+a reproducible science document, like a Jupyter-notebook, to show exactly where
+your data came from and how you renamed the files.
 
