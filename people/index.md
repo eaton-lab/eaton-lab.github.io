@@ -12,8 +12,8 @@ Masters, and Undergraduate students to work on plant, ecology and evolution,
 and computational genomics research. If you are interested in joining the lab
 follow this link ([joining the lab](#joining-the-lab)) and contact us.
 
-### PI: Deren Eaton
-
+<br>
+<h1 class="entry-subtitle" id="Principle Investigator">Principal Investigator: Deren Eaton</h1>
 <p>
 <a href="../images/Deren-photo.jpg">
     <img src="../images/Deren-photo.jpg"
@@ -24,7 +24,8 @@ follow this link ([joining the lab](#joining-the-lab)) and contact us.
 </a>
 <!-- https://c1.staticflickr.com/6/5323/31076258402_63f8612588_z.jpg"> -->
 
-Deren is an Assistant Professor in the Department of Ecology, Evolution, 
+<span style="font-weight:bold">Deren Eaton</span> 
+is an Assistant Professor in the Department of Ecology, Evolution, 
 and Environmental Science (E3B) at Columbia University. 
 He is an evolutionary biologist and botanist with broad interests 
 in plant biodiversity -- from the scale of global patterns and community 
@@ -45,7 +46,7 @@ contact: [de2356@columbia.edu](mailto:de2356@columbia.edu)
 
 <br>
 
-### Post-docs
+<h1 class="entry-subtitle" id="Post-docs">Post-doctoral Researchers</h1>
 
 <p>
 <a href="../images/Sandra-photo.jpg">
@@ -55,7 +56,8 @@ contact: [de2356@columbia.edu](mailto:de2356@columbia.edu)
          hspace="20px"
          align='right'>
 	</a>
-Sandra Hoffberg joined the lab in 2017 as an NSF Postdoctoral Fellow.
+<span style="font-weight:bold">Sandra Hoffberg</span>
+joined the lab in 2017 as an NSF Postdoctoral Fellow.
 Sandra's work is focused on the development of tools and resources to 
 expediate large-scale genotyping and bioinformatic analyses of 
 germplasm databases (i.e., seed databases) for agriculture and 
@@ -77,8 +79,8 @@ contact: [slh2181@columbia.edu](mailto:slh2181@columbia.edu)
 
 
 <br>
-### Graduate Students
 
+<h1 class="entry-subtitle" id="Graduate Students">Graduate Students</h1>
 
 <a href="../images/Patrick-photo.jpg">
     <img src="../images/Patrick-photo.jpg"
@@ -87,7 +89,8 @@ contact: [slh2181@columbia.edu](mailto:slh2181@columbia.edu)
     hspace="20"
     align="right">
 </a>
-Patrick McKenzie joined the lab in 2017, and was a recipient of the 
+<span style="font-weight:bold">Patrick McKenzie</span> 
+joined the lab in 2017, and was a recipient of the 
 an NSF Graduate Research Fellowship (GRFP). Patrick is interested in plant 
 phylogenetics and comparative methods, and has worked on predictive modeling 
 in forest communities. He completed his BSc from the University of Tennessee 
@@ -96,14 +99,14 @@ in 2017.
 contact: [p.mckenzie@columbia.edu](mailto:p.mckenzie@columbia.edu)
 
 <br>
-### Joining the lab:
+<h1 class="entry-subtitle" id="Joining the lab">Joining the lab</h1>
 
-##### Postdocs
-I'm currently looking to recruit postdocs to work on independent projects in
-the lab and/or to join ongoing projects. I encourage people to contact me about
-writing proposals for the coming year for available postdoc fellowships.
-Some great resources to find fellowships are available
-[here](http://mathbionerd.blogspot.com/2014/04/some-postdoctoral-fellowships-in-biology.html)
+I'm currently looking to recruit Post-docs and Graduate Student 
+to work on independent projects in the lab and/or to join ongoing 
+projects. If interested please contact Deren about applications 
+and/or writing proposals for the coming year. For potential 
+Post-docs there are many great resources to find fellowships 
+such as [here](http://mathbionerd.blogspot.com/2014/04/some-postdoctoral-fellowships-in-biology.html)
 and [here](http://people.ds.cam.ac.uk/dl384/Resources_Postdocs.html). 
 Please email Deren with your CV if you'd like to discuss
 fellowship opportunities.
