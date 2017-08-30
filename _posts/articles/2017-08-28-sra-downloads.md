@@ -15,24 +15,23 @@ date: 2017-08-28
 
 
 <h1 class="entry-subtitle">Diving into the SRA abyss</h1>
-Access to data remains a major hurdle for reproducibility in science today
-despite the increased availability of large-scale repositories for data storage, 
-and even journal policies that require data archiving. This is particularly true
-for genomic sequence data, where it can be really confusing to learn how to
-upload large data files (e.g., requiring a checksum and FTP); and how to properly
-tag with them appropriate meta-data. And so typically people just don't do it. 
-Or if they do, the data is uploaded to an archive dump site, like DRYAD, where 
-it is not easily searchable. 
+Access to data remains a major hurdle for reproducibility in science 
+despite the increased availability of large-scale repositories for 
+online data storage, and even journal policies that require data archiving.
+And this is particularly true for genomic sequence data. Uploading 
+it is confusing and difficult and so people just don't do it, and 
+journals don't enforce their stated policies.
 
-There are many reasons for not submitting data to SRA, but surely the 
-most common reason is that it's a completely *time-consuming and 
-soul-crushing exercise.* It requires entering pages upon pages of meta-data 
-by hand into arcane web forms or spread-sheets to define various 
-objects that are continually referenced by redundant names or prefix tags
+There are many reasons for not submitting data to SRA, but the 
+most common reason is that it's a totally *time-consuming and 
+soul-crushing exercise*. It requires entering pages upon 
+pages of meta-data by hand into arcane web forms or spread-sheets 
+to define numerous objects that are continually referenced by 
+redundant names or prefix tags
 (e.g., SUB, SAMN, SRX, SRP, PRJNA, BioSamples and BioProjects), 
 and which have a relational structure that defies understanding
 (e.g., 1 SRA can have 4 SRXs which produce data for 96 SRRs from
-96 SRSs for 4 SRPs; See table below; which I reference frequently when
+96 SRSs for 4 SRPs; See table below, which I reference frequently when
 trying to understand this stuff.)
 
 | Prefix	| Accession Name	|   Definition	   |   Example   |
@@ -52,17 +51,20 @@ trying to understand this stuff.)
 </h1>
 The distinguishing benefit of having all sequence data archived in the SRA, 
 with associated metadata, is that we can easily develop uniform scripts to access
-the data regardless of its format or distribution among samples and lanes of sequencing.
-For the purpose of creating reproducible documentation, then, 
-a single code block can be written at the beginning of a document to query
-and download all of the sequence data for a project. This would be a huge advance 
-over what is commonly available today for doing reproducible science, which is 
-typically just a verbal instruction to "go get the raw data" before you start. 
-Even great examples of reproducible science often start from the point of assuming
-that users have properly accessed the data, renamed files, and grouped them into a 
-correct directory structure. Instead, reproducible code should itself include 
-the necessary code to download the data from an online archive ready for 
-downstream analysis.
+the data regardless of its format or distribution among samples and lanes of 
+sequencing. It think that up to now, this fact is a little under-appreciated, 
+simply because most people are generating their own data rather than accessing
+published data online. But as soon as you do go looking for data, you'll find 
+that accessing it can be a huge pain... if it's even available. 
+
+For the purpose of creating reproducible code for a published study 
+the idea state would include a single code block written at the 
+beginning of a document to query and download all of the sequence data 
+for a project. This would be a huge advance over what is commonly available
+today, which is typically just a verbal instruction to "go get the raw data"
+from an accession ID before you start. Instead, reproducible code should 
+itself include the necessary code (and software) to download the data from 
+an online archive ready for downstream analysis.
 
 <h1 class="entry-subtitle" 
   id="What about sra-tools" href="What about sra-tools">What about sra-tools?
