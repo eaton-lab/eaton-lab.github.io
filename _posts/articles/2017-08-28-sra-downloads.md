@@ -15,15 +15,17 @@ date: 2017-08-28
 
 
 <h1 class="entry-subtitle">Diving into the SRA abyss</h1>
-Access to data remains a major hurdle for reproducibility in science 
+Access to data remains a major hurdle for reproducibility in science today
 despite the increased availability of large-scale repositories for 
 online data storage, and even journal policies that require data archiving.
-And this is particularly true for genomic sequence data. Uploading 
-it is confusing and difficult and so people just don't do it, and 
-journals don't enforce their stated policies.
+Here I try to make an argument for archiving data in the SRA through 
+demonstration of the `sratools` wrapper from the `ipyrad.analysis` tools, 
+which makes it easy and elegant to download data from the SRA 
+when working in Python/Jupyter.
 
-There are many reasons for not submitting data to SRA, but the 
-most common reason is that it's a totally *time-consuming and 
+There are many reasons for not using the SRA and instead dumping data 
+on a generic archive like DRYAD, chief among them being that
+uploading data to SRA is a totally *time-consuming and 
 soul-crushing exercise*. It requires entering pages upon 
 pages of meta-data by hand into arcane web forms or spread-sheets 
 to define numerous objects that are continually referenced by 
@@ -34,14 +36,14 @@ and which have a relational structure that defies understanding
 96 SRSs for 4 SRPs; See table below, which I reference frequently when
 trying to understand this stuff.)
 
-| Prefix	| Accession Name	|   Definition	   |   Example   |
-|:------------------| :-------------- | :--------------- |:------------|
-| SRX  | *Experiment* | Metadata about library, platform, selection.    | link |
-| SRR  | *Run*        | **The actual sequence data for an experiment**. | link |
-| SRP  | *Study*      | Metadata about project (BioProject).            | link |
-| SRS  | *Sample*     | Metadata about the physical Sample (BioSample)  | link |
-| SRZ  | *Analysis*   | Mapped/aligned reads file (BAM) & metadata.     | link |
-| SRA  | *Submission* | Metadata of other 5 linked objects.             | link |
+| Prefix	| Accession Name	|   Definition	  
+|:------------------| :-------------- | :--------------- |
+| SRX  | *Experiment* | Metadata about library, platform, selection.    | 
+| SRR  | *Run*        | **The actual sequence data for an experiment**. | 
+| SRP  | *Study*      | Metadata about project (BioProject).            | 
+| SRS  | *Sample*     | Metadata about the physical Sample (BioSample)  | 
+| SRZ  | *Analysis*   | Mapped/aligned reads file (BAM) & metadata.     | 
+| SRA  | *Submission* | Metadata of other 5 linked objects.             | 
 
 
 <h1 class="entry-subtitle" 
@@ -49,22 +51,27 @@ trying to understand this stuff.)
   href="Why use the SRA">
   Why use the SRA?
 </h1>
-The distinguishing benefit of having all sequence data archived in the SRA, 
-with associated metadata, is that we can easily develop uniform scripts to access
-the data regardless of its format or distribution among samples and lanes of 
-sequencing. It think that up to now, this fact is a little under-appreciated, 
-simply because most people are generating their own data rather than accessing
-published data online. But as soon as you do go looking for data, you'll find 
-that accessing it can be a huge pain... if it's even available. 
+The distinguishing benefit of archiving sequence data in the SRA, however,
+is that by grouping it with associated metadata you can easily develop 
+uniform scripts to access data regardless of its format or distribution 
+among samples and lanes of sequencing. 
+This idea of reusing data is perhaps a little under-appreciated in genomics, 
+although it has been central for other similar types of data
+such as Sanger data in Genbank, perhaps because many people are 
+still generating their own genomic data rather than accessing
+previously published data. But if you do go looking for fastq files
+from your favorite study you're likely to find that accessing them is
+a huge pain... if they're even available. 
 
-For the purpose of creating reproducible code for a published study 
-the idea state would include a single code block written at the 
+For the purpose of creating reproducible code for a published study, then,
+the ideal example would include a single code block written at the 
 beginning of a document to query and download all of the sequence data 
-for a project. This would be a huge advance over what is commonly available
+for a project while also providing information about the format of the data. 
+This would be a huge advance over what is commonly available
 today, which is typically just a verbal instruction to "go get the raw data"
 from an accession ID before you start. Instead, reproducible code should 
-itself include the necessary code (and software) to download the data from 
-an online archive ready for downstream analysis.
+itself include the necessary code (and software) to download the data 
+and make it ready for downstream analysis.
 
 <h1 class="entry-subtitle" 
   id="What about sra-tools" href="What about sra-tools">What about sra-tools?
@@ -72,11 +79,12 @@ an online archive ready for downstream analysis.
 
 NCBI has developed a proprietary set of tools for accessing the SRA called 
 ([sra-tools](http://ncbi.github.io/sra-tools/)).
-Historically, I avoided using it because it was atrociously difficult to access
+Historically, I've avoided using this because it was atrociously difficult to access
 and install, and I didn't want to have to provide complex installation instructions 
-at the beginning of my documents just so other users could install the software that 
-I was using. *But*, now its 2017, and like any good software the sra-tools 
-package is now available on conda, making it easy enough for anyone to install and use. 
+at the beginning of my own documents just so other users could install the 
+software that is required to download the raw data. 
+*But*, now that its 2017, like most good software the sra-tools package is 
+now available on conda, making it easy enough for anyone to install and use. 
 To install the sra-tools along with another set of tools for searching genome 
 databases (called entrez-tools), simply run the following command with conda.
 
@@ -97,16 +105,14 @@ you can download its fastq data with `fastq-dump` with just the ID:
 If you want to download data for an entire project, however, you need to
 do some complex bash scripting. For example, below we query the "Study
 accession" (SRP) to extract its metadata with `esearch` and from that 
-we extract info using `efetch` to grab the "Run accessions (SRRs)", which we
-could then pass into `fastq-dump` like above. 
-If you google around you can find similar recipes for this kind of piped
-script:
+we extract info using `efetch` to grab the "Run accessions (SRRs)". 
+This fairly long script is required simply to tell us which SRRs are 
+associated with this SRP. 
 
 ```bash
 >>> esearch -db sra -query SRP021469 | efetch --format runinfo | cut -d ',' -f 1
 ```
 
-The following "Run" accessions would be printed to stdout:
 ```yaml
  1
 Run
@@ -125,7 +131,7 @@ SRR1754730
 SRR1754731
 ```
 
-To grab all the SRRS and also pas them to the `fastq-dump` command to be downloaded
+To pass the resulting SRRs to the `fastq-dump` command to be downloaded
 you could write something like the following, which I've broken 
 down into smaller bits so you can see what each call is doing
 before piping to the next:
@@ -236,29 +242,32 @@ a new directory that it creates in `/home/user/ncbi/` without telling you that i
 doing it, and then it leaves these large multiple GB size files behind in that 
 directory. Crazy. This is most troublesome when working on HPC machines where your
 home directory may not even have sufficient space to temporarily hold these files.
-Changing the location to another directory, like a scratch space, is not easy, 
-and requires using *another* tool from sra-tools called `vdb-config`. 
-It's ugly, and one of the reasons I became interested in developing a better way. 
+Changing the location to another directory, like a scratch space, is not at all
+easy, and requires using *another* tool from sra-tools called `vdb-config`. 
+It's ugly, really ugly, and one of the reasons I became interested in 
+developing a better way. 
 
 <h1 class="entry-subtitle" 
   id="A simpler (Pythonic) way?" href="A simpler (Pythonic) way?">A simpler (Pythonic) way?
 </h1>
 
 I do almost all of my work these days in Jupyter notebooks, and so I aimed
-to write a simple wrapper around sra-tools + entez-tools that could would 
+to write a simple wrapper around sra-tools + entez-tools that would 
 function in a Pythonic way, and overcome some of the problems listed above. 
 This tool is available through conda and distributed with the ipyrad analysis
 toolkit. 
 
 ```bash
+## install ipyrad and associated tools
 >>> conda install -c ipyrad ipyrad
 >>> conda install -c eaton-lab toytree
 ```
 
-First import the ipyrad analysis tools (as ipa) and then initiate an sratools
-object with a Study accession (SRP). You can also provide it with an argument
-"workdir" which is the location where your fastq files will be downloaded to, 
-and will be created if it doesn't yet exist. 
+First import the ipyrad analysis tools (renamed as `ipa`) and then initiate 
+an sratools object with a Study accession ID (SRP). 
+You can also provide an argument for "workdir" which is the location 
+where your fastq files (and temporary .sra files) will be downloaded to, 
+and which will be created if it doesn't yet exist. 
 
 ```python
 ## import ipyrad analysis tools
@@ -268,13 +277,13 @@ and will be created if it doesn't yet exist.
 >>> sra = ipa.sratools(accession="SRP021469", workdir="rawdata")
 ```
 
-You can then query information about the accession (essentially run efetch run_info). 
-You can select just a number of specific fields (run `sra.fetch_fields` to see available
-fields) or return the full data frame of all fields. Below I request fields 1,4,6,29,30.
-The result is returned as a Pandas dataframe which is easy to read and manipulate. 
-From these fields you can see the Run IDs, the number of reads (spots), the fact that
-the data are single-end (i.e., no "spots with mates"), the ScientificNames and the 
-SampelName provided by the study authors. 
+By providing just the SRP ID you can now query information about the 
+study and have it returned as a nice DataFrame. Below I request fields 
+1,4,6,29, and 30. The result is returned as a Pandas DataFrame object
+which is easy to read and manipulate. From these fields you can see the 
+Run IDs, the number of reads (spots), the fact that the data are 
+single-end (i.e., no "spots with mates"), the ScientificNames and the 
+SampleName provided by the study authors. 
 
 ```python
 ## view meta-data for all fields or a subset of fields
@@ -298,13 +307,14 @@ SampelName provided by the study authors.
 12  SRR1754731  1803858                0               Pedicularis rex               35236_rex
 ```
 
-To download the data we will use the `.run()` command, following the design
-of all other tools in the ipyrad.analysis toolkit. It will not overwrite existing
-files in the workdir with the same name unless you provide the force=True argument, 
-and you can optinally parallelize the work by providing an ipyparallel Client object
-as an argument to `ipyclient=` (see ipyrad.analysis docs for more details). 
-If the data are paired-end they will automatically be split into separate files
-for read_1 and read_2. You can indicate the field you wish to use for file 
+To download the data now you simply need to use the `.run()` command. 
+As with all other tools in the `ipyrad.analysis` toolkit existing files
+with the same name will note be overwritten unless you use the `force=True`
+argument, and the work can be optionally parallelized by providing an 
+ipyparallel Client object as an argument (`ipyclient=`; see 
+ipyrad docs for more details). 
+If the data are paired-end they will be automatically split into separate files
+for R1 and R2. You can indicate the field you wish to use for file 
 names with the `name_fields=` argument, or provide multiple fields to name
 files with multiple values. For example, to name files by their ScientificName
 \+ Run ID separated by an underscore we would run the following, which will 
@@ -322,7 +332,7 @@ print a progress bar while it runs:
 And you can see the files were written to the proper location and 
 renamed as we wished. 
 ```bash
->>> ls -lthr
+>>> ls -lthr rawdata/
 ```
 ```yaml
 total 1.1G
@@ -341,7 +351,7 @@ total 1.1G
 -rw-rw-r-- 1 deren deren 136M Aug 28 19:12 41954_cyathophylloides_SRR1754721.fastq.gz
 ```
 
-et voilà. A huge benefit of this approach is hidden under the hood, which is 
+Et voilà. A huge benefit of this approach is hidden under the hood, which is 
 that we automatically temporarily set the location for the `.sra` files to be
 downloaded in the "workdir" location that you set, and we remove them right 
 after they are converted into .fastq files. Therefore you will never run 
