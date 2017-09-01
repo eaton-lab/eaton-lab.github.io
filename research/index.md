@@ -8,14 +8,13 @@ image:
   credit:
 ---
 
-The Eaton lab is currently in the incipient stages of development with plans
-to officially launch in the summer of 2017 in the [Department of Ecology,
+The Eaton lab is in the [Department of Ecology,
 Evolution, and Environmental Biology](http://e3b.columbia.edu)
-at Columbia University. This site will serve as a venue for sharing updates
-about the lab and its members, including notes on fieldwork, discussions of
-papers, and posts about new methods being developed and used in the lab.
-Check back soon for updates. Below you can find descriptions of several
-major projects ongoing in the lab.
+at Columbia University. Here you can find information about news and
+updates in the lab, current and former members, as well as fun 
+posts about fieldwork, discussions of papers, and new methods being 
+developed and used in the lab. Below you can find descriptions of 
+several major ongoing projects.
 
 <br>
 <h1 class="entry-subtitle" id="Flowers"
