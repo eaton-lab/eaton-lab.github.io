@@ -2,15 +2,20 @@
 
 Deren:
   name: Deren Eaton
-  #web: http://thewhip.com
   email: de2356@columbia.edu
-  bio: "PI"
-  avatar: bio-monbeigiana.jpg
+  bio: PI
+  avatar: Deren-photo4.png
   twitter: dereneaton
 
-cornelius_fiddlebone:
-  name: Cornelius Fiddlebone
-  email: cornelius@thewhip.com
-  bio: "I ordered what?"
-  avatar: bio-photo.jpg
+Sandra:
+  name: Sandra Hoffberg
+  email: slh2181@columbia.edu
+  bio: NSF Post-doctoral Fellow
+  avatar: Sandra-photo3.png
+
+Patrick:
+  name: Patrick McKenzie
+  email: p.mckenzie@columbia.edu
+  bio: Graduate student
+  avatar: Patrick-photo2.png
   twitter: rhymeswithsackit

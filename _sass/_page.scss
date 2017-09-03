@@ -177,7 +177,6 @@ span + .entry-subtitle {
 
 .bio-photo {
 	display: none;
-
 	
 	@include media($large) {
 		display: block;
@@ -191,6 +190,47 @@ span + .entry-subtitle {
 	
 }
 
+.people-photo {
+
+	// default styling
+	display: none;
+	max-width: 160px;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 40px;
+	@include span-columns(4);
+	@include rounded(120px);
+
+	// mid-size styling
+	@include media($medium) {
+		display: block;
+		width: 160px;
+		height: 160px;
+		float: left;
+		margin-top: 15px;
+		margin-bottom: 20px;
+		margin-left: 30px;
+		margin-right: 30px;
+		@include rounded(120px);
+		//@include clearfix();
+	}
+	
+	@include media($large) {
+		display: block;
+		width: 160px;
+		height: 160px;
+		float: left;
+		//margin: 0 auto;
+		margin-top: 15px;
+		margin-bottom: 20px;
+		margin-right: 30px;
+		margin-left: 30px;
+		@include rounded(120px);
+		@include clearfix();
+	}
+	
+}
 
 /* feature image credit */
 
