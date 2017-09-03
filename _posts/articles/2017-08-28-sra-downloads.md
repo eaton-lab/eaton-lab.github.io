@@ -15,26 +15,27 @@ date: 2017-08-28
 
 
 <h1 class="entry-subtitle">Diving into the SRA abyss</h1>
-Access to data remains a major hurdle for reproducibility in science today
+Access to data remains a major hurdle for reproducibility in science 
 despite the increased availability of large-scale repositories for 
 online data storage, and even journal policies that require data archiving.
-Here I try to make an argument for archiving data in the SRA through 
-demonstration of the `sratools` wrapper from the `ipyrad.analysis` tools, 
+In this post I'll try to make an argument for archiving data in the SRA through 
+demonstration of the `sratools` wrapper from the `ipyrad.analysis` toolkit, 
 which makes it easy and elegant to download data from the SRA 
 when working in Python/Jupyter.
 
-There are many reasons for not using the SRA and instead dumping data 
-on a generic archive like DRYAD, chief among them being that
-uploading data to SRA is a totally *time-consuming and 
-soul-crushing exercise*. It requires entering pages upon 
-pages of meta-data by hand into arcane web forms or spread-sheets 
-to define numerous objects that are continually referenced by 
-redundant names or prefix tags
+There are many reasons not to upload data to the SRA and to instead dump 
+it on a generic archive like DRYAD, chief among them being that
+uploading data to SRA is *super time-consuming and difficult*.
+It requires entering pages upon pages of meta-data by hand into 
+arcane web forms or spread-sheets to define numerous objects that 
+are continually referenced by redundant names or prefix tags
 (e.g., SUB, SAMN, SRX, SRP, PRJNA, BioSamples and BioProjects), 
 and which have a relational structure that defies understanding
 (e.g., 1 SRA can have 4 SRXs which produce data for 96 SRRs from
 96 SRSs for 4 SRPs; See table below, which I reference frequently when
-trying to understand this stuff.)
+trying to understand this stuff.) And so it should be no surprise that
+people often forgo data archiving.
+
 
 | Prefix	| Accession Name	|   Definition	  
 |:------------------| :-------------- | :--------------- |
@@ -51,17 +52,16 @@ trying to understand this stuff.)
   href="Why use the SRA">
   Why use the SRA?
 </h1>
-The distinguishing benefit of archiving sequence data in the SRA, however,
-is that by grouping it with associated metadata you can easily develop 
-uniform scripts to access data regardless of its format or distribution 
-among samples and lanes of sequencing. 
-This idea of reusing data is perhaps a little under-appreciated in genomics, 
-although it has been central for other similar types of data
-such as Sanger data in Genbank, perhaps because many people are 
-still generating their own genomic data rather than accessing
-previously published data. But if you do go looking for fastq files
-from your favorite study you're likely to find that accessing them is
-a huge pain... if they're even available. 
+The distinguishing advantage of using the SRA, however,
+is that grouping data with its associated meta-data allows later users
+to write scripts to access the data and properly format it for downstream
+analyses based on the information encoded in the meta-data
+(e.g., replicate samples are present from multiple lanes of sequencing, 
+or paired reads need to be split into separate files). 
+The idea of reusing genomic data seems obvious, but currently
+seems less appreciated than for previous types of data like Sanger sequences, 
+which have been fairly uniformly archived in Genbank. Perhaps this is 
+because data generation has been highly incentivized over data reuse in recent years.
 
 For the purpose of creating reproducible code for a published study, then,
 the ideal example would include a single code block written at the 
@@ -77,16 +77,17 @@ and make it ready for downstream analysis.
   id="What about sra-tools" href="What about sra-tools">What about sra-tools?
 </h1>
 
-NCBI has developed a proprietary set of tools for accessing the SRA called 
-([sra-tools](http://ncbi.github.io/sra-tools/)).
-Historically, I've avoided using this because it was atrociously difficult to access
-and install, and I didn't want to have to provide complex installation instructions 
-at the beginning of my own documents just so other users could install the 
-software that is required to download the raw data. 
-*But*, now that its 2017, like most good software the sra-tools package is 
-now available on conda, making it easy enough for anyone to install and use. 
-To install the sra-tools along with another set of tools for searching genome 
-databases (called entrez-tools), simply run the following command with conda.
+For several years there has been a proprietary tool developed by NCBI 
+for this purpose, called 
+[sra-tools](http://ncbi.github.io/sra-tools/).
+Historically, I avoided using it because it was atrociously difficult to access
+and install, and thus I didn't want to have to provide complex installation 
+instructions at the beginning of my own documents just so users could 
+download data from a link. *But*, now that it's 2017, like most good software 
+the sra-tools package has become available through conda, 
+making it easy enough for anyone to install and use. To install the sra-tools 
+along with some associated tools for searching genome databases 
+(called entrez-tools), simply run the following command with conda.
 
 ```bash
 >>> conda install -c bioconda sra-tools
@@ -96,7 +97,7 @@ databases (called entrez-tools), simply run the following command with conda.
 The key program in `sra-tools` to download data from SRA is called `fastq-dump`.
 And the main tool in `entrez-tools` is called `esearch`, which queries meta-data 
 from NCBI. If you wanted to get the data from a single Run Accession (SRR)
-you can download its fastq data with `fastq-dump` with just the ID:
+you can download its fastq data with `fastq-dump` and the ID:
 
 ```bash
 >>> fastq-dump SRR1754715
@@ -104,10 +105,10 @@ you can download its fastq data with `fastq-dump` with just the ID:
 
 If you want to download data for an entire project, however, you need to
 do some complex bash scripting. For example, below we query the "Study
-accession" (SRP) to extract its metadata with `esearch` and from that 
-we extract info using `efetch` to grab the "Run accessions (SRRs)". 
-This fairly long script is required simply to tell us which SRRs are 
-associated with this SRP. 
+accession" (SRP) to extract its metadata and from that 
+we extract info using `efetch` and `cut` to grab just the 
+"Run accessions (SRRs)". It is a bit convoluted just to get the SRRs 
+associated with an SRP. 
 
 ```bash
 >>> esearch -db sra -query SRP021469 | efetch --format runinfo | cut -d ',' -f 1
@@ -149,11 +150,12 @@ before piping to the next:
   id="Complications" href="Complications">Complications
 </h1>
 
-SRA names the files after their SRR accession IDs. To rename them you can 
-pass in other names, or grab them from the SRP metadata, which often includes 
-the taxonomic names, or collection IDs. To rename the files based
-on their original collection IDs we'll need to grab the 30th element from runinfo.
-The command below shows what this looks like for the example SRP accession.
+By default this will name files according to their SRR accession IDs. 
+To rename them you can pass in other names, or grab them from the SRP 
+metadata, which often includes the taxonomic names and collection IDs. 
+For example, to rename the files based on their original collection IDs we'll 
+grab the 30th element from runinfo. The command below shows what this looks 
+like for the example SRP accession.
 
 ```bash
 >>> esearch -db sra -query SRP021469 | efetch --format runinfo | cut -d ',' -f 30
@@ -201,7 +203,7 @@ we provide the `SampleName`.
     done
 ```
 
-The resulting data files, success!
+We now have the resulting data files, success!
 ```bash
 >>> ls -l fastqs/
 ```
@@ -227,20 +229,21 @@ The resulting data files, success!
 </h1>
 
 *It's not very clear/readable*  
-For reasonably small sized tasks it seems like overkill to write a large 
-complicated script to download the data when you could instead simply host and 
-download it from something like a Dropbox link, which doesn't require the users 
-to install any software. Moreover, when renaming files, and downloading paired-end 
-data, the sra-tools scripts which pipe together three different programs can start
-to look very complicated and hard to understand.   
+If your goal is simply to attain a few fastq files it really seems like overkill 
+to have to install a large suite of tools and then write a large complicated 
+script that pipes the tools together just to download a few files from online. 
+A simple `wget` command could likely this in one line. While it is nice to have 
+the meta-data available, this approach does not make the meta-data 
+very easy to read.
 
 *The download location is hard-coded*  
-An annoying aspect of fastq-dump is that it downloads files in `.sra` format and 
-converts from that format into `.fastq`. The reason for this is to avoid errors
-in the download if it interrupted. But crazy enough it downloads the sra files into
-a new directory that it creates in `/home/user/ncbi/` without telling you that its
-doing it, and then it leaves these large multiple GB size files behind in that 
-directory. Crazy. This is most troublesome when working on HPC machines where your
+A *very annoying* aspect of the sra-tools is that it downloads files in `.sra` 
+format first and then converts from that format into `.fastq` fiels. 
+The reason for this is to avoid errors in the download if it interrupted. 
+But *crazy* enough it actually downloads these large sra files into
+a new directory that it creates in `/home/user/ncbi/` without telling you that it's
+doing it, and then it *leaves* these multiple GB size files behind in that 
+directory. *Crazy*. This is most troublesome when working on HPC machines where your
 home directory may not even have sufficient space to temporarily hold these files.
 Changing the location to another directory, like a scratch space, is not at all
 easy, and requires using *another* tool from sra-tools called `vdb-config`. 
@@ -309,7 +312,7 @@ SampleName provided by the study authors.
 
 To download the data now you simply need to use the `.run()` command. 
 As with all other tools in the `ipyrad.analysis` toolkit existing files
-with the same name will note be overwritten unless you use the `force=True`
+with the same name will not be overwritten unless you use the `force=True`
 argument, and the work can be optionally parallelized by providing an 
 ipyparallel Client object as an argument (`ipyclient=`; see 
 ipyrad docs for more details). 
@@ -351,16 +354,17 @@ total 1.1G
 -rw-rw-r-- 1 deren deren 136M Aug 28 19:12 41954_cyathophylloides_SRR1754721.fastq.gz
 ```
 
-Et voilà. A huge benefit of this approach is hidden under the hood, which is 
-that we automatically temporarily set the location for the `.sra` files to be
-downloaded in the "workdir" location that you set, and we remove them right 
+Et voilà. A huge benefit of this approach is actually hidden under the hood, 
+which is that it automatically temporarily sets the location for the `.sra`
+files to be downloaded to the "workdir" location, and we remove them right 
 after they are converted into .fastq files. Therefore you will never run 
-into problems with hidden sra files filling up your drive space that often 
-counfounds sra-tools users.
+into problems with hidden sra files filling up your drive space, as is often 
+the case with sra-tools.
 
 Another strength of this approach is that you can clearly see and show 
 the full meta-data from which the files are being drawn, nicely displayed 
 as a Pandas DataFrame. This is a great thing to stick right at the beginning of
 a reproducible science document, like a Jupyter-notebook, to show exactly where
 your data came from and how you renamed the files.
+
 
