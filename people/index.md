@@ -14,16 +14,11 @@ follow this link ([joining the lab](#joining-the-lab)) and contact us.
 
 <br>
 <h1 class="entry-subtitle" id="Principle Investigator">Principal Investigator: Deren Eaton</h1>
-<p>
-<a href="../images/Deren-photo.jpg">
-    <img src="../images/Deren-photo.jpg"
-     alt="image"
-     align='right' 
-     hspace='20'
-     width="225px">
-</a>
-<!-- https://c1.staticflickr.com/6/5323/31076258402_63f8612588_z.jpg"> -->
 
+<p>
+<img src="{{ site.url }}/images/Deren-photo4.png"
+     class="people-photo" 
+     alt="Deren bio photo">
 <span style="font-weight:bold">Deren Eaton</span> 
 is an Assistant Professor in the Department of Ecology, Evolution, 
 and Environmental Science (E3B) at Columbia University. 
@@ -39,74 +34,62 @@ support for reproducible science. Deren completed a
 postdoc at Yale in 2017; earned his PhD from the University
 of Chicago in 2014; and his BSc from the University of Minnesota in 
 2007.
-
 </p>
-
 contact: [de2356@columbia.edu](mailto:de2356@columbia.edu)
 
 <br>
 
 <h1 class="entry-subtitle" id="Post-docs">Post-doctoral Researchers</h1>
-
 <p>
-<a href="../images/Sandra-photo.jpg">
-    <img src="../images/Sandra-photo.jpg" 
-         alt="" 
-         width="200px" 
-         hspace="20px"
-         align='right'>
-	</a>
+<img src="{{ site.url }}/images/Sandra-photo3.png"
+     class="people-photo" 
+     alt="Sandra bio photo">
 <span style="font-weight:bold">Sandra Hoffberg</span>
 joined the lab in 2017 as an NSF Postdoctoral Fellow.
 Sandra's work is focused on the development of tools and resources to 
 expediate large-scale genotyping and bioinformatic analyses of 
 germplasm databases (i.e., seed databases) for agriculture and 
 plant breeding research. Her work combines genomics, phylogenetics, 
-and functional trait evolution, including the study of herbicide 
-resistance, and invasiveness. Sandra completed her PhD in 2017 at the 
-University of Georgia. 
+and functional trait evolution, including the invasiveness and 
+herbicide resistance. Sandra completed her PhD in 2017 at the 
+University of Georgia where she studied <i>Wisteria</i> and 
+<i>Kudzu</i> and developed a genomics protocol for 
+developing RAD-capture (RADcap) libraries. 
 </p>
-
-
 contact: [slh2181@columbia.edu](mailto:slh2181@columbia.edu)
-
-<!-- a href="../images/Sandra-photo.jpg">
-    <img src="../images/Sandra-photo.jpg" 
-         alt="" 
-         width="250px" 
-         align='right'>
-</a -->
 
 
 <br>
-
 <h1 class="entry-subtitle" id="Graduate Students">Graduate Students</h1>
-
-<a href="../images/Patrick-photo.jpg">
-    <img src="../images/Patrick-photo.jpg"
-    alt="image"
-    width="200px"
-    hspace="20"
-    align="right">
-</a>
+<p>
+<img src="{{ site.url }}/images/Patrick-photo2.png"
+     class="people-photo" 
+     alt="Patrick bio photo">
 <span style="font-weight:bold">Patrick McKenzie</span> 
 joined the lab in 2017, and was a recipient of the 
 an NSF Graduate Research Fellowship (GRFP). Patrick is interested in plant 
 phylogenetics and comparative methods, and has worked on predictive modeling 
 in forest communities. He completed his BSc from the University of Tennessee 
 in 2017. 
-
+</p>
 contact: [p.mckenzie@columbia.edu](mailto:p.mckenzie@columbia.edu)
+
 
 <br>
 <h1 class="entry-subtitle" id="Joining the lab">Joining the lab</h1>
-
-I'm currently looking to recruit Post-docs and Graduate Student 
+<p>
+<img src="{{ site.url }}/images/bio-monbeigiana.jpg"
+     class="people-photo" 
+     alt="pedic photo">     
+<span style="font-weight:bold">I'm looking to recruit</span>      
+Post-docs and Graduate Student 
 to work on independent projects in the lab and/or to join ongoing 
 projects. If interested please contact Deren about applications 
 and/or writing proposals for the coming year. For potential 
 Post-docs there are many great resources to find fellowships 
-such as [here](http://mathbionerd.blogspot.com/2014/04/some-postdoctoral-fellowships-in-biology.html)
-and [here](http://people.ds.cam.ac.uk/dl384/Resources_Postdocs.html). 
+such as 
+<a href="http://mathbionerd.blogspot.com/2014/04/some-postdoctoral-fellowships-in-biology.html">Here</a> 
+and <a href="http://people.ds.cam.ac.uk/dl384/Resources_Postdocs.html">Here</a>.
 Please email Deren with your CV if you'd like to discuss
 fellowship opportunities.
+</p>
