@@ -1,6 +1,6 @@
 ---
 layout: page
-title: News/Posts
+title: News
 excerpt: "An archive of articles sorted by date."
 search_omit: true
 ---
