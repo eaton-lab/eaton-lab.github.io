@@ -9,12 +9,11 @@ image:
 
 The Eaton lab is looking to recruit motivated post-docs, Ph.D,
 Masters, and Undergraduate students to work on plant, ecology and evolution,
-and computational genomics research. If you are interested in joining the lab
-follow this link ([joining the lab](#joining-the-lab)) and contact us.
+and computational genomics research. 
 
 <br>
+<hr>
 <h1 class="entry-subtitle" id="Principle Investigator">Principal Investigator: Deren Eaton</h1>
-
 <p>
 <img src="{{ site.url }}/images/Deren-photo4.png"
      class="people-photo" 
@@ -38,7 +37,7 @@ of Chicago in 2014; and his BSc from the University of Minnesota in
 contact: [de2356@columbia.edu](mailto:de2356@columbia.edu)
 
 <br>
-
+<hr>
 <h1 class="entry-subtitle" id="Post-docs">Post-doctoral Researchers</h1>
 <p>
 <img src="{{ site.url }}/images/Sandra-photo3.png"
@@ -60,6 +59,7 @@ contact: [slh2181@columbia.edu](mailto:slh2181@columbia.edu)
 
 
 <br>
+<hr>
 <h1 class="entry-subtitle" id="Graduate Students">Graduate Students</h1>
 <p>
 <img src="{{ site.url }}/images/Patrick-photo2.png"
@@ -76,7 +76,8 @@ contact: [p.mckenzie@columbia.edu](mailto:p.mckenzie@columbia.edu)
 
 
 <br>
-<h1 class="entry-subtitle" id="Joining the lab">Joining the lab</h1>
+<hr>
+<h1 class="entry-subtitle" id="#Joining-the-lab">Joining the lab</h1>
 <p>
 <img src="{{ site.url }}/images/bio-monbeigiana.jpg"
      class="people-photo" 
