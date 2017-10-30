@@ -63,6 +63,20 @@
    Image layout in <figure>
    ========================================================================== */
 
+
+postfig {
+  &.captioned {
+    img {
+      //width: 50%;
+      float: right;
+    }
+    figcaption {
+      clear: right;
+    }
+  }
+}
+
+
 figure {
 
   /* 2 images in a row. should be of equal height/width to maintain layout */
@@ -100,6 +114,18 @@ figure {
       figcaption {
         clear: left;
       }
+    }
+  }
+  
+  &.widethird {
+    img {
+      width: 30.8%;
+      float: left;
+      margin-right: 2.5%;
+      margin-bottom: 2.5%;
+    }
+    figcaption {
+      clear: left;
     }
   }
 }
