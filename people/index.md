@@ -26,7 +26,7 @@ in plant biodiversity -- from the scale of global patterns and community
 assembly, to speciation and genetic variation within species. 
 Deren's research is rooted in organismal biology and fieldwork, 
 with projects focused in the Tibetan plateau and cloud forests of 
-Central and South America. An common theme across his work
+Central and South America. A common theme across his work
 is the development of new computational or statistical methods 
 for analyzing comparative data, and the implementation and 
 support for reproducible science. Deren completed a 
