@@ -193,14 +193,16 @@ span + .entry-subtitle {
 .people-photo {
 
 	// default styling
-	display: none;
+	display: flex;
 	max-width: 160px;
+	min-width: 120px;
 	margin-top: 15px;
 	margin-bottom: 10px;
 	margin-left: 10px;
 	margin-right: 40px;
 	@include span-columns(4);
 	@include rounded(120px);
+	//@include clearfix;
 
 	// mid-size styling
 	@include media($medium) {
@@ -229,8 +231,132 @@ span + .entry-subtitle {
 		@include rounded(120px);
 		@include clearfix();
 	}
-	
 }
+
+/* my own figure class for embedding any shape images into posts */
+
+
+
+postfig {
+    // default span full columns
+	display: -webkit-flex;
+    margin-top: 5px;
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+
+	a {
+	  img {
+	    @include transform(translateY(0));
+	    -webkit-transition-duration: 0.25s;
+	    -moz-transition-duration: 0.25s;
+	    -o-transition-duration: 0.25s;
+	    opacity: 1;
+		@include rounded(25px);
+
+	    &:hover {
+	      @include transform(translateY(-5px));
+	      @include box-shadow(0 0 10px rgba($black, .20));
+	      opacity: 0.7;
+	    }
+	  }
+	}
+
+	@include media($medium) {
+	  //@include span-columns(8);
+	  max-width: 375px;
+	  margin-top: 10px;
+	  margin-right: 5px;
+	  margin-left: 45px;
+	  margin-bottom: 10px;
+	  float: right;
+	  }
+
+	@include media($large) {
+	  //display: inline-block;
+	  //display: -webkit-flex;
+	  @include span-columns(8);
+	  max-width: 269px;
+	  margin-top: 10px;
+	  margin-right: 0px;
+	  margin-left: 50px;
+	  margin-bottom: 10px;
+	  float: right;
+	  }
+
+	& > span {
+		padding: 0 20px 10px 0;
+		display: inline-block;
+
+		@include media($medium) {
+			@include span-columns(12);
+		    display: -webkit-inline-flex;
+		    border-bottom: 20px solid $black;
+		}
+
+		@include media($large) {
+			@include span-columns(12);
+		    display: -webkit-inline-flex;
+		    border-bottom: 20px solid $black;
+		}
+
+
+	}
+}
+
+
+/*
+  //display: block;
+  //img {
+  //  margin-top: 20px;
+  //  margin-bottom: 50px;
+  // }
+  //@include span-columns(4);
+  //display: -webkit-inline-flex;
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  max-width: 200px;
+  @include rounded(25px);
+  color: lighten($text-color, 30);
+  //@include clearfix();
+ 
+
+  // when medium we will do a 2-column setup
+  // with text left and images right.
+  @include media($medium) {
+    @include span-columns(8);
+	margin-top: 10px;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-bottom: 10px;
+
+	padding-top: 5px;
+	padding-left: 15px;
+	padding-right: 5px;
+
+	max-width: 400px;
+	@include rounded(50px);
+	float: right;
+    color: lighten($text-color, 30);
+    @include clearfix();
+	}
+
+  @include media($large) {
+    @include span-columns(6);
+    float: right;
+	max-width: 760px;
+	@include clearfix;
+	}
+}
+*/
 
 /* feature image credit */
 
