@@ -1,6 +1,9 @@
 # Site navigation links
-- title: News/Posts
+- title: News
   url: /articles
+
+- title: Blog
+  url: /posts
 
 - title: Research
   url: /research/
@@ -10,6 +13,11 @@
 
 - title: Publications
   url: /publications/
+
+- title: Links
+  url: /links/
+
+
 
 #- title: Search
 #  url: /search/
