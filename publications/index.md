@@ -12,6 +12,11 @@ image:
 </center>
 
 ----------------
+
+* (Authors contributed equally) M.R. McKain, M.G. Johnson, S. Uribe‐Convers, 
+**D.A.R. Eaton** and Y. Yang (2018) *Practical considerations for plant phylogenomics*. 
+Applications in Plant Sciences 6: e1038 ([Open Access Review Article](https://onlinelibrary.wiley.com/doi/10.1002/aps3.1038#.WsJXeYVzylI.twitter)).
+
 * Forsman Z.H., Knapp I.S.S., Tisthammer K., **Eaton D.A.R.**, Belcaid M.,
 Toonen R.J. (2017). *Coral hybridization or phenotypic variation? Genomic
 data reveal gene flow between Porites lobata and P. compressa*.
