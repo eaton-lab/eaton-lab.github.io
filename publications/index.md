@@ -59,8 +59,7 @@ Bioinformatics 30(13): 1844-1849. doi: 10.1093/bioinformatics/btu121.
 
 * __Eaton, D.A.R.__ and R.H. Ree (2013).
 *Inferring phylogeny and introgression using genomic RADseq data: An example
-from flowering plants (Pedicularis: Orobanchaceae).* 2013.
-Systematic Biology, 62: 689-706.
+from flowering plants (Pedicularis: Orobanchaceae).* Systematic Biology, 62: 689-706.
 ([Open Access Link](http://sysbio.oxfordjournals.org/content/62/5/689)),
 ([cover image](http://sysbio.oxfordjournals.org/content/62/5.cover-expansion))  
 
