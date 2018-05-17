@@ -13,7 +13,30 @@ image:
 
 ----------------
 
-* (Authors contributed equally) M.R. McKain, M.G. Johnson, S. Uribe‐Convers, 
+* Park, B., Sinnott-Armstrong, M., Schlutius, C., Penagos Zuluaga, J., Spriggs, E.L,
+Simpson, R., Benavides, E., Landis, M., Sweeney, P., **Eaton, D.A.R.**, and
+M.J. Donoghue. *Sterile marginal flowers increase visitation and fruit set in the
+hobblebush (Viburnum lantanoides, Adoxaceae) at multiple spatial scales.*
+In Review.
+
+* Federman, S., Donoghue, M.J., Daly, D., and **D.A.R. Eaton**. *Reconciling Species
+Diversity in a Tropical Plant Clade (Canarium, Burseraceae).* In Review.
+
+<!-- * Spriggs, E.L., **Eaton, D.A.R.**, Sweeney, P., Schlutius, C., Edwards, E., and M.J.
+Donoghue. *RAD-seq data reveal a cryptic Viburnum species on the North
+American Coastal Plain*. In Review. -->
+
+* Spriggs, E.L., **Eaton, D.A.R.**, Sweeney, P., Schlutius, C., Edwards, E., and M.J.
+Donoghue. *RAD-seq data reveal a cryptic Viburnum species on the North
+American Coastal Plain*. In Review.
+
+* Miller, J., Quinzin, M., Edwards, D., **Eaton, D.A.R.**, Jensen, E., Russello, M.,
+Gibbs, J., Tapia, W., Rueda, D., and A. Caccone. *Genome-wide assessment of
+diversity and divergence among extant Galápagos giant tortoise species.* In
+Review.
+
+
+* (All authors contributed equally) M.R. McKain, M.G. Johnson, S. Uribe‐Convers, 
 **D.A.R. Eaton** and Y. Yang (2018) *Practical considerations for plant phylogenomics*. 
 Applications in Plant Sciences 6: e1038 ([Open Access Review Article](https://onlinelibrary.wiley.com/doi/10.1002/aps3.1038#.WsJXeYVzylI.twitter)).
 
