@@ -17,7 +17,7 @@ image:
 Simpson, R., Benavides, E., Landis, M., Sweeney, P., **Eaton, D.A.R.**, and
 M.J. Donoghue. *Sterile marginal flowers increase visitation and fruit set in the
 hobblebush (Viburnum lantanoides, Adoxaceae) at multiple spatial scales.*
-In Review.
+Accepted *Annals of Botany*. 
 
 * Federman, S., Donoghue, M.J., Daly, D., and **D.A.R. Eaton**. *Reconciling Species
 Diversity in a Tropical Plant Clade (Canarium, Burseraceae).* In Review.
