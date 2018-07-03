@@ -13,28 +13,28 @@ image:
 
 ----------------
 
-* Park, B., Sinnott-Armstrong, M., Schlutius, C., Penagos Zuluaga, J., Spriggs, E.L,
-Simpson, R., Benavides, E., Landis, M., Sweeney, P., **Eaton, D.A.R.**, and
-M.J. Donoghue. *Sterile marginal flowers increase visitation and fruit set in the
-hobblebush (Viburnum lantanoides, Adoxaceae) at multiple spatial scales.*
-Accepted *Annals of Botany*. 
-
-* Federman, S., Donoghue, M.J., Daly, D., and **D.A.R. Eaton**. *Reconciling Species
-Diversity in a Tropical Plant Clade (Canarium, Burseraceae).* In Review.
-
 <!-- * Spriggs, E.L., **Eaton, D.A.R.**, Sweeney, P., Schlutius, C., Edwards, E., and M.J.
 Donoghue. *RAD-seq data reveal a cryptic Viburnum species on the North
 American Coastal Plain*. In Review. -->
 
-* Spriggs, E.L., **Eaton, D.A.R.**, Sweeney, P., Schlutius, C., Edwards, E., and M.J.
-Donoghue. *RAD-seq data reveal a cryptic Viburnum species on the North
-American Coastal Plain*. In Review.
-
 * Miller, J., Quinzin, M., Edwards, D., **Eaton, D.A.R.**, Jensen, E., Russello, M.,
 Gibbs, J., Tapia, W., Rueda, D., and A. Caccone. *Genome-wide assessment of
-diversity and divergence among extant Galápagos giant tortoise species.* In
-Review.
+diversity and divergence among extant Galápagos giant tortoise species.* 
+In Press.
 
+* Spriggs, E.L., **Eaton, D.A.R.**, Sweeney, P., Schlutius, C., Edwards, E., and M.J.
+Donoghue. *RAD-seq data reveal a cryptic Viburnum species on the North
+American Coastal Plain*. In Press.
+
+* Park, B., Sinnott-Armstrong, M., Schlutius, C., Penagos Zuluaga, J., Spriggs, E.L,
+Simpson, R., Benavides, E., Landis, M., Sweeney, P., **Eaton, D.A.R.**, and
+M.J. Donoghue (2018) *Sterile marginal flowers increase visitation and fruit set in the
+hobblebush (Viburnum lantanoides, Adoxaceae) at multiple spatial scales.*
+Accepted *Annals of Botany*. ([link](https://academic.oup.com/aob/advance-article/doi/10.1093/aob/mcy117/5047165))
+
+* Federman, S., Donoghue, M.J., Daly, D., and **D.A.R. Eaton** (2018) *Reconciling Species
+Diversity in a Tropical Plant Clade (Canarium, Burseraceae).* ([Open Access](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0198882))
+([fully reproducible code](https://github.com/dereneaton/Canarium-GBS)).
 
 * (All authors contributed equally) M.R. McKain, M.G. Johnson, S. Uribe‐Convers, 
 **D.A.R. Eaton** and Y. Yang (2018) *Practical considerations for plant phylogenomics*. 
