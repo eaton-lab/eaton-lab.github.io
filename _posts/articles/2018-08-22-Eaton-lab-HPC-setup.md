@@ -189,7 +189,7 @@ jupyter-notebook --no-browser --ip=$ipnip --port=$ipnport
 
    Then open a browser on your local machine to the following address
    ------------------------------------------------------------------
-   localhost:9808  (prefix w/ https:// if using SSL cert/key)       
+   localhost:9999  (prefix w/ https:// if using SSL cert/key)       
    ------------------------------------------------------------------
 ```   
 
