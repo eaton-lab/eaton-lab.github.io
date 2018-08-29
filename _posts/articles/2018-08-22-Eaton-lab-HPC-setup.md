@@ -57,7 +57,7 @@ somewhere.
 ```bash
 # On your local computer
 # transfer files or dirs from your local computer to the scratch space
-scp <path-to-file-or-dir> habanero:/rigel/dsi/users/<user> 
+scp <path-to-file-or-dir> <user>@habanero:/rigel/dsi/users/<user> 
 ```
 
 <!-- 
@@ -136,9 +136,10 @@ cat log-files/<jobid>.log
 https://jupyter-notebook.readthedocs.io/en/stable/public_server.html
 
 
-Let's also create a password to connect to jupyter notebook. You can run this
-on the head node before submitting your jobs. If you installed jupyter only 
-into a specific conda environment then be sure to source that environment. 
+Let's also create a password to connect to jupyter notebook. This is optional, 
+if you don't set a password then a temporary _token_ will be generated when you
+start a notebook which you can copy and paste. But setting a password that you 
+can use persistently makes things a bit simpler. 
 ```bash
 # On Habanero
 jupyter-notebook --generate-config
