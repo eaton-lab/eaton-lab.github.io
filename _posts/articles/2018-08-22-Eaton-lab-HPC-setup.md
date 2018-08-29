@@ -47,7 +47,7 @@ partition named with your UNI. This is where you can store large data files.
 mkdir /rigel/dsi/users/<user>
 
 # make a symlink from your home dir
-cd ~
+cd
 ln -s /rigel/dsi/users/<user> scratch-dsi
 ```
 
@@ -84,7 +84,7 @@ directory for job scripts and one directory for log files, which store the
 output of running jobs. 
 ```bash
 # On Habanero
-cd ~
+cd 
 mkdir slurm-scripts/
 mkdir slurm-logs/
 ```
