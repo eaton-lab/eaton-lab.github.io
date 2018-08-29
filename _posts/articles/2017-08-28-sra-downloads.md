@@ -2,7 +2,7 @@
 layout: post
 title: "Accessing sequence data for reproducible science"
 author: Deren
-categories: posts
+categories: articles
 excerpt: "The tools to download sequence data from SRA are clunky. I wrote a 
 convenient Python wrapper to make it a bit easier."
 comments: true
