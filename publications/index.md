@@ -48,7 +48,8 @@ Molecular Phylogenetics and Evolution 111: 132:148.
 * **Eaton, D.A.R.**, Spriggs, E.L., Park, B., & M.J. Donoghue (2017). *Misconceptions
 of Missing data in RAD-seq phylogenetics with a Deep-scale Example from Flowering
 Plants*. Systematic Biology 66(3): 399:412.
-([reproducible science](https://github.com/dereneaton/RADmissing))
+([Link to paper](https://academic.oup.com/sysbio/article/66/3/399/2682283)); 
+([reproducible science](https://github.com/dereneaton/RADmissing)); 
 ([cover image](https://academic.oup.com/sysbio/article-pdf/66/3/i1/13134101/syx011.pdf))
 
 * **Eaton, D.A.R.**, Hipp, A., Gonzalez-Rodriguez, A. & J. Cavender-Bares (2015).
