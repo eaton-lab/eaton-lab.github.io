@@ -74,7 +74,7 @@ He completed his Bachelors degree at the University of Tennessee.
      class="people-photo" 
      alt="Jared bio photo">
 <span style="font-weight:bold">Jared Meek</span> 
-contact: [jm2761@columbia.edu](mailto:jm2761@columbia.edu)
+contact: [jared.meek@columbia.edu](mailto:jared.meek@columbia.edu)
 joined the lab in 2018 and is interested in plant biodiversity, 
 phylogenetics, and conservation. His M.A. thesis research is focused on 
 developing comparative phylogeographic methods for comparing contemporary 
