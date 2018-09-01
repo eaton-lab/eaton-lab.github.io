@@ -22,7 +22,7 @@
 .entry-feature-image {
 	margin: 20px 0 0;
 	width: 100%;
-
+	
 	@include media($medium) {
 		margin-top: 20px; /* move up to be overlapped by site logo */
 	}
@@ -80,6 +80,7 @@ span + .entry-title {
 	margin-top: 0;
 	//margin-bottom: 1000;
 }
+
 
 .entry-title {
 	font-family: $alt-font;
@@ -452,6 +453,7 @@ postfig {
 		max-width: 100%;
 	}
 
+	/* width of post links in posts/home page */
 	.entry-content {
 		@include span-columns(12);
 	}
