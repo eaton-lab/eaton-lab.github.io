@@ -175,7 +175,7 @@ Once it starts you can connect your local computer to the notebook server runnin
 ssh -N -L 9999:node210:9999 deren@habanero.rcs.columbia.edu
 ```
 
-Now open a browser and enter the address `localhost:9999`
+Now open a browser on your local computer (e.g., laptop) and enter the address `localhost:9999`
 
 
 ### Waiting on the queue
@@ -186,3 +186,11 @@ alternative can be to start your notebook on an interactive node, or on free,
 and then start an ipcluster instance as a queued job and connect to it from 
 your notebook once it starts. More on that in another post. 
 
+
+### Interactive mode
+If you only plan to do a very small amount of work it is better to just jump into
+an interactive session rather than submit a job to start a notebook server or to 
+request many resources. This type of job will usually start quickly.
+```bash
+# ask for 30 min interactive session
+srun --pty -t 30:00 --account=dsi /bin/bash
