@@ -85,6 +85,9 @@ mkdir ~/slurm-scripts/
 mkdir ~/slurm-logs/
 ```
 
+--------------------------------------------------
+
+
 #### Example job submission
 The header at the top of the file tells the scheduler the resources we need, which account to use ("dsi") and how the job and output files should be named. The scripts below the header will be executed on compute node(s) once they are available. In the command below we reserve one core and simply execute the `echo` command to print text to the output. I name the file `dsi-helloworld.sh` and put it in the `slurm-scripts/` dir. 
 
