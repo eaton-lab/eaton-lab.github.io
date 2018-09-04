@@ -172,7 +172,7 @@ Check if the job has started, and take note of the `hostname` of the node it has
 squeue -u <user>
 ```
 
-Once it starts you can connect your local computer to the notebook server running on the compute node by creating an SSH tunnel. Run the command below from your local machine, substituting in the hostname of the node that you connected to in place of the name `node210`. Once executed, leave this terminal window open and minimize it into the corner. You can just leave it for as long as you want to maintain the tunnel connection.
+Once it starts you can connect your local computer to the notebook server running on the compute node by creating an SSH tunnel. Run the command below from your local machine, **substituting in the hostname of the node that you connected to** in place of the name `node210`. Once executed, leave this terminal window open and minimize it into the corner. You can just leave it for as long as you want to maintain the tunnel connection.
 ```bash
 ## On your local computer
 ssh -N -L 9999:node210:9999 deren@habanero.rcs.columbia.edu
