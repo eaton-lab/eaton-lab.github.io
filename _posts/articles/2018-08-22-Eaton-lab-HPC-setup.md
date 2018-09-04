@@ -194,6 +194,9 @@ your notebook once it starts. More on that in another post.
 If you only plan to do a very small amount of work it is better to just jump into
 an interactive session rather than submit a job to start a notebook server or to 
 request many resources. This type of job will usually start quickly.
+
 ```bash
 # ask for 30 min interactive session
 srun --pty -t 30:00 --account=dsi /bin/bash
+```
+
