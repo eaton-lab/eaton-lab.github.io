@@ -47,8 +47,7 @@ partition named with your UNI. This is where you can store large data files.
 mkdir /rigel/dsi/users/<user>
 
 # make a symlink from your home dir
-cd
-ln -s /rigel/dsi/users/<user> scratch-dsi
+ln -s /rigel/dsi/users/<user> ~/scratch-dsi
 ```
 
 To transfer files from your local computer to the cluster you can use `scp`, 
@@ -75,27 +74,19 @@ your home space should suffice.
 Habanero uses the SLURM job submission system to manage shared resources on the 
 cluster. When you login you will be connected to the *head* node, which is 
 simply a landing pad. You should not run any intensive tasks on this node. 
-Instead, you submit your jobs using a *job script* and this will take care of
-reserving resources for your job and sending it to run on the proper *compute 
-nodes*. 
+Instead, submit your jobs using a *job script* to take care of reserving resources for your job and sending it to run on a *compute node*. 
 
 First we'll make some directories to help ourselves stay organized; one 
 directory for job scripts and one directory for log files, which store the 
 output of running jobs. 
 ```bash
 # On Habanero
-cd 
-mkdir slurm-scripts/
-mkdir slurm-logs/
+mkdir ~/slurm-scripts/
+mkdir ~/slurm-logs/
 ```
 
 #### Example job submission
-We will begin by writing a SLURM job script. The header at the top of the 
-file tells the scheduler the resources we need, which account to use ("dsi") 
-and how the job and output files should be named. The scripts below the header
-will be executed on compute node(s) once they are available. In the example below
-we reserve one core (from a 24 core node) and run a simple `echo` command.
-I name the file `dsi-helloworld.sh` and put it in the `slurm-scripts/` dir. 
+The header at the top of the file tells the scheduler the resources we need, which account to use ("dsi") and how the job and output files should be named. The scripts below the header will be executed on compute node(s) once they are available. In the command below we reserve one core and simply execute the `echo` command to print text to the output. I name the file `dsi-helloworld.sh` and put it in the `slurm-scripts/` dir. 
 
 ```bash
 # open file with nano text editor on Habanero
@@ -125,7 +116,7 @@ Check whether it has started yet:
 squeue -u <user>
 ```
 
-Once it starts check your log files for instructions to connect: 
+Once it starts check your log files for the output:
 ```bash
 # On Habanero
 cat log-files/<jobid>.log
@@ -133,10 +124,11 @@ cat log-files/<jobid>.log
 
 
 #### Start a notebook server
-https://jupyter-notebook.readthedocs.io/en/stable/public_server.html
+I do most of my work on jupyter notebooks which also provide a really nice way 
+to connect and work interactively on compute nodes. To start a notebook server
+follow the instructions below. 
 
-
-Let's also create a password to connect to jupyter notebook. This is optional, 
+Let's start by generating a config file and a password. This is optional, 
 if you don't set a password then a temporary _token_ will be generated when you
 start a notebook which you can copy and paste. But setting a password that you 
 can use persistently makes things a bit simpler. 
@@ -146,7 +138,8 @@ jupyter-notebook --generate-config
 jupyter-notebook password
 ```
 
-
+Next let's write a job submission script to start a notebook server. In the example below we reserve one node (all 24 cores by asking --exclusive). We also
+designate a specific port and IP to run the 
 ```bash
 #!/bin/sh
 #SBATCH --account=dsi
@@ -156,13 +149,12 @@ jupyter-notebook password
 #SBATCH --workdir=slurm-logs
 #SBATCH --job-name=jupyter
 
-## go home and unset XDG variable
-cd $HOME
+## unset XDG variable (required when running jupyter on HPC)
 XDG_RUNTIME_DIR=""
 
 ## choose port and get IP of the compute node
 ipnport='9999'
-ipnip=$(hostname -i)
+ipnip=$(hostname)
 
 ## print tunneling instructions to the log file
 echo -e "
@@ -185,7 +177,7 @@ jupyter-notebook --no-browser --ip=$ipnip --port=$ipnport
 # output
    Copy/Paste this in your local terminal to ssh tunnel with remote
    ----------------------------------------------------------------
-   ssh -N -L 9999:10.43.4.188:9999 deren@habanero.rcs.columbia.edu                    
+   ssh -N -L 9999:node210:9999 deren@habanero.rcs.columbia.edu                    
    ------------------------------------------------------------------
 
    Then open a browser on your local machine to the following address
