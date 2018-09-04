@@ -7,12 +7,6 @@ image:
   credit:
 ---
 
-The Eaton lab is looking to recruit motivated post-docs, Ph.D,
-Masters, and Undergraduate students to work on plant, ecology and evolution,
-and computational genomics research. 
-
-<!-- a href="#Post-docs">link to</a -->
-
 <br>
 <hr>
 <h1 class="entry-subtitle" id="Principle Investigator">Principal Investigator: Deren Eaton</h1>
@@ -74,13 +68,13 @@ He completed his Bachelors degree at the University of Tennessee.
      class="people-photo" 
      alt="Jared bio photo">
 <span style="font-weight:bold">Jared Meek</span> 
-contact: [jared.meek@columbia.edu](mailto:jared.meek@columbia.edu)
+([jared.meek@columbia.edu](mailto:jared.meek@columbia.edu))
 joined the lab in 2018 and is interested in plant biodiversity, 
-phylogenetics, and conservation. His M.A. thesis research is focused on 
+phylogenetics, and conservation. His thesis research is focused on 
 developing comparative phylogeographic methods for comparing contemporary 
 and historical plant collections to detect recent human mediated gene flow 
-in the Hengduan Mountains. He completed his Bachelors degree at Brigham Young
-University.
+in the Hengduan Mountains. He completed his Bachelors degree at Brigham 
+Young University.
 
 
 <br>
@@ -89,12 +83,9 @@ University.
 <img src="{{ site.url }}/images/bio-monbeigiana.jpg"
      class="people-photo" 
      alt="pedic photo">     
-<span style="font-weight:bold">I'm looking to recruit</span>      
-Post-docs and Graduate Student to work on independent projects in the lab 
-and/or to join ongoing projects. If interested please contact Deren about 
-applications and/or writing proposals for the coming year. For potential 
-Post-docs there are many great resources to find fellowships such as 
-<a href="http://mathbionerd.blogspot.com/2014/04/some-postdoctoral-fellowships-in-biology.html">Here</a> 
-and <a href="http://people.ds.cam.ac.uk/dl384/Resources_Postdocs.html">Here</a>.
-Please email Deren with your CV if you'd like to discuss fellowship 
-opportunities.
+<span style="font-weight:bold">I'm looking to recruit</span> talented
+post-docs and student to work on independent projects and/or to join 
+on-going projects in the lab. If interested please contact Deren, 
+especially if you are interested in pursuing fellowship proposals for the 
+coming year. Many opportunities are available, including NSF graduate and 
+postdoctoral fellowships, and internal Columbia fellowships.
