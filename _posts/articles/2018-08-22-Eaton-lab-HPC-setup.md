@@ -56,7 +56,7 @@ somewhere.
 ```bash
 # On your local computer
 # transfer files or dirs from your local computer to the scratch space
-scp <path-to-file-or-dir> <user>@habanero:/rigel/dsi/users/<user> 
+scp <path-to-file-or-dir> <user>@habanero.rcs.columbia.edu:/rigel/dsi/users/<user> 
 ```
 
 <!-- 
