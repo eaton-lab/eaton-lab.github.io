@@ -157,7 +157,7 @@ nano slurm-scripts/dsi-jupyter-1n-5d.sh
 
 ## unset XDG variable (required when running jupyter on HPC)
 XDG_RUNTIME_DIR=""
-jupyter-notebook --no-browser --ip=$(hostname) --port=9999
+jupyter-notebook --no-browser --ip=$(hostname) --port='9999'
 ```
 
 Submit the job:
@@ -187,8 +187,14 @@ start so that you can work interactively in a notebook is not really ideal,
 at least until the size of the cluster improves dramatically. A better 
 alternative can be to start your notebook on an interactive node, or on free, 
 and then start an ipcluster instance as a queued job and connect to it from 
-your notebook once it starts. More on that in another post. 
+your notebook once it starts. More on that in another post. For jobs with a long
+wait time it can be useful to set an email alert for when the job start. This
+can be done with in the slurm script by adding:
 
+```bash
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=de2356@columbia.edu
+```
 
 ### Interactive mode
 If you only plan to do a very small amount of work it is better to just jump into
