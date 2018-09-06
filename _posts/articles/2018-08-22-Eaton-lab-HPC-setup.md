@@ -93,7 +93,7 @@ The header at the top of the file tells the scheduler the resources we need, whi
 
 ```bash
 # open file with nano text editor on Habanero
-nano slurm-scripts/dsi-helloworld.sh
+nano ~/slurm-scripts/dsi-helloworld.sh
 ```
 
 ```bash
@@ -110,7 +110,7 @@ echo "hello world"
 Submit the job to the scheduling queue. 
 ```bash
 # On Habanero
-sbatch slurm-scripts/dsi-jupyter-1n.sh
+sbatch ~/slurm-scripts/dsi-jupyter-1n.sh
 ```
 
 Check whether it has started yet: 
@@ -122,7 +122,7 @@ squeue -u <user>
 Once it starts check your log files for the output:
 ```bash
 # On Habanero
-cat slurm-logs/<jobid>.log
+cat ~/slurm-logs/<jobid>.log
 ```
 
 ------------------------------------------------
@@ -143,7 +143,7 @@ Next let's write a job submission script to start a notebook server. In the exam
 
 ```bash
 # On Habanero create another job script
-nano slurm-scripts/dsi-jupyter-1n-5d.sh
+nano ~/slurm-scripts/dsi-jupyter-1n-5d.sh
 ```
 
 ```bash
