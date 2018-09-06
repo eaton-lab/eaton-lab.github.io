@@ -157,7 +157,7 @@ nano ~/slurm-scripts/dsi-jupyter-1n-5d.sh
 
 ## unset XDG variable (required when running jupyter on HPC)
 XDG_RUNTIME_DIR=""
-jupyter-notebook --no-browser --ip=$(hostname) --port='9999'
+jupyter-notebook --no-browser --ip=$(hostname) --port="9999"
 ```
 
 Submit the job:
