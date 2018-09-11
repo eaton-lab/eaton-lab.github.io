@@ -34,7 +34,7 @@ Journal of Heredity 109(6):611-619. ([link](https://doi.org/10.1093/jhered/esy03
 
 * Federman, S., Donoghue, M.J., Daly, D., and **D.A.R. Eaton** (2018). *Reconciling Species
 Diversity in a Tropical Plant Clade (Canarium, Burseraceae).* PLoS ONE 13(6): e0198882. ([Open access link](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0198882))
-([fully reproducible code](https://github.com/dereneaton/Canarium-GBS)).
+([reproducible code](https://github.com/dereneaton/Canarium-GBS)).
 
 * (All authors contributed equally) M.R. McKain, M.G. Johnson, S. Uribe‐Convers, 
 **D.A.R. Eaton** and Y. Yang (2018). *Practical considerations for plant phylogenomics*. 
@@ -44,17 +44,19 @@ Applications in Plant Sciences 6: e1038 ([Open Access Review Article](https://on
 Toonen R.J. (2017). *Coral hybridization or phenotypic variation? Genomic
 data reveal gene flow between Porites lobata and P. compressa*.
 Molecular Phylogenetics and Evolution 111: 132:148.
+([link](https://www.sciencedirect.com/science/article/pii/S1055790316303384?via%3Dihub))
 
 * **Eaton, D.A.R.**, Spriggs, E.L., Park, B., & M.J. Donoghue (2017). *Misconceptions
 of Missing data in RAD-seq phylogenetics with a Deep-scale Example from Flowering
 Plants*. Systematic Biology 66(3): 399:412.
-([Link to paper](https://academic.oup.com/sysbio/article/66/3/399/2682283)); 
-([reproducible science](https://github.com/dereneaton/RADmissing)); 
+([link](https://academic.oup.com/sysbio/article/66/3/399/2682283)); 
+([reproducible code](https://github.com/dereneaton/RADmissing)); 
 ([cover image](https://academic.oup.com/sysbio/article-pdf/66/3/i1/13134101/syx011.pdf))
 
 * **Eaton, D.A.R.**, Hipp, A., Gonzalez-Rodriguez, A. & J. Cavender-Bares (2015).
 *Historical introgression among the American live oaks and the comparative
 nature of tests for introgression.* Evolution 69(10) 2587-2601.
+([link](https://onlinelibrary.wiley.com/doi/10.1111/evo.12758)); 
 ([reproducible science](https://github.com/dereneaton/virentes))
 
 * Cavender-Bares, J., Gonzalez-Rodriguez, A., **Eaton, D.A.R.**, Hipp, A.,
@@ -66,7 +68,7 @@ Molecular Ecology 24(14): 3668-3687.
 *Genotyping-by-sequencing as a tool for phylogenetic inference and testing
 ancestral hybridization: A case study in Carex (Cyperaceae)*.
 Molecular Phylogenetics and Evolution. 79: 359-367. DOI: 10.1016/j.ympev.2014.06.026.
-([Reproducible science](http://nbviewer.ipython.org/gist/dereneaton/32382a28db11b83f6da5))
+([Reproducible code](http://nbviewer.ipython.org/gist/dereneaton/32382a28db11b83f6da5))
 
 * Hipp, A., **Eaton, D.A.R.**, Cavender-Bares, J., Fitzek, E., Nipper, R. and P.S. Manos (2014).
 *A framework phylogeny of the American oak clade based on sequenced RAD data*.
