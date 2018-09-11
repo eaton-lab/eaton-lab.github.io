@@ -17,27 +17,27 @@ image:
 Donoghue. *RAD-seq data reveal a cryptic Viburnum species on the North
 American Coastal Plain*. In Review. -->
 
-* Miller, J., Quinzin, M., Edwards, D., **Eaton, D.A.R.**, Jensen, E., Russello, M.,
-Gibbs, J., Tapia, W., Rueda, D., and A. Caccone. *Genome-wide assessment of
-diversity and divergence among extant Galápagos giant tortoise species.* 
-In Press.
-
 * Spriggs, E.L., **Eaton, D.A.R.**, Sweeney, P., Schlutius, C., Edwards, E., and M.J.
 Donoghue. *RAD-seq data reveal a cryptic Viburnum species on the North
-American Coastal Plain*. In Press.
+American Coastal Plain*. In Review.
 
 * Park, B., Sinnott-Armstrong, M., Schlutius, C., Penagos Zuluaga, J., Spriggs, E.L,
 Simpson, R., Benavides, E., Landis, M., Sweeney, P., **Eaton, D.A.R.**, and
-M.J. Donoghue (2018) *Sterile marginal flowers increase visitation and fruit set in the
+M.J. Donoghue (2018). *Sterile marginal flowers increase visitation and fruit set in the
 hobblebush (Viburnum lantanoides, Adoxaceae) at multiple spatial scales.*
 Accepted *Annals of Botany*. ([link](https://academic.oup.com/aob/advance-article/doi/10.1093/aob/mcy117/5047165))
 
-* Federman, S., Donoghue, M.J., Daly, D., and **D.A.R. Eaton** (2018) *Reconciling Species
-Diversity in a Tropical Plant Clade (Canarium, Burseraceae).* ([Open Access](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0198882))
+* Miller, J., Quinzin, M., Edwards, D., **Eaton, D.A.R.**, Jensen, E., Russello, M.,
+Gibbs, J., Tapia, W., Rueda, D., and A. Caccone (2018). *Genome-wide assessment of
+diversity and divergence among extant Galápagos giant tortoise species.* 
+Journal of Heredity 109(6):611-619. ([link](https://doi.org/10.1093/jhered/esy031)).
+
+* Federman, S., Donoghue, M.J., Daly, D., and **D.A.R. Eaton** (2018). *Reconciling Species
+Diversity in a Tropical Plant Clade (Canarium, Burseraceae).* PLoS ONE 13(6): e0198882. ([Open access link](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0198882))
 ([fully reproducible code](https://github.com/dereneaton/Canarium-GBS)).
 
 * (All authors contributed equally) M.R. McKain, M.G. Johnson, S. Uribe‐Convers, 
-**D.A.R. Eaton** and Y. Yang (2018) *Practical considerations for plant phylogenomics*. 
+**D.A.R. Eaton** and Y. Yang (2018). *Practical considerations for plant phylogenomics*. 
 Applications in Plant Sciences 6: e1038 ([Open Access Review Article](https://onlinelibrary.wiley.com/doi/10.1002/aps3.1038#.WsJXeYVzylI.twitter)).
 
 * Forsman Z.H., Knapp I.S.S., Tisthammer K., **Eaton D.A.R.**, Belcaid M.,
@@ -58,7 +58,7 @@ nature of tests for introgression.* Evolution 69(10) 2587-2601.
 ([reproducible science](https://github.com/dereneaton/virentes))
 
 * Cavender-Bares, J., Gonzalez-Rodriguez, A., **Eaton, D.A.R.**, Hipp, A.,
-Buelke, A., & P. Manos (2015) *Phylogeny and biogeography of the American live
+Buelke, A., & P. Manos (2015). *Phylogeny and biogeography of the American live
 oaks (Quercus subsection Virentes): A genomic and population genetic approach*.
 Molecular Ecology 24(14): 3668-3687.
 
