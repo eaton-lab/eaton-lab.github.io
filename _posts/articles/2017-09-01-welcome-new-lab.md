@@ -3,7 +3,7 @@ layout: post
 title: "Welcome Patrick and Sandra to the lab!"
 author: Deren
 categories: articles
-excerpt: "Join us to discuss current research, practice talks, and new articles."
+excerpt: "Fellowships abound, great job guys!"
 comments: true
 image:
   feature: header_ped.png
