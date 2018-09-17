@@ -24,7 +24,7 @@ bamboo species.
 
 
 <figure>
-	<a href="{{ site.url }}/images/Guo-Cen-photo.jpg">
+	<a href="{{ site.url }}/images/Guo-Cen-small.jpg">
 		<img src="{{ site.url }}/images/Guo-Cen-photo.jpg" alt="GC image">
 	</a>
 </figure>

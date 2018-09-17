@@ -78,6 +78,17 @@ Young University.
 
 
 <br>
+<img src="{{ site.url }}/images/Guo-Cen-square.jpg"
+     class="people-photo" 
+     alt="Guo Cen bio photo">
+<span style="font-weight:bold">Guo Cen</span> 
+([gc2799@columbia.edu](mailto:gc2799@columbia.edu))
+is a visiting Ph.D. student from the Chinese Academy of Sciences graduate 
+program at the Kunming Institute of Botany where she works with Dr. De-Zhu Li.
+Her thesis research if on the phylogeny and diversification of temperate woody
+bamboos using genomic sequence data.
+
+<br>
 <hr>
 <h1 class="entry-subtitle" id="#Joining-the-lab">Joining the lab</h1>
 <img src="{{ site.url }}/images/bio-monbeigiana.jpg"
