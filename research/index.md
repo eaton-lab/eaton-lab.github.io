@@ -91,9 +91,26 @@ apparent pattern of replicated evolution.
 
 <h1 class="entry-subtitle" id="Phylo" href="Phylo">Computational phylogenetics and bioinformatics</h1>
 I have been writing software primarily in the Python programming language
-for a number of years now. This includes software for short-read (RAD-seq)
-assembly (pyrad & ipyrad), for quartet species tree inference (tetrad), and
-tree plotting (toytree). A major focus on my software development is
-to create methods that make it easy to write and share code for reproducible
-analyses, which when writing in Python has steered by development strongly
-towards proselytizing for the use of jupyter-notebooks.  
+for a number of years now. This includes software for assembly of genomic 
+RAD-seq type data sets (*ipyrad*), for quartet species tree inference (*tetrad*), and for tree plotting (*toytree*). A major focus of software development in the Eaton lab is to create methods that make it easy to write and share code for reproducible analyses, which when writing in Python has steered development strongly towards the use of jupyter notebooks.  
+
+
+<figure>
+	<a href="{{ site.url }}/images/toytree-1.jpg">
+		<img src="{{ site.url }}/images/toytree-1.jpg" alt="toytree-1">
+	</a>
+	<figcaption><em>A toytree plot in a jupyter notebook.</em></figcaption>
+</figure>
+
+
+<h1 class="entry-subtitle" id="Speciation" href="Speciation">Speciation genomics in <emph>Amaranthus</emph></h1>
+The cultivated species of grain amaranth make up only a small proportion of the much larger *Amaranthus* clade. While a lot of work is being done to study the genome of the cultivated species, we are interested in applying these powerful genomics resources for understanding the evolutionary history of the entire *Amaranthus* genus. We are studying diversification, speciation, biogeography, floral evolution, and hybridization. *Amaranthus* is a nice model system for such studies owing to it's fast growth, small genome size, and variable mating system strategies. 
+
+<figure>
+	<a href="{{ site.url }}/images/amaranthus-1">
+		<img src="{{ site.url }}/images/amaranthus-1.jpg" alt="amaranthus-1">
+	</a>
+	<figcaption><em>The entire USDA germplasm database of <em>Amaranthus</em> growing from seed for our DNA collecting pleasure.</em></figcaption>
+</figure>
+
+
