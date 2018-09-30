@@ -25,7 +25,7 @@ American Coastal Plain*. In Review.
 Simpson, R., Benavides, E., Landis, M., Sweeney, P., **Eaton, D.A.R.**, and
 M.J. Donoghue (2018). *Sterile marginal flowers increase visitation and fruit set in the
 hobblebush (Viburnum lantanoides, Adoxaceae) at multiple spatial scales.*
-Accepted *Annals of Botany*. ([link](https://academic.oup.com/aob/advance-article/doi/10.1093/aob/mcy117/5047165))
+Annals of Botany mcy117, https://doi.org/10.1093/aob/mcy117 ([link](https://academic.oup.com/aob/advance-article/doi/10.1093/aob/mcy117/5047165))
 
 * Miller, J., Quinzin, M., Edwards, D., **Eaton, D.A.R.**, Jensen, E., Russello, M.,
 Gibbs, J., Tapia, W., Rueda, D., and A. Caccone (2018). *Genome-wide assessment of
