@@ -11,19 +11,75 @@
     <link rel="stylesheet" href="../reveal/css/reveal.css">
     <link rel="stylesheet" href="../eaton-lab.css" id='theme'>
     <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">    
-    <!-- <link rel="stylesheet" href="../reveal/css/theme/white.css"> -->
-
+    <!-- <link rel="stylesheet" href="../reveal/lib/css/font-awesome.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">    
 </head>
-<body>
-    <div class="reveal">
-        <div class="slides">
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- Stroopwafel icon link to eaton-lab site overlays all-->
+    <div style="position: absolute; top:2%; right:2%; z-index:100;">
+        <a href="https://eaton-lab.org/">
+            <i class="fa fa-stroopwafel fa-2x" style="color: #262626; opacity: 0.1;"></i>
+        </a>
+    </div>
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear center" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width: 960px; height: 720px; transform: translate(-50%, -50%) scale(0.969792) translate(50%, 50%);">
 
             <!--  -->
             <section 
-            data-background-image="images/deren-flags.jpg"
-            data-transition="none" style="top:-960px; display: block;" class="future" hidden="">
-                <h2>Hello world</h2>
+                data-background-image="images/deren-flags.jpg"
+                data-background-position="center"
+                data-background-size="cover"
+                data-transition="none" 
+                class="future" 
+                hidden="">
+                <div class="fragment grow" style="top:-50%; display: block">
+                    <div class="fragment shrink">
+                        <h3 style="color: white">Hello world</h3>
+                    </div>
+                </div>          
             </section>
+
+            <!-- Here transition none is good, text doesn't fly in -->
+            <section data-transition="none" style="top: -360px;">
+
+                <div id='content' style="padding:10%;">
+                    <div id='mapcol' style="
+                        background-color: #262626;
+                        width: 50%; 
+                        height: 1000%; 
+                        display: inline-block;">
+                        Hello world
+                    </div>                    
+                </div>
+            </section>
+
+            <section>
+                <pre><code class="python">
+    def wat(x, y):
+            for i in range(x):
+            y += x
+        return y
+                </code></pre>
+            </section>
+
+
+            <!-- SLIDE 3: vertical with code -->
+            <section>
+                <section data-transition="none">
+                    Vertical slide 1
+                </section>
+                <section data-transition="none">
+                    Vertical slide 2
+                </section>
+            </section>
+
 
             <section 
             data-background-image="images/yellow-field.jpg"
@@ -33,6 +89,8 @@
 
             <section 
             data-background-image="images/patrick-bouquet.jpg"
+            data-background-position="25% 75%"
+            data-background-size="cover"
             data-transition="none" style="top:-960px; display: block;" class="future" hidden="">
                 <h2>Hello world</h2>
             </section>                      
@@ -40,7 +98,18 @@
             <!-- map -->
             <section data-background-iframe="/home/deren/Dropbox/crano2.html" 
             data-background-interactive data-transition="none"
-            style="top:-960px; display: block;" class="future" hidden="">                    
+            style="top:-960px; display: block;" class="future" hidden="">
+            
+            </section>
+
+            <!-- map -->
+            <section data-background-color="white">
+                <iframe 
+                    class="stretch" 
+                    align='middle' 
+                    data-src="/home/deren/Dropbox/crano2.html">
+                </iframe>
+                <!-- </div> -->
             </section>
 
 
@@ -149,9 +218,8 @@
 
 
             <!-- 2  -->
-            <section data-transition="none" style="top:-360px; display: block;" class="future" hidden="">       
-                <h3>Toytree documentation</h3>
-                <iframe class="stretch" align='middle' data-src="/home/deren/Dropbox/ref-dhighsub-m4-f5k.tetrad.html"></iframe>
+            <section data-transition="none" style="top:-360px; display: block;" class="future" hidden="">    <h3>Toytree documentation</h3>
+                <iframe class="stretch" align='middle' data-src="https://toytree.rtfd.io"></iframe>
             </section>
 
             <!--  -->
@@ -198,22 +266,40 @@
             </div>
         </div>
         
-        <!-- SLIDESHOW MODE -->
+        <!-- <div class="slide-number"></div> -->
+        <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+
+
+        <!-- JAVASCRIPT -->
+        <script src="../reveal/lib/js/head.min.js"></script>        
         <script src="../reveal/js/reveal.js"></script>
+        <script type="text/javascript" src="../reveal/plugin/highlight/highlight.js"></script>
         <script>
-            Reveal.initialize({controls:true, loop:true, autoSlide: 5000})
-                // // hide controls
-                // controls: true,
+            Reveal.initialize({
+                controls:true, 
+                progress:false, 
+                loop:true, 
+                history:false,
+                center:false,
+                fragmentInURL:true,
+                margin:.05,
+                minScale:0.1,
+                maxScale:5,
+                width:960,
+                height:720,
+                // theme:Reveal.getQueryHash().theme,
+                // transition:Reveal.getQueryHash().transition||"linear",                 
+                dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                ]
+            });
 
-                // // 
-                // loop: true,
-                
-                // // 
-                // autoSlide: 30,
+            // Reveal.configure({ slideNumber: true })
+            // Reveal.configure({ slideNumber: "c/t" })            
 
-                // );
-            // Reveal.configure({slideNumber: true});
-            // Reveal.configure({ slideNumber: 'c/t' });            
+            // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
         </script>
+
     </body>
 </html>
