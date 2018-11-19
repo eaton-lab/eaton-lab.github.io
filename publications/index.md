@@ -17,9 +17,12 @@ image:
 Donoghue. *RAD-seq data reveal a cryptic Viburnum species on the North
 American Coastal Plain*. In Review. -->
 
+* Spriggs E.L., Schlutius, C.; **Eaton, D.A.R.**, Park, B., Sweeney, P., Edwards, E., and  
+M. Donoghue. *Differences in flowering time maintain species boundaries in a continental radiation of Viburnum*. American Journal of Botany. In Press.
+
 * Spriggs, E.L., **Eaton, D.A.R.**, Sweeney, P., Schlutius, C., Edwards, E., and M.J.
 Donoghue. *RAD-seq data reveal a cryptic Viburnum species on the North
-American Coastal Plain*. In Review.
+American Coastal Plain*. Systematic Biology. In Press.
 
 * Park, B., Sinnott-Armstrong, M., Schlutius, C., Penagos Zuluaga, J., Spriggs, E.L,
 Simpson, R., Benavides, E., Landis, M., Sweeney, P., **Eaton, D.A.R.**, and

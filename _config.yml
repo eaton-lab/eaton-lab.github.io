@@ -3,8 +3,8 @@
 title: The Eaton Lab at Columbia University
 locale: en_US
 description: Botany / Phylogenetics / Bioinformatics
-logo: site-logo.png
-search: true
+logo: site-logo-mini.svg
+search: false
 url: https://eaton-lab.org  ## github.io   ##http://localhost:4000
 
 # Jekyll configuration
@@ -14,7 +14,7 @@ highlighter: rouge
 sass:
   sass_dir: _sass
   style: compressed
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed

@@ -85,7 +85,7 @@ Young University.
 ([gc2799@columbia.edu](mailto:gc2799@columbia.edu))
 is a visiting Ph.D. student from the Chinese Academy of Sciences graduate 
 program at the Kunming Institute of Botany where she works with Dr. De-Zhu Li.
-Her thesis research if on the phylogeny and diversification of temperate woody
+Her thesis research is on the phylogeny and diversification of temperate woody
 bamboos using genomic sequence data.
 
 <br>

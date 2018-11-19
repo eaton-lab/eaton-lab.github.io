@@ -9,18 +9,21 @@ image:
 
 <hr>
 
-<h1 class="entry-subtitle">Lab information</h1>
-
-<h4><a href="https://jhub.eaton-lab.org">JupyterHub Server on Sacra</a></h4>
-If you are an Eaton Lab member and your GitHub ID has been whitelisted you can
-connect to a notebook server on the *sacra* workstation from this link.
+<!-- <h1 class="entry-subtitle">Lab information</h1> -->
 
 <h4><a href="https://gitter.im/eaton-lab/Lobby">Lab Gitter</a></h4>
 A chatroom for updates about projects and organization in the lab. 
 Gitter is a particularly convenient way to share code snippets, and
 to link to github repositories. Feel free to pop-in and say Hi.
 
-<br>
+<!-- 
+<h4><a href="https://jhub.eaton-lab.org">JupyterHub Server on Sacra</a></h4>
+If you are an Eaton Lab member and your GitHub ID has been whitelisted you can
+connect to a notebook server on the *sacra* workstation from this link.
+ -->
+
+
+<!-- <br>
 <hr>
 <h1 class="entry-subtitle">Tutorial slides</h1>
 
@@ -33,7 +36,7 @@ A short tutorial on using the Python library toytree to create interactive
 HTML tree figures that can be embedded in jupyter notebooks, used in HTML
 slides like these (reveal.js), or saved as standard figures (e.g., SVG, PDF).
 
-
+ -->
 
 <!-- 
 <h4><a href="https://groups.google.com/a/columbia.edu/forum/#!forum/eaton-lab">Friday lab meeting schedule</a></h4>
