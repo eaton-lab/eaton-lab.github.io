@@ -2,7 +2,7 @@
 layout: post
 title: "Eaton lab group meetings: Fridays 4pm"
 author: Deren
-categories: articles
+categories: posts
 excerpt: "Join us to hear about project updates, practice talks, and new articles."
 comments: true
 image:

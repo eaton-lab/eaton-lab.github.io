@@ -2,7 +2,7 @@
 layout: post
 title: "Welcome Patrick and Sandra to the lab!"
 author: Deren
-categories: articles
+categories: posts
 excerpt: "Fellowships abound, great job guys!"
 comments: true
 image:

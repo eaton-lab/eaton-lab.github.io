@@ -2,7 +2,7 @@
 layout: post
 title: "Welcome Jared Meek and Guo Cen to the lab!"
 author: Deren
-categories: articles
+categories: posts
 excerpt: "New projects in the Hengduan Mountains"
 comments: true
 image:
