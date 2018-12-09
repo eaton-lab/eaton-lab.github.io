@@ -9,7 +9,7 @@ image:
   feature: header_ped.png
 share: true
 tags: [conda, jupyter, HPC, python, Columbia, Habanero, Terremoto]
-date: 2018-08-22
+date: 2018-12-09
 ---
 
 <hr>
