@@ -1,9 +1,9 @@
 # Site navigation links
-- title: Posts          # News
-  url: /articles
+- title: News
+  url: /posts
 
-#- title: Blog
-#  url: /posts
+- title: Posts
+  url: /articles
 
 - title: Research
   url: /research/
