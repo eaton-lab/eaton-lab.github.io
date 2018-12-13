@@ -129,9 +129,9 @@
 <!-- SLIDE 6 (THE SYLLABUS -- TOPICS) -->
 <section
     data-background="white" 
-    data-transition="none" 
-    class="future">
+    hidden="">
 
+    <section>
     <h4>THE SYLLABUS</h4>
     <object align="center" data="https://eaton-lab.org/slides/genomics/session-1/data/Syllabus.pdf" type="application/pdf">
         <iframe src="https://docs.google.com/viewer?url=https://eaton-lab.org/slides/genomics/session-1/data/Syllabus.pdf&embedded=true"
@@ -139,6 +139,17 @@
         height="600">           
         </iframe>
     </object>  
+    </section>
+
+    <section>
+        <h5>Project proposal and presentation</h5>
+        <p>...</p>
+    </section>
+
+    <section>
+        <h5>Field trip and report</h5>
+        <p>...</p>
+    </section>
 </section>
 
 
@@ -180,21 +191,88 @@
 
 
 <!-- SLIDE 8: CODIO TOUR -->
+<!-- style="top:-960px; display: block;"  -->
+    <!-- class="future"> -->
 <section 
     data-background-iframe="https://codio.com/home/teacher"
-    data-background-interactive data-transition="none"
-    style="top:-960px; display: block;" 
-    class="future" 
-    hidden="">       
+    data-background-interactive 
+    data-transition="none"
+    >
 </section>
 
+
+<!-- SLIDE 8 -->
+<section data-transition="none">
+    <section>
+        <h3> Hierarchical File System</h3>
+        <p> Always know where you are and where your files are.</p>
+        <pre><code class="bash">
+    # e.g., format of unix command line tools
+    $ program [option...] target
+
+    # use 'pwd' program with no option or target to ask where am I now?
+    $ pwd
+
+    # what is here (-l shows as a list)
+    $ ls -l
+
+    # what is in that folder (-l is argument, folder is target)
+    $ ls -l folder/
+
+    # move me into that folder
+    $ cd folder/
+        </code></pre>
+    </section>
+
+    <!-- ... -->
+    <section>
+        Run a program from the command line.
+        <pre><code class="bash">
+    # use 'pwd' program with no option or target to ask where am I now?
+    $ pwd
+        </code></pre>
+        <pre><code class="bash">
+    /home/deren/
+        </code></pre>
+
+        <!-- <br> -->
+
+        Make directories, change your location.
+        <pre><code class="bash">
+    # make a new directory
+    $ mkdir genomics
+
+    # change directory (move) into the new directory and run pwd again
+    $ cd genomics
+    $ pwd
+        </code></pre>
+        <pre><code class="bash">
+    /home/deren/genomics
+        </code></pre>                       
+    </section>
+    
+    <section>
+        <pre><code class="bash">
+    # what is in that folder (-l is argument, folder is target)
+    $ ls -l folder/
+
+    # move me into that folder
+    $ cd folder/
+        </code></pre>
+    </section>
+
+    <section>        
+        Vertical slide 2
+    </section>
+</section>
 
 
 <!-- SLIDE 11 -->
 <!-- data-background-iframe="http://mybinder.org/repo/eaton-lab/toytree" -->
 <section 
     data-background-iframe="https://jhub.eaton-lab.org"
-    data-background-interactive data-transition="none"
+    data-background-interactive 
+    data-transition="none"
     style="top:-960px; display: block;" 
     class="future" 
     hidden="">       
