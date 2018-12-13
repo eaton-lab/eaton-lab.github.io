@@ -25,31 +25,196 @@
 <!-- ###################################################################### -->
 
 
-<!-- SLIDE 1 -->
+<!-- SLIDE 0 (TITLE) -->
 <section 
 	data-background="#262626" 
  	style="top:300.5px; display:block;"
  	class="present">
+    <div style="margin-left: auto; margin-top: 20%">
     <h2 class="title">Principles and Applications of Modern DNA Sequencing</h2>
     <p style="color: lightgrey"> EEEB GU4055</p>
-    <h4 style="color: white">Session 2: Genes, orthology, and text</h4>
+    <h5 style="color: white">Session 1: Introduction to computational genomics</h4>
     <br>
+    </div>
 </section>
 
 
-<!-- SLIDE 2 -->
-<section 
-	data-background="white" 
-	data-transition="none" 
-	class="future">
-    
-    <h2 class="title">The Coalescent</h2>
+<!-- SLIDE 1 (OBJECTIVE)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+    <h3> The objective of this course </h3>
+    <img src="./data/xkcd-dna.png" style="width: 70%; height: 20%;">
+    <br>
+    <p> <b>Genome sequencing</b> has revolutionized biological research, but 
+        learning to apply genomics to answer biological questions requires both
+        bioinformatics skills and an understanding of genetics.
+    </p>
+</section> 
+
+
+<!-- SLIDE 2 (LEARN LITERATURE) -->
+<section data-transition="none" class="future" hidden="">
+    <h3> We will learn modern genomic methods</h3>
+    <p style='font-size:0.85em;'> 
+        Based on readings and discussions from the primary literature (free).
+    </p>
+    <img src="./data/Kelleher-everyone.png" style="width: 60%; height: 20%;">
     <div class="citation">
-        <a href="http://mbe.oxfordjournals.org/content/22/5/1185.short">
-            Drummond et al. 2005
+        <a href="https://www.biorxiv.org/content/early/2018/11/01/458067">
+            Kelleher et al. 2018
         </a>
     </div>
+</section>
 
+
+<!-- SLIDE 3 (LEARN SKILLS) -->
+<section data-transition="none" class="future" hidden="">
+    <h3> And we will learn to apply modern genomic methods</h3>
+    <p> Through computational exercises in class and as assignments.
+    <pre><code class="python">
+    # simulate a chromosome from a coalescent tree_sequence 
+    tree_sequence = ms.simulate(
+        sample_size=1000, 
+        length=int(1e5),
+        Ne=int(1e5),
+        mutation_rate=1e-9,
+        recombination_rate=1e-10, 
+        random_seed=10,
+        )
+
+    ## calculate linkage disequilibrium across the chromosome
+    ldx = ms.LdCalculator(tree_sequence).get_r2_matrix()
+    </code></pre>
+</section>
+
+
+<!-- SLIDE 4 (OUR LEARNING OBJECTIVES)-->
+<section 
+    data-background="white" 
+    data-transition="none" 
+    class="future">
+    <h2>Learning objectives</h2>
+    <br>
+    <div align='left'>
+    <p> 
+        Learn to design, conduct, and analyze genomic experiments. By the end 
+        of class you should be able to: 
+    <p>
+    <p style="font-size:0.75em; color:#568259; font-weight:400; line-height:2.2em;">        
+    <br>
+    1. Describe the structure of genomes and how information is represented in them.
+    <br>
+    2. Choose appropriate sequencing techniques for genomic experiments.
+    <br>
+    3. Analyze genomic data using computational methods.
+    </p>
+    </div>
+</section>
+
+
+<!-- SLIDE 5 (POLL: WHY ARE YOU HERE?) -->
+<section 
+    data-background-iframe="https://www.polleverywhere.com/free_text_polls/QJ4o7fHuEWsxeJJLOfKhJ?preview=true"
+    data-background-interactive data-transition="none"
+    style="top:-960px; display: block;" 
+    class="future" 
+    hidden="">       
+</section>
+
+
+<!-- SLIDE 6 (THE SYLLABUS -- TOPICS) -->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future">
+
+    <h4>THE SYLLABUS</h4>
+    <object align="center" data="https://eaton-lab.org/slides/genomics/session-1/data/Syllabus.pdf" type="application/pdf">
+        <iframe src="https://docs.google.com/viewer?url=https://eaton-lab.org/slides/genomics/session-1/data/Syllabus.pdf&embedded=true"
+        width="800"
+        height="600">           
+        </iframe>
+    </object>  
+</section>
+
+
+<!-- SLIDE 7: FIRST TOPICS: WHAT IS THE GENOME AND HISTORY OF GENOMICS -->
+<section class="future" data-transition="none">
+    <h2> Today's topics: </h2>
+    <br>
+    <br>    
+    <h4 style="color:#568259"> Genome Structure </h4>
+    <h4 style="color:#568259"> A Brief History of Genomics</h4>    
+    <h4 style="color:#568259"> An introduction to Codio</h4>        
+</section>
+
+
+<!-- SLIDE 9 (GENOME HISTORY) -->
+<section data-transition="none" class="future" hidden="">
+    <h3> Genome Structure, Genomes, and DNA</h3>
+    <p> Chapter 4 of <emph>Molecular Biology</emph>. </p>
+    
+    <img src="./data/Kelleher-everyone.png" style="width: 60%; height: 20%;">
+    <div class="citation">
+        <a href="https://www.clinicalkey.com/#!/content/book/3-s2.0-B9780128132883000045">
+        Clark 2013</a>
+    </div>
+</section>
+
+
+<!-- SLIDE 9 (GENOME HISTORY) -->
+<section data-transition="none" class="future" hidden="">
+    <h3> We will learn modern genomic methods</h3>
+    <p> Based on reading and discussing the primary literature 
+    <img src="./data/Kelleher-everyone.png" style="width: 60%; height: 20%;">
+    <div class="citation">
+        <a href="https://www.biorxiv.org/content/early/2018/11/01/458067">
+            Kelleher et al. 2018
+        </a>
+    </div>
+</section>
+
+
+<!-- SLIDE 8: CODIO TOUR -->
+<!-- style="top:-960px; display: block;"  -->
+    <!-- class="future"> -->
+<section 
+    data-background-iframe="https://codio.com/home/teacher"
+    data-background-interactive 
+    data-transition="none"
+    >
+</section>
+
+
+<!-- SLIDE 8 -->
+<section>
+    <section data-transition="none">
+        <h3> Hierarchical File System</h3>
+        <p> Always know where you are and where your files are.</p>
+        <pre><code class="bash">
+    # format of unix command line toold
+    <program> [-arg -arg -arg] <input>
+
+    # where am I now?
+    pwd
+
+    # what is here
+    ls
+
+    # what is that folder
+    ls folder/
+
+    # move me into that folder
+    cd folder/
+        </code></pre>
+    </section>
+    <section>
+        Vertical slide 2
+    </section>
 </section>
 
 
@@ -64,36 +229,6 @@
 </section>
 
 
-<!-- SLIDE 2 -->
-<section data-background="white" data-transition="none">
-    <h3 >Parse index numbers from loci</h3>
-    <pre><code class="python">
-def get_ref_locus_idxs(self):
-    idxs = []
-
-    with open(self.data) as indata:
-        liter = (indata.read().strip().split("|\n"))
-
-    for idx, loc in enumerate(liter):
-        lines = loc.split("\n")
-        snpline = loc[-1]
-        locidx, chidx, pos = snpline.split("|")[1].split(":")            
-        names = [i.split()[0] for i in lines[:-1]]
-
-        ## check coverage
-        coverage = 0
-        for node in self.imap:
-            mincov = self.minmap[node]
-            if sum([i in names for i in self.imap[node]]) >= mincov:
-                coverage += 1
-        
-        if coverage == len(self.imap.keys()):
-            pos1, pos2 = pos.split('-')
-            refinfo = (idx, chidx, pos1, pos2)
-            idxs.append(refinfo)
-    return idxs
-    </code></pre>
-</section>
 
 
 <!-- SLIDE 3 -->
