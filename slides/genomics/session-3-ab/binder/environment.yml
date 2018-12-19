@@ -1,8 +1,0 @@
-name: session3
-dependencies:
-  - python
-  - pandas
-  - numpy
-  - pip
-    - toyplot
-
