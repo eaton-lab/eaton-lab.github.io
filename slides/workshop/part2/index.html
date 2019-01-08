@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RADcamp-2</title>
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../reveal/css/theme/simple.css">    
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width: 960px; height: 720px; transform: translate(-50%, -50%) scale(0.969792) translate(50%, 50%);">
+
+<!-- ###################################################################### -->
+
+
+<!-- SLIDE 0 (TITLE) -->
+<section data-background="#262626" style="top:200.5px; display:block;" class="present">
+    <div style="margin-left: auto; margin-top: 10%">
+    <h2 class="title">RAD-seq bioinformatics workshop</h2>
+    <p style="color: lightgrey"> Malaga, Spain 2019</p>
+    <h4 style="color: white">Part 2: Reproducible RAD-seq analyses</h4>
+    <br>
+    <p style="color: white">Deren Eaton, Columbia Univesity</p>
+    <p style="color: white">Isaac Overcast, City College of New York</p>    
+    </div>
+</section>
+
+
+<!-- SLIDE 1 (OBJECTIVES)-->
+<section data-transition="none" class="future" style="top: -20px; display: none;" hidden="">
+    <h2>Objectives of this workshop</h2>
+    <br>
+    <div align='left'>
+        <p> 
+        By the end of class you should be able to: 
+        </p>
+
+        <div style="margin-left: 5%; margin-right: 5%">
+        <p style="font-size:0.7em; color:#568259; font-weight:400; line-height:2.2em;">        
+        <br>
+        1. Branching: How to assemble multiple data sets under different parameter settings.
+        <br>
+        2. How to use the ipyrad API (Python).
+        </p>
+        3. How to use ipyrad for parallel computing in jupyter notebooks.
+        <br>
+        4. Creating reproducible notebooks and sharing them.
+        </p>
+        </div>
+    </div>
+</section>
+
+<!-- What is jupyter -->
+<section data-transition="none" class="future" style="top: -20px; display: none;" hidden="">
+    <section>
+    <h3> Jupyter is a program that can be started from the command line.</h3>
+    <br>
+    <p style="font-size:0.75em"> 
+        It starts a <strong>server</strong> (the hub) that will open in your 
+        browser (you've seen this). From there, you can start notebooks that 
+        run a <strong>kernel</strong> (e.g., Python session) which you can 
+        interact with through the browser. </p>
+    <pre><code class="bash">
+# Starting jupyter from the command line
+$ jupyter-notebook
+    </pre></code>     
+    </section>
+
+    <section>
+<h3> Starting a <strong>Python</strong> notebook in jupyter</h3>
+<p> Select [New] and then [Python 3] </p>
+<img class=plain src="../data/jupyter-hub.png" style="width: 80%; height: 20%;">
+    </section>
+
+    <section>
+<h3> Getting started with notebooks</h3>
+<p> Code cells (Python), Markdown cells (rich text) </p>
+<img class=plain src="../data/jupyter-notebook-empty.png" style="width: 80%; height: 20%;">
+    </section>
+
+    <section>
+<h3> Getting started with notebooks</h3>
+<p> Code cells (Python), Markdown cells (rich text) </p>
+<img class=plain src="../data/jupyter-code.png" style="width: 80%; height: 20%;">
+    </section>
+</section>
+
+
+<!-- CLI versus API -->
+<section data-transition="none" class="future" style="top: -20px; display: none;" hidden="">
+    <section>
+        <h3> ipyrad CLI versus API</h3>
+        <br>
+        <p style="font-size:0.75em"> In the ipyrad CLI we use the '-n' flag</p>
+        <pre><code class="bash">
+  # CLI (terminal): create a new Assembly named "test"
+  $ ipyrad -n test
+        </pre></code>       
+
+        <p style="font-size:0.75em"> In the ipyrad API we create an Assembly object</p>
+        <pre><code class="bash">
+  # API (Python session): create a new Assembly named "test"
+  $ data = ip.Assembly("test")
+        </pre></code>       
+    </section>
+</section>
+
+
+<!-- CLI versus API -->
+<section data-transition="none" class="future" style="top: -20px; display: none;" hidden="">
+    <section>
+        <h3> Advantages to using the API</h3>
+        <p style="font-size:0.75em"> 
+        The API allows us to interactively set parameters, run assembly, etc.</p>
+
+        <pre><code class="python">
+  # create the Assembly object
+  data = ip.Assembly("test")
+
+  # show the params
+  data.params
+        </pre></code>       
+
+        <pre><code style="background: grey">
+  0   assembly_name               test
+  1   project_dir                 ~
+  2   raw_fastq_path                           
+  3   barcodes_path                      
+  4   sorted_fastq_path
+  5   assembly_method             denovo     
+  6   reference_sequence                    
+  7   datatype                    rad          
+  8   restriction_overhang        ('TGCAG', '')  
+  9   max_low_qual_bases          5          
+  10  phred_Qscore_offset         33       
+  ...
+        </code></pre>
+    </section>
+</section>
+
+
+<section data-transition="none" class="future" style="top: -20px; display: none;" hidden="">
+    <section>
+        <h3> Advantages to using the API</h3>
+        <p style="font-size:0.75em"> 
+        Setting params can take advantage of tab-completion</p>
+
+        <pre><code class="python">
+  # set some parameters and try typing the first part and hitting [tab]
+  data.params.raw_fastq_path = "/home/jovyan/ro-data/ipsimdata/gbs_example_R1_.fastq.gz"
+  data.params.barcodes_path = "/home/jovyan/ro-data/ipsimdata/gbs_example_R1_.fastq.gz"
+  data.params.datatype = "gbs"
+  data.params
+        </pre></code>       
+
+        <pre><code style="background: grey">
+  0   assembly_name               test
+  1   project_dir                 ~
+  2   raw_fastq_path              /home/jovyan/ro-data/ipsimdata/gbs_example_R1_.fastq.gz  
+  3   barcodes_path               /home/jovyan/ro-data/ipsimdata/gbs_barcodes.fastq.gz  
+  4   sorted_fastq_path
+  5   assembly_method             denovo     
+  6   reference_sequence                    
+  7   datatype                    gbs          
+  8   restriction_overhang        ('TGCAG', '')  
+  9   max_low_qual_bases          5          
+  10  phred_Qscore_offset         33       
+  ...
+        </code></pre>
+    </section>
+</section>
+
+
+<section data-transition="none" class="future" style="top: -20px; display: none;" hidden="">
+
+    <section>
+        <h4> Branching: Multiple assemblies done easily</h4>
+        <p> The seven steps of assembly</p>
+        <img class=plain src="../data/ipyrad-steps.png" style="width: 80%; height: 20%;">
+    </section>
+
+    <section>
+        <h4> Branching: Multiple assemblies done easily</h4>
+        <p> Start a different assembly from a previous checkpoint</p>
+        <img class=plain src="../data/ipyrad-steps-branching.png" style="width: 80%; height: 20%;">
+    </section>
+
+
+  <section>
+        <h4> Branching: Multiple assemblies done easily</h4>
+        <p style="font-size:0.75em"> 
+        Create a new branch from an existing assembly.
+        </p>
+  <pre><code class="bash">
+  # branching in the CLI
+  $ ipyrad -p params-simdata.txt -b newdata
+  </pre></code>       
+
+  <pre><code style>
+  loading Assembly: simdata
+  from saved path: ~/Documents/ipyrad/tests/simdata.json
+  creating a new branch called 'newdata' with 12 Samples
+  writing new params file to params-newdata.txt
+  </pre></code>
+  </section>
+
+  <section>
+    <h4> Branching to drop samples </h4>
+    <p style="font-size:0.75em"> 
+    Create a new branch from an existing assembly.
+    </p>
+  <pre><code class="bash">
+  # branching in the CLI
+  $ ipyrad -p params-simdata.txt -b newdata - 1A_0 1B_0
+  </pre></code>       
+
+  <pre><code>
+  loading Assembly: simdata
+  from saved path: ~/Documents/ipyrad/tests/simdata.json
+  dropping 2 samples
+  creating a new branch called 'newdata' with 10 Samples
+  writing new params file to params-newdata.txt
+  </pre></code>
+  </section>  
+
+
+  <section>
+    <h4> Branching in the API </h4>
+    <p style="font-size:0.75em"> 
+    Create a new branch from an existing assembly.
+    </p>
+  <pre><code class="bash">
+  # branching in the API
+  data1 = ip.Assembly("data1")
+  data1.params.clust_threshold = 0.85
+
+  # create a branch with different params
+  data2 = data1.branch("data2")
+  data2.params.clust_threshold = 0.90
+
+  # run both assemblies through steps 1-7
+  data1.run("1234567")
+  data2.run("1234567")
+  </pre></code>       
+  </section>
+</section>
+
+
+<!-- Example notebook -->
+<section 
+    data-background-iframe="https://nbviewer.jupyter.org/github/dereneaton/ipyrad/blob/master/tests/cookbook-empirical-API-1-pedicularis.ipynb"
+    data-background-interactive 
+    data-transition="none"
+    style="top:-960px; display: block;" 
+    >
+</section>
+
+
+<!-- API is useful for analysis afterwards  -->
+<section class="future" data-transition="none">
+  <section>
+    <h4> API for analysis </h4>
+    <p style="font-size:0.75em"> 
+    Even if data was assembled w/ CLI, API can be useful afterwards. 
+    </p>
+  <pre><code class="bash">
+  # load the assembly in the API
+  data = ip.load_json("/home/jovyan/work/simdata.json")
+
+  # show stats of the assembly
+  data.stats
+
+  # show output file paths of the assembly
+  data.outfiles
+  </pre></code>       
+  </section>
+</section>
+
+
+<!-- DDDDDDDDDD -->
+<section data-transition="none">
+
+
+<section data-transition="none">
+<h3> Phylogenomic analyses </h3>
+<img class=plain src="../data/Eaton-2015-fig5.png" style="width: 50%; height: 20%;">
+<br>
+<p style="font-size:0.85em;"> Infer gene trees and species trees, even over 
+    relatively deep evolutionary time scales (~100 Ma). 
+</p>
+    <div class="citation">
+        <a href="https://www.ncbi.nlm.nih.gov/pubmed/27798402">
+        Eaton et al. 2015</a>
+    </div>
+</section>
+
+  <section>
+    <h4> API analysis tools for population level analysis </h4>
+    <p style="font-size:0.75em"> 
+    Many other tools can be used with the output files as well.
+    </p>
+  <pre><code class="bash">
+  # load the ipyrad analysis tools
+  import ipyrad.analysis as ipa
+
+  # run raxml with ipa
+  rax = ipa.raxml(
+      data="./simdata_outfiles/simdata.phy",
+      name="raxml-tree",
+      N=50,
+      T=4,
+  )
+
+  # run the analysis
+  rax.run()
+  </pre></code>       
+  </section>
+
+</section>
+
+
+<!-- SLIDE 9 -->
+<!-- data-background-iframe="http://mybinder.org/repo/eaton-lab/toytree" -->
+<!-- <section 
+    data-background-iframe="https://jhub.eaton-lab.org/user/eaton-lab/notebooks/work/nb-1.0-jupyter.ipynb"
+    data-background-interactive 
+    data-transition="none"
+    style="top:-960px; display: block;" 
+    >
+</section>
+
+<section 
+    data-background-iframe="https://jhub.eaton-lab.org/user/eaton-lab/terminals/2"
+    data-background-interactive 
+    data-transition="none"
+    style="top:-960px; display: block;" 
+    >
+</section>
+ -->
+        
+        <!-- <div class="slide-number"></div> -->
+        <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+
+
+        <!-- JAVASCRIPT -->
+        <script src="../../reveal/lib/js/head.min.js"></script>        
+        <script src="../../reveal/js/reveal.js"></script>
+        <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+        <script>
+            Reveal.initialize({
+                controls:true, 
+                progress:false, 
+                loop:true, 
+                history:true,
+                center:false,
+                fragmentInURL:true,
+                margin:.05,
+                minScale:0.1,
+                maxScale:5,
+                width:960,
+                height:720,
+                theme:Reveal.getQueryHash().theme,
+                transition:Reveal.getQueryHash().transition||"linear",
+                // slideNumber: true,
+                // slideNumber: "h/v",
+                dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                ]
+            });
+
+            // Reveal.configure({ slideNumber: true })
+            // Reveal.configure({ slideNumber: "c/t" })            
+
+            // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+        </script>
+    </body>
+</html>
