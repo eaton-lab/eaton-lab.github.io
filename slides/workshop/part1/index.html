@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Session-1</title>
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../reveal/css/theme/simple.css">    
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width: 960px; height: 720px; transform: translate(-50%, -50%) scale(0.969792) translate(50%, 50%);">
+
+<!-- ###################################################################### -->
+
+
+<!-- SLIDE 0 (TITLE) -->
+<section data-background="#262626" style="top:200.5px; display:block;" class="present">
+    <div style="margin-left: auto; margin-top: 10%">
+    <h2 class="title">RAD-seq bioinformatics workshop</h2>
+    <p style="color: lightgrey"> Malaga, Spain 2019</p>
+    <h4 style="color: white">Part 1: Introduction to RAD-seq</h4>
+    <br>
+    <p style="color: white">Deren Eaton, Columbia Univesity</p>
+    <p style="color: white">Isaac Overcast, City College of New York</p>    
+    </div>
+</section>
+
+
+<!-- SLIDE 1 (OBJECTIVES)-->
+<section data-transition="none" class="future" style="top: -20px; display: none;" hidden="">
+    <h2>Objectives of this workshop</h2>
+    <br>
+    <div align='left'>
+        <p> 
+        By the end of class you should be able to: 
+        </p>
+
+        <div style="margin-left: 5%; margin-right: 5%">
+        <p style="font-size:0.65em; color:#568259; font-weight:400; line-height:2.2em;">
+        <br>
+        1. Describe the structure and format of RAD-seq data. 
+        <br>
+        2. Aassemble RAD-seq data sets using ipyrad to produce files for analyses.
+        <br>
+        3. Understand the use of jupyter-notebooks for reproducible analyses.
+        <br>
+        4. Create notebooks for conducting reproducible genomic analyses in Python.
+        </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- SLIDE 2 (What will we be doing today? -->
+<section 
+    data-background-iframe="https://radcamp.github.io/IBS2019"
+    data-transition="none"
+    style="top:-960px; display: block;" 
+    class="future" 
+    hidden="">       
+</section>
+
+
+<!-- WHO ARE WE? -->
+<section>
+    <section 
+    data-background-iframe="https://ipyrad.readthedocs.io/"
+    data-transition="none"
+    style="top:-960px; display: block;" 
+    class="future" 
+    hidden="">       
+    </section>
+
+    <section 
+    data-background-iframe="https://eaton-lab.org/research/"
+    data-transition="none"
+    style="top:-960px; display: block;" 
+    class="future" 
+    hidden="">       
+    </section>
+
+    <section 
+    data-background-iframe="https://commons.gc.cuny.edu/members/iovercast/"
+    data-transition="none"
+    style="top:-960px; display: block;" 
+    class="future" 
+    hidden="">       
+    </section>
+</section>
+
+
+<!-- SLIDE 3 WHY ARE YOU HERE? -->
+<section class="future" data-transition="none">
+    <h2> Why are <strong>you</strong> here today? </h2>
+    <br>
+    <br>  
+    <h5 style="color:#568259"> What organism/question are you studying? </h4>
+    <h5 style="color:#568259"> Do you have data already, if so, what kind?</h4>
+    <h5 style="color:#568259"> What analysis tools do you hope to use on your data?</h4>
+</section>
+
+<!-- DDDDDDDDDD -->
+<section>
+<h3> Population genomic analyses </h3>
+<img class=plain src="../data/Andrews-Box2.png" style="width: 70%; height: 20%;">
+<br>
+<p style="font-size:0.85em;"> Reconstruct demography, calculate 
+    population divergence and introgression. With reference mapped data this 
+    can be done spatially along chromosomes.
+</p>
+    <div class="citation">
+        <a href="https://genome.cshlp.org/content/24/8/1316.long">Nadeau et al. 2013</a>
+    </div>
+</section>
+
+<!-- EEEEEEEEEEEE -->
+<section>
+<h3> Phylogenomic analyses </h3>
+<img class=plain src="../data/Eaton-2015-fig5.png" style="width: 50%; height: 20%;">
+<br>
+<p style="font-size:0.85em;"> Infer gene trees and species trees, even over 
+    relatively deep evolutionary time scales (~100 Ma). 
+</p>
+    <div class="citation">
+        <a href="https://www.ncbi.nlm.nih.gov/pubmed/27798402">
+        Eaton et al. 2015</a>
+    </div>
+</section>
+
+<!-- FFFFFFFFFFFF -->
+<section>
+    <section>
+    <h5> What is RAD-seq (and its variants) </h5>
+    <img class=plain src="../data/RAD-original.png" style="width: 28%; height: 20%;">
+    </section>
+    <section>
+        <h4> The goal is to attain a <br><strong>reduced representation of 
+        the genome</strong></h4> 
+        <br>
+        <p style="font-size:0.85em;"> Sequence to <strong>higher coverage</strong> by selecting fewer genomic regions.</p>
+        <p style="font-size:0.85em;"> 
+            Concentrate sequencing to the <strong>same regions</strong> across all samples.
+        </p>
+        <p style="font-size:0.85em;"> 
+            <strong>Multiplex</strong> many samples onto a sequencing run.
+        </p>
+    </section>
+    <section>
+    <h5> Variant methods differ in cost and selectivity </h5>
+    <img class=plain src="../data/RAD-variants.png" style="width: 90%; height: 30%;">
+    </section>
+</section>
+
+
+<!-- EEEEEEEEEEEE -->
+<section>
+    <section>
+    <h3> Concerns about RAD-seq</h3>
+    <p> Why not just sequence the whole genome at low-coverage?</p>
+
+    <br>
+    <p style="font-size:0.85em;"> Many genomes are very large, so it remains too expensive,<br> especially when studying many samples/pops/species.</p>
+    <p style="font-size:0.85em;"> Low coverage base calling can estimate population-wide <br>
+    statistics well, but not individual level.</p>
+    <p style="font-size:0.85em;"> Low coverage is messy/difficult for extracting loci <br>
+    for individuals (e.g., for phylogenetics) b/c so much missing data.</p>    
+    </section>
+
+    <section>
+    <h3> RAD-seq has a lot of missing data</h3>
+    <br>
+    <p style="font-size:0.85em;"> Variation in the presence/absence of a restriction <br>
+    cut site can cause loci to be present in some samples but not others.</p>
+    <p style="font-size:0.85em;"> 
+        Compared to many other methods (e.g., transcriptomes, UCEs) RAD-seq still <br>
+        provides substantially more data (e.g., SNPs). The important concern is how your
+        analysis tools deal with missing information.
+    </p>
+    </section>
+
+    <section>
+    <h3> Allele dropout can affect base calls</h3>
+    <img class=plain src="../data/RAD-dropout.png" style="width: 40%; height: 20%;">
+    <br>
+    <p style="font-size:0.85em;"> Many genomes are very large, so it remains too expensive,<br> especially when studying many samples/pops/species.</p>
+    <p style="font-size:0.85em;"> Low coverage base calling can estimate population-wide <br>
+    statistics well, but not individual level.</p>
+    <p style="font-size:0.85em;"> Low coverage is messy/difficult for extracting loci <br>
+    for individuals (e.g., for phylogenetics) b/c so much missing data.</p>           
+    </section>    
+
+</section>
+
+
+<!-- SLIDE 8 -->
+<section data-transition="none">
+    <section>
+        <h3> A quick introduction to the command line</h3>
+        <p style="font-size:0.75em"> Lines starting with hash (#) are only comments</p>       
+        <pre><code class="bash">
+  # This is the general format of unix command line tools
+  $ program -option1 -option2 target
+        </pre></code>
+
+        <pre><code class="bash">
+  # e.g., the 'pwd' program with no option or target prints your cur dir
+  $ pwd
+        </code></pre>
+
+        <p style="font-size:0.75em"> I'll use a grey background to show the returned value</p>
+        <pre><code class="bash" style="background: grey">    /home/deren/        </code></pre>
+    </section>
+
+    <section>
+        <h3> The ipyrad command line interface</h3>
+        <br>
+        <p style="font-size:0.75em"> We'll cover this soon in the RADcamp tutorial.</p>
+        <pre><code class="bash">
+  # The ipyrad CLI can be used in a terminal
+  $ ipyrad -p params-data.txt -s 123 -t 4 -c 16 
+        </pre></code>
+
+        
+    </section>
+</section>
+
+
+<section>
+    <section>
+        <h3> Hierarchical File System</h3>
+        <p style="font-size:0.75em"> Always know where you are and where your files are.</p>
+        <pre><code class="bash">
+  # The root (top) of the entire filesystem (used for writing full paths).
+  $ /
+
+  # Here, in my current directory (used for writing relative paths).
+  $ ./
+
+  # Up one directory from my current directory (a relative path).
+  $ ../
+        </pre></code>
+
+        <img class=plain src="../data/Unix-filesystem.png" style="width: 50%; height: 20%;">
+    </section>
+
+    <section>
+        <h3> Hierarchical File System</h3>
+        <p style="font-size:0.75em"> Always know where you are and where your files are.</p>
+        <pre><code class="bash">
+  # show the files and folders in a location (default target is cur dir)
+  $ ls 
+
+  # show result as a list for cur dir.
+  $ ls -l ./
+
+  # show another location on the filesystem
+  $ ls -l /bin/
+
+  # move to a new location. This becomes your new cur dir.
+  $ cd folder/
+        </code></pre>
+    </section>
+
+
+
+    <!-- ... -->
+    <section>
+        <p style="font-size:0.75em"> 
+        Your location (current directory) starts from / (the root) and is described
+        by a nested set of directory names leading to your location.  
+        </p>
+        <pre><code class="bash">
+  # use 'pwd' program with no option or target to ask where am I now?
+  $ pwd
+        </code></pre>
+        <pre><code class="bash" style="background: grey">    /home/deren/        </code></pre>
+
+        <!-- <br> -->
+        <p style="font-size:0.75em"> 
+        We can make new directories and change our location.
+        </p>
+        <pre><code class="bash">
+  # make a new directory (mkdir is the program, genomics is the target)
+  $ mkdir genomics
+
+  # change directory (move) into the new directory and run pwd again
+  $ cd genomics
+  $ pwd
+        </code></pre>
+        <pre><code class="bash" style="background: grey">    /home/deren/genomics        </code></pre>                       
+    </section>
+    
+
+</section>
+
+
+<!-- SLIDE 9 -->
+<!-- data-background-iframe="http://mybinder.org/repo/eaton-lab/toytree" -->
+<!-- <section 
+    data-background-iframe="https://jhub.eaton-lab.org/user/eaton-lab/notebooks/work/nb-1.0-jupyter.ipynb"
+    data-background-interactive 
+    data-transition="none"
+    style="top:-960px; display: block;" 
+    >
+</section>
+
+<section 
+    data-background-iframe="https://jhub.eaton-lab.org/user/eaton-lab/terminals/2"
+    data-background-interactive 
+    data-transition="none"
+    style="top:-960px; display: block;" 
+    >
+</section>
+ -->
+        
+        <!-- <div class="slide-number"></div> -->
+        <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+
+
+        <!-- JAVASCRIPT -->
+        <script src="../../reveal/lib/js/head.min.js"></script>        
+        <script src="../../reveal/js/reveal.js"></script>
+        <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+        <script>
+            Reveal.initialize({
+                controls:true, 
+                progress:false, 
+                loop:true, 
+                history:true,
+                center:false,
+                fragmentInURL:true,
+                margin:.05,
+                minScale:0.1,
+                maxScale:5,
+                width:960,
+                height:720,
+                theme:Reveal.getQueryHash().theme,
+                transition:Reveal.getQueryHash().transition||"linear",
+                // slideNumber: true,
+                // slideNumber: "h/v",
+                dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                ]
+            });
+
+            // Reveal.configure({ slideNumber: true })
+            // Reveal.configure({ slideNumber: "c/t" })            
+
+            // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+        </script>
+    </body>
+</html>
