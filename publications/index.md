@@ -14,22 +14,22 @@ image:
 ----------------
 
 * Spriggs E.L., Schlutius, C.; **Eaton, D.A.R.**, Park, B., Sweeney, P., Edwards, E., and  
-M. Donoghue. *Differences in flowering time maintain species boundaries in a continental radiation of Viburnum*. American Journal of Botany. In Press.
+M. Donoghue (2019). *Differences in flowering time maintain species boundaries in a continental radiation of Viburnum*. American Journal of Botany. In Press.
 
 * Spriggs, E.L., **Eaton, D.A.R.**, Sweeney, P., Schlutius, C., Edwards, E., and M.J.
-Donoghue. *RAD-seq data reveal a cryptic Viburnum species on the North
-American Coastal Plain*. Systematic Biology. In Press.
+Donoghue (2019). *RAD-seq data reveal a cryptic Viburnum species on the North
+American Coastal Plain*. Systematic Biology, syy084, [https://doi.org/10.1093/sysbio/syy084](https://doi.org/10.1093/sysbio/syy084).
 
 * Park, B., Sinnott-Armstrong, M., Schlutius, C., Penagos Zuluaga, J., Spriggs, E.L,
 Simpson, R., Benavides, E., Landis, M., Sweeney, P., **Eaton, D.A.R.**, and
 M.J. Donoghue (2018). *Sterile marginal flowers increase visitation and fruit set in the
 hobblebush (Viburnum lantanoides, Adoxaceae) at multiple spatial scales.*
-Annals of Botany mcy117, https://doi.org/10.1093/aob/mcy117 ([link](https://academic.oup.com/aob/advance-article/doi/10.1093/aob/mcy117/5047165))
+Annals of Botany mcy117, [https://doi.org/10.1093/aob/mcy117](https://doi.org/10.1093/aob/mcy117)
 
 * Miller, J., Quinzin, M., Edwards, D., **Eaton, D.A.R.**, Jensen, E., Russello, M.,
 Gibbs, J., Tapia, W., Rueda, D., and A. Caccone (2018). *Genome-wide assessment of
 diversity and divergence among extant Galápagos giant tortoise species.* 
-Journal of Heredity 109(6):611-619. ([link](https://doi.org/10.1093/jhered/esy031)).
+Journal of Heredity 109(6):611-619. [https://doi.org/10.1093/jhered/esy031](https://doi.org/10.1093/jhered/esy031).
 
 * Federman, S., Donoghue, M.J., Daly, D., and **D.A.R. Eaton** (2018). *Reconciling Species
 Diversity in a Tropical Plant Clade (Canarium, Burseraceae).* PLoS ONE 13(6): e0198882. ([Open access link](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0198882))
