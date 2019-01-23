@@ -1,21 +1,26 @@
 
-### Example file tree for hosting jupyter presentations
-```
-eaton-lab.github.io/  
-|
-+-- slides/
-    +-- reveal.js/  
-    |
-    +-- slideshow_1/  
-    |   +-- notebook_1.ipynb  
-    |   +-- index.slides.html  
-    |
-    +-- slideshow_2/  
-        +-- notebook_2.ipynb  
-        +-- index.slides.html  
-```  
+### Presentations
 
-### Build the HTML presentation
++ china-2018: Slideshow of China trip photos and maps. 
++ 
+
+
+# show docker images
+docker images
+
+# build docker image from Dockerfile
+docker build -t dereneaton/reveal .
+
+# Dockerfile 
+
+
+
+### Build HTML reveal.js presentations by hand.
+
++ https://github.com/hakimel/reveal.js/  
+
+
+### Build HTML reveal.js presentations from notebooks
 cd into one of the slideshow directories and run *nbconvert* to build the 
 presentation as slides. It will build index.slides.html.
 
@@ -47,4 +52,22 @@ After pushing to github you can then view the slides at
 [http://github.com/eaton-lab.github.io/slides/notebook](http://github.com/eaton-lab.github.io/slides/notebook)
 
 
-
+### Treefile for presentations
+```
+eaton-lab.github.io/  
+|
++-- slides/
+    +-- reveal.js/  
+    |
+    +-- slideshow_1/  
+    |   +-- notebook_1.ipynb  
+    |   +-- index.slides.html  
+    |
+    +-- slideshow_2/  
+    |   +-- notebook_2.ipynb  
+    |   +-- index.slides.html  
+    |
+    +-- slideshow_3/
+        +-- index.html
+        +-- images/
+```  

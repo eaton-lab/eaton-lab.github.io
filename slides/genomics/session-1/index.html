@@ -44,7 +44,7 @@
     <h3> Learning objectives in this course </h3>
     <img class=plain src="./data/xkcd-dna.png" style="width: 70%; height: 20%;">
     <br>
-    <p style="font-size:0.85em;"> To comprehend that <strong> the genome is data 
+    <p style="font-size:0.85em;"> To understand that <strong> genomes are data 
     </strong> -- a set of instructions, and a record of history -- and to learn
     to use this information to test hypotheses.
     </p>
@@ -131,19 +131,33 @@
 
 
 <!-- SLIDE 3 (THE SYLLABUS -- TOPICS) -->
+<section data-background-iframe=https://docs.google.com/viewer?url=https://eaton-lab.org/slides/genomics/session-1/data/Syllabus.pdf&embedded=true>
+</section>
+
+<!-- SLIDE 4 SYLLABUS DETAILS -->
 <section
     data-background="white" 
     class="future"
-    hidden="">
-
-    <section>
-    <h4>THE SYLLABUS</h4>
+    hidden="">  
+    <!--     <h4>THE SYLLABUS</h4>
     <object align="center" data="https://eaton-lab.org/slides/genomics/session-1/data/Syllabus.pdf" type="application/pdf">
         <iframe src="https://docs.google.com/viewer?url=https://eaton-lab.org/slides/genomics/session-1/data/Syllabus.pdf&embedded=true"
         width="800"
         height="600">           
         </iframe>
     </object>  
+    </section> -->
+
+    <section>
+        <h4>Class format</h4>
+        <p>
+            - Assigned readings & computational assignments between classes.  
+            - Discussion of readings in class.      
+            - Lecture on new topics
+            - In class computation primers
+            - ... repeat
+
+        </p>
     </section>
 
     <section>
@@ -171,6 +185,8 @@
 
 <!-- SLIDE 5 (GENOME HISTORY) -->
 <section data-transition="none" class="future" hidden="">
+
+    <section class="future" hidden="">
     <h3> Genome Structure, Genomes, and DNA</h3>
     <a href="https://www.clinicalkey.com/#!/content/book/3-s2.0-B9780128132883000045">
     <p> Chapter 4 of free online <emph>Molecular Biology</emph> book</p>
@@ -180,25 +196,16 @@
         <a href="https://www.clinicalkey.com/#!/content/book/3-s2.0-B9780128132883000045">
         Clark (2013)</a>
     </div>
+    </section>
+
+    <section class="future" hidden="">
+        <h3> Genome Structure, Genomes, and DNA</h3>
+    </section>
+
 </section>
 
 
-<!-- SLIDE 6 (HUMAN GENOME) -->
-<section data-transition="none" class="future" hidden="">
-    <h3> The Human Genome Publication</h3>
-    <a href="https://www.nature.com/articles/35057062">
-    <p> Initial sequencing and analysis of the human genome <br>(Lander et al. 2001)</p>
-    </a>
-    <!--     <img src="./data/Kelleher-everyone.png" style="width: 60%; height: 20%;">
-    <div class="citation">
-        <a href="https://www.biorxiv.org/content/early/2018/11/01/458067">
-            Kelleher et al. 2018
-        </a>
-    </div> -->
-</section>
-
-
-<!-- SLIDE 8: CODIO TOUR -->
+<!-- SLIDE 7: CODIO TOUR -->
 <!-- style="top:-960px; display: block;"  -->
     <!-- class="future"> -->
 <section 
@@ -217,13 +224,13 @@
         <h3> A quick introduction to the command line</h3>
         <p style="font-size:0.75em"> Lines starting with hash (#) are only comments</p>       
         <pre><code class="bash">
-    # This is the general format of unix command line tools
-    $ program -option1 -option2 target
+  # This is the general format of unix command line tools
+  $ program -option1 -option2 target
         </pre></code>
 
         <pre><code class="bash">
-    # e.g., the 'pwd' program with no option or target
-    $ pwd
+  # e.g., the 'pwd' program with no option or target prints your cur dir
+  $ pwd
         </code></pre>
 
         <p style="font-size:0.75em"> I'll use a grey background to show the returned value</p>
@@ -235,17 +242,17 @@
         <h3> Hierarchical File System</h3>
         <p style="font-size:0.75em"> Always know where you are and where your files are.</p>
         <pre><code class="bash">
-    # use the 'pwd' program with no option or target to ask where am I now?
-    $ pwd
+  # 'ls' shows the files and folders in a location (def. target is cur dir)
+  $ ls 
 
-    # 'ls' shows the files and folders in a location (-l shows as a list)
-    $ ls -l
+  # '-l' shows result as a list, a shortcut for cur dir is '.' (dot)
+  $ ls -l .
 
-    # the default target is here, but ls can be given a different target
-    $ ls -l folder/
+  # to view another location enter a different target than '.'
+  $ ls -l folder/
 
-    # 'cd' moves you to a new location. Now 'pwd' will say you are there.
-    $ cd folder/
+  # 'cd' moves you to a new location. This becomes your new cur dir.
+  $ cd folder/
         </code></pre>
     </section>
 
@@ -258,8 +265,8 @@
         by a nested set of directory names leading to your location.  
         </p>
         <pre><code class="bash">
-    # use 'pwd' program with no option or target to ask where am I now?
-    $ pwd
+  # use 'pwd' program with no option or target to ask where am I now?
+  $ pwd
         </code></pre>
         <pre><code class="bash" style="background: grey">    /home/deren/        </code></pre>
 
@@ -268,12 +275,12 @@
         We can make new directories and change our location.
         </p>
         <pre><code class="bash">
-    # make a new directory
-    $ mkdir genomics
+  # make a new directory (mkdir is the program, genomics is the target)
+  $ mkdir genomics
 
-    # change directory (move) into the new directory and run pwd again
-    $ cd genomics
-    $ pwd
+  # change directory (move) into the new directory and run pwd again
+  $ cd genomics
+  $ pwd
         </code></pre>
         <pre><code class="bash" style="background: grey">    /home/deren/genomics        </code></pre>                       
     </section>
@@ -290,17 +297,24 @@
 </section>
 
 
-<!-- SLIDE 11 -->
+<!-- SLIDE 9 -->
 <!-- data-background-iframe="http://mybinder.org/repo/eaton-lab/toytree" -->
-<section 
-    data-background-iframe="https://jhub.eaton-lab.org"
+<!-- <section 
+    data-background-iframe="https://jhub.eaton-lab.org/user/eaton-lab/notebooks/work/nb-1.0-jupyter.ipynb"
     data-background-interactive 
     data-transition="none"
     style="top:-960px; display: block;" 
-    class="future" 
-    hidden="">       
+    >
 </section>
 
+<section 
+    data-background-iframe="https://jhub.eaton-lab.org/user/eaton-lab/terminals/2"
+    data-background-interactive 
+    data-transition="none"
+    style="top:-960px; display: block;" 
+    >
+</section>
+ -->
         
         <!-- <div class="slide-number"></div> -->
         <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
