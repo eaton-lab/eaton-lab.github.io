@@ -8,8 +8,8 @@ search: false
 url: https://eaton-lab.org  ## github.io   ##http://localhost:4000
 
 # Jekyll configuration
-permalink:   /:categories/:title/
-markdown:    kramdown
+permalink: /:categories/:title/
+markdown: kramdown
 highlighter: rouge
 sass:
   sass_dir: _sass

@@ -13,6 +13,18 @@ image:
 
 ----------------
 
+<!-- 2019 papers -->
+<!-- ------------------------------------ -->
+<!-- Guo Cen... -->
+<!-- Satler, J., ... and T. Heath -->
+<!-- Toytree* -->
+<!-- ipyrad* -->
+<!-- Ficus* -->
+<!-- Cranolopha* -->
+<!-- Viburnum* -->
+<!-- ------------------------------------ -->
+
+
 * Spriggs E.L., Schlutius, C.; **Eaton, D.A.R.**, Park, B., Sweeney, P., Edwards, E., and  
 M. Donoghue (2019). *Differences in flowering time maintain species boundaries in a continental radiation of Viburnum*. American Journal of Botany. In Press.
 
