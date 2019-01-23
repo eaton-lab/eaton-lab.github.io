@@ -42,12 +42,11 @@
 
     <section>
     <h3> Learning objectives in this course </h3>
-    <img class=plain src="./data/xkcd-dna.png" style="width: 70%; height: 20%;">
-    <br>
     <p style="font-size:0.85em;"> To understand that <strong> genomes are data 
     </strong> -- a set of instructions, and a record of history -- and to learn
     to use this information to test hypotheses.
     </p>
+    <img class=plain src="./data/xkcd-dna.png" style="width: 70%; height: 20%;">
     </section>
 
     <!-- 1.1 (LEARN LITERATURE) -->
@@ -122,8 +121,8 @@
 
 <!-- SLIDE 2 (POLL: WHY ARE YOU HERE?) -->
 <section 
-    data-background-iframe="https://www.polleverywhere.com/free_text_polls/QJ4o7fHuEWsxeJJLOfKhJ?preview=true"
     data-transition="none"
+    data-background-iframe="https://www.polleverywhere.com/free_text_polls/QJ4o7fHuEWsxeJJLOfKhJ?preview=true"
     style="top:-960px; display: block;" 
     class="future" 
     hidden="">       
@@ -131,11 +130,14 @@
 
 
 <!-- SLIDE 3 (THE SYLLABUS -- TOPICS) -->
-<section data-background-iframe=https://docs.google.com/viewer?url=https://eaton-lab.org/slides/genomics/session-1/data/Syllabus.pdf&embedded=true>
+<section 
+    data-transition="none"
+    data-background-iframe=https://docs.google.com/viewer?url=https://eaton-lab.org/slides/genomics/session-1/data/Syllabus.pdf&embedded=true>
 </section>
 
 <!-- SLIDE 4 SYLLABUS DETAILS -->
 <section
+    data-transition="none"
     data-background="white" 
     class="future"
     hidden="">  
@@ -285,43 +287,49 @@
             - If you completely screw up an assignment you must <br>ask us to reset your unit for you. 
         </p>
     </section>
+
+    <section>
+        <br>
+        <br>
+        Open up a new terminal in Codio.
+    </section>
 </section>
 
 
-<!-- SLIDE 8 INTO TO COMMAND LINE-->
+
+<!-- SLIDE 8 INTRO TO COMMAND LINE -->
 <section data-transition="none">
     <section>
-        <h3> A quick introduction to the command line</h3>
-        <p style="font-size:0.75em"> Lines starting with hash (#) are only comments</p>       
+        <h3> Hierarchical File System</h3>
+        <p style="font-size:0.75em"> Always know where you are and where your files are.</p>
         <pre><code class="bash">
-  # This is the general format of unix command line tools
-  $ program -option1 -option2 target
+  # The root (top) of the entire filesystem (used for writing full paths).
+  $ /
+
+  # Here, in my current directory (used for writing relative paths).
+  $ ./
+
+  # Up one directory from my current directory (a relative path).
+  $ ../
         </pre></code>
 
-        <pre><code class="bash">
-  # e.g., the 'pwd' program with no option or target prints your cur dir
-  $ pwd
-        </code></pre>
-
-        <p style="font-size:0.75em"> I'll use a grey background to show the returned value</p>
-        <pre><code class="bash" style="background: grey">    /home/deren/        </code></pre>
+        <img class=plain src="../../workshop/data/Unix-filesystem.png" style="width: 50%; height: 20%;">
     </section>
-
 
     <section>
         <h3> Hierarchical File System</h3>
         <p style="font-size:0.75em"> Always know where you are and where your files are.</p>
         <pre><code class="bash">
-  # 'ls' shows the files and folders in a location (def. target is cur dir)
+  # show the files and folders in a location (default target is cur dir)
   $ ls 
 
-  # '-l' shows result as a list, a shortcut for cur dir is '.' (dot)
-  $ ls -l .
+  # show result as a list for cur dir.
+  $ ls -l ./
 
-  # to view another location enter a different target than '.'
-  $ ls -l folder/
+  # show another location on the filesystem
+  $ ls -l /bin/
 
-  # 'cd' moves you to a new location. This becomes your new cur dir.
+  # move to a new location. This becomes your new cur dir.
   $ cd folder/
         </code></pre>
     </section>
@@ -363,8 +371,10 @@
             complete the <strong>Linux Command Line Tutorial on 
             Codio</strong>, listed under the Courses tab on the left. </p>
         <img class=plain src="./data/codio-linux-tutorial.png" style="width: 90%; height: 20%;">
-    </section>
+    </section>    
+
 </section>
+
 
 
 <!-- SLIDE 9 INTRO TO JUPYTER NOTEBOOKS -->
@@ -375,7 +385,7 @@
     hidden="">
     
     <section>
-    <h3> Jupyter is a program that can be started from the command line.</h3>
+    <h4> Jupyter is a program that can be started from the command line.</h4>
     <br>
     <p style="font-size:0.75em"> 
         It starts a <strong>server</strong> (the hub) that will open in your 
