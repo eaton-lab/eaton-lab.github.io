@@ -212,19 +212,37 @@ GATACTGTGATAGGTACGTTATTTAATAGGATCTATAACGAAATgtcaaataattttacgGTAATATAACTTAT
     </section>
 
     <section>
-        <h3> The yeast genome </h3>
-        <p style='font-size:0.9em;'> 
-        An assembly of strain S288C of Saccharomyces cerevisiae.
-        What is a reference genome? 
+        <h3> A genome fasta file</h3>
+        <p style='font-size:0.7em;'> 
+        Read a compressed fasta file (e.g., a genome) and PIPE the output to 
+        view just a portion of it. The head command is extremely useful for 
+        "peeking" at large files. It's fast!
         </p>
+        <pre><code class="bash">
+  # pass the result of zcat to the program head
+  $ zcat genomes/virus.fna.gz | head -n 10
+        </code></pre>
+        <pre><code class="bash" style="background: grey">
+  >NC_037667.1 Pandoravirus quercus, complete genome
+  CCGGTACAGTGAGCGGTTCACGGCCTGGCCACGGTCGACGGAGTGCCGTGCGATGCCATCGGCGACGGCCG
+  CGCGGGCATTCGCACGTGCGACCACAGCCGTCAGTGGTACTGGCGGGACGAGGCCGTCGGGGTGACGGACG
+  ACCTGCTCGATGCCATCACACGATGCGCCGAGTACGCGCACGATACCATCAGGGCGCCGTTGGCGAGCAAA
+  GAGATTATGGAGTTCAGCGTCCGTTGCACCCGCCAGGCGGCGGCCGGAGGCGACGACGTCACGGACCCCAT
+  GGACGCGAGGCCAGGCGCACGTGGCGCGCCTATCGCATGCACGCGCGCGTGTTCAGCGCCATCGCGTTGCT
+  ACCGCTGAGCATGATGGCGACGGCGGGTCTGCCCTTCTATGACGTGCGCCGGTACGCGCTGGTGGCGGCCC
+  GCCGCGCCGAACGCGCGTCGAGCCTGCTCCCAACACGCGTGCGACCAGACACCCTTGCGCACGAGGTGATG
+  GGCGATGGGCGTCTTCCGCGGCGCTCAATCGCGCACAGCCTCTTTGCAAGTTGGTTCGAACGCAATTACGC
+  CTACGAGGACGCCAGCGGCATCGACGCCGTGTGGTACGACCATCTCGGTCAAGAGGGCACCCACGAGACCG
+        </code></pre>
 
     </section>
 
 
     <section>
         <br>
-        <img src="./data/yeast-ngenes2.png" style="width: 90%; height: 30%;">          
+        <img src="./data/yeast-ngenes2.png" style="width: 99%; height: 30%;">
     </section>
+
 
     <section>
         <!-- <h3>A quiz about reference genomes</h3> -->
@@ -232,12 +250,71 @@ GATACTGTGATAGGTACGTTATTTAATAGGATCTATAACGAAATgtcaaataattttacgGTAATATAACTTAT
     </section>       
 
     <section>       
-        The GFF file format. We will revisit this in the next assignment.
-        <img src="./data/GFF-structure.png" style="width: 70%; height: 30%;">        
+        <h4> The GFF file format (genome annotation)</h4>
+        <p style="font-size: 0.7em; margin-right: 60px; margin-left: 60px">
+        We will revisit this file format in the next assignment; it 
+        introduces how genomic features are related (e.g., gene -> mRNA 
+        transcript -> exon -> CDS). For now, we are using it to practice 
+        reading and parsing a tab-delimited file. 
+        </p>
+        <img src="./data/GFF-structure.png" style="width: 80%; height: 30%;">        
     </section> 
 
+    <section>       
+        <h4>Challenge</h4>
+        <p style="font-size: 0.7em; margin-right: 60px; margin-left: 60px">        
+        Return a tab-delimited table with the positions of all of the telomeres in the Yeast genome. Each line should have the following information: seqid, type, start, stop.
+        </p>
+        <pre><code class="bash">
+  # read file | not lines start w/ # | fields 1,3,4,5 | only w/ 'telomere' 
+  zcat genomes/yeast.gff.gz | \
+      grep -v "^#" | \
+      cut -f 1,3-5 | \
+      grep -w 'telomere'  
+        </code></pre>        
+
+        <pre><code class="bash" style="background: grey">
+  NC_001133.9 telomere    1   801
+  NC_001133.9 telomere    229411  230218
+  NC_001134.8 telomere    1   6608
+  NC_001134.8 telomere    812379  813184
+  NC_001135.5 telomere    1   1098
+  NC_001135.5 telomere    315783  316620
+  NC_001136.10    telomere    1   904
+  NC_001136.10    telomere    1524625 1531933
+  NC_001137.3 telomere    1   6473
+  ...
+        </code></pre>
+    </section>
 
 </section>
+
+
+
+<section 
+    data-background="white" 
+    data-transition="none" 
+    class="future">
+
+    <section>
+        <h4> Notebook 1.2: Genome Databases</h4>
+        FTP allows you to access a file system through your browser.
+        <br><br>
+        <p style="font-size: 0.8em;">
+        The refseq/ directory contains genomes that are <i>annotated</i>,
+        meaning they contain files with information about where genes, and other 
+        genomic features (e.g., telomeres) are located. While we of course
+        hope to learn what all of these features are, you don't need to know 
+        yet. They are simply labeled things in the genome that are marked with
+        a start and stop position.
+
+        <br><br>
+        <a href="https://bit.ly/2EA1iOS">Link to FTP</a>
+
+        </p>
+    </section>
+</section>
+
 
 
 <!-- SLIDE X: Reading review -->
@@ -256,10 +333,27 @@ GATACTGTGATAGGTACGTTATTTAATAGGATCTATAACGAAATgtcaaataattttacgGTAATATAACTTAT
         <img src="./data/Shendure-1.png" style="width: 35%; height: 20%; margin-right: 10%;">    
         <img src="./data/Shendure-2.png" style="width: 35%; height: 20%;">        
     </section>    
+
+    <section 
+        data-transition="none"
+        data-background-iframe="https://www.polleverywhere.com/discourses/PpRJGKOPSpQSHHHNkGc7e?preview=true"
+        style="top:-960px; display: block;" 
+        class="future" 
+        hidden="">       
+    </section>    
+
+
+    <section>       
+        <video data-autoplay src="https://www.youtube.com/watch?v=fCd6B5HRaZ8"></video>
+    </section>
 </section>
 
+
 <!-- Why Python -->
-<section>
+<section 
+    data-background="white" 
+    data-transition="none" 
+    class="future">
 
     <section>
     <h3>Why Python?</h3>
@@ -275,407 +369,17 @@ GATACTGTGATAGGTACGTTATTTAATAGGATCTATAACGAAATgtcaaataattttacgGTAATATAACTTAT
     <img src="https://target.scene7.com/is/image/Target/GUEST_a6546ad7-b1b5-465a-90ad-c5c55fdc9f77?wid=488&hei=488&fmt=pjpeg"
         style="width: 50%; height: 20%;">        
     </section>
-
 </section>
 
 
-<!-- SLIDE 5 (POLL: WHY ARE YOU HERE?) -->
-<section 
-    data-background-iframe="https://www.polleverywhere.com/free_text_polls/QJ4o7fHuEWsxeJJLOfKhJ?preview=true"
-    data-background-interactive data-transition="none"
-    style="top:-960px; display: block;" 
-    class="future" 
-    hidden="">       
-</section>
 
 
-<!-- SLIDE 6 (THE SYLLABUS -- TOPICS) -->
-<section
-    data-background="white" 
-    data-transition="none" 
-    class="future">
 
-    <h4>THE SYLLABUS</h4>
-    <object align="center" data="https://eaton-lab.org/slides/genomics/session-1/data/Syllabus.pdf" type="application/pdf">
-        <iframe src="https://docs.google.com/viewer?url=https://eaton-lab.org/slides/genomics/session-1/data/Syllabus.pdf&embedded=true"
-        width="800"
-        height="600">           
-        </iframe>
-    </object>  
-</section>
-
-
-<!-- SLIDE 7: FIRST TOPICS: WHAT IS THE GENOME AND HISTORY OF GENOMICS -->
-<section class="future" data-transition="none">
-    <h2> Today's topics: </h2>
-    <br>
-    <br>    
-    <h4 style="color:#568259"> Genome Structure </h4>
-    <h4 style="color:#568259"> A Brief History of Genomics</h4>    
-    <h4 style="color:#568259"> An introduction to Codio</h4>        
-</section>
-
-
-<!-- SLIDE 9 (GENOME HISTORY) -->
-<section data-transition="none" class="future" hidden="">
-    <h3> Genome Structure, Genomes, and DNA</h3>
-    <p> Chapter 4 of <emph>Molecular Biology</emph>. </p>
+</div>
+</div>
     
-    <img src="./data/Kelleher-everyone.png" style="width: 60%; height: 20%;">
-    <div class="citation">
-        <a href="https://www.clinicalkey.com/#!/content/book/3-s2.0-B9780128132883000045">
-        Clark 2013</a>
-    </div>
-</section>
-
-
-<!-- SLIDE 9 (GENOME HISTORY) -->
-<section data-transition="none" class="future" hidden="">
-    <h3> We will learn modern genomic methods</h3>
-    <p> Based on reading and discussing the primary literature 
-    <img src="./data/Kelleher-everyone.png" style="width: 60%; height: 20%;">
-    <div class="citation">
-        <a href="https://www.biorxiv.org/content/early/2018/11/01/458067">
-            Kelleher et al. 2018
-        </a>
-    </div>
-</section>
-
-
-<!-- SLIDE 8: CODIO TOUR -->
-<!-- style="top:-960px; display: block;"  -->
-    <!-- class="future"> -->
-<section 
-    data-background-iframe="https://codio.com/home/teacher"
-    data-background-interactive 
-    data-transition="none"
-    >
-</section>
-
-
-<!-- SLIDE 8 -->
-<section>
-    <section data-transition="none">
-        <h3> Hierarchical File System</h3>
-        <p> Always know where you are and where your files are.</p>
-        <pre><code class="bash">
-    # format of unix command line toold
-    <program> [-arg -arg -arg] <input>
-
-    # where am I now?
-    pwd
-
-    # what is here
-    ls
-
-    # what is that folder
-    ls folder/
-
-    # move me into that folder
-    cd folder/
-        </code></pre>
-    </section>
-    <section>
-        Vertical slide 2
-    </section>
-</section>
-
-
-<!-- SLIDE 11 -->
-<!-- data-background-iframe="http://mybinder.org/repo/eaton-lab/toytree" -->
-<section 
-    data-background-iframe="https://jhub.eaton-lab.org"
-    data-background-interactive data-transition="none"
-    style="top:-960px; display: block;" 
-    class="future" 
-    hidden="">       
-</section>
-
-
-
-
-<!-- SLIDE 3 -->
-<section data-background="white" data-transition="none">
-    <pre><code class="python" style="font-size: 18px">
-def get_ref_locus_idxs(self):
-    idxs = []
-
-    with open(self.data) as indata:
-        liter = (indata.read().strip().split("|\n"))
-
-    for idx, loc in enumerate(liter):
-        lines = loc.split("\n")
-        snpline = loc[-1]
-        locidx, chidx, pos = snpline.split("|")[1].split(":")            
-        names = [i.split()[0] for i in lines[:-1]]
-
-    </code></pre>
-    <img class="plain" src="../../2018-CCNY/images/intro-rad.svg" style="width: 863.678px; height: 577px;">
-</section>
-
-
-<!-- SLIDE 4 -->
-<section data-background="8474D1" data-transition="none">
-    <h3>Eaton Lab China expedition 2018</h3>
-    <!-- what happened to class='stretch'? -->
-    <img class="plain" src="images/deren-flags.jpg" style="width: 80%;">
-    <!-- style="width: 863.678px; height: 577px;"> -->
-</section>
-
-
-<section data-background="8474D1" data-transition="none">
-    <h2 style='font-size: 32pt'>Limits on the application of genomics to phylogeny</h2>
-    <img src="../../2018-CCNY/images/intro-rad.svg" style="width: 863.678px; height: 577px;">
-</section>            
-
-
-<!-- SLIDE 5 -->
-<section 
-    data-background-image="images/deren-flags.jpg"
-    data-background-position="center"
-    data-background-size="cover"
-    data-transition="none" 
-    class="future" 
-    hidden="">
-    <div class="fragment grow" style="top:-50%; display: block">
-        <div class="fragment shrink">
-            <h3 style="color: white">Hello world</h3>
-        </div>
-    </div>          
-</section>
-
-
-<!-- SLIDE 6 -->
-<!-- Here transition none is good, text doesn't fly in -->
-<section data-transition="none" style="top: -360px;">
-    <div id='content' style="padding:10%;">
-        <div id='mapcol' style="
-            background-color: #262626;
-            width: 50%; 
-            height: 1000%; 
-            display: inline-block;">
-            Hello world
-        </div>                    
-    </div>
-</section>
-
-
-<!-- SLIDE 7 -->
-<section>
-    <pre><code class="python">
-def wat(x, y):
-    for i in range(x):
-        y += x
-        return y
-    </code></pre>
-</section>
-
-
-<!-- SLIDE 8 -->
-<section>
-    <section data-transition="none">
-        Vertical slide 1
-    </section>
-    <section data-transition="none">
-        Vertical slide 2
-    </section>
-</section>
-
-
-<!-- SLIDE 9: vertical with code -->
-<section 
-    data-background-image="images/yellow-field.jpg"
-    data-transition="none" style="top:-960px; display: block;" class="future" hidden="">
-    <h2>Hello world</h2>
-</section>          
-
-
-<!-- SLIDE 10 -->
-<section 
-    data-background-image="images/patrick-bouquet.jpg"
-    data-background-position="25% 75%"
-    data-background-size="cover"
-    data-transition="none" style="top:-960px; display: block;" class="future" hidden="">
-    <h2>Hello world</h2>
-</section>                      
-
-
-
-<!-- SLIDE 11 -->
-<!-- map -->
-<section data-background-iframe="/home/deren/Dropbox/crano2.html" 
-    data-background-interactive data-transition="none"
-    style="top:-960px; display: block;" class="future" hidden="">       
-</section>
-
-
-<!-- SLIDE 12 -->
-<!-- Could put leaflet css in a stylesheet and then just copy html here? -->
-<section data-background-color="white">
-    <iframe 
-        class="stretch" 
-        align='middle' 
-        data-src="/home/deren/Dropbox/crano2.html">
-    </iframe>
-</section>
-
-
-
-            <!-- 1  -->
-            <!-- split-slide layout [text organized on left] [portrait style image on right] -->
-            <section data-background-color="white">
-                <h2>Slide 1</h2>
-                <img data-src="images/site-logo.svg">
-            </section>
-
-            <!-- photo grid -->
-            <section>
-                <div class="row">
-                  <div class="column">
-                    <img data-src="../../images/pedics/P-P-p-decor.jpg">
-                    <img data-src="../../images/pedics/P-P-p-decor.jpg">
-                    <img data-src="../../images/pedics/P-P-p-dichotoma.jpg">
-                    <img data-src="../../images/pedics/P-P-p-fetisowii.jpg">
-                    <img data-src="../../images/pedics/P-P-p-siphon.jpg">
-                    <img data-src="../../images/pedics/P-P-p-rex.jpg">                                                  
-                  </div>
-                  <div class="column">
-                    <img data-src="../../images/pedics/P-P-p-decor.jpg">
-                    <img data-src="../../images/pedics/P-P-p-decor.jpg">
-                    <img data-src="../../images/pedics/P-P-p-dichotoma.jpg">
-                    <img data-src="../../images/pedics/P-P-p-fetisowii.jpg">
-                    <img data-src="../../images/pedics/P-P-p-siphon.jpg">
-                    <img data-src="../../images/pedics/P-P-p-rex.jpg">
-                  </div>
-                </div>                
-            </section>
-                
-
-            <section>
-
-                <!-- The background splash on the left -->
-                <div style="
-                    background-color: #262626;
-                    width: 100%; 
-                    height: 400%; 
-                    position: absolute; 
-                    top: -100%; 
-                    left: -55%; 
-                    z-index: -1;">
-                </div>
-
-                <div>
-                  <!-- Text on left -->
-                  <div style="
-                    width: 40%; 
-                    display: inline-block; 
-                    margin-right: 60%;         
-                    vertical-align: top;">
-                    <p style="text-align: right;">
-                        <b>2018 sampling in Yunnan and Sichuan provinces, China</b>
-                    </p>
-                  </div>
-                
-                  <div style="
-                    width: 40%; 
-                    margin-right: 60%;
-                    display: inline-block;">
-                    <p style="text-align: left; font-weight: bold;">
-                    <span style="color: rgb(204, 153, 204);">P. integrifolia</span> 
-                    </p>
-
-                    <p style="text-align: left; font-weight: bold;"> 
-                        <span style="color: rgb(204, 153, 204);">return</span>
-                    </p>
-                    <p style="text-align: left; font-weight: bold;"></p>
-                  </div>
-                </div>
-
-                <div class="fragment" style="margin: 50px 0px;">
-                    <div style="width: 50%; display: inline-block; margin-right: 5%; vertical-align: top;">
-                        <p style="text-align: right;">
-                        <b>when curried, will become</b>
-                        </p>
-                    </div>
-                    <div style="width: 40%; display: inline-block;">
-                    </div>
-                </div>
-    
-                <div class="fragment">
-                    <div style="width: 50%; display: inline-block; margin-right: 5%; vertical-align: top;">
-                        <p style="text-align: right;">
-                        <b>a chain of functions, each</b>
-                        </p>
-                        <p style="text-align: right;">
-                        <b>with a single argument</b>
-                        </p>
-                    </div>
-                    
-                    <div style="width: 40%; display: inline-block;">
-                    <p style="text-align: left; font-weight: bold;">
-                    <span style="color: rgb(204, 153, 204);">function<span style="color: rgb(249, 145, 87);">(x)</span>
-                        </span> {</p>
-                        <p style="text-align: left; font-weight: bold;">    <span style="color: rgb(204, 153, 204);">return function<span style="color: rgb(249, 145, 87);">(y)</span>
-                    </span> {</p>
-                    <p style="text-align: left; font-weight: bold;">        <span style="color: rgb(204, 153, 204);">return</span> x + y;</p>
-                    <p style="text-align: left; font-weight: bold;">    };</p>
-                    <p style="text-align: left; font-weight: bold;">}</p>
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- 2  -->
-            <section data-transition="none" style="top:-360px; display: block;" class="future" hidden="">    <h3>Toytree documentation</h3>
-                <iframe class="stretch" align='middle' data-src="https://toytree.rtfd.io"></iframe>
-            </section>
-
-            <!--  -->
-            <section data-transition="none" style="top:-60px; display: block;" class="future" hidden="">        
-                <h3>Toytree documentation</h3>
-                <img class="stretch" data-src="/home/deren/Dropbox/ref-dhighsub-m4-f5k.tetrad.html">
-            </section>
-
-            <!--  -->
-            <section data-background-iframe="/home/deren/Dropbox/ref-dhighsub-m4-f5k.tetrad.html" data-transition="none" style="top:-960px; display: block;" class="future" hidden="">
-                <h2>Hello world</h2>
-            </section>
-
-            <!--  -->
-            <section data-background-image="https://eaton-lab.org/images/pedics/p-decor.jpg">
-                <h2 class='title'>Pedicularis</h2>
-                <div style="width: 800px; height: 550px;"></div>            
-                <div class="citation">
-                    <a href="http://mbe.oxfordjournals.org/content/22/5/1185.short">
-                        Drummond et al. 2005
-                    </a>
-                </div>
-            </section>
-
-            <!-- 3  -->
-            <section>
-                <h3>Fading</h3>
-                <span class='fragment fade-in' data-fragment-index='1'>
-                    <h4>hello</h4>
-                </span>
-                <p class="fragment highlight-current-blue" data-fragment-index='2'> heereree</p>
-            </section>
-
-            <!-- 4 -->
-            <section data-background-iframe="https://eaton-lab.org" data-background-interactive             data-transition="none" style="top:-960px; display: block;" class="future" hidden="">                    
-            </section>
-
-            <!--  -->
-            <section 
-                <h2 fill='white'>YEEP</h2>
-            </section>
-
-
-            </div>
-        </div>
-        
-        <!-- <div class="slide-number"></div> -->
-        <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
 
 
         <!-- JAVASCRIPT -->
