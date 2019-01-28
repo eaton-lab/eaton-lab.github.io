@@ -33,86 +33,249 @@
     <div style="margin-left: auto; margin-top: 20%">
     <h2 class="title">Principles and Applications of Modern DNA Sequencing</h2>
     <p style="color: lightgrey"> EEEB GU4055</p>
-    <h5 style="color: white">Session 2: Introduction to Python, Genomic Data, and Text</h4>
+    <h5 style="color: white">Session 2: Intro to Genomics and Python</h5>
     <br>
     </div>
 </section>
 
-
-<!-- SLIDE 1 (OBJECTIVE)-->
+<!-- SLIDE 1 (what are we doing today?)-->
 <section
     data-background="white" 
     data-transition="none" 
     class="future"
     style="top: -20px; display: none;" 
     hidden="">
-    <h3> The objective of this course </h3>
-    <img src="./data/xkcd-dna.png" style="width: 70%; height: 20%;">
+    <h3> Today's topics </h3>
+
     <br>
-    <p> <b>Genome sequencing</b> has revolutionized biological research, but 
-        learning to apply genomics to answer biological questions requires both
-        bioinformatics skills and an understanding of genetics.
-    </p>   
+    <p style='font-size:0.9em; 
+    text-align: left; margin-left: 100px; margin-right: 100px'>
+        <br>
+        1. Review notebook assignments.
+        <br><br>
+        2. Discuss the assigned reading.
+        <br><br>
+        3. Introduction to Python.
+        <br><br>
+    </p>
+</section>
+
+
+<!-- SLIDE 2 (warning about being left behind)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    hidden="">
+    <h3> A general note on coding assignments </h3>
+
+    <br>
+    <p style='font-size:0.9em;'> 
+        "I didn't really understand it, can I just move on without learning
+        the subject from this unit?"
+    <br>
+    <br>
+    <span style=color:red>
+        No, most assignments will build on earlier lessons. If you do not 
+        learn the basics now you will get lost later on. 
+        Please attend office hours to seek help if you fall behind.
+    </span>                  
+    </p>
 </section> 
 
 
-<!-- SLIDE 2 (LEARN LITERATURE) -->
-<section data-transition="none" class="future" hidden="">
-    <h3> We will learn modern genomic methods</h3>
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <section>
+        <h3> Notebook 1.0: Intro to jupyter (in codio)</h3>
+        <br>
+        <p> We completed this in class, but did you have difficulty on your 
+            own either with jupyter or jupyter in codio?
+        </p>   
+        <img src="./data/jupyter-celltype.gif" style="width: 95%; height: 25%;">    
+    </section>
+
+    <section>
+        <h3> The unix command line</h3>
+        <p style="font-size:0.75em"> Lines starting with hash (#) are only comments</p>       
+        <pre><code class="bash">
+  # This is the general format of unix command line tools
+  $ program -option1 -option2 target
+        </pre></code>
+
+        <p style="font-size:0.75em"> An example command line program </p>       
+        <pre><code class="bash">
+  # e.g., the 'pwd' program with no option or target prints your cur dir
+  $ pwd
+        </code></pre>
+        <pre><code class="bash" style="background: grey">    /home/deren/        </code></pre>
+    </section>
+
+
+    <section>
+        <h3> The unix command line</h3>
+        <!-- <p style="font-size:0.75em"> An example command with options and target</p>        -->
+        <pre><code class="bash">
+  # The echo command prints text to the screen (stdout)
+  $ echo "hello\tworld"
+        </pre></code>
+        <pre><code class="bash" style="background: grey">
+  hello\tworld        
+       </code></pre>        
+
+        <p style="font-size:0.75em"> An example with option -e </p>       
+        <pre><code class="bash">
+  # The -e option renders special characters as well (e.g., tab)
+  $ echo -e "hello\tworld"
+        </code></pre>
+        <pre><code class="bash" style="background: grey">
+  hello    world        
+        </code></pre>
+    </section>
+
+
+    <section>
+    <h3> Executing bash code in jupyter </h3>
     <p style='font-size:0.85em;'> 
-        Based on readings and discussions from the primary literature (free).
+        Use the `%%head` header to execute entire jupyter cell as bash code:
     </p>
-    <img src="./data/Kelleher-everyone.png" style="width: 60%; height: 20%;">
-    <div class="citation">
-        <a href="https://www.biorxiv.org/content/early/2018/11/01/458067">
-            Kelleher et al. 2018
-        </a>
-    </div>
+        <pre><code class="bash">
+  %%bash
+  echo -e "hello\tworld"
+        </code></pre>
+        <pre><code class="bash" style="background: grey">
+  hello    world        
+        </code></pre>
+    </section>
+
+
+    <section>
+    <h3> Errors and exceptions </h3>
+    <p style='font-size:0.85em;'> 
+        When an error is detected the Python interpreter will return a message
+        to the cell output with a hint about the error. 
+        <br><br>
+        For example, if we
+        tried to execute bash code in a Python cell:
+    </p>
+        <pre><code class="bash">
+  # we forgot the %%bash header, the code below is not valid Python.
+  echo -e "hello\tworld"
+        </code></pre>
+        <pre><code class="bash" style="background: grey">
+  File "ipython-input-458-239334a501c4", line 1
+    echo -e "hello\tworld"
+                  ^
+  SyntaxError: invalid syntax
+        </code></pre>
+    </section>
 </section>
 
 
-<!-- SLIDE 3 (LEARN SKILLS) -->
+<!-- SLIDE 4 (notebook 1.1 review) -->
 <section data-transition="none" class="future" hidden="">
-    <h3> And we will learn to apply modern genomic methods</h3>
-    <p> Through computational exercises in class and as assignments.
-    <pre><code class="python">
-    # simulate a chromosome from a coalescent tree_sequence 
-    tree_sequence = ms.simulate(
-        sample_size=1000, 
-        length=int(1e5),
-        Ne=int(1e5),
-        mutation_rate=1e-9,
-        recombination_rate=1e-10, 
-        random_seed=10,
-        )
 
-    ## calculate linkage disequilibrium across the chromosome
-    ldx = ms.LdCalculator(tree_sequence).get_r2_matrix()
+    <section>
+    <h3> Notebook 1.1: bash-genomes </h3>
+    <img src="./data/yeast-genome.png" style="width: 90%; height: 20%;">    
+    </section>
+
+    <section>
+    <h3> Notebook 1.1: bash-genomes </h3>
+    <p style='font-size:0.9em;'> 
+        What is a reference genome? A fasta file.
+    </p>
+    <pre><code class="bash">
+>NC_001133.9 Saccharomyces cerevisiae S288C chromosome I, complete sequence
+ccacaccacacccacacacccacacaccacaccacacaccacaccacacccacacacacacatCCTAACACTAC
+ACAGCCCTAATCTAACCCTGGCCAACCTGTCTCTCAACTTACCCTCCATTACCCTGCCTCCACTCGTTACCCTG
+TCAACCATACCACTCCGAACCACCATCCATCCCTCTACTTACTACCACTCACCCACCGTTACCCTCCAATTACC
+CAACCCACTGCCACTTACCCTACCATTACCCTACCATCCACCATGACCTACTCACCATACTGTTCTTCTACCCA
+TGAAACGCTAACAAATGATCGTAAATAACACACACGTGCTTACCCTACCACTTTATACCACCACCACATGCCAT
+CCTCACTTGTATACTGATTTTACGTACGCACACGGATGCTACAGTATATACCATCTCAAACTTACCCTACTCTC
+CACTTCACTCCATGGCCCATCTCTCACTGAATCAGTACCAAATGCACTCACATCATTATGCACGGCACTTGCCT
+TCTATACCCTGTGCCATTTACCCATAACGCCCATCATTATCCACATTTTGATATCTATATCTCATTCGGCGGTc
+attgtataaCTGCCCTTAATACATACGTTATACCACTTTTGCACCATATACTTACCACTCCATTTATATACACT
+AATATTACAGAAAAATCCCCACAAAAATCacctaaacataaaaatattctacttttcaacaataataCATAAAC
+GCTTGTGGTAGCAACACTATCATGGTATCACTAACGTAAAAGTTCCTCAATATTGCAATTTGCTTGAACGGATG
+CAGAATATTTCGTACTTACACAGGCCATACATTAGAATAATATGTCACATCACTGTCGTAACACTCTTTATTCA
+AATAATACGGTAGTGGCTCAAACTCATGCGGGTGCTATGATACAATTATATCTTATTTCCATTCCCATATGCTA
+ATATCCTAAAAGCATAACTGATGCATCTTTAATCTTGTATGTGACACTACTCATACGAAGGGACTATATCTAGT
+GATACTGTGATAGGTACGTTATTTAATAGGATCTATAACGAAATgtcaaataattttacgGTAATATAACTTAT
     </code></pre>
+    </section>
+
+    <section>
+        <h3> The yeast genome </h3>
+        <p style='font-size:0.9em;'> 
+        An assembly of strain S288C of Saccharomyces cerevisiae.
+        What is a reference genome? 
+        </p>
+
+    </section>
+
+
+    <section>
+        <br>
+        <img src="./data/yeast-ngenes2.png" style="width: 90%; height: 30%;">          
+    </section>
+
+    <section>
+        <!-- <h3>A quiz about reference genomes</h3> -->
+        <img src="./data/yeast-ngenes.png" style="width: 70%; height: 30%;">
+    </section>       
+
+    <section>       
+        The GFF file format. We will revisit this in the next assignment.
+        <img src="./data/GFF-structure.png" style="width: 70%; height: 30%;">        
+    </section> 
+
+
 </section>
 
 
-<!-- SLIDE 4 (OUR LEARNING OBJECTIVES)-->
+<!-- SLIDE X: Reading review -->
 <section 
     data-background="white" 
     data-transition="none" 
     class="future">
-    <h2>Learning objectives</h2>
-    <br>
-    <div align='left'>
-    <p> 
-        Learn to design, conduct, and analyze genomic experiments. By the end 
-        of class you should be able to: 
-    <p>
-    <p style="font-size:0.75em; color:#568259; font-weight:400; line-height:2.2em;">        
-    <br>
-    1. Describe the structure of genomes and how information is represented in them.
-    <br>
-    2. Choose appropriate sequencing techniques for genomic experiments.
-    <br>
-    3. Analyze genomic data using computational methods.
-    </p>
-    </div>
+
+    <section>
+        <h2>Assigned reading</h2>        
+        <img src="./data/Shendure-title.png" style="width: 99%; height: 30%;">            
+    </section>
+
+    <section>
+        <h2>Assigned reading</h2>
+        <img src="./data/Shendure-1.png" style="width: 35%; height: 20%; margin-right: 10%;">    
+        <img src="./data/Shendure-2.png" style="width: 35%; height: 20%;">        
+    </section>    
+</section>
+
+<!-- Why Python -->
+<section>
+
+    <section>
+    <h3>Why Python?</h3>
+    Is it fast enough?
+    <img src="https://i.ytimg.com/vi/3Q5jg-2zwpM/maxresdefault.jpg" 
+        style="width: 80%; height: 20%;">        
+    </section>
+
+    <section>
+    <h3>Why Python?</h3>
+    Easy to use, readable, extendable (e.g., C/C++ bindings), mature.
+    Python is often the glue that binds programs/code/web.
+    <img src="https://target.scene7.com/is/image/Target/GUEST_a6546ad7-b1b5-465a-90ad-c5c55fdc9f77?wid=488&hei=488&fmt=pjpeg"
+        style="width: 50%; height: 20%;">        
+    </section>
+
 </section>
 
 
