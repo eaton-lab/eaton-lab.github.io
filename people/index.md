@@ -47,6 +47,19 @@ University of Georgia where she studied <i>Wisteria</i> and
 <i>Kudzu</i> and worked on the development of new genomic library protocols 
 3RAD and RADcap. 
 
+<br>
+<img src="{{ site.url }}/images/Carlos-photo.jpg"
+     class="people-photo" 
+     alt="Sandra bio photo">
+<span style="font-weight:bold">Carlos Alonso Maya Lastra</span> ([cam2384@columbia.edu](mailto:cam2384@columbia.edu)) joined the lab
+in 2019 as an Postdoctoral Researcher. Carlos is a computational biologist, 
+botanist, and systematist. His research interests include Euphorbiaceae 
+phylogeny and systematics of Cnidoscolus (More info: 
+[http://camayal.info/](http://camayal.info/)). He is working in the Eaton 
+lab to investigate phylogeny and introgression in Viburnum using genomic 
+RAD-seq data, and on modeling speciation and gene flow of wild and 
+domesticated crop species using forward-in-time simulations. Carlos 
+completed his PhD in 2018 from the Institute of Ecology in Xalapa, Mexico. 
 
 <br>
 <hr>
