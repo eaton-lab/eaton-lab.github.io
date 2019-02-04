@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Session-4</title>
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width: 960px; height: 720px; transform: translate(-50%, -50%) scale(0.969792) translate(50%, 50%);">
+
+<!-- ###################################################################### -->
+
+
+<!-- SLIDE 0 (TITLE) -->
+<section 
+	data-background="#262626" 
+ 	style="top:300.5px; display:block;"
+ 	class="present">
+    <div style="margin-left: auto; margin-top: 20%">
+    <h2 class="title">Principles and Applications of Modern DNA Sequencing</h2>
+    <p style="color: lightgrey"> EEEB GU4055</p>
+    <h5 style="color: white">Session 4: BLAST and Homology</h5>
+    <br>
+    </div>
+</section>
+
+<!-- SLIDE 1 (what are we doing today?)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+    <h3> Today's topics </h3>
+
+    <br>
+    <p style='font-size:0.9em; 
+    text-align: left; margin-left: 100px; margin-right: 100px'>
+        <br>
+        1. Review notebook assignments: Scientific Python.
+        <br><br>
+        2. Discuss the assigned reading: Genome Annotation.
+        <br><br>
+        3. Introduce new topic: BLAST & Homology.
+        <br><br>
+    </p>
+</section>
+
+
+<!-- SLIDE 2 (warning about being left behind)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    hidden="">
+
+    <h3> A general note on coding assignments </h3>
+
+    <br>
+    <p style='font-size:0.9em;'> 
+    "I'm having trouble learning Python, am I completely lost?
+    <br>
+    <br>
+    <span style='color:red;'>No</span>, we expect you to learn through 
+    experience. Keep <i>trying</i> to complete the exercises. 
+    Run the notebooks again with the posted answers. Seek out help. 
+    As we said, most future exercises will recycle and reuse the coding 
+    concepts that we've learned so far. 
+    </p>
+</section> 
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <section>
+        <h3> Notebook 2.3: Files</h3>
+        <p style="font-size:0.75em"> 
+        Open and close files in Python.
+        </p>       
+        <pre><code class="python">
+  # Open a file object
+  infile = open("./datafiles/data.txt", "r")
+
+  # read data as a string
+  data = infile.read()
+
+  # close the file object
+  infile.close()
+        </pre></code>
+
+        <pre><code class="python">
+  # A simpler alternative
+  with open("./datafiles/data.txt", 'r') as infile:
+      data = infile.read()
+        </code></pre>
+    </section>
+
+    <section>
+        <h3> Notebook 2.3: Files</h3>
+        <p style="font-size:0.75em"> 
+        Open and close files in Python.
+        </p>       
+        <pre><code class="python">
+  # Open a file object for writing
+  outfile = open("./datafiles/data.txt", "w")
+
+  # write data as a string
+  outfile.write("hello world")
+
+  # close the file object
+  outfile.close()
+        </pre></code>
+
+        <pre><code class="python">
+  # A simpler alternative
+  with open("./datafiles/data.txt", 'w') as outfile:
+      outfile.write("hello world")
+        </code></pre>
+    </section>
+
+</section>
+
+
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <section>
+        <h3> Notebook 3.0: Dictionaries</h3>
+        <p style="font-size:0.75em"> 
+        Python objects.
+        </p>       
+        <pre><code class="python">
+  # Dictionaries are used to store key/value pairs
+  {"a key": ["and value in a dictionary"]}
+        </pre></code>
+
+        <pre><code class="python">
+  # dicts can be created using curly brackets or the dict() func.
+  dict([("a", 3), ("b", 4), ("c", 5)])
+        </code></pre>
+    </section>
+
+
+   <section>
+        <h3> Notebook 3.0: Dictionaries</h3>
+        <p style="font-size:0.75em"> 
+        List comprehension methods: a shortcut.
+        </p>       
+        <pre><code class="python">
+  # list-comprehension example for list objects
+  newlist = [i for i in range(10)]
+  newlist          
+        </pre></code>
+        <pre><code class="python" style="background: grey">
+  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        </code></pre>
+
+        <pre><code class="python">
+  # list comprehension for a dictionary from a list of lists
+  ddict = {i: j for (i, j) in [['a', 1], ['b', 2], ['c', 3]]}
+  ddict
+        </code></pre>
+        <pre><code class="python" style="background: grey">
+  {'a': 1, 'b': 2, 'c': 3}
+        </code></pre>
+
+    </section>
+
+
+    <section>
+        <h3> Notebook 3.0: Dictionaries</h3>
+        <p style="font-size:0.75em; background-color: #b7e2c0; color: #3a6944"> 
+    Action 1:
+    Add comments to the code below.        </p>
+        <pre><code class="python" style="max-height: 510px">
+# comment: import the random library
+import random
+
+# comment: create ea list with 1000 random numbers between 0-10
+integer_list = [random.randint(0, 10) for i in range(1000)]
+
+# comment: create an empty dictionary
+counter = {}
+
+# comment: iterate over elements of the integer list
+for item in integer_list:
+    
+    # comment: conditional True if item is not already in the dict keys
+    if item not in counter:
+        # comment: set the value to 1 for this key
+        counter[item] = 1
+    
+    # comment: item is already in dict keys 
+    else:
+        # comment: increment value by 1 for this key
+        counter[item] += 1
+        </pre></code>
+    </section>
+</section>
+
+
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <section>
+        <h4> Notebook 3.1: Transcription & Translation</h4>
+        <pre><code class="python" style="max-height: 525px">
+  GENCODE = {
+      'ATA': 'I', 'ATC': 'I', 'ATT': 'I', 'ATG': 'M', 
+      'ACA': 'T', 'ACC': 'T', 'ACG': 'T', 'ACT': 'T', 
+      'AAC': 'N', 'AAT': 'N', 'AAA': 'K', 'AAG': 'K', 
+      'AGC': 'S', 'AGT': 'S', 'AGA': 'R', 'AGG': 'R',                  
+      'CTA': 'L', 'CTC': 'L', 'CTG': 'L', 'CTT': 'L', 
+      'CCA': 'P', 'CCC': 'P', 'CCG': 'P', 'CCT': 'P', 
+      'CAC': 'H', 'CAT': 'H', 'CAA': 'Q', 'CAG': 'Q', 
+      'CGA': 'R', 'CGC': 'R', 'CGG': 'R', 'CGT': 'R', 
+      'GTA': 'V', 'GTC': 'V', 'GTG': 'V', 'GTT': 'V', 
+      'GCA': 'A', 'GCC': 'A', 'GCG': 'A', 'GCT': 'A', 
+      'GAC': 'D', 'GAT': 'D', 'GAA': 'E', 'GAG': 'E', 
+      'GGA': 'G', 'GGC': 'G', 'GGG': 'G', 'GGT': 'G', 
+      'TCA': 'S', 'TCC': 'S', 'TCG': 'S', 'TCT': 'S', 
+      'TTC': 'F', 'TTT': 'F', 'TTA': 'L', 'TTG': 'L', 
+      'TAC': 'Y', 'TAT': 'Y', 'TAA': '_', 'TAG': '_', 
+      'TGC': 'C', 'TGT': 'C', 'TGA': '_', 'TGG': 'W', 
+  } 
+
+  # get amino acid for a particular codon
+  GENCODE["CTA"]
+        </code></pre>    
+        <pre><code class="python" style="background: grey">        
+  "L"
+        </code></pre>
+    </section>  
+
+
+    <section>
+        <h4> Notebook 3.1: Transcription & Translation</h4>
+        <p style="font-size:0.75em;">
+    Create a string of DNA with a coding block between two non-coding blocks.
+        </p>
+        <pre><code class="python">
+  # use a random seed so we will all draw the same random values each time (repeatable) 
+  random.seed(12345)
+
+  # create a genomic region containing a coding region surrounded by non-coding DNA
+  region = random_dna(300) + "ATG" + random_coding_dna(100) + "TGA" +  random_dna(300)
+  region
+        </code></pre>    
+
+        <pre><code class="python" style="background: grey">        
+  'TAGGCGTCGATGCCGATCCCACGGATGATAACCGATACTCGACATCCGTCACGACCGGCTGAAATATCAGCATAATGTCGACATCGCCCCGCAACATCAGTATTCCCAGGCTCCCTTGAATCCCCGGCAGTAGAACGAGTGTGTGGTTAGTACGCAAAACTTCGGCGGTAGGATCCACGCGTCACAAGTGACATCCGGCGAAACTACGCTTTAGATGAGTTAGGTGCTAATAACAAGCATTTATCCGCTCTCCCCTACAAAAGCCGCTGTTCTAAGCTTATTAGCTGTACCTGCAGATGCATGTCTGATCCAATCGGTCAACACAGATGGGCACTCAGGACGTGTTCTAGACTCTGTGCAATAATCAAAGCCGCGTCTTGGTCTAATCCGAGAAATTTAGACGACCCAGTCCTTATCAGACGACAATGTGGAGCGCAATCTGAAGATGGTGAGTTCCGCGCCGCACTGGTCCTTGTTACCGAGCGTTTGGGCCGTTGTGAAAAGTGCCGAACAGGGACTGGTTGCTTAAACCTGGAGCCCTATCAGGGTCAACGTACGCATGGCGAAAACTCACGAAGGGACATATCCCGGAAAGATATACCTTGACGCTCGGGTAGCTAGTTCGGCTTATGCTTCGTGCTGACCAATCGACCAAGGCGGGGTAATTGCGACGACCCGCGGAACCACAACTTTACCCTAGACAAGCGGCGCGTAGCGTCCTATCGCCGGGAGTCTAACTCAAATCATATGGCCCATCGCAGTGCGTGAGTTTTATTCAGCCCACCCCAACAAGAGATCGAAATAGTAATCTGTCTCTCTGCTATGATGAGACAATGTCCGTACACTCACTACTTGTTGTACAGTAGATATTCAACCTTAGTGGTTGGTACCTTAGGGTGGGCGAAT'
+        </code></pre>
+    </section>        
+
+
+    <section>
+        <h4> Notebook 3.1: Transcription & Translation</h4>
+        <p style="font-size:0.65em;">
+        </p>
+        <pre><code class="python" style="margin: 10px auto; ">
+  # find the first occurrence 
+  region.index("ATG")
+
+  # 9
+        </pre></code>
+
+        <pre><code class="python">
+  # split on ATG and count items in the resulting list
+  len(region.split("ATG"))
+
+  # 16
+        </pre></code>
+
+        <pre><code class="python">
+  # best: get a list with every ATG start position
+  starts = [i for (i, j) in enumerate(region) if region[i: i+3] == "ATG"]
+
+  # [9, 24, 74, 214, 296, 300, 326, 425, 445, 559, 629, 747, 822, 825, 833]
+        </pre></code>
+    </section>
+</section>
+
+
+
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <section>
+        <h4> Notebook 3.2: Numpy arrays</h4>
+        <pre><code class="python" style="max-height: 525px">
+# create a 3-dimensional array
+np.zeros((5, 3, 3))
+        </code></pre>    
+        <pre><code class="python" style="background: grey; max-height: 500px">        
+array([[[0., 0., 0.],
+        [0., 0., 0.],
+        [0., 0., 0.]],
+
+       [[0., 0., 0.],
+        [0., 0., 0.],
+        [0., 0., 0.]],
+
+       [[0., 0., 0.],
+        [0., 0., 0.],
+        [0., 0., 0.]],
+
+       [[0., 0., 0.],
+        [0., 0., 0.],
+        [0., 0., 0.]],
+
+       [[0., 0., 0.],
+        [0., 0., 0.],
+        [0., 0., 0.]]])
+        </code></pre>
+    </section>  
+</section>
+
+
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <section>
+        <h4> Notebook 3.3: Pandas DataFrames</h4>
+        <pre><code class="python" style="max-height: 525px">
+# create an array with randomly generated values 
+df = pd.DataFrame({
+    "column1": np.random.normal(0, 1, 10),
+    "column2": np.random.choice(list("ACGT"), 10), 
+    "column3": np.random.randint(0, 5, 10),
+})
+
+# return the dataframe
+df
+        </code></pre>    
+        <pre><code class="python" style="background: grey; max-height: 500px">        
+
+  column1   column2   column3
+0   1.633686    T   4
+1   0.071054    G   4
+2   -0.201375   T   0
+3   0.461895    A   3
+4   -1.480207   G   2
+5   -0.729692   C   0
+6   -0.143699   A   4
+7   -1.108858   G   2
+8   -1.704039   A   1
+9   -2.760000   A   1
+
+        </code></pre>
+    </section>  
+</section>
+
+
+<section 
+        data-transition="none"
+        data-background-iframe="
+        https://www.polleverywhere.com/discourses/cT0SRI5zxcRR7nmKa951a?preview=true"
+        style="top:-960px; display: block;" 
+        class="future" 
+        hidden="">       
+</section>    
+
+
+<section>
+    <h4> Assignment</h4>
+    <br>
+    <p style="font-size:0.75em;">
+    Complete Unit 4 on Codio: 2 notebooks.
+    <br>
+    <br>
+    “OrthoDB: A Hierarchical Catalog of Animal, Fungal and Bacterial Orthologs.” Nucleic Acids Research 41 (Database issue): D358–65. 
+    <a href="https://doi.org/10.1093/nar/gks1116">https://doi.org/10.1093/nar/gks1116</a>   
+    </p>
+</section>
+
+
+</div>
+</div>
+    
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+
+
+        <!-- JAVASCRIPT -->
+        <script src="../../reveal/lib/js/head.min.js"></script>        
+        <script src="../../reveal/js/reveal.js"></script>
+        <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+        <script>
+            Reveal.initialize({
+                controls:true, 
+                progress:false, 
+                loop:true, 
+                history:true,
+                center:false,
+                fragmentInURL:true,
+                margin:.05,
+                minScale:0.1,
+                maxScale:5,
+                width:960,
+                height:720,
+                theme:Reveal.getQueryHash().theme,
+                transition:Reveal.getQueryHash().transition||"linear",
+                // slideNumber: true,
+                // slideNumber: "h/v",
+                dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                ]
+            });
+
+            // Reveal.configure({ slideNumber: true })
+            // Reveal.configure({ slideNumber: "c/t" })            
+
+            // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+        </script>
+    </body>
+</html>
