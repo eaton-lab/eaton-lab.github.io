@@ -1,0 +1,1388 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   class="toyplot-canvas-Canvas"
+   height="350.0px"
+   id="t8747047d37654a2db841bec6d39e7531"
+   preserveAspectRatio="xMidYMid meet"
+   style="background-color:transparent;border-color:#292724;border-style:none;border-width:1.0;fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:Helvetica;font-size:12px;opacity:1.0;stroke:rgb(16.1%,15.3%,14.1%);stroke-opacity:1.0;stroke-width:1.0"
+   viewBox="0 0 375.0 350.0"
+   width="375.0px"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="crano-tree-tubes-colors.svg">
+  <metadata
+     id="metadata566">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs564" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview562"
+     showgrid="false"
+     inkscape:zoom="1.3485714"
+     inkscape:cx="170.87014"
+     inkscape:cy="119.41913"
+     inkscape:window-x="502"
+     inkscape:window-y="245"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="t8747047d37654a2db841bec6d39e7531" />
+  <g
+     class="toyplot-coordinates-Cartesian"
+     id="t6f7d3cba4634455e811304f670566be0">
+    <clipPath
+       id="t5b9d3239c0ab45fc8145f1b68bc9efda">
+      <rect
+         height="290.0"
+         width="215.0"
+         x="30.0"
+         y="30.0"
+         id="rect5" />
+    </clipPath>
+    <g
+       clip-path="url(#t5b9d3239c0ab45fc8145f1b68bc9efda)"
+       id="g7">
+      <g
+         class="toyplot-mark-Text"
+         id="t2698529c3823421b935e3c6d8393c65a">
+        <g
+           class="toyplot-Series"
+           id="g10">
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45454545454544,293.73100303951367)"
+             id="g12">
+            <text
+               style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre"
+               x="15.0"
+               y="2.8104999999999993"
+               id="text14">s9</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45454545454544,276.76943117672596)"
+             id="g16">
+            <text
+               style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre"
+               x="15.0"
+               y="2.8104999999999993"
+               id="text18">s10</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45454545454544,259.8078593139383)"
+             id="g20">
+            <text
+               style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre"
+               x="15.0"
+               y="2.8104999999999993"
+               id="text22">s11</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45454545454544,242.84628745115066)"
+             id="g24">
+            <text
+               style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre"
+               x="15.0"
+               y="2.8104999999999993"
+               id="text26">s12</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45454545454544,225.88471558836298)"
+             id="g28">
+            <text
+               style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre"
+               x="15.0"
+               y="2.8104999999999993"
+               id="text30">s15</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45454545454544,208.92314372557533)"
+             id="g32">
+            <text
+               style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre"
+               x="15.0"
+               y="2.8104999999999993"
+               id="text34">s18</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45454545454544,191.96157186278768)"
+             id="g36">
+            <text
+               style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre"
+               x="15.0"
+               y="2.8104999999999993"
+               id="text38">s8</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45454545454544,175.0)"
+             id="g40">
+            <text
+               style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre"
+               x="15.0"
+               y="2.8104999999999993"
+               id="text42">s6</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45454545454544,158.03842813721235)"
+             id="g44">
+            <text
+               style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre"
+               x="15.0"
+               y="2.8104999999999993"
+               id="text46">s4</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45454545454544,141.07685627442467)"
+             id="g48">
+            <text
+               style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre"
+               x="15.0"
+               y="2.8104999999999993"
+               id="text50">s26</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45454545454544,124.11528441163702)"
+             id="g52">
+            <text
+               style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre"
+               x="15.0"
+               y="2.8104999999999993"
+               id="text54">s24</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45454545454544,107.15371254884936)"
+             id="g56">
+            <text
+               style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre"
+               x="15.0"
+               y="2.8104999999999993"
+               id="text58">s1</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45454545454544,90.19214068606166)"
+             id="g60">
+            <text
+               style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre"
+               x="15.0"
+               y="2.8104999999999993"
+               id="text62">s22</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45454545454544,73.23056882327401)"
+             id="g64">
+            <text
+               style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre"
+               x="15.0"
+               y="2.8104999999999993"
+               id="text66">s23</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45454545454544,56.268996960486355)"
+             id="g68">
+            <text
+               style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre"
+               x="15.0"
+               y="2.8104999999999993"
+               id="text70">s19</text>
+          </g>
+        </g>
+      </g>
+      <g
+         class="toyplot-mark-Graph"
+         id="tbd7ff660ae7844adab6feeea93add995">
+        <g
+           class="toyplot-Edges"
+           id="g73">
+          <path
+             d="M 50.0 68.9901758575771 L 113.63636363636364 68.9901758575771"
+             style="fill:none;opacity:1;stroke:rgb(98.8%,55.3%,38.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path75" />
+          <path
+             d="M 50.0 153.2679860508033 L 65.9090909090909 153.2679860508033"
+             style="fill:none;opacity:1;stroke:rgb(14.9%,14.9%,14.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path77" />
+          <path
+             d="M 113.63636363636364 56.268996960486355 L 145.45454545454544 56.268996960486355"
+             style="fill:none;opacity:1;stroke:rgb(98.8%,55.3%,38.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path79" />
+          <path
+             d="M 113.63636363636364 81.71135475466787 L 129.54545454545453 81.71135475466787"
+             style="fill:none;opacity:1;stroke:rgb(98.8%,55.3%,38.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path81" />
+          <path
+             d="M 65.9090909090909 107.15371254884936 L 145.45454545454544 107.15371254884936"
+             style="fill:none;opacity:1;stroke:rgb(90.6%,54.1%,76.5%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path83" />
+          <path
+             d="M 65.9090909090909 199.38225955275732 L 81.81818181818181 199.38225955275732"
+             style="fill:none;opacity:1;stroke:rgb(14.9%,14.9%,14.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path85" />
+          <path
+             d="M 129.54545454545453 73.23056882327401 L 145.45454545454544 73.23056882327401"
+             style="fill:none;opacity:1;stroke:rgb(98.8%,55.3%,38.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path87" />
+          <path
+             d="M 129.54545454545453 90.19214068606166 L 145.45454545454544 90.19214068606166"
+             style="fill:none;opacity:1;stroke:rgb(98.8%,55.3%,38.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path89" />
+          <path
+             d="M 81.81818181818181 151.67783868866695 L 97.72727272727272 151.67783868866695"
+             style="fill:none;opacity:1;stroke:rgb(14.9%,14.9%,14.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path91" />
+          <path
+             d="M 81.81818181818181 247.08668041684757 L 97.72727272727272 247.08668041684757"
+             style="fill:none;opacity:1;stroke:rgb(14.9%,14.9%,14.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path93" />
+          <path
+             d="M 97.72727272727272 132.59607034303085 L 129.54545454545453 132.59607034303085"
+             style="fill:none;opacity:1;stroke:rgb(65.1%,84.7%,32.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path95" />
+          <path
+             d="M 97.72727272727272 170.75960703430312 L 113.63636363636364 170.75960703430312"
+             style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path97" />
+          <path
+             d="M 97.72727272727272 221.6443226226661 L 113.63636363636364 221.6443226226661"
+             style="fill:none;opacity:1;stroke:rgb(55.3%,62.7%,79.6%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path99" />
+          <path
+             d="M 97.72727272727272 272.52903821102905 L 113.63636363636364 272.52903821102905"
+             style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path101" />
+          <path
+             d="M 129.54545454545453 124.11528441163702 L 145.45454545454544 124.11528441163702"
+             style="fill:none;opacity:1;stroke:rgb(65.1%,84.7%,32.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path103" />
+          <path
+             d="M 129.54545454545453 141.07685627442467 L 145.45454545454544 141.07685627442467"
+             style="fill:none;opacity:1;stroke:rgb(65.1%,84.7%,32.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path105" />
+          <path
+             d="M 113.63636363636364 158.03842813721235 L 145.45454545454544 158.03842813721235"
+             style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path107" />
+          <path
+             d="M 113.63636363636364 183.48078593139383 L 129.54545454545453 183.48078593139383"
+             style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path109" />
+          <path
+             d="M 113.63636363636364 208.92314372557533 L 145.45454545454544 208.92314372557533"
+             style="fill:none;opacity:1;stroke:rgb(55.3%,62.7%,79.6%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path111" />
+          <path
+             d="M 113.63636363636364 234.36550151975683 L 129.54545454545453 234.36550151975683"
+             style="fill:none;opacity:1;stroke:rgb(55.3%,62.7%,79.6%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path113" />
+          <path
+             d="M 113.63636363636364 259.8078593139383 L 145.45454545454544 259.8078593139383"
+             style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path115" />
+          <path
+             d="M 113.63636363636364 285.25021710811984 L 129.54545454545453 285.25021710811984"
+             style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path117" />
+          <path
+             d="M 129.54545454545453 175.0 L 145.45454545454544 175.0"
+             style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path119" />
+          <path
+             d="M 129.54545454545453 191.96157186278768 L 145.45454545454544 191.96157186278768"
+             style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path121" />
+          <path
+             d="M 129.54545454545453 225.88471558836298 L 145.45454545454544 225.88471558836298"
+             style="fill:none;opacity:1;stroke:rgb(55.3%,62.7%,79.6%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path123" />
+          <path
+             d="M 129.54545454545453 242.84628745115066 L 145.45454545454544 242.84628745115066"
+             style="fill:none;opacity:1;stroke:rgb(55.3%,62.7%,79.6%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path125" />
+          <path
+             d="M 129.54545454545453 276.76943117672596 L 145.45454545454544 276.76943117672596"
+             style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path127" />
+          <path
+             d="M 129.54545454545453 293.73100303951367 L 145.45454545454544 293.73100303951367"
+             style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path129" />
+          <path
+             d="M 50.0 111.12908095419021 L 50.0 68.9901758575771"
+             style="fill:none;opacity:1;stroke:rgb(98.8%,55.3%,38.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path131" />
+          <path
+             d="M 50.0 111.12908095419021 L 50.0 153.2679860508033"
+             style="fill:none;opacity:1;stroke:rgb(14.9%,14.9%,14.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path133" />
+          <path
+             d="M 113.63636363636364 68.9901758575771 L 113.63636363636364 56.268996960486355"
+             style="fill:none;opacity:1;stroke:rgb(98.8%,55.3%,38.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path135" />
+          <path
+             d="M 113.63636363636364 68.9901758575771 L 113.63636363636364 81.71135475466787"
+             style="fill:none;opacity:1;stroke:rgb(98.8%,55.3%,38.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path137" />
+          <path
+             d="M 65.9090909090909 153.2679860508033 L 65.9090909090909 107.15371254884936"
+             style="fill:none;opacity:1;stroke:rgb(90.6%,54.1%,76.5%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path139" />
+          <path
+             d="M 65.9090909090909 153.2679860508033 L 65.9090909090909 199.38225955275732"
+             style="fill:none;opacity:1;stroke:rgb(14.9%,14.9%,14.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path141" />
+          <path
+             d="M 129.54545454545453 81.71135475466787 L 129.54545454545453 73.23056882327401"
+             style="fill:none;opacity:1;stroke:rgb(98.8%,55.3%,38.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path143" />
+          <path
+             d="M 129.54545454545453 81.71135475466787 L 129.54545454545453 90.19214068606166"
+             style="fill:none;opacity:1;stroke:rgb(98.8%,55.3%,38.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path145" />
+          <path
+             d="M 81.81818181818181 199.38225955275732 L 81.81818181818181 151.67783868866695"
+             style="fill:none;opacity:1;stroke:rgb(14.9%,14.9%,14.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path147" />
+          <path
+             d="M 81.81818181818181 199.38225955275732 L 81.81818181818181 247.08668041684757"
+             style="fill:none;opacity:1;stroke:rgb(14.9%,14.9%,14.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path149" />
+          <path
+             d="M 97.72727272727272 151.67783868866695 L 97.72727272727272 132.59607034303085"
+             style="fill:none;opacity:1;stroke:rgb(65.1%,84.7%,32.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path151" />
+          <path
+             d="M 97.72727272727272 151.67783868866695 L 97.72727272727272 170.75960703430312"
+             style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path153" />
+          <path
+             d="M 97.72727272727272 247.08668041684757 L 97.72727272727272 221.6443226226661"
+             style="fill:none;opacity:1;stroke:rgb(55.3%,62.7%,79.6%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path155" />
+          <path
+             d="M 97.72727272727272 247.08668041684757 L 97.72727272727272 272.52903821102905"
+             style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path157" />
+          <path
+             d="M 129.54545454545453 132.59607034303085 L 129.54545454545453 124.11528441163702"
+             style="fill:none;opacity:1;stroke:rgb(65.1%,84.7%,32.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path159" />
+          <path
+             d="M 129.54545454545453 132.59607034303085 L 129.54545454545453 141.07685627442467"
+             style="fill:none;opacity:1;stroke:rgb(65.1%,84.7%,32.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path161" />
+          <path
+             d="M 113.63636363636364 170.75960703430312 L 113.63636363636364 158.03842813721235"
+             style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path163" />
+          <path
+             d="M 113.63636363636364 170.75960703430312 L 113.63636363636364 183.48078593139383"
+             style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path165" />
+          <path
+             d="M 113.63636363636364 221.6443226226661 L 113.63636363636364 208.92314372557533"
+             style="fill:none;opacity:1;stroke:rgb(55.3%,62.7%,79.6%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path167" />
+          <path
+             d="M 113.63636363636364 221.6443226226661 L 113.63636363636364 234.36550151975683"
+             style="fill:none;opacity:1;stroke:rgb(55.3%,62.7%,79.6%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path169" />
+          <path
+             d="M 113.63636363636364 272.52903821102905 L 113.63636363636364 259.8078593139383"
+             style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path171" />
+          <path
+             d="M 113.63636363636364 272.52903821102905 L 113.63636363636364 285.25021710811984"
+             style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path173" />
+          <path
+             d="M 129.54545454545453 183.48078593139383 L 129.54545454545453 175.0"
+             style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path175" />
+          <path
+             d="M 129.54545454545453 183.48078593139383 L 129.54545454545453 191.96157186278768"
+             style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path177" />
+          <path
+             d="M 129.54545454545453 234.36550151975683 L 129.54545454545453 225.88471558836298"
+             style="fill:none;opacity:1;stroke:rgb(55.3%,62.7%,79.6%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path179" />
+          <path
+             d="M 129.54545454545453 234.36550151975683 L 129.54545454545453 242.84628745115066"
+             style="fill:none;opacity:1;stroke:rgb(55.3%,62.7%,79.6%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path181" />
+          <path
+             d="M 129.54545454545453 285.25021710811984 L 129.54545454545453 276.76943117672596"
+             style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path183" />
+          <path
+             d="M 129.54545454545453 285.25021710811984 L 129.54545454545453 293.73100303951367"
+             style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0"
+             id="path185" />
+          <g
+             class="toyplot-HeadMarkers"
+             id="g187" />
+          <g
+             class="toyplot-MiddleMarkers"
+             id="g189" />
+          <g
+             class="toyplot-TailMarkers"
+             id="g191" />
+        </g>
+        <g
+           class="toyplot-Vertices"
+           id="g193">
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(145.45454545454544, 293.73100303951367)"
+             id="g195">
+            <circle
+               r="0.0"
+               id="circle197" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(145.45454545454544, 276.76943117672596)"
+             id="g199">
+            <circle
+               r="0.0"
+               id="circle201" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(145.45454545454544, 259.8078593139383)"
+             id="g203">
+            <circle
+               r="0.0"
+               id="circle205" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(145.45454545454544, 242.84628745115066)"
+             id="g207">
+            <circle
+               r="0.0"
+               id="circle209" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(145.45454545454544, 225.88471558836298)"
+             id="g211">
+            <circle
+               r="0.0"
+               id="circle213" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(145.45454545454544, 208.92314372557533)"
+             id="g215">
+            <circle
+               r="0.0"
+               id="circle217" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(145.45454545454544, 191.96157186278768)"
+             id="g219">
+            <circle
+               r="0.0"
+               id="circle221" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(145.45454545454544, 175.0)"
+             id="g223">
+            <circle
+               r="0.0"
+               id="circle225" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(145.45454545454544, 158.03842813721235)"
+             id="g227">
+            <circle
+               r="0.0"
+               id="circle229" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(145.45454545454544, 141.07685627442467)"
+             id="g231">
+            <circle
+               r="0.0"
+               id="circle233" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(145.45454545454544, 124.11528441163702)"
+             id="g235">
+            <circle
+               r="0.0"
+               id="circle237" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(145.45454545454544, 107.15371254884936)"
+             id="g239">
+            <circle
+               r="0.0"
+               id="circle241" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(145.45454545454544, 90.19214068606166)"
+             id="g243">
+            <circle
+               r="0.0"
+               id="circle245" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(145.45454545454544, 73.23056882327401)"
+             id="g247">
+            <circle
+               r="0.0"
+               id="circle249" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(145.45454545454544, 56.268996960486355)"
+             id="g251">
+            <circle
+               r="0.0"
+               id="circle253" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(129.54545454545453, 285.25021710811984)"
+             id="g255">
+            <circle
+               r="0.0"
+               id="circle257" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(129.54545454545453, 234.36550151975683)"
+             id="g259">
+            <circle
+               r="0.0"
+               id="circle261" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(129.54545454545453, 183.48078593139383)"
+             id="g263">
+            <circle
+               r="0.0"
+               id="circle265" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(113.63636363636364, 272.52903821102905)"
+             id="g267">
+            <circle
+               r="0.0"
+               id="circle269" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(113.63636363636364, 221.6443226226661)"
+             id="g271">
+            <circle
+               r="0.0"
+               id="circle273" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(113.63636363636364, 170.75960703430312)"
+             id="g275">
+            <circle
+               r="0.0"
+               id="circle277" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(129.54545454545453, 132.59607034303085)"
+             id="g279">
+            <circle
+               r="0.0"
+               id="circle281" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(97.72727272727272, 247.08668041684757)"
+             id="g283">
+            <circle
+               r="0.0"
+               id="circle285" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(97.72727272727272, 151.67783868866695)"
+             id="g287">
+            <circle
+               r="0.0"
+               id="circle289" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(81.81818181818181, 199.38225955275732)"
+             id="g291">
+            <circle
+               r="0.0"
+               id="circle293" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(129.54545454545453, 81.71135475466787)"
+             id="g295">
+            <circle
+               r="0.0"
+               id="circle297" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(65.9090909090909, 153.2679860508033)"
+             id="g299">
+            <circle
+               r="0.0"
+               id="circle301" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(113.63636363636364, 68.9901758575771)"
+             id="g303">
+            <circle
+               r="0.0"
+               id="circle305" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(50.0, 111.12908095419021)"
+             id="g307">
+            <circle
+               r="0.0"
+               id="circle309" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(50.0, 68.9901758575771)"
+             id="g311">
+            <circle
+               r="0.0"
+               id="circle313" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(50.0, 153.2679860508033)"
+             id="g315">
+            <circle
+               r="0.0"
+               id="circle317" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(113.63636363636364, 56.268996960486355)"
+             id="g319">
+            <circle
+               r="0.0"
+               id="circle321" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(113.63636363636364, 81.71135475466787)"
+             id="g323">
+            <circle
+               r="0.0"
+               id="circle325" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(65.9090909090909, 107.15371254884936)"
+             id="g327">
+            <circle
+               r="0.0"
+               id="circle329" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(65.9090909090909, 199.38225955275732)"
+             id="g331">
+            <circle
+               r="0.0"
+               id="circle333" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(129.54545454545453, 73.23056882327401)"
+             id="g335">
+            <circle
+               r="0.0"
+               id="circle337" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(129.54545454545453, 90.19214068606166)"
+             id="g339">
+            <circle
+               r="0.0"
+               id="circle341" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(81.81818181818181, 151.67783868866695)"
+             id="g343">
+            <circle
+               r="0.0"
+               id="circle345" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(81.81818181818181, 247.08668041684757)"
+             id="g347">
+            <circle
+               r="0.0"
+               id="circle349" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(97.72727272727272, 132.59607034303085)"
+             id="g351">
+            <circle
+               r="0.0"
+               id="circle353" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(97.72727272727272, 170.75960703430312)"
+             id="g355">
+            <circle
+               r="0.0"
+               id="circle357" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(97.72727272727272, 221.6443226226661)"
+             id="g359">
+            <circle
+               r="0.0"
+               id="circle361" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(97.72727272727272, 272.52903821102905)"
+             id="g363">
+            <circle
+               r="0.0"
+               id="circle365" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(129.54545454545453, 124.11528441163702)"
+             id="g367">
+            <circle
+               r="0.0"
+               id="circle369" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(129.54545454545453, 141.07685627442467)"
+             id="g371">
+            <circle
+               r="0.0"
+               id="circle373" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(113.63636363636364, 158.03842813721235)"
+             id="g375">
+            <circle
+               r="0.0"
+               id="circle377" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(113.63636363636364, 183.48078593139383)"
+             id="g379">
+            <circle
+               r="0.0"
+               id="circle381" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(113.63636363636364, 208.92314372557533)"
+             id="g383">
+            <circle
+               r="0.0"
+               id="circle385" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(113.63636363636364, 234.36550151975683)"
+             id="g387">
+            <circle
+               r="0.0"
+               id="circle389" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(113.63636363636364, 259.8078593139383)"
+             id="g391">
+            <circle
+               r="0.0"
+               id="circle393" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(113.63636363636364, 285.25021710811984)"
+             id="g395">
+            <circle
+               r="0.0"
+               id="circle397" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(129.54545454545453, 175.0)"
+             id="g399">
+            <circle
+               r="0.0"
+               id="circle401" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(129.54545454545453, 191.96157186278768)"
+             id="g403">
+            <circle
+               r="0.0"
+               id="circle405" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(129.54545454545453, 225.88471558836298)"
+             id="g407">
+            <circle
+               r="0.0"
+               id="circle409" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(129.54545454545453, 242.84628745115066)"
+             id="g411">
+            <circle
+               r="0.0"
+               id="circle413" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(129.54545454545453, 276.76943117672596)"
+             id="g415">
+            <circle
+               r="0.0"
+               id="circle417" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0"
+             transform="translate(129.54545454545453, 293.73100303951367)"
+             id="g419">
+            <circle
+               r="0.0"
+               id="circle421" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     class="toyplot-coordinates-Cartesian"
+     id="t274428145e8a43f18e2568f7cc3dae59">
+    <clipPath
+       id="ta94f937c0fd243768150675f1dd46514">
+      <rect
+         height="270.0"
+         width="155.0"
+         x="180.0"
+         y="40.0"
+         id="rect425" />
+    </clipPath>
+    <g
+       clip-path="url(#ta94f937c0fd243768150675f1dd46514)"
+       id="g427">
+      <g
+         class="toyplot-mark-BarMagnitudes"
+         id="t5a1a3d6320ab43c8b1fa3c3c707cd4a0"
+         style="stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0">
+        <g
+           class="toyplot-Series"
+           id="g430">
+          <rect
+             class="toyplot-Datum"
+             height="3.521126760563334"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0"
+             width="22.780496592449964"
+             x="236.24350170377502"
+             y="296.47887323943667"
+             id="rect432" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267605633907"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0"
+             width="24.895870252199984"
+             x="231.4361898739"
+             y="278.8732394366197"
+             id="rect434" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267605633907"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0"
+             width="39.700811240099995"
+             x="262.58071937995"
+             y="261.2676056338028"
+             id="rect436" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267605633907"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0"
+             width="27.94967110709996"
+             x="248.66416444645"
+             y="243.6619718309859"
+             id="rect438" />
+          <rect
+             class="toyplot-Datum"
+             height="3.521126760563334"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0"
+             width="36.41039584560008"
+             x="244.99742707719997"
+             y="226.05633802816905"
+             id="rect440" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267605633623"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0"
+             width="35.735798096999986"
+             x="262.5652259515"
+             y="208.45070422535213"
+             id="rect442" />
+          <rect
+             class="toyplot-Datum"
+             height="3.521126760563334"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0"
+             width="29.56998778335"
+             x="252.18975610832499"
+             y="190.84507042253523"
+             id="rect444" />
+          <rect
+             class="toyplot-Datum"
+             height="3.521126760563334"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0"
+             width="24.610479932249973"
+             x="255.39401003387502"
+             y="173.23943661971833"
+             id="rect446" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267605633623"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0"
+             width="28.63785763620001"
+             x="204.2583211819"
+             y="155.6338028169014"
+             id="rect448" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267605633623"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0"
+             width="45.398228930100004"
+             x="273.40863553495"
+             y="138.0281690140845"
+             id="rect450" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267605633623"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0"
+             width="47.24054214885001"
+             x="230.57897892557497"
+             y="120.42253521126761"
+             id="rect452" />
+          <rect
+             class="toyplot-Datum"
+             height="3.521126760563348"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0"
+             width="18.556576933949998"
+             x="228.617461533025"
+             y="102.81690140845072"
+             id="rect454" />
+          <rect
+             class="toyplot-Datum"
+             height="3.521126760563334"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0"
+             width="30.750108292350035"
+             x="225.71569585382497"
+             y="85.21126760563382"
+             id="rect456" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267605633907"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0"
+             width="22.592959094250006"
+             x="203.96089545287498"
+             y="67.6056338028169"
+             id="rect458" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267605633765"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0"
+             width="38.801911526549986"
+             x="245.783919236725"
+             y="50.0"
+             id="rect460" />
+        </g>
+      </g>
+      <g
+         class="toyplot-mark-Point"
+         id="t52293c65249e4c3b908e30012e8874e4">
+        <g
+           class="toyplot-Series"
+           id="g463">
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0"
+             transform="translate(247.63375000000002, 298.2394366197183)"
+             id="g465">
+            <circle
+               r="3.0"
+               id="circle467" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0"
+             transform="translate(243.88412499999998, 280.6338028169014)"
+             id="g469">
+            <circle
+               r="3.0"
+               id="circle471" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0"
+             transform="translate(282.431125, 263.0281690140845)"
+             id="g473">
+            <circle
+               r="3.0"
+               id="circle475" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0"
+             transform="translate(262.639, 245.4225352112676)"
+             id="g477">
+            <circle
+               r="3.0"
+               id="circle479" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0"
+             transform="translate(263.202625, 227.8169014084507)"
+             id="g481">
+            <circle
+               r="3.0"
+               id="circle483" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0"
+             transform="translate(280.433125, 210.21126760563382)"
+             id="g485">
+            <circle
+               r="3.0"
+               id="circle487" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0"
+             transform="translate(266.97475, 192.6056338028169)"
+             id="g489">
+            <circle
+               r="3.0"
+               id="circle491" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0"
+             transform="translate(267.69925, 175.0)"
+             id="g493">
+            <circle
+               r="3.0"
+               id="circle495" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0"
+             transform="translate(218.57725, 157.3943661971831)"
+             id="g497">
+            <circle
+               r="3.0"
+               id="circle499" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0"
+             transform="translate(296.10774999999995, 139.78873239436618)"
+             id="g501">
+            <circle
+               r="3.0"
+               id="circle503" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0"
+             transform="translate(254.19925, 122.18309859154928)"
+             id="g505">
+            <circle
+               r="3.0"
+               id="circle507" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0"
+             transform="translate(237.89575000000002, 104.57746478873239)"
+             id="g509">
+            <circle
+               r="3.0"
+               id="circle511" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0"
+             transform="translate(241.09075, 86.97183098591549)"
+             id="g513">
+            <circle
+               r="3.0"
+               id="circle515" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0"
+             transform="translate(215.25737499999997, 69.36619718309859)"
+             id="g517">
+            <circle
+               r="3.0"
+               id="circle519" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0"
+             transform="translate(265.18487500000003, 51.76056338028169)"
+             id="g521">
+            <circle
+               r="3.0"
+               id="circle523" />
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       class="toyplot-coordinates-Axis"
+       id="tc05715eadf3741bbbdc71c4c9f4bfce8"
+       transform="translate(190.0,300.0)translate(0,10.0)">
+      <line
+         x1="13.960895452874993"
+         x2="128.80686446505"
+         y1="0"
+         y2="0"
+         id="line526"
+         style="" />
+      <g
+         id="g528">
+        <line
+           x1="0.0"
+           x2="0.0"
+           y1="0"
+           y2="-5"
+           id="line530"
+           style="" />
+        <line
+           x1="45.0"
+           x2="45.0"
+           y1="0"
+           y2="-5"
+           id="line532"
+           style="" />
+        <line
+           x1="90.0"
+           x2="90.0"
+           y1="0"
+           y2="-5"
+           id="line534"
+           style="" />
+        <line
+           x1="135.0"
+           x2="135.0"
+           y1="0"
+           y2="-5"
+           id="line536"
+           style="" />
+      </g>
+      <g
+         id="g538">
+        <g
+           transform="translate(0.0,6)"
+           id="g540">
+          <text
+             style="fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:helvetica;font-size:10.0px;font-weight:normal;stroke:none;vertical-align:baseline;white-space:pre"
+             x="-5.56"
+             y="8.555"
+             id="text542">30</text>
+        </g>
+        <g
+           transform="translate(45.0,6)"
+           id="g544">
+          <text
+             style="fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:helvetica;font-size:10.0px;font-weight:normal;stroke:none;vertical-align:baseline;white-space:pre"
+             x="-5.56"
+             y="8.555"
+             id="text546">50</text>
+        </g>
+        <g
+           transform="translate(90.0,6)"
+           id="g548">
+          <text
+             style="fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:helvetica;font-size:10.0px;font-weight:normal;stroke:none;vertical-align:baseline;white-space:pre"
+             x="-5.56"
+             y="8.555"
+             id="text550">70</text>
+        </g>
+        <g
+           transform="translate(135.0,6)"
+           id="g552">
+          <text
+             style="fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:helvetica;font-size:10.0px;font-weight:normal;stroke:none;vertical-align:baseline;white-space:pre"
+             x="-5.56"
+             y="8.555"
+             id="text554">90</text>
+        </g>
+      </g>
+      <g
+         class="toyplot-coordinates-Axis-coordinates"
+         style="visibility:hidden"
+         id="g556"
+         transform="">
+        <line
+           style="stroke:rgb(43.9%,50.2%,56.5%);stroke-opacity:1.0;stroke-width:1.0"
+           x1="0"
+           x2="0"
+           y1="-3.0"
+           y2="4.5"
+           id="line558" />
+        <text
+           style="alignment-baseline:alphabetic;fill:rgb(43.9%,50.2%,56.5%);fill-opacity:1.0;font-size:10px;font-weight:normal;stroke:none;text-anchor:middle"
+           x="0"
+           y="-6"
+           id="text560" />
+      </g>
+    </g>
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="217.81836"
+     y="346.31094"
+     id="text3894"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3896"
+       x="217.81836"
+       y="346.31094"
+       style="font-size:15px">style length</tspan></text>
+</svg>
