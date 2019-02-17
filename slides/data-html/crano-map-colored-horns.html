@@ -44,7 +44,7 @@
         layers: [],
         worldCopyJump: false,
         crs: L.CRS.EPSG3857,
-        zoomControl: true,
+        zoomControl: false,
         });
 
     
@@ -53,7 +53,7 @@
         'https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg',
         {
         "attribution": null,
-        "detectRetina": false,
+        "detectRetina": true,
         "maxNativeZoom": 18,
         "maxZoom": 18,
         "minZoom": 0,
@@ -61,7 +61,9 @@
         "opacity": 1,
         "subdomains": "abc",
         "tms": false
-}).addTo(map_fd322883bb484400b57a2302ed7f491e);
+        }).addTo(map_fd322883bb484400b57a2302ed7f491e);
+
+
     
             var circle_marker_5dc80e01fa394462b320ec1ca3fb8f07 = L.circleMarker(
                 [29.0, 99.0],
