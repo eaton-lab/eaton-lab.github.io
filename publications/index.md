@@ -16,7 +16,6 @@ image:
 <!-- 2019 papers -->
 <!-- ------------------------------------ -->
 <!-- Guo Cen... -->
-<!-- Satler, J., ... and T. Heath -->
 <!-- Toytree* -->
 <!-- ipyrad* -->
 <!-- Ficus* -->
@@ -25,7 +24,7 @@ image:
 <!-- ------------------------------------ -->
 
 
-* Satler, J.D., Herre, A., Jander, C., **Eaton, D.A.R.**, Machado, C.A., Heath, T.A., and J.D. Nason (2018). *Inferring Processes of Coevolutionary Diversification in a Community of Panamanian Strangler Figs and Associated Pollinating Wasps* BioRxiv, December, 490862. https://doi.org/10.1101/490862.
+* Satler, J.D., Herre, A., Jander, C., **Eaton, D.A.R.**, Machado, C.A., Heath, T.A., and J.D. Nason (2019). *Inferring Processes of Coevolutionary Diversification in a Community of Panamanian Strangler Figs and Associated Pollinating Wasps* BioRxiv, December, 490862. https://doi.org/10.1101/490862.
 
 * Spriggs E.L., Schlutius, C.; **Eaton, D.A.R.**, Park, B., Sweeney, P., Edwards, E., and  
 M. Donoghue (2019). *Differences in flowering time maintain species boundaries in a continental radiation of Viburnum*. American Journal of Botany. In Press.
