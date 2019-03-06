@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Session-13</title>
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width: 960px; height: 720px; transform: translate(-50%, -50%) scale(0.969792) translate(50%, 50%);">
+
+<!-- ###################################################################### -->
+
+
+<!-- SLIDE 0 (TITLE) -->
+<section 
+    data-background="#262626" 
+    style="top:300.5px; display:block;"
+    data-transition="none"     
+    class="present">
+    <div style="margin-left: auto; margin-top: 20%">
+    <h2 class="title" style="color:#5D9B84">
+    Principles and Applications of Modern DNA Sequencing</h2>
+    <p style="color: lightgrey"> EEEB GU4055</p>
+    <h5 style="color: white">Session 12: Phylogenetics II</h5>
+    <br>
+    </div>
+</section>
+
+
+<!-- SLIDE 1 (what are we doing today?)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+    <h3> Today's topics </h3>
+    <br>
+    <p style='font-size:0.9em; 
+    text-align: left; margin-left: 100px; margin-right: 100px'>
+        <br>
+        1. Review notebook assignments: Hi-C.
+        <br><br>
+        2. Discuss the assigned readings: Composite assembly.
+        <br><br>
+        3. Introduce new topic: reduced-representation sequencing.
+        <br><br>
+    </p>
+</section>
+
+
+
+<!-- Summary: what have we learned so far... -->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+    <h3> Review of course topics </h3>
+    <br>
+    <p style='font-size:0.6em; 
+    text-align: left; margin-left: 100px; margin-top:0px; margin-right: 100px'>
+        <br>
+        1. DNA sequencing review; and intro to Jupyter/Python.
+        <br>
+        2. Python bootcamp I: Basic objects.
+        <br>
+        3. Python bootcamp II: Scientific libraries.
+        <br>
+        4. Homology/Blast/GFF: Genome structure
+        <br>
+        5. Phylogenetics I: Sanger sequences to trees.
+        <br>
+        6. Recombination and Meiosis.
+        <br>
+        7. Inheritance and pedigrees.
+        <br>
+        8. Intro to Illumina and read mapping.
+        <br>
+        9. Intro to long-read technologies and read mapping.
+        <br>
+        10. Genome Assembly in theory.
+        <br>
+        11. Genome Assembly in practice.
+        <br>
+        12. Scaffolding.
+        <br>
+        13. Phylogenetics II: RAD-seq  
+        <br>
+        14. Phylogenetics II: SNPs, gene trees and species trees 
+    </p>
+</section>
+
+
+
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <section>
+        <h4> Notebook 12.1: Hi-C </h4>
+        <p style="text-align:left; font-size:0.75em; margin:10%">
+        Chromosome conformation capture (3C) describes the structure of the 
+        genome within a cell; it's organization and structure. Better than 
+        microscopy, can tell us how close together (potentially interacting)
+        some regions of the genome are (such as promoters and enhancers).
+        <br><br>
+        Hi-C: A highthroughput version of 3C is based a library preparation to 
+        build chimeric reads followed by short-read sequencing of paired-end 
+        reads. Creates a contact map of interactions 
+        correlated to spatial distance.
+        </p>
+    </section>
+
+    <section>
+        <h4> Notebook 12.1: Hi-C </h4>
+        <p style="font-size:0.75em; margin:0%">
+        Restriction digestion; streptavidin bead extraction; paired-seq.
+        </p>
+        <img src="https://github.com/genomics-course/12-scaffolding/raw/master/data/Hi-C.1.png" style="width:80%">
+    </section>
+
+
+    <section>
+        <h4> Notebook 12.1: Hi-C </h4>
+        <p style="text-align:left; font-size:0.75em; margin:0%">
+When a genome is digested with a restriction enzyme the genome is broken into smaller fragments. Each fragment will begin and end with a characteristic overhang of the restriction enzyme. For the restriction enzyme HindIII, the recognition site is AAGCTT, and the cut occurs between the two A's in the 5' direction (A^AGCTT) such that it leaves one A at the end a fragment, and AGCTT at the beginning of the next fragment. Let's see what this looks like:
+        </p>
+    </section>
+
+
+    <section>
+        <h4> Notebook 12.1: Hi-C</h4>
+        <pre ><code class="python" style="max-height: 500px">   
+  def random_sequence(length):
+      "return a random sequence of DNA"
+      return "".join(np.random.choice(list("ACGT"), size=length))
+
+
+  def restriction_digest(sequence, recognition, cut):
+      """
+      restriction digest a genome sequence at the given (recognition) site and
+      split the site at the given position (cut) to leave overhangs. 
+      """
+      # cut sequence at every occurence of recognition site
+      fragments = sequence.split(recognition)
+      
+      # add overhang that results from sequence splitting within the recognition site
+      fragments = [recognition[cut:] + i + recognition[:cut] for i in fragments]
+      return fragments
+        </pre></code>
+    </section>
+
+    <section>
+        <h4> Notebook 12.1: Hi-C</h4>      
+        <pre ><code class="python" style="max-height: 600px; 
+        font-size: 13px; line-height: 1.45">
+  # generate a 5Mb genome
+  seq = random_sequence(5000000)
+
+  # digest the genome at every HindIII site
+  fragments = restriction_digest(seq, "AAGCTT", 1)
+
+  # print headers
+  print("Restriction recognition site: A^AGCTT")
+  print("Expected: [overhang-AGCTT][sequence][overhang-A]")
+
+  # check the beginning and end of the first 10 fragments
+  for i in range(10):
+      print(fragments[i][:5], fragments[i][5:10], '...', fragments[i][-1:])
+      </pre></code>
+        <pre><code class="python" style="background: grey">
+Restriction recognition site: A^AGCTT
+Expected: [overhang-AGCTT][sequence][overhang-A]
+AGCTT TACAA ... A
+AGCTT AATGG ... A
+AGCTT CCGTT ... A
+AGCTT TCCCC ... A
+AGCTT AGCGA ... A
+AGCTT GGATT ... A
+AGCTT ATATA ... A
+...</pre></code>
+    </section>
+
+
+
+    <section>
+        <h4> Notebook 12.1: Hi-C</h4>      
+        <pre ><code class="python" style="max-height: 600px; 
+        font-size: 13px; line-height: 1.45;">
+# get fragment lengths binned 
+flens = np.histogram([len(i) for i in fragments], bins=50)
+
+# plot distribution of fragment lengths
+toyplot.bars(
+    flens,
+    width=400,
+    height=300,
+    xlabel="fragment size", 
+    ylabel="number of fragments",
+);
+      </pre></code>
+    <img src="https://raw.githubusercontent.com/genomics-course/12-scaffolding/master/data/hist.png" style='width:50%; margin:0px;'>
+    </section>
+
+
+    <section>
+        <p style="font-size:0.65em; 
+        background-color: #b7e2c0; color: #3a6944; margin:30px"> 
+Action 1: Repeat for PstI enzyme: CTGCA^G
+   </p>
+        <pre><code class="python" style="max-height: 600px;">
+# digest the genome at every PstI site
+fragments = restriction_digest(seq, "CTGCAG", 5)
+
+# print headers
+print("Expected: [overhang-G][sequence][overhang-CTGCA]")
+
+# check the beginning and end of the first 10 fragments
+for i in range(10):
+    print(fragments[i][:1], '...', fragments[i][5:10], fragments[i][-5:])
+    #print(fragments[i][:5], fragments[i][5:10], '...', fragments[i][-1:])
+        </pre></code>
+        <pre><code class="python" style="background: grey">
+Expected: [overhang-G][sequence][overhang-CTGCA]
+G ... TTAGC CTGCA
+G ... TTCAG CTGCA
+G ... CCTTA CTGCA
+G ... CTTTA CTGCA
+G ... GAGCT CTGCA
+G ... CCCGG CTGCA
+G ... ATCAC CTGCA
+G ... TATGT CTGCA
+G ... AATAC CTGCA
+G ... TCACG CTGCA
+        </pre></code>
+    </section>
+
+
+<!-- SLIDE 4 -->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <h4> Notebook 12.1: Hi-C</h4>
+    <p style="font-size:0.65em; text-align: left;
+    background-color: #b7e2c0; color: #3a6944; margin:30px"> 
+
+    </p>
+    <img src="https://github.com/genomics-course/12-scaffolding/raw/master/data/Hi-C.3.png" style="width:70%">
+</section>
+
+
+<!-- SLIDE 4 -->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <h4> Notebook 12.1: Hi-C</h4>
+    <p style="font-size:0.65em; text-align: left;
+    background-color: #b7e2c0; color: #3a6944; margin:30px"> 
+
+    </p>
+    <img src="https://github.com/genomics-course/12-scaffolding/raw/master/data/amaranth.png" style="width:55%">
+</section>
+
+
+</div>
+</div>
+    
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+
+
+        <!-- JAVASCRIPT -->
+        <script src="../../reveal/lib/js/head.min.js"></script>        
+        <script src="../../reveal/js/reveal.js"></script>
+        <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+        <script>
+            Reveal.initialize({
+                controls:true, 
+                progress:false, 
+                loop:false, 
+                history:true,
+                center:false,
+                fragmentInURL:true,
+                margin:.05,
+                minScale:0.1,
+                maxScale:5,
+                width:960,
+                height:720,
+                theme:Reveal.getQueryHash().theme,
+                transition:Reveal.getQueryHash().transition||"linear",
+                // slideNumber: true,
+                // slideNumber: "h/v",
+                dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                ]
+            });
+
+            // Reveal.configure({ slideNumber: true })
+            // Reveal.configure({ slideNumber: "c/t" })            
+
+            // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+        </script>
+    </body>
+</html>
