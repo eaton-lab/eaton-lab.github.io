@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Session-11</title>
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width: 960px; height: 720px; transform: translate(-50%, -50%) scale(0.969792) translate(50%, 50%);">
+
+<!-- ###################################################################### -->
+
+
+<!-- SLIDE 0 (TITLE) -->
+<section 
+    data-background="#262626" 
+    style="top:300.5px; display:block;"
+    data-transition="none"     
+    class="present">
+    <div style="margin-left: auto; margin-top: 20%">
+    <h2 class="title" style="color:#5D9B84">
+    Principles and Applications of Modern DNA Sequencing</h2>
+    <p style="color: lightgrey"> EEEB GU4055</p>
+    <h5 style="color: white">Session 11: de novo genome assembly</h5>
+    <br>
+    </div>
+</section>
+
+
+<!-- SLIDE 1 (what are we doing today?)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+    <h3> Today's topics </h3>
+    <br>
+    <p style='font-size:0.9em; 
+    text-align: left; margin-left: 100px; margin-right: 100px'>
+        <br>
+        1. Review notebook assignments: de Bruijn graphs.
+        <br><br>
+        2. Discuss the assigned readings: de Bruijn / Euler.
+        <br><br>
+        3. Introduce new topic: de novo genome assembly
+        <br><br>
+    </p>
+</section>
+
+
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <h4> Notebook 10.1: kmers and de Bruijn graphs</h4>
+    <p style="font-size:0.75em">
+    kmers are used to decompose reads into smaller units that align to form a path.
+    </p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/K-mer-example.png" style="width:80%; margin:50px">
+</section>
+
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <h4> Notebook 10.1: kmers and de Bruijn graphs</h4>
+    <p style="font-size:0.75em">
+    Shortest possible superstring that contains all substrings.
+    </p>
+    <img src="data/deBruijn.png" style="width:80%; margin:30px">
+</section>
+
+
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <h4> Notebook 10.1: kmers and de Bruijn graphs</h4>
+    <img src="data/Eulerian.png" style="width:80%; margin:30px">
+</section>
+
+
+
+
+
+<section 
+        data-transition="none"
+        data-background-iframe="
+        https://www.polleverywhere.com/multiple_choice_polls/3Nkah84yqE4eHURKO6bWF?preview=true"
+        style="top:-960px; display: block;" 
+        class="future" 
+        hidden="">       
+</section>    
+
+
+
+<section 
+        data-transition="none"
+        data-background-iframe="
+        https://www.polleverywhere.com/free_text_polls/yTLUrTIRSqVU2Msij09cN?preview=true"
+        style="top:-960px; display: block;" 
+        class="future" 
+        hidden="">       
+</section>    
+
+
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <h4> Session 11: Genome assembly</h4>
+    <img src="https://i.imgflip.com/2urzxl.jpg" style="width:90%; margin:20px">
+</section>
+
+
+
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <h4> Session 11: Genome assembly</h4>
+    <p style="font-size:0.75em">
+    denovo genome assembly is computationally demanding. Requires reads that 
+    cover the full genome many times (e.g., 50X). The end goal is to assemble
+    scaffolds that match to chromosomes -- the real *bits* of the genome.
+    </p>
+    <img src="data/chromosomes.png" style="width:60%; margin:20px">
+</section>
+
+
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <h4> Session 11: Genome assembly</h4>
+    <p style="font-size:0.75em">
+    Even the shortest piece of the human genome is 48Mbp! 
+    </p>
+    <img src="data/human-genome-size.png" style="width:80%; margin:50px">
+</section>
+
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <h4> Session 11: Genome assembly</h4>
+    <p style="font-size:0.75em; margin:50px">
+    Sometimes intermediate/draft genomes are good enough to answer many questions.
+    For many tasks, though, they are not. e.g., genome annotation. Trade off 
+    in costs and time.
+    </p>
+    <img src="data/draft-v-finished.png" style="width:80%; margin:10px">
+</section>
+
+
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <h4> Session 11: Genome assembly</h4>
+    <p style="font-size:0.75em">
+      Hybrid genome assembly methods.
+    </p>
+    <img src="https://www.researchgate.net/profile/Alberto_Magi/publication/317848322/figure/fig5/AS:545304849596416@1507022215662/De-novo-assembly-High-level-diagram-of-long-read-assembly-pipeline-The-assembly-has.png" style="width:70%; margin:30px">
+</section>
+
+
+
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <h4> Session 11: Genome assembly</h4>
+    <p style="font-size:0.75em">
+      Hybrid genome assembly methods.
+    </p>
+    <img src="https://raw.githubusercontent.com/wiki/PacificBiosciences/Bioinformatics-Training/images/large-genome/pacbio-assembly-algorithms.png" style="width:70%; margin:20px">
+</section>
+
+
+
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <h4> Session 11: Genome assembly</h4>
+    <p style="font-size:0.75em">
+      Hybrid genome assembly methods.
+    </p>
+    <img src="data/hybrid-assembly.jpg" style="width:55 %; margin:0px">
+</section>
+
+
+
+
+</div>
+</div>
+    
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+
+
+        <!-- JAVASCRIPT -->
+        <script src="../../reveal/lib/js/head.min.js"></script>        
+        <script src="../../reveal/js/reveal.js"></script>
+        <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+        <script>
+            Reveal.initialize({
+                controls:true, 
+                progress:false, 
+                loop:false, 
+                history:true,
+                center:false,
+                fragmentInURL:true,
+                margin:.05,
+                minScale:0.1,
+                maxScale:5,
+                width:960,
+                height:720,
+                theme:Reveal.getQueryHash().theme,
+                transition:Reveal.getQueryHash().transition||"linear",
+                // slideNumber: true,
+                // slideNumber: "h/v",
+                dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                ]
+            });
+
+            // Reveal.configure({ slideNumber: true })
+            // Reveal.configure({ slideNumber: "c/t" })            
+
+            // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+        </script>
+    </body>
+</html>

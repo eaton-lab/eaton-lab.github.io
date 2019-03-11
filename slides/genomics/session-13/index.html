@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Session-13</title>
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../custom.css">    
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width: 960px; height: 720px; transform: translate(-50%, -50%) scale(0.969792) translate(50%, 50%);">
+
+<!-- ###################################################################### -->
+
+
+<!-- SLIDE 0 (TITLE) -->
+<section 
+    data-background="#262626" 
+    style="top:300.5px; display:block;"
+    data-transition="none"     
+    class="present">
+    <div style="margin-left: auto; margin-top: 20%">
+    <h2 class="title" style="color:#5D9B84">
+    Principles and Applications of Modern DNA Sequencing</h2>
+    <p style="color: lightgrey"> EEEB GU4055</p>
+    <h5 style="color: white">Session 13: Phylogenetics II</h5>
+    <br>
+    </div>
+</section>
+
+
+<!-- SLIDE 1 (what are we doing today?)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+    <h3> Today's topics </h3>
+    <br>
+    <p style='font-size:0.9em; 
+    text-align: left; margin-left: 100px; margin-right: 100px'>
+        <br>
+        1. Review notebook assignments: RAD-seq
+        <br><br>
+        2. Discuss the assigned readings: RAD & Oaks study
+        <br><br>
+        3. Introduce new topic: species trees & midterm 
+        <br><br>
+    </p>
+</section>
+
+
+
+<!-- Summary: what have we learned so far... -->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+    <h3> Review of course topics </h3>
+    <br>
+    <p style='font-size:0.6em; 
+    text-align: left; margin-left: 100px; margin-top:0px; margin-right: 100px'>
+        <br>
+        1. DNA sequencing review; and intro to Jupyter/Python.
+        <br>
+        2. Python bootcamp I: Basic objects.
+        <br>
+        3. Python bootcamp II: Scientific libraries.
+        <br>
+        4. Homology/Blast/GFF: Genome structure
+        <br>
+        5. Phylogenetics I: Sanger sequences to trees.
+        <br>
+        6. Recombination and Meiosis.
+        <br>
+        7. Inheritance and pedigrees.
+        <br>
+        8. Intro to Illumina and read mapping.
+        <br>
+        9. Intro to long-read technologies and read mapping.
+        <br>
+        10. Genome Assembly in theory.
+        <br>
+        11. Genome Assembly in practice.
+        <br>
+        12. Long-reads and Hi-C Scaffolding.
+        <br>
+        13. Phylogenetics II: RAD-seq  
+        <br>
+        14. Phylogenetics II: SNPs, gene trees and species trees 
+    </p>
+</section>
+
+
+
+<section 
+    data-transition="none"
+    data-background-iframe="
+https://www.polleverywhere.com/multiple_choice_polls/Yqyvq6yuVMHEpUycWLaDf?preview=true"
+style="top:-960px; display: block;" 
+    class="future" 
+    hidden="">       
+</section>
+
+
+
+
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <section>
+        <h4> Notebook 13.1: RAD-seq </h4>
+        <p style="text-align:left; font-size:0.75em; margin:10%">
+        Restriction-site associated DNA sequencing (RAD-seq) is a method 
+        for subsampling the genome adjacent to restriction enzyme recognition 
+        sites. 
+        <br><br>
+        Provides a cheap, easy and fast method for genotyping many markers 
+        (typically thousands) that are spread throughout the entire genome. 
+        </p>
+    </section>
+
+
+    <section>
+        <h4> Notebook 13.1: RAD-seq </h4>
+        <p style="text-align:left; font-size:0.75em; margin:0%">
+When a genome is digested with a restriction enzyme the genome is broken into smaller fragments. Each fragment will begin and end with a characteristic overhang. Your
+notebook this week emulated this process bioinformatically.
+        </p>
+    </section>
+
+
+
+
+
+<section
+    class="future"
+    data-transition="none"
+    hidden="">
+
+    <h3> Phylogenomics II </h3>
+    <p style="font-size:24px; margin-right:5%; margin-left: 5%";>
+    Genomics methods allow us to efficiently sample variation across the genome.
+    </p>
+
+    <div style="position: relative;">
+        <!-- fade out RAD-sampling -->
+        <img class="fragment step-fade-in-then-out" 
+        src="../../data-svg/intro-phylogenomic-sampling.svg"
+        style="margin-top:5%;">
+
+        <!-- fade out RAD-sampling -->
+        <img class="fragment step-fade-in-then-out" 
+        src="../../data-svg/intro-RAD-diagram.svg"
+        style="width:85%; margin-top:5%;">
+
+        <!-- In and out coalescent types -->
+        <img class="fragment step-fade-in-then-out" 
+        src="../../data-svg/intro-tree-outlines.svg" 
+        style="position:absolute; display:block; width:90%; top:15%; left:5%;">
+
+        <!-- In and examples of gene flow -->
+        <span class="fragment fade-in"> 
+            <img 
+            src="../../data-svg/intro-tree-outlines-2.svg" 
+            style="position:absolute; display:block; width:90%; top:15%; left:5%;">
+        </span>        
+    </div>
+</section>
+
+
+<section
+    class="future"
+    data-transition="none"
+    hidden="">
+
+    <h3> Phylogenomics II </h3>
+    <p style="font-size:28px; margin-right:10%; margin-left: 10%";>
+    Background on the method and application of RAD-seq:
+    </p>
+    <img src="https://raw.githubusercontent.com/genomics-course/12-scaffolding/master/data/Andrews-2016.png" style="width:85%">
+</section>
+
+
+<section
+    class="future"
+    data-transition="none"
+    hidden="">
+    <h3> Phylogenomics II </h3>
+    <p style="font-size:28px; margin-right:10%; margin-left: 10%";>
+    Applied phylogenomics example:
+    </p>
+    <img src="https://raw.githubusercontent.com/genomics-course/12-scaffolding/master/data/Eaton-2015.png" style="width:85%">
+</section>
+
+
+
+
+    <section>
+        <h4> Notebook 13.1: RAD-seq </h4>
+        <p style="text-align:left; font-size:0.75em; margin:0%">
+ Genomic library preparation for Illumina sequencing involves combining oligonucleotide molecules in solution, in a particular order, to build larger molecules that will bind by complementarity to the sequencing machine where they can be read using "sequencing by synthesis".<br><br>
+
+ We built oligonucleotides bioinformatically for a RAD-seq library following the Original RAD method (*sensu* Andrews et al.) using the `PstI` restriction enzyme (CTGCA^G), and ligation of six-base barcodes (e.g., AACCTT) and the two Illumina adapters.  
+        </p>
+    </section>    
+
+
+
+
+    <section>
+        <h4> Notebook 13.1: RAD-seq variants: original RAD </h4>
+        <img src="../data/Andrews-RAD.png" style="width:30%">
+    </section>
+
+    <section>
+        <h4> Notebook 13.1: RAD-seq variants: ddRAD </h4>
+        <img src="../data/Andrews-ddRAD.png" style="width:30%">
+    </section>
+
+
+
+    <section>
+        <h4> Notebook 13.1: RAD-seq</h4>
+        <pre><code class="python" style="max-height: 500px">   
+def random_sequence(length):
+    "return a random sequence of DNA"
+    return "".join(np.random.choice(list("ACGT"), size=length))
+
+
+def restriction_digest(sequence, recognition, cut):
+    """
+    restriction digest a genome sequence at the given (recognition) site and
+    split the site at the given position (cut) to leave overhangs. Returns one
+    strand of the resulting fragment: e.g., for recognition=CTGCAG, cut=5 this
+    returns the 5' to 3' strand below.
+       5' ----G[seq]CTGCA 3'
+       3' ACGTC[seq]G---- 5'
+    """
+    # cut sequence at every occurence of recognition site
+    fragments = sequence.split(recognition)
+    
+    # add overhang that results from sequence splitting within the recognition site
+    fragments = [recognition[cut:] + i + recognition[:cut] for i in fragments]
+    return fragments
+
+        </pre></code>
+    </section>
+
+
+    <section>
+        <h4> Notebook 13.1: RAD-seq</h4>
+        <pre><code class="python" style="max-height: 500px">   
+    
+def complement(sequence):
+    "return the complement of a sequence"
+    return (sequence
+              .replace("C", "g")
+              .replace("G", "c")
+              .replace("T", "a")
+              .replace("A", "t")
+              .upper())
+        </pre></code>
+    </section>
+
+
+
+    <section>
+        <h4> Notebook 13.1: RAD-seq</h4>
+        <pre><code class="python" style="max-height: 600px;font-size: 13px; line-height: 1.45">   
+def ligate_barcoded_adapters(fragments, recognition, cut, barcode):
+    """
+    Ligates a barcoded Illumina adapter to each fragment if it has a cleaved
+    sequence overhang matching the recognition site. This will fill the molecule
+    so that both ends have full recognition sequence and Illumina adapter.
+    """
+    ligated = []
+    for fragment in fragments:
+        
+        # adapter has the recognition overhang complement attached to it so
+        # it can bind to 5' strand and complement with 3' strand.
+        # ----G[seq]CTGCA   <- attaches left side of here   
+        # ACGTC[seq]G---- 
+        ligate_to_this_strand = "{}{}{}".format(
+            complement(ILLUMINA_ADAPTER_1)[::-1], 
+            complement(barcode)[::-1],
+            recognition[-cut:-(len(recognition) - cut)],   
+        )
+        
+        # attaches to this strand and complements overhang on other strand.
+        # ----G[seq]CTGCA   <- attaches here
+        # ACGTC[seq]G----   
+        ligate_to_other_strand = "{}{}".format(
+            barcode, 
+            ILLUMINA_ADAPTER_1,
+        )
+        
+        # the full molecule has the fragment in the middle
+        molecule = "{}{}{}".format(
+            ligate_to_this_strand,
+            fragment,
+            ligate_to_other_strand,
+        )
+        ligated.append(molecule)
+    return ligated
+        </pre></code>
+    </section>
+
+
+
+    <section>
+        <h4> Notebook 13.1: RAD-seq</h4>
+        <pre><code class="python" style="max-height: 600px;font-size: 14px; line-height: 1.45">   
+# generate a random genome sequence
+scaffold = random_sequence(1000000)
+
+# cut up the genome with a restriction enzyme
+fragments = restriction_digest(scaffold, "CTGCAG", 5)
+
+# attach a barcode (AATTCC) and adapter to the overhanging end sequence (CTGCA)
+barcoded_fragments = ligate_barcoded_adapters(fragments, "CTGCAG", 5, "AATTCC")
+        </pre></code>
+    </section>
+
+    <section>
+        <p style="font-size:0.65em; 
+        background-color: #b7e2c0; color: #3a6944; 
+        margin-left:50px; margin-right: 50px"> 
+    How many fragments are in the library after the restriction digestion? Calculate it from the fragments or barcoded_fragments lists. If we used a restriction enzyme with a longer recognition sequence would it produce more or fewer fragments?
+       </p>    
+        <pre><code class="python" style="max-height: 600px;">   
+    len(barcoded_fragments)
+    # 231
+        </pre></code>
+    <p style="font-size:0.65em; 
+        margin-left:50px; margin-right: 50px"> 
+There are 231 fragments in the digested library. If we used a restriction 
+enzyme that cuts at a longer recognition site is would cut less often and we 
+would get fewer fragments. 
+       </p>    
+    </section>
+</section>
+
+
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <section>
+        <pre><code class="python" style="max-height: 600px;">   
+
+    # select first fragmented molecule
+    fragment = barcoded_fragments[0]
+
+    # print features of the molecule
+    print("{:<\40}adapter I (revcomp)".format(fragment[:33]))
+    print("{:<\40}barcode (revcomp)".format(fragment[33:39]))
+    print("{:<\40}restriction overhang (revcomp)".format(fragment[39:44]))
+    print("{}...       5' end of strand".format(fragment[44:74]))
+    print("...{}       3' end of strand".format(fragment[-74:-44]))
+    print("{:<\40}restriction overhang".format(fragment[-44:-39]))
+    print("{:<\40}barcode".format(fragment[-39:-33]))
+    print("{:<\40}adapter I".format(fragment[-33:]))
+        </pre></code>
+        <pre><code class="python" style="background: grey">
+    TGACTGGAGTTCAGACGTGTGCTCTTCCGATCT       adapter I (revcomp)
+    GGAATT                                  barcode (revcomp)
+    TGCAG                                   restriction overhang (revcomp)
+    TCTCGTCAGCTGGACGCAACAGTGTTATCT...       5p end of strand
+    ...CCAGGATAACCGTAATTCAATTGCAGTCAC       3p end of strand
+    CTGCA                                   restriction overhang
+    AATTCC                                  barcode
+    AGATCGGAAGAGCACACGTCTGAACTCCAGTCA       adapter I
+
+        </pre></code>
+    </section>
+</section>
+
+
+
+<section 
+    data-transition="none"
+    data-background-iframe="
+https://www.polleverywhere.com/multiple_choice_polls/0quIfxHcHJkZ7Uyx4eQOS?preview=true"
+style="top:-960px; display: block;" 
+    class="future" 
+    hidden="">       
+</section>
+
+
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <section>
+        <pre><code class="python" style="max-height: 600px;">   
+
+def shear_DNA_to_size_select(fragments, size):
+    "randomly shears fragments down to the entered size"
+    sheared_fragments = []
+    
+    # iterate over fragments
+    for fragment in fragments:
+        
+        # get breakpoints for shearing into chunks of size 'size'
+        nfrags = max(2, int(len(fragment) / size))
+        splits = np.linspace(0, len(fragment), nfrags).astype(int)
+        
+        # slice out bits to represent sheared fragments
+        idx = 0
+        for end in splits[1:]:
+            fragbit = fragment[idx:end]
+            sheared_fragments.append(fragbit)
+            idx = end
+    return sheared_fragments
+        </pre></code>
+        <pre><code class="python" style="max-height: 600px;">   
+# break into 300bp bits and only keep bits 
+sheared_fragments = shear_DNA_to_size_select(all_fragments, 300)
+        </pre></code>
+    </section>
+</section>
+
+
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <section>
+        <p style="font-size:0.65em; 
+        background-color: #b7e2c0; color: #3a6944; 
+        margin-left:50px; margin-right: 50px"> 
+    How many fragments are in the library after shearing? What type of sequences do you expect to find at the ends of the fragments after shearing? How is this different from the expectation after the initial restriction digestion? Answer in Markdown below.
+       </p>    
+
+        <pre><code class="python" style="max-height: 600px;">   
+    len(sheared_fragments)
+    # 12176
+        </pre></code>
+    <p style="font-size:0.65em; text-align: left;
+        margin-left:50px; margin-right: 50px"> 
+ After shearing there are 12176 fragments in the library since many of the fragments were longer than 300 bp and we sheared them all down to this size. The ends of the sheared fragments are random positions, but some will still have a restriction overhang on one end. This is different from before shearing, when each fragment had a restriction overhang on each end.
+       </p>    
+    </section>
+</section>
+
+
+
+
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+
+    <section>
+        <p style="font-size:0.6em; text-align: left;
+        background-color: #b7e2c0; color: #3a6944; 
+        margin-left:50px; margin-right: 50px"> 
+
+Question: Look at the contents of the fastq files in the following directory:
+    
+<span style="font-family:monospace">/home/jovyan/ro-data/SRP021469/</span>
+
+Based on the sequence data in each file, and what you now know about the structure of oligonucleotides that make up RAD-seq data, what was the restriction enzyme that was used to build this RAD-seq library? For the file <span style="font-family:monospace">29154_superba_SRR1754715.fastq.gz</span> in this directory, what is the barcode sequence? 
+
+Hint: it may help to compare the sequences found in several files (data from several different individuals) to figure out which is the barcode sequence and which is the restriction sequence. 
+
+Answer in Markdown below.
+    </p>
+
+    <p style="font-size:0.6em; text-align: left;
+    margin-left:50px; margin-right: 50px"> 
+    In the sentence above this question I suggest 2 ways: (1) Use the unix tools
+    `less` or `head` to peek at the contents of the file; or (2) use Python to
+    load the file and print the first few lines. We've learned both of these 
+    things before.
+    </p>
+
+    </section>
+
+
+    <section>
+
+        <pre><code class="python" style="max-height: 600px;">   
+import gzip
+data = gzip.open("/home/jovyan/ro-data/SRP021469/29154_superba_SRR1754715.fastq.gz")
+
+# print a few lines
+for i in range(10):
+    line = data.readline().strip().decode()
+    print(line)
+       
+data.close()
+        </pre></code>
+
+
+        <pre><code class="parsed-literal" style="background: grey">
+@29154_superba_SRR1754715.1 GRC13_0027_FC:4:1:12560:1179 length=74
+TGCAGGAAGGAGATTTTCGNACGTAGTGNNNNNNNNNNNNNNGCCNTGGATNNANNNGTGTGCGTGAAGAANAN
++29154_superba_SRR1754715.1 GRC13_0027_FC:4:1:12560:1179 length=74
+IIIIIIIGIIIIIIFFFFF#EEFE<\?###############################################
+@29154_superba_SRR1754715.2 GRC13_0027_FC:4:1:15976:1183 length=74
+TGCAGTTGTAAATACAAATATCCCAAAANNNNGNNNNNNNTNTAATATTTTGNAANNTTGAGGGGTGTGATNTN
++29154_superba_SRR1754715.2 GRC13_0027_FC:4:1:15976:1183 length=74
+GGGGHHHHHHHHHHHHHDHGHHHHCAAA##############################################
+@29154_superba_SRR1754715.3 GRC13_0027_FC:4:1:19092:1179 length=74
+TGCAGGCTCTGACAAAGAANTCGACTGANNNNNNNNNNNNNNCACNGGTTCNNGNNNATGTCAATGTGGTANAN
+        </pre></code>
+    </section>
+
+
+
+    <section>
+    <p style="font-size:0.6em; text-align: left;
+    margin-left:50px; margin-right: 50px"> 
+    Or, open a terminal (from the dashboard page, as explained in the instructions)
+    and use the `less` or `zcat [file] | head` commands. 
+    </p>
+
+        <pre><code class="bash" style="max-height: 600px;">
+# opens an interactive view to one window full of the file. (q to quit).
+less /home/jovyan/ro-data/SRP021469/29154_superba_SRR1754715.fastq.gz
+
+# or, print first n lines to the screen 
+zcat /home/jovyan/ro-data/SRP021469/29154_superba_SRR1754715.fastq.gz | head -n 20
+        </code></pre>
+
+    </section>
+
+</section>
+
+
+
+
+
+<section
+    class="future"
+    data-transition="none"
+    hidden="">
+
+
+
+    <section>
+        <h4> Notebook 13.2: RAD-seq pipelines</h4>
+        <p style="text-align:left; font-size:0.75em; margin:0%">
+
+ The ipyrad software is used to make variant calls and assemble loci from 
+ RAD-seq reads. Two approaches: de novo and reference. Reference mapped data
+ uses the mapping coordinates to identify orthology of sequences across samples.
+ Without a reference clustering is used to identify orthology based on 
+ pairwise sequence similarity. 
+ <br>
+ <br> 
+ ipyrad is convenient to use as it provides a full pipeline from raw data to 
+ assembled loci, and includes many analysis tools specialized for RAD data. 
+        </p>
+    </section>    
+
+
+
+    <section>
+        <h4> Notebook 13.2: Object oriented Python library</h4>
+        <pre><code class="python" style="max-height: 600px;">
+import ipyrad as ip
+
+# create an Assembly object
+data = ip.Assembly("test")
+
+# view default params of object
+data.params
+
+# set parameters for assembly 
+data.params.raw_fastq_path = "/home/jovyan/ro-data/ipsimdata/rad_example_R1_.fastq.gz"
+data.params.barcodes_path = "/home/jovyan/ro-data/ipsimdata/rad_example_barcodes.txt"
+...    </code></pre>
+    </section>
+
+
+
+    <section>
+        <pre><code class="python" style="max-height: 600px;">
+# run steps of the assembly
+data.run("123", auto=True)
+...    </code></pre>
+        <img src="https://ipyrad.readthedocs.io/_images/steps.png" style="width:70%">
+    </section>
+
+
+    <section>
+        <h4> Notebook 13.2: After assembly</h4>
+        <pre><code class="python" style="max-height: 600px;">
+# final assembled data files can be accessed from the object directly
+data.outfiles
+        </code></pre>
+
+
+        <pre><code class="python" style="max-height: 600px;">
+import ipyrad.analysis as ipa
+import toytree
+
+# infer a ML tree
+rax = ipa.raxml(data=data.outfiles.phy, N=10)
+rax.run(block=True, force=True)
+
+# plot the tree
+tre = toytree.tree(rax.trees.bipartitions)
+tre.root(wildcard="3").draw();
+        </code></pre>        
+    </section>
+
+
+
+    <section>
+    <p style="font-size:0.6em; text-align: left;
+    margin-left:50px; margin-right: 50px"> 
+    Look at the output files (again, I recommend using `less`).
+    </p>
+
+        <pre><code class="bash" style="max-height: 600px;">
+# opens an interactive view to one window full of the file. (q to quit).
+less /home/jovyan/work/simdata/test_outfiles/test.loci
+        </code></pre>
+
+        <pre><code class="bash" style="max-height: 400px;">
+reference     TTTAACTGTTCAAGTTGGCAAGATCAAGTCGTCCCTAGCCCCCGCGTCCGTTTTTACCTGGTCGCGGTCCCGACCCAGCTGCCCCC
+1A_0          TTTAACTGTTCAAGTTGGCAAGATCAAGTCGTCCCTAGCCCCCGCGTCCGTTTTTACCTGGTCGCGGTCCCGACCCAGCTGCCCCC
+1B_0          TTTAACTGTTCAAGTTGGCAAGATCAAGTCGTCCCTAGCCCCCGCGTCCGTTTTTACCTGGTCGCGGTCCCGACCCAGCTGCCCCC
+1C_0          TTTAACTGTTCAAGTCGGCAAGATCAAGTCGTCCCTAGCCCCCGCGTCCGTTTTTACCTGGTCGCGGTCCCGACCCAGCTGCCCCC
+1D_0          TTTAACTGTTCAAGTTGGCAAGATCAAGTCGTCCCTAGCCCCCGCGTCCGTTTTTACCTGGTCGCGGTCCCGACCCAGCTGCCCCC
+2E_0          TTTAACTGTTCAAGTTGGCAAGATCAAGTCGTCCCTAGCCCCCGCGTCCGTTTTTACCTGGTCGCGGTCCCGACCCAGCTGCCCCC
+2F_0          TTTAACTGTTCAAGTTGGCAAGATCAAGTCGTCCCTAGCCCCCGCGTCCGTTTTTACCTGGTCGCGGTCCCGACCCAGCTGCCCCC
+2G_0          TTTAACTGTTCAAGTTGGCAAGATCAAGTCGTCCCTAGCCCCCGCGTCCGTTTTTACCTGGTCGCGGTCCCGACCCAGCTGCCCCC
+2H_0          TTTAACTGTTCAAGTTGGCAAGATCAAGTCGTCCCGAGCCCCCGCGTCCGTTTTTACCTGGTCGCGGTCCCGACCCAGCTGCCCCC
+3I_0          TTTAACTGTTCAAGTTGGCAAGATCAAGTCGTCCCTAGCCCCCGCGTCCGTTTTTACCTGGTCGCGGTCCCGACCCAGCTGCCCCC
+3J_0          TTTAACTGTTCAAGTTGGCAAGATCAAGTCGTCCCTAGCCCCCGCGTCCGTTTTTACCTGGTCGCGGTCCCGACCCAGCTGCCCCC
+3K_0          TTTAACTGTTCAAGTTGGCAAGATCAAGTCGTCCCTAGCCCCCGCGTCCGTTTTTACCTGGTCGCGGTCCCGACCCAGCTGCCCCC
+3L_0          TTTAACTGTTCAAGTTGGCAAGATCAAGTCGTCCCTAGCCCCCGCGTCCGTTTTTACCTGGTCGCGGTCCCGACCCAGCTGCCCSC
+//                           -                   -                                                - |0:MT:5014-5100|
+reference     GCGACTCTATGGAGGAAGGCACACCCGCCATTGCAGGTCATCAACTATACTGAGTGCCGTGTTGGCACCATCCAGTGTGAATTACA
+1A_0          GCGACTCTATGGAGGAAGGCACACCCGCCATTGCAGGTCATCAACTATACTGAGTGCCGTGTTGGCACCATCCAGTGTGAATTACA
+1B_0          GCGACTCTATGGAGGAAGGCACACCCGCCATTGCAGGTCATCAACTATACTGAGTGCCGTGTTGGCACCATCCAGTGTGAATTACA
+1C_0          GCGACTCTATGGAGGAAGGCACACCCGCCATTGCAGATCATCAACTATACTGAGTGCCGTGTTGGCACCATCCAGTGTGAATTACA
+1D_0          GCGACTCTATGGAGGAAGGCACACCCGCCATTGCAGGTCATCAACTATACTGAGTGCCGTGTTGGCACCATCCAGTGTGAATTACA
+2E_0          GCGACTCTATGGAGGAAGGCACACCCGCCATTGCAGGTCATCAACTATACTGAGTGCCGTGTTGGCACCATCCAGTGTGAATTACA
+2F_0          GCGACTCTATGGAGGAAGGCACACCCGCCATTGCAGGTCATCAACTATACTGAGTGCCGTGTTGGCACCATCCAGTGTGAATTACA
+2G_0          GCGACTCTATGGAGGAAGGCACACCCGCCATTGCAGGTCATCAACTATACTGAGTGCCGTGTTGGCACCATCCAGTGTGAATTACA
+2H_0          GCGACTCTATGGAGGAAGGCACACCCGCCATTGCAGGTCATCAACTATACTGAGTGCCGTGTTGGCACCATCCAGTGTGAATTACA
+3I_0          GCGACTCTATGGAGGAAGGCWCACCCGCCATTGCAGGTCATCAACTATACTGAGTGCCGTGTTGGCACCATCCAGTGTGAATTACA
+3J_0          GCGACTCTATGGAGGAAGGCACACCCGCCATTGCAGGTCATCAACTATACTGAGTGCCGTGTTGGCACCATCCAGTGTGAATTACA
+3K_0          GCGACTCTATGGAGGAAGGCACACCCGCCATTGCAGGTCATCAACTATACTGAGTGCCGTGTTGGCACCATCCAGTGTGAATTACA
+3L_0          GCGACTCTTTGGAGGAAGGCACACCCGCCATTGCAGGTCATCAATTATAGTGAGTGCCGTGTTGGCACCATCCAGTGTGAATTACA
+//                    -           -               -       -    -                                    |1:MT:10114-10200|
+reference     CACTAGGACCCCCATATAGGTTATAGGGTTGCTATGTATAAGCCGTCGGCAAATTCCGCGAACGCTGTCGCGTCCAGCTTAATTAC
+1A_0          CACTAGGACCCCCATATAGGTTATAGGGTTGCTATGTATAAGCCGTCGGCAAATTCCGCGAACGCTGTCGCGTCCAGCTTAATTAC
+1B_0          CACTAGGACCCCCATATAGGTTATAGGGTTGCTATGTATAAGCCGTCGGCAAATTCCGCGAACGCTGTCGCGTCCAGCTTAATTAC
+1C_0          CACTAGGACCCCCATATAGGKTATAGGGTWGCTATGTATAAGCCGTCGGCAAATTCCGCGAACGCTGTCRCGTCCAGCTTAATTAC
+1D_0          CACTAGGACCCCCATATAGGTTATAGGGTTGCTATGTATAAGCCGTCGGCAAATTCCGCGAACGCTGTCGCGTCCAGCTTAATCAC
+2E_0          CACTAGGACCCCCATATAGGTTATAGGGTTGCTATGTATAAGCCGTCGGCAAATTCCGCGAACGCTGTCGCGTCCAGCTTAATTAC
+2F_0          CACTAGGACCCCCATATAGGTTATAGGGTTGCTATGTATAAGCCGTCGGCAAATTCCGCGAACGCTGTCGCGTCCAGCTTAATTAC
+2G_0          CACTAGGACCCCCATATAGGTTATAGGGTTGCTATGTATAAGCCGTCGGCAAATTCCGCGAACGCTGTCGCGTCCAGCTTAATTAC
+2H_0          CACTAGGACCCCCATATAGGTAATAGGGTTGCTATGTATAAGCCGTCGGCAAATTCCGCGAACGCTGTCGCRTCCAGCTTAATTAC
+3I_0          CACTAGAACCCCCATATAGGTTATAGGGTTGCTATGTATAAGCCGTCGGCAAATTCCGCGAACGCTGTCGCGTCCAGCTTAATTAC
+3J_0          CACTAGRACCCCCATATAGGTTATAGGGTTGCTATGTATAAGCCGTCGGCAAATTCCGCGAACGCTGTCGCGTCCAGCTTAATTAC
+3K_0          CACTAGGACCCCCATATAGGTTATAGGGTTGCTATGTATAAGCCGTCGGCAAATTCCGCGAACGCTGTCGCGTCCAGCTTAATTAC
+3L_0          CACTAGGACCCCCATATAGGTTATAGGGTTGCTATGTATAAGCCGTCGGCAAATTCCGCGAACGCTGTCGCGTCCAGCTTAATTAC
+//                  *             --       -                                       - -           -  |2:MT:15214-15300|
+        </code></pre>
+    </section>
+
+
+
+    <section>
+    <p style="font-size:0.7em; text-align: left;
+    margin-left:50px; margin-right: 50px"> 
+    Let's look at an empirical example: 
+    </p>
+        <pre><code class="bash" style="max-height: 600px;">
+# opens an interactive view to one window full of the file. (q to quit).
+less /home/jovyan/ro-data/SRP021469_outfiles/SRP021469.loci
+        </code></pre>
+
+        <pre><code class="bash" style="max-height: 400px;">
+29154_superba_SRR1754715              TCATGGATTTTATTAATTTTG--TAAAAAAGATTGAATAAGTATGTTCAATAGAATATATTATGCTTGAC
+30556_thamno_SRR1754720               TCATGGATTTTATTAATTTTG-AAAAAAAAGATTGAATAAGTATGTTTAATATAATATATTATGCTTGAC
+30686_cyathophylla_SRR1754730         TCATGGATTTTATTAATTTTG--TAAAAAAGATTGAATAAGTATGTTCAATAGAATATATTATGCTTGAC
+33413_thamno_SRR1754728               TCATGGATTTTATTAATTTTG--TAAAAAAGATTGAATAAGTATGTTTAATATAATATATTATGCTTGAC
+35236_rex_SRR1754731                  TCATGGATTTTATTAATTTTG-AAAAAAAAGATTGAATAAGTATGTTTAATATAATATATTATGCTTGAC
+35855_rex_SRR1754726                  TCATGGATTTTATTAATTTTG-AAAAAAAAGATTGAATAAGTATGTTTAATATAATATATTATGCTTGAC
+40578_rex_SRR1754724                  TCATGGATTTTATTAATTTTGAAAAAAAAAGATTGAATAAGTATGTTTAATATAATATATTATGCTTCAC
+//                                                           *                       *    *              -  |0|
+29154_superba_SRR1754715              GGNGAATATTGTTTTCCACGACATTGATAAAACTGATCATCTTTAAGAACTACCCAAGACATGATCAAA
+30556_thamno_SRR1754720               GGTGAATATTGTTTTCCACGACATTGATAAAACTGATCATCTTTAAGAACTACCCAAGACATGATCAAA
+30686_cyathophylla_SRR1754730         GGNGAATATTGTTTTCCACGACAATGATAAAACTGATCATCTTTAAGAACTACCCAAGACATGATCAAA
+33413_thamno_SRR1754728               GGTGAATATTGTTTTCCACGACATTGATAAAACTGATCATCTTTAAGAACTACCCAAGACATGATCAAA
+35236_rex_SRR1754731                  GGTGAATATTGTTTTCCACGACATTGATAAAACTGATCATCTTTAAGAACTACCCAAGACATGATCAAA
+35855_rex_SRR1754726                  GGTGAATATTGTTTTCCATGACATTGATAAAACTGATCATCTTTAAGAACAACCCAAGACATGATCAAA
+38362_rex_SRR1754725                  GGTGAATATTGTGTTCCACGACATTGATAAAACTGATCATCTTTAAGAACTACCCAAGACATGATCAAA
+39618_rex_SRR1754723                  GGTGAATATTGTGTTCCACGACATTGATAAAACTGATCATCTTTAAGAACTACCCAAGACATGATCAAA
+40578_rex_SRR1754724                  GGTGAATATTGTTTTCCAYGACATTGATAAAACTGATCATCTTTAAGAACWACCCAAGACATGATCAAA
+41478_cyathophylloides_SRR1754722     GGTGAATATTGTTTTCCACGACATTGATAAAACTGATCATCTTTAAGAACTACCCAAGACATGATCAAA
+41954_cyathophylloides_SRR1754721     GGTGAATATTGTTTTCCACGACATTGATAAAACTGATCATCTTTAAGAACTACCCAAGACATGATCAAA
+//                                                *     *    -                          *                  |1|
+29154_superba_SRR1754715              AACACCTGAAATAAATTTTATGTGCAATGCACAC--ACACACACCTCCCATGCGTGTGTGTCAGAAANA
+30556_thamno_SRR1754720               AACACCTGAAATAAATTTTATGTGCAACGCACACAAACACACACCTACCATGCGTGTGTGTCAGAAAAA
+30686_cyathophylla_SRR1754730         AACACCTGAAATAAATTTTATGTGCAATGCACACACACACACACCTCCCATGCGTGTGTGTCAGAAAAA
+35236_rex_SRR1754731                  AACACCTGAAATAAATTTTATGTGCAATGCACACAAACACACACCTCCCATGCGTGTGTGTCAGAAAAA
+35855_rex_SRR1754726                  AACACCTGAAATAAATTTTATGTGCAATGCACACAAACACACACCTCCTATGCATGTGTGTCAGAAAAA
+38362_rex_SRR1754725                  AACACCTGAAATAAATTTTATGTGCAATGCACACAAACACACACCTCCCATGCGTGTGTGTCAGAAAAA
+39618_rex_SRR1754723                  AACACCTGAAATAAATTTTATGTGCAATGCACACAAACACACACCTCCCATGCGTGTGTGTCAGAAAAA
+40578_rex_SRR1754724                  AACACCTGAAATAAATTTTATGTGCAATGCACACAAATACACACCTCCCATGCGTGTGTGTCAGAAAAA
+//                                                               -       - -        - -    -               |2|
+        </code></pre>
+</section>
+</section>
+
+
+
+<section
+    class="future"
+    data-transition="none"
+    hidden="">
+
+
+
+    <section>
+    <h3> Phylogenomics II </h3>
+    <p style="font-size:24px; margin-right:10%; margin-left: 10%";>
+    Inference of phylogeny and introgression from multi-locus genomic data.
+    </p>
+    <img src="../data/Oaks-tree-struct.png" style="width:95%">
+    </section>
+
+    <section>
+        <p style="font-size:0.6em; text-align: left;
+        background-color: #b7e2c0; color: #3a6944; 
+        margin-left:50px; margin-right: 50px"> 
+    See Table 1 in the Eaton et al. paper which shows the number of RAD-seq loci that were included in de novo assembled data sets that were assembled with different parameter settings. The Allmin4 and Allmin20 assemblies differ greatly in the total number of loci, the number of informative sites, and the missing data. Why do you think?
+        </p>
+
+        <p style="font-size:0.6em; text-align: left;
+        margin-left:50px; margin-right: 50px"> 
+    RAD-seq data is characterized by missing data because many loci will be sequenced for some samples 
+    but not for others. This can occur from mutations to restriction sites, from low sequencing coverage, 
+    or from the generation of new restriction sites in only a subset of samples. These data sets were 
+    assembled with different parameters to yeild data sets with different amounts of missingness. Lots of
+    missing data is not a problem for phylogenetic inference. It is a big problem for many population 
+    genetic methods like principal components analysis. In this paper Eaton et al. found missingness had
+    no effect on phylogeny, and they used a data set with very little missing data (allmin20) for structure
+    analyses. 
+        </p>
+    </section>
+
+
+    <section>
+        <p style="font-size:0.75em; text-align: left;
+        background-color: #b7e2c0; color: #3a6944; 
+        margin-left:50px; margin-right: 50px"> 
+    Two important considerations for inferring introgression:
+        </p>
+
+        <p style="font-size:0.75em; text-align: left;
+        margin-left:50px; margin-right: 50px"> 
+    (1) Missing samples (ghost lineages) may be the true source of introgression. <br>
+    (2) Phylogenetic relatedness (non-independence) can give a spurious signal of 
+    introgression. 
+        </p>
+    </section>
+</section>
+
+
+
+
+<section
+    class="future"
+    data-transition="none"
+    hidden="">
+
+    <h3> Phylogenomics II: the coalescent </h3>
+    <p style="font-size:24px; margin-right:5%; margin-left: 5%; text-align: left";>
+    Genealogical relationships vary across the genome because the genome represents 
+    a mosaic of chunks inherited from many different ancestors. This variation 
+    can be modeled using the coalescent -- a mathematical approximation for 
+    the relationship between population size and the expected number of generations
+    back in time until two individuals share a common ancestor.
+    </p>
+
+    <img src="../../data-svg/intro-tree-outlines.svg" 
+        style="width:90%; top:15%; left:5%;">
+</section>
+
+
+
+
+</section>
+
+
+</div>
+</div>
+    
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+
+
+        <!-- JAVASCRIPT -->
+        <script src="../../reveal/lib/js/head.min.js"></script>        
+        <script src="../../reveal/js/reveal.js"></script>
+        <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+        <script>
+            Reveal.initialize({
+                controls:true, 
+                progress:false, 
+                loop:false, 
+                history:true,
+                center:false,
+                fragmentInURL:true,
+                margin:.05,
+                minScale:0.1,
+                maxScale:5,
+                width:960,
+                height:720,
+                theme:Reveal.getQueryHash().theme,
+                transition:Reveal.getQueryHash().transition||"linear",
+                // slideNumber: true,
+                // slideNumber: "h/v",
+                dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                ]
+            });
+
+            // Reveal.configure({ slideNumber: true })
+            // Reveal.configure({ slideNumber: "c/t" })            
+
+            // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+        </script>
+    </body>
+</html>
