@@ -165,12 +165,9 @@
 <section class="present" data-transition="none">
     <div style="margin-left: auto; margin-top: 5%">    
     <h2> <i>Quercus</i> section Virentes </h2>    
-    <p>ipyrad v1.0 reference-based assembly</p>
     <p>35 samples, 7 species plus outgroups.<p>
-    <p>58K loci, 51% missing, 484K SNPs. (30 min. on 40 cores).</p>
-
-    IMAGE HERE
-
+    <p>ipyrad (ref): 58K loci, 51% missing, 484K SNPs. (30 min., 40 cores).</p>
+    <img src="../data-svg/oaks-2015-summary.svg" style="width:70%">
     <br>
     <p style="font-size: 0.75em"> 
         Hipp et al. (2014); Eaton et al. (2015); Cavender-Bares et al. (2015)</p>
@@ -305,11 +302,11 @@
 <section class="present" data-transition="none">
     <div style="margin-left: auto; margin-top: 5%">    
     <h2> Missing data in phylogenetics</h2>
-    <!-- <h2> Goal: A distribution of gene trees representing every species.</h2> -->
     <p> Goal: A distribution of gene trees representing every species.</p>
-    <!-- <p> Live oak min4 data set: 57K loci (mindepth=6, mincov=4), 51% missing.</p> -->
-    <p> Oak data set: 57K loci, 51% missing, 7 species (3-5 inds. each).</p>    
+    <!-- <p> Oak data set: 57K loci, 51% missing, 7 species (3-5 inds. each).</p>     -->
     <img src="../data-svg/oaks-2015-summary.svg" style="width:80%">
+    <p style="font-size: 0.75em"> 
+        Hipp et al. (2014); Eaton et al. (2015); Cavender-Bares et al. (2015)</p>
     </div>
 </section>
 
@@ -353,12 +350,12 @@
 <!-- 25 -->
 <section class="present" data-transition="none">
     <div style="margin-left: auto; margin-top: 5%">    
-    <!-- <h2> Missing data in phylogenetics</h2> -->
-    <h2 style="font-size:1.4em"> Goal: A distribution of gene trees representing every species.</h2>
-    <p> Oaks: 57K loci, 51% missing, 8 clades (2-5 inds. each).</p>    
-    <p> One sample per clade: X loci</p>
-    <p> Consensus for each species: N loci </p>
+    <h2 style="font-size:1.4em"> Consensus sampling yields 3X as many fully sampled loci.</h2>
+    <p> One sample of each species: 12/57K loci</p>
+    <p> Consensus for each species: 32/57K loci </p>
     <img src="../data-svg/oaks-2015-summary.svg" style="width:80%">
+    <p style="font-size: 0.75em"> 
+        Hipp et al. (2014); Eaton et al. (2015); Cavender-Bares et al. (2015)</p>
     </div>
 </section>
 <!-- MAXIMIZES USEFULNESS OF SATA -->
@@ -369,6 +366,8 @@
     <h2> Sliding windows</h2>
     <p> How well do concatenated RAD windows represent gene tree variation?</p>
     <img src="../data-svg/oaks-2step-1.svg" style="width:85%">
+    <p style="font-size: 0.75em"> 
+        RAxML gene trees.</p>
     </div>
 </section>
 
@@ -379,6 +378,8 @@
     <h2> Sliding windows</h2>
     <p> How well do concatenated RAD windows represent gene tree variation?</p>
     <img src="../data-svg/oaks-2step-2.svg" style="width:85%">
+    <p style="font-size: 0.75em"> 
+        Astral species trees inferred from gene trees.</p>
     </div>
 </section>
 
@@ -393,7 +394,7 @@
 </section>
 
 
-<!-- 27 OUTLINE III -->
+<!-- 29 OUTLINE III -->
 <section class="present" data-transition="none">
     <div style="margin-left: auto; margin-top: 5%">    
     <h2> Missing data in phylogenetics</h2>
@@ -401,34 +402,36 @@
     </div>
 </section>
 
+<!-- 30 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> SNP-based species trees (and networks)</h2>
+    <p>SVDquartets uses <i>invariant patterns</i> to infer quartet trees from SNPs.</p>
+    <p>Each quartet is inferred independently, so missing data has almost no effect.</p>
+    <p>But invariant patterns <i>among quartets</i> can be highly informative.</p>
+    <p><span style="font-weight: 400">See McKenzie Poster #76 (Monday);</span> invariant method for network inference.</p>
+    <img src="../data-img/patrick-invariants-2.png" style="width:50%">    
+    </div>
 
+    <!-- (Chifman and Kubatko 2014)  -->
+</section>
 
 
 <!-- CONCLUSION -->
 <section class="present" data-transition="none">
     <div style="margin-left: auto; margin-top: 5%">    
     <h2> Conclusions</h2>
-
     <div style="margin-left: 20%; width: 70%; text-align: left">
-    <p>1. <i>ipyrad-analysis</i> toolkit makes it easy to run dozens of analyses
-        optimized for RAD missing-ness with a few lines of code </p>
+    <p>1. With <i>ipyrad-analysis</i> it is easy to run dozens of analyses
+        optimized for RAD missing-ness with a few lines of code.</p>
     <br>
     <p>2. Concatenating RAD loci on scaffold windows, and consensus or imputation
         sampling, dramatically improve the utility of RAD.</p>
     <br>
-    <p>3. SNP based methods may be the focus of many new methods </p>
+    <p>3. SNP based methods are in their infancy, but can work well with RAD.</p>
     </div>
     </div>
 </section>
-
-
-<!--     <p> RAD data can be used in most phylogenomic applications.</p>
-    <p> "Spatial binning" in ipyrad combines ref mapped loci into informative markers"</p>
-    <p> Live oak "reference" results recapitulate earlier denovo results, but with
-        much improved confidence.</p>
-    <p> Spatial genomic windows allow us to interrogate the genome for adaptive introgression</p>
-    <p> The ipyrad-analysis toolkit makes RAD phylogenomic analyses simple.</p>
- -->
 
 
 <section class="present" data-transition="none">
@@ -436,30 +439,37 @@
 
     <div style="display:flex; flex-wrap:row;">
         <p style="font-size: 24px; text-align: left">
-        
 
+
+        Oaks data set:
         Jeannine Cavender-Bares<br>
         Andrew Hipp<br>
         Antonio Gonzalez-Rodriguez<br>
-        Patrick McKenzie<br>
+
+
+        ipyrad development:
         Isaac Overcast<br>        
+
         </p>
         <p style="font-size: 24px; text-align: left; margin-left: 10%">
         NSF DEB<br>
         Columbia University<br>
         </p>
-
-        Tutorials online
-    <br>
-    <br>
-    <h2> Try it now in the cloud</h2>    
-    <p><a href="url">https://eaton-lab.org/</a></p>
-
-    </div>
-
-    <img src="../data-img/sipho-2009.jpg" style="width: 20%">
-    <img src="../data-svg/acknowledge-logos.svg" style="width:70%">
 </section>
+
+
+<!-- 
+    Tutorials online
+<br>
+<br>
+<h2> Try it now in the cloud</h2>    
+<p><a href="url">https://eaton-lab.org/</a></p>
+
+</div>
+
+<img src="../data-img/sipho-2009.jpg" style="width: 20%">
+<img src="../data-svg/acknowledge-logos.svg" style="width:70%">
+ -->
 
 
 <!-- SLIDES CLASS ENDING -->
