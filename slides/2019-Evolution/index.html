@@ -108,7 +108,7 @@
 <!-- 5 -->
 <section class="present" data-transition="none">
     <div style="margin-left: auto; margin-top: 5%">    
-    <h2> Difficulties of working with RAD-seq </h2>
+    <h2> Can RAD-seq reconstruct genome-wide patterns?</h2>
     <p> Missing data (big problem for some analyses but not all).</p>
     <p> Filtering and formatting data for downstream analyses.</p>
     <img src="../data-img/Calvin-Hobbes-RAD.png" style="width:25%">
@@ -303,10 +303,8 @@
     <div style="margin-left: auto; margin-top: 5%">    
     <h2> Missing data in phylogenetics</h2>
     <p> Goal: A distribution of gene trees representing every species.</p>
-    <!-- <p> Oak data set: 57K loci, 51% missing, 7 species (3-5 inds. each).</p>     -->
-    <img src="../data-svg/oaks-2015-summary.svg" style="width:80%">
-    <p style="font-size: 0.75em"> 
-        Hipp et al. (2014); Eaton et al. (2015); Cavender-Bares et al. (2015)</p>
+    <img src="../data-svg/intro-phylogenomic-sampling.svg" style="width:75%">
+    <!-- <img src="../data-svg/intro-tree-outlines.svg" style="width:75%"> -->
     </div>
 </section>
 
@@ -351,8 +349,8 @@
 <section class="present" data-transition="none">
     <div style="margin-left: auto; margin-top: 5%">    
     <h2 style="font-size:1.4em"> Consensus sampling yields 3X as many fully sampled loci.</h2>
-    <p> One sample of each species: 12/57K loci</p>
-    <p> Consensus for each species: 32/57K loci </p>
+    <p> One sample of each species: 12K/57K loci</p>
+    <p> Consensus for each species: 32K/57K loci </p>
     <img src="../data-svg/oaks-2015-summary.svg" style="width:80%">
     <p style="font-size: 0.75em"> 
         Hipp et al. (2014); Eaton et al. (2015); Cavender-Bares et al. (2015)</p>
@@ -388,8 +386,8 @@
 <section class="present" data-transition="none">
     <div style="margin-left: auto; margin-top: 5%">    
     <h2> Clade weights</h2>
-    <p> Support for a monophyletic clade across sliding windows</p>
-    <img src="../data-svg/oaks-clade-weights.svg" style="width:85%">
+    <p> Chrom 1 weighted support for a (Cuba, Florida) vs (Cuba, Mexico)</p>
+    <img src="../data-svg/cuba-slider.svg" style="width:70%">
     </div>
 </section>
 
@@ -409,8 +407,8 @@
     <p>SVDquartets uses <i>invariant patterns</i> to infer quartet trees from SNPs.</p>
     <p>Each quartet is inferred independently, so missing data has almost no effect.</p>
     <p>But invariant patterns <i>among quartets</i> can be highly informative.</p>
-    <p><span style="font-weight: 400">See McKenzie Poster #76 (Monday);</span> invariant method for network inference.</p>
-    <img src="../data-img/patrick-invariants-2.png" style="width:50%">    
+    <p><span style="font-weight: 400">See McKenzie Poster #76 (Monday);</span></p>
+    <img src="../data-img/patrick-invariants-2.png" style="width:55%">    
     </div>
 
     <!-- (Chifman and Kubatko 2014)  -->
@@ -421,11 +419,12 @@
 <section class="present" data-transition="none">
     <div style="margin-left: auto; margin-top: 5%">    
     <h2> Conclusions</h2>
+    <br>
     <div style="margin-left: 20%; width: 70%; text-align: left">
     <p>1. With <i>ipyrad-analysis</i> it is easy to run dozens of analyses
         optimized for RAD missing-ness with a few lines of code.</p>
     <br>
-    <p>2. Concatenating RAD loci on scaffold windows, and consensus or imputation
+    <p>2. Concatenating RAD loci in scaffold windows, and consensus or imputation
         sampling, dramatically improve the utility of RAD.</p>
     <br>
     <p>3. SNP based methods are in their infancy, but can work well with RAD.</p>
@@ -437,24 +436,47 @@
 <section class="present" data-transition="none">
     <h3>Acknowledgements</h3>
 
-    <div style="display:flex; flex-wrap:row;">
-        <p style="font-size: 24px; text-align: left">
+    <br>
+    <div style="margin-left: 20%; width:75%">
 
 
-        Oaks data set:
+        <div style="display:flex; flex-wrap:row;">
+            <p style="font-size: 1em; text-align: left">
+
+
+        Oaks data set:<br>
         Jeannine Cavender-Bares<br>
         Andrew Hipp<br>
         Antonio Gonzalez-Rodriguez<br>
 
-
-        ipyrad development:
+        <br>
+        ipyrad development:<br>
         Isaac Overcast<br>        
+            </p>
+
+            <p style="font-size: 1em; text-align: left; margin-left: 10%">
+        Eaton lab members<br><br>
+
+        Funding:<br>
+        NSF DEB 1557059<br>
+        Columbia University<br>
+        <br>
+        <span style="font-weight: 400">Questions?</span>
+            </p>
+        </div>
+        <br>
+
+    </div>
+        <p>
+        RADcamp wetlab and bioinformatics workshop in New York City Oct. 2019<br>
+        Bring <span style="font-weight:400">your DNA samples.</span>
+        Library preparation and sequencing will be <span style="font-weight:400">free.</span>
+        <br>
+        (sponsored by SSB, Columbia, CCNY).<br>
 
         </p>
-        <p style="font-size: 24px; text-align: left; margin-left: 10%">
-        NSF DEB<br>
-        Columbia University<br>
-        </p>
+        <a href="https://radcamp.github.io/NYC2019/">https://radcamp.github.io/NYC2019/</a>
+
 </section>
 
 
