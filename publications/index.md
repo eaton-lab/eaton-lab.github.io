@@ -24,10 +24,14 @@ image:
 <!-- ------------------------------------ -->
 
 
+* Paetzold, C., Wood, K.R., **Eaton, D.A.R.**, Wagner, W.L., and M. S. Appelhans. 
+*Phylogeny of Hawaiian Melicope (Rutaceae): RAD-Seq resolves species 
+relationships and reveals ancient introgression*. In Review.
+
 * Satler, J.D., Herre, A., Jander, C., **Eaton, D.A.R.**, Machado, C.A., Heath, T.A., and J.D. Nason (2019). *Inferring Processes of Coevolutionary Diversification in a Community of Panamanian Strangler Figs and Associated Pollinating Wasps* BioRxiv, December, 490862. https://doi.org/10.1101/490862.
 
 * Spriggs E.L., Schlutius, C.; **Eaton, D.A.R.**, Park, B., Sweeney, P., Edwards, E., and  
-M. Donoghue (2019). *Differences in flowering time maintain species boundaries in a continental radiation of Viburnum*. American Journal of Botany. In Press.
+M. Donoghue (2019). *Differences in flowering time maintain species boundaries in a continental radiation of Viburnum*. American Journal of Botany. https://doi.org/10.1002/ajb2.1292
 
 * Spriggs, E.L., **Eaton, D.A.R.**, Sweeney, P., Schlutius, C., Edwards, E., and M.J.
 Donoghue (2019). *RAD-seq data reveal a cryptic Viburnum species on the North

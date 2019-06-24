@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Host a jupyterhub server on a static lab website"
+title: "Hosting a jupyterhub server on a static website"
 author: Deren
 categories: articles
 excerpt: "For workshops, assignments, and demonstrations"
