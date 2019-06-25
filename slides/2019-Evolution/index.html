@@ -528,6 +528,7 @@
                 dependencies: [
                 //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
                 { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: '../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
                 ]
             });
 
