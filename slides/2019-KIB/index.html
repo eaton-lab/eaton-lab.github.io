@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2019-KIB</title>
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../eaton-lab.css">
+    <link rel="stylesheet" href="./custom.css">
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">    
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+<!-- SLIDE 1: TITLE -->
+<section 
+    data-background="#262626" 
+    data-transition="none"     
+    class="present">
+    <div style="margin-left: auto; margin-top: 15%">
+    <h1 class="title" style="color:#5D9B84">
+        Advances in SNP based phylogenomics</i></h1>
+    <p style="color: lightgrey"> Kunming Institute of Botany, 2019</p>
+    <h4 style="color: white">Deren Eaton, Columbia University</h4>
+    <br>
+    </div>
+</section>
+
+<!-- 2 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> The goal of phylogenomics</h2>
+    <p style="font-size: 1em"> Characterize evolutionary relationships
+    from a subset of sampled genomes.</p>
+    <img src="../data-svg/intro-phylogenomic-sampling.svg" style="width:75%">
+    </div>
+</section>
+
+
+<!-- 3 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> WGS vs. RAD-seq genomic sampling</h2>
+    <p style="font-size: 1em"> Characterize whole genomes from a subset of sequenced markers.</p>
+    <!-- <p style="font-size: 1em"> Efficiently sequence thousands of loci.</p> -->
+    <br>
+    <img src="../data-svg/intro-RAD-diagram.svg">
+    </div>
+</section>
+
+
+<!-- 
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Can RAD-seq data capture genome-wide patterns?</h2>
+    <p> Data type/size (e.g., seq. coverage, enzymes)</p>
+    <p>Assembly type (e.g., denovo vs. reference-mapped)</p>
+    <br>
+    <img src="../data-svg/intro-RAD-diagram.svg">
+    </div>
+</section>
+ -->
+
+<!-- 4 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Coalescent variation </h2>
+    <p style="font-size: 1em"> Different genomic regions have different
+    genealocial histories.</p>
+    <img src="../data-svg/intro-tree-outlines.svg" style="width:75%">
+    </div>
+</section>
+
+<!-- 
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Many examples across various software tools </h2>
+    <p> Concatenation trees (raxml, IQTree)</p>
+    <p> Species trees (bpp, SNAPP, SVDQuartets) </p>
+    <p> Demographic inference (dadi, momi)</p>
+    <p> Introgression analyses (treemix, ABBA-BABA)</p>
+
+    <p> NEW IMAGE HERE (pdfS?)</p>    
+    </div>
+</section>
+ -->
+
+<!-- 5 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h3> Can sparse SNP sampling reconstruct <br>genome-wide patterns?</h3>
+    <p> Filtering and formatting to deal with missing data...</p>
+    <img src="../data-img/Calvin-Hobbes-RAD.png" style="width:25%">
+    </div>
+</section>
+
+
+<!-- 6 -->
+<section class="present" data-transition="none" data-background-color="#262626">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2 style="color:#5D9B84; font-weight:400"> Outline: RAD-seq phylogenomics in <i>ipyrad</i> </h2>
+    <br>
+    <br>
+    <div style="text-align: left; margin-left: 25%; color:white; font-size: 1.2em">
+    <p> 1. <i>ipyrad-analysis</i> toolkit.</p>
+    <p> 2. Gene tree extraction: concatenation.</p>
+    <p> 3. Gene tree distributions: sliding window consensus.</p>
+    <p> 4. Sticking with SNPs: genome-wide inference.</p>
+    </div>
+    </div>
+</section>
+
+
+<!-- 7 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2><i>ipyrad-analysis toolkit (and toytree) and jupyter</i></h2>        
+    <img src="../data-img/ipa.treemix.png" style="width:40%">
+</section>
+
+
+<!-- 8 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2><i>ipyrad-analysis toolkit</i></h2>
+    <p> Filter or impute missing data; easily distribute massively parallel jobs.</p>
+    </div>
+    <pre style="width:60%"><code class="python" style="max-height: 500px; font-size: 24px; line-height:1.35;"> 
+  import ipyrad.analysis as ipa
+
+  # initiate an analysis tool with arguments
+  tool = ipa.pca(data=data, ...)
+
+  # run job (distribute in parallel)
+  tool.run()
+
+  # examine results
+  ...
+    </code></pre>
+</section>
+
+
+<!-- 9 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> <i>Quercus</i> section Virentes </h2>    
+    <p>35 samples, 7 species plus outgroups.<p>
+    <p>ipyrad (ref): 58K loci, 51% missing, 484K SNPs. (30 min., 40 cores).</p>
+    <img src="../data-svg/oaks-2015-summary.svg" style="width:70%">
+    <br>
+    <p style="font-size: 0.75em"> 
+        Hipp et al. (2014); Eaton et al. (2015); Cavender-Bares et al. (2015)</p>
+    </div>
+</section>
+
+
+<!-- 10 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> PCA: very sensitive to missing data</h2>
+    <img src="../data-svg/PCA-none.svg" style="width:70%">
+</section>
+
+<!-- 11 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> PCA: very sensitive to missing data</h2>        
+    <img src="../data-svg/PCA-none.svg" style="width:70%">
+    <hr style="width: 50%;">
+    <img src="../data-svg/PCA-strict.svg" style="width:70%">
+    </div>
+</section>
+
+<!-- 12 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">
+    <h2> PCA: clear delimitation when (some) data are imputed</h2>
+    <img src="../data-svg/PCA-sample.svg" style="width:70%">
+    <hr style="width: 50%;">
+    <img src="../data-svg/PCA-kmeans7.svg" style="width:70%">
+    </div>
+</section>
+
+<!-- 13 -->
+<section class="present" data-transition="none" data-background-color="#262626">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2 style="color:#5D9B84; font-weight:400"> Outline: RAD-seq phylogenomics in <i>ipyrad</i> </h2>
+    <br>
+    <br>
+    <div style="text-align: left; margin-left: 25%; color:white; font-size: 1.2em">
+    <p><span style="color:grey"> 1. <i>ipyrad-analysis</i> toolkit.</span></p>
+    <p> 2. Gene tree extraction: concatenation.</p>
+    <p> 3. Gene tree distributions: sliding window consensus.</p>
+    <p> 4. Sticking with SNPs: genome-wide inference.</p>
+    </div>
+    </div>
+</section>
+
+<!-- 14 OUTLINE II -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Missing data in phylogenetics</h2>
+    <img src="../data-svg/consensus-pre.svg" style="width:55%">
+    </div>
+</section>
+
+<!-- 15 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Missing data in phylogenetics</h2>
+    <img src="../data-svg/consensus-pre2.svg" style="width:55%">
+    </div>
+</section>
+
+<!-- 16 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Missing data in phylogenetics</h2>
+    <img src="../data-svg/consensus-pre-concat.svg" style="width:55%">
+    </div>
+</section>
+
+<!-- 17 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Window_extracter: extract, filter, format.</h2>
+    <p> Reference mapped RAD loci can be <i>"spatially binned"</i> to form larger loci.<p>
+    <pre style="width:60%"><code class="python" style="max-height: 500px; font-size: 22px; line-height:1.35;"> 
+  import ipyrad.analysis as ipa
+
+  # initiate an analysis tool with arguments
+  tool = ipa.window_extacter(
+      data=data,
+      scaffold_idx=0, 
+      start=0, 
+      end=1000000,
+  )
+
+  # writes a phylip file
+  tool.run()
+    </code></pre>
+    </div>
+</section>
+
+<!-- 18 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Window_extracter: extract, filter, format.</h2>
+    <p> Reference mapped RAD loci can be <i>"spatially binned"</i> to form larger loci.</p>
+    <img src="../data-svg/window-extracter-min4.svg" style="width:80%">
+    </div>
+</section>
+
+<!-- 19 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Window_extracter: extract, filter, format.</h2>
+    <p> Reference mapped RAD loci can be <i>"spatially binned"</i> to form larger loci.</p>
+    <img src="../data-svg/window-extracter-min8.svg" style="width:80%">
+    </div>
+</section>
+
+
+<!-- 20 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Herbicide resistance among <i>Amaranthus</i> species.</h2>
+    <img src="../data-svg/Amaranth-windows.svg" style="width:70%">
+    </div>
+</section>
+
+<!-- 21 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Missing data in phylogenetics</h2>
+    <img src="../data-svg/consensus-pre-2step.svg" style="width:55%">
+    </div>
+</section>
+
+<!-- 22 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Missing data in phylogenetics</h2>
+    <p> Goal: A distribution of gene trees representing every species.</p>
+    <img src="../data-svg/intro-phylogenomic-sampling.svg" style="width:75%">
+    <!-- <img src="../data-svg/intro-tree-outlines.svg" style="width:75%"> -->
+    </div>
+</section>
+
+<!-- 23 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Missing data: Consensus sampling </h2>
+    <p> Represent species by the consensus genotype across sampled individuals</p>
+    <img src="../data-svg/consensus.svg" style="width:80%">    
+    </div>
+</section>
+
+<!-- 24 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> treeslider: extract windows across chromosomes.</h2>
+    <p> Runs raxml on windows and parses results into a "tree_table"<p>
+    <pre style="width:60%"><code class="python" style="max-height: 600px; font-size: 21px; line-height:1.35;"> 
+  # define population groups
+  imap = {
+      "sp1": ["a0", "a1", "a2", "a3"],
+      "sp2": ["b0", "b1", "b2", "b3"],
+      "sp3": ["c0", "c1", "c2", "c3"],
+      "sp4": ["d0", "d1", "d2", "d3"],
+  }
+
+  # initiate an analysis tool with arguments
+  tool = ipa.treeslider(
+      data=data,
+      window_size=1e6, 
+      slide_size=1e6,
+      imap=imap,
+  )
+
+  # distributes raxml jobs across all 1M windows in data set
+  tool.run()
+    </code></pre>
+    </div>
+</section>
+
+<!-- 25 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2 style="font-size:1.4em"> Consensus sampling yields 3X as many fully sampled loci.</h2>
+    <p> One sample of each species: 12K/57K loci</p>
+    <p> Consensus for each species: 32K/57K loci </p>
+    <img src="../data-svg/oaks-2015-summary.svg" style="width:80%">
+    <p style="font-size: 0.75em"> 
+        Hipp et al. (2014); Eaton et al. (2015); Cavender-Bares et al. (2015)</p>
+    </div>
+</section>
+<!-- MAXIMIZES USEFULNESS OF SATA -->
+
+<!-- 26 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Sliding windows</h2>
+    <p> How well do concatenated RAD windows represent gene tree variation?</p>
+    <img src="../data-svg/oaks-2step-1.svg" style="width:85%">
+    <p style="font-size: 0.75em"> 
+        RAxML gene trees.</p>
+    </div>
+</section>
+
+
+<!-- 27 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Sliding windows</h2>
+    <p> How well do concatenated RAD windows represent gene tree variation?</p>
+    <img src="../data-svg/oaks-2step-2.svg" style="width:85%">
+    <p style="font-size: 0.75em"> 
+        Astral species trees inferred from gene trees.</p>
+    </div>
+</section>
+
+
+<!-- 28 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h3> Clade weights (<i>sensu</i> Martin et al. 2017)</h3>
+    <p> Chrom 1 weighted support for a (Cuba, Florida) vs (Cuba, Mexico)</p>
+    <img src="../data-svg/cuba-slider.svg" style="width:70%">
+    </div>
+</section>
+
+
+<!-- 29 OUTLINE III -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Missing data in phylogenetics</h2>
+    <img src="../data-svg/consensus-pre-SNP.svg" style="width:55%">
+    </div>
+</section>
+
+<!-- 30 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> SNP-based species trees</h2>
+    <br>
+    <p>SNAPP: joint inference of gene trees and species trees.<p>
+    <p style="font-size: 0.75em">(Bryant et al. 2012)</p>
+    <br>
+    <p>SVDquartets: infers quartet trees from SNPs and joins these into a species tree.</p>
+    <p style="font-size: 0.75em">(Chifman and Kubatko 2014)</p>
+    </div>
+    <!-- (Chifman and Kubatko 2014)  -->
+</section>
+
+
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2>Advantages to SVDquartets-based methods</h2>
+
+    <p>Each quartet is inferred independently: missing data has almost no effect.</p>
+    <p>It is fast! My software tool, <i>tetrad</i> is even much faster.</p>
+    <p>e.g., Guo Cen applied <i>tetrad</i> to infer a 218 species tree for Arundinarieae</p>   
+    <img src="../../images/Guo-Cen-square.jpg" style="width:20%">
+</section>
+
+
+
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2>What are the next frontiers in SNP based inference?</h2>
+
+    <p> 1. Faster methods for integrating over SNPs to infer species trees (i.e., faster-SNAPP)</p>
+    <p> 2. Network inference by integrating over SNPs (i.e., SNP-based-phylonet)</p>
+
+    <p><span style="font-weight: 400">3. Network inference from SNP <p></span></p>
+    <img src="../../images/Patrick-photo2.png" style="width:20%">
+    <p>Patrick McKenzie</p>
+    <!-- <img src="../data-img/patrick-invariants-2.png" style="width:55%">     -->
+</section>
+
+
+
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2>Background of SVDquartets</h2>   
+    <div style="margin-left: 20%; width: 70%; text-align: left">    
+    <br>
+    <p>SVDquartets orders SNP patterns among quartet samples into 3 matrices.</p>
+    <p>One contains <i>more</i> patterns matching the tree (e.g., AABB)</p>
+    <p>Two contain patterns discordant with the tree (e.g., BABA, ABBA)</p>
+    <p>The matrix matching the tree aligns along rows/cols.</p> 
+    <p>SVD decomposition measures matrix filling, and quickly finds best tree.</p>
+    </div>
+</section>
+
+
+<section class="present" data-transition="none">
+ <img src="../data-svg/inv-matrix-null.svg" style="width:55%">    
+</section>
+
+<section class="present" data-transition="none">
+ <img src="../data-svg/inv-matrix-fill.svg" style="width:55%">    
+</section>
+
+
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2>However...</h2>   
+    <p>SVDquartets discards the other two subtrees which contain <br>information relevant to inferring admixture (e.g., ABBA-BABA imbalance)<br>(Durand et al. 2011)</p>
+    <img src="../data-img/abba-baba.png" style="width:35%">
+</section>
+
+
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2>In addition...</h2>   
+    <p>SVDquartets only examines individual quartets at a time<p>
+    <p>Because quartets are not independent of each other, introgression of one <br>
+       may affect multiple other quartets (Eaton et al. 2012, 2015).</p>
+    <p>Ideally, all taxa, or all quartets, would be examined simultaneously.</p>
+</section>
+
+
+
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h3>Joint inference of all quartet matrices for network inference</h3>
+    <img src="../data-img/inv-matrix-stacked.png" style="width:45%">    
+</section>
+
+
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h3>Quartet matrices</h3>
+    <p>Unique fingerprint for different admixture scenarios</p>
+    <img src="../data-img/patrick-invariants.png" style="width:51%">    
+    <img src="../data-img/patrick-invariants-2.png" style="width:51%">    
+    <!-- <img src="../data-img/inv-matrix-stacked.png" style="width:45%">     -->
+</section>
+
+
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h4>SVDquartets reduces SNP matrices to categorical results</h4>
+    <img src="../data-svg/svdquartets-extended-1.svg" style="width:71%">    
+</section>
+
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h4>SVDquartets reduces SNP matrices to categorical results</h4>        
+    <img src="../data-svg/svdquartets-extended-2.svg" style="width:71%">    
+</section>
+
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h4>SVDquartets reduces SNP matrices to categorical results</h4>
+    <img src="../data-svg/svdquartets-extended-3.svg" style="width:71%">
+</section>
+
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">
+    <h4>SVDquartets reduces SNP matrices to categorical results</h4>
+    <img src="../data-svg/svdquartets-extended-4.svg" style="width:71%">
+</section>
+
+
+
+
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h3>Simulate SNP data on a tree, train ML model on admixture scenario</h3>
+    <p>ExtraTrees Classifier (scikit-learn)</p>
+    <img src="../data-img/patrick-results.png" style="width:51%">    
+</section>
+
+    
+
+<!-- CONCLUSION -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Conclusions</h2>
+    <br>
+    <div style="margin-left: 20%; width: 70%; text-align: left">
+    <p>1. With <i>ipyrad-analysis</i> it is easy to run dozens of analyses
+        optimized for RAD missing-ness with a few lines of code.</p>
+    <br>
+    <p>2. Concatenating RAD loci in scaffold windows, and consensus or imputation
+        sampling, dramatically improve the utility of RAD.</p>
+    <br>
+    <p>3. SNP based methods are in their infancy, but work well with RAD data.</p>
+    </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="present" data-transition="none">
+    <h3>Acknowledgements</h3>
+
+    <br>
+    <div style="margin-left: 20%; width:75%">
+
+
+        <div style="display:flex; flex-wrap:row;">
+            <p style="font-size: 1em; text-align: left">
+
+
+        Oaks data set:<br>
+        Jeannine Cavender-Bares<br>
+        Andrew Hipp<br>
+        Antonio Gonzalez-Rodriguez<br>
+
+        <br>
+        ipyrad development:<br>
+        Isaac Overcast<br>        
+            </p>
+
+            <p style="font-size: 1em; text-align: left; margin-left: 10%">
+        Eaton lab members<br><br>
+
+        Funding:<br>
+        NSF DEB 1557059<br>
+        Columbia University<br>
+        <br>
+        <span style="font-weight: 400">Questions?</span>
+            </p>
+        </div>
+        <br>
+
+    </div>
+        <p>
+        RADcamp wetlab and bioinformatics workshop in New York City Oct. 2019<br>
+        Bring <span style="font-weight:400">your DNA samples.</span>
+        Library preparation and sequencing will be <span style="font-weight:400">free.</span>
+        <br>
+        (sponsored by SSB, Columbia, CCNY).<br>
+
+        </p>
+        <a href="https://radcamp.github.io/NYC2019/">https://radcamp.github.io/NYC2019/</a>
+
+</section>
+
+
+<!-- 
+    Tutorials online
+<br>
+<br>
+<h2> Try it now in the cloud</h2>    
+<p><a href="url">https://eaton-lab.org/</a></p>
+
+</div>
+
+<img src="../data-img/sipho-2009.jpg" style="width: 20%">
+<img src="../data-svg/acknowledge-logos.svg" style="width:70%">
+ -->
+
+
+<!-- SLIDES CLASS ENDING -->
+</div>
+
+<!-- REVEAL LINEAR CENTER CLASS ENDING -->
+</div>
+
+
+<!--#######################################################################  -->
+        <!-- <div class="slide-number"></div> -->
+        <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+        <!-- JAVASCRIPT -->
+        <script src="../reveal/lib/js/head.min.js"></script>        
+        <script src="../reveal/js/reveal.js"></script>
+        <script type="text/javascript" src="../reveal/plugin/highlight/highlight.js"></script>
+        <script>
+            Reveal.initialize({
+                controls:false, 
+                progress:false, 
+                loop:false, 
+                history:true,
+                center:false,
+                fragmentInURL:true,
+                margin:.05,
+                minScale:0.1,
+                maxScale:5,
+                width:1600,
+                height:900,
+                theme:Reveal.getQueryHash().theme,
+                transition:Reveal.getQueryHash().transition||"linear",
+                slideNumber: true,
+                // slideNumber: "h/v",
+                dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: '../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                ]
+            });
+
+            // Reveal.configure({ slideNumber: true })
+            // Reveal.configure({ slideNumber: "c/t" })            
+
+            // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+        </script>
+    </body>
+</html>
