@@ -57,7 +57,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.24748737"
      inkscape:cx="751.09925"
-     inkscape:cy="131.70505"
+     inkscape:cy="454.95387"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -74,7 +74,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -109,16 +109,16 @@
          x="125.93822"
          y="494.58173"
          style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:41.42192841px;font-family:ubuntu;-inkscape-font-specification:'ubuntu Light';text-align:start;text-anchor:start;fill:url(#linearGradient21762);fill-opacity:1;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">Published: 65 species; Eaton et al. (2015)</tspan><tspan
-         id="tspan72993"
-         sodipodi:role="line"
-         x="125.93822"
-         y="546.35913"
-         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:41.42192841px;font-family:ubuntu;-inkscape-font-specification:'ubuntu Light';text-align:start;text-anchor:start;fill:url(#linearGradient21762);fill-opacity:1;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">Current: 127 species; In Prep</tspan><tspan
          id="tspan72850"
          sodipodi:role="line"
          x="125.93822"
+         y="546.35913"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:41.42192841px;font-family:ubuntu;-inkscape-font-specification:'ubuntu Light';text-align:start;text-anchor:start;fill:url(#linearGradient21762);fill-opacity:1;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">Current: 127 species; In Prep.</tspan><tspan
+         sodipodi:role="line"
+         x="125.93822"
          y="598.13654"
-         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:41.42192841px;font-family:ubuntu;-inkscape-font-specification:'ubuntu Light';text-align:start;text-anchor:start;fill:url(#linearGradient21762);fill-opacity:1;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000" /><tspan
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:41.42192841px;font-family:ubuntu;-inkscape-font-specification:'ubuntu Light';text-align:start;text-anchor:start;fill:url(#linearGradient21762);fill-opacity:1;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="tspan3356" /><tspan
          id="tspan72991"
          sodipodi:role="line"
          x="125.93822"
@@ -135,7 +135,7 @@
          sodipodi:role="line"
          x="125.93822"
          y="753.46881"
-         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:41.42192841px;font-family:ubuntu;-inkscape-font-specification:'ubuntu Light';text-align:start;text-anchor:start;fill:url(#linearGradient21762);fill-opacity:1;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">3.1M SNPs across 127 species! </tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:41.42192841px;font-family:ubuntu;-inkscape-font-specification:'ubuntu Light';text-align:start;text-anchor:start;fill:url(#linearGradient21762);fill-opacity:1;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">3.1M SNPs across 127 species </tspan><tspan
          sodipodi:role="line"
          x="125.93822"
          y="805.24622"

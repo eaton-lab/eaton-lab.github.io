@@ -1,0 +1,2093 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   class="toyplot-canvas-Canvas"
+   height="300.0px"
+   id="t01b38f62f48646bda596dfa3fedafc48"
+   preserveAspectRatio="xMidYMid meet"
+   style="background-color:transparent;border-color:#292724;border-style:none;border-width:1.0;fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:Helvetica;font-size:12px;opacity:1.0;stroke:rgb(16.1%,15.3%,14.1%);stroke-opacity:1.0;stroke-width:1.0"
+   viewBox="0 0 350.0 300.0"
+   width="350.0px"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="TSNE-PCA-sample-22m-labeled.svg">
+  <metadata
+     id="metadata6235">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6233" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1114"
+     inkscape:window-height="676"
+     id="namedview6231"
+     showgrid="false"
+     inkscape:zoom="1.5733333"
+     inkscape:cx="207.10268"
+     inkscape:cy="176.01869"
+     inkscape:window-x="735"
+     inkscape:window-y="93"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="t01b38f62f48646bda596dfa3fedafc48" />
+  <g
+     class="toyplot-coordinates-Cartesian"
+     id="tf39641a00e63497b8710d696be197e54">
+    <clipPath
+       id="t8e9a843d2e0c45b8b4681bddaf294d0e">
+      <rect
+         height="220.0"
+         width="270.0"
+         x="40.0"
+         y="40.0"
+         id="rect5214" />
+    </clipPath>
+    <g
+       clip-path="url(#t8e9a843d2e0c45b8b4681bddaf294d0e)"
+       id="g5216">
+      <g
+         class="toyplot-mark-Point"
+         id="t47aaa384ea144cd784da624eaaa73a32">
+        <g
+           class="toyplot-Series"
+           id="g5219">
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(175.54950465052866, 57.252826962282995)"
+             id="g5221">
+            <title
+               id="title5223">C1_ciliatum</title>
+            <circle
+               r="5.0"
+               id="circle5225" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(152.11811130972217, 68.09829973285264)"
+             id="g5227">
+            <title
+               id="title5229">C2_caudatum</title>
+            <circle
+               r="5.0"
+               id="circle5231" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(178.86084769897295, 62.6383077889428)"
+             id="g5233">
+            <title
+               id="title5235">C4_tiliafolium_hybrid</title>
+            <circle
+               r="5.0"
+               id="circle5237" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(164.4780273881298, 67.51573021049235)"
+             id="g5239">
+            <title
+               id="title5241">C5_tiliafolium_hybrid</title>
+            <circle
+               r="5.0"
+               id="circle5243" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(104.25890720150271, 128.69688883675923)"
+             id="g5245">
+            <title
+               id="title5247">EJE_602</title>
+            <circle
+               r="5.0"
+               id="circle5249" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(110.60172842124399, 130.84091999932093)"
+             id="g5251">
+            <title
+               id="title5253">EJE_603</title>
+            <circle
+               r="5.0"
+               id="circle5255" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(109.2671251552701, 129.01697180522783)"
+             id="g5257">
+            <title
+               id="title5259">EJE_604</title>
+            <circle
+               r="5.0"
+               id="circle5261" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(91.43537734419971, 137.01114425802947)"
+             id="g5263">
+            <title
+               id="title5265">EJE_606</title>
+            <circle
+               r="5.0"
+               id="circle5267" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(112.72275577907718, 138.3894455959269)"
+             id="g5269">
+            <title
+               id="title5271">EJE_607</title>
+            <circle
+               r="5.0"
+               id="circle5273" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(81.40432332535522, 137.61260392279118)"
+             id="g5275">
+            <title
+               id="title5277">EJE_608</title>
+            <circle
+               r="5.0"
+               id="circle5279" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(91.37557942254674, 136.65877519650223)"
+             id="g5281">
+            <title
+               id="title5283">EJE_609</title>
+            <circle
+               r="5.0"
+               id="circle5285" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(83.5%,24.3%,31%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(263.3005120126034, 190.90181910219354)"
+             id="g5287">
+            <title
+               id="title5289">Edwards2014-04_triphyllum_Peru</title>
+            <circle
+               r="5.0"
+               id="circle5291" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(83.5%,24.3%,31%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(278.81547853485625, 201.06922218604012)"
+             id="g5293">
+            <title
+               id="title5295">Fuentes4724_seemenii</title>
+            <circle
+               r="5.0"
+               id="circle5297" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(83.5%,24.3%,31%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(299.86896718877813, 195.66670319172414)"
+             id="g5299">
+            <title
+               id="title5301">Fuentes8750_seemenii</title>
+            <circle
+               r="5.0"
+               id="circle5303" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(162.6430757112128, 178.53877649288455)"
+             id="g5305">
+            <title
+               id="title5307">HUL_H_31.1</title>
+            <circle
+               r="5.0"
+               id="circle5309" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(145.94760202381312, 55.09731355630081)"
+             id="g5311">
+            <title
+               id="title5313">M2_caudatum</title>
+            <circle
+               r="5.0"
+               id="circle5315" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(119.48696488623625, 133.13446725631485)"
+             id="g5317">
+            <title
+               id="title5319">MJD-60_acutifolium</title>
+            <circle
+               r="5.0"
+               id="circle5321" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(152.62425394613265, 79.12816745555646)"
+             id="g5323">
+            <title
+               id="title5325">MJD-64_caudatum</title>
+            <circle
+               r="5.0"
+               id="circle5327" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(149.1051519374678, 167.94659213497192)"
+             id="g5329">
+            <title
+               id="title5331">MJD-73_lautum</title>
+            <circle
+               r="5.0"
+               id="circle5333" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(152.96350016663132, 90.06901692550586)"
+             id="g5335">
+            <title
+               id="title5337">MJD-76_microcarpum</title>
+            <circle
+               r="5.0"
+               id="circle5339" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(99.6%,87.8%,54.5%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(140.14932438573638, 169.8924619997932)"
+             id="g5341">
+            <title
+               id="title5343">MJD-83_stellato-tomentosum</title>
+            <circle
+               r="5.0"
+               id="circle5345" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(83.10343260520496, 108.99490243951372)"
+             id="g5347">
+            <title
+               id="title5349">MJD_001_sulcatum_111716</title>
+            <circle
+               r="5.0"
+               id="circle5351" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(99.77213166903991, 108.75562730242902)"
+             id="g5353">
+            <title
+               id="title5355">MJD_002_sulcatum_111716</title>
+            <circle
+               r="5.0"
+               id="circle5357" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(85.69451177023056, 112.27647822309197)"
+             id="g5359">
+            <title
+               id="title5361">MJD_005_sulcatum_111716</title>
+            <circle
+               r="5.0"
+               id="circle5363" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(122.96414396946102, 90.00321008955841)"
+             id="g5365">
+            <title
+               id="title5367">MJD_006_sulcatum_hybrid_111716</title>
+            <circle
+               r="5.0"
+               id="circle5369" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(115.74881843245373, 133.24077060669148)"
+             id="g5371">
+            <title
+               id="title5373">MJD_007_sulcatum_oaxaca_111816</title>
+            <circle
+               r="5.0"
+               id="circle5375" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(89.64787772290725, 141.5836081715299)"
+             id="g5377">
+            <title
+               id="title5379">MJD_009_hartwegii_fuscum_tutontepec_111816</title>
+            <circle
+               r="5.0"
+               id="circle5381" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(92.42281940194505, 146.6582659034473)"
+             id="g5383">
+            <title
+               id="title5385">MJD_010_hartwegii_fuscum_tutontepec_111816</title>
+            <circle
+               r="5.0"
+               id="circle5387" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(80.09497985275851, 126.63990048722368)"
+             id="g5389">
+            <title
+               id="title5391">MJD_011_acutifolium_tutontepec_111816</title>
+            <circle
+               r="5.0"
+               id="circle5393" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(80.55060290241464, 119.97773000368852)"
+             id="g5395">
+            <title
+               id="title5397">MJD_012_acutifolium_tutontepec_111816</title>
+            <circle
+               r="5.0"
+               id="circle5399" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(53.474793225679406, 146.80753506791348)"
+             id="g5401">
+            <title
+               id="title5403">MJD_013_sulcatum_tutontepec_111816</title>
+            <circle
+               r="5.0"
+               id="circle5405" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(119.13609234404822, 137.5926025955426)"
+             id="g5407">
+            <title
+               id="title5409">MJD_014_sulcatum_tutontepec_111816</title>
+            <circle
+               r="5.0"
+               id="circle5411" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(160.2271866573757, 172.14353730262965)"
+             id="g5413">
+            <title
+               id="title5415">MKM_1</title>
+            <circle
+               r="5.0"
+               id="circle5417" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(157.19373920683492, 166.46519753625626)"
+             id="g5419">
+            <title
+               id="title5421">MKM_11</title>
+            <circle
+               r="5.0"
+               id="circle5423" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(159.95796346229588, 181.1572218526847)"
+             id="g5425">
+            <title
+               id="title5427">MKM_12</title>
+            <circle
+               r="5.0"
+               id="circle5429" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(150.06153997636864, 172.53442743885782)"
+             id="g5431">
+            <title
+               id="title5433">MKM_13</title>
+            <circle
+               r="5.0"
+               id="circle5435" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(162.8988926591329, 162.7750761238786)"
+             id="g5437">
+            <title
+               id="title5439">MKM_14</title>
+            <circle
+               r="5.0"
+               id="circle5441" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(159.56050989184115, 160.79259889159312)"
+             id="g5443">
+            <title
+               id="title5445">MKM_15</title>
+            <circle
+               r="5.0"
+               id="circle5447" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(163.33826915502772, 175.5969146100744)"
+             id="g5449">
+            <title
+               id="title5451">MKM_16</title>
+            <circle
+               r="5.0"
+               id="circle5453" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(165.37208016481353, 173.85920670661787)"
+             id="g5455">
+            <title
+               id="title5457">MKM_17</title>
+            <circle
+               r="5.0"
+               id="circle5459" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(163.34353318992942, 172.42398801155014)"
+             id="g5461">
+            <title
+               id="title5463">MKM_18</title>
+            <circle
+               r="5.0"
+               id="circle5465" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(147.2397521737813, 183.50676047947627)"
+             id="g5467">
+            <title
+               id="title5469">MKM_2</title>
+            <circle
+               r="5.0"
+               id="circle5471" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(158.76261096131122, 169.30964554746689)"
+             id="g5473">
+            <title
+               id="title5475">MKM_20</title>
+            <circle
+               r="5.0"
+               id="circle5477" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(155.55056503165997, 166.556808553654)"
+             id="g5479">
+            <title
+               id="title5481">MKM_22</title>
+            <circle
+               r="5.0"
+               id="circle5483" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(156.15486866422273, 166.08893800051544)"
+             id="g5485">
+            <title
+               id="title5487">MKM_23</title>
+            <circle
+               r="5.0"
+               id="circle5489" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(152.90279334686582, 176.33004967922255)"
+             id="g5491">
+            <title
+               id="title5493">MKM_24</title>
+            <circle
+               r="5.0"
+               id="circle5495" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(158.2243917956797, 174.81852962465103)"
+             id="g5497">
+            <title
+               id="title5499">MKM_25</title>
+            <circle
+               r="5.0"
+               id="circle5501" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(129.75213591056445, 186.17866617692226)"
+             id="g5503">
+            <title
+               id="title5505">MKM_26</title>
+            <circle
+               r="5.0"
+               id="circle5507" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(154.72180143605902, 173.2423139189792)"
+             id="g5509">
+            <title
+               id="title5511">MKM_3</title>
+            <circle
+               r="5.0"
+               id="circle5513" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(158.64009906989426, 168.72454499295478)"
+             id="g5515">
+            <title
+               id="title5517">MKM_9</title>
+            <circle
+               r="5.0"
+               id="circle5519" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(83.5%,24.3%,31%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(300.0, 196.8496829264905)"
+             id="g5521">
+            <title
+               id="title5523">Maldonado3040_seemenii</title>
+            <circle
+               r="5.0"
+               id="circle5525" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(145.7195064683249, 54.22923126071637)"
+             id="g5527">
+            <title
+               id="title5529">P33_microcarpum_x_caudatum</title>
+            <circle
+               r="5.0"
+               id="circle5531" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(292.01366376829156, 135.60493983397046)"
+             id="g5533">
+            <title
+               id="title5535">PWS2175</title>
+            <circle
+               r="5.0"
+               id="circle5537" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(191.98950222680037, 200.3789294659985)"
+             id="g5539">
+            <title
+               id="title5541">PWS3186_hartwegii</title>
+            <circle
+               r="5.0"
+               id="circle5543" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(156.98526070227527, 187.93699273254245)"
+             id="g5545">
+            <title
+               id="title5547">PWS3188_jucundum</title>
+            <circle
+               r="5.0"
+               id="circle5549" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(149.50218892962098, 168.41483308305953)"
+             id="g5551">
+            <title
+               id="title5553">PWS3189_lautum</title>
+            <circle
+               r="5.0"
+               id="circle5555" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(190.53223558639078, 195.01258571170618)"
+             id="g5557">
+            <title
+               id="title5559">PWS3190_hartwegii</title>
+            <circle
+               r="5.0"
+               id="circle5561" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(159.375549125943, 171.30953134235762)"
+             id="g5563">
+            <title
+               id="title5565">PWS3191_lautum</title>
+            <circle
+               r="5.0"
+               id="circle5567" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(194.42527342684886, 211.92630066501326)"
+             id="g5569">
+            <title
+               id="title5571">PWS3193_hartwegii</title>
+            <circle
+               r="5.0"
+               id="circle5573" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(201.79946677977398, 219.01448707244464)"
+             id="g5575">
+            <title
+               id="title5577">PWS3194_hartwegii</title>
+            <circle
+               r="5.0"
+               id="circle5579" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(192.46364407549913, 216.99515554272895)"
+             id="g5581">
+            <title
+               id="title5583">PWS3195_hartwegii</title>
+            <circle
+               r="5.0"
+               id="circle5585" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(148.66948677553248, 61.462859418140404)"
+             id="g5587">
+            <title
+               id="title5589">PWS3211_caudatum_Veracruz_Pah-Honey</title>
+            <circle
+               r="5.0"
+               id="circle5591" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(138.55969945769078, 66.44251084562711)"
+             id="g5593">
+            <title
+               id="title5595">PWS3215_caudatum_x_microcarpum_Pah-Honey</title>
+            <circle
+               r="5.0"
+               id="circle5597" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(154.3352925137092, 58.02355711875941)"
+             id="g5599">
+            <title
+               id="title5601">PWS3216_caudatum_Veracruz_Pah-Honey</title>
+            <circle
+               r="5.0"
+               id="circle5603" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(157.46591632078042, 76.44490297967303)"
+             id="g5605">
+            <title
+               id="title5607">PWS3217_tiliafolium</title>
+            <circle
+               r="5.0"
+               id="circle5609" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(173.61105220104827, 50.0)"
+             id="g5611">
+            <title
+               id="title5613">PWS3220_ciliatum</title>
+            <circle
+               r="5.0"
+               id="circle5615" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(141.9348925985397, 52.96217187251624)"
+             id="g5617">
+            <title
+               id="title5619">PWS3221_caudatum</title>
+            <circle
+               r="5.0"
+               id="circle5621" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(160.89908958705726, 78.56911801246069)"
+             id="g5623">
+            <title
+               id="title5625">PWS3222_tiliafolium</title>
+            <circle
+               r="5.0"
+               id="circle5627" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(149.8850622595207, 50.02926120097475)"
+             id="g5629">
+            <title
+               id="title5631">PWS3223_caudatum</title>
+            <circle
+               r="5.0"
+               id="circle5633" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(146.7618611203684, 57.01052693311439)"
+             id="g5635">
+            <title
+               id="title5637">PWS3223_m1_caudatum</title>
+            <circle
+               r="5.0"
+               id="circle5639" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(182.5452934226073, 57.76551530425631)"
+             id="g5641">
+            <title
+               id="title5643">PWS3225_ciliatum</title>
+            <circle
+               r="5.0"
+               id="circle5645" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(163.75234798679068, 76.61559331869245)"
+             id="g5647">
+            <title
+               id="title5649">PWS3226_microcarpum</title>
+            <circle
+               r="5.0"
+               id="circle5651" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(183.68421849910624, 57.09059397460017)"
+             id="g5653">
+            <title
+               id="title5655">PWS3227_micrcarpum</title>
+            <circle
+               r="5.0"
+               id="circle5657" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(83.5%,24.3%,31%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(294.8449571303057, 203.91039837520083)"
+             id="g5659">
+            <title
+               id="title5661">PWS3897</title>
+            <circle
+               r="5.0"
+               id="circle5663" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(83.5%,24.3%,31%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(276.41469991213984, 203.5325337946808)"
+             id="g5665">
+            <title
+               id="title5667">PWS3903</title>
+            <circle
+               r="5.0"
+               id="circle5669" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(256.21360620474445, 167.7983106903699)"
+             id="g5671">
+            <title
+               id="title5673">PWS_2172</title>
+            <circle
+               r="5.0"
+               id="circle5675" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(252.1692368285515, 165.23801733757026)"
+             id="g5677">
+            <title
+               id="title5679">PWS_2173</title>
+            <circle
+               r="5.0"
+               id="circle5681" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(248.7480685915109, 164.4664846587042)"
+             id="g5683">
+            <title
+               id="title5685">PWS_2176</title>
+            <circle
+               r="5.0"
+               id="circle5687" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(83.5%,24.3%,31%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(293.533417153937, 200.13446879962711)"
+             id="g5689">
+            <title
+               id="title5691">PWS_3883</title>
+            <circle
+               r="5.0"
+               id="circle5693" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(100%,100%,74.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(110.0711591480595, 245.08634060593528)"
+             id="g5695">
+            <title
+               id="title5697">PWS_3916</title>
+            <circle
+               r="5.0"
+               id="circle5699" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(100%,100%,74.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(112.54230163298693, 248.66293596642987)"
+             id="g5701">
+            <title
+               id="title5703">PWS_3917</title>
+            <circle
+               r="5.0"
+               id="circle5705" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(100%,100%,74.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(118.34822916351078, 227.1327418331772)"
+             id="g5707">
+            <title
+               id="title5709">PWS_3918</title>
+            <circle
+               r="5.0"
+               id="circle5711" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(100%,100%,74.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(112.78713606204744, 239.6825869617891)"
+             id="g5713">
+            <title
+               id="title5715">PWS_3919</title>
+            <circle
+               r="5.0"
+               id="circle5717" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(100%,100%,74.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(116.08636046899143, 233.54594517846093)"
+             id="g5719">
+            <title
+               id="title5721">PWS_3920</title>
+            <circle
+               r="5.0"
+               id="circle5723" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(100%,100%,74.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(111.16070076044474, 236.42088904047642)"
+             id="g5725">
+            <title
+               id="title5727">PWS_3923</title>
+            <circle
+               r="5.0"
+               id="circle5729" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(100%,100%,74.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(112.29633108128579, 240.6124017488815)"
+             id="g5731">
+            <title
+               id="title5733">PWS_3924</title>
+            <circle
+               r="5.0"
+               id="circle5735" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(100%,100%,74.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(108.03727239676434, 234.51205867055995)"
+             id="g5737">
+            <title
+               id="title5739">PWS_3927</title>
+            <circle
+               r="5.0"
+               id="circle5741" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(100%,100%,74.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(109.70801648135244, 241.24052984997462)"
+             id="g5743">
+            <title
+               id="title5745">PWS_3928</title>
+            <circle
+               r="5.0"
+               id="circle5747" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(100%,100%,74.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(112.58539855182235, 245.8446625316186)"
+             id="g5749">
+            <title
+               id="title5751">PWS_3929</title>
+            <circle
+               r="5.0"
+               id="circle5753" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(100%,100%,74.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(106.24382706698579, 248.5448417101752)"
+             id="g5755">
+            <title
+               id="title5757">PWS_3930</title>
+            <circle
+               r="5.0"
+               id="circle5759" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(100%,100%,74.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(107.16291241251855, 246.80843018904034)"
+             id="g5761">
+            <title
+               id="title5763">PWS_3931</title>
+            <circle
+               r="5.0"
+               id="circle5765" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(100%,100%,74.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(109.2475081043415, 241.11317571999373)"
+             id="g5767">
+            <title
+               id="title5769">PWS_3932</title>
+            <circle
+               r="5.0"
+               id="circle5771" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(100%,100%,74.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(112.78516678280366, 244.16374852034934)"
+             id="g5773">
+            <title
+               id="title5775">PWS_3934</title>
+            <circle
+               r="5.0"
+               id="circle5777" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(100%,100%,74.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(112.3909322264974, 239.73981298141697)"
+             id="g5779">
+            <title
+               id="title5781">PWS_3935</title>
+            <circle
+               r="5.0"
+               id="circle5783" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(100%,100%,74.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(110.35371284878966, 244.9370097089776)"
+             id="g5785">
+            <title
+               id="title5787">PWS_3936</title>
+            <circle
+               r="5.0"
+               id="circle5789" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(100%,100%,74.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(110.43399884872906, 232.61353762672522)"
+             id="g5791">
+            <title
+               id="title5793">PWS_3937</title>
+            <circle
+               r="5.0"
+               id="circle5795" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(159.30730602599448, 75.22272311279916)"
+             id="g5797">
+            <title
+               id="title5799">SH2_ciliatum</title>
+            <circle
+               r="5.0"
+               id="circle5801" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(152.7226421668131, 65.17680957224013)"
+             id="g5803">
+            <title
+               id="title5805">SH3_caudatum</title>
+            <circle
+               r="5.0"
+               id="circle5807" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(140.39521919592815, 52.08668167795085)"
+             id="g5809">
+            <title
+               id="title5811">SH4_caudatum</title>
+            <circle
+               r="5.0"
+               id="circle5813" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(133.59192746993062, 55.48443801054699)"
+             id="g5815">
+            <title
+               id="title5817">T1_caudatum</title>
+            <circle
+               r="5.0"
+               id="circle5819" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(185.78649983336868, 52.95223294138345)"
+             id="g5821">
+            <title
+               id="title5823">T5_tiliafolium</title>
+            <circle
+               r="5.0"
+               id="circle5825" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(179.2756082043203, 195.04030360039323)"
+             id="g5827">
+            <title
+               id="title5829">Tzont_obtusatum</title>
+            <circle
+               r="5.0"
+               id="circle5831" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(163.90398248856306, 78.5628212983269)"
+             id="g5833">
+            <title
+               id="title5835">V1_microcarpum</title>
+            <circle
+               r="5.0"
+               id="circle5837" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(166.72906504680827, 63.65356034428211)"
+             id="g5839">
+            <title
+               id="title5841">ZA2_microcarpum</title>
+            <circle
+               r="5.0"
+               id="circle5843" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(19.6%,53.3%,74.1%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(168.19776865513376, 67.1265068515349)"
+             id="g5845">
+            <title
+               id="title5847">ZA4_microcarpum</title>
+            <circle
+               r="5.0"
+               id="circle5849" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(92.08152816069318, 129.9221553282085)"
+             id="g5851">
+            <title
+               id="title5853">acutifolium_D11_MEX_005</title>
+            <circle
+               r="5.0"
+               id="circle5855" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(105.19579180173903, 132.3315744717628)"
+             id="g5857">
+            <title
+               id="title5859">acutifolium_DRY3_MEX_006</title>
+            <circle
+               r="5.0"
+               id="circle5861" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(114.99943193867966, 134.76488408953063)"
+             id="g5863">
+            <title
+               id="title5865">acutifolium_PWS_3050</title>
+            <circle
+               r="5.0"
+               id="circle5867" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(116.3107068197655, 130.80980682360095)"
+             id="g5869">
+            <title
+               id="title5871">acutifolium_PWS_3059</title>
+            <circle
+               r="5.0"
+               id="circle5873" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(253.60120580482928, 151.8359551636914)"
+             id="g5875">
+            <title
+               id="title5877">anabaptista_PWS_2160</title>
+            <circle
+               r="5.0"
+               id="circle5879" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(258.14403005423094, 145.1429801668938)"
+             id="g5881">
+            <title
+               id="title5883">anabaptista_PWS_2162</title>
+            <circle
+               r="5.0"
+               id="circle5885" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(163.94938952343443, 152.42692030489678)"
+             id="g5887">
+            <title
+               id="title5889">blandum_PWS_3088</title>
+            <circle
+               r="5.0"
+               id="circle5891" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(99.6%,87.8%,54.5%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(86.31824309994849, 182.11512492341313)"
+             id="g5893">
+            <title
+               id="title5895">discolor_veliz_35_99</title>
+            <circle
+               r="5.0"
+               id="circle5897" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(110.41824461477867, 140.4376679316683)"
+             id="g5899">
+            <title
+               id="title5901">fuscum_PWS_3054</title>
+            <circle
+               r="5.0"
+               id="circle5903" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(118.84388160087254, 138.41944758679975)"
+             id="g5905">
+            <title
+               id="title5907">fuscum_PWS_3058</title>
+            <circle
+               r="5.0"
+               id="circle5909" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(240.5735147090011, 155.09518378534375)"
+             id="g5911">
+            <title
+               id="title5913">glabratum_PWS_2152</title>
+            <circle
+               r="5.0"
+               id="circle5915" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(242.16363195685767, 166.55557390382384)"
+             id="g5917">
+            <title
+               id="title5919">glabratum_PWS_2155</title>
+            <circle
+               r="5.0"
+               id="circle5921" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(248.23893416548006, 156.0955588102297)"
+             id="g5923">
+            <title
+               id="title5925">glabratum_PWS_2157</title>
+            <circle
+               r="5.0"
+               id="circle5927" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(238.75397642924227, 161.4048000098772)"
+             id="g5929">
+            <title
+               id="title5931">glabratum_PWS_2158</title>
+            <circle
+               r="5.0"
+               id="circle5933" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(259.5239646135668, 140.53829189282624)"
+             id="g5935">
+            <title
+               id="title5937">hallii_PWS_2180</title>
+            <circle
+               r="5.0"
+               id="circle5939" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(281.64654467234226, 153.4343945663061)"
+             id="g5941">
+            <title
+               id="title5943">hallii_WC_293</title>
+            <circle
+               r="5.0"
+               id="circle5945" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(186.69183809494956, 187.65246767918242)"
+             id="g5947">
+            <title
+               id="title5949">hartwegii_PWS_3108</title>
+            <circle
+               r="5.0"
+               id="circle5951" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(145.43740721665102, 84.0948550598265)"
+             id="g5953">
+            <title
+               id="title5955">jucundum_2_oaxaca_2017</title>
+            <circle
+               r="5.0"
+               id="circle5957" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(151.83491380616232, 88.16358184262228)"
+             id="g5959">
+            <title
+               id="title5961">jucundum_6_oaxaca_1_2017</title>
+            <circle
+               r="5.0"
+               id="circle5963" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(145.64092465234646, 181.1179599880856)"
+             id="g5965">
+            <title
+               id="title5967">jucundum_PWS_3107</title>
+            <circle
+               r="5.0"
+               id="circle5969" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(229.49775805132245, 160.33009906521576)"
+             id="g5971">
+            <title
+               id="title5973">lasiophyllum_PWS_2174</title>
+            <circle
+               r="5.0"
+               id="circle5975" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(256.27079104432397, 144.46966388201685)"
+             id="g5977">
+            <title
+               id="title5979">lasiophyllum_PWS_2175</title>
+            <circle
+               r="5.0"
+               id="circle5981" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(157.21589359832763, 168.3234072631363)"
+             id="g5983">
+            <title
+               id="title5985">lautum_PWS_3105</title>
+            <circle
+               r="5.0"
+               id="circle5987" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(138.66285939346199, 177.64668025810357)"
+             id="g5989">
+            <title
+               id="title5991">lautum_PWS_3106</title>
+            <circle
+               r="5.0"
+               id="circle5993" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(90.2%,96.1%,59.6%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(177.07190898900234, 153.15042510536964)"
+             id="g5995">
+            <title
+               id="title5997">obtusatum_PWS_3100</title>
+            <circle
+               r="5.0"
+               id="circle5999" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(251.4074287272397, 163.12454375830495)"
+             id="g6001">
+            <title
+               id="title6003">pichinchese_PWS_2156</title>
+            <circle
+               r="5.0"
+               id="circle6005" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(275.8294452691853, 150.59081080997657)"
+             id="g6007">
+            <title
+               id="title6009">subsessile_PWS_2169</title>
+            <circle
+               r="5.0"
+               id="circle6011" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(110.80395825128002, 129.6602860992319)"
+             id="g6013">
+            <title
+               id="title6015">sulcatum_D10_MEX_004</title>
+            <circle
+               r="5.0"
+               id="circle6017" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(60%,83.5%,58%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(112.76501954130941, 139.4918026967839)"
+             id="g6019">
+            <title
+               id="title6021">sulcatum_D9_MEX_003</title>
+            <circle
+               r="5.0"
+               id="circle6023" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(239.16479837610206, 161.10107615165822)"
+             id="g6025">
+            <title
+               id="title6027">tinoides_PWS_2151</title>
+            <circle
+               r="5.0"
+               id="circle6029" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(239.26114157602933, 163.86132104445204)"
+             id="g6031">
+            <title
+               id="title6033">tinoides_glab_PWS_2177</title>
+            <circle
+               r="5.0"
+               id="circle6035" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(244.65174053988548, 155.79856379358506)"
+             id="g6037">
+            <title
+               id="title6039">tinoides_monster_PWS_2168</title>
+            <circle
+               r="5.0"
+               id="circle6041" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(238.5316750992214, 164.19091081661284)"
+             id="g6043">
+            <title
+               id="title6045">triph_hall_PWS_2178</title>
+            <circle
+               r="5.0"
+               id="circle6047" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(255.87345108613326, 169.25272819029658)"
+             id="g6049">
+            <title
+               id="title6051">triphyllum_PWS_2179</title>
+            <circle
+               r="5.0"
+               id="circle6053" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(239.79458902657012, 171.1031596232466)"
+             id="g6055">
+            <title
+               id="title6057">triphyllum_WC_285</title>
+            <circle
+               r="5.0"
+               id="circle6059" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(246.43863422910292, 172.1035346481325)"
+             id="g6061">
+            <title
+               id="title6063">triphyllum_WC_286</title>
+            <circle
+               r="5.0"
+               id="circle6065" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(241.52937255733633, 170.9907447562107)"
+             id="g6067">
+            <title
+               id="title6069">triphyllum_WC_287B</title>
+            <circle
+               r="5.0"
+               id="circle6071" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(260.39552216196563, 180.91461316105853)"
+             id="g6073">
+            <title
+               id="title6075">triphyllum_WC_287C</title>
+            <circle
+               r="5.0"
+               id="circle6077" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(245.78506074469053, 166.55637642621346)"
+             id="g6079">
+            <title
+               id="title6081">triphyllum_WC_287D</title>
+            <circle
+               r="5.0"
+               id="circle6083" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(255.68727845608507, 181.9606084971688)"
+             id="g6085">
+            <title
+               id="title6087">triphyllum_WC_288C</title>
+            <circle
+               r="5.0"
+               id="circle6089" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(247.6687520828915, 169.71368470438625)"
+             id="g6091">
+            <title
+               id="title6093">triphyllum_WC_288E</title>
+            <circle
+               r="5.0"
+               id="circle6095" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(258.408973854031, 142.80905986045371)"
+             id="g6097">
+            <title
+               id="title6099">triphyllum_WC_291</title>
+            <circle
+               r="5.0"
+               id="circle6101" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(267.2590662586724, 146.49288455869757)"
+             id="g6103">
+            <title
+               id="title6105">triphyllum_n_WC_288b</title>
+            <circle
+               r="5.0"
+               id="circle6107" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(250.04271821128853, 150.71267074821324)"
+             id="g6109">
+            <title
+               id="title6111">und_sub_PWS_2170A</title>
+            <circle
+               r="5.0"
+               id="circle6113" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(232.92104705062562, 162.29757530206479)"
+             id="g6115">
+            <title
+               id="title6117">und_sub_PWS_2170B</title>
+            <circle
+               r="5.0"
+               id="circle6119" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(267.23535916623746, 140.27907716098446)"
+             id="g6121">
+            <title
+               id="title6123">und_sub_PWS_2170C</title>
+            <circle
+               r="5.0"
+               id="circle6125" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(259.9611446056897, 147.62987358729052)"
+             id="g6127">
+            <title
+               id="title6129">und_sub_PWS_2170D</title>
+            <circle
+               r="5.0"
+               id="circle6131" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(246.1380161783864, 156.94104701392223)"
+             id="g6133">
+            <title
+               id="title6135">und_sub_PWS_2170E</title>
+            <circle
+               r="5.0"
+               id="circle6137" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(231.34312418577878, 161.0503320436387)"
+             id="g6139">
+            <title
+               id="title6141">und_sub_PWS_2170F</title>
+            <circle
+               r="5.0"
+               id="circle6143" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(236.88437301178536, 162.0769433774155)"
+             id="g6145">
+            <title
+               id="title6147">und_sub_PWS_2170G</title>
+            <circle
+               r="5.0"
+               id="circle6149" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(250.30902535825734, 145.07353111394738)"
+             id="g6151">
+            <title
+               id="title6153">und_sub_PWS_2171</title>
+            <circle
+               r="5.0"
+               id="circle6155" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(286.11862635198594, 150.16695552328318)"
+             id="g6157">
+            <title
+               id="title6159">undulatum_PWS_2164</title>
+            <circle
+               r="5.0"
+               id="circle6161" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="fill:rgb(98.8%,55.3%,34.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(0%,0%,0%);stroke-opacity:1.0"
+             transform="translate(261.90368709667644, 175.63988042416395)"
+             id="g6163">
+            <title
+               id="title6165">undulatum_PWS_2165</title>
+            <circle
+               r="5.0"
+               id="circle6167" />
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       class="toyplot-coordinates-Axis"
+       id="t9237a9222b7c440fa9d06d15ff0e5e4e"
+       transform="translate(50.0,250.0)translate(0,10.0)">
+      <line
+         style=""
+         x1="3.4747932256794014"
+         x2="250.0"
+         y1="0"
+         y2="0"
+         id="line6170" />
+      <g
+         id="g6172">
+        <g
+           transform="translate(0.0,6)"
+           id="g6174">
+          <text
+             style="fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:helvetica;font-size:10.0px;font-weight:normal;stroke:none;vertical-align:baseline;white-space:pre"
+             x="-2.78"
+             y="8.555"
+             id="text6176">6</text>
+        </g>
+        <g
+           transform="translate(79.42072893628624,6)"
+           id="g6178">
+          <text
+             style="fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:helvetica;font-size:10.0px;font-weight:normal;stroke:none;vertical-align:baseline;white-space:pre"
+             x="-2.78"
+             y="8.555"
+             id="text6180">8</text>
+        </g>
+        <g
+           transform="translate(158.84145787257248,6)"
+           id="g6182">
+          <text
+             style="fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:helvetica;font-size:10.0px;font-weight:normal;stroke:none;vertical-align:baseline;white-space:pre"
+             x="-2.78"
+             y="8.555"
+             id="text6184">8</text>
+        </g>
+        <g
+           transform="translate(238.26218680885873,6)"
+           id="g6186">
+          <text
+             style="fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:helvetica;font-size:10.0px;font-weight:normal;stroke:none;vertical-align:baseline;white-space:pre"
+             x="-5.56"
+             y="8.555"
+             id="text6188">10</text>
+        </g>
+      </g>
+      <g
+         transform="translate(125.0,22)"
+         id="g6190">
+        <text
+           style="fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:helvetica;font-size:12.0px;font-weight:bold;stroke:none;vertical-align:baseline;white-space:pre"
+           x="-55.00800000000001"
+           y="10.265999999999998"
+           id="text6192">TSNE component 1</text>
+      </g>
+      <g
+         class="toyplot-coordinates-Axis-coordinates"
+         style="visibility:hidden"
+         transform=""
+         id="g6194">
+        <line
+           style="stroke:rgb(43.9%,50.2%,56.5%);stroke-opacity:1.0;stroke-width:1.0"
+           x1="0"
+           x2="0"
+           y1="-3.0"
+           y2="4.5"
+           id="line6196" />
+        <text
+           style="alignment-baseline:alphabetic;fill:rgb(43.9%,50.2%,56.5%);fill-opacity:1.0;font-size:10px;font-weight:normal;stroke:none;text-anchor:middle"
+           x="0"
+           y="-6"
+           id="text6198" />
+      </g>
+    </g>
+    <g
+       class="toyplot-coordinates-Axis"
+       id="ta1b4d3ba9ad14f708fd0c2a0e55b9c30"
+       transform="translate(50.0,250.0)rotate(-90.0)translate(0,-10.0)">
+      <line
+         style=""
+         x1="1.337064033570129"
+         x2="200.0"
+         y1="0"
+         y2="0"
+         id="line6201" />
+      <g
+         id="g6203">
+        <g
+           transform="translate(0.0,-6)"
+           id="g6205">
+          <text
+             style="fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:helvetica;font-size:10.0px;font-weight:normal;stroke:none;vertical-align:baseline;white-space:pre"
+             x="-5.56"
+             y="-4.440892098500626e-16"
+             id="text6207">10</text>
+        </g>
+        <g
+           transform="translate(64.73120901541306,-6)"
+           id="g6209">
+          <text
+             style="fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:helvetica;font-size:10.0px;font-weight:normal;stroke:none;vertical-align:baseline;white-space:pre"
+             x="-5.56"
+             y="-4.440892098500626e-16"
+             id="text6211">10</text>
+        </g>
+        <g
+           transform="translate(129.46241803082611,-6)"
+           id="g6213">
+          <text
+             style="fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:helvetica;font-size:10.0px;font-weight:normal;stroke:none;vertical-align:baseline;white-space:pre"
+             x="-5.56"
+             y="-4.440892098500626e-16"
+             id="text6215">12</text>
+        </g>
+        <g
+           transform="translate(194.19362704623916,-6)"
+           id="g6217">
+          <text
+             style="fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:helvetica;font-size:10.0px;font-weight:normal;stroke:none;vertical-align:baseline;white-space:pre"
+             x="-5.56"
+             y="-4.440892098500626e-16"
+             id="text6219">12</text>
+        </g>
+      </g>
+      <g
+         transform="translate(100.0,-22)"
+         id="g6221">
+        <text
+           style="fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:helvetica;font-size:12.0px;font-weight:bold;stroke:none;vertical-align:baseline;white-space:pre"
+           x="-55.00800000000001"
+           y="0.0"
+           id="text6223">TSNE component 2</text>
+      </g>
+      <g
+         class="toyplot-coordinates-Axis-coordinates"
+         style="visibility:hidden"
+         transform=""
+         id="g6225">
+        <line
+           style="stroke:rgb(43.9%,50.2%,56.5%);stroke-opacity:1.0;stroke-width:1.0"
+           x1="0"
+           x2="0"
+           y1="3.0"
+           y2="-4.5"
+           id="line6227" />
+        <text
+           style="alignment-baseline:hanging;fill:rgb(43.9%,50.2%,56.5%);fill-opacity:1.0;font-size:10px;font-weight:normal;stroke:none;text-anchor:middle"
+           x="0"
+           y="6"
+           id="text6229" />
+      </g>
+    </g>
+  </g>
+  <ellipse
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#d43d4f;stroke-width:3.96003294;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="path6237"
+     cx="333.65732"
+     cy="111.15932"
+     rx="47.814262"
+     ry="25.354191"
+     transform="matrix(0.95672009,0.29100975,-0.33583367,0.94192131,0,0)" />
+  <ellipse
+     transform="matrix(0.93965571,-0.34212154,0.29739753,0.95475374,0,0)"
+     ry="25.354191"
+     rx="47.814262"
+     cy="235.22559"
+     cx="205.92426"
+     id="ellipse7039"
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#fa8c57;stroke-width:3.96003294;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#d43d4f;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="255.50848"
+     y="251.05931"
+     id="text7041"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan7043"
+       x="255.50848"
+       y="251.05931"
+       style="font-size:22.5px">Bolivia</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text7045"
+     y="120.12711"
+     x="233.89832"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#fa8c57;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"><tspan
+       style="font-size:22.5px;fill:#fa8c57;fill-opacity:1"
+       y="120.12711"
+       x="233.89832"
+       id="tspan7047"
+       sodipodi:role="line">Colombia</tspan></text>
+  <ellipse
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#c1c18f;stroke-width:3.96003294;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="ellipse7049"
+     cx="132.64046"
+     cy="234.47131"
+     rx="47.814262"
+     ry="25.354191"
+     transform="matrix(0.99921174,0.03969752,-0.08680663,0.99622518,0,0)" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="71"
+     y="224.73729"
+     id="text7051"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan7053"
+       x="71"
+       y="224.73729"
+       style="font-size:22.5px">Jamaica</tspan></text>
+  <ellipse
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#232517;stroke-width:5.21460295;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="ellipse7055"
+     cx="251.47343"
+     cy="35.898724"
+     rx="62.900185"
+     ry="33.419521"
+     transform="matrix(0.77960602,0.62627027,-0.65424662,0.75628127,0,0)" />
+  <ellipse
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#99d494;stroke-width:5.22316456;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="ellipse7061"
+     cx="75.206192"
+     cy="150.96655"
+     rx="59.134132"
+     ry="35.664719"
+     transform="matrix(0.919106,-0.39401035,0.25575605,0.96674135,0,0)" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#232517;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="132.839"
+     y="135.92372"
+     id="text7057"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan7059"
+       x="132.839"
+       y="135.92372"
+       style="font-size:22.5px;fill:#232517;fill-opacity:1">Chiapas</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text7063"
+     y="86.34745"
+     x="23.51697"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#232517;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"><tspan
+       style="font-size:22.5px;fill:#232517;fill-opacity:1"
+       y="86.34745"
+       x="23.51697"
+       id="tspan7065"
+       sodipodi:role="line">Oaxaca</tspan></text>
+  <ellipse
+     transform="matrix(0.99979147,0.02042078,-0.16601121,0.98612387,0,0)"
+     ry="29.115932"
+     rx="48.275871"
+     cy="63.466507"
+     cx="172.17256"
+     id="ellipse7071"
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#3087bd;stroke-width:4.26408243;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#232517;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="194.49155"
+     y="62.194908"
+     id="text7067"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan7069"
+       x="194.49155"
+       y="62.194908"
+       style="font-size:22.5px;fill:#232517;fill-opacity:1">Veracruz</tspan></text>
+</svg>
