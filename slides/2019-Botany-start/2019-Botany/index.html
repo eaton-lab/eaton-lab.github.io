@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2019-KIB</title>
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../eaton-lab.css">
+    <link rel="stylesheet" href="./custom.css">
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">    
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+<!-- SLIDE 1: TITLE -->
+<section 
+    data-background="#262626" 
+    data-transition="none"     
+    class="present">
+    <div style="margin-left: auto; margin-top: 15%">
+    <h1 class="title" style="color:#5D9B84">
+        Phylogenomic Perspectives on Reproductive<br> Isolation and Introgression</h1>
+    <br>
+    <h4 style="color: white">Deren Eaton, Columbia University</h4>
+    <p style="color: lightgrey"> Botany 2019, Tucson</p>
+    <br>
+    </div>   
+</section>
+
+
+
+<!-- 2 OUTLINE -->
+<section class="present" data-transition="none" data-background-color="#262626">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2 style="color:#5D9B84; font-weight:400"> Outline: Plant Perspectives</h2>
+    <br>
+    <br>
+    <div style="text-align: left; margin-left: 25%; color:white; font-size: 1.2em">
+    <p> 1. Phylogenomic data generation</p>
+    <p> 2. Species tree inference</p>
+    <p> 3. Network/admixture inference</p>
+    <p> 4. Reproductive isolation and phylogenomics</p>
+    <p> 5. Advances on the horizon...</p>    
+    </div>
+    </div>
+</section>
+
+
+<!-- 3 REFERENCE IS GETTING BETTER B/C -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Generating data: reference genomes</h2>
+    <br>
+    <div style="text-align: left; margin-left: 20%; font-size: 1em">
+    <p> Quality reference genome assemblies are now <i>generally</i> obtainable.</p>
+    </div>
+    </div>
+</section>
+
+
+<!-- 4 HIGH QUALITY DNA MAKES ALL THE DIFFERENCE -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Generating data: reference genomes</h2>
+    <br>
+    <div style="text-align: left; margin-left: 20%; font-size: 1em">
+    <p> Quality reference genome assemblies are now <i>generally</i> obtainable.</p>
+    <p> > Long read technologies (e.g., Oxford Nanopore)</p>
+    </div>
+    <img src="../data-img/SRE-kits.png" style="width:90%">
+    </div>
+</section>
+
+
+<!-- 5 HIGH QUALITY DNA MAKES ALL THE DIFFERENCE -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Generating data: reference genomes</h2>
+    <br>
+    <div style="text-align: left; margin-left: 20%; font-size: 1em">
+    <p> Quality reference genome assemblies are now <i>generally</i> obtainable.</p>
+    <p> > Long range scaffolding technologies (e.g., Chicago, Hi-C)</p>
+    </div>
+    <img src="../data-img/Arima-Hi-C.png" style="width:70%">
+    </div>
+</section>
+
+
+<!-- 5 HIGH QUALITY DNA MAKES ALL THE DIFFERENCE -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Generating data: reference genomes</h2>
+    <br>
+    <div style="text-align: left; margin-left: 20%; font-size: 1em">
+    <p> <i>Caveat:</i> requires large(ish) quantities of (fresh/flash frozen) leaf tissue.</p>
+    </div>
+    <img src="../data-img/Crano-genome-collection.png" style="width:80%">
+    </div>
+</section>
+
+
+<!-- 5 HIGH QUALITY DNA MAKES ALL THE DIFFERENCE -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Generating data: reference genomes</h2>
+    <br>
+    <div style="text-align: left; margin-left: 20%; font-size: 1em">
+    <p> <i>Caveat:</i> requires large(ish) quantities of (fresh/flash frozen) leaf tissue.</p>
+    </div>
+    <img src="../data-img/watering-the-tiny-plant.jpg" style="width:35%">
+    </div>
+</section>
+
+
+<!-- 6 OUTLINE -->
+<section class="present" data-transition="none" data-background-color="#262626">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2 style="color:#5D9B84; font-weight:400"> Outline: Plant Perspectives</h2>
+    <br>
+    <br>
+    <div style="text-align: left; margin-left: 25%; color:white; font-size: 1.2em">
+    <p style="color:grey"> 1. Phylogenomic data generation</p>
+    <p> 2. Species tree inference</p>
+    <p> 3. Network/admixture inference</p>
+    <p> 4. Reproductive isolation and phylogenomics</p>
+    <p> 5. Advances on the horizon...</p>    
+    </div>
+    </div>
+</section>
+
+<!-- 7 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Coalescent variation </h2>
+    <p style="font-size: 1em"> Different genomic regions have different
+    genealogical histories.</p>
+    <img src="../data-svg/intro-tree-outlines-sptree1.svg" style="width:70%">
+    </div>
+</section>
+
+
+<!-- 7 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Coalescent variation </h2>
+    <p style="font-size: 1em"> Different genomic regions have different
+    genealogical histories.</p>
+    <img src="../data-svg/intro-tree-outlines-sptree2.svg" style="width:70%">
+    </div>
+</section>
+
+<!-- 8 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Advances in species tree inference </h2>
+    <div style="text-align: left; margin-left: 20%; font-size: 1em">
+    <p> Joint gene tree & species tree inference (e.g., *BEAST, BPP)</p>
+    <p> Summary inference based on gene-tree inputs (e.g., ASTRAL)</p>
+    <p> Quartet joining with fast inference from SNPS (e.g., SVDQuartets)</p>
+    </div>
+    <img src="../data-svg/svdquartets-algorithm.svg" style="width:45%">
+    </div>
+</section>
+
+<!-- 9 OUTLINE -->
+<section class="present" data-transition="none" data-background-color="#262626">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2 style="color:#5D9B84; font-weight:400"> Outline: Plant Perspectives</h2>
+    <br>
+    <br>
+    <div style="text-align: left; margin-left: 25%; color:white; font-size: 1.2em">
+    <p style="color:grey"> 1. Phylogenomic data generation</p>
+    <p style="color:grey"> 2. Species tree inference</p>
+    <p> 3. Network/admixture inference</p>
+    <p> 4. Reproductive isolation and phylogenomics</p>
+    <p> 5. Advances on the horizon...</p>    
+    </div>
+    </div>
+</section>
+
+
+<!-- 10 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Coalescent variation within a network</h2>
+    <p style="font-size: 1em"> Different genomic regions have different
+    genealogical histories.</p>
+    <img src="../data-svg/intro-tree-outlines-network.svg" style="width:70%">
+    </div>
+</section>
+
+<!-- 11 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Advances in network inference </h2>
+    <div style="text-align: left; margin-left: 20%; font-size: 1em">
+    <p> Summary inference based on gene-tree inputs (e.g., Phylonet, SNAQ)</p>
+    <p> Joint gene tree & network inference (e.g., Phylonet, BEAST2)</p>    
+    </div>
+    <img src="../data-img/snaq-example.png" style="width:50%">
+    </div>
+</section>
+
+<!-- 12 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Coalescent variation within a network</h2>
+    <p style="font-size: 1em"> Different genomic regions have different
+    genealogical histories.</p>
+    <img src="../data-svg/intro-tree-outlines-network2.svg" style="width:70%">
+    </div>
+</section>
+
+
+<!-- 12 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Coalescent variation within a network</h2>
+    <p style="font-size: 1em"> Different genomic regions have different
+    genealogical histories.</p>
+    <img src="../data-img/Wen-etal-2016.png" style="width:20%">
+    <br>
+    <p style="font-size: 0.7em">Wen et al. (2016)</p>
+    </div>
+</section>
+
+
+<!-- 13 OUTLINE -->
+<section class="present" data-transition="none" data-background-color="#262626">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2 style="color:#5D9B84; font-weight:400"> Outline: Plant Perspectives</h2>
+    <br>
+    <br>
+    <div style="text-align: left; margin-left: 25%; color:white; font-size: 1.2em">
+    <p style="color:grey"> 1. Phylogenomic data generation</p>
+    <p style="color:grey"> 2. Species tree inference</p>
+    <p style="color:grey"> 3. Network/admixture inference</p>
+    <p> 4. Reproductive isolation and phylogenomics</p>
+    <p> 5. Advances on the horizon...</p>    
+    </div>
+    </div>
+</section>
+
+
+<!-- 15 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Introgression in the context of biology</h2>
+    <p style="font-size: 1em">
+    Are introgressive patterns concordant with reproductive traits, or geography?</p>
+    <img src="../data-img/Folk-etal-2018.png" style="width:65%">
+    <br>
+    <p style="font-size: 0.7em">Folk et al. (2018)</p>
+    </div>
+</section>
+
+
+<!-- 14 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Introgression in the context of biology</h2>
+    <p style="font-size: 1em">
+    Sliding windows can reveal interplay of introgression and selection</p>
+    <img src="../data-img/twisst-paper-2.png" style="width:55%">
+    <br>
+    <p style="font-size: 0.7em">Martin et al. (2017)</p>
+    </div>
+</section>
+
+
+<!-- 13 OUTLINE -->
+<section class="present" data-transition="none" data-background-color="#262626">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2 style="color:#5D9B84; font-weight:400"> Outline: Plant Perspectives</h2>
+    <br>
+    <br>
+    <div style="text-align: left; margin-left: 25%; color:white; font-size: 1.2em">
+    <p style="color:grey"> 1. Phylogenomic data generation</p>
+    <p style="color:grey"> 2. Species tree inference</p>
+    <p style="color:grey"> 3. Network/admixture inference</p>
+    <p style="color:grey"> 4. Reproductive isolation and phylogenomics</p>
+    <p> 5. Advances on the horizon...</p>    
+    </div>
+    </div>
+</section>
+
+
+<!-- 14 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> A disconnect between theory and practice</h2>
+    <p style="font-size: 1em">
+    Sliding windows reveal genealogical variation; but what is our expectation?</p>
+    <p>Species tree/network models could provide a better null.</p>
+    <img src="../data-img/twisst-paper-3.png" style="width:55%">
+    <br>
+    <p style="font-size: 0.7em">Martin et al. (2017)</p>
+    </div>
+</section>
+
+
+<!-- 15 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Additional sources of information.</h2>
+    <p style="font-size: 1em">
+    Recombination rate are correlated with retention of introgressed blocks</p>
+    <p>But such data are not readily available for many taxa...</p>    
+    <img src="../data-img/Martin-etal-2019.png" style="width:55%">
+    <br>
+    <p style="font-size: 0.7em">Martin et al. (2019)</p>
+    </div>
+</section>
+
+
+<!-- 4 HIGH QUALITY DNA MAKES ALL THE DIFFERENCE -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> Concluding</h2>
+    <br>
+    <div style="text-align: left; margin-left: 20%; font-size: 1em">
+    <p> > Increased availability of genome-wide comparative data</p>
+    <p> > Hierarchical model inference (e.g., species trees/networks)</p>
+    <p> > Spatial investigation (e.g., sliding windows)</p>
+    <p> > Introgression in the context of biology (traits, geography, selection)</p>
+    <p> > Combining spatial and hierarchical models</p>
+    </div>
+</section>
+
+
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2>Phylogenomic Perspectives on Reproductive<br> Isolation and Introgression</h2>
+    <img src="../data-img/Botany-speakers.png" style="width:90%">
+    <br>
+    </div>
+</section>
+
+
+
+
+<!-- SLIDES CLASS ENDING -->
+</div>
+
+<!-- REVEAL LINEAR CENTER CLASS ENDING -->
+</div>
+
+
+<!--#######################################################################  -->
+        <!-- <div class="slide-number"></div> -->
+        <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+        <!-- JAVASCRIPT -->
+        <script src="../reveal/lib/js/head.min.js"></script>        
+        <script src="../reveal/js/reveal.js"></script>
+        <script type="text/javascript" src="../reveal/plugin/highlight/highlight.js"></script>
+        <script>
+            Reveal.initialize({
+                controls:false, 
+                progress:false, 
+                loop:false, 
+                history:true,
+                center:false,
+                fragmentInURL:true,
+                margin:.05,
+                minScale:0.1,
+                maxScale:5,
+                width:1600,
+                height:900,
+                theme:Reveal.getQueryHash().theme,
+                transition:Reveal.getQueryHash().transition||"linear",
+                slideNumber: true,
+                // slideNumber: "h/v",
+                dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: '../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                ]
+            });
+
+            // Reveal.configure({ slideNumber: true })
+            // Reveal.configure({ slideNumber: "c/t" })            
+
+            // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+        </script>
+    </body>
+</html>
