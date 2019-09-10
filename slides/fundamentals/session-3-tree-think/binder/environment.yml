@@ -1,0 +1,7 @@
+name: session-3
+channels: 
+  - eaton-lab
+dependencies:
+  - python
+  - toytree
+
