@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Fundamentals-3</title>
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="./custom.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal/css/print/pdf.css' : '../../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <!-- SLIDE 0 (TITLE) -->
+            <section 
+                data-background="#262626" 
+                style="top:300.5px; display:block;"
+                data-transition="none"     
+                class="present">
+                <div style="margin-left: auto; margin-top: 20%">
+                <h1 class="title" style="color:#5D9B84">
+                Fundamentals of Evolution</h1>
+                <h5 style="color: lightgrey"> EEEB G6110</h5>
+                <h4 style="color: white">Session 3: Tree Thinking</h4>
+                <br>
+                </div>
+            </section>
+
+
+            <!-- SLIDE 1 (what are we doing today?)-->
+            <section data-transition="none" class="present">               
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Today's topics </h2>
+                <br>
+                <p style='font-size:1.25em; font-weight:400; color:#5D9B84; text-align:left; margin-left: 25%; margin-right:10%'>
+                    1. Recap: Earth History
+                    <br><br>
+                    2. Homology and Phylogeny (Futuyma Chapter 2)
+                    <br><br>                    
+                    3. Tree-thinking and trees as tools
+                    <br><br>
+                </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 2%">
+                <h3> The Geological Time Scale </h3>
+                <img src="../../data-img/GeologicalTimeScale4.png" style="width:45%">
+                <br>
+                <p style="font-size: 0.7em; margin-left: 15%; margin-right: 15%">
+                <a href="https://www.digitalatlasofancientlife.org/">https://www.digitalatlasofancientlife.org/</a>
+                </p>
+                </div>
+            </section>
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">                
+                <h2> Measuring diversity</h2>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">       
+                Jack Sepkoski spent 15 years compiling a database of animal diversity to compile his classic <i>kinetic model diversity curve</i> (Sepkoski curve).
+                </p>
+                <img src="../../data-img/Sepkoski-curve.png" style="width:40%">
+                <br>
+                <p style="font-size: 0.9em; margin-left: 15%; margin-right: 15%">       
+                <a href="https://www.cambridge.org/core/journals/paleobiology/article/kinetic-model-of-phanerozoic-taxonomic-diversity-i-analysis-of-marine-orders/A6C7BA0BBD638ECFB2DA91AD655468A2">Sepkoski 1978, A Kinetic Model of Phanerozoic Taxonomic Diversity I</a>
+                </p>
+                </div>
+            </section>
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">                
+                <h2> The Geologic History of Diversity</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">       
+                Has diversity (the global number of species) increased through time? 
+                <br><br>
+                - What does the evidence suggest?
+                <br><br>
+                - What biases exist in the data?
+                <br><br>
+                - Why should we expect diversity should or should increase over time?
+                <br><br>
+                </p>
+                <br><br><br>
+                <p style="font-size: 0.9em; margin-left: 15%; margin-right: 15%">       
+                <a href="https://www.cambridge.org/core/journals/paleobiology/article/kinetic-model-of-phanerozoic-taxonomic-diversity-i-analysis-of-marine-orders/A6C7BA0BBD638ECFB2DA91AD655468A2">Signor 1990, The Geologic History of Diversity</a>
+                </p>
+                </div>
+            </section>  
+
+            <!-- 3 -->
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> Phylogenetic Classifications</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"> 
+                <span style="font-weight: 400">Darwin (1859)</span> drew a tree in the Origin of Species and described how it provides a useful analogy for thinking about descent from common ancestors. 
+                <br>
+                <br>
+                <span style="font-weight: 400">Zimmerman (1931) and Hennig (1950)</span> formalized quantitative methods for inferring phylogenetic relationships based on measured characters (cladistics).
+                <br>
+                <br>
+                This includes identifying 
+                <span style="font-weight: 400">homologous characters</span> (derived from a shared ancestor) and
+                <span style="font-weight: 400">synapomorphies</span> (derived character states). Their methods were based on Occam's raxor (parsimony). 
+                </p>
+                </div>
+            </section>
+
+            <section class="present" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Homology</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"> 
+                Central to all character analyses is the necessity to identify homology: characters that are derived from the same character in a <span style="font-weight: 400"> shared ancestor.</span> 
+                <br>
+                <br>
+                </p>                
+                <img src="../../data-img/homology-morph.png" style="width:60%">
+                </div>
+            </section>
+
+
+            <section class="present" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Homology</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"> 
+                It is sometimes very difficult to infer homology. Which structures of seed plants are homologous to flowers in angiosperms? Anatomical and developmental arguments over this clouded seed plant phylogeny for decaces when morphological characters were used to infer phylogeny.
+                <br>
+                <br>
+                </p>                
+                <img src="../../data-img/homology-plants.png" style="width:45%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> Character Analysis</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"> 
+                <span style="font-weight: 400">Homology:</span> derived from a shared ancestral character.
+                <br>
+                <br>
+                <span style="font-weight: 400">Convergence:</span> derived characters that look similar but evolved from different ancestral characters (non-homologous, e.g., wings of birds and insects). 
+                <br>
+                <br>                               
+                <span style="font-weight: 400">Parallel evolution:</span> similar derived character states which evolved independently from a homologous ancestral character. Often used as evidence of adaptation.
+                <br>
+                <br>
+                <span style="font-weight: 400">Dollo's law:</span> complex characters, once lost, are unlikely to be regained. Not a great rule, more of a common pattern. Examples: eyes, teeth, aquatic larval stage. In general, not all traits are equally reversible in their evolution.
+                </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> Character Analysis: not always that simple...</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"> 
+                How to define independent characters? How to discretize quantitative characters?
+                <br>
+                <br>
+                <span style="font-weight: 400">How to define gains/losses:</span> <br>
+                Same function but different organ.<br>
+                Same organ but different gene. <br>
+                Same gene but different mutation. <br>
+                Same mutation but different context.
+                <br>
+                <br>                               
+                <span style="font-weight: 400">Example: blue flowers evolve in two lineages:</span> <br>
+                Same mutations affect the same protein.<br>
+                Different mutations affect the same protein.<br>
+                Different mutations affect different proteins in same pathway.<br>
+                Different loss-of-function mutations in same protein.<br>
+                </p>
+                </div>
+            </section>            
+
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> Homology in genetics</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"> 
+
+                <span style="font-weight: 400">Homologous genes:</span> the ancestor of these gene copies was present in a common ancestor. Two distinct copies (<i>orthologs</i>) arose by a speciation/divergence event.<br><br>
+                
+                <span style="font-weight: 400">Paralogous genes:</span> the ancestor of these gene copies was present within a lineage (e.g., species). Two distinct copies (<i>paralogs</i>) arose by gene (or genome) duplication.
+                </p>
+                <img src="http://ecoevo.unit.oist.jp/lab/wp-content/uploads/2013/08/GeneHomology_II.png" style="width:60%">
+                </div>
+            </section>  
+
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> Homology in genetics: hemoglobin example</h2>
+                <img src="https://schaechter.asmblog.org/.a/6a00d8341c5e1453ef01a73dde119f970d-800wi" style="width:60%">
+                </div>
+            </section>  
+
+            <!-- 
+            <section 
+                data-transition="none"
+                data-background-iframe="
+                https://www.orthodb.org/?level=2759&species=314295&query=FOXP2"
+                style="top:-960px; display: block;" 
+                class="future" 
+                hidden="">       
+            </section>
+            -->
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> Character Analysis: definitions</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"> 
+                <span style="font-weight: 400">Apomorphy (autapomorphy):</span> uniquely derived in a single taxon.<br><br>
+                <span style="font-weight: 400">Synapomorphy:</span> shared derived.<br><br>
+                <span style="font-weight: 400">Plesiomorphy:</span> shared ancestral state.<br><br>
+                <span style="font-weight: 400">Homoplasy:</span> independent (parallel) evolution of a character in different taxa.
+                </p>
+                </div>
+            </section>            
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> Coding characters</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"> 
+                <span style="font-weight: 400">Discrete data:</span> DNA is discrete, there are only four possible states (A,C,G,T). But what about body mass, height, color, etc.<br><br>
+
+                <span style="font-weight: 400">Characters weighting:</span> Is one trait more informative than another? How to avoid biased sampling of characters?<br><br>
+
+                <span style="font-weight: 400">Why not only use DNA?:</span> For phylogenetics of extant taxa we mostly do. But morphology is still very relevant to phylogeny of extinct taxa (e.g., dinosaurs) and placing fossils with extant taxa
+                </p>
+                </div>
+            </section>    
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> DNA (nucleotides) as characters</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"> 
+                <span style="font-weight: 400">heritable:</span> DNA and amino acid differences are heritable, not plastic.<br><br>
+
+                <span style="font-weight: 400">homology:</span> can be inferred by comparing sequences using alignment algorithms. The spatial location of nucleotides in the genome provides evidence of its homology. <br><br>
+
+                <span style="font-weight: 400">models:</span> informed evolutionary models can be used to estimate rates of character change (e.g., random or non-random rates).<br><br>
+
+                <span style="font-weight: 400">availability and bias:</span> Huge amounts of data are available and there is no inherent bias or expectation that certain parts of the genome (characters) should support one hypothesis more than another.
+                </p>
+                </div>
+            </section>                       
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> Tree Thinking</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"> 
+                <span style="font-weight: 400">Essential to all fields of biology.</span>
+                <br><br>
+
+                Simple but commonly done incorrectly.
+                <br><br>
+
+                <span style="font-weight: 400">Common pitfalls:</span><br>
+                - describing taxa as being "basal".<br>
+                - misinterpreting node rotations as meaningful.<br>
+                - misinterpreting relationships.<br>
+                - misinterpreting branch lengths.<br>
+                - misinterpreting rooting of tree. <br>
+                - failing to read figure captions when present.<br>
+                </p>
+                </div>
+            </section>                       
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> Tree Thinking</h2>
+                <img src="../../data-img/tree-think-1.png" style="width:40%">
+                </div>
+            </section>                       
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> Tree Thinking</h2>
+                <img src="../../data-img/tree-think-2.png" style="width:60%">
+                </div>
+            </section>                       
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> But what is a tree?</h2>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"> 
+                <br>
+                A data structure (e.g., objects and pointers), that can be used in quantitative analyses.
+                </p>
+                <img src="../../data-img/tree-think-3.png" style="width:25%">
+                </div>
+            </section>                       
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> But what is a tree?</h2>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"> 
+                <br>
+                It can be an image, but can also be stored as text (data). The newick format stores phylogenetic trees as <i>nested parentheses</i>.
+                <br><br>
+                </p>
+                <img src="../../data-img/tree-think-4.png" style="width:40%">
+                </div>
+            </section>                       
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> In class exercise</h2>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"> 
+                <br>
+                You can access these slides at: <a href="https://eaton-lab.org/slides/session-3-tree-think/">https://eaton-lab.org/slides/session-3-tree-think/</a>
+                <br><br>
+                Interactive coding exercises with trees: <a href="https://mybinder.org/v2/gh/genomics-course/f3-tree-thinking.git/master?filepath=notebooks">https://mybinder.org/v2/gh/genomics-course/f3-tree-thinking.git/master?filepath=notebooks</a>
+                <br><br>
+                </p>
+                </div>
+            </section>                       
+
+
+
+
+<!-- https://mybinder.org/v2/gh/genomics-course/f3-tree-thinking.git/master?filepath=notebooks -->
+       
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">                
+                <h2> Reading for next week</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">       
+                <br><br>
+                - Futuyma Evolution Textbook (Chapters 1, 2 & 17)
+                <br><br>
+                - <a href="https://bioone.org/journals/The-American-Biology-Teacher/volume-70/issue-4/0002-7685(2008)70[222:PT]2.0.CO;2/Phylogenics-amp-Tree-Thinking/10.1662/0002-7685(2008)70[222:PT]2.0.CO;2.full"> Baum, David A., and Susan Offner. 2008. “Phylogenics & Tree-Thinking.” The American Biology Teacher 70 (4): 222–30. https://doi.org/10.1662/0002-7685(2008)70[222:PT]2.0.CO;2.</a>
+                </p>
+                </div>
+            </section>            
+
+
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../../reveal/lib/js/head.min.js"></script>        
+    <script src="../../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:false, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: true,
+            // slideNumber: "h/v",
+            dependencies: [
+            //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: '../../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>
