@@ -12,6 +12,7 @@ body {
   background-color: white;
 }
 
+
 .reveal {
   font-family: "Lato", sans-serif;
   font-size: 34px;
@@ -106,11 +107,11 @@ body {
   line-height: 1.6em; }
 
 .citation {
-	position: fixed;
+  position: fixed;
   bottom: 0px;
   /*left: 42%;*/
-	z-index:100;
-	font-size: 0.5em !important;
+  z-index:100;
+  font-size: 0.5em !important;
   text-align: center;
 }
 
@@ -237,8 +238,8 @@ background: #264c66; }
   /*position: absolute;*/
   display: none;
   position: fixed;
-  right: 30px;
-  bottom: 30px;
+  right: 45px;
+  bottom: 25px;
   z-index: 31;
   background-color: transparent;
   padding: 5px; 
@@ -252,7 +253,7 @@ background: #264c66; }
 
 
 .reveal .slides section .fragment.strike-through {
-	opacity: 1;
+  opacity: 1;
 }
 
 .reveal .slides section .fragment.strike-through.visible {
@@ -323,3 +324,16 @@ background: #264c66; }
 border-bottom: none; }
 
 
+/* my slide margin top div for all but title or exceptions */
+.reveal .standard {
+    margin-left: auto; 
+    margin-top: 2%;
+}
+
+/* my slide block text div class for p elements*/
+.textbox p {
+    font-size: 0.9em; 
+    text-align: left;
+    margin-left: 15%;
+    margin-right: 15%;
+}
