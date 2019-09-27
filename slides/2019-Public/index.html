@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Eaton-lab</title>
+
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../eaton-lab.css">
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">    
+    <link rel="stylesheet" href="./custom.css">
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <section 
+                data-background-image="../data-img/landscape-collect.jpg"
+                data-state="dimbg"
+                data-transition="none" 
+                class="present" 
+                hidden="">
+                <div style="margin-left: auto; margin-top: 15%">
+                <h2 class="title" style="color:#262626;line-height: 1.25">
+                    Evolutionary Genomics Research<br>
+                    <i>In the Eaton lab at Columbia University<br>
+                </h2>
+                <h5 style="font-weight: 400; line-height: 1.5"> 
+                    Dept. of Ecology, Evolution, and Environmental Biology<br></i>
+                </h5>
+                </div>
+            </section>            
+
+            <section id="contents" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Outline: <i>many topics few slides</i></h2>
+                <br>
+                <p style='font-size:1.15em; line-height: 1.2; font-weight:400; color:#5D9B84; text-align:left; margin-left: 20%; margin-right:10%'>
+                    1. Evolutionary research
+                    <br><br>                   
+                    2. Software development for evolutionary genomics research.
+                    <br><br>                    
+                    3. Species interactions in a hotspot of plant diversity.
+                    <br><br>                    
+                    4. Inferring hybrid gene flow using phylogenetic invariants.
+                    <br><br>
+                    5. Modeling the accumulation of <i>speciation genes</i>.
+                    <br><br>
+                </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> What is an Evolutionary Biologist?</h3>
+                <div class="textbox"><p>
+                    Modern research in ecology and evolution requires a diverse skill set, from organismal biology, to genomics, statistics, and computational biology. My research and teaching centers on integrating these skills.
+                </p></div>  
+                <br>              
+                <!-- <img src="../data-img/crano-flaghorn.jpg" style="width:19%"> -->
+                <img src="
+                https://lh3.googleusercontent.com/VbI7P_OjEILgxj244xn71mnOZgekE5ThQg2RB1IvSHGuCNDCTQLYnA_vQlbSXDgnFZwwhKCN-F4e3eumqdA5v13BuxHX75tBB6rqVpGd70ae_d0GF2J3JFinYIdi-zEPLcsTrN2XGdH6NLjaldTe9cNfi4Y3ckNql7VwhGxrs_-k75aJz-GBum2p8kaVJ9cIIj186XOXtafqnxOzOVII-lcm6KtSEHR5eyZedOaLaCoiV2R8X7iAfAapYlBFR5NtoF_3jKMnr6VVCoeiOx7HKHzUcpCe-RBF4acR5jU_q3ym-atihmYICAuAMX7DZ-Qv8i51zNZP8t-wD_g6PC6HDWhZUiaSAiNauRKeid7l9FKLcYSt2ZpFbYDJDHkEJhXIa07eMSD_WZHKr5R6WizA6dg4gye0YbYE8QNmE7OU6nmSv5AfQLe1tUdG-WGtcH18y4c9CMr5MjM8KO9DOZZNlccfiKKYxcLo9ZBXQJj-Utd8522midvvFIRP9gC3LNgcNevyo7HLasDpawxjzQLNGYbPFAlr9hzJA-TRf_8q3JyucT-MkZJ2VWEM8QbntsPMLtXEJANQzMV3OwpZbyJzrtS6w9o1GPJo4ViuMkjSYa0ARYWADcCwdk9FoXbGDbn-OdhLU4oDdAyyDn7Z0lLPt9g74cCrjmu4KynJqfoAeBNNBhswn2qE6As=w654-h872-no" style="width:21.45%; margin-right: 2%">
+                <img src="../data-svg/crano-tube-lengths.svg" style="width:29%; margin-right:2%">
+                <img src="../data-img/tetrad-code.png" style="width:26.25%">
+
+                </div>
+            </section>
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                <h3 class="title" style="color:#5ab4ac; margin-top:20%; line-height:1.2">
+                How can we most accurately reconstruct the <br>evolutionary history
+                of organisms from their genomes?
+                </h3>
+                </div>
+            </section>
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                <h3 class="title" style="color:#d8b365; margin-top:20%; line-height:1.2">
+                How can we use genomics to reconstruct historical <br>
+                <i>ecological interactions</i> among species?
+                </h3>
+                </div>
+            </section>
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Genomics and Botany </h3>
+                <br>
+                <div class="textbox"><p>
+                And it's an exciting time for this! Genomic technologies are 
+                <i>revolutionizing</i> the study of ecology and evolution.
+                </p></div>               
+                <img src="../data-svg/intro-phylogenomic-sampling.svg" style="width:70%">
+                </div>
+            </section>
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Genomics and Botany </h3>
+                <br>
+                <div class="textbox"><p>
+                And it's an exciting time for this! Genomic technologies are 
+                <i>revolutionizing</i> the study of ecology and evolution.
+                </p></div>               
+                <img src="../data-svg/intro-RAD-diagram.svg" style="width:70%">
+                </div>
+            </section>
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Genomics and Botany </h3>
+                <br>
+                <div class="textbox"><p>
+                And it's an exciting time for this! Genomic technologies are 
+                <i>revolutionizing</i> the study of ecology and evolution.
+                </p></div>               
+                <img src="../data-svg/intro-tree-outlines.svg" style="width:70%">
+                </div>
+            </section>
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Genomics and Botany </h3>
+                <br>
+                <div class="textbox"><p>
+                And it's an exciting time for this! Genomic technologies are 
+                <i>revolutionizing</i> the study of ecology and evolution.
+                </p></div>               
+                <img src="../data-svg/intro-tree-outlines-2.svg" style="width:70%">
+                </div>
+            </section>
+
+
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+
+
+            <section id="computational" class="future" data-transition="none">
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Coding, reproducibility, software development</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        Efficient handling of large data sets, clear and reproducible coding skills, statistical literacy, understanding of data within a specialized field (e.g. genomics).
+                    </p></div>
+                    <img src="../data-img/toytree-example.png" style="width:70%">
+                    </div>
+                </section>
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Coding, reproducibility, development</h3>
+                    <img src="../data-img/ipa.treemix.png" style="width:40%">                
+                    </div>
+                </section>
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Coding, reproducibility, development</h3>
+                    <pre style="width:60%"><code class="python" style="max-height: 500px; font-size: 24px; line-height:1.35;"> 
+  import ipyrad.analysis as ipa
+
+  # initiate an analysis tool with arguments
+  tool = ipa.pca(data=data, ...)
+
+  # run job (distribute in parallel)
+  tool.run()
+
+  # examine results
+  ...   
+                    </code></pre>                    
+                    </div>
+                </section>          
+
+                <section 
+                data-background-iframe="https://github.com/eaton-lab/toytree" 
+                data-background-interactive 
+                data-transition="none"
+                class="future" 
+                hidden="">
+                </section>
+            </section>
+
+
+            <!-- ============================================================== -->
+            <!-- ====  ORGANISMAL  ============================================ -->
+            <!-- ============================================================== -->
+
+
+            <!-- 20 -->
+            <section id="organismal" class="future" data-transition="none">            
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h2> Herbicide resistance among <i>Amaranthus</i> species.</h2>
+                    <img src="../data-svg/Amaranth-windows.svg" style="width:70%">
+                    </div>
+                </section>
+
+                <section data-background-iframe="../data-html/Hengduan.html" 
+                data-background-interactive data-transition="none"
+                style="top:-960px; display: block;" class="future" hidden="">
+                <h3 class="title" style="color:black; text-align: right">The Hengduan Mountains</h3>
+                </section>
+
+
+
+            <section 
+                data-background-color="black"
+                data-background-image="../data-img/landscape-3-big.jpg" 
+                data-background-position="center"
+                data-background-size="contain"
+                data-transition="none" 
+                class="future" 
+                hidden="">
+                    <h3 class="title" style="text-align: right; color:white">
+                    The Hengduan Mountains</h3>
+            </section>
+
+
+            <section 
+                data-background-color="black"
+                data-background-image="../data-img/landscape-4-big.jpg" 
+                data-background-position="center"
+                data-background-size="contain"
+                data-transition="none" 
+                class="future" 
+                hidden="">
+                    <h3 class="title" style="text-align: right; color:white">
+                    The Hengduan Mountains</h3>
+            </section>
+
+
+
+            <section 
+                data-background-color="black"
+                data-background-image="../data-img/landscape-5-big.jpg" 
+                data-background-position="center"
+                data-background-size="contain"
+                data-transition="none" 
+                class="future" 
+                hidden="">
+                    <h3 class="title" style="text-align: right; color:white">
+                    The Hengduan Mountains</h3>
+            </section>
+
+
+            <section 
+                data-background-color="black"
+                data-background-image="../data-img/landscape-6-big.jpg" 
+                data-background-position="center"
+                data-background-size="contain"
+                data-transition="none" 
+                class="future" 
+                hidden="">
+                    <h3 class="title" style="text-align: right; color:white">
+                    The Hengduan Mountains</h3>
+            </section>
+
+
+            <section 
+                data-background-color="black"
+                data-background-image="../china-2018/images/deren-flags.jpg"                
+                data-background-position="center"
+                data-background-size="contain"
+                data-transition="none" 
+                class="future" 
+                hidden="">
+                    <h3 class="title" style="text-align: right; color:white">
+                    The Hengduan Mountains</h3>
+            </section>
+
+
+            <section
+                class="future"
+                data-transition="none"
+                hidden="">   
+                <section>
+                    <h2 style="margin-bottom: 1%">Floral diversity in <i>Pedicularis</i></h2>
+                    <div class="container" style="margin: auto">
+                      <div class="gallery">
+                        <figure class="gallery__item gallery__item--1">
+                          <img src="../data-img/fetisowii.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--2">  
+                          <img src="../data-img/crano-flaghorn.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--3">    
+                          <img src="../data-img/sipho-small.jpg" class="gallery__img">        
+                        </figure>
+                        <figure class="gallery__item gallery__item--4">
+                          <img src="../data-img/decorissima-small.jpg" class="gallery__img"> 
+                        </figure>
+                        <figure class="gallery__item gallery__item--5">
+                          <img src="../data-img/macrosiphon-small.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--6">
+                          <img src="../data-img/latituba-small.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--7">
+                          <img src="../data-img/sipho-2009.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--8">
+                          <img src="../data-img/anas-small.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--9">
+                          <img src="../data-img/longiflora-small.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--10">
+                          <img src="../data-img/davidii-small.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--11">
+                          <img src="../data-img/scolopax-2009.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--12">
+                          <img src="../data-img/oxycarpa-small.jpg" class="gallery__img">
+                        </figure>
+                      </div>
+                    </div>
+                </section>            
+
+
+                <section class="future" data-transition="none" hidden="">   
+
+                    <!-- ZOOM IN HARVARD COLLECTIONS AND MINE-->
+                    <section data-background-iframe="../data-html/Hengduan-Ped-database.html"
+                    data-background-interactive data-transition="none"
+                    style="top:-960px; display: block;" class="future" hidden="">
+
+                    <h3 style="color:black; text-align: right"><i>Pedicularis</i> L. in China</h3>
+
+                    <div id="part1" style="margin-left:35%; margin-top: 7%; text-align:left">        
+                        <div style="display:flex; flex-wrap:row; justify-content:left;
+                            align-items:center;">
+                            <p style="line-height: 1em">
+                                <span style="font-size:30px; font-weight:400;">Species rich:</span><br>
+                                <span style="font-size:20px;">
+                                >600 species worldwide, approximately 300 endemic to Hengduan.<br>
+                                We collected >60 species from 100 locations in 2018. 
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="part2" style="margin-left:35%; margin-top: 0%; text-align:left">        
+                        <div style="display:flex; flex-wrap:row; justify-content:left;
+                            align-items:center;">
+                            <p style="line-height: 1em">
+                                <span style="font-size:30px; font-weight:400;">Morphologically diverse:</span><br>
+                                <span style="font-size:20px;">
+                                Spectacular <i>floral diversity</i> and abundant homoplasy;
+                                similar forms have evolved repeatedly.
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="part3" style="margin-left:35%; margin-top: 0%; text-align:left">        
+                        <div style="display:flex; flex-wrap:row; justify-content:left;
+                            align-items:center;">
+                            <p style="line-height: 1em">
+                                <span style="font-size:30px; font-weight:400;">
+                                Complex history of assembly:</span><br>
+                                <span style="font-size:20px;">
+                                Mountain uplift over millions of years, glacial cycles over 
+                                thousands of years, river and mountains barriers, lead to
+                                constantly shuffling communities (and species
+                                interactions).
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    </section>    
+                </section>
+
+
+            </section>
+
+
+            
+            <!-- ============================================================== -->
+            <!-- ====  E3B  =================================================== -->
+            <!-- ============================================================== -->
+
+            <section id="E3B" class="future" data-transition="none">            
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                        E3B website.
+
+                        My website.
+                        This talk.
+                           
+                        *EEEB GU4050, PROGRAMMING AND DATA SCIENCE SKILLS FOR BIOLOGY 3 pts.
+
+                        *EEEB GU4055, PRINCIPLES AND APPLICATIONS OF MODERN DNA SEQUENCING TECHNOLOGY 3 pts.
+
+                    </div>
+                </section>
+            </section>  
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../reveal/lib/js/head.min.js"></script>        
+    <script src="../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: false,
+            // slideNumber: "h/v",
+            dependencies: [
+            //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: '../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>
