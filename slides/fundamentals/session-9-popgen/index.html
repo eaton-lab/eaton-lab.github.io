@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Fundamentals-9</title>
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+    <!-- <link rel="stylesheet" href="./custom.css"> -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal/css/print/pdf.css' : '../../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <!-- SLIDE 0 (TITLE) -->
+            <section id="title" data-background="#262626" style="top:300.5px; display:block;" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 20%">
+                <h1 class="title" style="color:#5D9B84">
+                Fundamentals of Evolution</h1>
+                <h5 style="color: lightgrey"> EEEB G6110</h5>
+                <h4 style="color: white">Session 9: Population Genetics</h4>
+                <br>
+                </div>
+            </section>
+
+            <section id="contents" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Today's topics </h2>
+                <br>
+                <p style='font-size:1.2em; font-weight:400; color:#5D9B84; text-align:left; margin-left: 25%; margin-right:10%; line-height: 1.0'>
+                    1. Quiz 
+                    <br><br>
+                    2. Recap (contingency and development)
+                    <br><br>
+                    3. Segregation & recombination 
+                    <br><br>
+                    4. Hardy Weinberg equilibrium
+                    <br><br>
+                    5. Genetic drift
+                    <br><br>
+                    6. Genealogical variation
+                    <br><br>
+                </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Recap: contingency </h3>
+                <br>
+                <div class="textbox"><p>
+                Statistical modeling is widely used in evolutionary research
+                to test or compare hypotheses and to estimate model parameters.
+                <br><br>
+                A model describes a mechanistic (probabilistic) process that could produce observable data. It is especially useful when  
+                <span style="font-style:italic;font-weight:400">we cannot observe the past, but we can observe data at the present.</span>
+                </div>
+            </section>    
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 2%">
+                <h3> Models, Probability, and Likelihood</h3>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">
+                The use of statistical models for <i>historical inference</i> 
+                is not unique to evolution, or biology, although many statistical methods were developed by biologists <a href="https://en.wikipedia.org/wiki/Likelihood_function">(e.g., the Likelihood framework was developed by the geneticist R.A. Fisher)</a>
+                <br><br>
+
+                A <i>likelihood function</i> describes the probabilitiy of a set of <i>observations</i> given a set of model <i>parameters</i>. 
+                Likelihood can express the probability of a DNA sequence alignment given a phylogenetic hypotheses, or it can express the probability that a coin toss will turn up heads versus tails. 
+                <br><br>
+                What do we mean by a model parameter?
+                </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 2%">
+                <h3> Models, Probability, and Likelihood</h3>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">
+
+                <span style="font-weight:400">The coin toss example:</span>
+                We can describe a statistical model for the outcome of a coin toss. For a single trial (a toss) there are only two possible outcomes, H or T. The probability of H is unknown. If the coin is fair then p=0.5, but maybe p!=0.5. <br><br>
+
+                The probability of observing data ($D$) given model parameters ($\Theta$) is described by a <i>likelihood function</i>: <br>
+                
+                $$ L(\Theta) = f(D | \Theta)$$
+                <br>
+
+                The observed data are fixed. The function evaluates the data given proposed values for $\Theta$ and returns a score (the likelihood) for how well the parameters explain the observed data under a given model.
+                The goal of <span style="font-weight:400">maximum likelihood</span>
+                is to estimate $\Theta$ by finding the value that maximizes $L(\Theta)$
+                </p>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 2%">
+                <h3> Models, Probability, and Likelihood</h3>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">
+
+                <span style="font-weight:400">The coin toss example:</span>
+                
+                Imagine we observe the following sequence of tosses:
+                <br><br>
+
+                $$ H, T, T, H, H, H, T, T, H, H, T, T, T$$
+                <br>
+
+                There are multiple ways in which to describe a likelihood function based on this observation to test different hypotheses. One  hypothesis we may wish to ask is whether the probability of <i>each trial</i> is fair (prob. heads = 0.5).
+                <br><br>
+                By <a href=https://en.wikipedia.org/wiki/Probability_theory>probability theory</a>, the outcome of many independent events is the product of their probabilities. For example, the probability of flipping heads 5 times in a row using a fair coin is: 
+                <br><br>
+                $$ 0.5 * 0.5 * 0.5 * 0.5 * 0.5 = 0.03125 $$
+                </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 2%">
+                    <h3> Models, Probability, and Likelihood</h3>
+                    <br>
+                    <div class="textbox">
+                        <p>
+                        <span style="font-weight:400">The coin toss example:</span>
+                
+                        In other words, <a href=https://en.wikipedia.org/wiki/Joint_probability_distribution>the joint probability</a> of multiple independent events is computed as:<br><br>
+
+                        $$ P(A, B) = P(A) * P(B) $$
+                        <br>
+                        In other words, the joint probability can be calculated as the product of many <i>independent</i>probabilities:<br><br>
+                        $$ P(A_{i}) = \Pi_{i} P(A_{i}) $$
+                        <br>
+                        The likelihood of 5 heads in a row when p=0.5 is very low.
+                        <br><br>
+                        $$ L(\Theta=0.5) = 0.5 * 0.5 * 0.5 * 0.5 * 0.5 = 0.03125 $$
+                        </p>
+                    </div>
+                </div>
+            </section>  
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 2%">
+                    <h3> Models, Probability, and Likelihood</h3>
+                    <br>
+                    <div class="textbox">
+                        <p>
+                        <span style="font-weight:400">The coin toss example:</span>
+                
+                        In other words, <a href=https://en.wikipedia.org/wiki/Joint_probability_distribution>the joint probability</a> of multiple independent events is computed as:<br><br>
+
+                        $$ P(A, B) = P(A) * P(B) $$
+                        <br>
+                        In other words, the joint probability can be calculated as the product of many <i>independent</i>probabilities:<br><br>
+
+                        $$ P(A_{i}) = \Pi_{i} P(A_{i}) $$
+                        <br>
+                        <i><span style="font-weight:400;">But, the likelihood of 5 heads in a row when p=0.99 is quite high. </span></i>
+                        <br><br>
+                        $$ L(\Theta=0.99) = 0.99 * 0.99 * 0.99 * 0.99 * 0.99 = 0.9509 $$
+                        </p>
+                    </div>
+                </div>
+            </section>   
+
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 2%">
+                    <h3> The likelihood function</h3>
+                    <br>
+                    <div class="textbox">
+                        <p>
+                        <span style="font-weight:400">The coin toss example:</span>
+                
+                        The likelihood function for the probability of heads based on observed coin tosses describes the probability that a coin comes up heads (p) or tails (1-p). Since tails is just one minus heads there is only one parameter (p). The observed data is simply the number of trials (n) and the number of trials that came up heads (h):
+                        <br><br>
+                        $$ L(p) = p^{h} * (1-p)^{n-h}$$
+                        <br>
+                        <i><span style="font-weight:400;">The likelihood score depends only on the parameter (p) and the observation (n, h). </span></i>
+                        <br><br>
+                        $$ L(\Theta=0.5) = (0.5)^{5} * (1-0.5)^{0}$$
+                        <br>              
+                        $$ L(\Theta=0.99) = (0.99)^{5} * (1-0.99)^{0} $$
+                        </p>
+                    </div>
+                </div>
+            </section>                                    
+
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 2%">
+                    <h3> Exercise in Notebook</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        <a href=https://mybinder.org/v2/gh/genomics-course/f5-likelihood.git/master?filepath=notebooks>https://mybinder.org/v2/gh/genomics-course/f5-likelihood.git/master?filepath=notebooks</a>
+                    </p></div>
+                </div>
+            </section>            
+
+
+<!-- 
+            <section id="quiz 1" class="future" data-transition="none">
+                <div class='standard' style="margin-top:10%">
+                <h2> Quiz time!</h2>
+                </div>
+            </section>
+
+
+            <section id="quiz 2" class="future" data-transition="none" 
+            data-background-iframe="https://www.polleverywhere.com/multiple_choice_polls/e3q4OjzwDR6edEFulv0lz?preview=true"
+            hidden="">
+            </section> -->
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Statistical phylogenetics</h3>
+                <br>
+                    <div class="textbox">
+                    <p>
+                    The likelihood function calculates probability of observing a character state (DNA site in an alignment) under a specific model of molecular substitution and a phylogenetic tree (more on these soon).<br><br>
+
+                    Simplest models treat each DNA site independently so that the likelihood of a sequence alignment (many sites) is simply the product of the individual site likelihoods: <br><br>
+
+                    $$ L(D) = \prod_{i=1}^{n} L(D_{i}) = \prod_{i=1}^{n} f(D_{i} | \Theta) $$
+                    </p>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Statistical phylogenetics</h3>
+                <br>
+                    <div class="textbox">
+                    <p>
+                    By <span style="font-weight:400">only knowing the results of coin tosses that occurred in the past</span> we are able to estimate the <i>model parameters that are most likely to have produced them</i> (i.e., the probability the coin toss is heads or tails).<br><br>
+
+                    The same principle applies to estimating the evolutionary distance between two aligned DNA sequences. Looking <span style="font-weight:400">only at the results of an evolutionary process that occurred in the past</span> we can estimate the model parameters that are most likely to have produced the DNA differences between a set of taxa. 
+                    <br><br>
+
+                    Whereas the coin toss problem assumed a <i>Bernoulli distribution</i> as the underlying model, for DNA substitutions we use a molecular substitution model, which is a type of <span style="font-weight:400">Continuous Time Markov Model</span>.
+                    </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- parsimony has fallen out of use for DNA -->
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Molecular Substitution Models</h3>
+                    <br>
+                        <div class="textbox">
+                        <p> Many mutations occur that are not observable in the present-daty samples alone due to <i>homoplasy</i> (repeated mutations to the same sites). 
+                        </p></div>
+                    <img src="../../data-img/dist-homoplasy.png">
+                </div>
+            </section>
+
+
+
+            <!-- parsimony has fallen out of use for DNA -->
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Molecular Substitution Models</h3>
+                    <br>
+                    <div class="textbox">
+                    <p> 
+                    <i>Instantaneous transition rate matrix ($Q$): </i>
+                    Similar to the coin toss example, where q was equal to 1-p, you can see that the probability of not changing over some length of time is simply (1 - probability of changing.)
+                    </p></div>
+
+                    <img src="https://www.oreilly.com/library/view/basic-applied-bioinformatics/9781119244332/images/bapp06f02.gif" style="width:40%">
+
+                    <br><br><br>
+                    <a href=https://en.wikipedia.org/wiki/Models_of_DNA_evolution>https://en.wikipedia.org/wiki/Models_of_DNA_evolution</a>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Molecular Substitution Models</h3>
+                    <br>
+                    <div class="textbox">
+                    <p> 
+                    <i>Transition-probability matrix:</i> the probability of change between states over some time interval (t) is easily calculated as $ P(t) = e^{Qt} $. This tells us the probability of starting in some state (e.g., A) and ending as another (e.g., T). Jukes-Cantor Model predicts equal prob. for any state over very long branches.
+                    </p></div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Jukes_and_Cantor_%281969%29_JC69_Pij_Pii.jpg" style="width:25%">
+                    <br>
+                    <a href=https://en.wikipedia.org/wiki/Models_of_DNA_evolution>https://en.wikipedia.org/wiki/Models_of_DNA_evolution</a>
+                </div>
+            </section>            
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Markov Process Models</h3>
+                    <br>
+                    <div class="textbox">
+                    <p> 
+                    A <i>Markov Process</i> is a random process in which the future state is not dependent on past states, but only on the present. (It is memory-less.) <br><br>
+
+                    These types of models are used extensively in evolutionary modeling, and in many other fields. Made up of a set of discrete states, starting frequencies, and a mechanism for transitioning between states. <br><br>
+
+                    Can be used to infer parameters (describing an unobserved process) that are most likely to produce observed data. For example, we model changes occurring in DNA sites as a Markov process.
+                    </p></div>
+                    <br>
+                </div>
+            </section>            
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Markov Process Models</h3>
+                    <br>
+                    <div class="textbox">
+                    <p style="text-align:center"> 
+                    <a href=http://setosa.io/blog/2014/07/26/markov-chains/>http://setosa.io/blog/2014/07/26/markov-chains/</a>
+                    </p></div>
+                </div>
+            </section>            
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Inferring phylogenies by ML</h3>
+                    <br>
+                    <div class="textbox">
+                    <p> 
+                    Felsenstein (1981) is a classic paper with >10K citations although the methods in this paper have easily been used 10-100X this often.<br><br>
+
+                    The likelihood of a tree is calculated as the likelihood of the data (sequence alignment) given the hypothesis (tree) under a given model (Markov substitution process).<br><br>
+
+                    Unlike coin tosses the likelihoods for different trees do not sum to 1. In theory, we must calculate the probabilitiy of the sequence alignment on every tree to find the maximum.
+                    The probability of a tree hypothesis is calculated as the probability of observing substitutions along each branch of a tree. We must optimize parameters of our model (e.g., JC), and branch lengths of each tested tree.
+                    </p></div>
+                    <br>
+                </div>
+            </section>            
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Inferring phylogenies by ML</h3>
+                    <br>
+                    <div class="textbox">
+                    <p> 
+                    Felsenstein (1981) is a classic paper with >10K citations although the methods in this paper have easily been used 10-100X this often.<br><br>
+
+                    Felsenstein's pruning algorithm describes a simplification of the likelihood calculation that requires fewer steps by traversing a tree from tips to root and optimizing edge lengths one at a time based only on the likelihoods of the nodes descendant from each.<br><br>
+
+                    He describes the pulley principle as an outcome of using a reversible Markov process model ($r_{ij} = r_{ji}$). It shows that the root can be placed anywhere in the tree and does not affect the likelihood score.
+                    </p></div>
+                    <br>
+                </div>
+            </section>            
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Inferring phylogenies by ML</h3>
+                    <br>
+                    <div class="textbox">
+                    <p> 
+                    Felsenstein (1981) is a classic paper with >10K citations although the methods in this paper have easily been used 10-100X this often.<br><br>
+
+                    Because tree size is so large, we must use heuristic tree search algorithms to find the best tree. Felsenstein proposed a step-wise addition method to start, followed by local re-arrangements. Many similar methods are used today, involving sequential re-arrangements of the tree.
+                    </p></div>
+                    <img src=https://static.javatpoint.com/tutorial/ai/images/hill-climbing-algorithm-in-ai.png style="width:30%">
+                    <br>
+                </div>
+            </section>            
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Markov Models for Evolutionary Inference</h3>
+                    <br>
+                    <div class="textbox">
+                    <p> 
+                    As described in your assigned review paper by O'Meara, Markov models are used widely in evolution beyond tree inference. For example, we can describe the evolution of any discrete character along branches of a tree similar to the evolution of nucleotide substitutions. 
+                    </p></div>
+                    <img src=https://i2.wp.com/www.molecularecologist.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-24-at-10.01.39-AM.png
+                    style="width:35%">
+                    <br>
+                    <a href=https://www.molecularecologist.com/2015/09/measuring-dispersal-rate-in-neotropical-fishes-in-units-of-wallace/>
+                    link to review of this paper.
+                    </a>
+                    <br>
+                </div>
+            </section>   
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Other common models in Evolution</h3>
+                    <br>
+                    <div class="textbox">
+                    <p> 
+                    Other common classes of models used in Evolution include probability distributions (e.g., Normal), especially the Multivariate Normal Distribution, which describes covariance structure that can be used in regression framework.<br><br>
+
+                    Multivariate Normal Distribution describes <i>covariance</i> between two N distributions. 
+                    </p></div>
+                    <img src=https://www.mathworks.com/help/examples/stats/win64/ComputeTheMultivariateNormalPdfExample_01.png
+                    style="width:35%">
+                    <br>
+                    </a>
+                    <br>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Other common models in Evolution</h3>
+                    <br>
+                    <div class="textbox">
+                    <p> 
+                    Phylogenetic relationships can be modeled using a variance-covariance matrix. For example, if we assume a <i>continuous trait </i> evolves along branches of a tree by a Brownian motion process (an assumption from the Normal Distribution) then the expeced distributions at the tips can be modeled as the sum of many independent draws from multiple normal distributions. 
+                    <br><br>
+                    Multivariate Normal Distribution describes the <i>covariance</i> among tips of tree due to their shared ancestors (shared ancestral trait distributions). 
+                    </p></div>
+                    <img src=https://www.researchgate.net/profile/Simone_Blomberg/publication/228086346/figure/fig1/AS:214007551139860@1428034784482/Transformation-from-a-phylogenetic-tree-to-a-variance-covariance-matrix-under-the.png
+                    style="width:30%">
+                    <br>
+                    </a>
+                    <br>
+                </div>
+            </section>            
+           
+
+
+            <section id="reading" class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Reading for next session</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">       
+                <br>
+                <a href="https://bsapubs.onlinelibrary.wiley.com/doi/10.1002/aps3.1038">
+                McKain Michael R., Johnson Matthew G., Uribe‐Convers Simon, Eaton Deren, and Yang Ya. 2018. “Practical Considerations for Plant Phylogenomics.” Applications in Plant Sciences 0 (0): e01038. https://doi.org/10.1002/aps3.1038.
+                </a>
+                <br><br>
+                Chapter 4 of Futuyma Textbook.
+                </div>
+            </section>            
+
+
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../../reveal/lib/js/head.min.js"></script>        
+    <script src="../../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: true,
+            // slideNumber: "h/v",
+
+            dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: '../../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                { src: '../../reveal/plugin/math/math.js', async: true }
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>
