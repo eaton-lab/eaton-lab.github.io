@@ -24,9 +24,9 @@ image:
 <!-- ------------------------------------ -->
 
 
-**Eaton, D.A.R**. *Toytree: A minimalist tree visualization and manipulation library for Python* (2019) Methods in Ecology and Evolution. https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13313
+* **Eaton, D.A.R**. *Toytree: A minimalist tree visualization and manipulation library for Python* (2019) Methods in Ecology and Evolution. https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13313
 
-Landis, M.J, **Eaton, D.A.R.**, Clement, W.L., Park, B., Spriggs, E.L., Sweeney, P.,  Edwards, E.J, and M.J. Donoghue (2019). *Joint phylogenetic estimation of geographic movements and biome shifts during the global diversification of Viburnum*. BioRxiv.
+* Landis, M.J, **Eaton, D.A.R.**, Clement, W.L., Park, B., Spriggs, E.L., Sweeney, P.,  Edwards, E.J, and M.J. Donoghue (2019). *Joint phylogenetic estimation of geographic movements and biome shifts during the global diversification of Viburnum*. BioRxiv.
 
 * Paetzold, C., Wood, K.R., **Eaton, D.A.R.**, Wagner, W.L., and M. S. Appelhans. (2019) *Phylogeny of Hawaiian Melicope (Rutaceae): RAD-Seq resolves species 
 relationships and reveals ancient introgression*. Frontiers in Plant Science 10, 1074. 
