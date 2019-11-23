@@ -14,24 +14,41 @@ image:
 ----------------
 
 <!-- 2019 papers -->
-<!-- ------------------------------------ -->
-<!-- Guo Cen... -->
-<!-- Toytree* -->
-<!-- ipyrad* -->
-<!-- Ficus* -->
-<!-- Cranolopha* -->
-<!-- Viburnum* -->
+<!-- =============================== -->
+<!-- xxx Guo Cen... (2019) -->                 
+<!-- xxx Toytree (2019) -->
+<!-- ipyrad* (2019) -->
+<!-- Landis paper (2019) -->
+<!-- Ficus* (2019) -->
+<!-- Oaks sliding window (2019) -->
+<!-- Tetrad paper (2019) -->
+<!-- DMIs (2019) -->
+
+<!-- 2020 papers -->
+<!-- =============================== -->
+<!-- Amaranth (2020) -->
+<!-- Cranolopha* (2020) -->
+<!-- Orienotinus* (2020) -->
+<!-- Fernando Brazil paper (2020) -->
+<!-- simcat (2020) -->
+<!-- Parallel phylogeography (2020) -->
+<!-- Historical pedicularis (2020) -->
+<!-- Pedicularis genome and phylogeny (2020) -->
+<!--  -->
+
 <!-- ------------------------------------ -->
 
+
+
+* **Eaton, D.A.R.** (2019) *Toytree: a minimalist tree visualization and manipulation library for Python.* Methods in Ecology and Evolution. Accepted.
 
 * Paetzold, C., Wood, K.R., **Eaton, D.A.R.**, Wagner, W.L., and M. S. Appelhans. 
 *Phylogeny of Hawaiian Melicope (Rutaceae): RAD-Seq resolves species 
-relationships and reveals ancient introgression*. In Review.
+relationships and reveals ancient introgression* (2019) Frontiers in Plant Science. doi: 10.3389/fpls.2019.01074 
 
 * Satler, J.D., Herre, A., Jander, C., **Eaton, D.A.R.**, Machado, C.A., Heath, T.A., and J.D. Nason (2019). *Inferring Processes of Coevolutionary Diversification in a Community of Panamanian Strangler Figs and Associated Pollinating Wasps* BioRxiv, December, 490862. https://doi.org/10.1101/490862.
 
-* Spriggs E.L., Schlutius, C.; **Eaton, D.A.R.**, Park, B., Sweeney, P., Edwards, E., and  
-M. Donoghue (2019). *Differences in flowering time maintain species boundaries in a continental radiation of Viburnum*. American Journal of Botany. https://doi.org/10.1002/ajb2.1292
+* Spriggs E.L., Schlutius, C.; **Eaton, D.A.R.**, Park, B., Sweeney, P., Edwards, E., and M. Donoghue (2019). *Differences in flowering time maintain species boundaries in a continental radiation of Viburnum*. American Journal of Botany. https://doi.org/10.1002/ajb2.1292
 
 * Spriggs, E.L., **Eaton, D.A.R.**, Sweeney, P., Schlutius, C., Edwards, E., and M.J.
 Donoghue (2019). *RAD-seq data reveal a cryptic Viburnum species on the North
@@ -39,8 +56,7 @@ American Coastal Plain*. Systematic Biology, syy084, [https://doi.org/10.1093/sy
 
 * Park, B., Sinnott-Armstrong, M., Schlutius, C., Penagos Zuluaga, J., Spriggs, E.L,
 Simpson, R., Benavides, E., Landis, M., Sweeney, P., **Eaton, D.A.R.**, and
-M.J. Donoghue (2018). *Sterile marginal flowers increase visitation and fruit set in the
-hobblebush (Viburnum lantanoides, Adoxaceae) at multiple spatial scales.*
+M.J. Donoghue (2018). *Sterile marginal flowers increase visitation and fruit set in the hobblebush (Viburnum lantanoides, Adoxaceae) at multiple spatial scales.*
 Annals of Botany mcy117, [https://doi.org/10.1093/aob/mcy117](https://doi.org/10.1093/aob/mcy117)
 
 * Miller, J., Quinzin, M., Edwards, D., **Eaton, D.A.R.**, Jensen, E., Russello, M.,
