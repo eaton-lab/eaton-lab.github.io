@@ -80,21 +80,25 @@ gsutil -m cp -r gs://liuliu/2019-11-15-Liuliu-shasta/ .
 ```
 
 ### Install canu from source
-To install *canu's* dependencies and ensure binaries are accessible to all users I installed *canu* into the `/opt/conda/bin` directory. The binary can be called from its full path.
+To install *canu's* dependencies and ensure binaries are accessible to all users I installed *canu* into the `/opt/conda/bin` directory. 
 
 ```bash
 # install conda in /opt/ so it is available to all users
 cd
 sudo bash Miniconda3-latest-Linux-x86_64 -p /opt/conda -b
 
+# activate conda in path so that dependencies are found (e.g., java).
+source /opt/conda/bin/activate
+conda init
+exec -l $SHELL
+
 # install with conda
-sudo /opt/conda/bin/conda install canu=1.9 -c bioconda -c conda-forge
+sudo conda install canu=1.9 -c bioconda -c conda-forge
 ```
 
 
 ### Clean and trim nanopore reads with canu
-
-This is what we plan to run first (read the docs, do we need to run the correct and trim steps multiple times?). Then we will probably try a fast shasta assembly of the trimmed and cleaned reads. Then if that goes well we will start a canu assembly as well. The shasta assembly will probably require changing the instance to a high mem node.
+This is what we plan to run first (do we need to run the correct and trim steps multiple times?). Then we will probably try a fast shasta assembly of the trimmed and cleaned reads. Then if that goes well we will start a canu assembly as well. The shasta assembly will probably require changing the instance to a high mem node.
 
 
 ```bash
