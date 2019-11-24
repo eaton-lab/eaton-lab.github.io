@@ -118,7 +118,7 @@ This is what we plan to run first (do we need to run the correct and trim steps 
 /opt/conda/bin/conda -trim \
   -p liuliu \
   -d /scratch/canu-assembly/ \
-  genomeSize=1g,
+  genomeSize=1g \
   correctedErrorRate=0.12 \
   corMaxEvidenceErate=0.15 \
   minReadLength=1000 \
