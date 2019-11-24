@@ -16,7 +16,6 @@ image:
 <!-- 2019 papers -->
 <!-- =============================== -->
 <!-- xxx Guo Cen... (2019) -->                 
-<!-- xxx Toytree (2019) -->
 <!-- ipyrad* (2019) -->
 <!-- Landis paper (2019) -->
 <!-- Ficus* (2019) -->
@@ -39,20 +38,18 @@ image:
 <!-- ------------------------------------ -->
 
 
+* **Eaton, D.A.R**. *Toytree: A minimalist tree visualization and manipulation library for Python* (2019) Methods in Ecology and Evolution. https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13313
 
-* **Eaton, D.A.R.** (2019) *Toytree: a minimalist tree visualization and manipulation library for Python.* Methods in Ecology and Evolution. Accepted.
+* Landis, M.J, **Eaton, D.A.R.**, Clement, W.L., Park, B., Spriggs, E.L., Sweeney, P.,  Edwards, E.J, and M.J. Donoghue (2019). *Joint phylogenetic estimation of geographic movements and biome shifts during the global diversification of Viburnum*. BioRxiv.
 
-* Paetzold, C., Wood, K.R., **Eaton, D.A.R.**, Wagner, W.L., and M. S. Appelhans. 
-*Phylogeny of Hawaiian Melicope (Rutaceae): RAD-Seq resolves species 
-relationships and reveals ancient introgression* (2019) Frontiers in Plant Science. doi: 10.3389/fpls.2019.01074 
+* Paetzold, C., Wood, K.R., **Eaton, D.A.R.**, Wagner, W.L., and M. S. Appelhans. (2019) *Phylogeny of Hawaiian Melicope (Rutaceae): RAD-Seq resolves species relationships and reveals ancient introgression*. Frontiers in Plant Science 10, 1074. doi: 10.3389/fpls.2019.01074 
 
 * Satler, J.D., Herre, A., Jander, C., **Eaton, D.A.R.**, Machado, C.A., Heath, T.A., and J.D. Nason (2019). *Inferring Processes of Coevolutionary Diversification in a Community of Panamanian Strangler Figs and Associated Pollinating Wasps* BioRxiv, December, 490862. https://doi.org/10.1101/490862.
 
 * Spriggs E.L., Schlutius, C.; **Eaton, D.A.R.**, Park, B., Sweeney, P., Edwards, E., and M. Donoghue (2019). *Differences in flowering time maintain species boundaries in a continental radiation of Viburnum*. American Journal of Botany. https://doi.org/10.1002/ajb2.1292
 
 * Spriggs, E.L., **Eaton, D.A.R.**, Sweeney, P., Schlutius, C., Edwards, E., and M.J.
-Donoghue (2019). *RAD-seq data reveal a cryptic Viburnum species on the North
-American Coastal Plain*. Systematic Biology, syy084, [https://doi.org/10.1093/sysbio/syy084](https://doi.org/10.1093/sysbio/syy084).
+Donoghue (2019). *Restriction-Site-Associated DNA Sequencing Reveals a Cryptic Viburnum Species on the North American Coastal Plain*. Systematic Biology, syy084, [https://doi.org/10.1093/sysbio/syy084](https://doi.org/10.1093/sysbio/syy084).
 
 * Park, B., Sinnott-Armstrong, M., Schlutius, C., Penagos Zuluaga, J., Spriggs, E.L,
 Simpson, R., Benavides, E., Landis, M., Sweeney, P., **Eaton, D.A.R.**, and
@@ -64,13 +61,11 @@ Gibbs, J., Tapia, W., Rueda, D., and A. Caccone (2018). *Genome-wide assessment 
 diversity and divergence among extant Galápagos giant tortoise species.* 
 Journal of Heredity 109(6):611-619. [https://doi.org/10.1093/jhered/esy031](https://doi.org/10.1093/jhered/esy031).
 
-* Federman, S., Donoghue, M.J., Daly, D., and **D.A.R. Eaton** (2018). *Reconciling Species
-Diversity in a Tropical Plant Clade (Canarium, Burseraceae).* PLoS ONE 13(6): e0198882. ([Open access link](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0198882))
+* Federman, S., Donoghue, M.J., Daly, D., and **D.A.R. Eaton** (2018). *Reconciling Species Diversity in a Tropical Plant Clade (Canarium, Burseraceae).* PLoS ONE 13(6): e0198882. ([Open access link](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0198882))
 ([reproducible code](https://github.com/dereneaton/Canarium-GBS)).
 
 * (All authors contributed equally) M.R. McKain, M.G. Johnson, S. Uribe‐Convers, 
-**D.A.R. Eaton** and Y. Yang (2018). *Practical considerations for plant phylogenomics*. 
-Applications in Plant Sciences 6: e1038 ([Open Access Review Article](https://onlinelibrary.wiley.com/doi/10.1002/aps3.1038#.WsJXeYVzylI.twitter)).
+**D.A.R. Eaton** and Y. Yang (2018). *Practical considerations for plant phylogenomics*. Applications in Plant Sciences 6: e1038 ([Open Access Review Article](https://onlinelibrary.wiley.com/doi/10.1002/aps3.1038#.WsJXeYVzylI.twitter)).
 
 * Forsman Z.H., Knapp I.S.S., Tisthammer K., **Eaton D.A.R.**, Belcaid M.,
 Toonen R.J. (2017). *Coral hybridization or phenotypic variation? Genomic

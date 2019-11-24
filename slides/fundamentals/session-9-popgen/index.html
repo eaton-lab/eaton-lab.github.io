@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Fundamentals-9</title>
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+    <!-- <link rel="stylesheet" href="./custom.css"> -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal/css/print/pdf.css' : '../../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <!-- SLIDE 0 (TITLE) -->
+            <section id="title" data-background="#262626" style="top:300.5px; display:block;" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 20%">
+                <h1 class="title" style="color:#5D9B84">
+                Fundamentals of Evolution</h1>
+                <h5 style="color: lightgrey"> EEEB G6110</h5>
+                <h4 style="color: white">Session 9: Population Genetics</h4>
+                <br>
+                </div>
+            </section>
+
+            <section id="contents" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Today's topics </h2>
+                <br>
+                <p style='font-size:1.2em; font-weight:400; color:#5D9B84; text-align:left; margin-left: 25%; margin-right:10%; line-height: 1.0'>
+                    1. Quiz 
+                    <br><br>
+                    2. Recap (contingency, development, molecular bio)
+                    <br><br>
+                    3. Segregation & recombination 
+                    <br><br>
+                    4. Hardy Weinberg equilibrium
+                    <br><br>
+                    5. Genetic drift
+                    <br><br>
+                    6. Genealogical variation
+                    <br><br>
+                </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Recap: contingency </h3>
+                <br>
+                <div class="textbox"><p>
+                    The history of life is dependent upon the series of events that took place until that moment. Replaying the tape of life with slight alterations will result in different outcomes.
+                    <br><br>
+                    <span style="font-weight:400">Example:</span>
+                    S.J. Gould wrote on the enormous influence of chance events like mass extinctions. <i>Traits that affect the probability of survival of mass extinction do so in ways that are incidental and unrelated to the causes of their evolution in the first place.</i>
+                    <br><br>
+                    <span style="font-weight:400">Example:</span>
+                    <a href=https://en.wikipedia.org/wiki/E._coli_long-term_evolution_experiment>The long term evolution experiment (LTEE)</a> has studied adaptation of E. coli to a harsh environment over >60K generations. Frozen samples allow <i>actually replaying</i> the experiment from snapshots in the past. Seemingly neutral mutations at gen=20K can influence probability of adaptive mutations at gen=30K.
+                </p></div>
+            </section>    
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Recap: evolutionary development (evo-devo)</h3>
+                <br>
+                <div class="textbox"><p>
+                <span style="font-weight:400">Proximate causes:</span> mechanisms that operate within an individual organism to regulate development based on genetic and environmental signaling. e.g., programmed cell death causes the skin between digits to be lost in humans but not ducks.
+                <br><br>
+                <span style="font-weight:400">Ultimate causes:</span>
+                mechanisms that operate on populations over generations. e.g., natural selection. Explains how proximate causes evolve, by changes in allele frequencies
+                <br><br>
+                <span style="font-weight:400">A major goal of evo-devo:</span>
+                is to understand how genotypes influence phenotypes by linking ultimate and proximal causes. 
+                </p></div>
+            </section>    
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Recap: modules and homology (evo-devo)</h3>
+                <br>
+                <div class="textbox"><p>
+                <span style="font-weight:400">Modules:</span> 
+                distinct units that have genetic specifications, developmental patterns, locations, and interactions with other modules.
+                <br><br>
+                <span style="font-weight:400">Embryology:</span>
+                Studying the embryological development of living things provides clues to the evolution of present-day organisms. During some stages of development, organisms exhibit ancestral features in whole or incomplete form. 
+                <br><br>
+                <span style="font-weight:400">Homology:</span>
+                is the existence of shared ancestry between a pair of structures, or genes, in different taxa. In development we can define modules with a shared developmental basis (often inferred through embryology) as <i>serially homologous</i>. Examples include the legs of centipedes, or vertebrae of the vertebral column. Additional differentiation of serially homologous structures is called <i>individualization</i>.
+                </p></div>
+            </section>    
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Recap: molecular biology</h3>
+                <br>
+                <div class="textbox"><p>
+                <span style="font-weight:400">Genes</span> are regions of the genome that are transcribed into RNA. The RNA may be functional itself, or serve as a template to encode a functional protein, in which case it is translated by ribosomes from 3-bp codons to amino acid peptides. 
+                </p></div>
+                <img src="data/gene-structure.png" style="width:50%">         
+            </section>    
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Recap: gene regulation</h3>
+                <img src="data/gene-regulation.png" style="width:36%">
+            </section>    
+
+
+            <section class="future" data-transition="none" data-background="#262626">
+                <div style="margin-top: 15%">
+                    <h1 class="title" style="color:#5D9B84">
+                    Population genetics</h1>
+
+                    <div class="textbox"><p style="color:white">
+                        <i> A mathematical and statistical framework for studying genetic differences within and between populations.</i>
+                    </p></div>           
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Hardy Weinberg Equilibrium </h3>
+                    <div class="textbox"><p>
+                    The <a href=https://en.wikipedia.org/wiki/Hardy%E2%80%93Weinberg_principle>Hardy–Weinberg principle (HW)</a> provides the solution to one of Darwin's biggest mysteries: how variation is maintained in a population. HW shows that under Mendelian inheritance <i>the frequencies of alleles (variants at a gene) will remain constant in the absence of <span style="font-weight:400">selection, mutation, migration, and genetic drift.</span></i>
+                    </p></div>
+                    <img src="data/allele-freqs.png" style="width:20%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Mendelian segregation and recombination</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        Haploid gametes formed during Meiosis inherit one of the two copies of each locus (in diploid organisms). The frequency of diploid genotypes can change over time (e.g., heterozygotes may be absent in parents but present in offspring), based solely on the random segregation of alleles. 
+                        <br><br>
+                        If segregation is the only factor changing genotype frequencies then they will reach Hardy-Weinberg equilibrium after a single generation:
+                    </p></div>
+                        $p^{2} + 2pq + q^{2} = 1$.
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Hardy Weinberg Equilibrium </h3>
+                    <div class="textbox"><p>
+                        The three genotypes for a locus with two alleles will occur at: $p^{2} + 2pq + q^{2} = 1$.
+                    </p></div>
+                    <img src="data/hardy-weinberg.png" style="width:42%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright-Fisher Model </h3>
+                    <div class="textbox"><p>
+                        A discrete time model in which each generation is composed of 2N copies of each gene. Each subsequent generation 2N new copies are randomly drawn from the previous generation (note: this is type of Markov process model). For a gene with two alleles (A1 and A2) the probability of obtaining k copies of an allele that had frequency p in the last generation is:
+                        <br><br>
+                        $$ {{2N \choose k}p^{k}q^{2N-k}} $$
+                    </p></div>
+                    <br>
+                    <a href=https://en.wikipedia.org/wiki/Genetic_drift#Wright.E2.80.93Fisher_model>
+                    <p style="font-size:0.7em">
+                    https://en.wikipedia.org/wiki/Genetic_drift#Wright.E2.80.93Fisher_model
+                    </p></a>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Mendelian segregation and recombination</h3>
+                    <div class="textbox"><p>
+                        Segregation applies to the inheritance of allele copies at a single locus, whereas recombination affects whether copies at <i>two different loci</i> will be inherited together.
+                    </p></div>
+                    <img src=data/recombination.png style="width:29%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Linkage disequilibrium</h3>
+                    <img src=data/linkage-disequilibrium.png style="width:50%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Physical linkage</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        Linkage describes the probability that alleles at two or more positions in the genome will be co-inherited in gametes during Meiosis. It is a measurement of an individual genome, and is influenced by the <i>physical distance</i> separating the alleles (the number of nucleotides in the genome), and the <i>genetic distance</i> (variation in recombination rates across the genome). Loci very close together tend to be in linkage disequilibrium, while those on different chromosomes tend to be in linkage equilibrium. However, selection and recombination can affect this.
+                    </p></div>                    
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Linkage disequilibrium</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        Linkage disequilibrium (LD) describes the statistical association between alleles at two loci in a population, e.g., when an individual has A1 it also has B1. It is a measurement of a population and is influenced by the population history (e.g., selection, recombination), not an individual.
+                        <br><br>
+                        When a new mutation occurs the new allele only exists on the chromosome on which it evolved. It can be replicated and inherited in offspring, but will continue to occur only with the other alleles with which it is physically linked unless recombination breaks this association by crossover events that link it to other chromosomes with other alleles. 
+                    </p></div>                    
+                </div>
+            </section>
+            
+
+
+           <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Recombination and Sex</h3>
+                    <div class="textbox"><p>
+                        Recombination re-shuffles variation among individuals in a population and can bring together beneficial alleles more quickly than in asexual populations. 
+                    </p></div>         
+                    <img src="data/clonal-interference-1.png">
+                    <img src="data/clonal-interference-2.png">
+                </div>
+            </section>
+
+
+           <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Recombination and Sex</h3>
+                    <div class="textbox"><p>
+                        Recombination re-shuffles variation among individuals in a population and in doing so can disassociate (linkage equilibrium) beneficial from deleterious alleles. 
+                    </p></div>         
+                    <img src="data/ruby-in-the-rubbish.png" style="width:60%">
+                </div>
+            </section>            
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright-Fisher Model </h3>
+                    <div class="textbox"><p>
+                        A discrete time model in which each generation is composed of 2N copies of each gene. Each subsequent generation 2N new copies are randomly drawn from the previous generation (note: this is type of Markov process model). For a gene with two alleles (A1 and A2) the probability of obtaining k copies of an allele that had frequency p in the last generation is:
+                        <br><br>
+                        $$ {{2N \choose k}p^{k}q^{2N-k}} $$
+                    </p></div>
+
+                    <br>
+                    <a href=https://en.wikipedia.org/wiki/Genetic_drift#Wright.E2.80.93Fisher_model>
+                    <p style="font-size:0.7em">
+                    https://en.wikipedia.org/wiki/Genetic_drift#Wright.E2.80.93Fisher_model
+                    </p></a>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright-Fisher Model </h3>
+                    <div class="textbox"><p>
+                        A neutral evolutionary process (no selection) can be modeled using the WF model in which allele frequencies change over time by genetic drift. 
+                    </p></div>
+                    <img src=data/WF-genealogy-Drummond.png>
+                    <br>
+                    <a href=https://www.researchgate.net/figure/The-Wright-Fisher-and-Kingman-coalescent-processes-with-generation-time-r-left-K-40_fig1_2853283>
+                    <p style="font-size:0.7em">
+                        Source: Alexei Drummond
+                    </p></a>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright-Fisher Model </h3>
+                    <div class="textbox"><p>
+                        A neutral evolutionary process (no selection) can be modeled using the WF model in which allele frequencies change over time by genetic drift. 
+                    </p></div>
+                    <img src=data/WF-genealogy-Drummond.png>
+                    <br>
+                    <a href=https://www.researchgate.net/figure/The-Wright-Fisher-and-Kingman-coalescent-processes-with-generation-time-r-left-K-40_fig1_2853283>
+                    <p style="font-size:0.7em">
+                        Source: Alexei Drummond
+                    </p></a>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Genetic Drift</h3>
+                    <div class="textbox"><p>
+                        Change in the frequencies of alleles in populations can occur even in the absence of selection. As we saw, the simple process of segregation (random drawing alleles) will draw populations towards HW equilibrium. Although we can compute an exact expected probability for genotype frequencies under HW, in reality sampling is a random process, and thus it may deviate from expectations due to sampling variance.
+                    </p></div>
+                    <img src=data/genetic-drift-Ne.png>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Genetic Drift</h3>
+                    <br>
+                    <div class="textbox"><p style="font-size:0.75em">
+                        1. Allele frequencies fluctuate randomly as allele copies from the previous generation are randomly sampled each new generation. 
+                        <br><br>
+                        2. Random fluctuations in alleles frequencies are larger in smaller populations. This is the law of large numbers, the outcome of many independent events will converge closer to the true probability with larger sample sizes.
+                        <br><br>
+                        3. Drift causes genetic variation to be lost. <i>Fixation</i> occurs when frequency of an allele reaches 0 or 1. There is no longer variation to sample in the next generation.
+                        <br><br>
+                        4. Drift causes populations that are initially identical to become different. 
+                        <br><br>
+                        5. Alleles can become fixed by neutral drift without requiring selection. 
+                    </p></div>
+                </div>
+            </section>            
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>The neutral theory of molecular evolution</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        <a href=https://en.wikipedia.org/wiki/Neutral_theory_of_molecular_evolutionNeutral>Neutral theory</a> proposes that most genetic variation and genetic differences among species are a result of genetic drift acting on selectively neutral alleles. Most mutations that are not deleterious are neutral rather than beneficial. It does not deny the action of natural selection in evolution, but states that beneficial alleles are very rare and thus <i>contribute very little at the molecular level to explaining genetic variation.</i>
+                    </p></div>
+                </div>
+            </section>            
+
+ 
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>The neutral theory of molecular evolution</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        <a href=https://en.wikipedia.org/wiki/Neutral_theory_of_molecular_evolutionNeutral>Neutral theory</a> provides a <span style="font-weight:400">null model</span> for understanding population genetic variation. It justifies the use of Wright-Fisher like mathematical equations to infer evolutionary history, e.g., phylogenies, population size changes, migration rates, mutation rates, etc.
+                    </p></div>
+                </div>
+            </section>            
+
+
+
+            <section id="reading" class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Reading for next session</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">       
+                <br>
+                <a href="https://academic.oup.com/mbe/article/35/6/1366/4990884">
+                "The Neutral Theory in Light of Natural Selection." (Kern and Hahn, 2018). 
+                </a>
+                <br><br>
+
+                <a href=https://onlinelibrary.wiley.com/doi/10.1111/evo.13650> "The importance of the Neutral Theory in 1968 and 50 years on: A response to Kern and Hahn 2018." (Jensen et al. 2018).</a>
+                </div>
+            </section>            
+
+
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../../reveal/lib/js/head.min.js"></script>        
+    <script src="../../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: true,
+            // slideNumber: "h/v",
+
+            dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: '../../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                { src: '../../reveal/plugin/math/math.js', async: true }
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>

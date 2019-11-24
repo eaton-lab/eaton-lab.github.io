@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Fundamentals-11</title>
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+    <!-- <link rel="stylesheet" href="./custom.css"> -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal/css/print/pdf.css' : '../../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <!-- SLIDE 0 (TITLE) -->
+            <section id="title" data-background="#262626" style="top:300.5px; display:block;" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 20%">
+                <h1 class="title" style="color:#5D9B84">
+                Fundamentals of Evolution</h1>
+                <h5 style="color: lightgrey"> EEEB G6110</h5>
+                <h4 style="color: white">Session 11: The Coalescent</h4>
+                <br>
+                </div>
+            </section>
+
+            <section id="contents" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Today's topics </h2>
+                <br>
+                <p style='font-size:1.2em; font-weight:400; color:#5D9B84; text-align:left; margin-left: 25%; margin-right:10%; line-height: 1.0'>
+                    1. Recap (Fst, Wright-Fisher)
+                    <br><br>
+                    2. The coalescent
+                    <br><br>
+                    3. Coalescent simulations
+                    <br><br>
+                    4. Forward simulations
+                    <br><br>
+                    5. Readings
+                </p>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright's F-statistics </h3>
+                    <br>
+                    <div class="textbox"><p style="font-size:0.75em">
+                        Measure an inbreeding coefficient (deviation of H from expected). Applied at different hierarchical grouping of alleles (e.g., individuals, subpopulations) these statistics can measure population structure.
+                        <br><br>
+
+                        The prob. two randomly sampled alleles are the same in an individual (compared to in a subpop or total), or that they are the same in one subpop (compared to the combination of two subpops).
+                        <br>
+                    </p></div>
+                    <img src=https://upload.wikimedia.org/wikipedia/commons/d/db/F-statistics.png style="width:20%">
+                    <img src=https://www.clipartwiki.com/clipimg/detail/79-797929_notes-on-population-genetics-population-fst-0.png style="width:20%">
+                    <p style="font-size:0.7em">
+                    <a href=https://en.wikipedia.org/wiki/F-statistics>          https://en.wikipedia.org/wiki/F-statistics</a>
+                    </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright's F-statistics </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        $F_{ST}$ can be interpreted as a measure of population differentiation. If $F_{ST}$ between two populations is 1 then they are <i>fixed</i> for different alleles (no variation is segregating in both populations). 
+                        <br>
+                    </p></div>
+                    <img src=https://upload.wikimedia.org/wikipedia/commons/d/db/F-statistics.png style="width:20%">
+                    <img src=https://www.clipartwiki.com/clipimg/detail/79-797929_notes-on-population-genetics-population-fst-0.png style="width:20%">
+                    <p style="font-size:0.7em">
+                    <a href=https://en.wikipedia.org/wiki/F-statistics>          https://en.wikipedia.org/wiki/F-statistics</a>
+                    </p>
+                </div>
+            </section>      
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright's F-statistics ($F_{ST}$)</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        Although $F_{ST}$ is formally describe as partitioning variance relative to the <i>total population</i>, in practice we are often interested in <i>pairwise $F_{ST}$</i> as a measure of differentiation between two populations. This is simply done by re-defining what we mean by the <i>total population</i>. 
+                        <br>
+                    </p></div>
+                    <img src=https://camo.githubusercontent.com/dd594016c8a1f641be2268a3190d9794e025b478/68747470733a2f2f7777772e7265736561726368676174652e6e65742f70726f66696c652f56696e63656e7a6f5f4c616e64692f7075626c69636174696f6e2f3233393036353632312f6669677572652f666967312f41533a32313634393336313939373832363540313432383632373530393635302f477261706869632d726570726573656e746174696f6e2d6f662d7468652d6d61747269782d646570696374696e672d70616972776973652d4653542d64697374616e6365732d616d6f6e672d7468652d31372d7069672e706e67 style="width:28%">
+                    <p style="font-size:0.7em">
+                    <a href=https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjTqaPXwozlAhXPdd8KHU8rAgoQjRx6BAgBEAQ&url=%2Furl%3Fsa%3Di%26source%3Dimages%26cd%3D%26ved%3D%26url%3Dhttps%253A%252F%252Fgithub.com%252Frgiannico%252FRpairwiseFST%26psig%3DAOvVaw1_Lb-PU10eNfnWiU5Azgf8%26ust%3D1570619149579842&psig=AOvVaw1_Lb-PU10eNfnWiU5Azgf8&ust=1570619149579842>source</a>
+                    </p>
+                </div>
+            </section>                   
+
+
+            <!-- #################################################### -->
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>$F_{ST}$ Readings (review paper) </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        $F_{ST}$ can be defined and measured in several ways. The measure itself is informative, and it also can set a benchmark against which to test hypotheses about selection or introgressive gene flow. 
+                        <br>
+                    </p></div>
+                    <img src=https://upload.wikimedia.org/wikipedia/commons/d/db/F-statistics.png style="width:20%">
+                    <img src=https://www.clipartwiki.com/clipimg/detail/79-797929_notes-on-population-genetics-population-fst-0.png style="width:20%">
+                    <p style="font-size:0.7em">
+                    <a href=https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4687486/>
+                    “Genetics in Geographically Structured Populations: Defining, Estimating and Interpreting FST.”</a>
+                    </p>
+                </div>
+            </section>     
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3>$F_{ST}$ Readings (empirical papers) </h3>
+                <br>
+                <div class="textbox"><p>                
+                    <a href=https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-294X.2012.05730.x>
+                    “Genome-Wide Patterns of Divergence and Gene Flow across a Butterfly Radiation.”
+                    </a>
+                    <br><br>
+                    <a href=https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000862>
+                    "Population Genomics of Parallel Adaptation in Threespine Stickleback using Sequenced RAD Tags"
+                    </a>
+                    <br>
+                </p></div>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3>$F_{ST}$ Readings (empirical papers) </h3>
+                <br>
+                <div class="textbox"><p>                
+                    What is so interesting about the Heliconius butterfly radiation?
+                    <br><br>
+                    Do Heliconius populations form <i>good</i> taxa (identifiable by geography + morphology)?
+                    <br><br>
+                    What types of $F_{ST}$ patterns do the authors observe? And what do they conclude from these?
+                    <br>
+                </p></div>
+                <br><br>
+                <p style="font-size:0.7em">
+                    <a href=https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-294X.2012.05730.x>
+                    “Genome-Wide Patterns of Divergence and Gene Flow across a Butterfly Radiation.”
+                    </a>
+                </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3>$F_{ST}$ Readings (empirical papers) </h3>
+                <br>
+                <div class="textbox"><p>                
+                    There are many examples of phenotypic convergence in Heliconius between closely related and distantly related species and populations.
+                    <br><br>
+                    Here the authors focus on <i>H. cyndo</i> and <i>H. melpomene</i> which co-occur broadly, rarely hybridize, but may have experienced adaptive introgression. 
+                    <br><br>
+                    To what extent do color patterns reflect independent evolution versus retention of ancestral alleles, versus introgressed exchange of alleles? Genome-wide $F_{ST}$ can shed some light.
+                    <br>
+                </p></div>
+                <br><br>
+                <p style="font-size:0.7em">
+                    <a href=https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-294X.2012.05730.x>
+                    “Genome-Wide Patterns of Divergence and Gene Flow across a Butterfly Radiation.”
+                    </a>
+                </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3>$F_{ST}$ Readings (empirical papers) </h3>
+                <div class="textbox"><p>                
+                    <i>Genome-wide</i> pairwise $F_{ST}$. Populations showed increasing divergence with increasing geographic distance, as well as increases with taxonomic distance (Fig. 3). In addition, correlation between all pop distances with geography (mantel P=0.003).  
+                    <br>
+                </p></div>
+                <img src="./data/heliconius_fst.png" style="width:55%">
+                <br><br>
+                <p style="font-size:0.7em">
+                    <a href=https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-294X.2012.05730.x>
+                    “Genome-Wide Patterns of Divergence and Gene Flow across a Butterfly Radiation.”
+                    </a>
+                </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3>$F_{ST}$ Readings (empirical papers) </h3>
+                <div class="textbox"><p>                
+                    <i>per-locus</i> pairwise $F_{ST}$. Sympatric species pairs show correlated regions of high FST. 
+                </p></div>
+                <img src="./data/heliconius_fst_pops.png" style="width:50%">
+                <br>
+                <p style="font-size:0.7em">
+                    <a href=https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-294X.2012.05730.x>
+                    “Genome-Wide Patterns of Divergence and Gene Flow across a Butterfly Radiation.”
+                    </a>
+                </p>
+                </div>
+            </section>       
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3>$F_{ST}$ Readings (empirical papers) </h3>
+                <div class="textbox"><p>                
+                    Association with geography, taxon, and color pattern. Analysis of Molecular Variance.
+                </p></div>
+                <img src="./data/heliconius_fst_outlier.png" style="width:35%">
+                <br>
+                <p style="font-size:0.7em">
+                    <a href=https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-294X.2012.05730.x>
+                    “Genome-Wide Patterns of Divergence and Gene Flow across a Butterfly Radiation.”
+                    </a>
+                </p>
+                </div>
+            </section>                        
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3>$F_{ST}$ Readings (empirical papers) </h3>
+                <div class="textbox"><p>                
+                    Association with geography, taxon, and color pattern. Analysis of Molecular Variance.
+                    </p></div>
+                    <img src="./data/heliconius_amova.png" style="width:50%">
+                    <br>
+                    <p style="font-size:0.7em">
+                        <a href=https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-294X.2012.05730.x>
+                        “Genome-Wide Patterns of Divergence and Gene Flow across a Butterfly Radiation.”
+                    </a>
+                    </p>
+                </div>
+            </section>                        
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3>$F_{ST}$ Readings (empirical papers) </h3>
+                <div class="textbox"><p>
+                    "If the loci most strongly associated with 'taxon' are those under <span style="font-weight:400">divergent selection</span>, these should also be loci with high FST in sympatric mel v. cydo/tim pairs. ... The 21 loci that are FST outliers do appear as outliers in AMOVA."
+                    <br><br>
+                    "Convergent wing color patterning may be controlled by loci that are <span style="font-weight:400">introgressed</span> between taxa. Fourteen loci were found to be more strongly associated with color pattern than taxon or geography (Fig. 4B). Two of these are known to be associated with wing color."
+
+                <br><br>
+                <p style="font-size:0.7em">
+                    <a href=https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-294X.2012.05730.x>
+                    “Genome-Wide Patterns of Divergence and Gene Flow across a Butterfly Radiation.”
+                    </a>
+                </p>
+                </p>
+                </div>
+            </section>                        
+
+
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3>$F_{ST}$ Readings (empirical papers) </h3>
+                <br>
+                <div class="textbox"><p>                
+                    <a href=https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000862>
+                    Population Genomics of Parallel Adaptation in Threespine Stickleback using Sequenced RAD Tags
+                    </a>
+                    <br><br>
+                    <br>
+                </p></div>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3>$F_{ST}$ Readings (empirical papers) </h3>
+                <br>
+                <div class="textbox"><p>                
+                    What is so interesting about threespine Sticklebacks?
+                    <br><br>
+                    What are the relationships of sampled populations in this study?
+                    <br><br>
+                    What types of $F_{ST}$ patterns do the authors observe? And what do they conclude from these?
+                    <br>
+                </p></div>
+                <br><br>
+                <p style="font-size:0.7em">
+                    <a href=https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000862>
+                    Population Genomics of Parallel Adaptation in Threespine Stickleback using Sequenced RAD Tags
+                    </a>
+                </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3>$F_{ST}$ Readings (empirical papers) </h3>
+                <br>
+                <div class="textbox"><p>                
+                    There are many examples of phenotypic convergence in sticklebacks that have adapted recently to freshwater lakes from marine environment.
+                    <br><br>
+                    Genetic diversity and differentiation statistics support the repeated colonization of small freshwater pops from a large marine population.
+                    <br><br>
+                    FST scans reveal evidence of balancing and divergent selection, often in parallel but not always among freshwater pops.
+                    <br>
+                </p></div>
+                <br><br>
+                <p style="font-size:0.7em">
+                    <a href=https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000862>
+                    Population Genomics of Parallel Adaptation in Threespine Stickleback using Sequenced RAD Tags
+                    </a>
+                </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3>$F_{ST}$ Readings (empirical papers) </h3>
+                <div class="textbox"><p>                
+                    Marine populations have little differentiation even over large geographic distance, while marine/fresh or fresh/fresh FST shows much larger differentiation.
+                </p></div>
+                <img src="./data/stickleback_fst_table.png" style="width:50%">
+                <br>
+                <p style="font-size:0.7em">
+                    <a href=https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000862>
+                    Population Genomics of Parallel Adaptation in Threespine Stickleback using Sequenced RAD Tags
+                    </a>
+                </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3>$F_{ST}$ Readings (empirical papers) </h3>
+                <div class="textbox"><p>
+                    Genetic diversity and heterozygosity vary considerably across the genome.
+                </p></div>
+                <img src="./data/stickleback_pi_window.png" style="width:60%">
+                <br>
+                <p style="font-size:0.7em">
+                    <a href=https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000862>
+                    Population Genomics of Parallel Adaptation in Threespine Stickleback using Sequenced RAD Tags
+                    </a>
+                </p>
+                </div>
+            </section>            
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3>$F_{ST}$ Readings (empirical papers) </h3>
+                <img src="./data/stickleback_balancing.png" style="width:30%">
+                <br>
+                <p style="font-size:0.7em">
+                    <a href=https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000862>
+                    Population Genomics of Parallel Adaptation in Threespine Stickleback using Sequenced RAD Tags
+                    </a>
+                </p>
+                </div>
+            </section>            
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3>$F_{ST}$ Readings (empirical papers) </h3>
+                <img src="./data/stickleback_pairwise_fst.png" style="width:50%">
+                <br>
+                <p style="font-size:0.7em">
+                    <a href=https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000862>
+                    Population Genomics of Parallel Adaptation in Threespine Stickleback using Sequenced RAD Tags
+                    </a>
+                </p>
+                </div>
+            </section>            
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3>$F_{ST}$ Readings (empirical papers) </h3>
+                <div class="textbox"><p>
+                    Despite the phenotypic divergence of freshwater pops, a huge amount of genetic variation is still shared among all populations (no windows reach FST=1). 
+                    <br><br>
+                    The regions of highest differentiation are shared among most freshwater-marine comparisons, showing <i>convergence</i> at the genetic level. Similar regions responding to directional selection.
+                    <br><br>
+                    Private alleles are greater in marine than freshwater, supporting that fresh is a subset of marine. However, some high Fst (f/m) regions are associated with private alleles in freshwater. These are likely low freq alleles in marine that were unsamples but maintained by balancing selection or gene flow.
+                </p></div>
+                <br>
+                <p style="font-size:0.7em">
+                    <a href=https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000862>
+                    Population Genomics of Parallel Adaptation in Threespine Stickleback using Sequenced RAD Tags
+                    </a>
+                </p>
+                </div>
+            </section>     
+
+
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright-Fisher Model </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        Each generation randomly sample alleles from the parental generation. By incorporating a finite population size (N) into our sampling probabilities we can estimate the expected change in allele frequencies due to drift.
+                        <br><br>
+                        A discrete time model in which each generation is composed of 2N copies of each gene. Each subsequent generation 2N new copies are randomly drawn from the previous generation. The probability of obtaining k copies the next generation is:
+                        <br><br>
+                        $$ {{2N \choose k}p^{k}(1-p)^{2N-k}} $$
+                    </p></div>
+                    <br>
+                    <a href=https://en.wikipedia.org/wiki/Genetic_drift#Wright.E2.80.93Fisher_model>
+                    <p style="font-size:0.7em">
+                    https://en.wikipedia.org/wiki/Genetic_drift#Wright.E2.80.93Fisher_model
+                    </p></a>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright-Fisher Model </h3>
+                    <div class="textbox"><p>
+                        A neutral evolutionary process (no selection) can be modeled using the WF model in which allele frequencies change over time by genetic drift. 
+                    </p></div>
+                    <img src=../session-10-popgen/data/WF-genealogy-Drummond.png>
+                    <br>
+                    <a href=https://www.researchgate.net/figure/The-Wright-Fisher-and-Kingman-coalescent-processes-with-generation-time-r-left-K-40_fig1_2853283>
+                    <p style="font-size:0.7em">
+                        Source: Alexei Drummond
+                    </p></a>
+                </div>
+            </section>
+
+
+            <!-- ################################################ -->
+
+            <section id="reading" class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Reading for next session</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">  
+
+                <span style="font-weight:400">Read both of these:</span>
+                <br>
+                <a href=https://www.sciencedirect.com/science/article/pii/S0169534709000846>Gene tree discordance, phylogenetic inference and the multispecies coalescent</a>
+                <br><br>
+                <a href=https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000695>Inferring the Joint Demographic History of Multiple Populations from Multidimensional SNP Frequency Data</a>
+                <br><br>
+                </div>
+            </section>            
+
+
+
+
+
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../../reveal/lib/js/head.min.js"></script>        
+    <script src="../../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: true,
+            // slideNumber: "h/v",
+
+            dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                // { src: '../../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                { src: '../../reveal/plugin/math/math.js', async: true }
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>

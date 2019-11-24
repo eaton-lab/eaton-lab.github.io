@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RADcamp-1</title>
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../eaton-lab.css">
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">    
+    <!-- <link rel="stylesheet" href="../genomics/custom.css"> -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <!-- SLIDE 0 (TITLE) -->
+            <section id="title" data-background="#262626" style="top:300.5px; display:block;" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 20%">
+                <h1 class="title" style="color:#5D9B84">
+                RADcamp NYC</h1>
+                <h5 style="color: lightgrey"> Columbia University, 2019</h5>
+                <h4 style="color: white">Introduction to RAD and the terminal</h4>
+                <br>
+                </div>
+            </section>
+
+            <section id="contents" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Objectives of this workshop </h2>
+                <br>
+                <p style='font-size:1.0em; font-weight:400; color:#5D9B84; text-align:left; margin-left: 15%; margin-right:10%; line-height: 1.5'>
+                1. Understand and describe the structure and format of RAD-seq data. 
+                <br><br>
+                2. Assemble RAD-seq data sets using ipyrad to produce files for analyses.
+                <br><br>
+                3. Understand the use of jupyter-notebooks for reproducible analyses.
+                <br><br>
+                4. Create notebooks for conducting reproducible genomic analyses in Python.
+                </p>
+                </div>
+            </section>
+
+
+            <section id="schedule" data-transition="none" class="present">
+                <h3> Our schedule for today</h3>
+                <br>
+                <p> Please follow along on 
+                <a href="https://radcamp.github.io/NYC2019/">https://radcamp.github.io/NYC2019/</a>
+                <br><br>
+                <img class=plain src="./data/schedule.png" style="width: 80%">
+            </section>
+
+
+            <!-- WHO ARE WE? -->
+            <section 
+                data-background-iframe="https://ipyrad.readthedocs.io/en/latest/1-ethos.html"
+                data-transition="none"
+                class="future" 
+                hidden="">       
+            </section>
+
+
+            <section class="future" data-transition="none">                
+                <div class="standard">
+                <h3> My research</h3>
+                <div class="textbox"><p>
+                    Integrating collections based fieldwork, genomics, comparative methods, 
+                    and bioinformatics, to study phylogeny, introgression and speciation
+                    in flowering plants.
+                </p></div>  
+                <br>              
+                <!-- <img src="../data-img/crano-flaghorn.jpg" style="width:19%"> -->
+                <img src="
+                https://lh3.googleusercontent.com/VbI7P_OjEILgxj244xn71mnOZgekE5ThQg2RB1IvSHGuCNDCTQLYnA_vQlbSXDgnFZwwhKCN-F4e3eumqdA5v13BuxHX75tBB6rqVpGd70ae_d0GF2J3JFinYIdi-zEPLcsTrN2XGdH6NLjaldTe9cNfi4Y3ckNql7VwhGxrs_-k75aJz-GBum2p8kaVJ9cIIj186XOXtafqnxOzOVII-lcm6KtSEHR5eyZedOaLaCoiV2R8X7iAfAapYlBFR5NtoF_3jKMnr6VVCoeiOx7HKHzUcpCe-RBF4acR5jU_q3ym-atihmYICAuAMX7DZ-Qv8i51zNZP8t-wD_g6PC6HDWhZUiaSAiNauRKeid7l9FKLcYSt2ZpFbYDJDHkEJhXIa07eMSD_WZHKr5R6WizA6dg4gye0YbYE8QNmE7OU6nmSv5AfQLe1tUdG-WGtcH18y4c9CMr5MjM8KO9DOZZNlccfiKKYxcLo9ZBXQJj-Utd8522midvvFIRP9gC3LNgcNevyo7HLasDpawxjzQLNGYbPFAlr9hzJA-TRf_8q3JyucT-MkZJ2VWEM8QbntsPMLtXEJANQzMV3OwpZbyJzrtS6w9o1GPJo4ViuMkjSYa0ARYWADcCwdk9FoXbGDbn-OdhLU4oDdAyyDn7Z0lLPt9g74cCrjmu4KynJqfoAeBNNBhswn2qE6As=w654-h872-no" style="width:21.45%; margin-right: 2%">
+                <img src="../data-svg/crano-tube-lengths.svg" style="width:29%; margin-right:2%">
+                <img src="../data-img/tetrad-code.png" style="width:26.25%">
+
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Comparative genomics </h3>
+                <br>
+                <div class="textbox"><p>
+                And it's an exciting time for this! Genomic technologies are 
+                <i>revolutionizing</i> the study of ecology and evolution.
+                </p></div>               
+                <img src="../data-svg/intro-phylogenomic-sampling.svg" style="width:70%">
+                </div>
+            </section>
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Comparative genomics </h3>
+                <br>
+                <div class="textbox"><p>
+                And it's an exciting time for this! Genomic technologies are 
+                <i>revolutionizing</i> the study of ecology and evolution.
+                </p></div>               
+                <img src="../data-svg/intro-RAD-diagram.svg" style="width:70%">
+                </div>
+            </section>
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Comparative genomics </h3>
+                <br>
+                <div class="textbox"><p>
+                And it's an exciting time for this! Genomic technologies are 
+                <i>revolutionizing</i> the study of ecology and evolution.
+                </p></div>               
+                <img src="../data-svg/intro-tree-outlines.svg" style="width:70%">
+                </div>
+            </section>
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Comparative genomics </h3>                    
+                <br>
+                <div class="textbox"><p>
+                And it's an exciting time for this! Genomic technologies are 
+                <i>revolutionizing</i> the study of ecology and evolution.
+                </p></div>               
+                <img src="../data-svg/intro-tree-outlines-2.svg" style="width:70%">
+                </div>
+            </section>
+
+
+            <!-- popgen -->
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> Population genomic analyses </h3>
+                    <img class=plain src="../workshop/data/Andrews-Box2.png" style="width: 50%">
+                    <br>
+                    <div class="textbox"><p>
+                        Reconstruct demography, calculate 
+                        population divergence and introgression. With reference mapped data this 
+                        can be done spatially along chromosomes (e.g., Nadeau et al. 2013).
+                    </p></div>
+                </div>
+            </section>
+
+            <!-- phylo -->
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> Phylogenomic analyses </h3>
+                    <img class=plain src="../workshop/data/Eaton-2015-fig5.png" style="width: 39%">
+                    <br>
+                    <div class="textbox"><p>
+                        Infer gene trees and species trees, over shallow or
+                        relatively deep evolutionary time scales (<100 Ma); 
+                        e.g., Eaton et al. 2015.
+                    </p></div>
+                </div>
+            </section>
+
+
+            <!-- phylo -->
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> What is RAD-seq (and its variants)? </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        The aim of RAD-seq is select a <i>subset</i> (reduced representation)
+                        of orthologous genomic regions across many sampled individuals. 
+                        This concentrates <i>read coverage</i> to regions of the 
+                        genome that can be used in comparative analyses.
+                        In addition, you can multiplex many samples to attain high
+                        efficienty on Illumina machines (e.g., combinatorial indexing).
+                    </p></div>
+                    <img src="../data-svg/intro-RAD-diagram.svg" style="width:50%">
+                </div>
+            </section>
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> What is RAD-seq (and its variants)? </h3>
+                    <div class="textbox"><p>
+                        Variant methods differ in their cost, complexity, 
+                        and efficiency. We used the 3RAD method, a very inexpensive and 
+                        accurate new variant of RAD-seq
+                    </p></div>
+                    <img class=plain src="../workshop/data/RAD-variants.png" style="width: 55%">
+                </div>
+            </section>
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> Frequently asked questions </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        <i>Why not just sequence the entire genome at low-coverage?</i>
+                        <br><br>
+                        Many genomes are very large and so the cost is expensive. In addition, 
+                        most population/phylogenetic questions can be answered using a subsample
+                        of many loci from the genome.
+                        <br><br>
+                        Low coverage data can be powerful for studying very closely related
+                        populations where missing data can be imputed, but when comparing distant
+                        relatives it is important to obtain higher coverage per sample.                       
+                    </p></div>
+                </div>
+            </section>
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> Frequently asked questions </h3>
+                    <br>                    
+                    <div class="textbox"><p>
+                        <i>What's the deal with missing data in RAD-seq?</i>
+                        <br><br>
+                        Many genomes are very large and so the cost is expensive. In addition, 
+                        most population/phylogenetic questions can be answered using a subsample
+                        of many loci from the genome.
+                        <br><br>
+                        Low coverage data can be powerful for studying very closely related
+                        populations where missing data can be imputed, but when comparing distant
+                        relatives it is important to obtain higher coverage per sample.                       
+                    </p></div>
+                </div>
+            </section>
+
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> Frequently asked questions </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        <i>At what phylogenetic scale can I use RAD-seq?</i>
+                        <br><br>
+                        It depends. Different library types have different rates of 
+                        allele dropout. And other sources of missing data like seq. 
+                        coverage can be relevant too.
+                        <br><br>
+                        RAD-seq methods have been successfully applied <i>in silico</i>
+                        and empirically up to ~100Ma. However, the <i>efficiency</i> of 
+                        RAD-seq compared to other methods is lower at this scale, and you
+                        are often better off choosing a different method. 
+                        <br><br>
+                        A strength of RAD-seq is that one type of data can be used 
+                        across many scales, from studying pedigrees to millions of years
+                        of divergence. 
+                    </p></div>
+                </div>
+            </section>            
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> A quick introduction to the command line </h3>
+                    <i>Lines starting with (#) are only comments, not executed</i>
+                      
+                    <pre><code class="bash">
+  # This is the general format of unix command line tools
+  $ program -option1 -option2 target
+                    </pre></code>
+
+                    <i> Example, returned results of program shown in grey.</i>
+                    <pre><code class="bash">
+  # e.g., the 'pwd' program with no option or target prints your cur dir
+  $ pwd
+                    </code></pre>
+
+                    <pre><code class="bash" style="background: grey">    
+  /home/deren/        
+                    </code></pre>
+                </div>
+            </section>            
+
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> A quick introduction to the command line </h3>
+                    <i>Lines starting with (#) are only comments, not executed</i>
+                      
+                    <pre><code class="bash">
+  # This is the general format of unix command line tools
+  $ program -option1 -option2 target
+                    </pre></code>
+
+                    ipyrad works the same way:
+                    <pre><code class="bash">
+  # The ipyrad CLI can be used in a terminal
+  $ ipyrad -p params-data.txt -s 123 -t 4 -c 16 
+                    </code></pre>
+                </div>
+            </section>            
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> Hierarchical File System </h3>
+                    <i>Always know where you are and where your files are.</i>
+
+                    <pre><code class="bash">
+  # The root (top) of the entire filesystem (used for writing full paths).
+  $ /
+
+  # Here, in my current directory (used for writing relative paths).
+  $ ./
+
+  # Up one directory from my current directory (a relative path).
+  $ ../
+                    </pre></code>
+                </div>
+            </section>            
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> Hierarchical File System </h3>
+                    <i>Always know where you are and where your files are.</i>
+                    <br>
+                    <img class=plain src="../workshop/data/Unix-filesystem.png" style="width: 50%">
+                </div>
+            </section>            
+
+
+            <section data-transition="none" class="future">                
+                <div class="standard">
+                    <h3> Hierarchical File System</h3>
+                    <i> Always know where you are and where your files are.</i>
+                    <pre><code class="bash">
+  # show the files and folders in a location (default target is cur dir)
+  $ ls 
+
+  # show result as a list for cur dir.
+  $ ls -l ./
+
+  # show another location on the filesystem
+  $ ls -l /bin/
+
+  # move to a new location. This becomes your new cur dir.
+  $ cd folder/
+                    </code></pre>
+                </div>
+            </section>
+
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> File paths </h3>
+                    <br>
+                    <div class="textbox"><p>
+                    Your location (current directory) starts from / (the root) 
+                    and is described by a nested set of directory names leading 
+                    to your location.  
+                    </p></div>
+                    <pre><code class="bash">
+  # use 'pwd' program with no option or target to ask where am I now?
+  $ pwd
+                    </code></pre>
+                    <pre><code class="bash" style="background: grey">
+  /home/deren/
+                    </code></pre>                   
+                </div>
+            </section>            
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> File paths </h3>
+                    <br>
+                    You can make new directories and change your location. 
+                    <pre><code class="bash">
+  # make a new directory (mkdir is the program, genomics is the target)
+  $ mkdir genomics
+
+  # change directory (move) into the new directory and run pwd again
+  $ cd genomics
+  $ pwd
+                    </code></pre>
+                    <pre><code class="bash" style="background: grey">
+  /home/deren/genomics  
+                    </code></pre>                                           
+                </div>
+            </section>            
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../reveal/lib/js/head.min.js"></script>        
+    <script src="../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: true,
+            // slideNumber: "h/v",
+
+            dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                // { src: '../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                // { src: '../reveal/plugin/math/math.js', async: true }
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>

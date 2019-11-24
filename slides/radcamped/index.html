@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RADcamp-1</title>
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../eaton-lab.css">
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">    
+    <!-- <link rel="stylesheet" href="../genomics/custom.css"> -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <!-- SLIDE 0 (TITLE) -->
+            <section id="title" data-background="#262626" style="top:300.5px; display:block;" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 20%">
+                <h1 class="title" style="color:#5D9B84">
+                RADcamp NYC</h1>
+                <h5 style="color: lightgrey"> Columbia University, 2019</h5>
+                <h4 style="color: white">Introduction to RAD and the terminal</h4>
+                <br>
+                </div>
+            </section>
+
+            <section id="contents" data-transition="none" class="present">
+                <div class="standard">
+                    <h2> ipyrad command-line summary </h2>
+                    <p class="textbox">
+                1. create a params file
+                    <pre><code class="bash">
+  $ ipyrad -n somename
+                    </code></pre>                
+                <br>
+                2. edit the params file (using a text editor)
+                    <pre><code class="bash">
+  $ nano params-somename.txt  ## (edit, save, exit: ..., ctrl-o, ctrl-x)
+                    </code></pre>                
+                <br>
+                3. run ipyrad steps 1-7
+                    <pre><code class="bash">
+  $ ipyrad -p params-somename.txt -s 1234567
+                    </code></pre>                
+                </p>
+                </div>
+            </section>
+
+
+            <section data-transition="none" class="present">
+                <div class="standard">
+                    <h2> Connecting to google cloud instance </h2>
+                    <br>
+                    <p>Enter given IP address into browser. No https// at beginning.</p>
+                    <img src="./data/IPenter.png" style="width:80%">
+                </div>
+            </section>
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> PATHs of interest on google cloud</h3>
+                      
+                    <pre><code class="bash">
+  # home: the default location when you login
+  /home/isaac_overcast/
+
+  # 3RAD DATA directory (subdirectory for each dataset)
+  /media/RADCamp/
+
+  # Example files within a subdirectory
+  ls /media/RADCamp/Meek
+                    </pre></code>
+
+                    <pre><code class="bash" style="background: grey">    
+  Meek_barcodes.txt
+  raws/
+                    </code></pre>
+                </div>
+            </section>            
+  
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> The (internal) barcodes file </h3>
+                        <div class="textbox"><p>
+                        Contains three items on each line, a name, the R1 barcode, and the read2 barcode. 
+                    <pre><code class="bash">
+  # show all contents of the barcode file
+  cat /media/RADCamp/Meek/Meek_barcodes.txt
+                    </pre></code>
+
+                    <pre style="font-size:0.6em"><code class="bash" style="background: grey; max-height: 350px">    
+Pedicularis_430 CCGAAT      ACGCAT
+Pedicularis_442 TTAGGCA     ACGCAT
+Pedicularis_431 AACTCGTC        ACGCAT
+Pedicularis_13  GGTCTACGT       ACGCAT
+Pedicularis_457 GATACC      ACGCAT
+Pedicularis_455 AGCGTTG     ACGCAT
+Pedicularis_429 CTGCAACT        ACGCAT
+Pedicularis_25.1        TCATGGTCA       ACGCAT
+Pedicularis_25.2        CCGAAT  GTATGCA
+Pedicularis_39  TTAGGCA GTATGCA
+Pedicularis_216 AACTCGTC        GTATGCA
+Pedicularis_200 GGTCTACGT       GTATGCA
+Pedicularis_31  GATACC  GTATGCA
+Pedicularis_25.3        AGCGTTG GTATGCA
+Pedicularis_421 CTGCAACT        GTATGCA
+Pedicularis_38  TCATGGTCA       GTATGCA
+                    </code></pre>
+                </div>
+            </section>            
+
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> The raw un-demultiplexed data files</h3>
+                        <div class="textbox"><p>
+                        Paired data comes in two fastq files, one with 
+                        <span style="color:red; font-weight: 400">_R1_</span> 
+                        in the name and the other
+                        <span style="color:red; font-weight: 400">_R2_</span>                         
+                        </p></div>
+
+                        <pre><code class="bash">
+  # Example files within a subdirectory
+  ls /media/RADCamp/Meek/raws
+                        </pre></code>
+
+                        <pre><code class="bash" style="background: grey">    
+  19174FL-01-01-21_S21_R1_001.fastq.gz
+  19174FL-01-01-21_S21_R2_001.fastq.gz  
+                        </code></pre>
+
+                </div>
+            </section>          
+
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> Which cutters did I use again?</h3>
+                    <div class="textbox"><p>
+                    You can always do a google search on your enzyme to find the
+                    overhang sequence that you expect to have attached to your 
+                    reads. But I <i>always</i> recommend looking for it in your
+                    data directly. It will occur near the beginning of R1 or R2 
+                    and a common sequence after the barcode.
+                    </p></div>
+                      
+                    <pre><code class="bash">    
+  # use tab-completion to enter this long file path
+  less /media/RADCamp/Meek/raws/19174FL-01-01-21_S21_R1_001.fastq.gz                      
+                    </code></pre>
+                </div>
+            </section>            
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> Which cutters did I use again?</h3>
+                    <div class="textbox"><p>
+                        Once inside of less, 
+                        <span style="font-weight: 400">
+                        press the / key once </span>
+                        and you will see a prompt open in the lower left. Type 
+                        <span style="color:red; font-weight: 400">ATCGG</span>
+                        then Enter. This will highlight matches. Press q at any 
+                        time to exit.
+                    </p></div>
+                    <img src="data/highlight-cut.png" style="width:60%">
+                    </code></pre>
+                </div>
+            </section>            
+
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> Look for cutters in R1 and R2 of a different file. </h3>
+                    <div class="textbox"><p>
+                        Every data set used one set or the other: 
+                        <span style="font-weight: 400">(EcoRI, NheI) or (BamHI, ClaI)</span>. As we did in the last slide, search for the sequences below in one or more data files using <i>less</i>.
+                        <br><br>
+
+                        In R1 files try one of the following: <br>
+                        <span style="color:red; font-weight: 400; font-family:monospace">BamHI: ATCGG</span> (G/A)
+                        <br>
+                        <span style="color:red; font-weight: 400; font-family:monospace">EcoRI: GCTAG</span> (A/C)
+
+                        <br><br>
+
+                        In R1 files try one of the following: <br>
+                        <span style="color:red; font-weight: 400; font-family:monospace">ClaI: CGATCC</span>
+                        <br>
+                        <span style="color:red; font-weight: 400; font-family:monospace">NheI: TAATTC</span>
+                </div>
+            </section>            
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> Declone PCR duplicates w/ i5 tags </h3>
+                        <div class="textbox"><p>
+                            3RAD can incorporate a unique molecular identifiers (UMI) into the i5 index. 
+                        </p>
+
+
+                    <br>
+                    Standard data without i7 and i5 tags
+                    <p style="font-family:monospace; text-align: left; font-size:0.8em; background: lightgrey">                        
+
+@NB551405:60:H7T2GAFXY:1:11101:20590:1124 1:N:0:<br>
+AACTCGTCATCGGCATAAGCTAGACCATCTAAAGAACTTTTAAGACTAAAGCGGCATAAGCTAGACC...<br>
++<br>
+AABBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB...<br>
+</p>
+<br>
+
+                    The data with i7 and i5 tags attached to reads
+
+<p style="font-family:monospace; text-align: left; font-size:0.8em; background: lightgrey">
+@NB551405:60:H7T2GAFXY:1:11101:20590:1124 1:N:0:
+<span style="color:blue">CTCGTCAT</span>+<span style="color:red">GATTGCCA</span><br>
+AACTCGTCATCGGCATAAGCTAGACCATCTAAAGAACTTTTAAGACTAAAGCGGCATAAGCTAATCT...<br>
++<br>
+AABBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB...<br>
+</p>
+                    </p>
+                    </div>
+                </div>
+            </section>            
+
+
+            <section data-transition="none" class="future">                
+                <div class="standard">
+                    <h3> Getting started on real data</h3>
+                    <i> Let's all put our assemblies in a folders with the same name to make things simple.</i>
+                    <pre><code class="bash">
+  # move to your home directory
+  $ cd
+
+  # from here, make a directory in which to store all our work
+  $ mkdir empirical
+
+  # move into empirical 
+  $ cd empirical/
+
+  # create a new params file and name it with your data set's name
+  $ ipyrad -n Meek
+                    </code></pre>
+                </div>
+            </section>
+
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> My DENOVO paired 3RAD params</h3>
+                    <div class="textbox"><p>
+                        Ask for help if you are working on a different data set
+                        than one already on the cloud. We can help you to set up
+                        your params. Other cutter pair is GCTAG, TAATTC.
+                    </p></div>
+                    <pre><code class="bash">
+
+  /media/RADCamp/Meek/raws/*_R*.fastq.gz    ## [2] [raw_fastq_path]: ...
+  /media/RADCamp/Meek/Meek_barcodes.txt     ## [3] [barcodes_path]: ...
+
+  pair3rad                                  ## [7] [datatype]: ...
+  ATCGG, CGATCC                             ## [8] [restriction_overhang]: ...
+
+  1                                         ## [15] [max_barcode_mismatch]: ...
+  2                                         ## [16] [filter_adapters]: ...
+                               
+                    </code></pre>
+                </div>
+            </section>            
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> My REFERENCE paired 3RAD params </h3>
+                    <div class="textbox"><p>
+                        If your study organism has a closely related (~20Ma or less) 
+                        published high quality genome available then download the FASTA file to your empirical/ directory. 
+                    </p></div>
+                    <pre><code class="bash">
+
+  /media/RADCamp/Meek/raws/*_R*.fastq.gz    ## [2] [raw_fastq_path]: ...
+  /media/RADCamp/Meek/Meek_barcodes.txt     ## [3] [barcodes_path]: ...
+
+  reference                                 ## [5] [assembly_method]: ...
+  reference_file.fa                         ## [6] [reference_sequence]...
+  pair3rad                                  ## [7] [datatype]: ...
+  ATCGG, CGATCC                             ## [8] [restriction_overhang]: ...
+
+  1                                         ## [15] [max_barcode_mismatch]: ...
+  2                                         ## [16] [filter_adapters]: ...
+                               
+                    </code></pre>
+                </div>
+            </section>            
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> START YOUR ASSEMBLY! </h3>
+                    <br>
+                    <div class="textbox"><p>                    
+                    Set it to run all seven steps and then you're done for now. Let's go get pizza. We can check in on it as it runs later. It will
+                    probably finish in 1-3 hours.
+                    </p></div>
+
+                    <pre><code class="bash">
+  # start running all steps for your assembly
+  $ ipyrad -p params-Meek.txt -s 1234567 
+                    </code></pre>
+                </div>
+            </section>
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> Checking on it while it runs </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        You can disconnect and reconnect as much as you want, this is running in a terminal on the cloud server. The easiest way to check the stats of your run while it is running is to look at the stats files from the file browser in the jupyter server interface. 
+                    </p></div>
+
+                <img src="...">
+
+                </div>
+            </section>
+
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../reveal/lib/js/head.min.js"></script>        
+    <script src="../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: true,
+            // slideNumber: "h/v",
+
+            dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                // { src: '../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                // { src: '../reveal/plugin/math/math.js', async: true }
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>

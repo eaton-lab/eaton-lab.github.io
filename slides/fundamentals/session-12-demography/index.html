@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- TITLE -->
+    <title>Fundamentals-12</title>
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+    <!-- <link rel="stylesheet" href="./custom.css"> -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal/css/print/pdf.css' : '../../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <!-- SLIDE 0 (TITLE) -->
+            <section id="title" data-background="#262626" style="top:300.5px; display:block;" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 20%">
+                <h1 class="title" style="color:#5D9B84">
+                Fundamentals of Evolution</h1>
+                <h5 style="color: lightgrey"> EEEB G6110</h5>
+                <h4 style="color: white">Session 12: Demography</h4>
+                <br>
+                </div>
+            </section>
+
+            <section id="contents" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Today's topics </h2>
+                <br>
+                <p style='font-size:1.2em; font-weight:400; color:#5D9B84; text-align:left; margin-left: 25%; margin-right:10%; line-height: 1.0'>
+                    1. The coalescent
+                    <br><br>
+                    2. Coalescent simulations
+                    <br><br>
+                    3. Structured coalescent
+                    <br><br>
+                    4. Species trees
+                    <br><br>
+                    4. Forward simulations
+                    <br><br>
+                    5. Assignment
+                </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright-Fisher Model </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        Each generation randomly sample alleles from the parental generation. By incorporating a finite population size (N) into our sampling probabilities we can estimate the expected change in allele frequencies due to drift.
+                        <br><br>
+                        A discrete time model in which each generation is composed of 2N copies of each gene. Each subsequent generation 2N new copies are randomly drawn from the previous generation. The probability of obtaining k copies of allele p the next generation is:
+                        <br><br>
+                        $$ {{2N \choose k}p^{k}(1-p)^{2N-k}} $$
+                    </p></div>
+                    <br>
+                    <a href=https://en.wikipedia.org/wiki/Genetic_drift#Wright.E2.80.93Fisher_model>
+                    <p style="font-size:0.7em">
+                    https://en.wikipedia.org/wiki/Genetic_drift#Wright.E2.80.93Fisher_model
+                    </p></a>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright-Fisher Model </h3>
+                    <div class="textbox"><p>
+                        A neutral evolutionary process (no selection) can be modeled using the WF model in which allele frequencies change over time by genetic drift. 
+                    </p></div>
+                    <img src=../session-10-popgen/data/WF-genealogy-Drummond.png>
+                    <br>
+                    <a href=https://www.researchgate.net/figure/The-Wright-Fisher-and-Kingman-coalescent-processes-with-generation-time-r-left-K-40_fig1_2853283>
+                    <p style="font-size:0.7em">
+                        Source: Alexei Drummond
+                    </p></a>
+                </div>
+            </section>
+
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Characteristics of the coalescent </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        The coalescent is a mathematical description of the genealogical process arising in idealised populations. 
+                        <br><br>
+                        It focuses on one or more genealogies (i.e., trees) underlying the history of a sample of chromosomes.
+                        <br><br>
+                        It is a probabilistic model, which implies that it describes the distribution of genealogies.
+                        <br><br>
+                        The principle idea is that genealogy holds all the information we need to know about our population (under a neutral evolutionary scenario).
+                    </p></div>
+                </div>
+            </section>
+
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>The coalescent for <span style="font-weight:400">two sequences</span></h3>
+                    <br>                    
+                    <div class="textbox"><p>
+                        In one generation these two sequences either came from the same parent ($ \frac{1}{2N}$) <br> or they came from different parents ($1 - \frac{1}{2N}$)
+                        <br><br>
+                        The probability that these two sequences coalesced t generations ago can be calculated from these two probability statements: 
+                        <br><br>
+
+                        $$ \left(1 - \frac{1}{2N}\right)^{t - 1} \frac{1}{2N} $$
+
+                    </p></div>
+                </div>    
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>The distribution of coalescent times</h3>
+                    <br>                    
+                    <div class="textbox"><p>
+                        $$\mathrm{Pr}(\mathrm{coal}) = \binom{i}{2} \frac{1}{2N} = \frac{i(i-1)}{4N}$$
+                        <br>
+
+                        There are $\binom{i}{2}$ ways pairs of lineages can pick the same parent. Probability of coalescence scales quadratically with lineage count.
+                    </p></div>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Expected waiting time to coalescence</h3>
+                    <br>                    
+                    <div class="textbox"><p>
+                        $$\mathrm{E}[T_i] = \frac{4N}{i(i-1)}$$
+                        <br>
+                        This is a <a href="https://en.wikipedia.org/wiki/Geometric_distribution">geometric distribution</a>.
+                        If each generation there is a $\frac{1}{x}$ probability of an event occurring, we expect to
+                        wait $x$ generations for the event to occur.
+                    </p></div>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Continuous time limit</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        With per-generation probability of an event $\frac{1}{x}$ small, but many generations, then the
+                        discrete time geometric distribution approximates to a continuous time 
+                        <a href="https://en.wikipedia.org/wiki/Exponential_distribution">exponential distribution</a>. 
+
+                        <br><br>
+                        Thus, we assume $T_i$ to be exponentially distributed with mean:
+                        <br><br>
+                        $$\mathrm{E}[T_i] = \frac{4N}{i(i-1)}$$
+                    </p></div>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Set of coalescent intervals with waiting times</h3>
+                    <br>
+                    <img src="data/coalescent_intervals_2.png" style="width:50%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Set of coalescent intervals with waiting times</h3>
+                    <br>
+                    <img src="data/coalescent_tree_shape.png" style="width:30%">
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Set of coalescent intervals with waiting times</h3>
+                    <br>
+                    <img src="data/coalescent_pop_size.png" style="width:50%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Pairwise genetic diversity</h3>
+                    <br>
+                    <img src="data/diversity.png" style="width:50%">
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Time to the most recent common ancestor (TMRCA)</h3>
+                    <br>
+                    <img src="data/tmrca.png" style="width:50%">
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Coalescent patterns can estimate population growth/decline</h3>
+                    <br>
+                    <img src="data/changing_pop_size_1.png" style="width:50%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Coalescent patterns can estimate population growth/decline</h3>
+                    <br>
+                    <img src="data/changing_pop_size_2.png" style="width:50%">
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Coalescent simulation exercise.</h3>
+                    <br>
+                    https://mybinder.org/v2/gh/genomics-course/f12-coalescent/master?filepath=fundamentals-msprime.ipynb
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Coalescent simulation exercise.</h3>
+                    <br>
+                    https://mybinder.org/v2/gh/genomics-course/f12-coalescent/master?filepath=fundamentals-msprime.ipynb
+                </div>
+            </section>
+
+
+            
+
+
+            <!-- ################################################ -->
+
+            <section id="reading" class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Reading for next session</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">  
+
+                <span style="font-weight:400">Read both of these:</span>
+                <br>
+                <a href=https://www.sciencedirect.com/science/article/pii/S0169534709000846>Gene tree discordance, phylogenetic inference and the multispecies coalescent</a>
+                <br><br>
+                <a href=https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000695>Inferring the Joint Demographic History of Multiple Populations from Multidimensional SNP Frequency Data</a>
+                <br><br>
+                </div>
+            </section>            
+
+
+
+
+
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../../reveal/lib/js/head.min.js"></script>        
+    <script src="../../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: true,
+            // slideNumber: "h/v",
+
+            dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                // { src: '../../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                { src: '../../reveal/plugin/math/math.js', async: true }
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>
