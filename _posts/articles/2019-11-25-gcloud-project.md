@@ -138,7 +138,7 @@ canu -assemble \
   genomeSize=1.5g \
   correctedErrorRate=0.05 \
   -nanopore-corrected /scratch/canu-trim/S3*trimmedReads.fasta.gz
-
+```
 
 ### Canu tips for plant genomes
 [For repetive genomes](https://canu.readthedocs.io/en/latest/faq.html#my-genome-is-at-or-gc-rich-do-i-need-to-adjust-parameters-what-about-highly-repetitive-genomes) such as plants do this in canu:
