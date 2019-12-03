@@ -102,30 +102,43 @@ This is what we plan to run first (do we need to run the correct and trim steps 
 
 
 ```bash
-/opt/conda/bin/canu -correct \
+# correct errors in reads (32 cores 128Gb RAM)
+canu -correct \
   -p liuliu \
-  -d /scratch/canu-assembly/ \
+  -d /scratch/canu-correct/ \
   genomeSize=1g \
   correctedErrorRate=0.12 \
   corMaxEvidenceErate=0.15 \
   minReadLength=1000 \
   minOverlapLength=500 \
   -nanopore-raw /liuliu/2019-11-15-Liuliu-shasta/S3*.fastq
-```
 
-
-```bash
-/opt/conda/bin/conda -trim \
+# trim adapters and low quality (up to 64 cores node)
+canu -trim \
   -p liuliu \
-  -d /scratch/canu-assembly/ \
+  -d /scratch/canu-trim/ \
   genomeSize=1g \
   correctedErrorRate=0.12 \
   corMaxEvidenceErate=0.15 \
   minReadLength=1000 \
   minOverlapLength=500 \
-  -nanopore-raw /liuliu/2019-11-15-Liuliu-shasta/S3*.fastq 
-```
+  -nanopore-corrected /scratch/canu-correct/S3*correctedReads.fasta.gz
 
+# assemble at two different stringencies (use 96 core node)
+canu -assemble \
+  -p liuliu \
+  -d /scratch/canu-assembly-err0.12 \
+  genomeSize=1.5g \
+  correctedErrorRate=0.12 \
+  -nanopore-corrected /scratch/canu-trim/S3*trimmedReads.fasta.gz
+
+canu -assemble \
+  -p liuliu \
+  -d /scratch/canu-assembly-err0.05 \
+  genomeSize=1.5g \
+  correctedErrorRate=0.05 \
+  -nanopore-corrected /scratch/canu-trim/S3*trimmedReads.fasta.gz
+```
 
 ### Canu tips for plant genomes
 [For repetive genomes](https://canu.readthedocs.io/en/latest/faq.html#my-genome-is-at-or-gc-rich-do-i-need-to-adjust-parameters-what-about-highly-repetitive-genomes) such as plants do this in canu:
