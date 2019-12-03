@@ -1,1 +1,1572 @@
-<svg class="toyplot-canvas-Canvas" height="350.0px" id="tb6d8af3dbfa94b82bb6d03fb4c186e67" preserveAspectRatio="xMidYMid meet" style="background-color:transparent;border-color:#292724;border-style:none;border-width:1.0;fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:Helvetica;font-size:12px;opacity:1.0;stroke:rgb(16.1%,15.3%,14.1%);stroke-opacity:1.0;stroke-width:1.0" viewBox="0 0 375.0 350.0" width="375.0px" xmlns="http://www.w3.org/2000/svg" xmlns:toyplot="http://www.sandia.gov/toyplot" xmlns:xlink="http://www.w3.org/1999/xlink"><g class="toyplot-coordinates-Cartesian" id="ta146a19ea0df4839bd2f45b950563bf8"><clipPath id="t76826aaf94014f2cafe0795a7c83f1a5"><rect height="290.0" width="215.0" x="30.0" y="30.0" /></clipPath><g clip-path="url(#t76826aaf94014f2cafe0795a7c83f1a5)"><g class="toyplot-mark-Text" id="taf1716445d38444687e4657e3da762ef"><g class="toyplot-Series"><g class="toyplot-Datum" transform="translate(145.45454545454544,293.73100303951367)"><text style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre" x="15.0" y="2.8104999999999993">s9</text></g><g class="toyplot-Datum" transform="translate(145.45454545454544,276.76943117672596)"><text style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre" x="15.0" y="2.8104999999999993">s10</text></g><g class="toyplot-Datum" transform="translate(145.45454545454544,259.8078593139383)"><text style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre" x="15.0" y="2.8104999999999993">s11</text></g><g class="toyplot-Datum" transform="translate(145.45454545454544,242.84628745115066)"><text style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre" x="15.0" y="2.8104999999999993">s12</text></g><g class="toyplot-Datum" transform="translate(145.45454545454544,225.88471558836298)"><text style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre" x="15.0" y="2.8104999999999993">s15</text></g><g class="toyplot-Datum" transform="translate(145.45454545454544,208.92314372557533)"><text style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre" x="15.0" y="2.8104999999999993">s18</text></g><g class="toyplot-Datum" transform="translate(145.45454545454544,191.96157186278768)"><text style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre" x="15.0" y="2.8104999999999993">s8</text></g><g class="toyplot-Datum" transform="translate(145.45454545454544,175.0)"><text style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre" x="15.0" y="2.8104999999999993">s6</text></g><g class="toyplot-Datum" transform="translate(145.45454545454544,158.03842813721235)"><text style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre" x="15.0" y="2.8104999999999993">s4</text></g><g class="toyplot-Datum" transform="translate(145.45454545454544,141.07685627442467)"><text style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre" x="15.0" y="2.8104999999999993">s26</text></g><g class="toyplot-Datum" transform="translate(145.45454545454544,124.11528441163702)"><text style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre" x="15.0" y="2.8104999999999993">s24</text></g><g class="toyplot-Datum" transform="translate(145.45454545454544,107.15371254884936)"><text style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre" x="15.0" y="2.8104999999999993">s1</text></g><g class="toyplot-Datum" transform="translate(145.45454545454544,90.19214068606166)"><text style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre" x="15.0" y="2.8104999999999993">s22</text></g><g class="toyplot-Datum" transform="translate(145.45454545454544,73.23056882327401)"><text style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre" x="15.0" y="2.8104999999999993">s23</text></g><g class="toyplot-Datum" transform="translate(145.45454545454544,56.268996960486355)"><text style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;font-family:helvetica;font-size:11.0px;font-weight:normal;opacity:1;stroke:none;vertical-align:baseline;white-space:pre" x="15.0" y="2.8104999999999993">s19</text></g></g></g><g class="toyplot-mark-Graph" id="t69460ab3739a4511877d2c29e7377a00"><g class="toyplot-Edges"><path d="M 50.0 68.9901758575771 L 113.63636363636364 68.9901758575771" style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 50.0 153.2679860508033 L 65.9090909090909 153.2679860508033" style="fill:none;opacity:1;stroke:rgb(14.9%,14.9%,14.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 113.63636363636364 56.268996960486355 L 145.45454545454544 56.268996960486355" style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 113.63636363636364 81.71135475466787 L 129.54545454545453 81.71135475466787" style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 65.9090909090909 107.15371254884936 L 145.45454545454544 107.15371254884936" style="fill:none;opacity:1;stroke:rgb(98.8%,55.3%,38.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 65.9090909090909 199.38225955275732 L 81.81818181818181 199.38225955275732" style="fill:none;opacity:1;stroke:rgb(14.9%,14.9%,14.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 73.23056882327401 L 145.45454545454544 73.23056882327401" style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 90.19214068606166 L 145.45454545454544 90.19214068606166" style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 81.81818181818181 151.67783868866695 L 97.72727272727272 151.67783868866695" style="fill:none;opacity:1;stroke:rgb(14.9%,14.9%,14.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 81.81818181818181 247.08668041684757 L 97.72727272727272 247.08668041684757" style="fill:none;opacity:1;stroke:rgb(14.9%,14.9%,14.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 97.72727272727272 132.59607034303085 L 129.54545454545453 132.59607034303085" style="fill:none;opacity:1;stroke:rgb(55.3%,62.7%,79.6%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 97.72727272727272 170.75960703430312 L 113.63636363636364 170.75960703430312" style="fill:none;opacity:1;stroke:rgb(90.6%,54.1%,76.5%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 97.72727272727272 221.6443226226661 L 113.63636363636364 221.6443226226661" style="fill:none;opacity:1;stroke:rgb(65.1%,84.7%,32.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 97.72727272727272 272.52903821102905 L 113.63636363636364 272.52903821102905" style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 124.11528441163702 L 145.45454545454544 124.11528441163702" style="fill:none;opacity:1;stroke:rgb(55.3%,62.7%,79.6%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 141.07685627442467 L 145.45454545454544 141.07685627442467" style="fill:none;opacity:1;stroke:rgb(55.3%,62.7%,79.6%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 113.63636363636364 158.03842813721235 L 145.45454545454544 158.03842813721235" style="fill:none;opacity:1;stroke:rgb(90.6%,54.1%,76.5%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 113.63636363636364 183.48078593139383 L 129.54545454545453 183.48078593139383" style="fill:none;opacity:1;stroke:rgb(90.6%,54.1%,76.5%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 113.63636363636364 208.92314372557533 L 145.45454545454544 208.92314372557533" style="fill:none;opacity:1;stroke:rgb(65.1%,84.7%,32.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 113.63636363636364 234.36550151975683 L 129.54545454545453 234.36550151975683" style="fill:none;opacity:1;stroke:rgb(65.1%,84.7%,32.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 113.63636363636364 259.8078593139383 L 145.45454545454544 259.8078593139383" style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 113.63636363636364 285.25021710811984 L 129.54545454545453 285.25021710811984" style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 175.0 L 145.45454545454544 175.0" style="fill:none;opacity:1;stroke:rgb(90.6%,54.1%,76.5%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 191.96157186278768 L 145.45454545454544 191.96157186278768" style="fill:none;opacity:1;stroke:rgb(90.6%,54.1%,76.5%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 225.88471558836298 L 145.45454545454544 225.88471558836298" style="fill:none;opacity:1;stroke:rgb(65.1%,84.7%,32.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 242.84628745115066 L 145.45454545454544 242.84628745115066" style="fill:none;opacity:1;stroke:rgb(65.1%,84.7%,32.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 276.76943117672596 L 145.45454545454544 276.76943117672596" style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 293.73100303951367 L 145.45454545454544 293.73100303951367" style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 50.0 111.12908095419021 L 50.0 68.9901758575771" style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 50.0 111.12908095419021 L 50.0 153.2679860508033" style="fill:none;opacity:1;stroke:rgb(14.9%,14.9%,14.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 113.63636363636364 68.9901758575771 L 113.63636363636364 56.268996960486355" style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 113.63636363636364 68.9901758575771 L 113.63636363636364 81.71135475466787" style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 65.9090909090909 153.2679860508033 L 65.9090909090909 107.15371254884936" style="fill:none;opacity:1;stroke:rgb(98.8%,55.3%,38.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 65.9090909090909 153.2679860508033 L 65.9090909090909 199.38225955275732" style="fill:none;opacity:1;stroke:rgb(14.9%,14.9%,14.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 81.71135475466787 L 129.54545454545453 73.23056882327401" style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 81.71135475466787 L 129.54545454545453 90.19214068606166" style="fill:none;opacity:1;stroke:rgb(40%,76.1%,64.7%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 81.81818181818181 199.38225955275732 L 81.81818181818181 151.67783868866695" style="fill:none;opacity:1;stroke:rgb(14.9%,14.9%,14.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 81.81818181818181 199.38225955275732 L 81.81818181818181 247.08668041684757" style="fill:none;opacity:1;stroke:rgb(14.9%,14.9%,14.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 97.72727272727272 151.67783868866695 L 97.72727272727272 132.59607034303085" style="fill:none;opacity:1;stroke:rgb(55.3%,62.7%,79.6%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 97.72727272727272 151.67783868866695 L 97.72727272727272 170.75960703430312" style="fill:none;opacity:1;stroke:rgb(90.6%,54.1%,76.5%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 97.72727272727272 247.08668041684757 L 97.72727272727272 221.6443226226661" style="fill:none;opacity:1;stroke:rgb(65.1%,84.7%,32.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 97.72727272727272 247.08668041684757 L 97.72727272727272 272.52903821102905" style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 132.59607034303085 L 129.54545454545453 124.11528441163702" style="fill:none;opacity:1;stroke:rgb(55.3%,62.7%,79.6%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 132.59607034303085 L 129.54545454545453 141.07685627442467" style="fill:none;opacity:1;stroke:rgb(55.3%,62.7%,79.6%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 113.63636363636364 170.75960703430312 L 113.63636363636364 158.03842813721235" style="fill:none;opacity:1;stroke:rgb(90.6%,54.1%,76.5%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 113.63636363636364 170.75960703430312 L 113.63636363636364 183.48078593139383" style="fill:none;opacity:1;stroke:rgb(90.6%,54.1%,76.5%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 113.63636363636364 221.6443226226661 L 113.63636363636364 208.92314372557533" style="fill:none;opacity:1;stroke:rgb(65.1%,84.7%,32.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 113.63636363636364 221.6443226226661 L 113.63636363636364 234.36550151975683" style="fill:none;opacity:1;stroke:rgb(65.1%,84.7%,32.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 113.63636363636364 272.52903821102905 L 113.63636363636364 259.8078593139383" style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 113.63636363636364 272.52903821102905 L 113.63636363636364 285.25021710811984" style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 183.48078593139383 L 129.54545454545453 175.0" style="fill:none;opacity:1;stroke:rgb(90.6%,54.1%,76.5%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 183.48078593139383 L 129.54545454545453 191.96157186278768" style="fill:none;opacity:1;stroke:rgb(90.6%,54.1%,76.5%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 234.36550151975683 L 129.54545454545453 225.88471558836298" style="fill:none;opacity:1;stroke:rgb(65.1%,84.7%,32.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 234.36550151975683 L 129.54545454545453 242.84628745115066" style="fill:none;opacity:1;stroke:rgb(65.1%,84.7%,32.9%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 285.25021710811984 L 129.54545454545453 276.76943117672596" style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><path d="M 129.54545454545453 285.25021710811984 L 129.54545454545453 293.73100303951367" style="fill:none;opacity:1;stroke:rgb(100%,85.1%,18.4%);stroke-linecap:round;stroke-opacity:1.0;stroke-width:3.0" /><g class="toyplot-HeadMarkers" /><g class="toyplot-MiddleMarkers" /><g class="toyplot-TailMarkers" /></g><g class="toyplot-Vertices"><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(145.45454545454544, 293.73100303951367)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(145.45454545454544, 276.76943117672596)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(145.45454545454544, 259.8078593139383)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(145.45454545454544, 242.84628745115066)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(145.45454545454544, 225.88471558836298)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(145.45454545454544, 208.92314372557533)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(145.45454545454544, 191.96157186278768)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(145.45454545454544, 175.0)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(145.45454545454544, 158.03842813721235)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(145.45454545454544, 141.07685627442467)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(145.45454545454544, 124.11528441163702)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(145.45454545454544, 107.15371254884936)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(145.45454545454544, 90.19214068606166)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(145.45454545454544, 73.23056882327401)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(145.45454545454544, 56.268996960486355)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(129.54545454545453, 285.25021710811984)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(129.54545454545453, 234.36550151975683)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(129.54545454545453, 183.48078593139383)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(113.63636363636364, 272.52903821102905)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(113.63636363636364, 221.6443226226661)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(113.63636363636364, 170.75960703430312)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(129.54545454545453, 132.59607034303085)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(97.72727272727272, 247.08668041684757)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(97.72727272727272, 151.67783868866695)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(81.81818181818181, 199.38225955275732)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(129.54545454545453, 81.71135475466787)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(65.9090909090909, 153.2679860508033)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(113.63636363636364, 68.9901758575771)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(50.0, 111.12908095419021)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(50.0, 68.9901758575771)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(50.0, 153.2679860508033)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(113.63636363636364, 56.268996960486355)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(113.63636363636364, 81.71135475466787)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(65.9090909090909, 107.15371254884936)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(65.9090909090909, 199.38225955275732)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(129.54545454545453, 73.23056882327401)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(129.54545454545453, 90.19214068606166)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(81.81818181818181, 151.67783868866695)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(81.81818181818181, 247.08668041684757)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(97.72727272727272, 132.59607034303085)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(97.72727272727272, 170.75960703430312)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(97.72727272727272, 221.6443226226661)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(97.72727272727272, 272.52903821102905)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(129.54545454545453, 124.11528441163702)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(129.54545454545453, 141.07685627442467)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(113.63636363636364, 158.03842813721235)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(113.63636363636364, 183.48078593139383)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(113.63636363636364, 208.92314372557533)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(113.63636363636364, 234.36550151975683)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(113.63636363636364, 259.8078593139383)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(113.63636363636364, 285.25021710811984)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(129.54545454545453, 175.0)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(129.54545454545453, 191.96157186278768)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(129.54545454545453, 225.88471558836298)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(129.54545454545453, 242.84628745115066)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(129.54545454545453, 276.76943117672596)"><circle r="0.0" /></g><g class="toyplot-Datum" style="fill:rgb(40%,76.1%,64.7%);fill-opacity:1.0;opacity:1.0;stroke:rgb(40%,76.1%,64.7%);stroke-opacity:1.0" transform="translate(129.54545454545453, 293.73100303951367)"><circle r="0.0" /></g></g></g></g></g><g class="toyplot-coordinates-Cartesian" id="t9a41ea617346433d8c232e0f0b3f4525"><clipPath id="t9080373d20fb417898d48e96ce4302fd"><rect height="270.0" width="155.0" x="180.0" y="40.0" /></clipPath><g clip-path="url(#t9080373d20fb417898d48e96ce4302fd)"><g class="toyplot-mark-BarMagnitudes" id="t259650ca9e5c4636982ea4e12e4be8ec" style="stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0"><g class="toyplot-Series"><rect class="toyplot-Datum" height="3.521126760563334" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0" width="22.780496592449964" x="236.24350170377502" y="296.47887323943667" /><rect class="toyplot-Datum" height="3.5211267605633907" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0" width="24.895870252199984" x="231.4361898739" y="278.8732394366197" /><rect class="toyplot-Datum" height="3.5211267605633907" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0" width="39.700811240099995" x="262.58071937995" y="261.2676056338028" /><rect class="toyplot-Datum" height="3.5211267605633907" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0" width="27.94967110709996" x="248.66416444645" y="243.6619718309859" /><rect class="toyplot-Datum" height="3.521126760563334" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0" width="36.41039584560008" x="244.99742707719997" y="226.05633802816905" /><rect class="toyplot-Datum" height="3.5211267605633623" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0" width="35.735798096999986" x="262.5652259515" y="208.45070422535213" /><rect class="toyplot-Datum" height="3.521126760563334" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0" width="29.56998778335" x="252.18975610832499" y="190.84507042253523" /><rect class="toyplot-Datum" height="3.521126760563334" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0" width="24.610479932249973" x="255.39401003387502" y="173.23943661971833" /><rect class="toyplot-Datum" height="3.5211267605633623" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0" width="28.63785763620001" x="204.2583211819" y="155.6338028169014" /><rect class="toyplot-Datum" height="3.5211267605633623" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0" width="45.398228930100004" x="273.40863553495" y="138.0281690140845" /><rect class="toyplot-Datum" height="3.5211267605633623" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0" width="47.24054214885001" x="230.57897892557497" y="120.42253521126761" /><rect class="toyplot-Datum" height="3.521126760563348" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0" width="18.556576933949998" x="228.617461533025" y="102.81690140845072" /><rect class="toyplot-Datum" height="3.521126760563334" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0" width="30.750108292350035" x="225.71569585382497" y="85.21126760563382" /><rect class="toyplot-Datum" height="3.5211267605633907" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0" width="22.592959094250006" x="203.96089545287498" y="67.6056338028169" /><rect class="toyplot-Datum" height="3.5211267605633765" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:0.7;stroke:rgb(100%,100%,100%);stroke-opacity:1.0;stroke-width:1.0" width="38.801911526549986" x="245.783919236725" y="50.0" /></g></g><g class="toyplot-mark-Point" id="t4ed709a3f78c482c9163a379b5263163"><g class="toyplot-Series"><g class="toyplot-Datum" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0" transform="translate(247.63375000000002, 298.2394366197183)"><circle r="3.0" /></g><g class="toyplot-Datum" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0" transform="translate(243.88412499999998, 280.6338028169014)"><circle r="3.0" /></g><g class="toyplot-Datum" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0" transform="translate(282.431125, 263.0281690140845)"><circle r="3.0" /></g><g class="toyplot-Datum" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0" transform="translate(262.639, 245.4225352112676)"><circle r="3.0" /></g><g class="toyplot-Datum" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0" transform="translate(263.202625, 227.8169014084507)"><circle r="3.0" /></g><g class="toyplot-Datum" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0" transform="translate(280.433125, 210.21126760563382)"><circle r="3.0" /></g><g class="toyplot-Datum" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0" transform="translate(266.97475, 192.6056338028169)"><circle r="3.0" /></g><g class="toyplot-Datum" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0" transform="translate(267.69925, 175.0)"><circle r="3.0" /></g><g class="toyplot-Datum" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0" transform="translate(218.57725, 157.3943661971831)"><circle r="3.0" /></g><g class="toyplot-Datum" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0" transform="translate(296.10774999999995, 139.78873239436618)"><circle r="3.0" /></g><g class="toyplot-Datum" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0" transform="translate(254.19925, 122.18309859154928)"><circle r="3.0" /></g><g class="toyplot-Datum" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0" transform="translate(237.89575000000002, 104.57746478873239)"><circle r="3.0" /></g><g class="toyplot-Datum" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0" transform="translate(241.09075, 86.97183098591549)"><circle r="3.0" /></g><g class="toyplot-Datum" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0" transform="translate(215.25737499999997, 69.36619718309859)"><circle r="3.0" /></g><g class="toyplot-Datum" style="fill:rgb(14.9%,14.9%,14.9%);fill-opacity:1.0;opacity:1.0;stroke:rgb(14.9%,14.9%,14.9%);stroke-opacity:1.0" transform="translate(265.18487500000003, 51.76056338028169)"><circle r="3.0" /></g></g></g></g><g class="toyplot-coordinates-Axis" id="t8d23817160eb4f1ba84860117f16e14b" transform="translate(190.0,300.0)translate(0,10.0)"><line style="" x1="13.960895452874993" x2="128.80686446505" y1="0" y2="0" /><g><line style="" x1="0.0" x2="0.0" y1="0" y2="-5" /><line style="" x1="45.0" x2="45.0" y1="0" y2="-5" /><line style="" x1="90.0" x2="90.0" y1="0" y2="-5" /><line style="" x1="135.0" x2="135.0" y1="0" y2="-5" /></g><g><g transform="translate(0.0,6)"><text style="fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:helvetica;font-size:10.0px;font-weight:normal;stroke:none;vertical-align:baseline;white-space:pre" x="-5.56" y="8.555">30</text></g><g transform="translate(45.0,6)"><text style="fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:helvetica;font-size:10.0px;font-weight:normal;stroke:none;vertical-align:baseline;white-space:pre" x="-5.56" y="8.555">50</text></g><g transform="translate(90.0,6)"><text style="fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:helvetica;font-size:10.0px;font-weight:normal;stroke:none;vertical-align:baseline;white-space:pre" x="-5.56" y="8.555">70</text></g><g transform="translate(135.0,6)"><text style="fill:rgb(16.1%,15.3%,14.1%);fill-opacity:1.0;font-family:helvetica;font-size:10.0px;font-weight:normal;stroke:none;vertical-align:baseline;white-space:pre" x="-5.56" y="8.555">90</text></g></g><g class="toyplot-coordinates-Axis-coordinates" style="visibility:hidden" transform=""><line style="stroke:rgb(43.9%,50.2%,56.5%);stroke-opacity:1.0;stroke-width:1.0" x1="0" x2="0" y1="-3.0" y2="4.5" /><text style="alignment-baseline:alphabetic;fill:rgb(43.9%,50.2%,56.5%);fill-opacity:1.0;font-size:10px;font-weight:normal;stroke:none;text-anchor:middle" x="0" y="-6" /></g></g></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   class="toyplot-canvas-Canvas"
+   height="350"
+   id="tb6d8af3dbfa94b82bb6d03fb4c186e67"
+   preserveAspectRatio="xMidYMid meet"
+   style="font-size:12px;font-family:Helvetica;opacity:1;fill:#282623;fill-opacity:1;stroke:#282623;stroke-width:1;stroke-opacity:1"
+   viewBox="0 0 360 350"
+   width="360"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="crano-tube-lengths.svg">
+  <metadata
+     id="metadata566">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs564" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1006"
+     inkscape:window-height="593"
+     id="namedview562"
+     showgrid="false"
+     inkscape:zoom="0.67428571"
+     inkscape:cx="187.5"
+     inkscape:cy="175"
+     inkscape:window-x="688"
+     inkscape:window-y="73"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="tb6d8af3dbfa94b82bb6d03fb4c186e67" />
+  <g
+     class="toyplot-coordinates-Cartesian"
+     id="ta146a19ea0df4839bd2f45b950563bf8"
+     transform="matrix(1.2467778,0,0,1.2467778,-54.454974,-56.850312)">
+    <clipPath
+       id="t76826aaf94014f2cafe0795a7c83f1a5">
+      <rect
+         height="290"
+         width="215"
+         x="30"
+         y="30"
+         id="rect5" />
+    </clipPath>
+    <g
+       clip-path="url(#t76826aaf94014f2cafe0795a7c83f1a5)"
+       id="g7">
+      <g
+         class="toyplot-mark-Text"
+         id="taf1716445d38444687e4657e3da762ef">
+        <g
+           class="toyplot-Series"
+           id="g10">
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45455,293.731)"
+             id="g12">
+            <text
+               style="font-weight:normal;font-size:11px;font-family:helvetica;white-space:pre;opacity:1;fill:#232323;fill-opacity:1;stroke:none"
+               x="15"
+               y="2.8104999"
+               id="text14">s9</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45455,276.76943)"
+             id="g16">
+            <text
+               style="font-weight:normal;font-size:11px;font-family:helvetica;white-space:pre;opacity:1;fill:#232323;fill-opacity:1;stroke:none"
+               x="15"
+               y="2.8104999"
+               id="text18">s10</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45455,259.80786)"
+             id="g20">
+            <text
+               style="font-weight:normal;font-size:11px;font-family:helvetica;white-space:pre;opacity:1;fill:#232323;fill-opacity:1;stroke:none"
+               x="15"
+               y="2.8104999"
+               id="text22">s11</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45455,242.84629)"
+             id="g24">
+            <text
+               style="font-weight:normal;font-size:11px;font-family:helvetica;white-space:pre;opacity:1;fill:#232323;fill-opacity:1;stroke:none"
+               x="15"
+               y="2.8104999"
+               id="text26">s12</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45455,225.88472)"
+             id="g28">
+            <text
+               style="font-weight:normal;font-size:11px;font-family:helvetica;white-space:pre;opacity:1;fill:#232323;fill-opacity:1;stroke:none"
+               x="15"
+               y="2.8104999"
+               id="text30">s15</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45455,208.92314)"
+             id="g32">
+            <text
+               style="font-weight:normal;font-size:11px;font-family:helvetica;white-space:pre;opacity:1;fill:#232323;fill-opacity:1;stroke:none"
+               x="15"
+               y="2.8104999"
+               id="text34">s18</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45455,191.96157)"
+             id="g36">
+            <text
+               style="font-weight:normal;font-size:11px;font-family:helvetica;white-space:pre;opacity:1;fill:#232323;fill-opacity:1;stroke:none"
+               x="15"
+               y="2.8104999"
+               id="text38">s8</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45455,175)"
+             id="g40">
+            <text
+               style="font-weight:normal;font-size:11px;font-family:helvetica;white-space:pre;opacity:1;fill:#232323;fill-opacity:1;stroke:none"
+               x="15"
+               y="2.8104999"
+               id="text42">s6</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45455,158.03843)"
+             id="g44">
+            <text
+               style="font-weight:normal;font-size:11px;font-family:helvetica;white-space:pre;opacity:1;fill:#232323;fill-opacity:1;stroke:none"
+               x="15"
+               y="2.8104999"
+               id="text46">s4</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45455,141.07686)"
+             id="g48">
+            <text
+               style="font-weight:normal;font-size:11px;font-family:helvetica;white-space:pre;opacity:1;fill:#232323;fill-opacity:1;stroke:none"
+               x="15"
+               y="2.8104999"
+               id="text50">s26</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45455,124.11528)"
+             id="g52">
+            <text
+               style="font-weight:normal;font-size:11px;font-family:helvetica;white-space:pre;opacity:1;fill:#232323;fill-opacity:1;stroke:none"
+               x="15"
+               y="2.8104999"
+               id="text54">s24</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45455,107.15371)"
+             id="g56">
+            <text
+               style="font-weight:normal;font-size:11px;font-family:helvetica;white-space:pre;opacity:1;fill:#232323;fill-opacity:1;stroke:none"
+               x="15"
+               y="2.8104999"
+               id="text58">s1</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45455,90.192141)"
+             id="g60">
+            <text
+               style="font-weight:normal;font-size:11px;font-family:helvetica;white-space:pre;opacity:1;fill:#232323;fill-opacity:1;stroke:none"
+               x="15"
+               y="2.8104999"
+               id="text62">s22</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45455,73.230569)"
+             id="g64">
+            <text
+               style="font-weight:normal;font-size:11px;font-family:helvetica;white-space:pre;opacity:1;fill:#232323;fill-opacity:1;stroke:none"
+               x="15"
+               y="2.8104999"
+               id="text66">s23</text>
+          </g>
+          <g
+             class="toyplot-Datum"
+             transform="translate(145.45455,56.268997)"
+             id="g68">
+            <text
+               style="font-weight:normal;font-size:11px;font-family:helvetica;white-space:pre;opacity:1;fill:#232323;fill-opacity:1;stroke:none"
+               x="15"
+               y="2.8104999"
+               id="text70">s19</text>
+          </g>
+        </g>
+      </g>
+      <g
+         class="toyplot-mark-Graph"
+         id="t69460ab3739a4511877d2c29e7377a00">
+        <g
+           class="toyplot-Edges"
+           id="g73">
+          <path
+             d="m 50,68.990176 63.63636,0"
+             style="opacity:1;fill:none;stroke:#66c2a3;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path75"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 50,153.26799 15.909091,0"
+             style="opacity:1;fill:none;stroke:#232323;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path77"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 113.63636,56.268997 31.81819,0"
+             style="opacity:1;fill:none;stroke:#66c2a3;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path79"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 113.63636,81.711355 15.90909,0"
+             style="opacity:1;fill:none;stroke:#66c2a3;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path81"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 65.909091,107.15371 79.545459,0"
+             style="opacity:1;fill:none;stroke:#fa8c61;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path83"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 65.909091,199.38226 15.909091,0"
+             style="opacity:1;fill:none;stroke:#232323;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path85"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,73.230569 15.9091,0"
+             style="opacity:1;fill:none;stroke:#66c2a3;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path87"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,90.192141 15.9091,0"
+             style="opacity:1;fill:none;stroke:#66c2a3;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path89"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 81.818182,151.67784 15.909091,0"
+             style="opacity:1;fill:none;stroke:#232323;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path91"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 81.818182,247.08668 15.909091,0"
+             style="opacity:1;fill:none;stroke:#232323;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path93"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 97.727273,132.59607 31.818177,0"
+             style="opacity:1;fill:none;stroke:#8c9eca;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path95"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 97.727273,170.75961 15.909087,0"
+             style="opacity:1;fill:none;stroke:#e68ac2;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path97"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 97.727273,221.64432 15.909087,0"
+             style="opacity:1;fill:none;stroke:#a6d751;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path99"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 97.727273,272.52904 15.909087,0"
+             style="opacity:1;fill:none;stroke:#ffd92e;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path101"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,124.11528 15.9091,0"
+             style="opacity:1;fill:none;stroke:#8c9eca;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path103"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,141.07686 15.9091,0"
+             style="opacity:1;fill:none;stroke:#8c9eca;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path105"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 113.63636,158.03843 31.81819,0"
+             style="opacity:1;fill:none;stroke:#e68ac2;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path107"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 113.63636,183.48079 15.90909,0"
+             style="opacity:1;fill:none;stroke:#e68ac2;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path109"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 113.63636,208.92314 31.81819,0"
+             style="opacity:1;fill:none;stroke:#a6d751;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path111"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 113.63636,234.3655 15.90909,0"
+             style="opacity:1;fill:none;stroke:#a6d751;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path113"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 113.63636,259.80786 31.81819,0"
+             style="opacity:1;fill:none;stroke:#ffd92e;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path115"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 113.63636,285.25022 15.90909,0"
+             style="opacity:1;fill:none;stroke:#ffd92e;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path117"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,175 15.9091,0"
+             style="opacity:1;fill:none;stroke:#e68ac2;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path119"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,191.96157 15.9091,0"
+             style="opacity:1;fill:none;stroke:#e68ac2;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path121"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,225.88472 15.9091,0"
+             style="opacity:1;fill:none;stroke:#a6d751;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path123"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,242.84629 15.9091,0"
+             style="opacity:1;fill:none;stroke:#a6d751;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path125"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,276.76943 15.9091,0"
+             style="opacity:1;fill:none;stroke:#ffd92e;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path127"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,293.731 15.9091,0"
+             style="opacity:1;fill:none;stroke:#ffd92e;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path129"
+             inkscape:connector-curvature="0" />
+          <path
+             d="M 50,111.12908 50,68.990176"
+             style="opacity:1;fill:none;stroke:#66c2a3;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path131"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 50,111.12908 0,42.13891"
+             style="opacity:1;fill:none;stroke:#232323;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path133"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 113.63636,68.990176 0,-12.721179"
+             style="opacity:1;fill:none;stroke:#66c2a3;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path135"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 113.63636,68.990176 0,12.721179"
+             style="opacity:1;fill:none;stroke:#66c2a3;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path137"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 65.909091,153.26799 0,-46.11428"
+             style="opacity:1;fill:none;stroke:#fa8c61;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path139"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 65.909091,153.26799 0,46.11427"
+             style="opacity:1;fill:none;stroke:#232323;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path141"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,81.711355 0,-8.480786"
+             style="opacity:1;fill:none;stroke:#66c2a3;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path143"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,81.711355 0,8.480786"
+             style="opacity:1;fill:none;stroke:#66c2a3;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path145"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 81.818182,199.38226 0,-47.70442"
+             style="opacity:1;fill:none;stroke:#232323;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path147"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 81.818182,199.38226 0,47.70442"
+             style="opacity:1;fill:none;stroke:#232323;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path149"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 97.727273,151.67784 0,-19.08177"
+             style="opacity:1;fill:none;stroke:#8c9eca;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path151"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 97.727273,151.67784 0,19.08177"
+             style="opacity:1;fill:none;stroke:#e68ac2;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path153"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 97.727273,247.08668 0,-25.44236"
+             style="opacity:1;fill:none;stroke:#a6d751;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path155"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 97.727273,247.08668 0,25.44236"
+             style="opacity:1;fill:none;stroke:#ffd92e;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path157"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,132.59607 0,-8.48079"
+             style="opacity:1;fill:none;stroke:#8c9eca;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path159"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,132.59607 0,8.48079"
+             style="opacity:1;fill:none;stroke:#8c9eca;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path161"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 113.63636,170.75961 0,-12.72118"
+             style="opacity:1;fill:none;stroke:#e68ac2;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path163"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 113.63636,170.75961 0,12.72118"
+             style="opacity:1;fill:none;stroke:#e68ac2;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path165"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 113.63636,221.64432 0,-12.72118"
+             style="opacity:1;fill:none;stroke:#a6d751;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path167"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 113.63636,221.64432 0,12.72118"
+             style="opacity:1;fill:none;stroke:#a6d751;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path169"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 113.63636,272.52904 0,-12.72118"
+             style="opacity:1;fill:none;stroke:#ffd92e;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path171"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 113.63636,272.52904 0,12.72118"
+             style="opacity:1;fill:none;stroke:#ffd92e;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path173"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,183.48079 0,-8.48079"
+             style="opacity:1;fill:none;stroke:#e68ac2;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path175"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,183.48079 0,8.48078"
+             style="opacity:1;fill:none;stroke:#e68ac2;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path177"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,234.3655 0,-8.48078"
+             style="opacity:1;fill:none;stroke:#a6d751;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path179"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,234.3655 0,8.48079"
+             style="opacity:1;fill:none;stroke:#a6d751;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path181"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,285.25022 0,-8.48079"
+             style="opacity:1;fill:none;stroke:#ffd92e;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path183"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 129.54545,285.25022 0,8.48078"
+             style="opacity:1;fill:none;stroke:#ffd92e;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+             id="path185"
+             inkscape:connector-curvature="0" />
+          <g
+             class="toyplot-HeadMarkers"
+             id="g187" />
+          <g
+             class="toyplot-MiddleMarkers"
+             id="g189" />
+          <g
+             class="toyplot-TailMarkers"
+             id="g191" />
+        </g>
+        <g
+           class="toyplot-Vertices"
+           id="g193">
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(145.45455,293.731)"
+             id="g195">
+            <circle
+               r="0"
+               id="circle197"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(145.45455,276.76943)"
+             id="g199">
+            <circle
+               r="0"
+               id="circle201"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(145.45455,259.80786)"
+             id="g203">
+            <circle
+               r="0"
+               id="circle205"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(145.45455,242.84629)"
+             id="g207">
+            <circle
+               r="0"
+               id="circle209"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(145.45455,225.88472)"
+             id="g211">
+            <circle
+               r="0"
+               id="circle213"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(145.45455,208.92314)"
+             id="g215">
+            <circle
+               r="0"
+               id="circle217"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(145.45455,191.96157)"
+             id="g219">
+            <circle
+               r="0"
+               id="circle221"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(145.45455,175)"
+             id="g223">
+            <circle
+               r="0"
+               id="circle225"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(145.45455,158.03843)"
+             id="g227">
+            <circle
+               r="0"
+               id="circle229"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(145.45455,141.07686)"
+             id="g231">
+            <circle
+               r="0"
+               id="circle233"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(145.45455,124.11528)"
+             id="g235">
+            <circle
+               r="0"
+               id="circle237"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(145.45455,107.15371)"
+             id="g239">
+            <circle
+               r="0"
+               id="circle241"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(145.45455,90.192141)"
+             id="g243">
+            <circle
+               r="0"
+               id="circle245"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(145.45455,73.230569)"
+             id="g247">
+            <circle
+               r="0"
+               id="circle249"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(145.45455,56.268997)"
+             id="g251">
+            <circle
+               r="0"
+               id="circle253"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(129.54545,285.25022)"
+             id="g255">
+            <circle
+               r="0"
+               id="circle257"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(129.54545,234.3655)"
+             id="g259">
+            <circle
+               r="0"
+               id="circle261"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(129.54545,183.48079)"
+             id="g263">
+            <circle
+               r="0"
+               id="circle265"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(113.63636,272.52904)"
+             id="g267">
+            <circle
+               r="0"
+               id="circle269"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(113.63636,221.64432)"
+             id="g271">
+            <circle
+               r="0"
+               id="circle273"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(113.63636,170.75961)"
+             id="g275">
+            <circle
+               r="0"
+               id="circle277"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(129.54545,132.59607)"
+             id="g279">
+            <circle
+               r="0"
+               id="circle281"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(97.727273,247.08668)"
+             id="g283">
+            <circle
+               r="0"
+               id="circle285"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(97.727273,151.67784)"
+             id="g287">
+            <circle
+               r="0"
+               id="circle289"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(81.818182,199.38226)"
+             id="g291">
+            <circle
+               r="0"
+               id="circle293"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(129.54545,81.711355)"
+             id="g295">
+            <circle
+               r="0"
+               id="circle297"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(65.909091,153.26799)"
+             id="g299">
+            <circle
+               r="0"
+               id="circle301"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(113.63636,68.990176)"
+             id="g303">
+            <circle
+               r="0"
+               id="circle305"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(50,111.12908)"
+             id="g307">
+            <circle
+               r="0"
+               id="circle309"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(50,68.990176)"
+             id="g311">
+            <circle
+               r="0"
+               id="circle313"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(50,153.26799)"
+             id="g315">
+            <circle
+               r="0"
+               id="circle317"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(113.63636,56.268997)"
+             id="g319">
+            <circle
+               r="0"
+               id="circle321"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(113.63636,81.711355)"
+             id="g323">
+            <circle
+               r="0"
+               id="circle325"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(65.909091,107.15371)"
+             id="g327">
+            <circle
+               r="0"
+               id="circle329"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(65.909091,199.38226)"
+             id="g331">
+            <circle
+               r="0"
+               id="circle333"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(129.54545,73.230569)"
+             id="g335">
+            <circle
+               r="0"
+               id="circle337"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(129.54545,90.192141)"
+             id="g339">
+            <circle
+               r="0"
+               id="circle341"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(81.818182,151.67784)"
+             id="g343">
+            <circle
+               r="0"
+               id="circle345"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(81.818182,247.08668)"
+             id="g347">
+            <circle
+               r="0"
+               id="circle349"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(97.727273,132.59607)"
+             id="g351">
+            <circle
+               r="0"
+               id="circle353"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(97.727273,170.75961)"
+             id="g355">
+            <circle
+               r="0"
+               id="circle357"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(97.727273,221.64432)"
+             id="g359">
+            <circle
+               r="0"
+               id="circle361"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(97.727273,272.52904)"
+             id="g363">
+            <circle
+               r="0"
+               id="circle365"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(129.54545,124.11528)"
+             id="g367">
+            <circle
+               r="0"
+               id="circle369"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(129.54545,141.07686)"
+             id="g371">
+            <circle
+               r="0"
+               id="circle373"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(113.63636,158.03843)"
+             id="g375">
+            <circle
+               r="0"
+               id="circle377"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(113.63636,183.48079)"
+             id="g379">
+            <circle
+               r="0"
+               id="circle381"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(113.63636,208.92314)"
+             id="g383">
+            <circle
+               r="0"
+               id="circle385"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(113.63636,234.3655)"
+             id="g387">
+            <circle
+               r="0"
+               id="circle389"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(113.63636,259.80786)"
+             id="g391">
+            <circle
+               r="0"
+               id="circle393"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(113.63636,285.25022)"
+             id="g395">
+            <circle
+               r="0"
+               id="circle397"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(129.54545,175)"
+             id="g399">
+            <circle
+               r="0"
+               id="circle401"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(129.54545,191.96157)"
+             id="g403">
+            <circle
+               r="0"
+               id="circle405"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(129.54545,225.88472)"
+             id="g407">
+            <circle
+               r="0"
+               id="circle409"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(129.54545,242.84629)"
+             id="g411">
+            <circle
+               r="0"
+               id="circle413"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(129.54545,276.76943)"
+             id="g415">
+            <circle
+               r="0"
+               id="circle417"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#66c2a3;fill-opacity:1;stroke:#66c2a3;stroke-opacity:1"
+             transform="translate(129.54545,293.731)"
+             id="g419">
+            <circle
+               r="0"
+               id="circle421"
+               cx="0"
+               cy="0" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     class="toyplot-coordinates-Cartesian"
+     id="t9a41ea617346433d8c232e0f0b3f4525"
+     transform="matrix(1.2467778,0,0,1.2467778,-54.454974,-56.850312)">
+    <clipPath
+       id="t9080373d20fb417898d48e96ce4302fd">
+      <rect
+         height="270"
+         width="155"
+         x="180"
+         y="40"
+         id="rect425" />
+    </clipPath>
+    <g
+       clip-path="url(#t9080373d20fb417898d48e96ce4302fd)"
+       id="g427">
+      <g
+         class="toyplot-mark-BarMagnitudes"
+         id="t259650ca9e5c4636982ea4e12e4be8ec"
+         style="stroke:#ffffff;stroke-width:1;stroke-opacity:1">
+        <g
+           class="toyplot-Series"
+           id="g430">
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267"
+             style="opacity:0.7;fill:#232323;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+             width="22.780497"
+             x="236.2435"
+             y="296.47888"
+             id="rect432" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267"
+             style="opacity:0.7;fill:#232323;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+             width="24.89587"
+             x="231.43619"
+             y="278.87323"
+             id="rect434" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267"
+             style="opacity:0.7;fill:#232323;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+             width="39.700809"
+             x="262.58072"
+             y="261.26761"
+             id="rect436" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267"
+             style="opacity:0.7;fill:#232323;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+             width="27.949671"
+             x="248.66417"
+             y="243.66197"
+             id="rect438" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267"
+             style="opacity:0.7;fill:#232323;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+             width="36.410397"
+             x="244.99742"
+             y="226.05634"
+             id="rect440" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267"
+             style="opacity:0.7;fill:#232323;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+             width="35.735798"
+             x="262.56522"
+             y="208.4507"
+             id="rect442" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267"
+             style="opacity:0.7;fill:#232323;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+             width="29.569988"
+             x="252.18976"
+             y="190.84508"
+             id="rect444" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267"
+             style="opacity:0.7;fill:#232323;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+             width="24.610479"
+             x="255.39401"
+             y="173.23944"
+             id="rect446" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267"
+             style="opacity:0.7;fill:#232323;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+             width="28.637857"
+             x="204.25832"
+             y="155.6338"
+             id="rect448" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267"
+             style="opacity:0.7;fill:#232323;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+             width="45.398228"
+             x="273.40863"
+             y="138.02817"
+             id="rect450" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267"
+             style="opacity:0.7;fill:#232323;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+             width="47.240543"
+             x="230.57898"
+             y="120.42254"
+             id="rect452" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267"
+             style="opacity:0.7;fill:#232323;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+             width="18.556578"
+             x="228.61746"
+             y="102.8169"
+             id="rect454" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267"
+             style="opacity:0.7;fill:#232323;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+             width="30.750109"
+             x="225.7157"
+             y="85.211266"
+             id="rect456" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267"
+             style="opacity:0.7;fill:#232323;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+             width="22.592958"
+             x="203.96089"
+             y="67.605637"
+             id="rect458" />
+          <rect
+             class="toyplot-Datum"
+             height="3.5211267"
+             style="opacity:0.7;fill:#232323;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+             width="38.80191"
+             x="245.78392"
+             y="50"
+             id="rect460" />
+        </g>
+      </g>
+      <g
+         class="toyplot-mark-Point"
+         id="t4ed709a3f78c482c9163a379b5263163">
+        <g
+           class="toyplot-Series"
+           id="g463">
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#232323;fill-opacity:1;stroke:#232323;stroke-opacity:1"
+             transform="translate(247.63375,298.23944)"
+             id="g465">
+            <circle
+               r="3"
+               id="circle467"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#232323;fill-opacity:1;stroke:#232323;stroke-opacity:1"
+             transform="translate(243.88412,280.6338)"
+             id="g469">
+            <circle
+               r="3"
+               id="circle471"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#232323;fill-opacity:1;stroke:#232323;stroke-opacity:1"
+             transform="translate(282.43112,263.02817)"
+             id="g473">
+            <circle
+               r="3"
+               id="circle475"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#232323;fill-opacity:1;stroke:#232323;stroke-opacity:1"
+             transform="translate(262.639,245.42254)"
+             id="g477">
+            <circle
+               r="3"
+               id="circle479"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#232323;fill-opacity:1;stroke:#232323;stroke-opacity:1"
+             transform="translate(263.20262,227.8169)"
+             id="g481">
+            <circle
+               r="3"
+               id="circle483"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#232323;fill-opacity:1;stroke:#232323;stroke-opacity:1"
+             transform="translate(280.43313,210.21127)"
+             id="g485">
+            <circle
+               r="3"
+               id="circle487"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#232323;fill-opacity:1;stroke:#232323;stroke-opacity:1"
+             transform="translate(266.97475,192.60563)"
+             id="g489">
+            <circle
+               r="3"
+               id="circle491"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#232323;fill-opacity:1;stroke:#232323;stroke-opacity:1"
+             transform="translate(267.69925,175)"
+             id="g493">
+            <circle
+               r="3"
+               id="circle495"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#232323;fill-opacity:1;stroke:#232323;stroke-opacity:1"
+             transform="translate(218.57725,157.39437)"
+             id="g497">
+            <circle
+               r="3"
+               id="circle499"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#232323;fill-opacity:1;stroke:#232323;stroke-opacity:1"
+             transform="translate(296.10775,139.78873)"
+             id="g501">
+            <circle
+               r="3"
+               id="circle503"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#232323;fill-opacity:1;stroke:#232323;stroke-opacity:1"
+             transform="translate(254.19925,122.1831)"
+             id="g505">
+            <circle
+               r="3"
+               id="circle507"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#232323;fill-opacity:1;stroke:#232323;stroke-opacity:1"
+             transform="translate(237.89575,104.57746)"
+             id="g509">
+            <circle
+               r="3"
+               id="circle511"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#232323;fill-opacity:1;stroke:#232323;stroke-opacity:1"
+             transform="translate(241.09075,86.971831)"
+             id="g513">
+            <circle
+               r="3"
+               id="circle515"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#232323;fill-opacity:1;stroke:#232323;stroke-opacity:1"
+             transform="translate(215.25737,69.366197)"
+             id="g517">
+            <circle
+               r="3"
+               id="circle519"
+               cx="0"
+               cy="0" />
+          </g>
+          <g
+             class="toyplot-Datum"
+             style="opacity:1;fill:#232323;fill-opacity:1;stroke:#232323;stroke-opacity:1"
+             transform="translate(265.18488,51.760563)"
+             id="g521">
+            <circle
+               r="3"
+               id="circle523"
+               cx="0"
+               cy="0" />
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       class="toyplot-coordinates-Axis"
+       id="t8d23817160eb4f1ba84860117f16e14b"
+       transform="translate(190,310)">
+      <line
+         x1="13.960896"
+         x2="128.80687"
+         y1="0"
+         y2="0"
+         id="line526" />
+      <g
+         id="g528">
+        <line
+           x1="0"
+           x2="0"
+           y1="0"
+           y2="-5"
+           id="line530" />
+        <line
+           x1="45"
+           x2="45"
+           y1="0"
+           y2="-5"
+           id="line532" />
+        <line
+           x1="90"
+           x2="90"
+           y1="0"
+           y2="-5"
+           id="line534" />
+        <line
+           x1="135"
+           x2="135"
+           y1="0"
+           y2="-5"
+           id="line536" />
+      </g>
+      <g
+         id="g538">
+        <g
+           transform="translate(0,6)"
+           id="g540">
+          <text
+             style="font-weight:normal;font-size:10px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
+             x="-5.5599999"
+             y="8.5550003"
+             id="text542">30</text>
+        </g>
+        <g
+           transform="translate(45,6)"
+           id="g544">
+          <text
+             style="font-weight:normal;font-size:10px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
+             x="-5.5599999"
+             y="8.5550003"
+             id="text546">50</text>
+        </g>
+        <g
+           transform="translate(90,6)"
+           id="g548">
+          <text
+             style="font-weight:normal;font-size:10px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
+             x="-5.5599999"
+             y="8.5550003"
+             id="text550">70</text>
+        </g>
+        <g
+           transform="translate(135,6)"
+           id="g552">
+          <text
+             style="font-weight:normal;font-size:10px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
+             x="-5.5599999"
+             y="8.5550003"
+             id="text554">90</text>
+        </g>
+      </g>
+      <g
+         class="toyplot-coordinates-Axis-coordinates"
+         style="visibility:hidden"
+         id="g556">
+        <line
+           style="stroke:#6e7f8f;stroke-width:1;stroke-opacity:1"
+           x1="0"
+           x2="0"
+           y1="-3"
+           y2="4.5"
+           id="line558" />
+        <text
+           style="font-weight:normal;font-size:10px;text-anchor:middle;fill:#6e7f8f;fill-opacity:1;stroke:none"
+           x="0"
+           y="-6"
+           id="text560" />
+      </g>
+    </g>
+  </g>
+</svg>
