@@ -63,132 +63,231 @@
 
             <section class="future" data-transition="none">
                 <div class="standard">
-                <h3> Recap: contingency </h3>
+                <h3> Learning objectives in this courese</h3>
                 <br>
                 <div class="textbox"><p>
-                    The history of life is dependent upon the series of events that took place until that moment. Replaying the tape of life with slight alterations will result in different outcomes.
+                    To understand that <span style="font-weight:400">genomes are data</span> -- a set of instructions, and a record of history -- and to learn to use this information to test hypotheses. 
+                </p></div>
+
+                <img src="../../genomics-2019/session-1/data/xkcd-dna.png" style="width:70%">
+            </section>    
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Learning genomics from the primary literature</h3>
+                <br>
+                <div class="textbox"><p>
+                    We will read and discuss empirical papers and reviews of the application of genomics methods for studying evolution and medicine. 
+                </p></div>
+                <img src="../../genomics-2019/session-1/data/Kelleher-everyone.png" style="width:40%">
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Learn genomics through hands-on computational exercises</h3>
+                <br>
+                <div class="textbox"><p>
+                    We will use code exercises to see and touch real genomic data 
+                    to understand how biological processes and information
+                    are translated and interpreted as data.
+                </p></div>
+
+    <!-- ----------------------code block---------------- -->                
+    <pre><code class="python">
+    # simulate a chromosome from a coalescent tree_sequence 
+    tree_sequence = ms.simulate(
+        sample_size=1000, 
+        length=int(1e5),
+        Ne=int(1e5),
+        mutation_rate=1e-9,
+        recombination_rate=1e-10, 
+        random_seed=10,
+        )
+
+    # calculate linkage disequilibrium across the chromosome
+    ldx = ms.LdCalculator(tree_sequence).get_r2_matrix()
+    </code></pre>  
+    <!-- ----------------------code block---------------- -->
+
+            </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Learn about modern genomics technologies</h3>
+                <br>
+                <div class="textbox"><p>
+                    We will discuss state-of-the-art technologies. Why are these methods useful, what came before, and what is coming next? Why should you choose one method over another?
+                </p></div>
+                <img src="../../genomics-2019/session-1/data/genome-methods.png" style="width:40%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> In summary: Learning objectives</h3>
+                <br>
+                <div class="textbox"><p>
+                    Learn to <strong>design, conduct, and analyze </strong>genomic 
+                    experiments. By the end of class you should be able to: 
                     <br><br>
-                    <span style="font-weight:400">Example:</span>
-                    S.J. Gould wrote on the enormous influence of chance events like mass extinctions. <i>Traits that affect the probability of survival of mass extinction do so in ways that are incidental and unrelated to the causes of their evolution in the first place.</i>
+                    - Describe the structure of genomes; what information can be extracted.<br>
+                    - Choose appropriate technologies for genomic experiments.<br>
+                    - Analyze genomic data using computational methods.<br>
+                </p></div>
+                </div>
+            </section>
+
+
+
+            <section 
+                data-transition="none"
+                data-background-iframe="https://www.polleverywhere.com/free_text_polls/QJ4o7fHuEWsxeJJLOfKhJ?preview=true"
+                style="top:-960px; display: block;" 
+                class="future" 
+                hidden="">       
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Class format: In each class we will</h3>
+                <br>
+                <div class="textbox"><p style="font-size: 1.1em">
+                    <br>
+                    1. Discuss previous reading and review previous assignments.      
                     <br><br>
-                    <span style="font-weight:400">Example:</span>
-                    <a href=https://en.wikipedia.org/wiki/E._coli_long-term_evolution_experiment>The long term evolution experiment (LTEE)</a> has studied adaptation of E. coli to a harsh environment over >60K generations. Frozen samples allow <i>actually replaying</i> the experiment from snapshots in the past. Seemingly neutral mutations at gen=20K can influence probability of adaptive mutations at gen=30K.
+                    2. Introduce new topics.
+                    <br><br>
+                    3. Assign readings and assignments on the new topic.
+                    <br><br>
+
+                    <span style=color:red>
+                    - Mon. assigned work load will be light, Wed. will be intensive.
+                    <br>
+                    - Assignments are due before the start of next class, else score=0.
+                    </span> 
+
                 </p></div>
-            </section>    
+                </div>
+            </section>
+
 
 
             <section class="future" data-transition="none">
                 <div class="standard">
-                <h3> Recap: evolutionary development (evo-devo)</h3>
+                    <h3> Project proposal</h3>
+                    <br>
+                    <div class="textbox"><p>
+                    Propose a novel use/question/investigation using a modern genomic 
+                    technology; or propose an idea for a new technology/method, how it
+                    would work, and why it would be useful.
+                    <br>
+                    <br>
+
+                    This activity will require synthesizing knowledge about technologies
+                    we have learned, and about the data contained within genomes.
+                    </p></div>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Field trip and report</h3>
                 <br>
                 <div class="textbox"><p>
-                <span style="font-weight:400">Proximate causes:</span> mechanisms that operate within an individual organism to regulate development based on genetic and environmental signaling. e.g., programmed cell death causes the skin between digits to be lost in humans but not ducks.
-                <br><br>
-                <span style="font-weight:400">Ultimate causes:</span>
-                mechanisms that operate on populations over generations. e.g., natural selection. Explains how proximate causes evolve, by changes in allele frequencies
-                <br><br>
-                <span style="font-weight:400">A major goal of evo-devo:</span>
-                is to understand how genotypes influence phenotypes by linking ultimate and proximal causes. 
+                Black Rock Forest Hands-on Portable Genomic Sequencing in the Field</p>
+                <img class=plain  src="../../genomics-2019/session-1/data/blackrock.jpg" style="width: 40%; height: 20%;">
+                <img class=plain  src="../../genomics-2019/session-1/data/nanopore.png" style="width: 40%; height: 20%;">
+                </div></div>
+                <p style='font-size:1em;'>
+                4/17-4/18 (Fri-Sat) Let us know immediately if you cannot make it.
+                </p>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Grading</h3>
+                <br>
+                <div class="textbox"><p style="font-size: 1.1em; text-align: center">
+                    Assignments (50%)
+                    <br>  
+                    Midterm (15%)
+                    <br>  
+                    Participation/Quizzes (15%)
+                    <br>  
+                    Project Proposal (5%)
+                    <br>  
+                    Project Presentation (5%)
+                    <br>  
+                    Final trip report (10%)
+                    <br>  
                 </p></div>
-            </section>    
-
-
-            <section class="future" data-transition="none">
-                <div class="standard">
-                <h3> Recap: modules and homology (evo-devo)</h3>
-                <br>
-                <div class="textbox"><p>
-                <span style="font-weight:400">Modules:</span> 
-                distinct units that have genetic specifications, developmental patterns, locations, and interactions with other modules.
-                <br><br>
-                <span style="font-weight:400">Embryology:</span>
-                Studying the embryological development of living things provides clues to the evolution of present-day organisms. During some stages of development, organisms exhibit ancestral features in whole or incomplete form. 
-                <br><br>
-                <span style="font-weight:400">Homology:</span>
-                is the existence of shared ancestry between a pair of structures, or genes, in different taxa. In development we can define modules with a shared developmental basis (often inferred through embryology) as <i>serially homologous</i>. Examples include the legs of centipedes, or vertebrae of the vertebral column. Additional differentiation of serially homologous structures is called <i>individualization</i>.
-                </p></div>
-            </section>    
-
-
-            <section class="future" data-transition="none">
-                <div class="standard">
-                <h3> Recap: molecular biology</h3>
-                <br>
-                <div class="textbox"><p>
-                <span style="font-weight:400">Genes</span> are regions of the genome that are transcribed into RNA. The RNA may be functional itself, or serve as a template to encode a functional protein, in which case it is translated by ribosomes from 3-bp codons to amino acid peptides. 
-                </p></div>
-                <img src="data/gene-structure.png" style="width:50%">         
-            </section>    
-
-
-            <section class="future" data-transition="none">
-                <div class="standard">
-                <h3> Recap: gene regulation</h3>
-                <img src="data/gene-regulation.png" style="width:36%">
-            </section>    
-
-
-            <section class="future" data-transition="none" data-background="#262626">
-                <div style="margin-top: 15%">
-                    <h1 class="title" style="color:#5D9B84">
-                    Population genetics</h1>
-
-                    <div class="textbox"><p style="color:white">
-                        <i> A mathematical and statistical framework for studying genetic differences within and between populations.</i>
-                    </p></div>           
                 </div>
             </section>
 
 
             <section class="future" data-transition="none">
                 <div class="standard">
-                    <h3>Hardy Weinberg Equilibrium </h3>
-                    <div class="textbox"><p>
-                    The <a href=https://en.wikipedia.org/wiki/Hardy%E2%80%93Weinberg_principle>Hardy–Weinberg principle (HW)</a> provides the solution to one of Darwin's biggest mysteries: how variation is maintained in a population. HW shows that under Mendelian inheritance <i>the frequencies of alleles (variants at a gene) will remain constant in the absence of <span style="font-weight:400">selection, mutation, migration, and genetic drift.</span></i>
-                    </p></div>
-                    <img src="data/allele-freqs.png" style="width:20%">
-                </div>
-            </section>
-
-
-            <section class="future" data-transition="none">
-                <div class="standard">
-                    <h3>Mendelian segregation and recombination</h3>
+                    <h3> Our policy on working in groups</h3>
                     <br>
                     <div class="textbox"><p>
-                        Haploid gametes formed during Meiosis inherit one of the two copies of each locus (in diploid organisms). The frequency of diploid genotypes can change over time (e.g., heterozygotes may be absent in parents but present in offspring), based solely on the random segregation of alleles. 
+                    You <b>can discuss</b> the assignment with each other,
+                    including on the course chatroom on Courseworks.
+                    However, you should not post complete answers on 
+                    the chatroom, and you <b>cannot work together</b> in groups
+                    to complete assignments or share answers.
+                    <br>  
+                    We have office hours available between each class where
+                    you should seek extra help with assignments.
+                    </p></div>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Introduction to bash/jupyter/the-cloud</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        Throughout this course will assign <i>online computational
+                        notebooks</i> to complete between sessions. These are called
+                        jupyter notebooks, which combine text and code together
+                        into a single document. They are a great tool for teaching
+                        and for doing science. 
+                    </p></div>
+                    <img src=https://jupyter.org/assets/jupyterpreview.png style="width:45%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Codio, binder, and cloud hosting</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        The focus of this class is on genomics. Coding and bioinformatics are
+                        an integral part of genomics, and so we will use them as a tool to learn more about the subject. However, this is not a computer science course. We do not require you to have prior coding experience. We will not require you to install any software on your computer. 
                         <br><br>
-                        If segregation is the only factor changing genotype frequencies then they will reach Hardy-Weinberg equilibrium after a single generation:
+                        To make it as easy as possible to jump right into doing science we are hosting all of the assignments on cloud-based servers. This means you will be able to login to complete your assignments online without having to install anything on your computer. 
+                        <br>
+                        <br>
+                        <span style="font-weight: 400">
+                        You should have access to codio: <a href="https://codio.com">https://codio.com</a>
+                        <br>
+                        And we will also use a free alternative, binder: <a href=https://mybinder.org/v2/gh/genomics-course/1-introduction/master> example </a>
+                        </span>
                     </p></div>
-                        $p^{2} + 2pq + q^{2} = 1$.
-                </div>
-            </section>
-
-
-            <section class="future" data-transition="none">
-                <div class="standard">
-                    <h3>Hardy Weinberg Equilibrium </h3>
-                    <div class="textbox"><p>
-                        The three genotypes for a locus with two alleles will occur at: $p^{2} + 2pq + q^{2} = 1$.
-                    </p></div>
-                    <img src="data/hardy-weinberg.png" style="width:42%">
-                </div>
-            </section>
-
-
-            <section class="future" data-transition="none">
-                <div class="standard">
-                    <h3>Wright-Fisher Model </h3>
-                    <div class="textbox"><p>
-                        A discrete time model in which each generation is composed of 2N copies of each gene. Each subsequent generation 2N new copies are randomly drawn from the previous generation (note: this is type of Markov process model). For a gene with two alleles (A1 and A2) the probability of obtaining k copies of an allele that had frequency p in the last generation is:
-                        <br><br>
-                        $$ {{2N \choose k}p^{k}q^{2N-k}} $$
-                    </p></div>
-                    <br>
-                    <a href=https://en.wikipedia.org/wiki/Genetic_drift#Wright.E2.80.93Fisher_model>
-                    <p style="font-size:0.7em">
-                    https://en.wikipedia.org/wiki/Genetic_drift#Wright.E2.80.93Fisher_model
-                    </p></a>
                 </div>
             </section>
 
@@ -196,101 +295,62 @@
 
             <section class="future" data-transition="none">
                 <div class="standard">
-                    <h3>Mendelian segregation and recombination</h3>
-                    <div class="textbox"><p>
-                        Segregation applies to the inheritance of allele copies at a single locus, whereas recombination affects whether copies at <i>two different loci</i> will be inherited together.
-                    </p></div>
-                    <img src=data/recombination.png style="width:29%">
-                </div>
-            </section>
-
-
-            <section class="future" data-transition="none">
-                <div class="standard">
-                    <h3>Linkage disequilibrium</h3>
-                    <img src=data/linkage-disequilibrium.png style="width:50%">
-                </div>
-            </section>
-
-
-            <section class="future" data-transition="none">
-                <div class="standard">
-                    <h3>Physical linkage</h3>
+                    <h3> Introduction to the bash terminal</h3>
                     <br>
                     <div class="textbox"><p>
-                        Linkage describes the probability that alleles at two or more positions in the genome will be co-inherited in gametes during Meiosis. It is a measurement of an individual genome, and is influenced by the <i>physical distance</i> separating the alleles (the number of nucleotides in the genome), and the <i>genetic distance</i> (variation in recombination rates across the genome). Loci very close together tend to be in linkage disequilibrium, while those on different chromosomes tend to be in linkage equilibrium. However, selection and recombination can affect this.
-                    </p></div>                    
-                </div>
-            </section>
+                        The system is composed of a hierarchical file system, just like the folder within folders in your own computer. There is a way of specifying the location of any file on your computer with text by describing its <i>path</i>.
+        <!-- ----------------------------------------------- -->
+        <pre><code class="bash">
+  # The root (top) of the entire filesystem (used for writing full paths).
+  $ /
 
+  # Here, in my current directory (used for writing relative paths).
+  $ ./
 
-            <section class="future" data-transition="none">
-                <div class="standard">
-                    <h3>Linkage disequilibrium</h3>
-                    <br>
-                    <div class="textbox"><p>
-                        Linkage disequilibrium (LD) describes the statistical association between alleles at two loci in a population, e.g., when an individual has A1 it also has B1. It is a measurement of a population and is influenced by the population history (e.g., selection, recombination), not an individual.
-                        <br><br>
-                        When a new mutation occurs the new allele only exists on the chromosome on which it evolved. It can be replicated and inherited in offspring, but will continue to occur only with the other alleles with which it is physically linked unless recombination breaks this association by crossover events that link it to other chromosomes with other alleles. 
-                    </p></div>                    
-                </div>
-            </section>
-            
-
-
-           <section class="future" data-transition="none">
-                <div class="standard">
-                    <h3>Recombination and Sex</h3>
-                    <div class="textbox"><p>
-                        Recombination re-shuffles variation among individuals in a population and can bring together beneficial alleles more quickly than in asexual populations. 
-                    </p></div>         
-                    <img src="data/clonal-interference-1.png">
-                    <img src="data/clonal-interference-2.png">
-                </div>
-            </section>
-
-
-           <section class="future" data-transition="none">
-                <div class="standard">
-                    <h3>Recombination and Sex</h3>
-                    <div class="textbox"><p>
-                        Recombination re-shuffles variation among individuals in a population and in doing so can disassociate (linkage equilibrium) beneficial from deleterious alleles. 
-                    </p></div>         
-                    <img src="data/ruby-in-the-rubbish.png" style="width:60%">
-                </div>
-            </section>            
-
-
-            <section class="future" data-transition="none">
-                <div class="standard">
-                    <h3>Wright-Fisher Model </h3>
-                    <div class="textbox"><p>
-                        A discrete time model in which each generation is composed of 2N copies of each gene. Each subsequent generation 2N new copies are randomly drawn from the previous generation (note: this is type of Markov process model). For a gene with two alleles (A1 and A2) the probability of obtaining k copies of an allele that had frequency p in the last generation is:
-                        <br><br>
-                        $$ {{2N \choose k}p^{k}q^{2N-k}} $$
+  # Up one directory from my current directory (a relative path).
+  $ ../
+        </pre></code>
+        <!-- ----------------------------------------------- -->
                     </p></div>
-
-                    <br>
-                    <a href=https://en.wikipedia.org/wiki/Genetic_drift#Wright.E2.80.93Fisher_model>
-                    <p style="font-size:0.7em">
-                    https://en.wikipedia.org/wiki/Genetic_drift#Wright.E2.80.93Fisher_model
-                    </p></a>
                 </div>
             </section>
 
 
             <section class="future" data-transition="none">
                 <div class="standard">
-                    <h3>Wright-Fisher Model </h3>
-                    <div class="textbox"><p>
-                        A neutral evolutionary process (no selection) can be modeled using the WF model in which allele frequencies change over time by genetic drift. 
-                    </p></div>
-                    <img src=data/WF-genealogy-Drummond.png>
+                    <h3> Hierarchical file system</h3>                    
                     <br>
-                    <a href=https://www.researchgate.net/figure/The-Wright-Fisher-and-Kingman-coalescent-processes-with-generation-time-r-left-K-40_fig1_2853283>
-                    <p style="font-size:0.7em">
-                        Source: Alexei Drummond
-                    </p></a>
+                    <div class="textbox"><p>
+                        The beginning of the path starts at the <i>root</i>, which is represented by a forward slash (/). From there you can see file and folders of your system, as well as folders leading to your personal file. When you open a terminal you are located somewhere in this file system. You can ask where am I? What is here? 
+                    </p></div>
+                    <img src="../../workshop/data/Unix-filesystem.png" style="width: 50%; height: 20%;">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> The bash command line</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        Bash is a language for interacting with your system from a terminal. From bash you can call a large number of software programs (which we will learn about) to accomplish a large number of tasks, including data analysis.
+                        
+        <!-- ----------------------------------------------- -->
+        <pre><code class="bash">
+  # the common syntax of bash commands
+  $ [program name] [-options] [target]
+
+  # an example with the program 'ls'
+  $ ls -l ./
+
+  # the same without using the optional flag -l
+  $ ls ./
+
+  # the same without the optional target (it uses the default target ./)
+  $ ls 
+        </pre></code>
+        <!-- ----------------------------------------------- -->
+                    </p></div>
                 </div>
             </section>
 
@@ -298,16 +358,45 @@
 
             <section class="future" data-transition="none">
                 <div class="standard">
-                    <h3>Wright-Fisher Model </h3>
-                    <div class="textbox"><p>
-                        A neutral evolutionary process (no selection) can be modeled using the WF model in which allele frequencies change over time by genetic drift. 
-                    </p></div>
-                    <img src=data/WF-genealogy-Drummond.png>
+                    <h3> Hierarchical file system</h3>
                     <br>
-                    <a href=https://www.researchgate.net/figure/The-Wright-Fisher-and-Kingman-coalescent-processes-with-generation-time-r-left-K-40_fig1_2853283>
-                    <p style="font-size:0.7em">
-                        Source: Alexei Drummond
-                    </p></a>
+                    <div class="textbox"><p>
+                        You should always know where you are in the filesystem. This is bioinformatics skill number one. You need to know where your data is located to anything with it.
+                        
+        <!-- ----------------------------------------------- -->
+        <pre><code class="bash">
+  # show the files in your current directory
+  $ ls -l 
+
+  # show the files in a different location on the filesystem
+  $ ls -l /bin/
+
+  # move yourself to a new location. This becomes your new cur dir.
+  $ cd folder
+
+  # print the path to your current location
+  $ pwd
+        </pre></code>
+        <!-- ----------------------------------------------- -->
+                    </p></div>
+                </div>
+            </section>
+
+
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Learning bash command line tools</h3>
+                    <br>
+                    <div class="textbox"><p>
+                    There are many great tutorials, and google always has an answer. 
+                    If you have zero experience in using a terminal then you may 
+                    want to complete the <strong>Linux Command Line Tutorial on 
+                    Codio</strong>, listed under the Courses tab on the left.
+                    </p></div>
+                    <img class=plain src="../../genomics-2019/session-1/data/codio-linux-tutorial.png" style="width: 70%; height: 20%;">
                 </div>
             </section>
 
@@ -315,73 +404,15 @@
 
             <section class="future" data-transition="none">
                 <div class="standard">
-                    <h3>Genetic Drift</h3>
+                    <h3> Your assignment for Monday</h3>
+                    <br>
                     <div class="textbox"><p>
-                        Change in the frequencies of alleles in populations can occur even in the absence of selection. As we saw, the simple process of segregation (random drawing alleles) will draw populations towards HW equilibrium. Although we can compute an exact expected probability for genotype frequencies under HW, in reality sampling is a random process, and thus it may deviate from expectations due to sampling variance.
-                    </p></div>
-                    <img src=data/genetic-drift-Ne.png>
+                        You have several notebooks to complete and an assigned paper to read. 
+                        
+                    <img class=plain src="../../genomics-2019/session-1/data/codio-linux-tutorial.png" style="width: 70%; height: 20%;">
                 </div>
             </section>
 
-
-
-            <section class="future" data-transition="none">
-                <div class="standard">
-                    <h3>Genetic Drift</h3>
-                    <br>
-                    <div class="textbox"><p style="font-size:0.75em">
-                        1. Allele frequencies fluctuate randomly as allele copies from the previous generation are randomly sampled each new generation. 
-                        <br><br>
-                        2. Random fluctuations in alleles frequencies are larger in smaller populations. This is the law of large numbers, the outcome of many independent events will converge closer to the true probability with larger sample sizes.
-                        <br><br>
-                        3. Drift causes genetic variation to be lost. <i>Fixation</i> occurs when frequency of an allele reaches 0 or 1. There is no longer variation to sample in the next generation.
-                        <br><br>
-                        4. Drift causes populations that are initially identical to become different. 
-                        <br><br>
-                        5. Alleles can become fixed by neutral drift without requiring selection. 
-                    </p></div>
-                </div>
-            </section>            
-
-
-
-            <section class="future" data-transition="none">
-                <div class="standard">
-                    <h3>The neutral theory of molecular evolution</h3>
-                    <br>
-                    <div class="textbox"><p>
-                        <a href=https://en.wikipedia.org/wiki/Neutral_theory_of_molecular_evolutionNeutral>Neutral theory</a> proposes that most genetic variation and genetic differences among species are a result of genetic drift acting on selectively neutral alleles. Most mutations that are not deleterious are neutral rather than beneficial. It does not deny the action of natural selection in evolution, but states that beneficial alleles are very rare and thus <i>contribute very little at the molecular level to explaining genetic variation.</i>
-                    </p></div>
-                </div>
-            </section>            
-
- 
-            <section class="future" data-transition="none">
-                <div class="standard">
-                    <h3>The neutral theory of molecular evolution</h3>
-                    <br>
-                    <div class="textbox"><p>
-                        <a href=https://en.wikipedia.org/wiki/Neutral_theory_of_molecular_evolutionNeutral>Neutral theory</a> provides a <span style="font-weight:400">null model</span> for understanding population genetic variation. It justifies the use of Wright-Fisher like mathematical equations to infer evolutionary history, e.g., phylogenies, population size changes, migration rates, mutation rates, etc.
-                    </p></div>
-                </div>
-            </section>            
-
-
-
-            <section id="reading" class="future" data-transition="none">
-                <div style="margin-left: auto; margin-top: 5%">
-                <h2> Reading for next session</h2>
-                <br>
-                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">       
-                <br>
-                <a href="https://academic.oup.com/mbe/article/35/6/1366/4990884">
-                "The Neutral Theory in Light of Natural Selection." (Kern and Hahn, 2018). 
-                </a>
-                <br><br>
-
-                <a href=https://onlinelibrary.wiley.com/doi/10.1111/evo.13650> "The importance of the Neutral Theory in 1968 and 50 years on: A response to Kern and Hahn 2018." (Jensen et al. 2018).</a>
-                </div>
-            </section>            
 
 
 
