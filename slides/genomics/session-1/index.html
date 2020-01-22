@@ -306,6 +306,30 @@
                     <br>
                     <div class="textbox"><p>
                         The system is composed of a hierarchical file system, just like the folder within folders in your own computer. There is a way of specifying the location of any file on your computer with text by describing its <i>path</i>.
+                    </p></div>
+                    <img src="../../workshop/data/Unix-filesystem.png" style="width: 50%; height: 20%;">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Hierarchical file system</h3>                    
+                    <br>
+                    <div class="textbox"><p>
+                        The beginning of the path starts at the <i>root</i>, which is represented by a forward slash (/). From there you can see file and folders of your system, as well as folders leading to your personal file. When you open a terminal you are located somewhere in this file system. You can ask where am I? What is here? 
+                    </p></div>
+                    <img src="../../workshop/data/Unix-filesystem.png" style="width: 50%; height: 20%;">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Hierarchical file system</h3>                    
+                    <br>
+                    <div class="textbox"><p>
+                        The beginning of the path starts at the <i>root</i>, which is represented by a forward slash (/). From there you can see file and folders of your system, as well as folders leading to your personal file. When you open a terminal you are located somewhere in this file system. You can ask where am I? What is here? 
         <!-- ----------------------------------------------- -->
         <pre><code class="bash">
   # The root (top) of the entire filesystem (used for writing full paths).
@@ -323,16 +347,7 @@
             </section>
 
 
-            <section class="future" data-transition="none">
-                <div class="standard">
-                    <h3> Hierarchical file system</h3>                    
-                    <br>
-                    <div class="textbox"><p>
-                        The beginning of the path starts at the <i>root</i>, which is represented by a forward slash (/). From there you can see file and folders of your system, as well as folders leading to your personal file. When you open a terminal you are located somewhere in this file system. You can ask where am I? What is here? 
-                    </p></div>
-                    <img src="../../workshop/data/Unix-filesystem.png" style="width: 50%; height: 20%;">
-                </div>
-            </section>
+
 
 
             <section class="future" data-transition="none">
@@ -458,7 +473,7 @@
             dependencies: [
                 //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
                 { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                { src: '../../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                // { src: '../../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
                 { src: '../../reveal/plugin/math/math.js', async: true }
             ]
         });
