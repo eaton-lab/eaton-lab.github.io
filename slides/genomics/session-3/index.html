@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Genomics-3</title>
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+    <!-- <link rel="stylesheet" href="./custom.css"> -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal/css/print/pdf.css' : '../../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <!-- SLIDE 0 (TITLE) -->
+            <section id="title" data-background="#262626" style="top:300.5px; display:block;" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 20%">
+                <h1 class="title" style="color:#5D9B84">
+                Principles and Applications of Modern <br> DNA Sequencing</h1>
+                <h5 style="color: lightgrey"> EEEB GU4055</h5>
+                <h4 style="color: white">Session 2: Python</h4>
+                <br>
+                </div>
+            </section>
+
+
+            <section id="contents" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Today's topics </h2>
+                <br>
+                <p style='font-size:1.2em; font-weight:400; color:#5D9B84; text-align:left; margin-left: 25%; margin-right:10%; line-height: 1.0'>
+                <br>
+                1. review notebook assignments (Python Intro)
+                <br><br>
+                2. objects, types, variables, return, print
+                <br><br>
+                3. iterables: strings and lists
+                <br><br>
+                4. conditional statements
+                <br><br>
+                5. writing functions
+                <br><br>
+                </p>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Notebook 2.0: Intro to Python</h3>
+                <br>
+                <div class="textbox"><p>
+                    Every language has its idiosyncrasies. Whether you've never seen Python before, or you're more familiar with another programming language like R, it takes some time to become familiar with the format and rules of any specific language and why they matter.
+                    <br><br>
+                    This primer on Python and bash is intended to introduce and explain some of the reasoning behind these concepts. We will continue to reinforce how and why the code is written the way it is throughout the course. 
+                </p></div>
+            </section>    
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Python objects </h3>
+                <br>
+
+                <div class="textbox"><p>
+                    Everything in Python is an object. Different <i>types</i> of objects have different features associated with them. This can include functions to query or modify aspects of the object, or ways of returning stats or details about it.
+                    <br><br>
+                    <i>Object-oriented</i> languages are designed for this purpose: connecting functions to the objects they are meant to operate on. It is an organizational structure to help users/coders write cleaner code that is easier to use. 
+                </p></div>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Python objects </h3>               
+                <div class="textbox"><p>
+                The main object types in Python can be created in one of two ways: using a shorthand syntax or explicit function call.
+                </p></div>
+
+                    <pre><code class="python">
+  # Create objects of various types using their type conventions
+  "a string"
+  ["a", "list", "of", "strings"]
+  ("a", "tuple", "of", "strings")
+  {"a key": ["and value in a dictionary"]}
+                    </code></pre>
+
+                    <pre><code class="python">
+  # Or, we can explicitly use the object type function to creating objects
+  str("Columbia")
+  list((1, 2, 3, 4, 5))
+  tuple("apple", "banana", "orange")
+  dict([("a", 3), ("b", 4), ("c", 5)])
+                    </code></pre>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Creating variables to store objects</h3>
+                <div class="textbox"><p>
+                A created object disappears instantly upon creation unless you store it to a <i>variable</i>.
+                </p></div>
+                <pre><code class="python">
+  # Create objects of various types using their type conventions
+  a = "a string"
+  b = ["a", "list", "of", "strings"]
+  c = ("a", "tuple", "of", "strings")
+  d = {"a key": ["and value in a dictionary"]}
+                </code></pre>
+
+                <pre><code class="python">
+  # Or, we can explicitly name the object type as a function
+  a = str("Columbia")
+  b = list((1, 2, 3, 4, 5))
+  c = tuple("apple", "banana", "orange")
+  d = dict([("a", 3), ("b", 4), ("c", 5)])
+                </code></pre>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> String objects</h3>
+                    <div class="textbox"><p>
+                    The <span style="color:#c755c5;">string</span> object type is used to represent text. It can be created using the <i>str()</i> function or by enclosing text in single or double quotes.
+                    </p></div>
+                    <pre><code class="python">
+  # Wrap any text in single or double quotes to create a string
+  a = "a string"
+  b = 'another string'
+  c = "A very long string ....................."
+  DNA = "ACGCAGTCGATGCTAGCTAGCTGACTGATCGTA"
+                    </code></pre>
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> More details on single vs double quotes</h3>
+                    <div class="textbox"><p>
+                        The reason that both options exist is that it can be useful to use them in conjunction when the string you wish to create actually includes ' or " character in it.
+                    </p></div>
+                    <pre><code class="python">
+  # Use double quotes to enclose a string with single quotes in it
+  sentence1 = "Deren's dog's name is Phylo"
+
+  # Use single quotes to enclose a string with double quotes in it
+  sentence2 = 'Sometimes we call her "Fart-lo"'
+
+  # There is also a special triple-quote option for multiline strings
+  sentence3 = """
+  This is a long string that is
+  broken over multiple lines and 
+  stored with newline characters
+  """
+                    </code></pre>
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Strings versus Bytes (Python3)</h3>
+                    <div class="textbox"><p>
+                        In Python3 (as opposed to the older Python2) a new object type of 'bytes' was introduced. This is very similar to a string, and it a more efficient way to represent text data. In practice, when you read in data from a file it will sometimes be in 'bytes' format. It is easiest to just convert it to a 'string'.
+                    </p></div>
+                    <pre><code class="python">
+  # A bytes object looks like a string but with a 'b' at the beginning
+  a = str('this is a sentence')
+  b = bytes('this is a sentence')
+
+  # print the two objects
+  print(a)
+  print(b)
+                    </code></pre>
+                <pre><code class="python" style="background: grey">
+  'this is a sentence'
+  b'this is a sentence'
+                </code></pre>
+                </div>
+                </section>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <section class="future" data-transition="none">                
+                    <div class="standard">
+                    <h3> Integers and Floats</h3>               
+                    <div class="textbox"><p>
+                        The <span style="color:#c755c5;">integer</span> and 
+                        <span style="color:#c755c5;">float</span> object types are used for mathematical operations.
+                    </p></div>
+                    <br>
+                    <pre><code class="python">
+  # numeric values (ints or float)
+  a = 0
+  b = 10
+  c = 3300.239291
+  d = 0.0000301
+                    </code></pre>
+                    </div>
+                </section>            
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Integers and Floats: Challenge</h3>
+                    <div class="textbox" style="background-color: #b7e2c0; color: #3a6944"><p>
+                    Challenge 1:
+                    In a code cell below write three lines of Python code. On line 1 create a new variable called 'y' with the value 30. On line 2 create another new variable 'z' with the value 5.5. On line 3 use the print function to print the value of y / z. <br> (See Chapter 3 if you need help). 
+                    </p></div>
+                    <pre><code class="python">
+  y = 30
+  z = 5.5
+  print(y / z)
+                    </code></pre>
+                    <pre><code class="python" style="background: grey">
+  5.454545454545454
+                    </code></pre>
+                    </div>
+                </section>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <section class="future" data-transition="none">                
+                    <div class="standard">
+                    <h3> Built-in Functions</h3>
+                    <div class="textbox"><p>
+                        A <span style="color:#c755c5;">function</span> is a program that performs a task. Functions end in parentheses. <br>Example: the <span style="color:#c755c5; font-family:  monospace;">len()</span> function returns the length of an object. 
+                        </p></div>
+                        <pre><code class="python">
+  # Create a string 
+  DNA = "ACTACTACTACTACTACTAC "
+
+  # return the length of the string
+  len(DNA)
+                        </code></pre>
+                        <pre><code class="python" style="background: grey">
+  20
+                        </code></pre>
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Built-in Functions</h3>
+                    <div class="textbox"><p>
+                        You might be asking, <i>but I thought functions are always associated with an object in Python?</i>. You're rigt. For convenience some functions look and act like standalone functions but are actually associated to objects under the hood. Example:
+                    </p></div>
+                    <pre><code class="python">
+  # Create a string 
+  DNA = "ACTACTACTACTACTACTAC "
+
+  # len() is a shortcut function
+  print(len(DNA))
+
+  # it actually returns the result of a "hidden" function in the string object
+  print(DNA.__len__())
+                    </code></pre>
+                    <pre><code class="python" style="background: grey">
+  20
+  20  
+                    </code></pre>
+                </div>
+                </section>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Built-in Functions</h3>
+                <div class="textbox"><p>
+                    Example: string objects have functions to operate on strings, such as to format, search, split, or modify the text in many ways.
+                </p></div>
+                <pre><code class="python">
+  # Create a string 
+  DNA = "ACTACTACTACTACTACTAC"
+
+  # access functions for string objects from the string object
+  DNA.lower()
+                </code></pre>
+                <pre><code class="python" style="background: grey">
+  "actactactactactactac"
+                </code></pre>
+                </div>
+            </section>    
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Indexing and slicing</h3>
+                <div class="textbox"><p>
+                    Select a subset of values by their position (starting at 0). Think intervals: [0|1|2|3|4]
+                </p></div>
+                <pre><code class="python">
+  # Select subsets of an object by their position (starting at 0)
+  DNA = "ACTACTACTACTACTACTAC"
+  DNA[0]
+                </code></pre>
+                <pre><code class="python" style="background: grey">
+  "A"
+                </code></pre>
+                <pre><code class="python">
+  DNA = "ACTACTACTACTACTACTAC"
+  DNA[1:5]
+                </code></pre>
+                <pre><code class="bash" style="background: grey">
+  "CTAC"
+                </code></pre>
+            </div>
+            </section> 
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Indexing and slicing</h3>
+                <div class="textbox" style="background-color: #b7e2c0; color: #3a6944"><p>
+                    Challenges: Use indexing to return only the first 10 characters of 'dna'; and only the last 5. (See Chapter 3.1.2 if you need help)                    
+                </p></div>
+                <pre><code class="python">
+  dna = "ACGCAGACGATTTGATGATGAGCATCGACTAGCTACACAAAGACTCAGGGCATATA"
+  dna[:10]
+                </code></pre>    
+                <pre><code class="python" style="background: grey">
+  "ACGCAGACGA"
+                </code></pre>
+                <pre><code class="python">        
+  dna[-5:]
+                </code></pre>    
+                <pre><code class="python" style="background: grey">
+  "ATATA
+                </code></pre>
+            </div>
+            </section>  
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Indexing and slicing</h3>
+                <div class="textbox" style="background-color: #b7e2c0; color: #3a6944"><p>
+                    Challenges: (1) Use the split() function to split the dna variable on the characters "CG". (2) Store the returned result of step 1 to a new variable called dnalist. (3) Then use the print function on the dnalist variable to show its contents. 
+                </p></div>
+                <pre><code class="python">
+  # the dna string variable
+  dna = "ACGCAGACGATTTGATGATGAGCATCGACTAGCTACACAAAGACTCAGGGCATATA"
+
+  # call split with the argument "CG" and store results as dnalist
+  dnalist = dna.split("CG")
+
+  # print to show the value of dnalist
+  print(dnalist)
+                </code></pre>    
+                <pre><code class="python" style="background: grey">
+  ['A', 'CAGA', 'ATTTGATGATGAGCAT', 'ACTAGCTACACAAAGACTCAGGGCATATA']
+                </code></pre>
+                </div>
+            </section>    
+
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Indexing and slicing</h3>
+                <div class="textbox" style="background-color: #b7e2c0; color: #3a6944"><p>
+                    Challenge: In the cell below create two new variables, one called fiveprime that contains the first ten 10 elements in dnalist, and another called threeprime that contains the last 10 elements in dnalist.
+                </p></div>
+                <pre><code class="python">
+  # the dna string variable
+  dna = "ACGCAGACGATTTGATGATGAGCATCGACTAGCTACACAAAGACTCAGGGCATATA"
+
+  # make dna string into a list object
+  dnalist = list(dna)
+
+  # index the first ten items and store as fiveprime
+  fiveprime = dnalist[:10]
+
+  # index last ten items and store as threeprime
+  threeprime = dnalist[-10:]
+                </code></pre>
+                </div>
+            </section>    
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Indentation and iterables</h3>
+                <div class="textbox"><p>
+                Indentation in Python has meaning, where <i>nested</i> lines are influenced by the less indented lines above them. For example, a <i>for-loop</i>.
+                </p></div>
+                <pre><code class="python">
+  # format: for each item in container of items do x with item
+  for letter in "aeiou":
+      print(letter)
+                </code></pre>
+                <pre><code class="python" style="background: grey">        
+  "a"
+  "e"
+  "i"
+  "o"
+  "u"
+                </code></pre>
+                </div>
+            </section>    
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Indentation and iterables</h3>
+                <div class="textbox"><p>
+                    Conditional statements act as a query to do something only <i>if</i> something is True or False. The special keyword <i>if</i> is used here. 
+                </p></div>
+                <pre><code class="python">
+  # for item in container of items do x with item if it's the right kind.
+  for letter in "aeiou":
+      if letter == "a"
+          print(letter)
+                </code></pre>
+                <pre><code class="python" style="background: grey">        
+  "a"
+                </code></pre>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Conditional statements: Challenge</h3>
+                <div class="textbox" style="background-color: #b7e2c0; color: #3a6944"><p>
+                        Challenge: (1) Create a list object of bases; (2) Iterate over the length of dnalist selecting with indexing; (3) query conditional match the value "A"; (4) if "A" replace with lowercase; (5) print.
+                </p></div>
+                <pre><code class="python" style="max-height: 850px">
+  # 1. create a list
+  dnalist = list("AAACCCGGGTTT")
+  
+  # 2. iterate over the index of the list
+  for i in range(len(dnalist)):
+
+      # 3: select each element and ask if it is "A"
+      if dnalist[i] == "A":
+
+          # 4. replace matching "A" with lowercase version
+          dnalist[i] = dnalist[i].lower()
+
+  # 5. print the final modified version of dnalist
+  print(dnalist)
+                </code></pre>
+            </div>
+            </section>    
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Conditional statements: Challenge</h3>
+                <pre><code class="python" style="max-height: 750px">
+  dna1 = "AACTCGCTAAAGCCTCGCGGATCGATAAGCTAG"
+  dna2 = "AAGTCGCTAAAGCAACGCGGAACGATAACCTGG"            
+  
+  # Hint 1: create an integer variable set to 0
+  diffs = 0
+
+  # Hint 2: use the range function and index each object while iterating
+  for idx in range(len(dna1)):
+      dna1_value = dna1[idx]
+      dna2_value = dna2[idx]
+      if dna1_value != dna2_value:
+          diffs += 1
+
+  print(diffs)
+                </code></pre>    
+                <pre><code class="python" style="background: grey">        
+  6
+                </code></pre>
+                </div>
+            </section>    
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Functions (writing your own)</h3>
+                <div class="textbox"><p> 
+                Functions are used to perform a repeated task. As we said there are many functions available in Python. In addition, <i>you can write your own</i> by using <span style="color:#c755c5; font-family: monospace;">def()</span> 
+                </p></div>
+
+                <pre><code class="python">
+  # a function to add 100 to x
+  def myfunc(x):
+      return x + 100
+
+  # run the function on an input value (e.g., 200)
+  myfunc(200)
+                </code></pre>    
+                <pre><code class="python" style="background: grey">        
+  300
+                </code></pre>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Functions (writing your own)</h3>
+                <div class="textbox"><p> 
+                Functions are used to perform a repeated task. As we said there are many functions available in Python. In addition, <i>you can write your own</i> by using <span style="color:#c755c5; font-family: monospace;">def()</span> 
+                </p></div>
+
+                <pre><code class="python">
+  # name the function and the arguments anything you want
+  def sumfunc(arg1, arg2):
+      summed = arg1 + arg2
+      return summed
+
+  # run the function
+  myfunc(200, 300)
+        </code></pre>    
+        <pre><code class="python" style="background: grey">        
+  500
+                </code></pre>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Comments and documentation</h3>
+                <pre><code class="python" style="max-height: 800px">
+  def base_frequency(string):
+      "returns the frequency of A, C, G, and T as a list"     
+      # create an empty list
+      freqs = []
+
+      # get the full length of the input string
+      slen = len(string)
+
+      # iterate over the letters A, C, G, and T
+      for base in "ACGT":
+
+          # count letter is in string divided by total and append to results
+          freqs.append(string.count(base) / slen)
+
+      # return the results list
+      return freqs
+
+  # test the function
+  base_frequency("ACACTGATCGACGAGCTAGCTAGCTAGCTGAC")
+                </code></pre>    
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <section class="future" data-transition="none">                
+                    <div class="standard">
+                    <h3> Challenge: Understanding a mystery function</h3>
+                    <pre><code class="python" style="max-height: 800px">
+  def mystery_function(string):
+      "no hint on this one"
+    
+      # code block 1
+      ag = 0
+      ct = 0
+    
+      # code block 2
+      for element in string:
+          if element in ["A", "G"]:
+              ag += 1
+          elif element in ["C", "T"]:
+              ct += 1
+            
+      # code block 3
+      freq_ag = ag / len(string)
+      freq_ct = ct / len(string)
+    
+      return [freq_ag, freq_ct]
+                    </code></pre>    
+                    </div>
+                </section>
+
+                <section class="future" data-transition="none">                
+                    <div class="standard">
+                    <h3> Challenge: Understanding a mystery function</h3>
+                    <pre><code class="python" style="max-height: 800px">
+  def mystery_function(string):
+      "Takes input string and returns list with frequency of AG, CT"
+    
+      # integer counters
+      ag = 0
+      ct = 0
+    
+      # iterate over string recording purine (AG) or pyrimidine (CT)
+      for element in string:
+          if element in ["A", "G"]:
+              ag += 1
+          elif element in ["C", "T"]:
+              ct += 1
+            
+      # calculate frequency from counts divided by total length
+      freq_ag = ag / len(string)
+      freq_ct = ct / len(string)
+
+      # returns two frequencies in a list    
+      return [freq_ag, freq_ct]
+                    </code></pre>    
+                    </div>
+                </section>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Importing libraries </h3>
+                <div class="textbox"><p>
+                    Import libraries as objects to access all of the functions and objects from these additional libraries.
+                </p></div>
+        <pre><code class="python">
+  import random
+
+  # generate one random number between 0 and 10
+  random.randint(0, 10)
+
+  # return a list of 10 random numbers
+  [random.randint(0, 10) for i in range(10)]
+        </code></pre>    
+        <pre><code class="python" style="background: grey">        
+  [3, 7, 0, 10, 3, 9, 1, 7, 10, 8]
+        </code></pre>                
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Challenge: many ways to accomplish a task</h3>
+                <div class="textbox"><p>
+                    Write a function using 'random' to generate a random sequence of DNA (As, Cs, Gs, and Ts) of a length that is supplied as an argument. It should return the results as a string object. Demonstrate by generating a 20bp sequence. 
+                </p></div>
+                <pre><code class="python">
+  def random_dna(length):
+      "returns a random string of ACGTs of len length"
+      dna = ""
+      for i in range(length):
+          dna += random.choice("ACGT")
+      return dna
+  
+  # test it out
+  random_dna(20)
+              </code></pre>
+              <pre><code class="python" style="background: grey">        
+  "AGGTTTTACCGGTATGAGTC"
+              </code></pre>
+              </div>
+            </section>
+
+
+            <section 
+                data-transition="none"
+                data-background-iframe="
+                https://www.polleverywhere.com/free_text_polls/5AA7uT90JyonCfu4ab7LX?preview=true"        
+                style="top:-960px; display: block;" 
+                class="future" 
+                hidden="">       
+            </section>    
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Interactive exercise writing functions</h3>
+                <div class="textbox"><p>
+                    Write a function from scratch that uses the 'random' library in some way. An example could be to create a dice rolling function, or a function that randomly mutates a string of 
+                    DNA that it accepts as an argument. Try to get creative, and share ideas and code with your neighbor.
+                </p></div>
+                </div>
+            </section>
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../../reveal/lib/js/head.min.js"></script>        
+    <script src="../../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: true,
+            // slideNumber: "h/v",
+
+            dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                // { src: '../../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                { src: '../../reveal/plugin/math/math.js', async: true }
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>
