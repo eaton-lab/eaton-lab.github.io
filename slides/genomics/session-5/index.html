@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Genomics-5</title>
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+    <!-- <link rel="stylesheet" href="./custom.css"> -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal/css/print/pdf.css' : '../../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <!-- SLIDE 0 (TITLE) -->
+            <section id="title" data-background="#262626" style="top:300.5px; display:block;" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 20%">
+                <h1 class="title" style="color:#5D9B84">
+                Principles and Applications of Modern <br> DNA Sequencing</h1>
+                <h5 style="color: lightgrey"> EEEB GU4055</h5>
+                <h4 style="color: white">Session 5: Homology & BLAST</h4>
+                <br>
+                </div>
+            </section>
+
+
+            <section id="contents" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Today's topics </h2>
+                <br>
+                <p style='font-size:1.2em; font-weight:400; color:#5D9B84; text-align:left; margin-left: 25%; margin-right:10%; line-height: 1.0'>
+                <br>
+                1. Review notebook assignments: Numpy, Pandas.
+                <br><br>
+                2. BLAST and Homology.
+                <br><br>
+                3. OrthoDB and databases.
+                </p>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> Homology and BLAST</h3>
+                  What do we mean by orthology and paralogy?
+                  <br><br>
+                  <img src="http://ecoevo.unit.oist.jp/lab/wp-content/uploads/2013/08/GeneHomology_II.png" 
+                  style="width: 60%">    
+              </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> Homology and BLAST</h3>
+                  What do we mean by orthology and paralogy?
+                  <br><br>
+                  <img src="https://schaechter.asmblog.org/.a/6a00d8341c5e1453ef01a73dde119f970d-800wi" 
+                  style="width: 45%">
+              </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> Homology and BLAST</h3>
+                  <div class="textbox"><p>
+                    Question [1]: Using orthology to transfer the gene functional annotation from one organism to another might be inaccurate in some instances. What type of things do you think could lead to these inaccuracies? In other words, why is the function of the model organism gene not always the same as some other organism being compared to it? 
+                  </p></div>
+              </div>
+            </section>
+
+
+            <section class="future" 
+                data-transition="none"
+                data-background-iframe="https://blast.ncbi.nlm.nih.gov/Blast.cgi"
+                hidden="">       
+            </section>    
+
+
+            <section class="future" 
+                data-transition="none"
+                data-background-iframe="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&PAGE_TYPE=BlastSearch&LINK_LOC=blasthome"
+                class="future" 
+                hidden="">       
+            </section>    
+
+
+            <section class="future"             
+                data-transition="none"
+                data-background-iframe="https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Get&RID=3NW9CVDJ014"
+                hidden="">       
+            </section>    
+
+
+            <section class="future"                         
+                data-transition="none"
+                data-background-iframe="https://www.ncbi.nlm.nih.gov/nuccore/?term=foxp2+%5BGENE%5D+AND+%22exon+7%22"
+                hidden="">       
+            </section>    
+
+
+            <section class="future"
+                data-transition="none"
+                data-background-iframe="https://www.orthodb.org/"
+                hidden="">       
+            </section>    
+
+
+
+            <section class="future" data-transition="none">
+              <div class=standard>
+                <h3> OrthoDB</h3>
+                <img src="../../genomics-2019/session-5/data/orthodb.jpg" style="width: 70%; height: 25%;">    
+            </section>
+
+
+            <section 
+                class="future" 
+                data-transition="none"
+                data-background-iframe="
+                https://www.orthodb.org/?level=2759&species=314295&query=FOXP2"
+                hidden="">       
+            </section>
+
+
+            <section 
+                class="future" 
+                data-transition="none"
+                data-background-iframe="https://www.orthodb.org/?level=314295&species=314295&query=FOXP2"
+                hidden="">
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> BLAST, NCBI, and APIs</h3>
+                <div class="textbox"><p>
+                <a href=https://bioinf.comav.upv.es/courses/biotech3/theory/blast.html>BLAST</a> is an algorithm for comparing sequences, it searches the NCBI 
+                database. The NCBI Entrez tools provide an API interface to this database.
+                These tools have facilitated the development of complex tools like 
+                OrthoDB. 
+                </p></div>
+                <img src="https://www.researchgate.net/publication/329761758/figure/fig2/AS:705385665159170@1545188456706/SCKEs-system-architecture-SCKE-is-a-Python-application-run-on-an-Apache-web-server.png" style="width: 50%">
+              </div>
+            </section>
+
+                
+            <section>
+              <div class="standard">
+                <h3> Using requests to query APIs</h3>      
+                <pre><code class="python" style="max-height: 500px">
+  import requests
+
+  # search term
+  term = "FOXP2[GENE] AND Mammalia[ORGN] AND phylogenetic study[PROP]"
+
+  # make a request to esearch 
+  res = requests.get(
+      url="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi", 
+      params={
+          "db": "nucleotide",
+          "term": term,
+          "sort": "Organism Name",
+          "retmode": "text",
+          "retmax": "20",
+          "tool": "genomics-course", 
+          "email": "de2356@columbia.edu",
+          },
+      )
+                </code></pre>
+              </div>
+            </section>
+
+
+            <section 
+                data-transition="none"
+                data-background-iframe="https://www.ncbi.nlm.nih.gov/genbank/"
+                class="future" 
+                hidden="">       
+            </section>    
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../../reveal/lib/js/head.min.js"></script>        
+    <script src="../../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: true,
+            // slideNumber: "h/v",
+
+            dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                // { src: '../../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                { src: '../../reveal/plugin/math/math.js', async: true }
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>
