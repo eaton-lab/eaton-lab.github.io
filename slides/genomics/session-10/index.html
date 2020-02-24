@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Genomics-10</title>
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+    <!-- <link rel="stylesheet" href="./custom.css"> -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal/css/print/pdf.css' : '../../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <!-- SLIDE 0 (TITLE) -->
+            <section id="title" data-background="#262626" style="top:300.5px; display:block;" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 20%">
+                <h1 class="title" style="color:#5D9B84">
+                Principles and Applications of Modern <br> DNA Sequencing</h1>
+                <h5 style="color: lightgrey"> EEEB GU4055</h5>
+                <h4 style="color: white">Session 10: Genome Assembly</h4>
+                <br>
+                </div>
+            </section>
+
+
+            <section id="contents" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Today's topics </h2>
+                <br>
+                <p style='font-size:1.2em; font-weight:400; color:#5D9B84; text-align:left; margin-left: 25%; margin-right:10%; line-height: 1.0'>
+                <br>
+                1. Continued: long read technologies.
+                <br><br>
+                2. New: Genome assembly
+                <br><br>
+                3. Assignment: Kmers and graphs
+                </p>
+                </div>
+            </section>
+
+
+
+            <!-- Summary: what have we learned so far... -->
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Review of course topics </h3>
+                    <div class='textbox'><p>
+                    1. Intro to Jupyter/Python and history of genomics.
+                    <br>
+                    2. Python bootcamp I and genome structure.
+                    <br>
+                    3. Python bootcamp II and genome annotation.
+                    <br>
+                    4. Scientific Python and Homology.
+                    <br>
+                    5. Scientific Python and APIs/BLAST.
+                    <br>
+                    6. Recombination and Meiosis.
+                    <br>
+                    7. Inheritance and pedigrees.
+                    <br>
+                    8. Intro to Illumina and read mapping.
+                    <br>
+                    9. Intro to long-read technologies and read mapping.
+                    <br>
+                    <span style="color:darkred; font-weight: 400">
+                    10. Intro to Genome Assembly: Kmers and graphs
+                    <br>
+                    11. Genome Assembly: Hands-on.
+                    <br>
+                    12. The Coalescent and Genetic Diversity.
+                    <br>
+                    13. Phylogenetics and Phylogenomics.
+                    <br>
+                    14. Phylogenomics Continued and Midterm Review.
+                    </span>
+                    </p></div>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+
+                <section class="future" data-transition="none">
+                  <div class="standard">
+                    <h3> Where we left off: API queries</h3>      
+                    <pre><code class="python" style="max-height: 650px">
+  # search term
+  term = "FOXP2[GENE] AND Mammalia[ORGN] AND phylogenetic study[PROP]"
+
+  # make a request to esearch 
+  res = requests.get(
+      url="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi", 
+      params={
+          "db": "nucleotide",
+          "term": term,
+          "sort": "Organism Name",
+          "retmode": "text",
+          "retmax": "20",
+          "tool": "genomics-course", 
+          "email": "student@columbia.edu",
+      },
+  )
+                    </code></pre>
+                  </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                  <div class="standard">
+                    <h3> Where we left off: API queries</h3>      
+                    <pre><code class="python" style="max-height: 650px">
+  # the request object generates a URL to query the API
+  print(res.url)
+                    </code></pre>
+                    <pre><code class="python" style="max-height: 650px; background: lightgrey">
+  'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nucleotide&term=FOXP2%5BORGN%5D+Mammalia&sort=Organism+Name&retmode=text&retmax=20&tool=genomics-course&email=student%40columbia.edu'
+                    </code></pre>
+                  </div>
+                </section>
+
+
+                <section 
+                    data-transition="none"
+                    data-background-iframe="https://www.ncbi.nlm.nih.gov/genbank/"
+                    class="future" 
+                    hidden="">       
+                </section>    
+
+
+                <section class="future" data-transition="none">
+                  <div class="standard">
+                    <h3> Where we left off: API queries</h3>      
+                    <pre><code class="python" style="max-height: 650px">
+  # search term
+  term = "SARS-CoV-2[ORGN] complete genome"
+
+  # make a request to esearch 
+  res = requests.get(
+      url="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi", 
+      params={
+          "db": "nucleotide",
+          "term": term,
+          "sort": "Organism Name",
+          "retmode": "text",
+          "retmax": "20",
+          "tool": "genomics-course", 
+          "email": "student@columbia.edu",
+      },
+  )
+                    </code></pre>
+                  </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                  <div class="standard">
+                    <h3> Download data from NCBI: Coronavirus</h3>      
+                    <pre><code class="python" style="max-height: 650px">
+  # parse the fasta data and print only headers
+  fna = [i for i in fastas.strip().split("\n\n")]
+  for seq in fna:
+      print(seq.split("\n")[0][:90], '...')
+                    </code></pre>
+                    <pre><code class="python" style="background: grey; max-height: 650px">
+>MN908947.3 Severe acute respiratory syndrome coronavirus 2 isolate Wuhan-Hu-1, complete g ...
+>NC_045512.2 Wuhan seafood market pneumonia virus isolate Wuhan-Hu-1, complete genome ...
+>MN938384.1 Severe acute respiratory syndrome coronavirus 2 isolate 2019-nCoV_HKU-SZ-002a_ ...
+>MN975262.1 Severe acute respiratory syndrome coronavirus 2 isolate 2019-nCoV_HKU-SZ-005b_ ...
+>MN985325.1 Severe acute respiratory syndrome coronavirus 2 isolate 2019-nCoV/USA-WA1/2020 ...
+>MN988668.1 Severe acute respiratory syndrome coronavirus 2 isolate 2019-nCoV WHU01, compl ...
+>MN988669.1 Severe acute respiratory syndrome coronavirus 2 isolate 2019-nCoV WHU02, compl ...
+>MN988713.1 Severe acute respiratory syndrome coronavirus 2 isolate 2019-nCoV/USA-IL1/2020 ...
+...
+                    </code></pre>
+                  </div>
+                </section>
+            </section>
+
+
+        <section class="future" data-transition="none">
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> Long Read Technologies</h3>
+                <br>
+                    <div class=textbox><p>
+                        <span style="font-weight: 400">PacBio</span> and 
+                        <span style="font-weight: 400">Oxford Nanopore</span>
+                        currently offer two distinct technologies 
+                        for generating long sequenced reads that are now widely
+                        used in genomics, particularly for the assembly of reference
+                        genomes, but also for other purposes as well.
+                        <br><br>
+                        Your last assignment and reading introduced you to 
+                        long read data.
+                    </p></div>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> Long Read Technologies</h3>
+                <br>
+                    <div class=textbox><p>
+                      PacBio has greater accuracy but is currently has an upper limit on read lengths (~20Kb). Nanopore reads have more errors but can provide contiguous information up to the size of physical DNA fragments (e.g., >1Mb). 
+                    </p></div>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> Long Read Technologies</h3>
+                <br>
+                    <div class=textbox><p>
+                      PacBio has greater accuracy but is currently has an upper limit on read lengths (~20Kb). Nanopore reads have more errors but can provide contiguous information up to the size of physical DNA fragments (e.g., >1Mb). 
+                    </p></div>
+                </div>
+            </section>
+
+
+            <section 
+                class="future"
+                data-transition="none"
+                data-background-iframe=https://docs.google.com/viewer?url=https://eaton-lab.org/slides/genomics/readings/Gordon-etal-2016.pdf&embedded=true>
+            </section>
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> Nanopore is fast and portable</h3>
+                    <img src="data/nanopore-covid19-tweet.png" style="width:50%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> Nanopore Read-Until Targeting</h3>
+                    <div class=textbox><p>
+                      <a href="https://nanoporetech.com/about-us/news/towards-real-time-targeting-enrichment-or-other-sampling-nanopore-sequencing-devices">Two papers (link)</a> recently described a method for <i>targeted sequencing</i> with nanopores. The analysis API rejects DNA fragments that do not match a 
+                      desired signal (e.g., region from a reference genome) thus
+                      <i>enriching</i> coverage of the target.
+                      
+                    </p></div>
+                    <img src="data/nanopore-readuntil.png">
+                </div>
+            </section>
+
+
+        </section>
+
+
+        <section class="future" data-transition="none">
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> Long read assignment: functions revisited</h3>
+                <pre><code class="python" style="max-height: 650px">
+  def getLengthDistribution(thisFilePath):
+      "Return a list of lengths of each sequence in a fasta file."        
+      lenList = []
+      for record in SeqIO.parse(thisFilePath, "fasta"): 
+          lenList.append(len(record))
+      return lenList
+
+
+  def makeLengthPlot(thisRunName, ax):
+      "Plot the length plot for the raw sequence data"
+        
+      # set histogram bin size
+      bins = range(500, 5000, 100)
+
+      # plots a matplotlib histogram onto 'ax' axes
+      sns.distplot(
+          getLengthDistribution(file_path[thisRunName]),
+          bins=bins, 
+          kde=False, 
+          color=colors[thisRunName], 
+          ax=ax,
+          label=thisRunName,
+          hist_kws={"alpha": 1},
+      )
+
+      # style the axes and legend
+      ax.legend()
+      ax.set_xlim([1, 5000])
+      ax.set_ylabel('number of ' + str(thisRunName) + ' reads')
+      ax.set_ylim([0, 14000])
+      if thisRunName == 'Sanger':
+          ax.set_ylim([0, 800])
+                </code></pre>
+              </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> SeqIO</h3>
+                Loading fasta files as SeqIO record objects.
+
+                <pre><code class="python" style="max-height: 550px">
+  # The SeqIO module is useful for working with Fasta files
+  from Bio import SeqIO
+
+  # load a Fasta file from a path with Bio
+  record = SeqIO.parse(path, format="fasta")  
+
+  # the record object makes the seq data accessible (e.g. length)
+  len(record)
+                </code></pre>
+                <pre><code class="python" style="background: grey">
+    600
+                </code></pre>
+              </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                A dictionary to access long file names easier.
+                <pre><code class="python" style="max-height: 550px">   
+  # Global dictionary of technology name to file paths.
+  FILE_PATH = {
+      'Sanger': 'files/sanger.total.aftertrim.removeCT.min500bp.fasta',
+      'PacBio': 'files/PB.Cell1and2.raw.fasta',
+      'Nanopore': 'files/LejlaControl.2D.min500bp.fasta',
+  }
+
+  # Global dictionary of technology name to colors for plotting
+  COLORS = {
+      'Sanger': '#4daf4a', 
+      'PacBio': '#377eb8', 
+      'Nanopore': '#984ea3',
+  }
+                </code></pre>
+              </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                A function to plot a histogram with matplotlib.
+                <pre><code class="python" style="max-height: 650px; 
+        font-size: 16px; line-height: 1.45">
+  def makeLengthPlot(thisRunName, ax):    
+      "Plot histogram of read lengths. Gets filepath from global dict"
+      # get readlengths
+      filepath = FILE_PATH[thisRunName])          # <--- global
+      lengths = getLengthDistribution(filepath)
+
+      # make histogram
+      sns.distplot(
+          length, 
+          ax=ax,
+          bins=range(500, 5000, 100),
+          kde=False, 
+          color=COLORS[thisRunName],              # <--- global
+          label=thisRunName,
+          hist_kws={"alpha": 1})
+
+      # plot styling: legend, xlimit, ylabel, ylimit
+      ax.legend()                   
+      ax.set_xlim([1, 5000])        
+      ax.set_ylabel('number of {} reads'.format(thisRunName))
+      ax.set_ylim([0, 14000])
+
+      # make unique y-axis label for each run
+      if thisRunName == 'Sanger':
+          ax.set_ylim([0, 800])
+                </code></pre>
+              </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                A function to plot a histogram with matplotlib.
+                <pre><code class="python" style="max-height: 600px;">
+  # initalize plot with 3 rows and 1 column
+  fig, ax = plt.subplots(nrows=3, ncols=1, figsize=(8, 20))
+
+  # Plot Sanger, Pacbio, and Nanopore read length distributions
+  makeLengthPlot('Sanger', ax[0]) 
+  makeLengthPlot('PacBio', ax[1])
+  makeLengthPlot('Nanopore', ax[2])
+
+  # add label to x axis  
+  ax[2].set_xlabel('size [bp]')
+
+  # Show the plot
+  plt.show()
+                </code></pre>
+              </div>
+            </section>
+        </section>
+
+
+        <section class="future" data-transition="none">
+          <div class="standard">
+            <div class="textbox"><p style="background-color: #b7e2c0; color: #3a6944; margin:30px"> 
+Challenge 4 (2 points):
+Print the top ten longest reads and average read length:
+            </p></div>
+
+            <pre><code class="python" style="max-height: 600px;">
+  # 1. get filepath for Nanopore data set
+  npath = file_path["Nanopore"]
+
+  # 2. call getLengthDistribution on this file
+  readlens = getLengthDistribution(npath)
+
+  # 3. get top ten longest reads
+  topten = sorted(readlens)[::-1][:10]
+  print(topten)
+
+  # 4. get average length (of all reads)
+  avglen = sum(readlens) / len(readlens)
+  print(avglen)
+            </code></pre>
+            <pre><code class="python" style="background: grey">
+  [298549, 108360, 72322, 67205, 61366, 60592, 45980, 45605, 41057, 39953]
+  1512.50977897917
+            </code></pre>
+            </div>
+        </section>
+
+
+
+        <section class="future" data-transition="none">
+          <div class="standard">
+            <h3> Oxford nanopore sequence mapping</h3>
+              <pre><code class="bash" style="max-height: 600px;">
+# align nanopore reads (reads.fasta) to reference (ref.fa)
+minimap2 -ax map-ont \
+    /home/codio/workspace/files/ref.fa \
+    /home/codio/workspace/files/reads.fasta \
+    > /home/codio/workspace/files/aligned.sam
+              </code></pre>
+              <pre><code class="python" style="background: grey">
+[M::mm_idx_gen::0.187*0.88] collected minimizers
+[M::mm_idx_gen::0.220*1.19] sorted minimizers
+[M::main::0.221*1.19] loaded/built the index for 4319 target sequence(s)
+[M::mm_mapopt_update::0.232*1.18] mid_occ = 11
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 4319
+[M::mm_idx_stat::0.241*1.17] distinct minimizers: 731433 (98.40% are singletons); average occurrences: 1.024; average spacing: 5.463
+[M::worker_pipeline::0.373*1.78] mapped 112 sequences
+[M::main] Version: 2.15-r915-dirty
+[M::main] CMD: ./minimap2/minimap2 -ax map-ont /home/codio/workspace/files/ref.fa /home/codio/workspace/files/reads.fasta
+[M::main] Real time: 0.381 sec; CPU: 0.671 sec; Peak RSS: 0.053 GB
+              </code></pre>
+          </div>
+      </section>
+
+      <section class="future" data-transition="none">
+        <section class="future" data-transition="none">
+          <div class="standard">
+            <div class="textbox"><p style="background-color: #b7e2c0; color: #3a6944;">
+            Challenge 8 (2 points): Look at the last alignment in the SAM file, how many mismatches or gaps?
+            </p></div>
+                <pre><code class="bash" style="max-height: 600px;">
+%%bash
+# show the last 1 line
+tail -n 1 files/aligned.sam
+                </code></pre>
+                <pre><code class="python" style="background: grey">
+4b09492e-1e14-4c2a-9719-4cd4f1434703    2048    gi|545778205|gb|U00096.3|:c728821-728732    1   9   2547H24M1I12M1D35M2I8M1D9M2887H *   0   0   GTGAGTGCAGGCGTGATAACCGGCATTATTGCTGGTGTTTTATTACTGGGTTATCTGGTTTGTAACCTGATCCAAATGCGGAGCGTTCTGA *   NM:i:9  ms:i:126    AS:i:126    nn:i:0  tp:A:P  cm:i:4  s1:i:48 s2:i:0  de:f:0.0870 SA:Z:gi|545778205|gb|U00096.3|:729583-733776,1,-,3723S1727M30D75S,60,164;gi|545778205|gb|U00096.3|:c728732-727059,1,+,2637S1663M11D1225S,60,171;gi|545778205|gb|U00096.3|:c727036-724988,1,+,4321S1163M11D41S,60,109;gi|545778205|gb|U00096.3|:729134-729340,1,-,3276S207M1I2041S,60,21;    rl:i:0
+                </code></pre>
+          </div>
+        </section>
+
+
+        <section class="future" data-transition="none">
+          <div class="standard">
+            <div class="textbox"><p style="background-color: #b7e2c0; color: #3a6944;">
+            Challenge 8 (2 points): Look at the last alignment in the SAM file, how many mismatches or gaps?
+            </p></div>
+                <pre><code class="bash" style="max-height: 600px;">
+%%bash
+# show the last 5 lines, and only the 12th delimited column
+tail -n 5 files/aligned.sam | cut -f 12
+                </code></pre>
+                <pre><code class="python" style="background: grey">
+NM:i:164
+NM:i:171
+NM:i:109
+NM:i:21
+NM:i:9
+                </code></pre>
+          </div>
+        </section>
+    </section>
+
+
+        <section class="future" data-transition="none">
+          <div class="standard">
+            <div class="textbox"><p style="background-color: #b7e2c0; color: #3a6944;">
+            Challenge 9: Make a sorted BAM file from the SAM.
+            </p></div>
+            <pre><code class="bash" style="max-height: 600px;">
+%%bash
+# view as binary and direct to file (SAM -> BAM)
+samtools view -b aligned.sam > aligned.bam
+
+# sort and direct to file (BAM -> SORTED.BAM)
+samtools sort aligned.bam > aligned.sorted.bam
+
+# create index file (BAM -> BAM.BAI)
+samtools index aligned.sorted.bam
+
+# what are the file sizes?
+du aligned.sam
+du aligned.bam
+            </code></pre>
+          </div>
+        </section>
+
+
+        <section class="future" data-transition="none">
+          <div class="standard">
+            <h3>Genome Assembly</h3>
+            <img src="https://i.imgflip.com/2urzxl.jpg" style="width:60%">
+          </div>
+        </section>
+
+
+        <section class="future" data-transition="none">
+          <div class="standard">
+            <h3>Genome Assembly</h3>
+            <div class=textbox><p>
+            denovo genome assembly is computationally demanding. Requires reads that 
+            cover the full genome many times (e.g., 50X). The end goal is to assemble
+            scaffolds that match to chromosomes -- the real *bits* of the genome.
+            <img src="../../genomics-2019/session-11/data/chromosomes.png" style="width:60%; margin-left: 15%">
+            </p></div>
+          </div>
+        </section>
+
+
+        <section class="future" data-transition="none">
+          <div class="standard">
+            <h3>Genome Assembly</h3>
+            Even the smallest chromosome of the human genome is 48Mbp! 
+            <img src="../../genomics-2019/session-11/data/human-genome-size.png" style="width:60%; margin:10%">
+          </div>
+        </section>
+
+
+        <section class="future" data-transition="none">
+          <div class="standard">
+            <h3>Genome Assembly</h3>
+            <div class=textbox><p>
+              Sometimes intermediate/draft genomes are good enough to answer many questions. For many tasks, though, they are not. e.g., genome annotation. Trade off in costs and time.
+            </p></div>
+            <img src="../../genomics-2019/session-11/data/draft-v-finished.png" style="width:60%">
+          </div>
+        </section>
+
+
+
+        <section class="future" data-transition="none">
+          <div class="standard">
+            <h3>Why do we need (complete) reference genomes?</h3>
+            <br>
+            <div class=textbox><p>
+              (1) To study genome structural variation; (2) FAST mapping of 
+              sequenced reads to the reference to study variation in sequence or abundance (e.g., RNA); (3) Spatial genetic information is useful 
+              for association studies (e.g., GWAS; mapping traits) based on how variants segregate among offspring (i.e., genetic linkage);
+            </p></div>
+          </div>
+        </section>        
+
+
+
+
+
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../../reveal/lib/js/head.min.js"></script>        
+    <script src="../../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: true,
+            // slideNumber: "h/v",
+
+            dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                // { src: '../../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                { src: '../../reveal/plugin/math/math.js', async: true }
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>
