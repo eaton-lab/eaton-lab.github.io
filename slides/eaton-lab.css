@@ -3,7 +3,8 @@
 /*@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400);*/
 
 .reveal a:not(.image) {
-  line-height: 1.6em; }
+  line-height: 1.6em; 
+}
 
 /*********************************************
  * GLOBAL STYLES
@@ -145,15 +146,20 @@ body {
   -moz-transition: color .15s ease;
   -ms-transition: color .15s ease;
   -o-transition: color .15s ease;
-  transition: color .15s ease; }
+  transition: color .15s ease; 
+}
 
 .reveal a:not(.image):hover {
   color: #aaa;
-  border: none; }
+  border: none; 
+  /*font-weight: 400px;*/
+}
 
 .reveal .roll span:after {
   color: #aaa;
-background: #264c66; }
+  background: #264c66; 
+  /*font-weight: 400px;  */
+}
 
 
 
