@@ -16,13 +16,14 @@ image:
 <!-- 2019 papers -->
 <!-- ------------------------------------ -->
 <!-- Guo Cen... -->
-<!-- Toytree* -->
-<!-- ipyrad* -->
 <!-- Ficus* -->
 <!-- Cranolopha* -->
 <!-- Viburnum* -->
 <!-- ------------------------------------ -->
 
+
+* **Eaton, D.A.R** and I. Overcast. *ipyrad: interactive assembly and analysis 
+of RAD-seq data* (2020). *In review*
 
 * **Eaton, D.A.R**. *Toytree: A minimalist tree visualization and manipulation library for Python* (2019) Methods in Ecology and Evolution. https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13313
 
