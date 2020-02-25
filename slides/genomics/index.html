@@ -13,28 +13,121 @@
     <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">    
 </head>
 
-<body>
-<div style="margin: 100px; font-size: 1.5em; ">
+<!-- page with scrolling -->
+<body style="overflow-y: auto;">
+
+<!-- wrap text with margins -->
+<div style="margin: 75px; font-size: 1.05em; line-height: 1.25">
 
     <hr>
-    Resources:
+    <h3>Resources:<br>
+    <a href="https://docs.google.com/document/d/1u5Wwg3q6qSFLnCIE3jx7g78h7jlFI-zDPnLIu3S6Rn4/edit?usp=sharing">
+    Syllabus</a>  
+    </h3> 
+    <hr>
+    <h3>Materials:</h3>
+    <p>
+
+        1/22/2020: Intro to bash/jupyter/genomics<br> 
+        Lecture: <a href="session-1/index.html">(HTML) </a> <a href="session-1/Genomics-1.pdf">(PDF)</a>
+        <br>
+        Notebooks: <a href=https://mybinder.org/v2/gh/genomics-course/1-introduction/master> Link to assignment </a><br>
+        Answers: 
+            <a href="./answers/nb-1.1-bash-genomes.html">(nb-1.1)</a>
+        <br>
+        Reading:<br>
+        - <a href=readings/Shendure-etal-2017.pdf> Shendure et al. 2017</a>
     <br>
     <br>
-    <a href="https://docs.google.com/viewer?url=https://eaton-lab.org/slides/genomics/syllabus.pdf&embedded=true">
-    Syllabus PDF</a>
+        1/27/2020: Intro to Python and genome annotation<br> 
+        Lecture: <a href="session-2/index.html">(HTML) </a> <a href="session-2/Genomics-2.pdf">(PDF)</a>
+        <br>
+        Notebooks: <a href=https://mybinder.org/v2/gh/genomics-course/2-genes/master> Link to assignment </a><br>
+        Answers: 
+            <a href="./answers/nb-2.0-Python-objects.html">(nb-2.0)</a>
+            <a href="./answers/nb-2.1-conditionals.html">(nb-2.1)</a>
+            <a href="./answers/nb-2.2-functions.html">(nb-2.2)</a>
+        <br>
+        Reading: <br>
+        - <a href=http://docs.python.org/3/tutorial> Chapters 1, 3, and 4 of the official Python tutorial</a>
+    <br>
+    <br>   
+        1/29/2020: Advanced Python <br> 
+        Lecture: <a href="session-3/index.html">(HTML) </a> <a href="session-3/Genomics-3.pdf">(PDF)</a>
+        <br>
+        Notebooks: <a href=https://mybinder.org/v2/gh/genomics-course/3-python-advanced/master> Link to assignment </a>
+        <br>
+        Answers: 
+            <a href="./answers/nb-3.0-files.html">(nb-3.0)</a>
+            <a href="./answers/nb-3.1-dictionaries">(nb-3.1)</a>
+            <a href="./answers/nb-3.2-transcription-translation.html">(nb-3.2)</a>
+        <br>
+        Reading:<br>    
+        - <a href=http://docs.python.org/3/tutorial> Chapters 5, 7, and 8 of the official Python tutorial</a><br>
+        - <a href="readings/Yandell-etal-2012.pdf"> Yandell et al. 2012, Genome Annotation</a>
+        <!-- Yandell, Mark, and Daniel Ence. 2012. “A Beginner’s Guide to Eukaryotic Genome Annotation.” Nature Reviews Genetics 13 (5): 329–42. https://doi.org/10.1038/nrg3174. -->
     <br>
     <br>
-    <a href="https://nbviewer.jupyter.org/github/genomics-course/">
-    Notebook answers (look in session-n/notebooks/)</a>
+        2/3/2020: Scientific Python <br> 
+        Lecture: 
+        <a href="session-4/index.html">(HTML) </a> <a href="session-4/Genomics-4.pdf">(PDF)</a>
+        <br>
+        Notebooks: 
+        <a href=https://mybinder.org/v2/gh/genomics-course/4-homology-blast/master> Link to assignment </a>
+        <br>
+        Answers: 
+            <a href="./answers/nb-4.1-numpy.html">(nb-4.1)</a>
+            <a href="./answers/nb-4.2-pandas-GFF.html">(nb-4.2)</a>
+        <br>
+        Reading: <br>
+        - <a href="https://jakevdp.github.io/PythonDataScienceHandbook/"> Chapters 2,3 Python Data Science Handbook</a><br>
+        - <a href="readings/Waterhouse-etal-2012.pdf">Waterhouse et al. 2012</a>
     <br>
+    <br>
+        2/5/2020: Homology and Blast <br> 
+        Lecture: 
+        <a href="session-5/index.html">(HTML) </a> <a href="session-5/Genomics-5.pdf">(PDF)</a>
+        <br>
+        Notebooks: 
+        <a href=https://mybinder.org/v2/gh/genomics-course/5-phylogenetics-I/master> Link to assignment </a>
+        <br>
+        Reading: <br>
+        - <a href="https://jakevdp.github.io/PythonDataScienceHandbook/"> Chapter 4 (plotting) of the Python Data Science Handbook</a><br>
+        <!-- Stark, Rory, Marta Grzelak, and James Hadfield. 2019. “RNA Sequencing: The Teenage Years.” Nature Reviews Genetics 20 (11): 631–56. https://doi.org/10.1038/s41576-019-0150-2. -->
+
     <br>
     <hr>
-    Lectures:
+    <br>
+        2/24/2020: Introduction to Genome Assembly<br> 
+        Lecture: <a href="session-10/index.html">(HTML) </a> <a href="session-10/Genomics-10.pdf">(PDF)</a>
+        <br>
+        Notebooks: <a href=https://mybinder.org/v2/gh/genomics-course/10-deBruijn/master> Link to assignment </a>
+        <br>
+        Answers:
+            (nb-10.1)  
+            (nb-10.2)
+            (nb-10.3)
+        <br>
+        Reading: <a href=readings/Compeau-etal-2011.pdf> Compeau et al. 2011</a>
+<!--
     <br>
     <br>
-    <a href="session-1/index.html">1: Intro to Codio/Bash/Jupyter</a>
-    <br>
-    <br>
+        1/29/2020: Scientific Python and genome structure<br> 
+        Lecture: <a href="session-3/index.html">(HTML) </a> <a href="session-3/Genomics-3.pdf">(PDF)</a>
+        <br>
+        Notebooks: <a href=https://mybinder.org/v2/gh/genomics-course/3-python-advanced/master> Link to assignment </a>
+        <br>
+        Reading: <a href=http://docs.python.org/3/tutorial> Chapters 5, 7, and 8 of the official Python tutorial</a>  
+-->
+    </p>
+    </div>
+
+</body>
+</html>
+
+
+
+<!-- 
     <a href="session-2/index.html">2: Intro to Python</a>
     <br>
     <br>
@@ -59,8 +152,4 @@
     <a href="session-13/index.html">13: RAD-seq<a>
     <br>
     <br>                
-
-</div>
-
-</body>
-</html>
+ -->

@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Session-3</title>
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width: 960px; height: 720px; transform: translate(-50%, -50%) scale(0.969792) translate(50%, 50%);">
+
+<!-- ###################################################################### -->
+
+
+<!-- SLIDE 0 (TITLE) -->
+<section 
+	data-background="#262626" 
+ 	style="top:300.5px; display:block;"
+ 	class="present">
+    <div style="margin-left: auto; margin-top: 20%">
+    <h2 class="title">Principles and Applications of Modern DNA Sequencing</h2>
+    <p style="color: lightgrey"> EEEB GU4055</p>
+    <h5 style="color: white">Session 3: Python Advanced & Genome Annotation</h5>
+    <br>
+    </div>
+</section>
+
+<!-- SLIDE 1 (what are we doing today?)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+    <h3> Today's topics </h3>
+
+    <br>
+    <p style='font-size:0.9em; 
+    text-align: left; margin-left: 100px; margin-right: 100px'>
+        <br>
+        1. Review notebook assignments: Python introduction.
+        <br><br>
+        2. Discuss the assigned reading.
+        <br><br>
+        3. Introduce new topic: Scientific Python.
+        <br><br>
+    </p>
+</section>
+
+
+<!-- SLIDE 2 (warning about being left behind)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    hidden="">
+
+
+    <section>
+    <h3> A general note on coding assignments </h3>
+
+    <br>
+    <p style='font-size:0.9em;'> 
+    "I got stuck on a problem in the assignment, am I going to fail?"
+    <br>
+    <br>
+    <span style='color:red;'>No</span>, if you make it clear you ran the 
+    notebooks and made an effort to find answers (submit your code 
+    with errors, include comments on what you tried) you will get full 
+    points. We will go over everything in class. Also, visit the chatroom!
+    </p>
+    </section>
+
+    <section>
+        <h3> A general note on coding assignments </h3>        
+        <br>
+        <p>
+        These first few weeks are like a crash course
+        in coding so that we can do exciting things later using these skills. 
+        We will turn soon to much stronger focus on genomics and just start
+        recycling these coding skills each week.
+        </p>
+    </section>
+
+
+</section> 
+
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <section>
+        <h3> Notebook 2.0: Intro to Python</h3>
+        <p style="font-size:0.75em"> 
+        Python objects.
+        </p>       
+        <pre><code class="python">
+  # Create objects of various types using their type conventions
+  "a string"
+  ["a", "list", "of", "strings"]
+  ("a", "tuple", "of", "strings")
+  {"a key": ["and value in a dictionary"]}
+        </pre></code>
+
+        <pre><code class="python">
+  # Or, we can explicitly use the object type function to creating objects
+  str("Columbia")
+  list((1, 2, 3, 4, 5))
+  tuple("apple", "banana", "orange")
+  dict([("a", 3), ("b", 4), ("c", 5)])
+        </code></pre>
+    </section>
+
+
+    <section>
+        <h3> Notebook 2.0: Intro to Python</h3>
+        <p style="font-size:0.75em"> 
+        Creating variables to store objects
+        </p>       
+        <pre><code class="python">
+  # Create objects of various types using their type conventions
+  a = "a string"
+  b = ["a", "list", "of", "strings"]
+  c = ("a", "tuple", "of", "strings")
+  d = {"a key": ["and value in a dictionary"]}
+        </pre></code>
+
+        <pre><code class="python">
+  # Or, we can explicitly name the object type as a function
+  a = str("Columbia")
+  b = list((1, 2, 3, 4, 5))
+  c = tuple("apple", "banana", "orange")
+  d = dict([("a", 3), ("b", 4), ("c", 5)])
+        </code></pre>
+    </section>
+
+    <section>
+        <h3> Notebook 2.0: Intro to Python</h3>
+        <p style="font-size:0.8em"> 
+        The <span style="color:#c755c5;">string</span> object type
+        </p>       
+        <pre><code class="python">
+  # Wrap any text in single or double quotes to create a string
+  a = "a string"
+  b = 'another string'
+  c = "A very long string ....................."
+  DNA = "ACGCAGTCGATGCTAGCTAGCTGACTGATCGTA"
+        </pre></code>
+    </section>
+
+    <section>
+        <h3> Notebook 2.0: Intro to Python</h3>
+        <p style="font-size:0.8em"> 
+        The <span style="color:#c755c5;">integer</span> and 
+        <span style="color:#c755c5;">float</span> object types.
+        </p>       
+        <pre><code class="python">
+  # numeric values (ints or float)
+  a = 0
+  b = 10
+  c = 3300.239291
+  d = 0.0000301
+        </pre></code>
+    </section>
+
+    <section>
+        <h3> Notebook 2.0: Intro to Python</h3>
+        <p style="font-size:0.75em; background-color: #b7e2c0; color: #3a6944"> 
+    Challenge 1:
+    In a code cell below write three lines of Python code. 
+    On line 1 create a new variable called 'y' with the value 30. 
+    On line 2 create another new variable 'z' with the value 5.5. 
+    On line 3 use the print function to print the value of y / z. <br>
+    (See Chapter 3 if you need help). 
+        </p>
+        <pre><code class="python">
+  y = 30
+  z = 5.5
+  print(y / z)
+        </code></pre>
+        <pre><code class="python" style="background: grey">
+  5.454545454545454
+        </code></pre>
+    </section>    
+
+
+    <section>
+        <h3> Notebook 2.0: Intro to Python</h3>
+        <p style="font-size:0.8em"> 
+        A <span style="color:#c755c5;">function</span> is a program 
+        that perform a task. Functions end in parentheses. <br>Example: 
+        the <span style="color:#c755c5; font-family: monospace;">len()</span> 
+        function returns the length of an object.
+        </p>       
+        <pre><code class="python">
+  # Create a string 
+  DNA = "ACTACTACTACTACTACTAC "
+
+  # return the length of the string
+  len(DNA)
+          </code></pre>
+        <pre><code class="python" style="background: grey">
+  20
+          </code></pre>
+    </section>    
+
+
+    <section>
+        <h3> Notebook 2.0: Intro to Python</h3>
+        <p style="font-size:0.8em"> 
+        <span style="color:#c755c5;">Object-oriented:</span> 
+        everything is an object. <br>It is hard to remember all of the 
+        functions in a language, and which type of objects each function is
+        designed to operate on. To make life easier, the functions 
+        that operate on a specific object (e.g., a string) are accessible 
+        <i>from the object itself</i>.
+        </p>       
+        <pre><code class="python">
+  # Create a string 
+  DNA = "ACTACTACTACTACTACTAC"
+
+  # access functions for string objects from the string object
+  DNA.lower()
+          </code></pre>
+        <pre><code class="python" style="background: grey">
+  "actactactactactactac"
+          </code></pre>
+    </section>    
+
+
+    <section>
+        <h4> Interactive Python (it's here to help you) </h4>
+        <p style="font-size: 0.7em; margin-right: 60px; margin-left: 60px">
+        The <i>interactive</i> nature of Python in jupyter. Use 
+        [tab]-completion to view attributes/functions of objects. 
+        Easier than memorizing!
+        </p>
+        <img src="../session-2/data/jupyter-tab-complete.gif" style="width: 95%; height: 25%;">    
+    </section>
+
+
+    <section>
+        <h3> Notebook 2.0: Intro to Python</h3>
+        <p style="font-size:0.8em"> 
+        Indexing and slicing using brackets
+        <pre><code class="python">
+  # Select subsets of an object by their position (starting at 0)
+  DNA = "ACTACTACTACTACTACTAC"
+  DNA[0]
+          </code></pre>
+        <pre><code class="python" style="background: grey">
+  "A"
+          </code></pre>
+        <pre><code class="python">
+  DNA = "ACTACTACTACTACTACTAC"
+  DNA[1:5]
+          </code></pre>
+        <pre><code class="bash" style="background: grey">
+  "CTAC"
+          </code></pre>
+    </section>    
+
+    <section>
+        <h3> Notebook 2.0: Intro to Python</h3>
+        <p style="font-size:0.75em; background-color: #b7e2c0; color: #3a6944"> 
+    Challenges 2-3:<br>
+    Use indexing to return only the first 10 characters of dna; and 
+    only the last 5.
+    <br> (See Chapter 3.1.2 if you need help)
+        </p>
+        <pre><code class="python">
+  dna = "ACGCAGACGATTTGATGATGAGCATCGACTAGCTACACAAAGACTCAGGGCATATA"
+  dna[:10])
+        </code></pre>    
+        <pre><code class="python" style="background: grey">
+  "ACGCAGACGA"
+          </code></pre>
+        <pre><code class="python">        
+  dna[-5:])
+        </code></pre>    
+        <pre><code class="python" style="background: grey">
+  "ATATA
+          </code></pre>
+    </section>    
+
+
+    <section>
+        <h3> Notebook 2.0: Intro to Python</h3>
+        <p style="font-size:0.75em; background-color: #b7e2c0; color: #3a6944"> 
+    Challenge 4: 
+    Use the split() function to split the dna variable on the characters
+    "CG". Store the return values to a new variable called dnalist. Then use 
+    print on that variable to show its values. 
+        </p>
+
+        <pre><code class="python">
+  # the dna string variable
+  dna = "ACGCAGACGATTTGATGATGAGCATCGACTAGCTACACAAAGACTCAGGGCATATA"
+
+  # call split with the argument "CG" and store results as dnalist
+  dnalist = dna.split("CG")
+
+  # print to show the value of dnalist
+  print(dnalist)
+        </code></pre>    
+        <pre><code class="python" style="background: grey">
+  ['A', 'CAGA', 'ATTTGATGATGAGCAT', 'ACTAGCTACACAAAGACTCAGGGCATATA']
+          </code></pre>
+    </section>    
+
+
+    <section>
+        <h3> Notebook 2.0: Intro to Python</h3>
+        <p style="font-size:0.75em; background-color: #b7e2c0; color: #3a6944"> 
+    Challenge 5:
+    In the cell below create two new variables, one called fiveprime that 
+    contains the first ten 10 elements in dnalist, and another called 
+    threeprime that contains the last 10 elements in dnalist. 
+        </p>
+
+        <pre><code class="python">
+  # the dna string variable
+  dna = "ACGCAGACGATTTGATGATGAGCATCGACTAGCTACACAAAGACTCAGGGCATATA"
+
+  # make dna string into a list object
+  dnalist = list(dna)
+
+  # index the first ten items and store as fiveprime
+  fiveprime = dnalist[:10]
+
+  # index last ten items and store as threeprime
+  threeprime = dnalist[-10:]
+        </code></pre>    
+    </section>   
+
+    <section 
+        data-transition="none"
+        data-background-iframe="
+        https://www.polleverywhere.com/free_text_polls/5AA7uT90JyonCfu4ab7LX?preview=true"
+        style="top:-960px; display: block;" 
+        class="future" 
+        hidden="">       
+    </section>    
+
+</section>
+
+
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <section>
+        <h3> Notebook 2.1: Conditional statements</h3>
+        <p style="font-size:0.75em;">
+    Indentation in Python has meaning, where <i>nested</i> lines are influenced
+    by the less indented lines above them. For example, a <i>for-loop</i>.
+        </p>
+
+        <pre><code class="python">
+  # format: for each item in container of items do x with item
+  for letter in "aeiou":
+      print(letter)
+        </code></pre>    
+
+        <pre><code class="python" style="background: grey">        
+  "a"
+  "e"
+  "i"
+  "o"
+  "u"
+        </code></pre>
+    </section>  
+
+
+    <section>
+        <h3> Notebook 2.1: Conditional statements</h3>
+        <p style="font-size:0.75em;">
+    Conditional statements include code that only runs <i>if</i> something 
+    is True or False. The special keyword <i>if</i> is used here.
+        </p>
+        <pre><code class="python">
+  # for item in container of items do x with item if it's the right kind.
+  for letter in "aeiou":
+      if letter == "a"
+          print(letter)
+        </code></pre>    
+
+        <pre><code class="python" style="background: grey">        
+  "a"
+        </code></pre>
+    </section>        
+
+
+    <section>
+        <h3> Notebook 2.1: Conditional statements</h3>
+        <p style="font-size:0.65em; background-color: #b7e2c0; color: #3a6944"> 
+    Challenge 6: Count number of differences between dna1 and dna2. 
+    Hint, create an integer variable set to 0 and add 1 to it for each
+    difference. Iterate through each object comparing items. 
+    You may find that using the `range` function and 
+    indexing the objects is easiest. (See Chapter 4.3). 
+        </p>
+
+        <pre><code class="python">
+  # the two string objects
+  dna1 = "AACTCGCTAAAGCCTCGCGGATCGATAAGCTAG"
+  dna2 = "AAGTCGCTAAAGCAACGCGGAACGATAACCTGG"            
+  
+  # Hint 1: create an integer variable set to 0
+  diffs = 0
+
+  # Hint 2: use the range function and index each object while iterating
+  for idx in range(len(dna1)):
+      dna1_value = dna1[idx]
+      dna2_value = dna2[idx]
+      if dna1_value != dna2_value:
+          diffs += 1
+        </code></pre>    
+        <pre><code class="python" style="background: grey">        
+  6
+        </code></pre>
+    </section>
+
+    <section 
+        data-transition="none"
+        data-background-iframe="
+        https://www.polleverywhere.com/free_text_polls/5AA7uT90JyonCfu4ab7LX?preview=true"
+        style="top:-960px; display: block;" 
+        class="future" 
+        hidden="">       
+    </section>    
+
+</section>
+
+
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <section>
+        <h3> Notebook 2.2: Functions</h3>
+        <p style="font-size:0.75em;">
+    Functions are used to perform a repeated task. As we said there are many
+    functions available in Python. In addition, <i>you can write your own</i>
+    by using <span style="color:#c755c5; font-family: monospace;">def()</span> 
+        </p>
+
+        <pre><code class="python">
+  # a function to add 100 to x
+  def myfunc(x):
+      return x + 100
+
+  # run the function on an input value (e.g., 200)
+  myfunc(200)
+        </code></pre>    
+        <pre><code class="python" style="background: grey">        
+  300
+        </code></pre>
+    </section>
+
+
+    <section>
+        <h3> Notebook 2.2: Functions</h3>
+        <p style="font-size:0.75em;">   
+    Functions are used to perform a repeated task. As we said there are many
+    functions available in Python. In addition, <i>you can write your own</i>
+    by using <span style="color:#c755c5; font-family: monospace;">def()</span> 
+        </p>
+
+        <pre><code class="python">
+  # name the function and the arguments anything you want
+  def sumfunc(arg1, arg2):
+      summed = arg1 + arg2
+      return summed
+
+  # run the function
+  myfunc(200, 300)
+        </code></pre>    
+        <pre><code class="python" style="background: grey">        
+  500
+        </code></pre>
+    </section>
+
+
+
+    <section>
+        <h3> Notebook 2.2: Functions</h3>
+        <p style="font-size:0.75em; background-color: #b7e2c0; color: #3a6944"> 
+    Challenge 7: Describe this function.
+        </p>
+        <pre><code class="python">
+  def base_frequency(string):
+      "returns the frequency of A, C, G, and T as a list"
+      freqs = []
+      slen = len(string)
+      for base in "ACGT":
+          freqs.append(string.count(base) / slen)
+      return freqs
+
+  # test the function
+  base_frequency("ACACTGATCGACGAGCTAGCTAGCTAGCTGAC")
+        </code></pre>    
+        <pre><code class="python" style="background: grey">        
+  [0.28125, 0.28125, 0.25, 0.1875]
+        </code></pre>
+    </section>
+
+
+    <section>
+        <h3> Notebook 2.2: Functions</h3>
+        <p style="font-size:0.75em; background-color: #b7e2c0; color: #3a6944"> 
+    Challenge 8: Write an alternative implementation of base_frequency()
+        </p>
+        <pre><code class="python">
+  def base_frequency(string):
+      "returns the frequency of A, C, G, and T as a list"     
+      total_len = len(string)
+      freqA = string.count("A") / total_len
+      freqC = string.count("C") / total_len
+      freqG = string.count("G") / total_len      
+      freqT = string.count("T") / total_len      
+      return [freqA, freqC, freqG, freqT]
+
+  # test the function
+  base_frequency("ACACTGATCGACGAGCTAGCTAGCTAGCTGAC")
+        </code></pre>    
+        <pre><code class="python" style="background: grey">        
+  [0.28125, 0.28125, 0.25, 0.1875]
+        </code></pre>
+    </section>  
+
+
+    <section>
+        <h3> Notebook 2.2: Functions </h3>
+        <p style="font-size:0.75em;">
+    Importing libraries: the random library
+        </p>
+        <pre><code class="python">
+  import random
+
+  # generate one random number between 0 and 10
+  random.randint(0, 10)
+
+  # return a list of 10 random numbers
+  [random.randint(0, 10) for i in range(10)]
+        </code></pre>    
+        <pre><code class="python" style="background: grey">        
+  [0.28125, 0.28125, 0.25, 0.1875]
+        </code></pre>
+    </section>        
+
+
+    <section>
+        <h3> Notebook 2.2: Functions</h3>
+        <p style="font-size:0.65em; background-color: #b7e2c0; color: #3a6944"> 
+    Challenge 9: 
+    Write a function using random to generate a random sequence of DNA 
+    (As, Cs, Gs, and Ts) of a length that is supplied as an argument. It 
+    should return the results as a string object. 
+    Demonstrate by generating a 20 base pair long sequence of DNA. 
+        </p>
+        <pre><code class="python">
+  def random_dna(length):
+      "returns a random string of ACGTs of len length"
+      dna = ""
+      for i in range(length):
+          dna += random.choice("ACGT")
+      return dna
+  
+  # test it out
+  random_dna(20)
+      </code></pre>
+        <pre><code class="python" style="background: grey">        
+  "AGGTTTTACCGGTATGAGTC"
+        </code></pre>   
+    </section>
+
+    <section 
+        data-transition="none"
+        data-background-iframe="
+        https://www.polleverywhere.com/free_text_polls/5AA7uT90JyonCfu4ab7LX?preview=true"        
+        style="top:-960px; display: block;" 
+        class="future" 
+        hidden="">       
+    </section>    
+</section>
+
+
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <section>
+        <h3> Notebook 2.3: Files I/O</h3>
+        <p style="font-size:0.75em;">
+    The things we did with bash code in the first tutorial can all be run 
+    in Python as well. 
+        </p>
+        <pre><code class="bash">
+  %%bash
+  mkdir -p datafiles/
+  wget http://eaton-lab.org/data/40578.fastq.gz -q -O datafiles/40578.fastq.gz
+  wget http://eaton-lab.org/data/iris-data-dirty.csv -q -O datafiles/iris-data-dirty.csv
+        </code></pre>    
+
+        <pre><code class="python">
+  # make a new directory
+  os.makedirs("datafiles2", exist_ok=True)
+
+  # download files to that directory
+  url1 = "http://eaton-lab.org/data/40578.fastq.gz"
+  with open("./datafiles2/40578.fastq.gz", 'wb') as ffile:
+      ffile.write(requests.get(url1).content)
+
+  url2 = "http://eaton-lab.org/data/iris-data-dirty.csv"
+  with open("./datafiles2/iris-data-dirty.csv", 'wb') as ffile:
+      ffile.write(requests.get(url2).content)
+        </code></pre>    
+    </section>        
+
+
+
+    <section>
+        <h3> Notebook 2.3: Files I/O</h3>
+        <p style="font-size:0.75em;">
+    Writing to files in Python.
+        </p>
+        <pre><code class="python">
+  # open a file object in write-mode 
+  ofile = open("./datafiles/helloworld.txt", 'w')
+
+  # write a string to the file
+  ofile.write("hello world")
+
+  # close the file object
+  ofile.close()
+        </code></pre>    
+
+        <pre><code class="python">
+  # a simpler alternative: use 'with', 'as', and indentation
+  with open("./datafiles/helloworld.txt", 'w') as ofile:
+      ofile.write("hello world")
+        </code></pre>    
+    </section>        
+
+
+    <section>
+        <h3> Notebook 2.3: Files I/O</h3>
+        <p style="font-size:0.75em;">
+    Reading data from files in Python
+        </p>
+        <pre><code class="python">
+  # open a file object in read-mode 
+  infile = open("./datafiles/helloworld.txt", 'r')
+
+  # call the read or readlines function to get the data.
+  data = infile.read()
+
+  # close the file object
+  infile.close()
+        </code></pre>    
+
+        <pre><code class="python">
+  # a simpler alternative: use 'with', 'as', and indentation
+  with open("./datafiles/helloworld.txt", 'r') as infile:
+      data = infile.read()
+        </code></pre>    
+    </section>        
+
+
+    <section>
+        <h3> Notebook 2.3: Files I/O</h3>
+        <p style="font-size:0.65em; background-color: #b7e2c0; color: #3a6944"> 
+    Challenge 10: 
+    Use random function to generate a DNA sequence, and combine it with 
+    "> name" to make a valid fasta formatted DNA sequence. Then write it to a file.  
+        </p>
+        <pre><code class="python">
+  # create a fasta formatted DNA sequence
+  dna = random_dna(20)
+  name = "> sequence name"
+  fasta = name + "\n" + dna
+
+  # write it to a file
+  with open("datafiles/sequence.fasta", 'w') as out:
+      out.write(fasta)
+
+  # print fasta for demonstration
+  print(fasta)
+        </code></pre>   
+        <pre><code class="python" style="background: grey">        
+  > sequence name
+  CACGAATGCGTAATCTTATC         
+        </code></pre>
+    </section>        
+
+
+
+   <section>
+        <h3> Notebook 2.3: Files I/O</h3>
+        <p style="font-size:0.65em; background-color: #b7e2c0; color: #3a6944"> 
+    Challenge 11: 
+    Write function to convert fastq to fasta. (1) Write a function; 
+    (2) read 'datafiles/40578.fastq.gz' from disk;
+    (3) convert to fasta format; and (4) write result to a file 
+    <br> Trick: use print for debugging.
+        </p>
+        <pre><code class="python">
+  # 1. write a function
+  def converter(fastq_file):
+
+      # 2. read in the fastq file
+      with gzip.open(fastq_file, 'rb') as indata:
+          fastq = indata.read().decode()
+
+      # 3. convert to fasta: start with an empty list
+      fastadata = []
+
+      # split file into separate reads on @ delimiter
+      reads = fastq.split("@"):
+      for read in reads:
+          # split read into 4 lines
+          lines = read.split("\n")
+
+          # join ">", line[0], and line[1] to make fasta formatted sequence
+          fastadata.append("> " + lines[0] + "\n" + lines[1])
+
+      # join strings in the list back together into a string
+      fasta = "\n".join(fastadata)
+
+      # write to a file
+      with open("datafiles/sequence.fasta", 'w') as out:
+          out.write(fasta)
+        </code></pre>   
+    </section> 
+
+
+    <section 
+        data-transition="none"
+        data-background-iframe="
+        https://www.polleverywhere.com/free_text_polls/5AA7uT90JyonCfu4ab7LX?preview=true"
+        style="top:-960px; display: block;" 
+        class="future" 
+        hidden="">       
+    </section>    
+
+
+</section>       
+
+
+<section>
+    <h4> Assignment</h4>
+    <br>
+    Complete Unit 3 on Codio: 4 notebooks.
+    <br>
+    <br>
+    Read chapters 1, 2, and 3 (but not 4 yet) in the <br>
+    <a href="https://jakevdp.github.io/PythonDataScienceHandbook/">
+    Python DataScience Handbook</a>
+    <br>
+    <br>
+    And, “A Beginner’s Guide to Eukaryotic Genome Annotation.”  
+    <a href=https://doi.org/10.1038/nrg3174.>https://doi.org/10.1038/nrg3174.</a>
+    
+</section>
+
+
+</div>
+</div>
+    
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+
+
+        <!-- JAVASCRIPT -->
+        <script src="../../reveal/lib/js/head.min.js"></script>        
+        <script src="../../reveal/js/reveal.js"></script>
+        <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+        <script>
+            Reveal.initialize({
+                controls:true, 
+                progress:false, 
+                loop:true, 
+                history:true,
+                center:false,
+                fragmentInURL:true,
+                margin:.05,
+                minScale:0.1,
+                maxScale:5,
+                width:960,
+                height:720,
+                theme:Reveal.getQueryHash().theme,
+                transition:Reveal.getQueryHash().transition||"linear",
+                // slideNumber: true,
+                // slideNumber: "h/v",
+                dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                ]
+            });
+
+            // Reveal.configure({ slideNumber: true })
+            // Reveal.configure({ slideNumber: "c/t" })            
+
+            // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+        </script>
+    </body>
+</html>

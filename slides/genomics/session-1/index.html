@@ -4,14 +4,23 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Session-1</title>
+    <title>Genomics-1</title>
+    <!-- CSS styling -->
     <link rel="stylesheet" href="../../reveal/css/reveal.css">
-    <link rel="stylesheet" href="../../reveal/css/theme/simple.css">    
     <link rel="stylesheet" href="../../eaton-lab.css">
     <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+    <!-- <link rel="stylesheet" href="./custom.css"> -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal/css/print/pdf.css' : '../../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
 </head>
 
 <!-- Not sure yet of this transition effect -->
@@ -21,52 +30,72 @@
     <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
 
         <!-- By giving slides a dimension we can use pixels or % -->
-        <div class="slides" style="width: 960px; height: 720px; transform: translate(-50%, -50%) scale(0.969792) translate(50%, 50%);">
+        <div class="slides" style="width:1600px; height:900px;">
 
-<!-- ###################################################################### -->
+            <!-- SLIDE 0 (TITLE) -->
+            <section id="title" data-background="#262626" style="top:300.5px; display:block;" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 20%">
+                <h1 class="title" style="color:#5D9B84">
+                Principles and Applications of Modern DNA Sequencing</h1>
+                <h5 style="color: lightgrey"> EEEB GU4055</h5>
+                <h4 style="color: white">Session 1: Introduction</h4>
+                <br>
+                </div>
+            </section>
+
+            <section id="contents" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Today's topics </h2>
+                <br>
+                <p style='font-size:1.2em; font-weight:400; color:#5D9B84; text-align:left; margin-left: 25%; margin-right:10%; line-height: 1.0'>
+                    1. Introductions
+                    <br><br>
+                    2. Syllabus
+                    <br><br>
+                    3. Class structure
+                    <br><br>
+                    4. Computational resources
+                    <br><br>
+                </p>
+                </div>
+            </section>
 
 
-<!-- SLIDE 0 (TITLE) -->
-<section data-background="#262626" style="top:300.5px; display:block;" class="present">
-    <div style="margin-left: auto; margin-top: 20%">
-    <h2 class="title">Principles and Applications of Modern DNA Sequencing</h2>
-    <p style="color: lightgrey"> EEEB GU4055</p>
-    <h5 style="color: white">Session 1: Introduction to computational genomics</h4>
-    <br>
-    </div>
-</section>
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Learning objectives in this courese</h3>
+                <br>
+                <div class="textbox"><p>
+                    To understand that <span style="font-weight:400">genomes are data</span> -- a set of instructions, and a record of history -- and to learn to use this information to test hypotheses. 
+                </p></div>
+
+                <img src="../../genomics-2019/session-1/data/xkcd-dna.png" style="width:70%">
+            </section>    
 
 
-<!-- SLIDE 1 (OBJECTIVES)-->
-<section data-transition="none" class="future" style="top: -20px; display: none;" hidden="">
 
-    <section>
-    <h3> Learning objectives in this course </h3>
-    <p style="font-size:0.85em;"> To understand that <strong> genomes are data 
-    </strong> -- a set of instructions, and a record of history -- and to learn
-    to use this information to test hypotheses.
-    </p>
-    <img class=plain src="./data/xkcd-dna.png" style="width: 70%; height: 20%;">
-    </section>
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Learning genomics from the primary literature</h3>
+                <br>
+                <div class="textbox"><p>
+                    We will read and discuss empirical papers and reviews of the application of genomics methods for studying evolution and medicine. 
+                </p></div>
+                <img src="../../genomics-2019/session-1/data/Kelleher-everyone.png" style="width:40%">
+            </section>
 
-    <!-- 1.1 (LEARN LITERATURE) -->
-    <section class="future" hidden="">
-    <h4> Learn about genomes and genome variation</h4>
-    <p style='font-size:0.85em;'> 
-        Based on readings and discussions from the primary literature (free).
-    </p>
-    <img class=plain src="./data/Kelleher-everyone.png" style="width: 60%; height: 20%;">
-    <div class="citation">
-        <a href="https://www.biorxiv.org/content/early/2018/11/01/458067">
-            Kelleher et al. 2018
-        </a>
-    </div>
-    </section>
 
-    <!-- 1.2 (LEARN ABOUT ANALYSIS) -->
-    <section  class="future">
-    <h4> Learn to apply modern genomic methods</h4>
-    <p style="font-size:0.85em;">Through computational exercises in class and as assignments.
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Learn genomics through hands-on computational exercises</h3>
+                <br>
+                <div class="textbox"><p>
+                    We will use code exercises to see and touch real genomic data 
+                    to understand how biological processes and information
+                    are translated and interpreted as data.
+                </p></div>
+
+    <!-- ----------------------code block---------------- -->                
     <pre><code class="python">
     # simulate a chromosome from a coalescent tree_sequence 
     tree_sequence = ms.simulate(
@@ -78,230 +107,230 @@
         random_seed=10,
         )
 
-    ## calculate linkage disequilibrium across the chromosome
+    # calculate linkage disequilibrium across the chromosome
     ldx = ms.LdCalculator(tree_sequence).get_r2_matrix()
     </code></pre>  
-    </section>
+    <!-- ----------------------code block---------------- -->
 
-
-    <!-- 1.3 (LEARN TECHNOLOGY) -->
-    <section class="future" hidden="">
-    <h4> Learn about modern genomic technologies </h4>
-    <p style='font-size:0.85em;'> 
-    What methods exist and when to choose one over another.
-    </p>
-    <img class=plain  src="./data/genome-methods.png" style="width: 60%; height: 20%;">
-    </section>
-
-
-    <!-- 1.4 (OUR LEARNING OBJECTIVES)-->
-    <section class="future">
-    <h2>In summary...</h2>
-    <br>
-    <div align='left'>
-        <p> 
-        Learn to <strong>design, conduct, and analyze </strong>genomic 
-        experiments. By the end of class you should be able to: 
-        </p>
-
-        <div style="margin-left: 5%; margin-right: 5%">
-        <p style="font-size:0.75em; color:#568259; font-weight:400; line-height:2.2em;">        
-        <br>
-        1. Describe the structure of genomes; what information can be extracted.
-        <br>
-        2. Choose appropriate sequencing technologies for genomic experiments.
-        <br>
-        3. Analyze genomic data using computational methods.
-        </p>
-        </div>
-    </div>
-    </section>
-</section>
-
-
-<!-- SLIDE 2 (POLL: WHY ARE YOU HERE?) -->
-<section 
-    data-transition="none"
-    data-background-iframe="https://www.polleverywhere.com/free_text_polls/QJ4o7fHuEWsxeJJLOfKhJ?preview=true"
-    style="top:-960px; display: block;" 
-    class="future" 
-    hidden="">       
-</section>
-
-
-<!-- SLIDE 3 (THE SYLLABUS -- TOPICS) -->
-<section 
-    data-transition="none"
-    data-background-iframe=https://docs.google.com/viewer?url=https://eaton-lab.org/slides/genomics/session-1/data/Syllabus.pdf&embedded=true>
-</section>
-
-<!-- SLIDE 4 SYLLABUS DETAILS -->
-<section
-    data-transition="none"
-    data-background="white" 
-    class="future"
-    hidden="">  
-    <!--     <h4>THE SYLLABUS</h4>
-    <object align="center" data="https://eaton-lab.org/slides/genomics/session-1/data/Syllabus.pdf" type="application/pdf">
-        <iframe src="https://docs.google.com/viewer?url=https://eaton-lab.org/slides/genomics/session-1/data/Syllabus.pdf&embedded=true"
-        width="800"
-        height="600">           
-        </iframe>
-    </object>  
-    </section> -->
-
-
-    <section>
-        <h4>Class format. In each class we will:</h4>
-        <p style='font-size:0.75em; 
-        text-align: left; margin-left: 100px; margin-right: 100px'>
-            <br>
-            1. Discuss previous reading and review previous assignments.      
-            <br><br>
-            2. Introduce new topics.
-            <br><br>
-            3. Assign readings and assignments on the new topic.
-            <br><br>
-            <span style=color:red>
-            - Mon. assigned work load will be light, Wed. will be intensive.
-            <br>
-            - Assignments are due before the start of next class, else score=0.
-            </span>                  
-        </p>
-    </section>
-
-    <section>
-        <h4>Project proposal and presentation</h4>
-        <br>
-        <p style='font-size:0.75em; 
-        margin-left: 100px; margin-right: 100px;'>
-        Propose a novel use/question/investigation using a modern genomic 
-        technology; or propose an idea for a new technology/method, how it
-        would work, and why it would be useful.
-        <br>
-        <br>
-
-        This activity will require synthesizing knowledge about technologies
-        we have learned, and about the data contained within genomes.
-        </p>
-    </section>
-
-    <section>
-        <h5>Field trip and report</h5>
-        <p style='font-size:0.85em;'> 
-        Black Rock Forest Hands-on Portable Genomic Sequencing in the Field</p>
-        <img class=plain  src="./data/blackrock.jpg" style="width: 40%; height: 20%;">
-        <img class=plain  src="./data/nanopore.png" style="width: 40%; height: 20%;">
-        <p style='font-size:0.7em;'>
-        4/26-4/27 (Fri-Sat) Let us know immediately if you cannot make it.</p>
-    </section>
-
-
-    <!-- SLIDE 4: THREE TOPICS with link -->
-    <section class="future" data-transition="none">
-        <h2> Grading: </h2>
-        <br>
-        <p style="
-        color:#568259; 
-        text-align: left; 
-        font-size: 1em; 
-        margin-left: 150px;
-        margin-right: 100px;
-        ">
-        Assignments (50%)
-        <br>  
-        Midterm (15%)
-        <br>  
-        Participation/Quizzes (15%)
-        <br>  
-        Project Proposal (5%)
-        <br>  
-        Project Presentation (5%)
-        <br>  
-        Final trip report (10%)
-        <br>  
-    </section>
-
-
-    <section class="future" data-transition="none">
-        <h3> Our Policy on Working in Groups: </h3>
-        <br>
-        <p style="
-        text-align: left; 
-        font-size: 0.8em; 
-        margin-left: 150px;
-        margin-right: 100px;
-        ">
-        You <b>can discuss</b> the assignment with each other, <br>
-        including on the course chatroom on Courseworks. <br>
-        However, you should not post complete answers on <br>
-        the chatroom, and you <b>cannot work together</b> in groups <br>
-        to complete assignments or share answers.<br>       
-        <br>  
-        We have office hours available between each class <br>
-        that you can use to seek extra help with assignments <br>
-        if needed.
-        </p>
-    </section>    
-
-</section>
+            </div>
+            </section>
 
 
 
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Learn about modern genomics technologies</h3>
+                <br>
+                <div class="textbox"><p>
+                    We will discuss state-of-the-art technologies. Why are these methods useful, what came before, and what is coming next? Why should you choose one method over another?
+                </p></div>
+                <img src="../../genomics-2019/session-1/data/genome-methods.png" style="width:40%">
+                </div>
+            </section>
 
-<!-- SLIDE 4: THREE TOPICS with link -->
-<section class="future" data-transition="none">
-    <h2> Today's topics: </h2>
-    <br>
-    <br>  
-    <a href="#/7"><h4 style="color:#568259"> 
-        An introduction to Codio, the <br>
-        Command Line, and Jupyter</h4></a>
-</section>
 
-
-<!-- SLIDE 7: CODIO TOUR -->
-<!-- style="top:-960px; display: block;"  -->
-    <!-- class="future"> -->
-<section data-transition="none">
-    <section 
-    data-background-iframe="https://codio.com/home/teacher"
-    data-background-interactive
-    >
-    </section>
-
-    <section>
-        <br>
-        <h4>Why do we use codio?</h4>
-        <p style="font-size:0.75em"> 
-            - Everything runs in the cloud.
-            <br>
-            - You do not need to worry about installing any software.
-            <br>
-            - You can run your assignments on *any* computer.
-        </p>
-
-        <br>
-        <h4>What could go wrong?</h4>
-        <p style="font-size:0.75em"> 
-            - If you completely screw up an assignment you must <br>ask us to reset your unit for you. 
-        </p>
-    </section>
-
-    <section>
-        <br>
-        <br>
-        Open up a new terminal in Codio.
-    </section>
-</section>
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> In summary: Learning objectives</h3>
+                <br>
+                <div class="textbox"><p>
+                    Learn to <strong>design, conduct, and analyze </strong>genomic 
+                    experiments. By the end of class you should be able to: 
+                    <br><br>
+                    - Describe the structure of genomes; what information can be extracted.<br>
+                    - Choose appropriate technologies for genomic experiments.<br>
+                    - Analyze genomic data using computational methods.<br>
+                </p></div>
+                </div>
+            </section>
 
 
 
-<!-- SLIDE 8 INTRO TO COMMAND LINE -->
-<section data-transition="none">
-    <section>
-        <h3> Hierarchical File System</h3>
-        <p style="font-size:0.75em"> Always know where you are and where your files are.</p>
+            <section 
+                data-transition="none"
+                data-background-iframe="https://www.polleverywhere.com/free_text_polls/QJ4o7fHuEWsxeJJLOfKhJ?preview=true"
+                style="top:-960px; display: block;" 
+                class="future" 
+                hidden="">       
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Class format: In each class we will</h3>
+                <br>
+                <div class="textbox"><p style="font-size: 1.1em">
+                    <br>
+                    1. Discuss previous reading and review previous assignments.      
+                    <br><br>
+                    2. Introduce new topics.
+                    <br><br>
+                    3. Assign readings and assignments on the new topic.
+                    <br><br>
+
+                    <span style=color:red>
+                    - Mon. assigned work load will be light, Wed. will be intensive.
+                    <br>
+                    - Assignments are due before the start of next class, else score=0.
+                    </span> 
+
+                </p></div>
+                </div>
+            </section>
+
+
+
+            <section 
+                data-transition="none"
+                data-background-iframe=https://docs.google.com/viewer?url=https://eaton-lab.org/slides/genomics/readings/Syllabus-2020.pdf&embedded=true>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Project proposal</h3>
+                    <br>
+                    <div class="textbox"><p>
+                    Propose a novel use/question/investigation using a modern genomic 
+                    technology; or propose an idea for a new technology/method, how it
+                    would work, and why it would be useful.
+                    <br>
+                    <br>
+
+                    This activity will require synthesizing knowledge about technologies
+                    we have learned, and about the data contained within genomes.
+                    </p></div>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Field trip and report</h3>
+                <br>
+                <div class="textbox"><p>
+                Black Rock Forest Hands-on Portable Genomic Sequencing in the Field</p>
+                <img class=plain  src="../../genomics-2019/session-1/data/blackrock.jpg" style="width: 40%; height: 20%;">
+                <img class=plain  src="../../genomics-2019/session-1/data/nanopore.png" style="width: 40%; height: 20%;">
+                </div></div>
+                <p style='font-size:1em;'>
+                4/17-4/18 (Fri-Sat) Let us know immediately if you cannot make it.
+                </p>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Grading</h3>
+                <br>
+                <div class="textbox"><p style="font-size: 1.1em; text-align: center">
+                    Assignments (50%)
+                    <br>  
+                    Midterm (15%)
+                    <br>  
+                    Participation/Quizzes (15%)
+                    <br>  
+                    Project Proposal (5%)
+                    <br>  
+                    Project Presentation (5%)
+                    <br>  
+                    Final trip report (10%)
+                    <br>  
+                </p></div>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Our policy on working in groups</h3>
+                    <br>
+                    <div class="textbox"><p>
+                    You <b>can discuss</b> the assignment with each other,
+                    including on the course chatroom on Courseworks.
+                    However, you should not post complete answers on 
+                    the chatroom, and you <b>cannot work together</b> in groups
+                    to complete assignments or share answers.
+                    <br>  
+                    We have office hours available between each class where
+                    you should seek extra help with assignments.
+                    </p></div>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Introduction to bash/jupyter/the-cloud</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        Throughout this course will assign <i>online computational
+                        notebooks</i> to complete between sessions. These are called
+                        jupyter notebooks, which combine text and code together
+                        into a single document. They are a great tool for teaching
+                        and for doing science. 
+                    </p></div>
+                    <img src=https://jupyter.org/assets/jupyterpreview.png style="width:45%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Codio, binder, and cloud hosting</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        The focus of this class is on genomics. Coding and bioinformatics are
+                        an integral part of genomics, and so we will use them as a tool to learn more about the subject. However, this is not a computer science course. We do not require you to have prior coding experience. We will not require you to install any software on your computer. 
+                        <br><br>
+                        To make it as easy as possible to jump right into doing science we are hosting all of the assignments on cloud-based servers. This means you will be able to login to complete your assignments online without having to install anything on your computer. 
+                        <br>
+                        <br>
+                        <span style="font-weight: 400">
+                        You should have access to codio: <a href="https://codio.com">https://codio.com</a>
+                        <br>
+                        And we will also use a free alternative, binder: <a href=https://mybinder.org/v2/gh/genomics-course/1-introduction/master> example </a>
+                        </span>
+                    </p></div>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Introduction to the bash terminal</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        The system is composed of a hierarchical file system, just like the folder within folders in your own computer. There is a way of specifying the location of any file on your computer with text by describing its <i>path</i>.
+                    </p></div>
+                    <img src="../../workshop/data/Unix-filesystem.png" style="width: 50%; height: 20%;">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Hierarchical file system</h3>                    
+                    <br>
+                    <div class="textbox"><p>
+                        The beginning of the path starts at the <i>root</i>, which is represented by a forward slash (/). From there you can see file and folders of your system, as well as folders leading to your personal file. When you open a terminal you are located somewhere in this file system. You can ask where am I? What is here? 
+                    </p></div>
+                    <img src="../../workshop/data/Unix-filesystem.png" style="width: 50%; height: 20%;">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Hierarchical file system</h3>                    
+                    <br>
+                    <div class="textbox"><p>
+                        The beginning of the path starts at the <i>root</i>, which is represented by a forward slash (/). From there you can see file and folders of your system, as well as folders leading to your personal file. When you open a terminal you are located somewhere in this file system. You can ask where am I? What is here? 
+        <!-- ----------------------------------------------- -->
         <pre><code class="bash">
   # The root (top) of the entire filesystem (used for writing full paths).
   $ /
@@ -312,175 +341,147 @@
   # Up one directory from my current directory (a relative path).
   $ ../
         </pre></code>
+        <!-- ----------------------------------------------- -->
+                    </p></div>
+                </div>
+            </section>
 
-        <img class=plain src="../../workshop/data/Unix-filesystem.png" style="width: 50%; height: 20%;">
-    </section>
 
-    <section>
-        <h3> Hierarchical File System</h3>
-        <p style="font-size:0.75em"> Always know where you are and where your files are.</p>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> The bash command line</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        Bash is a language for interacting with your system from a terminal. From bash you can call a large number of software programs (which we will learn about) to accomplish a large number of tasks, including data analysis.
+                        
+        <!-- ----------------------------------------------- -->
         <pre><code class="bash">
-  # show the files and folders in a location (default target is cur dir)
-  $ ls 
+  # the common syntax of bash commands
+  $ [program name] [-options] [target]
 
-  # show result as a list for cur dir.
+  # an example with the program 'ls'
   $ ls -l ./
 
-  # show another location on the filesystem
+  # the same without using the optional flag -l
+  $ ls ./
+
+  # the same without the optional target (it uses the default target ./)
+  $ ls 
+        </pre></code>
+        <!-- ----------------------------------------------- -->
+                    </p></div>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Hierarchical file system</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        You should always know where you are in the filesystem. This is bioinformatics skill number one. You need to know where your data is located to anything with it.
+                        
+        <!-- ----------------------------------------------- -->
+        <pre><code class="bash">
+  # show the files in your current directory
+  $ ls -l 
+
+  # show the files in a different location on the filesystem
   $ ls -l /bin/
 
-  # move to a new location. This becomes your new cur dir.
-  $ cd folder/
-        </code></pre>
-    </section>
+  # move yourself to a new location. This becomes your new cur dir.
+  $ cd folder
 
-
-
-    <!-- ... -->
-    <section>
-        <p style="font-size:0.75em"> 
-        Your location (current directory) starts from / (the root) and is described
-        by a nested set of directory names leading to your location.  
-        </p>
-        <pre><code class="bash">
-  # use 'pwd' program with no option or target to ask where am I now?
+  # print the path to your current location
   $ pwd
-        </code></pre>
-        <pre><code class="bash" style="background: grey">    /home/deren/        </code></pre>
-
-        <!-- <br> -->
-        <p style="font-size:0.75em"> 
-        We can make new directories and change our location.
-        </p>
-        <pre><code class="bash">
-  # make a new directory (mkdir is the program, genomics is the target)
-  $ mkdir genomics
-
-  # change directory (move) into the new directory and run pwd again
-  $ cd genomics
-  $ pwd
-        </code></pre>
-        <pre><code class="bash" style="background: grey">    /home/deren/genomics        </code></pre>                       
-    </section>
-    
-    <section>
-        <h4> Learning bash command line tools</h4>
-        <p style="font-size: 0.8em">
-            There are many great tutorials, and google always has an answer. 
-            If you have no background in using the terminal then you should 
-            complete the <strong>Linux Command Line Tutorial on 
-            Codio</strong>, listed under the Courses tab on the left. </p>
-        <img class=plain src="./data/codio-linux-tutorial.png" style="width: 90%; height: 20%;">
-    </section>    
-
-</section>
+        </pre></code>
+        <!-- ----------------------------------------------- -->
+                    </p></div>
+                </div>
+            </section>
 
 
 
-<!-- SLIDE 9 INTRO TO JUPYTER NOTEBOOKS -->
-<section 
-    data-transition="none" 
-    class="future" 
-    style="top: -20px; display: none;" 
-    hidden="">
-    
-    <section>
-    <h4> Jupyter is a program that can be started from the command line.</h4>
-    <br>
-    <p style="font-size:0.75em"> 
-        It starts a <strong>server</strong> (the hub) that will open in your 
-        browser. From there, you can start notebooks that 
-        run a <strong>kernel</strong> (e.g., Python session) which you can 
-        interact with through the browser. </p>
-    <pre><code class="bash">
-# Starting jupyter from the command line
-$ jupyter-notebook
-    </pre></code>     
-    </section>
-
-    <section>
-<h3> Starting a <strong>Python</strong> notebook in jupyter</h3>
-<p> Select [New] and then [Python 3] </p>
-<img class=plain src="../../workshop/data/jupyter-hub.png" style="width: 80%; height: 20%;">
-    </section>
 
 
-    <section>
-<h4> Starting a <strong>Python</strong> jupyter notebook in Codio</h4>
-<p> Select Notebooks (.ipynb) from the left file menu.</p>
-<img class=plain src="./data/jupyter-codio.png" style="width: 80%; height: 20%;">
-    </section>
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Learning bash command line tools</h3>
+                    <br>
+                    <div class="textbox"><p>
+                    There are many great tutorials, and google always has an answer. 
+                    If you have zero experience in using a terminal then you may 
+                    want to complete the <strong>Linux Command Line Tutorial on 
+                    Codio</strong>, listed under the Courses tab on the left.
+                    </p></div>
+                    <img class=plain src="../../genomics-2019/session-1/data/codio-linux-tutorial.png" style="width: 70%; height: 20%;">
+                </div>
+            </section>
 
 
-    <section>
-<h3> Getting started with notebooks</h3>
-<p> Code cells (Python), Markdown cells (rich text) </p>
-<img class=plain src="../../workshop/data/jupyter-notebook-empty.png" style="width: 80%; height: 20%;">
-    </section>
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Your assignment for Monday</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        You have several notebooks to complete and an assigned paper to read. 
+
+                    <img class=plain src="../../genomics-2019/session-1/data/codio-linux-tutorial.png" style="width: 70%; height: 20%;">
+                </div>
+            </section>
 
 
-    <section>
-<h3> Getting started with notebooks</h3>
-<p> Code cells (Python), Markdown cells (rich text) </p>
-<img class=plain src="../../workshop/data/jupyter-code.png" style="width: 80%; height: 20%;">
-    </section>
-</section>
 
 
-<!-- SLIDE 9 -->
-<!-- data-background-iframe="http://mybinder.org/repo/eaton-lab/toytree" -->
-<!-- <section 
-    data-background-iframe="https://jhub.eaton-lab.org/user/eaton-lab/notebooks/work/nb-1.0-jupyter.ipynb"
-    data-background-interactive 
-    data-transition="none"
-    style="top:-960px; display: block;" 
-    >
-</section>
 
-<section 
-    data-background-iframe="https://jhub.eaton-lab.org/user/eaton-lab/terminals/2"
-    data-background-interactive 
-    data-transition="none"
-    style="top:-960px; display: block;" 
-    >
-</section>
- -->
-        
-        <!-- <div class="slide-number"></div> -->
-        <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
 
 
-        <!-- JAVASCRIPT -->
-        <script src="../../reveal/lib/js/head.min.js"></script>        
-        <script src="../../reveal/js/reveal.js"></script>
-        <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
-        <script>
-            Reveal.initialize({
-                controls:true, 
-                progress:false, 
-                loop:true, 
-                history:true,
-                center:false,
-                fragmentInURL:true,
-                margin:.05,
-                minScale:0.1,
-                maxScale:5,
-                width:960,
-                height:720,
-                theme:Reveal.getQueryHash().theme,
-                transition:Reveal.getQueryHash().transition||"linear",
-                // slideNumber: true,
-                // slideNumber: "h/v",
-                dependencies: [
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../../reveal/lib/js/head.min.js"></script>        
+    <script src="../../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: true,
+            // slideNumber: "h/v",
+
+            dependencies: [
                 //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
                 { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                ]
-            });
+                // { src: '../../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                { src: '../../reveal/plugin/math/math.js', async: true }
+            ]
+        });
 
-            // Reveal.configure({ slideNumber: true })
-            // Reveal.configure({ slideNumber: "c/t" })            
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
 
-            // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
-        </script>
-    </body>
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
 </html>

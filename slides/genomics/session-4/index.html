@@ -4,13 +4,24 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Session-4</title>
+
+    <title>Genomics-4</title>
+    <!-- CSS styling -->
     <link rel="stylesheet" href="../../reveal/css/reveal.css">
     <link rel="stylesheet" href="../../eaton-lab.css">
     <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+    <!-- <link rel="stylesheet" href="./custom.css"> -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal/css/print/pdf.css' : '../../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
 </head>
 
 <!-- Not sure yet of this transition effect -->
@@ -20,220 +31,489 @@
     <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
 
         <!-- By giving slides a dimension we can use pixels or % -->
-        <div class="slides" style="width: 960px; height: 720px; transform: translate(-50%, -50%) scale(0.969792) translate(50%, 50%);">
+        <div class="slides" style="width:1600px; height:900px;">
 
-<!-- ###################################################################### -->
-
-
-<!-- SLIDE 0 (TITLE) -->
-<section 
-	data-background="#262626" 
- 	style="top:300.5px; display:block;"
- 	class="present">
-    <div style="margin-left: auto; margin-top: 20%">
-    <h2 class="title">Principles and Applications of Modern DNA Sequencing</h2>
-    <p style="color: lightgrey"> EEEB GU4055</p>
-    <h5 style="color: white">Session 4: BLAST and Homology</h5>
-    <br>
-    </div>
-</section>
-
-<!-- SLIDE 1 (what are we doing today?)-->
-<section
-    data-background="white" 
-    data-transition="none" 
-    class="future"
-    style="top: -20px; display: none;" 
-    hidden="">
-    <h3> Today's topics </h3>
-
-    <br>
-    <p style='font-size:0.9em; 
-    text-align: left; margin-left: 100px; margin-right: 100px'>
-        <br>
-        1. Review notebook assignments: Scientific Python.
-        <br><br>
-        2. Discuss the assigned reading: Genome Annotation.
-        <br><br>
-        3. Introduce new topic: BLAST & Homology.
-        <br><br>
-    </p>
-</section>
+            <!-- SLIDE 0 (TITLE) -->
+            <section id="title" data-background="#262626" style="top:300.5px; display:block;" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 20%">
+                <h1 class="title" style="color:#5D9B84">
+                Principles and Applications of Modern <br> DNA Sequencing</h1>
+                <h5 style="color: lightgrey"> EEEB GU4055</h5>
+                <h4 style="color: white">Session 4: Scientific Python</h4>
+                <br>
+                </div>
+            </section>
 
 
-<!-- SLIDE 2 (warning about being left behind)-->
-<section
-    data-background="white" 
-    data-transition="none" 
-    class="future"
-    hidden="">
+            <section id="contents" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Today's topics </h2>
+                <br>
+                <p style='font-size:1.2em; font-weight:400; color:#5D9B84; text-align:left; margin-left: 25%; margin-right:10%; line-height: 1.0'>
+                <br>
+                1. review of topics thus far.
+                <br><br>
+                2. file I/O
+                <br><br>
+                3. fastq to fasta 
+                <br><br>
+                4. genome annotation
+                <br><br>
+                5. introducing numpy and pandas
+                <br><br>
+                </p>
+                </div>
+            </section>
 
-    <h3> A general note on coding assignments </h3>
 
-    <br>
-    <p style='font-size:0.9em;'> 
-    "I'm having trouble learning Python, am I completely lost?
-    <br>
-    <br>
-    <span style='color:red;'>No</span>, we expect you to learn through 
-    experience. Keep <i>trying</i> to complete the exercises. 
-    Run the notebooks again with the posted answers. Seek out help. 
-    As we said, most future exercises will recycle and reuse the coding 
-    concepts that we've learned so far. 
-    </p>
-</section> 
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Python Dictionaries</h3>
+                <br>
+                <div class="textbox"><p>
+                  A look-up table. Store values associated with look-up keys. Very efficient data structure for storing and retrieving data.
+                </p></div>                  
+                <pre><code class="python">
+  # make a dict using curly bracket format
+  adict = {
+    'key1': 'val1', 
+    'key2': 'val2',
+  }
 
-<!-- SLIDE 3 (notebook 1.0 review)-->
-<section
-    data-background="white" 
-    data-transition="none" 
-    class="future"
-    style="top: -20px; display: none;" 
-    hidden="">
+  # request a value using a key
+  print(adict['key1'])
+                </code></pre>
+                <pre><code class="python" style="background: grey">        
+  val1
+                </code></pre>                
 
-    <section>
-        <h3> Notebook 2.3: Files</h3>
-        <p style="font-size:0.75em"> 
-        Open and close files in Python.
-        </p>       
-        <pre><code class="python">
-  # Open a file object
-  infile = open("./datafiles/data.txt", "r")
+                </div>
+            </section>    
 
-  # read data as a string
-  data = infile.read()
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Comments are a key part of writing good code</h3>
+                <pre><code class="python" style="max-height: 600px">
+  # import the random library
+  import random
+
+  # create a list with 1000 random numbers between 0-10
+  integer_list = [random.randint(0, 10) for i in range(1000)]
+
+  # create an empty dictionary
+  counter = {}
+
+  # iterate over elements of the integer list
+  for item in integer_list:
+      
+      # conditional True if item is not already in the dict keys
+      if item not in counter:
+          # set the value to 1 for this key
+          counter[item] = 1
+      
+      # item is already in dict keys 
+      else:
+          # increment value by 1 for this key
+          counter[item] += 1
+                </code></pre>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Python Advanced</h3>
+                <br>
+                <div class="textbox"><p>
+                  You have now learned all of the core object types in Python. From these simple objects more complex Python object can be built. Thousands of complex software tools have been developed from creatively combining these objects with Python coding routines.
+                </p></div>                  
+                <pre><code class="python">
+  # The core Python object types
+  a_integer = 8  
+  b_float = 0.2345
+  c_string = "a string"
+  d_list = ["a", "list", "of", "strings"]
+  e_tuple = ("a", "tuple", "of", "strings")
+  f_dict = {"a key": ["and value in a dictionary"]}
+                </code></pre>
+                </div>
+            </section>    
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> File I/O: bash to Python</h3>
+                <pre><code class="bash">
+  %%bash  
+  wget http://eaton-lab.org/data/40578.fastq.gz -q -O 40578.fastq.gz
+                </code></pre>    
+                <pre><code class="python">
+  import os
+  import gzip
+  import requests
+
+  # the URL to file 1
+  url1 = "https://eaton-lab.org/data/40578.fastq.gz"
+
+  # open a file for writing and write the content to it
+  with gzip.open("40578.fastq.gz", 'wb') as ffile:
+      ffile.write(requests.get(url1).content)
+                </code></pre>
+              </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> File I/O: file objects</h3>
+                <div class="textbox"><p>
+                  Reading and writing files in Python is done through File
+                  objects. You first create an object, then use it is some 
+                  way (functions), and finally close it.
+                </p></div>
+                <pre><code class="python">   
+  # open a file object in write-mode 
+  ofile = open("./datafiles/helloworld.txt", 'w')
+
+  # write a string to the file
+  ofile.write("hello world")
 
   # close the file object
-  infile.close()
-        </pre></code>
+  ofile.close()
+                </code></pre>
+                </div>
+            </section>
 
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> File I/O: file objects</h3>
+                <div class="textbox"><p>
+                  The term 'with' creates context-dependence within the 
+                  indented block. The object can have functions that are 
+                  automatically called when the block starts or ends. For
+                  an open file object the block ending calls .close(). This 
+                  often is simpler better code.
+                </p></div>
         <pre><code class="python">
-  # A simpler alternative
-  with open("./datafiles/data.txt", 'r') as infile:
-      data = infile.read()
+  # a simpler alternative: use 'with', 'as', and indentation
+  with open("./helloworld.txt", 'w') as ofile:
+      ofile.write("hello world")
         </code></pre>
-    </section>
+                </div>
+            </section>
 
-    <section>
-        <h3> Notebook 2.3: Files</h3>
-        <p style="font-size:0.75em"> 
-        Open and close files in Python.
-        </p>       
-        <pre><code class="python">
-  # Open a file object for writing
-  outfile = open("./datafiles/data.txt", "w")
 
-  # write data as a string
-  outfile.write("hello world")
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> File I/O: file objects</h3>
+                <div class="textbox"><p>
+                  To reiterate, these two code blocks are equivalent.
+                </p></div>
+                <pre><code class="python">   
+  # open a file object in write-mode 
+  ofile = open("./helloworld.txt", 'w')
+
+  # write a string to the file
+  ofile.write("hello world")
 
   # close the file object
-  outfile.close()
-        </pre></code>
-
-        <pre><code class="python">
-  # A simpler alternative
-  with open("./datafiles/data.txt", 'w') as outfile:
-      outfile.write("hello world")
-        </code></pre>
-    </section>
-
-</section>
+  ofile.close()
+                </code></pre>                
+                <pre><code class="python">
+  # a simpler alternative: use 'with', 'as', and indentation
+  with open("./helloworld.txt", 'w') as ofile:
+      ofile.write("hello world")
+                </code></pre>
+                </div>
+            </section>
 
 
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> File I/O: file objects</h3>
+                <div class="textbox"><p>
+                  Compression or decompression is as simple as writing or reading using a File object from a compression library (e.g., gzip or bz2).
+                </p></div>
+                <pre><code class="python">   
+  import gzip
 
-<!-- SLIDE 3 (notebook 1.0 review)-->
-<section
-    data-background="white" 
-    data-transition="none" 
-    class="future"
-    style="top: -20px; display: none;" 
-    hidden="">
+  # open a gzipped file object in write-mode to expect byte strings
+  ofile = gzip.open("./helloworld.txt", 'wb')
 
-    <section>
-        <h3> Notebook 3.0: Dictionaries</h3>
-        <p style="font-size:0.75em"> 
-        Python objects.
-        </p>       
-        <pre><code class="python">
-  # Dictionaries are used to store key/value pairs
-  {"a key": ["and value in a dictionary"]}
-        </pre></code>
+  # write a byte-string to the file
+  ofile.write(b"hello world")
 
-        <pre><code class="python">
-  # dicts can be created using curly brackets or the dict() func.
-  dict([("a", 3), ("b", 4), ("c", 5)])
-        </code></pre>
-    </section>
+  # close the file object
+  ofile.close()
+                </code></pre>
+                </div>
+            </section>
 
 
-   <section>
-        <h3> Notebook 3.0: Dictionaries</h3>
-        <p style="font-size:0.75em"> 
-        List comprehension methods: a shortcut.
-        </p>       
-        <pre><code class="python">
-  # list-comprehension example for list objects
-  newlist = [i for i in range(10)]
-  newlist          
-        </pre></code>
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> File I/O: reading </h3>
+                <div class="textbox"><p>
+                  Open a file and call .read() to load all of the contents at once to a string or bytes object. 
+                </p></div>
+                <pre><code class="python">   
+  # open a file
+  fobj = open("./data.txt", 'r')
+
+  # read data from this file to create a string object
+  fdata = fobj.read()
+
+  # close the file
+  fobj.close()
+
+  # print part of the string 'fdata'
+  print(fdata[:500])
+                </code></pre>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> File I/O: reading </h3>
+                <div class="textbox"><p>
+                  Open a file and call .read() to load all of the contents at once to a string or bytes object. 
+                </p></div>
+                <pre><code class="python">   
+  # open a gzip file
+  fobj = gzip.open("./data.fastq", 'r')
+
+  # read compressed data from this file and decode it
+  fdata = fobj.read().decode()
+
+  # close the file
+  fobj.close()
+
+  # print part of the string 'fdata'
+  print(fdata[:500])
+                </code></pre>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> File I/O: reading </h3>
+                <div class="textbox"><p>
+                  Once again, the 'with' context style of code is a bit more concise.
+                </p></div>
+                <pre><code class="python">   
+  # open a gzip file and read data using 'with'
+  with gzip.open("./data.fastq", 'r') as fobj:
+      fdata = fobj.read().decode()
+      print(fdata[:500])
+                </code></pre>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> File I/O: file paths</h3>
+                <div class="textbox"><p>
+                  File paths are an important concept to master in bioinformatics. Be aware of the absolute path to where you are, and where the files you want to operate on are located, and understand how relative paths can also point to these locations.
+                </p></div>
+                <pre><code class="python">   
+  # os.path.abspath() prints the absolute path from a relative path
+  os.path.abspath(".")
+
+  # os.path.join() combines two or more parts of paths together with /
+  os.path.join("/home/deren", "file1.txt")  
+
+  # os.path.basename() and os.path.dirname() return the dir and filename 
+  os.path.basename("/home/deren/file.txt")
+
+  # check if a file exists before trying to do something with it
+  os.path.exists("badfilename.txt")
+                </code></pre>
+                </div>
+            </section>           
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> The FASTA file format</h3>
+                <div class="textbox"><p>
+                  The <a href=https://en.wikipedia.org/wiki/FASTA_format>fasta</a>
+                  format is commonly used to store sequence data. We learned
+                  about it in our first notebook assignment and also saw some 
+                  empirical examples representing full genomes. The delimiter
+                  ">" separates sequences. Files typically end in .fasta, .fna,
+                  (DNA specific) or .faa (amino acids specific).
+                </p></div>
+                <pre><code class="bash">
+  >mus musculus gene A
+  AGTCAGTCAGCGCTAGTCATAACACGCAAGTCAATATATACGACAGCAGCTAGCTACTTCGACA
+  CAGTCGATCAGCTAGCTGACTACTATATATTTTTATATGTAAAAAAAACATATGCGCGCTTTTG
+  GGGGAGTATTTTATGCATATCATGCAGCATATAGGTAGCTGTGCATGCTGCTAGCACGATCGTA
+  CATGCTAGCTAGCTAGCTAGCTAGCTAGCTGACTAGCTAGTGCTAGCTAGCTATATATATATAT
+
+  >mus musculus gene B  
+  ACGTACGTACGTACGTAGCTAGCTACATGCTAGCATGCATGCTAGCTAGCTATATATAGCCCCC
+  CAGCGGGGGGCGTCATGCATAAAAAAAAAAAGCATCATGCCGCGCCCCTAGCGCGTATTTTCTT
+  ...
+                </code></pre>
+                </div>
+              </section>
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> The FASTA file format</h3>
+                <div class="textbox"><p>
+                  Challenge: Write code to combine a fasta header (e.g., "> sequence name") and a random sequence of DNA to a create valid fasta data string. Then write the data to a file and save it as "datafiles/sequence.fasta".
+                </p></div>
+                <pre><code class="python">
+  # a function to return a random DNA string
+  def random_dna(length):
+      dna = "".join([random.choice("ACGT") for i in range(length)])
+      return dna
+
+  # format dna string to fasta format
+  dna = random_dna(20)
+  fasta = "> sequence name\n" + dna
+
+  # write it to a file
+  with open("./datafiles/sequence.fasta", 'w') as out:
+      out.write(fasta)
+                </code></pre>
+              </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> The FASTQ file format</h3>
+                <div class="textbox"><p>
+                  The <a href=https://en.wikipedia.org/wiki/FASTQ_format>fastq</a>
+                  format is commonly used to store sequenced read data. 
+                  It differs from fasta in that it contains quality (confidence)
+                  scores. Each sequenced read represented by four lines, and a
+                  single file can contain many millions of reads.
+                </p></div>
+                <pre><code class="bash">
+  @SEQ_ID
+  GATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT
+  +
+  !''*((((***+))%%%++)(%%%%).1***-+*''))**55CCF>>>>>>CCCCCCC65
+                </code></pre>
+                </div>
+              </section>
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> FASTQ quality scores</h3>
+                <div class="textbox"><p>
+                  Quality scores are encoded using ASCII characters, where each
+                  character can be translated into an integer score that is 
+                  log10 probability the base call is incorrect:
+                  <br>
+                  $$ Q = -10 * log_{10}(P) $$
+                </p></div>
+                <pre><code class="python">
+  # load a phred Q score as a string:
+  phred = "IIIIIGHIIIIIHIIIIFIIIDIHGIIIBGIIFIDIDI"
+
+  # ord() translates ascii to numeric
+  q_scores = [ord(i) for i in phred]
+
+  # values are offset by 33 on modern Illumina machines
+  q_scores = [ord(i) - 33 for i in phred]
+  print(q_scores)
+                </code></pre>
+        </code></pre>    
+        <pre><code class="python" style="background: grey">        
+  [40, 40, 40, 40, 40, 38, 39, 40, 40, 40, 40, 40, 39, 40, 40, ...
+        </code></pre>                
+                </div>
+              </section>
+
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> FASTQ quality scores</h3>
+                <div class="textbox"><p>
+                  Quality score is an integer log10 probability the base call
+                  is incorrect:<br>
+                  $$ Q = -10 * log_{10}(P) $$
+                </p></div>
+                <pre><code class="python">
+  # Q=30 means 3 decimal places in the probability of being wrong (0.001)
+  import math
+  print(-10 * math.log10(0.001))
+
+  # print the probability associated with the first few q_scores
+  probs = [10 ** (q / -10) for q in q_scores]
+  print(probs)
+                </code></pre>
+        </code></pre>    
         <pre><code class="python" style="background: grey">
-  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-        </code></pre>
+  30.0
+  [0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.00015848931924611142, ...
+        </code></pre>                
+                </div>
+              </section>
 
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> FASTQ conversion </h3>
+                <div class="textbox"><p>
+                  Now that you understand reading and writing files, working with string and list objects, and the format of fastq and fasta file formats, you are prepared to write a function to convert from one to the other.
+                </p></div>
         <pre><code class="python">
-  # list comprehension for a dictionary from a list of lists
-  ddict = {i: j for (i, j) in [['a', 1], ['b', 2], ['c', 3]]}
-  ddict
-        </code></pre>
-        <pre><code class="python" style="background: grey">
-  {'a': 1, 'b': 2, 'c': 3}
-        </code></pre>
+  def fastq2fasta(in_fastq, out_fasta):
+      """
+      (1) Write a function; 
+      (2) read 'datafiles/40578.fastq.gz' from disk; 
+      (3) convert to fasta format; and 
+      (4) write result to a file 
+      """
+      # 2. read in the fastq file
+      with gzip.open(in_fastq, 'rb') as indata:
+          fastq = indata.read().decode()
 
-    </section>
+      # 3. convert to fasta: start with an empty list
+      fastadata = []
 
+      # split file into separate reads on \n@ delimiter
+      reads = fastq.split("\n@")
+      for read in reads:
+          # split read into 4 lines
+          lines = read.split("\n")
 
-    <section>
-        <h3> Notebook 3.0: Dictionaries</h3>
-        <p style="font-size:0.75em; background-color: #b7e2c0; color: #3a6944"> 
-    Action 1:
-    Add comments to the code below.        </p>
-        <pre><code class="python" style="max-height: 510px">
-# comment: import the random library
-import random
+          # join ">", line[0], and line[1] to make fasta formatted sequence
+          fastadata.append(">" + lines[0] + "\n" + lines[1])
 
-# comment: create ea list with 1000 random numbers between 0-10
-integer_list = [random.randint(0, 10) for i in range(1000)]
+      # join strings in the list back together into a string
+      fasta = "\n".join(fastadata)
 
-# comment: create an empty dictionary
-counter = {}
-
-# comment: iterate over elements of the integer list
-for item in integer_list:
-    
-    # comment: conditional True if item is not already in the dict keys
-    if item not in counter:
-        # comment: set the value to 1 for this key
-        counter[item] = 1
-    
-    # comment: item is already in dict keys 
-    else:
-        # comment: increment value by 1 for this key
-        counter[item] += 1
-        </pre></code>
-    </section>
-</section>
+      # write to a file
+      with open(out_fasta, 'w') as out:
+          out.write(fasta)
+        </code></pre>    
+                </div>
+            </section>
 
 
-<section
-    data-background="white" 
-    data-transition="none" 
-    class="future"
-    style="top: -20px; display: none;" 
-    hidden="">
 
-    <section>
-        <h4> Notebook 3.1: Transcription & Translation</h4>
-        <pre><code class="python" style="max-height: 525px">
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> Dictionaries in action: translation</h3>
+                <pre><code class="python" style="max-height: 600px">
   GENCODE = {
       'ATA': 'I', 'ATC': 'I', 'ATT': 'I', 'ATG': 'M', 
       'ACA': 'T', 'ACC': 'T', 'ACG': 'T', 'ACT': 'T', 
@@ -252,203 +532,419 @@ for item in integer_list:
       'TAC': 'Y', 'TAT': 'Y', 'TAA': '_', 'TAG': '_', 
       'TGC': 'C', 'TGT': 'C', 'TGA': '_', 'TGG': 'W', 
   } 
-
-  # get amino acid for a particular codon
   GENCODE["CTA"]
+                </code></pre>
         </code></pre>    
-        <pre><code class="python" style="background: grey">        
-  "L"
-        </code></pre>
-    </section>  
+        <pre><code class="python" style="background: grey">
+  L
+          </code></pre>                
+                </div>
+              </section>
 
 
-    <section>
-        <h4> Notebook 3.1: Transcription & Translation</h4>
-        <p style="font-size:0.75em;">
-    Create a string of DNA with a coding block between two non-coding blocks.
-        </p>
-        <pre><code class="python">
-  # use a random seed so we will all draw the same random values each time (repeatable) 
-  random.seed(12345)
-
-  # create a genomic region containing a coding region surrounded by non-coding DNA
-  region = random_dna(300) + "ATG" + random_coding_dna(100) + "TGA" +  random_dna(300)
-  region
-        </code></pre>    
-
-        <pre><code class="python" style="background: grey">        
-  'TAGGCGTCGATGCCGATCCCACGGATGATAACCGATACTCGACATCCGTCACGACCGGCTGAAATATCAGCATAATGTCGACATCGCCCCGCAACATCAGTATTCCCAGGCTCCCTTGAATCCCCGGCAGTAGAACGAGTGTGTGGTTAGTACGCAAAACTTCGGCGGTAGGATCCACGCGTCACAAGTGACATCCGGCGAAACTACGCTTTAGATGAGTTAGGTGCTAATAACAAGCATTTATCCGCTCTCCCCTACAAAAGCCGCTGTTCTAAGCTTATTAGCTGTACCTGCAGATGCATGTCTGATCCAATCGGTCAACACAGATGGGCACTCAGGACGTGTTCTAGACTCTGTGCAATAATCAAAGCCGCGTCTTGGTCTAATCCGAGAAATTTAGACGACCCAGTCCTTATCAGACGACAATGTGGAGCGCAATCTGAAGATGGTGAGTTCCGCGCCGCACTGGTCCTTGTTACCGAGCGTTTGGGCCGTTGTGAAAAGTGCCGAACAGGGACTGGTTGCTTAAACCTGGAGCCCTATCAGGGTCAACGTACGCATGGCGAAAACTCACGAAGGGACATATCCCGGAAAGATATACCTTGACGCTCGGGTAGCTAGTTCGGCTTATGCTTCGTGCTGACCAATCGACCAAGGCGGGGTAATTGCGACGACCCGCGGAACCACAACTTTACCCTAGACAAGCGGCGCGTAGCGTCCTATCGCCGGGAGTCTAACTCAAATCATATGGCCCATCGCAGTGCGTGAGTTTTATTCAGCCCACCCCAACAAGAGATCGAAATAGTAATCTGTCTCTCTGCTATGATGAGACAATGTCCGTACACTCACTACTTGTTGTACAGTAGATATTCAACCTTAGTGGTTGGTACCTTAGGGTGGGCGAAT'
-        </code></pre>
-    </section>        
-
-
-    <section>
-        <h4> Notebook 3.1: Transcription & Translation</h4>
-        <p style="font-size:0.65em;">
-        </p>
-        <pre><code class="python" style="margin: 10px auto; ">
-  # find the first occurrence 
-  region.index("ATG")
-
-  # 9
-        </pre></code>
-
-        <pre><code class="python">
-  # split on ATG and count items in the resulting list
-  len(region.split("ATG"))
-
-  # 16
-        </pre></code>
-
-        <pre><code class="python">
-  # best: get a list with every ATG start position
-  starts = [i for (i, j) in enumerate(region) if region[i: i+3] == "ATG"]
-
-  # [9, 24, 74, 214, 296, 300, 326, 425, 445, 559, 629, 747, 822, 825, 833]
-        </pre></code>
-    </section>
-</section>
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> How are genes identified?</h3>
+                <br>
+                <div class="textbox"><p>
+                  Genome annotation is the process of labeling genomic elements, 
+                  including genes and their parts. Your reading by Yandell and Ence
+                  introduces the concepts of genome annotation, a process that
+                  has evolved rapidly over the last decade.
+                  <br><br>
+                  We used a translation dictionary in Python to search a string
+                  of DNA for start and stop codons to an open reading frame (ORF)
+                  : a region that could be translated. This was a relatively crude approach.
+                  <br><br>
+                  Modern approaches use <a href="https://en.wikipedia.org/wiki/RNA-Seq">RNA-seq</a>, in which RNA is extracted and reverse-transcribed into cDNA
+                  -- the subset of the genome matching to coding genes -- that
+                  is then sequenced and mapped to a reference genome. Thus we only
+                  examine a subset of the genome for annotation.
+                </p></div>             
+                </div>
+              </section>
 
 
 
-<section
-    data-background="white" 
-    data-transition="none" 
-    class="future"
-    style="top: -20px; display: none;" 
-    hidden="">
-
-    <section>
-        <h4> Notebook 3.2: Numpy arrays</h4>
-        <pre><code class="python" style="max-height: 525px">
-# create a 3-dimensional array
-np.zeros((5, 3, 3))
-        </code></pre>    
-        <pre><code class="python" style="background: grey; max-height: 500px">        
-array([[[0., 0., 0.],
-        [0., 0., 0.],
-        [0., 0., 0.]],
-
-       [[0., 0., 0.],
-        [0., 0., 0.],
-        [0., 0., 0.]],
-
-       [[0., 0., 0.],
-        [0., 0., 0.],
-        [0., 0., 0.]],
-
-       [[0., 0., 0.],
-        [0., 0., 0.],
-        [0., 0., 0.]],
-
-       [[0., 0., 0.],
-        [0., 0., 0.],
-        [0., 0., 0.]]])
-        </code></pre>
-    </section>  
-</section>
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> Genome annotations in practice</h3>
+                <br>
+                <div class="textbox"><p>
+                  Annotated genomes of model organisms, like humans and 
+                  Drosophila, are works in progress. However, they are considered
+                  to be highly accurate in comparison to most other genomes that
+                  have been sequenced recently. This is because their genomes are
+                  assembled better (more contiguous), and because they are able to
+                  build upon decades of experimental work to infer the function 
+                  of genes. 
+                  <br><br>
+                  Your next assignment will cover assembly statistics, like N50,
+                  what it means, how to calculate it, and what type of values
+                  represent good versus poor genome assemblies.
+                </p></div>             
+                </div>
+              </section>              
 
 
-<section
-    data-background="white" 
-    data-transition="none" 
-    class="future"
-    style="top: -20px; display: none;" 
-    hidden="">
 
-    <section>
-        <h4> Notebook 3.3: Pandas DataFrames</h4>
-        <pre><code class="python" style="max-height: 525px">
-# create an array with randomly generated values 
-df = pd.DataFrame({
-    "column1": np.random.normal(0, 1, 10),
-    "column2": np.random.choice(list("ACGT"), 10), 
-    "column3": np.random.randint(0, 5, 10),
-})
-
-# return the dataframe
-df
-        </code></pre>    
-        <pre><code class="python" style="background: grey; max-height: 500px">        
-
-  column1   column2   column3
-0   1.633686    T   4
-1   0.071054    G   4
-2   -0.201375   T   0
-3   0.461895    A   3
-4   -1.480207   G   2
-5   -0.729692   C   0
-6   -0.143699   A   4
-7   -1.108858   G   2
-8   -1.704039   A   1
-9   -2.760000   A   1
-
-        </code></pre>
-    </section>  
-</section>
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> Genome annotations in practice</h3>
+                <br>
+                <div class="textbox"><p>
+                  1. Repeat mask the genome to prevent data mapping to 
+                  repetitive regions (e.g., transposons), which also have 
+                  open reading frames (ORFs) and can interfere with the 
+                  identification of other ORFs associated with genes.
+                  <br><br>
+                  2. Map RNA-seq reads to a reference (e.g., using TopHat) and assemble
+                  transcript contigs from overlapping mapped reads (e.g., using
+                  Cufflinks).
+                  <br><br>
+                  3. <i>ab initio</i> gene prediction: little or no external evidence. Find the most likely coding sequence (CDS) in ORFs. Model parameters (e.g., GC content, intron lengths) affect accuracy, and vary among organisms. Additional evidence includes RNA-seq and Protein sequence data to identify introns/exons and UTRs. 
+                  <br><br>
+                  4. Annotation: combining evidence from multiple data types or analyses.
+                </p></div>             
+                </div>
+              </section>              
 
 
-<section 
-        data-transition="none"
-        data-background-iframe="
-        https://www.polleverywhere.com/discourses/cT0SRI5zxcRR7nmKa951a?preview=true"
-        style="top:-960px; display: block;" 
-        class="future" 
-        hidden="">       
-</section>    
+            <section class="future" data-transition="none">
+              <img src="../../data-img/Yandell-annotation.png" style="width:75%">
+            </section>              
+
+            <section 
+                data-transition="none"
+                data-background-iframe="
+                https://www.polleverywhere.com/free_text_polls/cT0SRI5zxcRR7nmKa951a?preview=true"
+                style="top:-960px; display: block;" 
+                class="future" 
+                hidden="">       
+            </section>    
 
 
-<section>
-    <h4> Assignment</h4>
-    <br>
-    <p style="font-size:0.75em;">
-    Complete Unit 4 on Codio: 2 notebooks.
-    <br>
-    <br>
-    “OrthoDB: A Hierarchical Catalog of Animal, Fungal and Bacterial Orthologs.” Nucleic Acids Research 41 (Database issue): D358–65. 
-    <a href="https://doi.org/10.1093/nar/gks1116">https://doi.org/10.1093/nar/gks1116</a>   
-    </p>
-</section>
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> Two more Python object: Arrays and DataFrames </h3>
+                <div class="textbox"><p>
+                  numpy and pandas are the reason Python is popular for data science. 
+                </p></div>
+                <pre><code class="python">
+  # numpy arrays are similar to lists, but also very different.
+  import numpy as np
+  arr = np.array([0, 5, 2, 1, 14])
+
+  # pandas dataframes are tables {column name: data}
+  import pandas as pd
+  df = pd.DataFrame({"column1": arr})
+                </code></pre>
+                <pre><code class="python" style="background: grey">
+  [ 0  5  2  1 14]
+     column1
+  0        0
+  1        5
+  2        2
+  3        1
+  4       14
+                </code></pre>                
+                </div>
+              </section>
 
 
-</div>
-</div>
-    
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> A short numpy intro </h3>
+                <div class="textbox"><p>
+                  numpy arrays are super efficient data structures. All data in 
+                  an array is of the same type (int8, int64, float64) which makes
+                  computations fast. In addition, is performs broadcasting on 
+                  arrays and includes many numerical functions.
+                </p></div>
+                <pre><code class="python">
+  # create an array from a list
+  arr = np.array([0, 5, 2, 1, 14])
+
+  # create a 1-d array of all zeros
+  arr = np.zeros(100)
+
+  # create a 2-d array of all zeros
+  arr = np.zeros((10, 10))
+
+  # create a 2-d array of all zeros of integer type data
+  arr = np.zeros((10, 10), dtype=np.int8)
+                </code></pre>
+                </div>
+              </section>
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> A short numpy intro </h3>
+                <div class="textbox"><p>
+                  numpy arrays are super fast and efficient. All data is of the 
+                  same 'type' (int8, int64, float64). Functions can
+                  be 'broadcast', and many numerical functions are supported.
+                </p></div>
+                <pre><code class="python">
+  # array of 1-10 reshaped to be 5 rows 2 columns
+  narr = np.arange(10).reshape((5, 2))
+  # print the shape of the array
+  print(narr.shape)
+  # arrays can be indexed just like lists  
+  print(narr)
+                </code></pre>
+                <pre><code class="python" style="background: grey">
+  (5, 2)
+  array([[0, 1],
+         [2, 3],
+         [4, 5],
+         [6, 7],
+         [8, 9]])
+                </code></pre>
+                </div>
+              </section>
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> A short numpy intro </h3>
+                <div class="textbox"><p>
+                  numpy arrays are super fast and efficient. All data is of the 
+                  same 'type' (int8, int64, float64). Functions can
+                  be 'broadcast', and many numerical functions are supported.
+                </p></div>
+                <pre><code class="python">
+  # two arrays can be added together value-by-value
+  xarr = np.arange(10) + np.arange(10)
+
+  # to lists are concatenated when added, not processed per-value
+  larr = list(range(10)) + list(range(10))
+
+  print(xarr)
+  print(larr)
+                </code></pre>
+                <pre><code class="python" style="background: grey">
+[ 0  2  4  6  8 10 12 14 16 18]
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+                </code></pre>
+                </div>
+              </section>
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> A short numpy intro </h3>
+                <div class="textbox"><p>
+                  numpy arrays are super fast and efficient. All data is of the 
+                  same 'type' (int8, int64, float64). Functions can
+                  be 'broadcast', and many numerical functions are supported.
+                </p></div>
+                <pre><code class="python">
+  # arrays can be indexed and sliced just like lists but in more dimensions
+  xarr = np.zeros(1000).reshape((10, 10, 10))
+  print(xarr[0])
+                </code></pre>
+                <pre><code class="python" style="background: grey">
+  [[0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+   [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+   [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+   [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+   [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+   [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+   [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+   [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+   [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+   [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]]
+                </code></pre>
+                </div>
+              </section>
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> A short numpy intro </h3>
+                <div class="textbox"><p>
+                  Many useful functions/modules in numpy, like .random.
+                </p></div>
+                <pre><code class="python">
+  # sample random values with numpy
+  np.random.normal(0, 1, 10)
+                </code></pre>
+                <pre><code class="python" style="background: grey">
+  array([-0.35549967, -2.1416518 , -0.49230544,  1.47456753,  1.31386496,
+         -1.38097489, -0.2578635 , -1.60208958, -0.45677291,  0.91109757])
+                </code></pre>
+                </div>
+              </section>              
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> A short pandas intro </h3>
+                <div class="textbox"><p>
+                  DataFrames are tables that can be selected by row or column names or indices. 
+                </p></div>
+                <pre><code class="python">
+  data = pd.DataFrame({
+      "randval": np.random.normal(0, 1, 10),
+      "randbase": np.random.choice(list("ACGT"), 10), 
+      "randint": np.random.randint(0, 5, 10),
+  })
+                  </code></pre>
+                <pre><code class="python" style="background: grey">
+      randval randbase  randint
+  0  0.602565        A        1
+  1 -0.657427        G        1
+  2 -0.907259        C        0
+  3  0.775811        T        0
+  4  0.601185        T        4
+  5  2.155603        G        2
+  ...
+                </code></pre>
+                </div>
+              </section>
+
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> A short pandas intro </h3>
+                <div class="textbox"><p>
+                  Read/write data to and from tabular formats (e.g., CSV). 
+                </p></div>
+                <pre><code class="python">
+  # load comma or tab-separated data from a file
+  df = pd.read_csv("datafile.csv", sep="\t")
+
+  # load a datafile from a URL
+  df = pd.read_csv("https://eaton-lab.org/data/iris-data-dirty.csv", header=None)
+                  </code></pre>
+                <pre><code class="python" style="background: grey">
+         0    1    2    3               4
+  0    5.1  3.5  1.4  0.2     Iris-setosa
+  1    4.9  3.0  1.4  0.2     Iris-setosa
+  2    4.7  3.2  1.3  0.2     Iris-setosa
+  3    4.6  3.1  1.5  0.2     Iris-setosa
+  4    5.0  3.6  1.4  0.2     Iris-setosa
+  ..   ...  ...  ...  ...             ...
+                </code></pre>
+                </div>
+              </section>
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> A short pandas intro </h3>
+                <div class="textbox"><p>
+                  Indexing rows, columns, or cells. Similar to numpy or Python lists you can use indexing with .iloc
+                </p></div>
+                <pre><code class="python">
+  # select row 0, all columns
+  data.iloc[0, :]
+
+  # select column 0, all rows
+  data.iloc[:, 0]
+
+  # select a range of columns and rows
+  data.iloc[:4, :4]
+
+  # select a specific cell
+  data.iloc[3, 2]
+                </code></pre>
+                </div>
+              </section>              
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> A short pandas intro </h3>
+                <div class="textbox"><p>
+                  To index by row or column names use .loc.
+                </p></div>
+                <pre><code class="python">
+  # select row 0, all columns
+  data.loc[0, :]
+
+  # select column "randint", all rows
+  data.loc[:, "randint"]
+
+  # create a boolean mask (True, False) where
+  mask = data.loc[:, "randint"] > 1
+
+  # apply mask to select all rows where mask is True
+  data.iloc[mask, :]
+                </code></pre>
+                </div>
+              </section>              
+
+
+
+            <section class="future" data-transition="none">
+              <div class="standard">
+                <h3> Assignment </h3>
+                <div class="textbox"><p>
+                  Your assignment will introduce numpy and pandas for operating 
+                  on data related to genome annotations. You will calculate genome
+                  N50 using numpy, and you will read and operate on a GFF file using
+                  pandas. Revisit the Yandell paper as needed.
+                  <br><br>
+                  Two assigned short chapters: Chapters 2,3 of the Python Data Science Handbook.
+                  <br><br>
+                  One assigned primary reading: “OrthoDB: A Hierarchical Catalog of Animal, Fungal and Bacterial Orthologs.” Nucleic Acids Research 41 (Database issue): D358–65. https://doi.org/10.1093/nar/gks1116
+                </p></div>
+                </div>
+              </section>
+
+
+
+
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
     <!-- <div class="slide-number"></div> -->
     <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../../reveal/lib/js/head.min.js"></script>        
+    <script src="../../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: true,
+            // slideNumber: "h/v",
 
-
-        <!-- JAVASCRIPT -->
-        <script src="../../reveal/lib/js/head.min.js"></script>        
-        <script src="../../reveal/js/reveal.js"></script>
-        <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
-        <script>
-            Reveal.initialize({
-                controls:true, 
-                progress:false, 
-                loop:true, 
-                history:true,
-                center:false,
-                fragmentInURL:true,
-                margin:.05,
-                minScale:0.1,
-                maxScale:5,
-                width:960,
-                height:720,
-                theme:Reveal.getQueryHash().theme,
-                transition:Reveal.getQueryHash().transition||"linear",
-                // slideNumber: true,
-                // slideNumber: "h/v",
-                dependencies: [
+            dependencies: [
                 //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
                 { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                ]
-            });
+                // { src: '../../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                { src: '../../reveal/plugin/math/math.js', async: true }
+            ]
+        });
 
-            // Reveal.configure({ slideNumber: true })
-            // Reveal.configure({ slideNumber: "c/t" })            
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
 
-            // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
-        </script>
-    </body>
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
 </html>

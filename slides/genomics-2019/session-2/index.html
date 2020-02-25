@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Session-2</title>
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width: 960px; height: 720px; transform: translate(-50%, -50%) scale(0.969792) translate(50%, 50%);">
+
+<!-- ###################################################################### -->
+
+
+<!-- SLIDE 0 (TITLE) -->
+<section 
+	data-background="#262626" 
+ 	style="top:300.5px; display:block;"
+ 	class="present">
+    <div style="margin-left: auto; margin-top: 20%">
+    <h2 class="title">Principles and Applications of Modern DNA Sequencing</h2>
+    <p style="color: lightgrey"> EEEB GU4055</p>
+    <h5 style="color: white">Session 2: Intro to Genomics and Python</h5>
+    <br>
+    </div>
+</section>
+
+<!-- SLIDE 1 (what are we doing today?)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+    <h3> Today's topics </h3>
+
+    <br>
+    <p style='font-size:0.9em; 
+    text-align: left; margin-left: 100px; margin-right: 100px'>
+        <br>
+        1. Review notebook assignments.
+        <br><br>
+        2. Discuss the assigned reading.
+        <br><br>
+        3. Introduction to Python.
+        <br><br>
+    </p>
+</section>
+
+
+<!-- SLIDE 2 (warning about being left behind)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    hidden="">
+    <h3> A general note on coding assignments </h3>
+
+    <br>
+    <p style='font-size:0.9em;'> 
+        "I didn't really understand it, can I just move on without learning
+        the subject from this unit?"
+    <br>
+    <br>
+    <span style=color:red>
+        No, most assignments will build on earlier lessons. If you do not 
+        learn the basics now you will get lost later on. 
+        Please attend office hours to seek help if you fall behind.
+    </span>                  
+    </p>
+</section> 
+
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <section>
+        <h3> Notebook 1.0: Intro to jupyter (in codio)</h3>
+        <br>
+        <p> We completed this in class, but did you have difficulty on your 
+            own either with jupyter or jupyter in codio?
+        </p>   
+        <img src="./data/jupyter-celltype.gif" style="width: 95%; height: 25%;">    
+    </section>
+
+    <section>
+        <h3> The unix command line</h3>
+        <p style="font-size:0.75em"> Lines starting with hash (#) are only comments</p>       
+        <pre><code class="bash">
+  # This is the general format of unix command line tools
+  $ program -option1 -option2 target
+        </pre></code>
+
+        <p style="font-size:0.75em"> An example command line program </p>       
+        <pre><code class="bash">
+  # e.g., the 'pwd' program with no option or target prints your cur dir
+  $ pwd
+        </code></pre>
+        <pre><code class="bash" style="background: grey">    /home/deren/        </code></pre>
+    </section>
+
+
+    <section>
+        <h3> The unix command line</h3>
+        <!-- <p style="font-size:0.75em"> An example command with options and target</p>        -->
+        <pre><code class="bash">
+  # The echo command prints text to the screen (stdout)
+  $ echo "hello\tworld"
+        </pre></code>
+        <pre><code class="bash" style="background: grey">
+  hello\tworld        
+       </code></pre>        
+
+        <p style="font-size:0.75em"> An example with option -e </p>       
+        <pre><code class="bash">
+  # The -e option renders special characters as well (e.g., tab)
+  $ echo -e "hello\tworld"
+        </code></pre>
+        <pre><code class="bash" style="background: grey">
+  hello    world        
+        </code></pre>
+    </section>
+
+
+    <section>
+    <h3> Executing bash code in jupyter </h3>
+    <p style='font-size:0.85em;'> 
+        Use the `%%head` header to execute entire jupyter cell as bash code:
+    </p>
+        <pre><code class="bash">
+  %%bash
+  echo -e "hello\tworld"
+        </code></pre>
+        <pre><code class="bash" style="background: grey">
+  hello    world        
+        </code></pre>
+    </section>
+
+
+    <section>
+    <h3> Errors and exceptions </h3>
+    <p style='font-size:0.85em;'> 
+        When an error is detected the Python interpreter will return a message
+        to the cell output with a hint about the error. 
+        <br><br>
+        For example, if we
+        tried to execute bash code in a Python cell:
+    </p>
+        <pre><code class="bash">
+  # we forgot the %%bash header, the code below is not valid Python.
+  echo -e "hello\tworld"
+        </code></pre>
+        <pre><code class="bash" style="background: grey">
+  File "ipython-input-458-239334a501c4", line 1
+    echo -e "hello\tworld"
+                  ^
+  SyntaxError: invalid syntax
+        </code></pre>
+    </section>
+</section>
+
+
+<!-- SLIDE 4 (notebook 1.1 review) -->
+<section data-transition="none" class="future" hidden="">
+
+    <section>
+    <h3> Notebook 1.1: bash-genomes </h3>
+    <img src="./data/yeast-genome.png" style="width: 90%; height: 20%;">    
+    </section>
+
+    <section>
+    <h3> Notebook 1.1: bash-genomes </h3>
+    <p style='font-size:0.9em;'> 
+        What is a reference genome? A fasta file.
+    </p>
+    <pre><code class="bash">
+>NC_001133.9 Saccharomyces cerevisiae S288C chromosome I, complete sequence
+ccacaccacacccacacacccacacaccacaccacacaccacaccacacccacacacacacatCCTAACACTAC
+ACAGCCCTAATCTAACCCTGGCCAACCTGTCTCTCAACTTACCCTCCATTACCCTGCCTCCACTCGTTACCCTG
+TCAACCATACCACTCCGAACCACCATCCATCCCTCTACTTACTACCACTCACCCACCGTTACCCTCCAATTACC
+CAACCCACTGCCACTTACCCTACCATTACCCTACCATCCACCATGACCTACTCACCATACTGTTCTTCTACCCA
+TGAAACGCTAACAAATGATCGTAAATAACACACACGTGCTTACCCTACCACTTTATACCACCACCACATGCCAT
+CCTCACTTGTATACTGATTTTACGTACGCACACGGATGCTACAGTATATACCATCTCAAACTTACCCTACTCTC
+CACTTCACTCCATGGCCCATCTCTCACTGAATCAGTACCAAATGCACTCACATCATTATGCACGGCACTTGCCT
+TCTATACCCTGTGCCATTTACCCATAACGCCCATCATTATCCACATTTTGATATCTATATCTCATTCGGCGGTc
+attgtataaCTGCCCTTAATACATACGTTATACCACTTTTGCACCATATACTTACCACTCCATTTATATACACT
+AATATTACAGAAAAATCCCCACAAAAATCacctaaacataaaaatattctacttttcaacaataataCATAAAC
+GCTTGTGGTAGCAACACTATCATGGTATCACTAACGTAAAAGTTCCTCAATATTGCAATTTGCTTGAACGGATG
+CAGAATATTTCGTACTTACACAGGCCATACATTAGAATAATATGTCACATCACTGTCGTAACACTCTTTATTCA
+AATAATACGGTAGTGGCTCAAACTCATGCGGGTGCTATGATACAATTATATCTTATTTCCATTCCCATATGCTA
+ATATCCTAAAAGCATAACTGATGCATCTTTAATCTTGTATGTGACACTACTCATACGAAGGGACTATATCTAGT
+GATACTGTGATAGGTACGTTATTTAATAGGATCTATAACGAAATgtcaaataattttacgGTAATATAACTTAT
+    </code></pre>
+    </section>
+
+    <section>
+        <h3> A genome fasta file</h3>
+        <p style='font-size:0.7em;'> 
+        Read a compressed fasta file (e.g., a genome) and PIPE the output to 
+        view just a portion of it. The head command is extremely useful for 
+        "peeking" at large files. It's fast!
+        </p>
+        <pre><code class="bash">
+  # pass the result of zcat to the program head
+  $ zcat genomes/virus.fna.gz | head -n 10
+        </code></pre>
+        <pre><code class="bash" style="background: grey">
+  >NC_037667.1 Pandoravirus quercus, complete genome
+  CCGGTACAGTGAGCGGTTCACGGCCTGGCCACGGTCGACGGAGTGCCGTGCGATGCCATCGGCGACGGCCG
+  CGCGGGCATTCGCACGTGCGACCACAGCCGTCAGTGGTACTGGCGGGACGAGGCCGTCGGGGTGACGGACG
+  ACCTGCTCGATGCCATCACACGATGCGCCGAGTACGCGCACGATACCATCAGGGCGCCGTTGGCGAGCAAA
+  GAGATTATGGAGTTCAGCGTCCGTTGCACCCGCCAGGCGGCGGCCGGAGGCGACGACGTCACGGACCCCAT
+  GGACGCGAGGCCAGGCGCACGTGGCGCGCCTATCGCATGCACGCGCGCGTGTTCAGCGCCATCGCGTTGCT
+  ACCGCTGAGCATGATGGCGACGGCGGGTCTGCCCTTCTATGACGTGCGCCGGTACGCGCTGGTGGCGGCCC
+  GCCGCGCCGAACGCGCGTCGAGCCTGCTCCCAACACGCGTGCGACCAGACACCCTTGCGCACGAGGTGATG
+  GGCGATGGGCGTCTTCCGCGGCGCTCAATCGCGCACAGCCTCTTTGCAAGTTGGTTCGAACGCAATTACGC
+  CTACGAGGACGCCAGCGGCATCGACGCCGTGTGGTACGACCATCTCGGTCAAGAGGGCACCCACGAGACCG
+        </code></pre>
+
+    </section>
+
+
+    <section>
+        <br>
+        <img src="./data/yeast-ngenes2.png" style="width: 99%; height: 30%;">
+    </section>
+
+
+    <section>
+        <!-- <h3>A quiz about reference genomes</h3> -->
+        <img src="./data/yeast-ngenes.png" style="width: 70%; height: 30%;">
+    </section>       
+
+    <section>       
+        <h4> The GFF file format (genome annotation)</h4>
+        <p style="font-size: 0.7em; margin-right: 60px; margin-left: 60px">
+        We will revisit this file format in the next assignment; it 
+        introduces how genomic features are related (e.g., gene -> mRNA 
+        transcript -> exon -> CDS). For now, we are using it to practice 
+        reading and parsing a tab-delimited file. 
+        </p>
+        <img src="./data/GFF-structure.png" style="width: 80%; height: 30%;">        
+    </section> 
+
+    <section>       
+        <h4>Challenge</h4>
+        <p style="font-size: 0.7em; margin-right: 60px; margin-left: 60px">        
+        Return a tab-delimited table with the positions of all of the telomeres in the Yeast genome. Each line should have the following information: seqid, type, start, stop.
+        </p>
+        <pre><code class="bash">
+  # read file | not lines start w/ # | fields 1,3,4,5 | only w/ 'telomere' 
+  zcat genomes/yeast.gff.gz | \
+      grep -v "^#" | \
+      cut -f 1,3-5 | \
+      grep -w 'telomere'  
+        </code></pre>        
+
+        <pre><code class="bash" style="background: grey">
+  NC_001133.9 telomere    1   801
+  NC_001133.9 telomere    229411  230218
+  NC_001134.8 telomere    1   6608
+  NC_001134.8 telomere    812379  813184
+  NC_001135.5 telomere    1   1098
+  NC_001135.5 telomere    315783  316620
+  NC_001136.10    telomere    1   904
+  NC_001136.10    telomere    1524625 1531933
+  NC_001137.3 telomere    1   6473
+  ...
+        </code></pre>
+    </section>
+
+</section>
+
+
+
+<section 
+    data-background="white" 
+    data-transition="none" 
+    class="future">
+
+    <section>
+        <h4> Notebook 1.2: Genome Databases</h4>
+        FTP allows you to access a file system through your browser.
+        <br><br>
+        <p style="font-size: 0.8em;">
+        The refseq/ directory contains genomes that are <i>annotated</i>,
+        meaning they contain files with information about where genes, and other 
+        genomic features (e.g., telomeres) are located. While we of course
+        hope to learn what all of these features are, you don't need to know 
+        yet. They are simply labeled things in the genome that are marked with
+        a start and stop position.
+
+        <br><br>
+        <a href="https://bit.ly/2EA1iOS">Link to FTP</a>
+
+        </p>
+    </section>
+</section>
+
+
+
+<!-- SLIDE X: Reading review -->
+<section 
+    data-background="white" 
+    data-transition="none" 
+    class="future">
+
+    <section>
+        <h2>Assigned reading</h2>        
+        <img src="./data/Shendure-title.png" style="width: 99%; height: 30%;">            
+    </section>
+
+    <section>
+        <h2>Assigned reading</h2>
+        <img src="./data/Shendure-1.png" style="width: 35%; height: 20%; margin-right: 10%;">    
+        <img src="./data/Shendure-2.png" style="width: 35%; height: 20%;">        
+    </section>    
+
+    <section 
+        data-transition="none"
+        data-background-iframe="https://www.polleverywhere.com/discourses/PpRJGKOPSpQSHHHNkGc7e?preview=true"
+        style="top:-960px; display: block;" 
+        class="future" 
+        hidden="">       
+    </section>    
+
+
+    <section>       
+        <h3> Sanger sequencing technology </h3>
+        <iframe width="800" height="500" 
+        src="https://www.youtube.com/embed/FvHRio1yyhQ"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen></iframe>
+    </section>
+
+    <section>       
+        <h3> Illumina sequencing technology </h3>
+        <iframe width="800" height="500" 
+        src="https://www.youtube.com/embed/fCd6B5HRaZ8" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen></iframe>
+    </section>
+
+    <section>       
+        <h3> Nanopore sequencing technology </h3>
+        <iframe width="800" height="500" 
+        src="https://www.youtube.com/embed/E9-Rm5AoZGw" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen></iframe>
+    </section>    
+
+</section>
+
+
+<!-- Why Python -->
+<section 
+    data-background="white" 
+    data-transition="none" 
+    class="future">
+
+    <section>
+    <h3>Why Python?</h3>
+    Is it fast enough?
+    <img src="https://i.ytimg.com/vi/3Q5jg-2zwpM/maxresdefault.jpg" 
+        style="width: 80%; height: 20%;">        
+    </section>
+
+    <section>
+    <h3>Why Python?</h3>
+    Easy to use, readable, extendable (e.g., C/C++ bindings), mature.
+    Python is often the glue that binds programs/code/web.
+    <img src="https://target.scene7.com/is/image/Target/GUEST_a6546ad7-b1b5-465a-90ad-c5c55fdc9f77?wid=488&hei=488&fmt=pjpeg"
+        style="width: 50%; height: 20%;">        
+    </section>
+
+    <section>
+        <h3> Python tutorials </h3>
+        <p style="font-size: 0.7em; margin-right: 60px; margin-left: 60px">                    
+    <br><br>
+    Python has been around for 20 years, and so there are many resources for 
+    learning Python online. For extra help I recommend looking for *modern*
+    tutorials. That means tutorials that use IPython/jupyter, and which teach
+    Python3 as opposed to Python2. 
+
+        <br><br>
+    The tutorials we have selected, and created, aim for modern Python use.
+        </p>    
+    </section>
+
+
+    <section>
+        <h3> Getting started with Python </h3>
+        <br>
+        <p style="font-size: 0.7em; margin-right: 60px; margin-left: 60px">                            
+        Learn by doing. Run the pre-written code in the assignment notebooks,
+        modify it, see how it changes, learn from it. *Try* to solve the 
+        assigned problems on your own before you seek help. 
+        <br>
+        <br>
+        Search for answers when you are stuck. If you get an error, type that
+        error into google to learn what it means. If you want to learn how to
+        create a list of list objects in python, google "python create a list 
+        of lists"
+        <br>
+        <br>
+        Don't stress out. You can't learn programming all at once, it takes 
+        time and *practice*. You'll pick it up through repetition, reading code,
+        and *trying* to solve problems with code. That is the purpose of our 
+        exercises.         
+        </p>
+    </section>
+
+
+    <section>
+        <h4> Interactive Python (it's here to help you) </h4>
+        <p style="font-size: 0.7em; margin-right: 60px; margin-left: 60px">
+        Take advantage of the *interactive* nature of Python in jupyter. Use 
+        [tab]-completion to view attributes/functions of objects, and use
+        shift+tab to view documentation notes for functions.
+        </p>
+
+        <img src="./data/jupyter-tab-complete.gif" style="width: 95%; height: 25%;">    
+    </section>
+
+</section>
+
+
+<section>
+    <h4> Assignment</h4>
+    <br>
+    Complete Unit 2 on Codio: 4 notebooks.
+    <br>
+    <br>
+    Read chapters 1,3,4,5,6,7 of 
+    <a href="https://docs.python.org/3/tutorial/">The official Python tutorial</a>
+
+
+
+</section>
+
+</div>
+</div>
+    
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+
+
+        <!-- JAVASCRIPT -->
+        <script src="../../reveal/lib/js/head.min.js"></script>        
+        <script src="../../reveal/js/reveal.js"></script>
+        <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+        <script>
+            Reveal.initialize({
+                controls:true, 
+                progress:false, 
+                loop:true, 
+                history:true,
+                center:false,
+                fragmentInURL:true,
+                margin:.05,
+                minScale:0.1,
+                maxScale:5,
+                width:960,
+                height:720,
+                theme:Reveal.getQueryHash().theme,
+                transition:Reveal.getQueryHash().transition||"linear",
+                // slideNumber: true,
+                // slideNumber: "h/v",
+                dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                ]
+            });
+
+            // Reveal.configure({ slideNumber: true })
+            // Reveal.configure({ slideNumber: "c/t" })            
+
+            // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+        </script>
+    </body>
+</html>

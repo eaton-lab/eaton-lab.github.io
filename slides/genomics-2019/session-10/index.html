@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Session-10</title>
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width: 960px; height: 720px; transform: translate(-50%, -50%) scale(0.969792) translate(50%, 50%);">
+
+<!-- ###################################################################### -->
+
+
+<!-- SLIDE 0 (TITLE) -->
+<section 
+    data-background="#262626" 
+    style="top:300.5px; display:block;"
+    data-transition="none"     
+    class="present">
+    <div style="margin-left: auto; margin-top: 20%">
+    <h2 class="title" style="color:#5D9B84">
+    Principles and Applications of Modern DNA Sequencing</h2>
+    <p style="color: lightgrey"> EEEB GU4055</p>
+    <h5 style="color: white">Session 10: de Bruijn graphs</h5>
+    <br>
+    </div>
+</section>
+
+
+<!-- SLIDE 1 (what are we doing today?)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+    <h3> Today's topics </h3>
+    <br>
+    <p style='font-size:0.9em; 
+    text-align: left; margin-left: 100px; margin-right: 100px'>
+        <br>
+        1. Review notebook assignments: read lengths.
+        <br><br>
+        2. Discuss the assigned readings: long read technologies.
+        <br><br>
+        3. Introduce new topic: de Bruijn graphs.
+        <br><br>
+    </p>
+</section>
+
+
+
+<!-- Summary: what have we learned so far... -->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+    <h3> Review of course topics </h3>
+    <br>
+    <p style='font-size:0.8em; 
+    text-align: left; margin-left: 100px; margin-right: 100px'>
+        <br>
+        1. DNA sequencing review; and intro to Jupyter/Python.
+        <br>
+        2. Python bootcamp I: Basic objects.
+        <br>
+        3. Python bootcamp II: Scientific libraries.
+        <br>
+        4. Homology/Blast/GFF: Genome structure
+        <br>
+        5. Phylogenetics I: Sanger sequences to trees.
+        <br>
+        6. Recombination and Meiosis.
+        <br>
+        7. Inheritance and pedigrees.
+        <br>
+        8. Intro to Illumina and read mapping.
+        <br>
+        9. Intro to long-read technologies and read mapping.
+        <br>
+        10. Genome Assembly.
+    </p>
+</section>
+
+
+
+
+<!-- SLIDE 3 (notebook 1.0 review)-->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <section>
+        <h4> Notebook 9.1: Long-read sequencing</h4>
+        <p style="font-size:0.75em">
+        Loading fasta files as SeqIO record objects.
+        </p>
+
+        <pre ><code class="python" style="max-height: 500px">
+  # The SeqIO module is useful for working with Fasta files
+  from Bio import SeqIO
+
+  # load a Fasta file from a path with Bio
+  record = SeqIO.parse(path, format="fasta")  
+
+  # the record object makes the seq data accessible (e.g. length)
+  len(record)
+        </pre></code>
+        <pre><code class="python" style="background: grey">
+    600
+        </pre></code>
+    </section>
+
+    <section>
+        <h4> Notebook 9.1: Long-read sequencing</h4>
+        <p style="font-size:0.75em">
+        A function to load fasta files and return lengths.
+        </p>       
+        <pre ><code class="python" style="max-height: 500px">   
+  def getLengthDistribution(path):
+      "Return a list with lengths of each fasta record"           
+      lenList = []
+      for record in SeqIO.parse(path, "fasta"):
+          lenList.append(len(record))
+      return lenList
+
+
+  # example:
+  getLengthDistribution("./files/sanger.aftertrim.removeCT.min500bp.fasta")
+        </pre></code>
+        </pre></code>
+        <pre><code class="python" style="background: grey">
+  [600, 550, 811, 430, 762, ... ]
+        </pre></code>
+    </section>
+
+
+    <section>
+        <h4> Notebook 9.1: Long-read sequencing</h4>
+        <p style="font-size:0.75em">
+        A dictionary to access long file names easier.
+        </p>              
+        <pre ><code class="python" style="max-height: 500px">   
+  # Global dictionary of technology name to file paths.
+  file_path = {
+      'Sanger': 'files/sanger.total.aftertrim.removeCT.min500bp.fasta',
+      'PacBio': 'files/PB.Cell1and2.raw.fasta',
+      'Nanopore': 'files/LejlaControl.2D.min500bp.fasta',
+  }
+
+  # Global dictionary of technology name to colors for plotting
+  colors = {
+      'Sanger': '#4daf4a', 
+      'PacBio': '#377eb8', 
+      'Nanopore': '#984ea3',
+  }
+        </pre></code>
+    </section>
+
+    <section>
+        <!-- <h4> Notebook 9.1: Long-read sequencing</h4> -->
+        <p style="font-size:0.75em">
+        A function to plot a histogram with matplotlib.
+        </p>       
+
+        <pre ><code class="python" style="max-height: 600px; 
+        font-size: 13px; line-height: 1.45">
+  def makeLengthPlot(thisRunName, ax):    
+      "Plot histogram of read lengths. Gets filepath from global dict"
+    
+      # get readlengths
+      filepath = file_path[thisRunName])
+      lengths = getLengthDistribution(filepath)
+
+      # set histogram bin size
+      bins = range(500, 5000, 100)
+
+      # make histogram
+      sns.distplot(
+          length, bins=bins, kde=False, 
+          color=colors[thisRunName], 
+          ax=ax,
+          label=thisRunName,
+          hist_kws={"alpha": 1})
+
+      # plot styling: legend, xlimit, ylabel, ylimit
+      ax.legend()                   
+      ax.set_xlim([1, 5000])        
+      ax.set_ylabel('number of {} reads'.format(thisRunName))
+      ax.set_ylim([0, 14000])
+
+      # make unique y-axis label for each run
+      if thisRunName == 'Sanger':
+          ax.set_ylim([0, 800])
+        </pre></code>
+    </section>
+
+    <section>
+        <!-- <h4> Notebook 9.1: Long-read sequencing</h4> -->
+        <p style="font-size:0.75em">
+        A function to plot a histogram with matplotlib.
+        </p>       
+
+        <pre><code class="python" style="max-height: 600px;">
+
+  # initalize plot with 3 rows and 1 column
+  fig, ax = plt.subplots(nrows=3, ncols=1, figsize=(8,20))
+
+  # Plot Sanger, Pacbio, and Nanopore read length distributions
+  makeLengthPlot('Sanger', ax[0]) 
+  makeLengthPlot('PacBio', ax[1])
+  makeLengthPlot('Nanopore', ax[2])
+
+  # add label to x axis  
+  ax[2].set_xlabel('size [bp]')
+
+  # Show the plot
+  plt.show()
+        </pre></code>
+    </section>
+
+
+    <section>
+        <img src="./data/size-dists.png" style="max-height:650px">
+    </section>        
+
+
+    <section>
+        <p style="font-size:0.65em; 
+        background-color: #b7e2c0; color: #3a6944; margin:30px"> 
+Question 4 (2 points):
+Print the average read length and the top ten longest reads of each run.
+   </p>
+        <pre><code class="python" style="max-height: 600px;">
+  # 1. get filepath for Nanopore data set
+  npath = file_path["Nanopore"]
+
+  # 2. call getLengthDistribution on this file
+  readlens = getLengthDistribution(npath)
+
+  # 3. get top ten longest reads
+  topten = sorted(readlens)[::-1][:10]
+  print(topten)
+
+  # 4. get average length (of all reads)
+  avglen = sum(readlens) / len(readlens)
+  print(avglen)
+        </pre></code>
+        <pre><code class="python" style="background: grey">
+  1512.50977897917
+  [298549, 108360, 72322, 67205, 61366, 60592, 45980, 45605, 41057, 39953]
+        </pre></code>
+    </section>
+
+    <section>
+        <p style="font-size:0.65em; 
+        background-color: #b7e2c0; color: #3a6944; margin:30px"> 
+Question 4 (2 points):
+Print the average read length and the top ten longest reads of each run.
+   </p>
+        <pre><code class="python" style="max-height: 600px;">
+  # get read lenghts of PacBio reads
+  readlens = getLengthDistribution(file_path["PacBio"]
+
+  # get top ten longest reads
+  topten = sorted(readlens)[::-1][:10]
+  print(topten)
+
+  # get average length (of all reads)
+  avglen = sum(readlens) / len(readlens)
+  print(avglen)
+        </pre></code>
+        <pre><code class="python" style="background: grey">
+  1370.1363583000705
+  [4641, 4327, 4200, 4173, 4125, 4018, 4008, 3989, 3943, 3872]
+        </pre></code>
+
+    <div class="fragment">
+        <p style="font-size:0.65em; 
+        background-color: #b7e2c0; color: #3a6944; margin:30px"> 
+Question 5 (1 point): What is the avg. len of PacBio reads for Susie?
+   </p>
+   12.5Kb
+    </div>
+    </section>
+</section>
+
+<!-- SLIDE 4 -->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <h4> Notebook 9.1: Long-read sequencing</h4>
+    <p style="font-size:0.65em; text-align: left;
+    background-color: #b7e2c0; color: #3a6944; margin:30px"> 
+    Question 6 (2 points):
+In Gordon et al. (2016), the authors used PacBio to assemble an entire genome, while Loomis et al. (2013) used PacBio to sequence just one gene. What is that gene and why did the authors decide to use long-read sequencing to sequence it?     
+   </p>
+
+
+        <p style="font-size:0.65em; text-align: left;
+        color: #3a6944; margin:30px"> 
+    The gene is Fmr1, and it is implicated in Fragile X syndrome. Fragile X is an example of a 'trinucleotide repeat disorder': healthy individuals have between 6 - 53 CGG repeats in the 5' UTR of the Fmr1 gene, while individuals with Fragile X syndrome typically have 230+ CGG repeats. Genetic analysis of these diseases have been limited by an inability to sequence regions with expanded trinucleotide repeats using short-read DNA sequencing; however, PacBio's long reads can span the length of the repetitive region to better characterize the extent of trinucleotide expansion. 
+   </p>
+
+</section>
+
+
+<!-- SLIDE 4 -->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <h4> Notebook 9.1: Long-read sequencing</h4>
+    <p style="font-size:0.65em; text-align: left;
+    background-color: #b7e2c0; color: #3a6944; margin:30px"> 
+
+Question 7. (3 points)
+Homopolymers are consecutive repetitions of a letter in a DNA sequence. For example, the sequence CATAAAG has a homopolymer of length 3, composed to the letter A. Use graph above to explain why homopolymer-length errors are common in nanopore sequencing. 
+   </p>
+
+
+    <p style="font-size:0.65em; text-align: left;
+    color: #3a6944; margin:30px"> 
+There are 1024 different 5-mers but the signals typically range from about 40-70 pA: this means that normal distributions for certain 5-mers overlap, which can make it difficult to infer which 5-mer generated a particular event. If the signals for adjacent 5-mers of the DNA strand are very similar, e.g. when sequencing through long homopolymers, then the machine may not detect a change in current, which introduces sequencing error.
+   </p>
+
+</section>
+
+
+<!-- SLIDE 4 -->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+
+  <section>
+  <h4> Oxford nanpore sequence mapping</h4>
+  <p style="font-size:0.65em; text-align: left;
+  background-color: #b7e2c0; color: #3a6944; margin:30px"> 
+  <!-- <pre ><code class="python" style="max-height: 600px;  -->
+  <!-- font-size: 13px; line-height: 1.45"> -->
+  <pre><code class="bash" style="max-height: 600px;">
+  # read mapping always starts by "indexing" the reference fasta
+  # and here also links the nanpore data.
+  nanopolish index -d ecoli ecoli_2kb_region/fast5_files/ ecoli_2kb_region/reads.fasta
+  </code></pre>
+  <pre><code class="python" style="background: grey">
+  [readdb] indexing ecoli_2kb_region/fast5_files/
+  [readdb] num reads: 112, num reads with path to fast5: 112
+  </code></pre>
+  </section>
+
+
+  <section>
+  <h4> Oxford nanpore sequence mapping</h4>
+  <pre><code class="bash" style="max-height: 600px;">
+  # map ONT data to the reference and write output to SAM
+  minimap2 -ax map-ont \
+    ecoli_2kb_region/ref.fa \
+    ecoli_2kb_region/reads.fasta > ecoli_2kb_region/aligned.sam
+  </code></pre>
+  <pre><code class="python" style="background: grey">
+  [M::mm_idx_gen::0.289*0.60] collected minimizers
+  [M::mm_idx_gen::0.318*0.80] sorted minimizers
+  [M::main::0.319*0.80] loaded/built the index for 4319 target sequence(s)
+  [M::mm_mapopt_update::0.333*0.81] mid_occ = 11
+  [M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 4319
+  [M::mm_idx_stat::0.340*0.82] distinct minimizers: 731433 (98.40% are singletons); average occurrences: 1.024; average spacing: 5.463
+  [M::worker_pipeline::0.470*1.38] mapped 112 sequences
+  [M::main] Version: 2.15-r915-dirty
+  [M::main] CMD: ./minimap2/minimap2 -ax map-ont ecoli_2kb_region/ref.fa ecoli_2kb_region/reads.fasta
+  [M::main] Real time: 0.478 sec; CPU: 0.656 sec; Peak RSS: 0.051 GB
+  </code></pre>
+  </section>
+
+
+  <section>
+  <h4> Oxford nanpore sequence mapping</h4>
+  <p style="font-size:0.6em; text-align: left; color: #3a6944; margin:50px"> 
+  Align k-mer 'events' to the reference genome. We will run eventalign and pass in the FASTA file, the bam file, and the reference genome. The program will output the file aligned.events.txt.
+  </p>
+  <pre><code class="bash" style="max-height: 600px;">
+  # get aligned kmer events 
+  nanopolish eventalign \
+    --reads ecoli_2kb_region/reads.fasta \
+    --bam ecoli_2kb_region/aligned.sorted.bam \
+    --genome ecoli_2kb_region/ref.fa \
+    --scale-events > ecoli_2kb_region/aligned.events.txt
+  </code></pre>
+  <pre><code class="python" style="background: grey">
+  [post-run summary] total reads: 537, unparseable: 0, qc fail: 0, 
+  could not calibrate: 0, no alignment: 0, bad fast5: 0
+  </code></pre>
+  </section>
+</section>
+
+
+
+<!-- SLIDE 4 -->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <h4> Notebook 9.1: Long-read sequencing</h4>
+    <p style="font-size:0.65em; text-align: left;
+    background-color: #b7e2c0; color: #3a6944; margin:30px"> 
+
+Question 9. (3 points)
+Why are there four events at position 3? What happened?
+   </p>
+
+<div class="fragment">
+    <p style="font-size:0.65em; text-align: left;
+    color: #3a6944; margin:30px"> 
+
+The first three rows represent a scenerio in which the event detector erroneously called three events where only one should have been emitted. Note that the current for these three events are all plausibly drawn from the expected distribution `N(101.43, 1.632)`. In the fourth row, the `nanopolish` model detects that this event is a likely sequencing artefact, and therefore the output `NNNNNN` appears in the model_kmer column so that the site can be discarded before downstream analysis.
+   </p>
+</div>
+
+</section>
+
+
+<!-- SLIDE 4 -->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <h4> Notebook 9.1: Long-read sequencing</h4>
+    <p style="font-size:0.65em; text-align: left;
+    background-color: #b7e2c0; color: #3a6944; margin:30px"> 
+
+Question 10. (1 point)
+
+Why is the sequence of the 6-mer of the reference kmer different than the model 6-mer?
+   </p>
+
+<div class="fragment">
+    <p style="font-size:0.65em; text-align: left;
+    color: #3a6944; margin:30px"> 
+It is the reverse complement.
+   </p>
+
+</div>
+</section>
+
+
+
+<!-- SLIDE 4 -->
+<section
+    data-background="white" 
+    data-transition="none" 
+    class="future"
+    style="top: -20px; display: none;" 
+    hidden="">
+
+    <h4> Notebook 9.1: Long-read sequencing</h4>
+    <p style="font-size:0.65em; text-align: left;
+    background-color: #b7e2c0; color: #3a6944; margin:30px"> 
+Question 11. (1 point)
+
+Each event contains a 6-mer. What is the total length of the DNA sequence that contains the set of all 6-mers represented in the `aligned_events` table?
+   </p>
+
+<div class="fragment">
+
+  <pre><code class="bash" style="max-height: 600px;">
+  print(aligned_events.position.min())
+  print(aligned_events.position.max())
+ 
+  # 0
+  # 4275
+  </code></pre>
+
+    <p style="font-size:0.65em; text-align: left;
+    color: #3a6944; margin:30px"> 
+The first mapped position is 0, the last mapped position is 4275, the k-mer length is 6bp; thus: 1 (account for index=0) + 4275 + 6bp = 4282 bp
+   </p>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+
+
+        <!-- JAVASCRIPT -->
+        <script src="../../reveal/lib/js/head.min.js"></script>        
+        <script src="../../reveal/js/reveal.js"></script>
+        <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+        <script>
+            Reveal.initialize({
+                controls:true, 
+                progress:false, 
+                loop:false, 
+                history:true,
+                center:false,
+                fragmentInURL:true,
+                margin:.05,
+                minScale:0.1,
+                maxScale:5,
+                width:960,
+                height:720,
+                theme:Reveal.getQueryHash().theme,
+                transition:Reveal.getQueryHash().transition||"linear",
+                // slideNumber: true,
+                // slideNumber: "h/v",
+                dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                ]
+            });
+
+            // Reveal.configure({ slideNumber: true })
+            // Reveal.configure({ slideNumber: "c/t" })            
+
+            // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+        </script>
+    </body>
+</html>
