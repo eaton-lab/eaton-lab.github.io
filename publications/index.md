@@ -13,38 +13,46 @@ image:
 
 ----------------
 
-<!-- 2019 papers -->
-<!-- =============================== -->
-<!-- xxx Guo Cen... (2019) -->                 
-<!-- ipyrad* (2019) -->
-<!-- Landis paper (2019) -->
-<!-- Ficus* (2019) -->
-<!-- Oaks sliding window (2019) -->
-<!-- Tetrad paper (2019) -->
-<!-- DMIs (2019) -->
+<!-- 
 
-<!-- 2020 papers -->
-<!-- =============================== -->
-<!-- Amaranth (2020) -->
-<!-- Cranolopha* (2020) -->
-<!-- Orienotinus* (2020) -->
-<!-- Fernando Brazil paper (2020) -->
-<!-- simcat (2020) -->
-<!-- Parallel phylogeography (2020) -->
-<!-- Historical pedicularis (2020) -->
-<!-- Pedicularis genome and phylogeny (2020) -->
-<!--  -->
+2020 papers 
+=============================== 
+Amaranth phylo-intro (2020)
+Cranolopha* (2020)
+Orienotinus* (2020)
+Chiapas-spp-delimit (2020)
+simcat (2020)
+Parallel phylogeography (2020)
+Historical pedicularis (2020) 
+Pedicularis genome and phylogeny (2020)       April/May?  
 
-<!-- ------------------------------------ -->
+OVERDUE
+----------------------
+Guo Cen---
+Juan-Carlos---
+Bombonato---
+Ficus-offloaded (2019) 
+Oaks sliding window (2019) 
+Tetrad paper (2019) 
+DMIs (2019) 
+
+-->
 
 
-* **Eaton, D.A.R**. *Toytree: A minimalist tree visualization and manipulation library for Python* (2019) Methods in Ecology and Evolution. https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13313
+* McKenzie, P.F. and **D. Eaton**. (2020) *The MultiSpecies Coalescent in Space and Time*. *In Press*
 
-* Landis, M.J, **Eaton, D.A.R.**, Clement, W.L., Park, B., Spriggs, E.L., Sweeney, P.,  Edwards, E.J, and M.J. Donoghue (2019). *Joint phylogenetic estimation of geographic movements and biome shifts during the global diversification of Viburnum*. BioRxiv.
+* McKenzie, P.F. and **D. Eaton**. (2020) *ipcoal: An interactive Python package for simulating and analyzing genealogies and sequences on a species tree or network *. *In review*
+
+* **Eaton, D.A.R** and I. Overcast. (2020) *ipyrad: interactive assembly and analysis 
+of RAD-seq data*. Bioinformatics.
+
+* **Eaton, D.A.R**. (2020) *Toytree: A minimalist tree visualization and manipulation library for Python* Methods in Ecology and Evolution. https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13313
+
+* Landis, M.J, **Eaton, D.A.R.**, Clement, W.L., Park, B., Spriggs, E.L., Sweeney, P.,  Edwards, E.J, and M.J. Donoghue (2019). *Joint phylogenetic estimation of geographic movements and biome shifts during the global diversification of Viburnum*. Systematic Biology.
 
 * Paetzold, C., Wood, K.R., **Eaton, D.A.R.**, Wagner, W.L., and M. S. Appelhans. (2019) *Phylogeny of Hawaiian Melicope (Rutaceae): RAD-Seq resolves species relationships and reveals ancient introgression*. Frontiers in Plant Science 10, 1074. doi: 10.3389/fpls.2019.01074 
 
-* Satler, J.D., Herre, A., Jander, C., **Eaton, D.A.R.**, Machado, C.A., Heath, T.A., and J.D. Nason (2019). *Inferring Processes of Coevolutionary Diversification in a Community of Panamanian Strangler Figs and Associated Pollinating Wasps* BioRxiv, December, 490862. https://doi.org/10.1101/490862.
+* Satler, J.D., Herre, A., Jander, C., **Eaton, D.A.R.**, Machado, C.A., Heath, T.A., and J.D. Nason (2019). *Inferring Processes of Coevolutionary Diversification in a Community of Panamanian Strangler Figs and Associated Pollinating Wasps* Evolution.
 
 * Spriggs E.L., Schlutius, C.; **Eaton, D.A.R.**, Park, B., Sweeney, P., Edwards, E., and M. Donoghue (2019). *Differences in flowering time maintain species boundaries in a continental radiation of Viburnum*. American Journal of Botany. https://doi.org/10.1002/ajb2.1292
 
