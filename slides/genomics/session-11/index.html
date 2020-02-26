@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Genomics-11</title>
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+    <!-- <link rel="stylesheet" href="./custom.css"> -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal/css/print/pdf.css' : '../../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <!-- SLIDE 0 (TITLE) -->
+            <section id="title" data-background="#262626" style="top:300.5px; display:block;" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 20%">
+                <h1 class="title" style="color:#5D9B84">
+                Principles and Applications of Modern <br> DNA Sequencing</h1>
+                <h5 style="color: lightgrey"> EEEB GU4055</h5>
+                <h4 style="color: white">Session 11: Genome Assembly</h4>
+                <br>
+                </div>
+            </section>
+
+
+            <section id="contents" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Today's topics </h2>
+                <br>
+                <p style='font-size:1.2em; font-weight:400; color:#5D9B84; text-align:left; margin-left: 25%; margin-right:10%; line-height: 1.0'>
+                <br>
+                1. de Bruijn Graphs and Euler.
+                <br><br>
+                2. Kmers.
+                <br><br>
+                3. Challenges in Genome Assembly.
+                <br><br>
+                4. Empirical Example.
+                </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Kmers and de Bruijn graphs</h3>
+                    <div class="textbox"><p>
+                        Reads start and end at different positions covering all
+                        or nearly all of the genome. Decomposing reads into smaller kmers makes it more likely that we have uniformly sized bits covering the entire genome. This is useful for building a graph.
+                    </p></div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/K-mer-example.png" style="width:60%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Kmers and de Bruijn graphs</h3>
+                    <div class="textbox"><p>
+                        Shortest possible superstring that contains all substrings of length k.
+                    </p></div>
+                    <img src="../../genomics-2019/session-11/data/deBruijn.png" style="width:60%">
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Kmers and de Bruijn graphs</h3>
+                    <div class="textbox"><p>
+                        Hamiltonian graph requires comparing/aligning kmers, which is hard when the number and size of kmers is large. de Bruijn graphs join identical matching (k-1)mers, such that kmers form the edges of the graph -- a much simpler computation.
+                    </p></div>
+                    <img src="../../genomics-2019/session-11/data/Eulerian.png" style="width:50%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none"
+                     data-background-iframe="
+                     https://www.polleverywhere.com/multiple_choice_polls/3Nkah84yqE4eHURKO6bWF?preview=true"
+            >
+            </section>
+
+
+
+            <section class="future" data-transition="none"
+                     data-background-iframe="
+                     https://www.polleverywhere.com/free_text_polls/yTLUrTIRSqVU2Msij09cN?preview=true">
+            </section>            
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Genome Assembly</h3>
+                    <img src="https://i.imgflip.com/2urzxl.jpg" style="width:60%">
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>denovo Genome Assembly</h3>
+                    <div class=textbox><p>
+                        denovo genome assembly is computationally demanding. Requires reads that cover the full genome many times (e.g., 50X). The end goal is to assemble scaffolds that match to chromosomes -- the real *bits* of the genome.
+                    </p></div>
+                    <img src="../../genomics-2019/session-11/data/chromosomes.png" style="width:50%">
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Combining short and long-read technologies</h3>
+                    <div class=textbox><p>
+                        Short read assemblies are highly fragmented. Long read technologies are highly error prone. Combining the two technologies -- while obtaining high-coverage of both -- 
+                        is <i>currently</i> the gold standard.
+                    </p></div>
+                    <img src="https://raw.githubusercontent.com/wiki/PacificBiosciences/Bioinformatics-Training/images/large-genome/pacbio-assembly-algorithms.png" style="width:50%">
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h4>Caveats: Long reads require HMW DNA, sometimes a lot.</h4>
+                    <div class=textbox><p>
+                        Specialized DNA extraction kits and protocols are used
+                        to isolate long (unbroken) DNA fragment lengths. More expensive
+                        and time-consuming, but worth it.
+                    </p></div>
+                    <img src="./data/DNA-nanobind.jpg" style="width:35%">
+                </div>
+            </section>            
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h4>Eucalypus: (500Mb size, 170X ONT; 200X Illumina)</h4>
+                    <img src="./data/Eucalyptus-genome-1.png" style="width:30%; margin-right: 49%;">
+                    <img src="./data/Eucalyptus-genome-3.png" style="width:80%">
+                    <img src="./data/Eucalyptus-genome-2.png" style="width:80%">
+                </div>
+            </section>            
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Scaffolding: Hi-C Proximity Ligation</h3>
+                    <br>
+                    <div class=textbox><p>
+                        Chromosome conformation capture (3C) describes the structure of the genome within a cell; it's organization and structure. Better than microscopy, can tell us how close together (potentially interacting) some regions of the genome are (such as promoters and enhancers).                    
+                        <br><br>        
+                        Hi-C: A highthroughput version of 3C is based a library preparation to build chimeric reads followed by short-read sequencing of paired-end reads. Creates a contact map of interactions correlated to spatial distance.
+                    </p></div>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Scaffolding: Hi-C Proximity Ligation</h3>
+                    Restriction digestion; streptavidin bead extraction; paired-seq.
+                    <img src="https://github.com/genomics-course/12-scaffolding/raw/master/data/Hi-C.1.png" style="width:60%">
+                </div>
+            </section>            
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Scaffolding: Amaranthus Hi-C Assembly</h3>
+                    <img src='https://github.com/genomics-course/12-scaffolding/raw/master/data/amaranth.png' style="width:38%">
+                </div>
+            </section>            
+
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../../reveal/lib/js/head.min.js"></script>        
+    <script src="../../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: true,
+            // slideNumber: "h/v",
+
+            dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                // { src: '../../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                { src: '../../reveal/plugin/math/math.js', async: true }
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>
