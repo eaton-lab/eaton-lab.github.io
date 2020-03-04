@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Genomics-13</title>
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+    <!-- <link rel="stylesheet" href="./custom.css"> -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal/css/print/pdf.css' : '../../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <!-- SLIDE 0 (TITLE) -->
+            <section id="title" data-background="#262626" style="top:300.5px; display:block;" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 20%">
+                <h1 class="title" style="color:#5D9B84">
+                Principles and Applications of Modern <br> DNA Sequencing</h1>
+                <h5 style="color: lightgrey"> EEEB GU4055</h5>
+                <h4 style="color: white">Session 13: Phylogenetics</h4>
+                <br>
+                </div>
+            </section>
+
+
+            <section id="contents" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Today's topics </h2>
+                <br>
+                <p style='font-size:1.2em; font-weight:400; color:#5D9B84; text-align:left; margin-left: 25%; margin-right:10%; line-height: 1.0'>
+                <br>
+                1. Recap of genome scaffolding methods 
+                <br><br>
+                2. Phylogenetic inference problem.
+                <br><br>
+                3. Likelihood approaches.
+                <br><br>
+                4. Alignment, homology, and phylogenetic markers.
+                <br><br>
+                5. Genealogies and gene trees.
+                </p>
+                </div>
+            </section>
+
+            <section id="scaffolding" class="future" data-transition="none">
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                        <h3>Scaffolding: Hi-C Proximity Ligation</h3>
+                        Restriction digestion; streptavidin bead extraction; paired-seq.
+                        <img src="https://github.com/genomics-course/12-scaffolding/raw/master/data/Hi-C.1.png" style="width:60%">
+                    </div>
+                </section>            
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                        <h3>Scaffolding: Amaranthus Hi-C Assembly</h3>
+                        <img src='https://github.com/genomics-course/12-scaffolding/raw/master/data/amaranth.png' style="width:38%">
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <h3>10X genomics linked-read sequencing</h3>
+                    <iframe width="900" height="600" src="https://www.youtube.com/embed/aUyFzwRFWJQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <h3>10X genomics linked-read sequencing</h3>
+                    <img src="../../data-img/10X-Capsicum.png" style='width:60%'>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                        <h3>Major Genome Projects</h3>
+                        <img src="../../data-img/10KP-project.png" style="width:60%">
+                    </div>               
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                        <h3>Major Genome Projects</h3>
+                        <img src="../../data-img/BioGenome-project.png" style="width:45%">
+                    </div>
+                </section>
+            </section>
+
+
+            <section id="phylogeny" class="future" data-transition="none">
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Tree thinking exercises </h3>
+                    <br>
+                    <div class="textbox"><p>
+                    Reading trees involves interpreting the order in which lineages
+                    share common ancestors by tracing relationships backwards from the tips towards the root. <i>Rotating nodes</i> does not affect these relationships, even though the order of the tips changes. 
+                    <span style="font-weight:400;color:#5D9B84">Which topology is different?</span>
+                    </p></div>
+                    <img src="../../data-img/toytree-thinking.png" style="width:70%">
+                    <br>
+                    </div>
+                </section>            
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Trees as data </h3>
+                    <br>
+                    <div class="textbox"><p>
+                    Phylogenetic trees are more than just pictures, they represent a data structure that can be interpreted and used in model-based analyses. Stored in <i>Newick</i> format.
+                    </p></div>
+                    <img src="../../data-img/toytree-newick-exercise-1.png" style="width:70%">
+                    <br>
+                    </div>
+                </section>    
+
+
+                <section class="future" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 2%">
+                    <h3> Trees as data</h3>
+                    <br>
+                    <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">
+                    Phylogenetic trees are more than just pictures, they represent a data structure that can be interpreted and used in model-based analyses. Stored in <i>Newick</i> format. 
+                    </p>
+                    <img src="../../data-img/toytree-newick-exercise-2.png" style="width:70%">
+                    <br>
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 2%">
+                    <h3> Phylogenetic inference: why?</h3>
+                    <br>
+                    <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">
+                    Much of evolutionary research involves reconstructing the past, or making inferences on the basis of relatedness/ancestry. Thus it is relevant to understand <span style="font-weight:400;">how</span> evolutionary relationships are inferred, and the level of 
+                    <span style="font-weight:400">confidence</span> we should place in various types of inference.
+                    </p>
+                    <img src="https://www.ebi.ac.uk/training/online/sites/ebi.ac.uk.training.online/files/resize/user/3638/documents/fig11-550x258.png" style="width:45%">
+                    <br>
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 2%">
+                    <h3> Phylogenetic inference: why?</h3>
+                    <br>
+                    <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">
+                    Dating evolutionary events: when populations or species diverged; whether different lineages show correlated histories; to compare rates of divergence among lineages; to compare histories of different genes; to infer ancestral states (geography, traits).
+                    </p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/ASR_phylogeny.png" style="width:45%">
+                    <br>
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 2%">
+                    <h3> Phylogenetic inference: why?</h3>
+                    <br>
+                    <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">
+                    Comparative methods: <i>species are non-independent data points</i>. Some share more evolutionary history than others, i.e., diverged from a common ancestor more recently. 
+                    <br><br>
+                    Example: Birds fly and lay eggs, mammals mostly do not fly or lay eggs. Is the correlation between flying and laying eggs an <i>adaptation</i>? Almost surely not, it is a coincident correlation due to the shared history of all mammals versus all birds, and the traits they inherited from their ancestors.
+                    </p>
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 2%">
+                    <h3> Phylogenetic inference: examples</h3>
+                    <br>
+                        <div style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"><p>
+                            Methods of phylogenetic inference, and model-based historical inferences using trees, are both highly active areas of research. Many new methods are published in the journal of <a href="https://academic.oup.com/sysbio/issue">Systematic Biology</a>, while countless applied examples are published in various journals, including Evolution, Molecular Biology and Evolution, Molecular Phylogenetics and Evolution, Molecular Ecology, etc.
+                        </p></div>
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 2%">
+                    <h3> Phylogenetic inference: methods</h3>
+                    <br>
+                        <div style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"><p>
+                        <span style="font-weight:400">Collect/measure homologous characters</span> for some number of taxa. For DNA, identifying homology typically involves targeting regions of the genome using primers, or mapping sequenced reads from the genome to the same region of a reference genome. Either way, it is based on <i>sequence similarity</i>. This is typically followed by a more rigorous <i>multiple sequence alignment</i>.
+                        </p></div>
+                    <br>
+                    <img src="http://ugene.unipro.ru/wp-content/uploads/2015/03/55.png" style="width:30%">
+                    </div>
+                </section>
+
+
+                <section id="phylo inf 4" class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Phylogenetic inference: methods</h3>
+                    <br>
+                    <img src="../../data-img/inferring-trees-space.png">
+                    </div>
+                </section>            
+
+
+                <section class="future" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 2%">
+                    <h3> Phylogenetic inference: methods</h3>
+                    <br>
+                    <div style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"><p>
+                        A general outline of phylogenetic inference:<br><br>
+                        1. Propose a starting tree (e.g., random or star). <br>
+                        2. Score based on some criterion (e.g., parsimony, likelihood, distance).<br>
+                        3. Modify to propose a new tree, return to step 2.
+                    </p></div>
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 2%">
+                    <h3> Phylogenetic inference: methods</h3>
+                    <br>
+                    <div style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"><p>
+                        <span style="font-weight:400">Distance methods:</span> <i>build</i> a tree based on pairwise distances (e.g., UPGMA and neighbor-joining).
+                        <br><br>
+                        <span style="font-weight:400">Parsimony methods:</span> <i>search</i> for best tree based on minimizing character changes along branches.
+                        <br><br>
+                        <span style="font-weight:400">Likelihood/statistical methods:</span> <i>search</i> for tree on which the observed data is most likely to have evolved under an assumed <i>model of evolution</i>.
+                        <br><br>
+                        <span style="font-weight:400">Other methods:</span> many are variants of likelihood statistical methods, but others exist as well, but the most popularly used are listed above.
+                        <br><br>
+                        </p></div>
+                    </div>
+                </section>
+
+
+                <!-- describe distance methods briefly -->
+                <section id="distance 1" class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Phylogenetic inference: distance methods (UPGMA)</h3>
+                    <br>
+                    <div class="textbox" style="font-size:0.8em"><p> 
+                    1. A pairwise distance matrix is computed from characters.
+                    <img src="../../data-img/distance-tree-1.png" style="width:60%">
+                    <br>
+
+                    2. New internal node is created joining the shortest distance between points. Their branch lengths are set to half the distance, and a new matrix is computed to this node using average distance to its descendants. 
+                    <br><br>
+
+                    3. repeat from 1 until all internal nodes are added. <br>
+                    <img src="../../data-img/distance-tree-2.png" style="width:50%">
+                    <br><br>
+                    </p></div>
+                    <p style="font-size:0.7em">                
+                    <a href=https://en.wikipedia.org/wiki/UPGMA>https://en.wikipedia.org/wiki/UPGMA</a></p>
+                    </div>
+                </section>
+
+
+                <section id="distance 2" class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Phylogenetic inference: distance methods (neighbor-joining)</h3>
+                    <br>
+                    <div class="textbox" style="font-size:0.8em"><p> 
+                    1. A pairwise distance matrix is computed from characters.
+                    <img src="../../data-img/distance-tree-1.png" style="width:60%">
+                    <br>
+
+                    2. (Starting from a star-tree initially), join two nodes with smallest distance to create an ancestor, transform distance matrix so that all pairwise distances are retained (uses entire matrix not just pairs).
+                    <br><br>
+
+                    3. repeat from 1 until all internal nodes are added. <br>
+                    <img src="../../data-img/distance-tree-2.png" style="width:50%">
+                    <br><br>
+                    </p></div>
+                    <p style="font-size:0.7em">                
+                    <a href=https://en.wikipedia.org/wiki/Neighbor_joining>https://en.wikipedia.org/wiki/Neighbor_joining</a></p>
+                    </div>
+                </section>   
+
+
+                <section id="distance 3" class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Phylogenetic inference: distance methods (summary)</h3>
+                    <br>
+                    <div class="textbox"><p> 
+                    <span style="font-weight:400">shortcomings:</span> They yield a single best tree but do not provide a score (e.g., likelihood) that could be used to compare against alternatives (how much better is it?)<br><br>
+
+                    Sensitive to model assumptions, such as molecular clock (UPGMA) or that distances are additive (i.e., when one gets longer another gets shorter; NJ).<br><br>
+
+                    <span style="font-weight:400">strengths:</span> it is very fast and computationally efficient. For this reason NJ has had a resurgence for use in population genomics where datasets ae very large and model assumptions are less likely to be violated among closely related populations (e.g., human populations).
+                    </p></div>
+                    </div>
+                </section>
+            </section>
+
+
+            <section id="parsimony" class="future" data-transition="none">
+
+               
+                <!-- describe parsimony, why is this an improvement... -->
+                <section id="parsimony 1" class="future" data-transition="none">
+                    <div class="standard">
+                        <h3>Phylogenetic inference: Parsimony</h3>
+                        <br>
+                        <div class="textbox"><p>
+                            A character matrix and a topology. Count the number of character state changes.
+                        </p></div>
+                        <br>
+                    </div>
+                    <img src="../../data-img/char-felsen-1.png">
+                    <img src="../../data-img/tree-felsen-1.png" 
+                        style="width:30%;transform:rotate(-1.5deg);">
+                </section>
+
+
+                <!-- describe parsimony, why is this an improvement... -->
+                <section id="parsimony 2" class="future" data-transition="none">
+                    <div class="standard">
+                        <h3>Phylogenetic inference: Parsimony</h3>
+                        <br>
+                        <div class="textbox"><p>
+                            A character matrix and a topology. Count the number of character state changes.
+                        </p></div>
+                        <br>
+                    </div>
+                    <img src="../../data-img/char-felsen-1.png" style="margin-bottom:5%">
+                    <img src="../../data-img/tree-felsen-2.png" 
+                        style="width:20%;transform:rotate(180deg);margin-left:5%;">
+                </section>            
+
+
+                <!-- describe parsimony, why is this an improvement... -->
+                <section id="parsimony 3" class="future" data-transition="none">
+                    <div class="standard">
+                        <h3>Phylogenetic inference: Parsimony</h3>
+                        <br>
+                        <div class="textbox"><p>
+                            A character matrix and a topology. Count the number of character state changes.
+                        </p></div>
+                        <br>
+                    </div>
+                    <img src="../../data-img/char-felsen-1.png" style="margin-bottom:14%">
+                    <img src="../../data-img/tree-felsen-3.png" 
+                        style="width:20%;transform:rotate(-1.5deg);margin-left:5%;">
+                </section>
+
+                <!-- scores can be compared, distance trees cannot... -->
+                <section id="parsimony 4" class="future" data-transition="none">
+                    <div class="standard">
+                        <h3>Phylogenetic inference: Parsimony</h3>
+                        <br>
+                        <div class="textbox"><p>
+                            <span style="font-weight:400">Parsimony principle:</span>
+                            The evolutionary tree that minimizes the net amount of evolution (fewest steps) should be preferred. <br><br>
+
+                            1. Propose a topology (e.g., randomly)<br>
+                            2. Calculate score (e.g., Fitch algorithm)<br>
+                            3. Propose new tree and repeat (test all or many trees).
+                        </p></div>
+                        <br>
+                    </div>
+                </section>            
+
+    <!-- 
+                <section id="parsimony 5" class="future" data-transition="none">
+                    <div class="standard">
+                        <h3>Phylogenetic inference: Fitch algorithm</h3>
+                        <br>
+                        <div class="textbox" style="font-size:0.8em"><p>
+                            We can count the number of steps required without needing to know the root of the tree, or which characters are ancestral versus derived. <br>
+
+                            1. arbitrarily root the tree.<br>
+                            <img src="../../data-img/tree-fitch-1.png" style="width:25%; margin-left:40%;"><br>
+                            
+                            2. bottom-up pass: Build <i>sets</i> for each internal node of the observed states. Union of states if they are different, intersection of states if they share a state.<br>
+                            <img src="../../data-img/char-fitch-1.png"
+                            style="width:20%">
+                            <img src="../../data-img/tree-fitch-2.png" 
+                            style="width:20%;margin-left:10%"><br>
+
+                        </p></div>
+                        <br>
+                    </div>
+                </section>
+     -->
+    <!-- 
+                <section id="parsimony 6" class="future" data-transition="none">
+                    <div class="standard">
+                        <div class="standard">
+                        <h3>Phylogenetic inference: Fitch algorithm</h3>
+                        <br>
+                        <div class="textbox" style="font-size:0.8em"><p>
+                            We can count the number of steps required without needing to know the root of the tree, or which characters are ancestral versus derived. <br><br>
+
+                            3. top-down pass: Assign any nucleotide at the root set. To all children apply the same state as its parent if shared, else any other state in its set. Count transitions.<br>
+                            <img src="../../data-img/tree-fitch-3.png" 
+                            style="width:17%"><br>
+
+                            <span style="font-weight:400">Is this better than an alternative tree?</span><br>
+                            <img src="../../data-img/tree-fitch-4.png" 
+                            style="width:17%"><br>
+                        </p></div>
+                        <br>
+                    </div>
+                </section>
+     -->
+
+                <!-- but, tree search is a huuuuge problem... 
+                spend some time here talking about what an unrooted versus rooted
+                tree shows and why these numbers differ... 
+                -->
+                <section id="phylo inf 4" class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Phylogenetic inference: methods</h3>
+                    <br>
+                    <img src="../../data-img/inferring-trees-space.png">
+                    </div>
+                </section>            
+
+
+                <!-- parsimony has fallen out of use for DNA -->
+                <section id="test" class="future" data-transition="none">
+                    <div class="standard">
+                        <h3> Parsimony's pitfall </h3>
+                        <br>
+                        <div class="textbox"><p>
+                        It does not account for homoplasy (repeated mutations to the same site). 
+                        </p></div>
+                        <img src="../../data-img/dist-homoplasy.png">
+                    </div>
+                </section>
+            </section>
+
+
+            <section id="likelihood" class="future" data-transition="none">
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Inferring the past from the present </h3>
+                    <br>
+                    <div class="textbox"><p>
+                    Statistical modeling is widely used in evolutionary research
+                    to test or compare hypotheses and to estimate model parameters.
+                    <br><br>
+                    A model describes a mechanistic (probabilistic) process that could produce observable data. It is especially useful when  
+                    <span style="font-style:italic;font-weight:400">we cannot observe the past, but we can observe data at the present.</span>
+                    </p></div>
+                    </div>
+                </section>    
+
+
+                <section class="future" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 2%">
+                    <h3> Models, Probability, and Likelihood</h3>
+                    <br>
+                    <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">
+                    The use of statistical models for <i>historical inference</i> 
+                    is not unique to evolution, or biology, although many statistical methods were developed by biologists <a href="https://en.wikipedia.org/wiki/Likelihood_function">(e.g., the Likelihood framework was developed by the geneticist R.A. Fisher)</a>
+                    <br><br>
+
+                    A <i>likelihood function</i> describes the probabilitiy of a set of <i>observations</i> given a set of model <i>parameters</i>. 
+                    Likelihood can express the probability of a DNA sequence alignment given a phylogenetic hypotheses, or it can express the probability that a coin toss will turn up heads versus tails. 
+                    <br><br>
+                    What do we mean by a model parameter?
+                    </p>
+                    </div>
+                </section>
+
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Statistical phylogenetics</h3>
+                    <br>
+                        <div class="textbox">
+                        <p>
+                        The likelihood function calculates probability of observing a character state (DNA site in an alignment) under a specific model of molecular substitution and a phylogenetic tree (more on these soon).<br><br>
+
+                        Simplest models treat each DNA site independently so that the likelihood of a sequence alignment (many sites) is simply the product of the individual site likelihoods: <br><br>
+
+                        $$ L(D) = \prod_{i=1}^{n} L(D_{i}) = \prod_{i=1}^{n} f(D_{i} | \Theta) $$
+                        </p>
+                        </div>
+                    </div>
+                </section>
+
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Statistical phylogenetics</h3>
+                    <br>
+                        <div class="textbox">
+                        <p>
+                        By <span style="font-weight:400">only knowing the results of coin tosses that occurred in the past</span> we are able to estimate the <i>model parameters that are most likely to have produced them</i> (i.e., the probability the coin toss is heads or tails).<br><br>
+
+                        The same principle applies to estimating the evolutionary distance between two aligned DNA sequences. Looking <span style="font-weight:400">only at the results of an evolutionary process that occurred in the past</span> we can estimate the model parameters that are most likely to have produced the DNA differences between a set of taxa. 
+                        <br><br>
+
+                        Whereas the coin toss problem assumed a <i>Bernoulli distribution</i> as the underlying model, for DNA substitutions we use a molecular substitution model, which is a type of <span style="font-weight:400">Continuous Time Markov Model</span>.
+                        </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- parsimony has fallen out of use for DNA -->
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                        <h3> Molecular Substitution Models</h3>
+                        <br>
+                            <div class="textbox">
+                            <p> Many mutations occur that are not observable in the present-daty samples alone due to <i>homoplasy</i> (repeated mutations to the same sites). 
+                            </p></div>
+                        <img src="../../data-img/dist-homoplasy.png">
+                    </div>
+                </section>
+
+
+
+                <!-- parsimony has fallen out of use for DNA -->
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                        <h3> Molecular Substitution Models</h3>
+                        <br>
+                        <div class="textbox">
+                        <p> 
+                        <i>Instantaneous transition rate matrix ($Q$): </i>
+                        Similar to the coin toss example, where q was equal to 1-p, you can see that the probability of not changing over some length of time is simply (1 - probability of changing.)
+                        </p></div>
+
+                        <img src="https://www.oreilly.com/library/view/basic-applied-bioinformatics/9781119244332/images/bapp06f02.gif" style="width:40%">
+
+                        <br><br><br>
+                        <a href=https://en.wikipedia.org/wiki/Models_of_DNA_evolution>https://en.wikipedia.org/wiki/Models_of_DNA_evolution</a>
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                        <h3> Molecular Substitution Models</h3>
+                        <br>
+                        <div class="textbox">
+                        <p> 
+                        <i>Transition-probability matrix:</i> the probability of change between states over some time interval (t) is easily calculated as $ P(t) = e^{Qt} $. This tells us the probability of starting in some state (e.g., A) and ending as another (e.g., T). Jukes-Cantor Model predicts equal prob. for any state over very long branches.
+                        </p></div>
+
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Jukes_and_Cantor_%281969%29_JC69_Pij_Pii.jpg" style="width:25%">
+                        <br>
+                        <a href=https://en.wikipedia.org/wiki/Models_of_DNA_evolution>https://en.wikipedia.org/wiki/Models_of_DNA_evolution</a>
+                    </div>
+                </section>            
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                        <h3> Markov Process Models</h3>
+                        <br>
+                        <div class="textbox">
+                        <p> 
+                        A <i>Markov Process</i> is a random process in which the future state is not dependent on past states, but only on the present. (It is memory-less.) <br><br>
+
+                        These types of models are used extensively in evolutionary modeling, and in many other fields. Made up of a set of discrete states, starting frequencies, and a mechanism for transitioning between states. <br><br>
+
+                        Can be used to infer parameters (describing an unobserved process) that are most likely to produce observed data. For example, we model changes occurring in DNA sites as a Markov process.
+                        </p></div>
+                        <br>
+                    </div>
+                </section>            
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                        <h3> Markov Process Models</h3>
+                        <br>
+                        <div class="textbox">
+                        <p style="text-align:center"> 
+                        <a href=http://setosa.io/blog/2014/07/26/markov-chains/>http://setosa.io/blog/2014/07/26/markov-chains/</a>
+                        </p></div>
+                    </div>
+                </section>            
+
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                        <h3> Inferring phylogenies by ML</h3>
+                        <br>
+                        <div class="textbox">
+                        <p> 
+                        Felsenstein (1981) is a classic paper with >10K citations although the methods in this paper have easily been used 10-100X this often.<br><br>
+
+                        The likelihood of a tree is calculated as the likelihood of the data (sequence alignment) given the hypothesis (tree) under a given model (Markov substitution process).<br><br>
+
+                        Unlike coin tosses the likelihoods for different trees do not sum to 1. In theory, we must calculate the probabilitiy of the sequence alignment on every tree to find the maximum.
+                        The probability of a tree hypothesis is calculated as the probability of observing substitutions along each branch of a tree. We must optimize parameters of our model (e.g., JC), and branch lengths of each tested tree.
+                        </p></div>
+                        <br>
+                    </div>
+                </section>            
+
+
+<!-- 
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                        <h3> Inferring phylogenies by ML</h3>
+                        <br>
+                        <div class="textbox">
+                        <p> 
+                        Felsenstein (1981) is a classic paper with >10K citations although the methods in this paper have easily been used 10-100X this often.<br><br>
+
+                        Felsenstein's pruning algorithm describes a simplification of the likelihood calculation that requires fewer steps by traversing a tree from tips to root and optimizing edge lengths one at a time based only on the likelihoods of the nodes descendant from each.<br><br>
+
+                        He describes the pulley principle as an outcome of using a reversible Markov process model ($r_{ij} = r_{ji}$). It shows that the root can be placed anywhere in the tree and does not affect the likelihood score.
+                        </p></div>
+                        <br>
+                    </div>
+                </section>            
+ -->
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                        <h3> Inferring phylogenies by ML</h3>
+                        <br>
+                        <div class="textbox">
+                        <p> 
+                        Felsenstein (1981) is a classic paper with >10K citations although the methods in this paper have easily been used 10-100X this often.<br><br>
+
+                        Because tree size is so large, we must use heuristic tree search algorithms to find the best tree. Felsenstein proposed a step-wise addition method to start, followed by local re-arrangements. Many similar methods are used today, involving sequential re-arrangements of the tree.
+                        </p></div>
+                        <img src=https://static.javatpoint.com/tutorial/ai/images/hill-climbing-algorithm-in-ai.png style="width:30%">
+                        <br>
+                    </div>
+                </section>            
+            </section>
+
+
+            <section class="nb-recap" data-transition="none">
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> The subprocess module</h3>
+                        Execute code in a bash environment and return results.
+                    <pre><code class="python">
+  import subprocess
+
+  # call a command with separate terms written as strings in a list
+  cmd = ["muscle", "-in", fasta_file, "-out", aligned_file]
+  proc = subprocess.call(cmd)
+                    </code></pre>
+                    </div>
+                </section> 
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> The subprocess module</h3>
+                        Execute code in a bash environment and return results.
+                    <pre><code class="python">
+  import subprocess
+
+  # write stdout to a file
+  cmd = ["echo", "hello world"]
+  proc = subprocess.Popen(cmd, stdout=subprocess.PIPE)
+  stdout, stderr = proc.communicate()
+  print(stdout)
+                    </code></pre>
+                    <pre><code class="python" style="background: grey">
+  hello world
+                    </code></pre>
+                </div>
+                </section> 
+
+            </section>
+
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../../reveal/lib/js/head.min.js"></script>        
+    <script src="../../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: true,
+            // slideNumber: "h/v",
+
+            dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                // { src: '../../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                { src: '../../reveal/plugin/math/math.js', async: true }
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>
