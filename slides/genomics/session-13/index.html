@@ -321,10 +321,7 @@
 
 
             <section id="parsimony" class="future" data-transition="none">
-
-               
-                <!-- describe parsimony, why is this an improvement... -->
-                <section id="parsimony 1" class="future" data-transition="none">
+                <section class="future" data-transition="none">
                     <div class="standard">
                         <h3>Phylogenetic inference: Parsimony</h3>
                         <br>
@@ -340,7 +337,7 @@
 
 
                 <!-- describe parsimony, why is this an improvement... -->
-                <section id="parsimony 2" class="future" data-transition="none">
+                <section class="future" data-transition="none">
                     <div class="standard">
                         <h3>Phylogenetic inference: Parsimony</h3>
                         <br>
@@ -356,7 +353,7 @@
 
 
                 <!-- describe parsimony, why is this an improvement... -->
-                <section id="parsimony 3" class="future" data-transition="none">
+                <section class="future" data-transition="none">
                     <div class="standard">
                         <h3>Phylogenetic inference: Parsimony</h3>
                         <br>
@@ -371,7 +368,7 @@
                 </section>
 
                 <!-- scores can be compared, distance trees cannot... -->
-                <section id="parsimony 4" class="future" data-transition="none">
+                <section class="future" data-transition="none">
                     <div class="standard">
                         <h3>Phylogenetic inference: Parsimony</h3>
                         <br>
@@ -387,55 +384,7 @@
                     </div>
                 </section>            
 
-    <!-- 
-                <section id="parsimony 5" class="future" data-transition="none">
-                    <div class="standard">
-                        <h3>Phylogenetic inference: Fitch algorithm</h3>
-                        <br>
-                        <div class="textbox" style="font-size:0.8em"><p>
-                            We can count the number of steps required without needing to know the root of the tree, or which characters are ancestral versus derived. <br>
-
-                            1. arbitrarily root the tree.<br>
-                            <img src="../../data-img/tree-fitch-1.png" style="width:25%; margin-left:40%;"><br>
-                            
-                            2. bottom-up pass: Build <i>sets</i> for each internal node of the observed states. Union of states if they are different, intersection of states if they share a state.<br>
-                            <img src="../../data-img/char-fitch-1.png"
-                            style="width:20%">
-                            <img src="../../data-img/tree-fitch-2.png" 
-                            style="width:20%;margin-left:10%"><br>
-
-                        </p></div>
-                        <br>
-                    </div>
-                </section>
-     -->
-    <!-- 
-                <section id="parsimony 6" class="future" data-transition="none">
-                    <div class="standard">
-                        <div class="standard">
-                        <h3>Phylogenetic inference: Fitch algorithm</h3>
-                        <br>
-                        <div class="textbox" style="font-size:0.8em"><p>
-                            We can count the number of steps required without needing to know the root of the tree, or which characters are ancestral versus derived. <br><br>
-
-                            3. top-down pass: Assign any nucleotide at the root set. To all children apply the same state as its parent if shared, else any other state in its set. Count transitions.<br>
-                            <img src="../../data-img/tree-fitch-3.png" 
-                            style="width:17%"><br>
-
-                            <span style="font-weight:400">Is this better than an alternative tree?</span><br>
-                            <img src="../../data-img/tree-fitch-4.png" 
-                            style="width:17%"><br>
-                        </p></div>
-                        <br>
-                    </div>
-                </section>
-     -->
-
-                <!-- but, tree search is a huuuuge problem... 
-                spend some time here talking about what an unrooted versus rooted
-                tree shows and why these numbers differ... 
-                -->
-                <section id="phylo inf 4" class="future" data-transition="none">
+                <section class="future" data-transition="none">
                     <div class="standard">
                     <h3> Phylogenetic inference: methods</h3>
                     <br>
@@ -445,7 +394,7 @@
 
 
                 <!-- parsimony has fallen out of use for DNA -->
-                <section id="test" class="future" data-transition="none">
+                <section class="future" data-transition="none">
                     <div class="standard">
                         <h3> Parsimony's pitfall </h3>
                         <br>
@@ -459,7 +408,6 @@
 
 
             <section id="likelihood" class="future" data-transition="none">
-
                 <section class="future" data-transition="none">
                     <div class="standard">
                     <h3> Inferring the past from the present </h3>
@@ -624,27 +572,6 @@
                         <br>
                     </div>
                 </section>            
-
-
-<!-- 
-                <section class="future" data-transition="none">
-                    <div class="standard">
-                        <h3> Inferring phylogenies by ML</h3>
-                        <br>
-                        <div class="textbox">
-                        <p> 
-                        Felsenstein (1981) is a classic paper with >10K citations although the methods in this paper have easily been used 10-100X this often.<br><br>
-
-                        Felsenstein's pruning algorithm describes a simplification of the likelihood calculation that requires fewer steps by traversing a tree from tips to root and optimizing edge lengths one at a time based only on the likelihoods of the nodes descendant from each.<br><br>
-
-                        He describes the pulley principle as an outcome of using a reversible Markov process model ($r_{ij} = r_{ji}$). It shows that the root can be placed anywhere in the tree and does not affect the likelihood score.
-                        </p></div>
-                        <br>
-                    </div>
-                </section>            
- -->
-
-
                 <section class="future" data-transition="none">
                     <div class="standard">
                         <h3> Inferring phylogenies by ML</h3>
@@ -663,7 +590,6 @@
 
 
             <section class="nb-recap" data-transition="none">
-
                 <section class="future" data-transition="none">
                     <div class="standard">
                     <h3> The subprocess module</h3>
