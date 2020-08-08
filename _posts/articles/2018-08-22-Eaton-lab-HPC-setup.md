@@ -15,14 +15,14 @@ date: 2018-12-09
 <hr>
 
 #### Columbia HPC resources
-This post has been updated for the new *Terremoto* cluster at Columbia. 
-We have access to both Terremoto and the older *Habanero* cluster. 
+We have access to both the *Terremoto* and *Habanero* clusters. 
 Documentation for Terremoto is [here](https://confluence.columbia.edu/confluence/display/rcs/Terremoto+HPC+Cluster+User+Documentation), and Habanero [here](https://confluence.columbia.edu/confluence/display/rcs/Habanero+HPC+Cluster+User+Documentation)). On Habanero
 Eaton lab members have access to 8Tb of scratch space and about 20 24-core nodes,
-but these resources are shared and often busy. On Terremoto we have we have one
+but these resources are shared and often busy. On Terremoto we have one
 reserved 24 core node and 6Tb of scratch space, and can access all other shared
 resources. On both clusters the max walltime is 5 days 
-(or 6 hours on the free partition).
+(or 6 hours on the free partition, or 12 hours on the short partition).
+
 
 ### Connecting by SSH
 Use SSH from a terminal and your UNI credentials to login. 
@@ -33,6 +33,7 @@ ssh <user>@habanero.rcs.columbia.edu
 # OR, connect to terremoto from your local computer
 ssh <user>@moto.rcs.columbia.edu
 ```
+
 
 ### Setup your scratch directory
 On Habanero you can access the "dsi" partition, on Terremoto use the "eaton" 
