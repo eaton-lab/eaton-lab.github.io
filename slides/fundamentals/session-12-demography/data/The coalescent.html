@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+
+		<title>reference</title>
+
+		<meta name="author" content="Deren Eaton">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- <link rel="stylesheet" href="The%20coalescent_files/reveal.css"> -->
+		<!-- <link rel="stylesheet" href="The%20coalescent_files/trvrb.css" id="theme"> -->
+		<!-- <link rel="stylesheet" href="The%20coalescent_files/font-awesome.css"> -->
+
+		<!-- For syntax highlighting -->
+		<!-- <link rel="stylesheet" href="The%20coalescent_files/zenburn.css"> -->
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	<!-- <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script> --></head>
+
+	<body style="transition: transform 0.8s ease 0s;">
+
+		<div style="position: absolute; top:10px; left:10px; z-index:100;">
+			<a href="http://bedford.io/projects/sismid/sequences/">
+				<i class="fa fa-times-circle" style="color: #bbb; opacity: 0.1;"></i>
+			</a>
+		</div>
+
+		<div class="reveal linear center" data-transition-speed="default" data-background-transition="default">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides" style="width: 960px; height: 720px; transform: translate(-50%, -50%) scale(0.969792) translate(50%, 50%);">
+
+				<section data-background="#8474D1" style="top: -87.5px; display: block;" class="present">
+					<h2 class="title">The coalescent</h2>
+					<p>An introduction</p>
+					<br>
+				</section>
+
+				<section data-transition="none" style="top: -360px; display: block;" class="future" hidden="">
+					<h3>Epidemic process</h3>
+					<img class="stretch" src="The%20coalescent_files/infection_tree_1.png" style="width: 863.678px; height: 577px;">
+				</section>
+
+				<section data-transition="none" style="top: -360px; display: block;" class="future" hidden="">
+					<h3>Sample some individuals</h3>
+					<img class="stretch" src="The%20coalescent_files/infection_tree_2.png" style="width: 863.678px; height: 577px;">
+				</section>
+
+				<section data-transition="none" style="top: -360px; display: block;" class="future" hidden="">
+					<h3>Sequence and determine phylogeny</h3>
+					<img class="stretch" src="The%20coalescent_files/infection_tree_3.png" style="width: 863.678px; height: 577px;">
+				</section>
+
+				<section data-transition="none" style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Sequence and determine phylogeny</h3>
+					<img class="stretch" src="The%20coalescent_files/infection_tree_4.png" style="width: 943.011px; height: 630px;">
+				</section>
+
+				<section data-transition="none" style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Wright-Fisher process</h3>
+					<img class="stretch" src="The%20coalescent_files/wright_fisher_1.png" style="width: 960px; height: 612.923px;">
+				</section>
+
+				<section data-transition="none" style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Sample some individuals</h3>
+					<img class="stretch" src="The%20coalescent_files/wright_fisher_2.png" style="width: 960px; height: 612.923px;">
+				</section>
+
+				<section data-transition="none" style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Each generation coalescence may occur</h3>
+					<img class="stretch" src="The%20coalescent_files/wright_fisher_3.png" style="width: 960px; height: 612.923px;">
+				</section>
+
+				<section data-transition="none" style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Each generation coalescence may occur</h3>
+					<img class="stretch" src="The%20coalescent_files/wright_fisher_4.png" style="width: 960px; height: 612.923px;">
+				</section>
+
+				<section data-transition="none" style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Each generation coalescence may occur</h3>
+					<img class="stretch" src="The%20coalescent_files/wright_fisher_5.png" style="width: 960px; height: 612.923px;">
+				</section>
+
+				<section data-transition="none" style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Each generation coalescence may occur</h3>
+					<img class="stretch" src="The%20coalescent_files/wright_fisher_6.png" style="width: 960px; height: 612.923px;">
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<img class="stretch" src="The%20coalescent_files/xkcd.png" style="width: 960px; height: 391.214px;">
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Set of coalescent intervals</h3>
+					<img class="stretch" src="The%20coalescent_files/coalescent_intervals_1.png" style="width: 900px; height: 630px;">
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Per-generation probability of coalescence</h3>
+					<br>
+					<p>$$\mathrm{Pr}(\mathrm{coal} \, | \, i=2) = \frac{1}{N}$$</p>
+					<br>
+					<p>Probability of first lineage picking an arbitrary parent is 1, while the
+					probability of the 2nd lineage picking the same parent is $\frac{1}{N}$.</p>
+					<p>Probability of coalescence scales inversely with population size.</p>
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Per-generation probability of coalescence</h3>
+					<br>
+					<p>$$\mathrm{Pr}(\mathrm{coal}) = \binom{i}{2} \frac{1}{N} = \frac{i(i-1)}{2N}$$</p>
+					<br>
+					<p>There are $\binom{i}{2}$ ways pairs of lineages can pick the same parent.</p>
+					<p>Probability of coalescence scales quadratically with lineage count.</p>
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Expected waiting time to coalescence</h3>
+					<br>
+					<p>$$\mathrm{E}[T_i] = \frac{2N}{i(i-1)}$$</p>
+					<br>
+					<p>
+						This is a <a href="https://en.wikipedia.org/wiki/Geometric_distribution">geometric distribution</a>.
+						If each generation there is a $\frac{1}{x}$ probability of an event occurring, we expect to
+						wait $x$ generations for the event to occur.
+					</p>
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Continuous time limit</h3>
+					<br>
+					<p>With per-generation probability of an event $\frac{1}{x}$ small, but many generations, then the
+					discrete time geometric distribution approximates to a continuous time
+					<a href="https://en.wikipedia.org/wiki/Exponential_distribution">exponential distribution</a>.
+					Thus, we assume $T_i$ to be exponentially distributed with mean
+					<br>
+					</p><p>$$\mathrm{E}[T_i] = \frac{2N}{i(i-1)}.$$</p>
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Set of coalescent intervals with waiting times</h3>
+					<img class="stretch" src="The%20coalescent_files/coalescent_intervals_2.png" style="width: 900px; height: 630px;">
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Gives coalescent trees their distinctive shape</h3>
+					<img class="stretch" src="The%20coalescent_files/coalescent_tree_shape.png" style="width: 628.123px; height: 630px;">
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Rate of coalescence scales with population size <i>N</i></h3>
+					<img class="stretch" src="The%20coalescent_files/coalescent_pop_size.png" style="width: 960px; height: 554.006px;">
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h2><a href="http://bedford.io/projects/coaltrace/">
+						Visualization of the coalescent process
+					</a></h2>
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Pairwise genetic diversity</h3>
+					<img class="stretch" src="The%20coalescent_files/diversity.png" style="width: 857.577px; height: 630px;">
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Time to the most recent common ancestor (TMRCA)</h3>
+					<img class="stretch" src="The%20coalescent_files/tmrca.png" style="width: 855.143px; height: 630px;">
+				</section>
+
+				<section data-background="#7F85DB" style="top: -20px; display: none;" class="future" hidden="">
+					<h2 class="title">Coalescence patterns can estimate population growth/decline</h2>
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Changing population size alters coalescent rate</h3>
+					<img class="stretch" src="The%20coalescent_files/changing_pop_size_1.png" style="width: 913.599px; height: 630px;">
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Changing population size alters coalescent rate</h3>
+					<img class="stretch" src="The%20coalescent_files/changing_pop_size_2.png" style="width: 881.595px; height: 630px;">
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>'Skyline' is flexible demographic model that estimates windows of coalescent rate</h3>
+					<img class="stretch" src="The%20coalescent_files/skyline.png" style="width: 960px; height: 619.307px;">
+					<div class="citation">
+						<a href="http://mbe.oxfordjournals.org/content/22/5/1185.short">
+							Drummond et al. 2005
+						</a>
+					</div>
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Skyline model shows population growth in HCV</h3>
+					<img class="stretch" src="The%20coalescent_files/skyline_hcv.png" style="width: 960px; height: 576.138px;">
+					<div class="citation">
+						<a href="http://www.sciencemag.org/content/292/5525/2323">
+							Pybus et al. 2001
+						</a>
+					</div>
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Skyline model shows seasonality in flu</h3>
+					<img class="stretch" src="The%20coalescent_files/skyline_flu.png" style="width: 959.868px; height: 630px;">
+					<div class="citation">
+						<a href="http://www.nature.com/nature/journal/v453/n7195/full/nature06945.html">
+							Rambaut et al. 2008
+						</a>
+					</div>
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Interpreting rate of coalescence</h3>
+					<br>
+					<p>These approaches directly estimate the pairwise rate of coalescence $\lambda$, which is measured
+					in terms of events per year. Thus, the timescale of coalescence $\frac{1}{\lambda}$ is measured as
+					the expected waiting time in years for two lineages to find a common ancestor.</p>
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Interpreting rate of coalescence</h3>
+					<br>
+					<p>The timescale of coalescence $\frac{1}{\lambda}$ is equal to $N_e\tau$, where $N_e$ is
+					measured in generations and $\tau$ is measured in years per generation. $\tau$ acts to rescale time
+					from generations to years.
+					</p>
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Example tree</h3>
+					<img class="stretch" src="The%20coalescent_files/skyline_exercise_example_tree.png" style="width: 913.232px; height: 630px;">
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Example skyline plot</h3>
+					<img class="stretch" src="The%20coalescent_files/skyline_exercise_example_plot.png" style="width: 920.621px; height: 630px;">
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3><i>Exercise: plot skyline from tree</i></h3>
+					<img class="stretch" src="The%20coalescent_files/skyline_exercise_tree.png" style="width: 926.078px; height: 630px;">
+				</section>
+
+				<section data-background="#7F97DF" style="top: -20px; display: none;" class="future" hidden="">
+					<h2 class="title">Selection distorts coalescence patterns</h2>
+				</section>
+
+				<section style="top: -20px; display: none;" class="future" hidden="">
+					<h3>Neutral population dynamics</h3>
+					<img class="stretch" src="The%20coalescent_files/tree_neutrality.png" style="width: 923.567px; height: 630px;">
+				</section>
+
+				<section style="top: -360px; display: block;" class="future" hidden="">
+					<h3>Purifying selection reduces genetic diversity and leads to population stasis</h3>
+					<img class="stretch" src="The%20coalescent_files/tree_negative_selection.png" style="width: 769.639px; height: 525px;">
+				</section>
+
+				<section style="top: -360px; display: block;" class="future" hidden="">
+					<h3>Positive selection reduces genetic diversity leads to population turnover</h3>
+					<img class="stretch" src="The%20coalescent_files/tree_positive_selection.png" style="width: 769.639px; height: 525px;">
+				</section>
+
+				<section style="top: -360px; display: block;" class="future" hidden="">
+					<h3>Episodic positive selection shows selective sweeps</h3>
+					<img class="stretch" src="The%20coalescent_files/tree_episodic_selection.png" style="width: 852.926px; height: 525px;">
+				</section>
+
+			</div>
+
+		<div class="backgrounds">
+			<div class="slide-background present" style="background: rgb(132, 116, 209) none repeat scroll 0% 0%;" data-background-hash="#8474D1nullnullnullnullnullnull"></div>
+
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future" style="background: rgb(127, 133, 219) none repeat scroll 0% 0%;" data-background-hash="#7F85DBnullnullnullnullnullnull"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future" style="background: rgb(127, 151, 223) none repeat scroll 0% 0%;" data-background-hash="#7F97DFnullnullnullnullnullnull"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+			<div class="slide-background future"></div>
+		</div>
+
+		<div class="progress" style="display: block;"><span style="width: 0px;"></span>
+		</div>
+
+		<aside class="controls" style="display: none;">
+			<div class="navigate-left"></div>
+			<div class="navigate-right enabled"></div>
+			<div class="navigate-up"></div>
+			<div class="navigate-down"></div>
+		</aside>
+		
+		<div class="slide-number"></div>
+		<div class="state-background"></div>
+		<div class="pause-overlay"></div></div>
+
+		<!-- <script src="The%20coalescent_files/head.js"></script> -->
+		<!-- <script src="The%20coalescent_files/reveal.js"></script> -->
+		<!-- <script src="The%20coalescent_files/config.js"></script> -->
+		<!-- <script type="text/javascript" src="The%20coalescent_files/highlight.js"></script> -->
+		<!-- <script type="text/javascript" src="The%20coalescent_files/zoom.js"></script> -->
+		<!-- <script type="text/javascript" src="The%20coalescent_files/notes.js"></script> -->
+		<!-- <script type="text/javascript" src="The%20coalescent_files/math.js"></script> -->
+
+
+</body></html>

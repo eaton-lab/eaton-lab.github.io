@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Genomics-14</title>
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+    <!-- <link rel="stylesheet" href="./custom.css"> -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal/css/print/pdf.css' : '../../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <!-- SLIDE 0 (TITLE) -->
+            <section id="title" data-background="#262626" style="top:300.5px; display:block;" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 20%">
+                <h1 class="title" style="color:#5D9B84">
+                Bioinformatics Boot Camp for Ecology and Evolution</h1>
+                <h5 style="color: lightgrey"> CUNY City Tech</h5>
+                <h4 style="color: white">Aug. 5, 2020</h4>
+                <br>
+                </div>
+            </section>
+
+            <!--  -->
+            <section class="future" data-transition="none">
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Phylogenomic sampling </h3>
+                    <br>
+                    <div class="textbox"><p style='text-align:center'>
+                    <!-- It's an exciting time to be asking these questions! Genomic technologies have <i>revolutionized</i> the study of ecology and evolution. -->
+                    Characterize evolutionary history from <i>a subset</i> of sampled genomes (individuals). 
+                    </p></div>
+                    <br>
+                    <img src="../../data-svg/intro-phylogenomic-sampling.svg" style="width:70%">
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <img src="../../data-img/1KPG.png" style="width:45%">
+                    <br>
+                    <img src="../../data-img/1KPG-tree.png" style="width:45%">
+                </section>
+
+                <section class="future" data-transition="none">
+                    <img src="../../data-svg/Spriggs.svg" style="width:70%">
+                </section>
+            </section>
+
+
+            <section id="Coalescent" class="future" data-transition="none">
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Phylogenomic sampling </h3>
+                    <br>
+                    <div class="textbox"><p style="text-align:center">
+                         Characterize whole genomes from <i> a subset</i> of sequenced markers.
+                    </p></div>   
+                    <br>            
+                    <img src="../../data-svg/intro-RAD-diagram.svg" style="width:70%">
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Genealogical variation </h3>
+                    <br>
+                    <div class="textbox"><p style="text-align:center">
+                        It is important to examine evolutionary history across the entire genome. 
+                    </p></div>
+                    <img src="../../data-svg/intro-tree-outlines.svg" style="width:70%">
+                    </div>
+                </section>
+
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Historical introgression/admixture </h3>                        
+                    <br>
+                    <div class="textbox"><p style="text-align:center">
+                        It is important to examine evolutionary history across the entire genome. 
+                    </p></div>
+                    <img src="../../data-svg/intro-tree-outlines-2.svg" style="width:70%">
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> The Coalescent</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        A model that describes the expected waiting time until two or more
+                        samples share a most recent common ancestor. The distribution of 
+                        coalescent times within a population, or between populations, provides information about their history.
+                        <br><br>
+                        There are many genealogical histories that could possibly explain the genetic relatedness of a set of samples. We cannot observe the genalogies directly, only the sequence data that evolved on those genealogies.
+                        <br><br>
+                        Coalescent simulations provide a means to ask: "can the genetic variation that I observe in my samples be explained by neutral evolutionary processes?" 
+                        </p></div>
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Population parameters (Ne)</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        The effective population size (Ne) of a population describes the probability that two samples share a common ancestor in the previous generation. This parameter does not translate directly to the actual population size, though they are likely correlated. Other factors like non-random mating and population structure also affect Ne. 
+                    </p></div>
+                    </div>
+                </section>                
+
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Single population model</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        If we assume that a population is randomly mating (panmictic) and neutrally evolving then the expected waiting time until n samples coalesce can be modeled entirely by Ne. 
+                        <br><br>
+                        Because n samples can share many possible genealogical histories (remember how big tree space is), and their genealogical relationships are expected to vary across their genomes (recombination makes different regions independent of others), we expect to observe a large variation in genealogical histories when examining many loci for n samples. 
+                        <br><br>
+                        <span style="font-weight:400">The coalescent model treats genealogies as a random varaible. We are interested in the expected <i>distribution</i> of variation when integrating over many genealogies.</span>
+                    </p></div>
+                    </div>
+                </section>
+
+
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Multiple population (structured) coalescent</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        When modeling multiple populations a "species tree" topology (e.g., "Species Tree") defines when different samples or their ancestors are able to share a parent in a previous generation. 
+                        <br><br>
+                        To predict the expected genetic similarity of samples in a structured coalescent model requires estimating Ne for each lineage as well as T, the divergence time of the populations. 
+                        <br><br>
+                        <span style="font-weight:400">Modern phylogenetic inference methods are based on the <i>multispecies coalescent model</i> which calculates the likelihood of observed genetic data given a set of parameters: Ne, T, and a topology. Searching over many topologies and many parameters can identify a best species tree model that explains variation among genealogies. 
+                    </p></div>
+                    </div>
+                </section>
+
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Coalescent Exercise</h3>
+                    <br>
+                    <a https://mybinder.org/v2/gh/genomics-course/2020-phylogenomics/master?filepath=nb-13.1-MSC-short.ipynb>Link to notebook 13.1 (MSC)</a>
+                    </div>
+                </section>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Python</h3>
+                Why Python, is it fast, is it easy to learn?
+                <img src="https://i.ytimg.com/vi/3Q5jg-2zwpM/maxresdefault.jpg" style="width:70%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Python</h3>
+                <div class=textbox><p>
+                Easy to use, easy to read, extendable (e.g., C++ binding), mature. Python is the glue that binds programs/code/web together.
+                </p></div>
+                <br>
+                <img src="https://target.scene7.com/is/image/Target/GUEST_a6546ad7-b1b5-465a-90ad-c5c55fdc9f77?wid=488&hei=488&fmt=pjpeg">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Interactive Modern Python (IPython)</h3>
+                <div class=textbox><p>
+                    Although it has been around for decades,                    Python has exploded in popularity in the last few years 
+                    owing to its well developed data science libraries and 
+                    interactive scripting tools. We will be learning modern
+                    interactive Python usage.
+                </p></div>
+                <br>
+                <img src="../..//genomics-2019/session-2/data/jupyter-tab-complete.gif" style="width:80%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Introduction to bash/jupyter/the-cloud</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        Throughout this course will assign <i>online computational
+                        notebooks</i> to complete between sessions. These are called
+                        jupyter notebooks, which combine text and code together
+                        into a single document. They are a great tool for teaching
+                        and for doing science. 
+                    </p></div>
+                    <img src=https://jupyter.org/assets/jupyterpreview.png style="width:45%">
+                </div>
+            </section>
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../../reveal/lib/js/head.min.js"></script>        
+    <script src="../../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: true,
+            // slideNumber: "h/v",
+
+            dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                // { src: '../../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                { src: '../../reveal/plugin/math/math.js', async: true }
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>
