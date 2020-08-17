@@ -40,7 +40,7 @@ ssh-keygen -t rsa -b 4096 -C "deren@sacra"
 ### 4. upload your public SSH key to your GitHub account
 Your public key can be shared publicly, and used for a variety of security
 purposes. To ensure that you do not lose it I recommend uploading it to 
-your GitHub account. Follow the instructions [here](https://jdblischak.github.io/2014-09-18-chicago/novice/git/05-sshkeys.html).
+your GitHub account. Follow the instructions here: [https://jdblischak.github.io/2014-09-18-chicago/novice/git/05-sshkeys.html](https://jdblischak.github.io/2014-09-18-chicago/novice/git/05-sshkeys.html).
 Once your key is uploaded send Deren an email with your GitHub 
 username and he will pull your public key onto pinky so that you 
 will be able to login.
