@@ -17,20 +17,36 @@ date: 2020-04-19
 This guide will walk you through the recommended steps to get set up 
 for using the `pinky` server and for following shared use best practices. 
 
+### 1. request access
+Write to Deren to request a username and password to be setup 
+for you on pinky. 
 
-### Generate a public SSH key and upload to GitHub
-For this you will need a GitHub account. On your laptop you will need to run
-the command below to generate a private and public key pair. The private key
-stays on your laptop and the public key will be placed on pinky so that they
-can handshake when you try to connect. Follow instructions like [here](https://virtualzero.net/blog/how-to-add-an-ssh-public-key-to-github-from-Ubuntu-18.04-lts) but using the SSH-keygen command below (**and your own email address**). 
 
+### 2. Create a GitHub account
+If you don't yet have one, create an account. 
+
+
+### 3. generate a public SSH key
+<!-- You need a GitHub account.  -->
+On your laptop run the command below to generate a private and public key
+pair. This will request that you enter a passphrase, if you want you can just
+hit enter to leave the passphrase blank. This will generate two files placed
+in your `~/.ssh` folder. The private key stays on your laptop and the public key will be sent to pinky so that the two files can be matched up
+when you try to connect. 
 ```bash
-ssh-keygen -t rsa -b 4096 -C "UNI@columbia.edu"
+ssh-keygen -t rsa -b 4096 -C "deren@sacra"
 ```
-Once your key is uploaded send Deren an email with your GitHub username and he will pull your public key onto pinky so that you will be able to login.
+
+### 4. upload your public SSH key to your GitHub account
+Your public key can be shared publicly, and used for a variety of security
+purposes. To ensure that you do not lose it I recommend uploading it to 
+your GitHub account. Follow the instructions [here](https://jdblischak.github.io/2014-09-18-chicago/novice/git/05-sshkeys.html).
+Once your key is uploaded send Deren an email with your GitHub 
+username and he will pull your public key onto pinky so that you 
+will be able to login.
 
 
-### Logging into pinky
+### 5. setup your laptop for easy ssh login
 Next edit your SSH config file on your laptop to create a shortcut name to 
 reference the pinky server. This makes it so that you do not need to write
 out the full IP address and username when you login. Replace the {username}
