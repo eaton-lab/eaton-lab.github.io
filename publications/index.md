@@ -42,7 +42,7 @@ Tetrad paper (2019)
 not snowball in a demographic model of speciation*. *In Review*.
 
 
-* McKenzie, P.F. and **D. Eaton**. (2020) *The MultiSpecies Coalescent in Space and Time*. *In Press*
+* McKenzie, P.F. and **D. Eaton**. (2020) *The MultiSpecies Coalescent in Space and Time*. *In Press* (Biorxiv: https://www.biorxiv.org/content/10.1101/2020.08.02.233395v1).
 
 
 * McKenzie, P.F. and **D. Eaton**. (2020) *ipcoal: An interactive Python package for simulating and analyzing genealogies and sequences on a species tree or network*. Bioinformatics.
