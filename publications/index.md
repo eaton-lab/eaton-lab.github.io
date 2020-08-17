@@ -28,23 +28,27 @@ Pedicularis genome and phylogeny (2020)       April/May?
 
 OVERDUE
 ----------------------
-Guo Cen---
-Juan-Carlos---
-Bombonato---
+x Guo Cen---
+x Juan-Carlos---
+x Bombonato---
+x DMIs (2019) 
+
 Ficus-offloaded (2019) 
 Oaks sliding window (2019) 
 Tetrad paper (2019) 
-DMIs (2019) 
-
 -->
+
+* Maya-Lastra, C.A. and **D. Eaton**. (20xx) *Genetic incompatibilities do 
+not snowball in a demographic model of speciation*. *In Review*.
 
 
 * McKenzie, P.F. and **D. Eaton**. (2020) *The MultiSpecies Coalescent in Space and Time*. *In Press*
 
-* McKenzie, P.F. and **D. Eaton**. (2020) *ipcoal: An interactive Python package for simulating and analyzing genealogies and sequences on a species tree or network *. *In review*
 
-* **Eaton, D.A.R** and I. Overcast. (2020) *ipyrad: interactive assembly and analysis 
-of RAD-seq data*. Bioinformatics.
+* McKenzie, P.F. and **D. Eaton**. (2020) *ipcoal: An interactive Python package for simulating and analyzing genealogies and sequences on a species tree or network*. Bioinformatics.
+
+
+* **Eaton, D.A.R** and I. Overcast. (2020) *ipyrad: interactive assembly and analysis of RAD-seq data*. Bioinformatics.
 
 * **Eaton, D.A.R**. (2020) *Toytree: A minimalist tree visualization and manipulation library for Python* Methods in Ecology and Evolution. https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13313
 
