@@ -52,7 +52,7 @@ Enter your email address here of course. This will prompt you to enter a passwor
 for which you should enter the password you wish to use to login to the cluster
 (you can set this to not ask later).
 ```bash
-ssh key-gen -t rsa -b 4096 -C "user@email.org"
+ssh-keygen -t rsa -b 4096 -C "user@email.org"
 ```
 
 #### 2. Send SSH key to the HPC
