@@ -11,17 +11,23 @@ image:
 
 <!-- <h1 class="entry-subtitle">Lab information</h1> -->
 
-<h4><a href="https://gitter.im/eaton-lab/Lobby">Lab Gitter</a></h4>
+<h4><a href="https://app.slack.com/client/TGFNRUS2U/DNRQPT9EK">Slack Channel</a></h4>
 
 A chatroom for updates about projects and organization in the lab. 
-Gitter is a particularly convenient way to share code snippets, and
-to link to github repositories. Feel free to pop-in and say Hi.
 
+
+<!-- 
+<h4><a href="https://gitter.im/eaton-lab/Lobby">Lab Gitter</a></h4>
+A chatroom for updates about projects and organization in the lab. 
+Gitter is a particularly convenient way to share code snippets, and
+to link to github repositories. Feel free to pop-in and say Hi. 
+-->
 
 
 <h4>Lab Meetings Mondays 3-5pm in Sch. Ext. 1012</h4>
 
 [Signup Link](https://docs.google.com/spreadsheets/d/1vtSFIOOwthD8mBuJqZaP3zDApC9IpEjqHcvMgIFaTFQ/edit?usp=sharing)
+
 
 
 <!-- 
