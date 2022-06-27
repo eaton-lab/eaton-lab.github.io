@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolution Conference 2022">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2022-Evolution</title>
+
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../eaton-lab.css">
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">    
+    <link rel="stylesheet" href="./custom.css">
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <!-- TITLE SLIDE -->
+            <section data-background-color="white" data-transition="none" class="future">
+                <div class="standard">
+                    <h2 class="title" style="color:#262626";>
+                    Deconstructing spatial genealogical variation across genomes</h2>
+                    <img src="./images/ARG-title-slide.svg" style="width:90%; margin-top: 3%">
+                    <h4 style="font-weight: 400; line-height: 1.5; font-size: 1em; margin-top: 2%"> 
+                        Deren Eaton <br>
+                        <i>Ecology, Evolution, and Environmental Biology, Columbia University</i>
+                    </h4>
+                </div>
+            </section>
+
+            <!--  -->
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Genealogical variation </h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        Genomes are composed of a mosaic of segments inherited from different ancestors,
+                        <br>each separated by past recombination events.</p></div>
+                    <!-- <img src="../data-svg/intro-tree-outlines.svg" style="width:70%"> -->
+                    <!-- <img src="./images/genealogies-full-A.svg" style="width: 50%"> -->
+                    <img src="./images/ARG-simple.svg" style="width:60%">
+                    <div class="textbox"><p class="fragment" style="text-align:center; font-weight: 400">
+                        Consequently, genealogical relationships vary spatially across genomes.
+                    </p></div>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Multispecies coalescent assumptions </h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        The multispecies coalescent (MSC) describes the expected distribution 
+                        of <i><span style="font-weight: 600;">unlinked</span></i> genealogies, 
+                        as a function of demographic model parameters (N$_e$, $\tau$, topology).</p></div>
+                    <img src="./images/linkage-full-pre.svg" style="width:50%">
+                </div>
+            </section>
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Multispecies coalescent assumptions </h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        The multispecies coalescent (MSC) describes the expected distribution 
+                        of <i><span style="font-weight: 600;">unlinked</span></i> genealogies, 
+                        as a function of demographic model parameters (N$_e$, $\tau$, topology).</p></div>
+                    <img src="./images/linkage-full-post.svg" style="width:50%">
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        The expected distribution of <i><span style="font-weight: 600;">linked</span></i> 
+                        genealogical variation is poorly characterized.
+                    </p></div>
+                </div>
+            </section>
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                <h3 class="title" style="color:#d8b365; margin-top:15%; line-height:1.5">
+                What is the expectation for the distribution of <br>
+                <i>linked</i> genealogical variation? <br><br>
+                How does it relate to demographic model parameters?
+                </h3>
+                </div>
+            </section>
+
+
+
+
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%     OUTLINE     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Why care about local genealogical variation? </h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400;">
+                        <ul>
+                            <li>Subsampling unlinked loci effectively discards >99% genomic info.</li>
+                            <li>Ignoring linkage introduces bias (<i>concatalescence</i>; Gatesy 2013).</li>
+                            <li>Local ancestry is informative about selection and introgression.</li>
+                        </ul>
+                    </p></div>
+                </div>
+            </section>
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Why care about local genealogical variation? </h3>
+                    <img src="./images/twisst.jpg" style="width:55%">
+                </div>
+                <div class="textbox"><p style="text-align:center; font-weight: 400; font-size: 18px; margin-top: 1%">
+                 (Martin & Belleghem 2017)
+                </p></div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Why care about local genealogical variation? </h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400;">
+                        <ul>
+                            <li>Subsampling unlinked loci effectively discards >99% genomic info.</li>
+                            <li>Ignoring linkage introduces bias (<i>concatalescence</i>; Gatesy 2013).</li>
+                            <li>Local ancestry is informative about selection and introgression.</li>
+                            <li>We lack a null expectation for spatial genealogical variation.</li>
+                        </ul>
+                    </p></div>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Outline: <i>Multispecies Sequentially Markov Coalescent</i></h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <ul>
+                            <!-- <li>Summarize current theory for modeling ARGs.</li> -->
+                            <li>Background: <i><span style="color:#1b91ff">SMC' waiting distances</span></i> from Deng et al. (2021).</li>
+                            <li>Introduce new analytical solutions for <i><span style="color:#1b91ff">MS-SMC' waiting distances.</span></i></li>
+                            <li>Validate estimates against to stochastic coalescent simulations.</li>
+                            <li>Likelihood framework for fitting MSC models from linked genealogies.</li>
+                            <li>Future directions.</li>
+                        </ul>
+                    </p></div>
+                </div>
+            </section>
+
+
+
+
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%     BACKGROUND  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+
+            <!-- <section class="future" data-transition="none"> -->
+                <!-- <div class="standard"> -->
+                    <!-- <h3 class="title">Coalescent with recombination (Hudson, 1983)</h3> -->
+
+                    <!-- <div class="textbox"><p style="text-align:center; font-weight: 400"> -->
+                        <!-- <i>A stochastic process for generating linked genealogical variation</i></p></div> -->
+
+                    <!-- <div class="textbox"><p style="font-weight: 400; margin-top: 3%"> -->
+                        <!-- But, entails complex process that makes developing a tractable  -->
+                        <!-- likelihood framework for statistical inference difficult.</p></div> -->
+                        <!-- 
+                        The waiting time between coalescent events is sampled as an 
+                        exponentially distributed random variable with a rate dependent 
+                        on the number of lineages (k) and the diploid effective population 
+                        size (N):</p></div>
+                    <section>\[\lambda_k = \frac{2N}{k(k-1)}\]</section>
+
+                    <div class="textbox"><p style="font-weight: 400; margin-top: 3%">
+                        The waiting time between recombination events is also exponentially 
+                        distributed, with rate $L(\mathcal{G}) \times r$. 
+                        ... TODO ...
+                        A recombination event at time $t_r$ splits 
+                        the genome into two intervals, and coalescence proceeds from time $t_r$
+                        independently in each interval.</p></div> -->
+                <!-- </div> -->
+            <!-- </section> -->
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Sequentially Markov Coalescent (McVean and Cardin, 2005)</h3>
+
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <!-- Hudson and Kaplan (1988) described a stochastic process for  -->
+                        <i>An approximation of the coalescent with recombination</i>
+
+                    <div class="textbox"><p style="font-weight: 400; margin-top: 3%">
+                        Changes between sequential genealogies are modeled as a Markov process
+                        &#8212; one subprune-regraft transition &#8212; which enables a tractable likelihood framework.
+                        <!-- by restricting coalescence to occur  -->
+                        <!-- only with lineages present in the previous interval.  -->
+
+                    </p></div>
+
+                    <div class="fragment">
+                        <div class="textbox"><p style="font-weight: 400; margin-top: 1.5%">                        
+                            Example: recombination at time t$_{1}$ on edge <i>b</i> creates
+                            a detached subtree which re-coalesces at rate $\lambda_k$
+                            to reconnect with any existing lineage lineage above time t$_{1}$.
+                            </p></div>
+                        <img src="./images/smc.svg" style="width:35%">
+                    </div>                            
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title">SMC' is widely used in HMM methods</h3>
+
+                    <div class="textbox"><p style="font-weight: 400; margin-top: 3%">
+                        <i>PSMC</i> (Li & Durbin 2011), <i>MSMC</i> (Schiffels & Durbin 2014), 
+                        use pairwise coalescent times between sequential genealogies to infer 
+                        changes in N$_e$ through time.
+                        </p></div>
+                    <img src="./images/msmc.png" style="width:35%">
+                    <div class="textbox"><p style="font-weight: 400; margin-top: 3%">
+                        <i>ARGweaver</i> (Rasmussen et al. 2014) and <i>ARGweaver-D</i> (Hubisz & Siepel 2020) 
+                        use an SMC'-based conditional sampling method to infer ARGs from sequence data.
+                </div>
+            </section>
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                <h3 class="title" style="color:#5ab4ac; margin-top:20%; line-height:1.2">
+                Currently, we extract a <i>fairly limited</i> amount of <br>spatial information from genomes.
+                </h3>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title">Four categorical patterns under the SMC'</h3>
+                    <!-- <div class="textbox"><p style="text-align:center; font-weight: 400"> -->
+                        <!-- <i>A genealogical variation</i></p></div> -->
+                    <div class="textbox"><p style="font-weight: 400; text-align: center">
+                        (a) no-change; (b-c) tree-change; and (d) topology-change.
+                    </p></div>
+                    <img src="./images/Fig2-singlepop-recomb_types_row.svg" style="width:70%">
+                    <div class="textbox"><p style="text-align:center; font-weight: 400;  margin-top: 3%">
+                    (Deng et al. 2021)</p></div>            
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <img src="./images/Deng-screenshot.png" style="width:70%">
+                    <img src="./images/Deng-waiting-distance-summary.svg" style="width:60%">                    
+                </div>
+            </section>            
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title">Estimating waiting distances under the SMC'</h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <i>Expected Tree and Topology Distances represent new spatial genetic information.</i>
+                    </p></div>
+                <img src="./images/Fig2-recomb-types-ARG-0.svg" style="width:70%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title">Estimating waiting distances under the SMC'</h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <i>Expected Tree and Topology Distances represent new spatial genetic information.</i>
+                    </p></div>
+                    <img src="./images/Fig2-recomb-types-ARG-1.svg" style="width:70%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title">Estimating waiting distances under the SMC'</h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <i>Expected Tree and Topology Distances represent new spatial genetic information.</i>
+                    </p></div>
+                    <img src="./images/Fig2-recomb-types-ARG-2.svg" style="width:70%">
+                </div>
+            </section>
+
+
+<!--             <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title">Estimating waiting distances under the SMC'</h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <i>Expected Tree and Topology Distances represent new spatial genetic information.</i>
+                    </p></div>
+                    <img src="./images/Fig2-recomb-types-ARG-3.svg" style="width:70%">
+                </div>
+            </section>
+
+ -->
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title">
+                        A <i>multispecies extension</i> to estimating waiting distances</h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <i>Barriers to coalescence and variable N$_e$ among species tree intervals.</i>
+                        </p></div>
+                    <img src="./images/Fig2-singlepop-recomb_types_row.svg" style="width:50%">
+                    <img src="./images/Fig2-recomb_types_row.svg" style="width:50%">
+
+                    <div class="fragment">
+                        <img src="../../images/Patrick-photo2.png" 
+                            style="width:10%; position: absolute; left:80%; bottom: 24%; border-radius: 50%;">
+                        <p style="position: absolute; left:79%; top:72%; text-align: left; font-size: 0.75em; font-weight: 400">
+                            Patrick McKenzie<br>PhD student</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title">Extending SMC' waiting distance estimation</h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <i>Integrate over all positions at which recombination can occur, <br>and all positions at which re-coalescence can occur.</i>
+                    </p></div>
+                    <img src="./images/smc-extension.svg" style="width:50%">
+                </div>
+            </section>                        
+
+
+
+
+
+            <!-- ARG inference is not very good... -->
+
+<!-- 
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <img src="./images/coal-with-recomb.svg" style="width:65%">
+                </div>
+            </section>
+-->
+<!-- 
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Coalescent with recombination (Hudson and Kaplan, 1988)</h3>
+
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <i>A stochastic process for generating linked genealogical variation</i></p></div>
+
+                    <div class="textbox"><p style="font-weight: 400; margin-top: 3%">
+                        The expected waiting time between coalescent events is a function of
+                        the number of lineages (k) and the diploid effective population size (N):
+                        </p></div>
+                    <section>\[\mathbb{E}(t_k| N, k) = \frac{k(k-1)}{2N}\]</section>
+
+                    <div class="textbox"><p style="font-weight: 400; margin-top: 3%">
+                        The time between recombination events is exponentially distributed. An 
+                        event at time $t$ splits the genome into two intervals. Coalescence 
+                        proceeds independently in each interval where waiting times between 
+                        coalescent events are sampled as exponential random variables with rate:
+                    </p></div>
+                    <section>\[\lambda_k = \frac{1}{\mathbb{E}(t_k| N, k)}\]</section>
+                </div>
+            </section>
+
+ -->
+
+
+
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%     RESULTS    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->                   
+
+
+           <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> <i>MS-SMC' analytical solutions</i></h3>
+
+                    <div class="equation">
+                        \[
+                            \mathbb{P}(\text{tree unchanged} | \mathcal{S}, \mathcal{G}, b, t_r) = 
+                            \int_{t_r}^{t^u_b} \frac{1}{2N(\tau)} e^{-\int_{t_r}^\tau \frac{A(s)}{2N(s)}ds} d\tau
+                        \]
+                    </div>
+
+                    <div class="fragment">
+                        <div class="equation">
+                            \[
+                                \mathbb{P}(\textrm{no-change} | \mathcal{S},\mathcal{G},b) = 
+                                \frac{1}{t^u_b-t^l_b} \int_{t_b^l}^{t_b^u} 
+                                \mathbb{P}(\textrm{no-change} | \mathcal{S},\mathcal{G},b,t)dt
+                            \]
+                        </div>
+                    </div>
+
+                    <div class="fragment">
+                        <div class="equation">
+                            \[
+                                \mathbb{P}(\textrm{no-change} | \mathcal{S},\mathcal{G}) = 
+                                \sum_{b \in \mathcal{G}}
+                                \left[\frac{t^u_b - t^l_b}{L(\mathcal{G})}\right]
+                                \mathbb{P}(\textrm{no-change} | \mathcal{S},\mathcal{G},b)
+                            \]
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> <i>Branch specific SMC' probabilities</i></h3>                    
+                    <img src="./images/Fig1-embedding-and-probs-fill-final.svg" style="width:80%; margin-top: 3%">
+                </div>
+                <div class="textbox"><p style="font-weight: 400; margin-top: 1.5%">                        
+                    Probabilities of different outcomes along a branch can go up or down 
+                    in complex demographic models, unlike the single-pop scenario.
+                    </p></div>
+            </section>
+
+
+
+           <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> <i>Exponentially distributed waiting distances</i></h3>
+
+
+                    <div class="equation">
+                        \[ \lambda_{r} = L(\mathcal{G}) \times r  \]
+                    </div>
+
+                    <div class="equation">
+                        \[ f(x) = \lambda e^{-\lambda x} \]
+                    </div>
+
+                    <div class="fragment">
+                        <div class="equation">
+                            \[ 
+                                \lambda_{n} = L(\mathcal{G}) \times r \times 
+                                \mathbb{P}(\text{no-change} | \mathcal{S},\mathcal{G})
+                            \]
+                        </div>
+                    </div>
+
+                    <div class="fragment">
+                        <div class="equation">
+                            \[ 
+                                \lambda_{g} = L(\mathcal{G}) \times r \times 
+                                \mathbb{P}(\text{tree-unchanged} | \mathcal{S},\mathcal{G})
+                            \]
+                        </div>
+
+                        <div class="equation">
+                            \[ 
+                                \lambda_{t} = L(\mathcal{G}) \times r \times 
+                                \mathbb{P}(\text{topology-unchanged} | \mathcal{S},\mathcal{G})
+                            \]
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> <i>Exponentially distributed waiting distances</i></h3>                    
+                    <img src="./images/exponentials.svg" style="width:40%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Validation:</h3>
+                        <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <i>Analytical results match expectation of stochastic coalescent simulations.</i>
+                    </p></div>
+                    <img src="./images/Fig4-final-validation2.svg" style="width:70%">
+                </div>
+            </section>
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Validation:</h3>
+                        <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <i>Analytical results match expectation of stochastic coalescent simulations.</i>
+                    </p></div>
+                    <img src="./images/Fig4-final-validation2-1.svg" style="width:70%">
+                </div>
+            </section>
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Validation:</h3>
+                        <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <i>Analytical results match expectation of stochastic coalescent simulations.</i>
+                    </p></div>
+                    <img src="./images/Fig4-final-validation2-2.svg" style="width:70%">
+                </div>
+            </section>
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Validation:</h3>
+                        <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <i>Analytical results match expectation of stochastic coalescent simulations.</i>
+                    </p></div>
+                    <img src="./images/Fig4-final-validation2-3.svg" style="width:70%">
+                </div>
+            </section>            
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> MS-SMC' likelihood framework</h3>
+                        <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <i>Exponential probability density of waiting distances given $\mathcal{G}$, $\mathcal{S}$.</i>
+                    </p></div>
+                    <!-- <img src="./images/Fig4-final-validation2-3.svg" style="width:70%"> -->
+                </div>
+            </section>            
+
+
+
+
+
+            <!--  -->
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Inference of MSC model parameters</h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <i>We implemented a simple Metropolis Hastings MCMC program to jointly infer 
+                        a posterior distribution of multiple MSC model parameters using the
+                        MS-SMC' likelihood.
+                        </i></div>
+                    <!-- <img src="../data-svg/intro-tree-outlines.svg" style="width:70%"> -->
+                    <!-- <img src="./images/genealogies-full-A.svg" style="width: 50%"> -->
+                    <img src="./images/MCMC-results.svg" style="width:60%">
+                    <div class="textbox"><p class="fragment" style="text-align:center; font-weight: 400">
+                        <!-- Input: 50 unlinked chromosomes, each 1e$^5$ in length (containing ~400 topology changes). -->
+                    </p></div>
+                </div>
+            </section>
+
+
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%   CONCLUSIONS    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->                                                
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Summary: <i>Multispecies Sequentially Markov Coalescent</i></h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <ul>
+                            <!-- <li>Summarize current theory for modeling ARGs.</li> -->
+                            <li>Extended method of Deng et al. (2020) to allow for MSC models</li>
+                            <li>Analytical solutions for waiting distance to tree or topology change</li>
+                            <li>Demonstrated accuracy against stochastic coalescent simulations</li>
+                            <li>Waiting distances provide <i>more</i> information in MSC-type models than
+                            in a single population coalescent.</li>
+                            <li>We can estimate MSC model parameters from <i>linked genome data!</i></li>
+                        </ul>
+                    </p></div>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Future directions</h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <ul>
+                            <li>Manuscript on biorxiv (within days!)</li>
+                            <li>Code at https://github.com/eaton-lab/ipcoal/ (docs coming!)</li>
+                            <li>Software to analyze genetic data is a future development</li>
+                            <li>Null expectations for hypothesis tests in sliding window analyses</li>
+                            <li>Incorporating waiting distance likelihoods into ARG inference (e.g., ARGweaver).</li>
+                            <li>and more...</li>
+                        </ul>
+                    </p></div>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Phylogenetic networks</h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <!-- Hudson and Kaplan (1988) described a stochastic process for  -->
+                        <i>What does this have to do with phylogenetic networks?</i>
+
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <ul>
+                            <li>Not much, yet...</li>
+                            <li>Admixture analyses remain polarized: MSC model, or model-free sliding windows</li>
+                            <li>I expect the MS-SMC' framework provides powerful future directions,
+                                where waiting distances between topology changes given a MSC network
+                                may be highly informative.
+                            </li>
+                        </ul>
+                    </p></div>
+                </div>
+            </section>
+
+
+
+
+            <!-- ============================================================== -->
+            <!-- ====  E3B  =================================================== -->
+            <!-- ============================================================== -->
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h2>Acknowledgements</h2>
+                    <!-- GRID OF CIRLCE FACES? -->
+                    <div class=textbox>
+                        <p>
+                        Richard Ree<br>
+                        Dave Boufford<br>
+                        Huang Shuang-Quan<br>
+                        De-Zhu Li<br>
+                        Patrick McKenzie<br>
+                        Jared Meek<br>
+                        Kasi Molina-Velez<br>
+                        Sandra Hoffberg<br>
+                        Isaac Overcast<br>
+                        </p>
+                    </div>
+
+                    <div class=textbox style="font-weight:400">
+                        <p>
+                        NSF DEB<br>
+                        NSF DDIG<br>
+                        NSF EAPSI<br>
+                        Columbia Lenfest Award<br>
+                        </p>
+                    </div>                    
+                    <img src="../data-img/crano-genomeplant.jpg" 
+                    style="position:absolute; width:40%; left:45%; top:170px">
+<!--                     <img src="../data-img/sipho-2009.jpg" 
+                    style="position:absolute; width:18%; left:50%; top:180px">
+                    <img src="../data-img/latituba-small.jpg" 
+                    style="position:absolute; width:18%; left:70%; top:180px">
+ -->
+                    <img src="../data-svg/acknowledge-logos.svg"
+                    style="position:absolute; width:40%; left:45%; top:660px">
+                </div>
+            </section>
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../reveal/lib/js/head.min.js"></script>        
+    <script src="../reveal/js/reveal.js"></script>
+    <script src="../reveal/plugin/math/math.js"></script>
+    <script type="text/javascript" src="../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: false,        
+            plugins: [ RevealMath ]
+      });
+    </script>
+
+<!--     <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: false,
+            // plugins: [RevealMath.Katex],
+            // slideNumber: "h/v",
+            dependencies: [
+            //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: '../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+            ]
+        });
+    </script> -->
+</body>
+</html>
