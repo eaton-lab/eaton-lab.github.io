@@ -465,10 +465,10 @@
                         \[ \lambda_{r} = L(\mathcal{G}) \times r  \]
                     </div>
 
-                    <div class="equation">
+<!--                     <div class="equation">
                         \[ f(x) = \lambda e^{-\lambda x} \]
                     </div>
-
+ -->
                     <div class="fragment">
                         <div class="equation">
                             \[ 
@@ -482,14 +482,14 @@
                         <div class="equation">
                             \[ 
                                 \lambda_{g} = L(\mathcal{G}) \times r \times 
-                                \mathbb{P}(\text{tree-unchanged} | \mathcal{S},\mathcal{G})
+                                \mathbb{P}(\text{tree-changed} | \mathcal{S},\mathcal{G})
                             \]
                         </div>
 
                         <div class="equation">
                             \[ 
                                 \lambda_{t} = L(\mathcal{G}) \times r \times 
-                                \mathbb{P}(\text{topology-unchanged} | \mathcal{S},\mathcal{G})
+                                \mathbb{P}(\text{topology-changed} | \mathcal{S},\mathcal{G})
                             \]
                         </div>
                     </div>
@@ -511,7 +511,7 @@
                         <div class="textbox"><p style="text-align:center; font-weight: 400">
                         <i>Analytical results match expectation of stochastic coalescent simulations.</i>
                     </p></div>
-                    <img src="./images/Fig4-final-validation2.svg" style="width:70%">
+                    <img src="./images/Fig4-final-validation2-result.svg" style="width:70%">
                 </div>
             </section>
 
@@ -519,7 +519,7 @@
                 <div class="standard">
                     <h3 class="title"> Validation:</h3>
                         <div class="textbox"><p style="text-align:center; font-weight: 400">
-                        <i>Analytical results match expectation of stochastic coalescent simulations.</i>
+                        <i>In single population model (Deng et al.) N$_e$ only affects genealogy lengths.</i>
                     </p></div>
                     <img src="./images/Fig4-final-validation2-1.svg" style="width:70%">
                 </div>
@@ -529,7 +529,7 @@
                 <div class="standard">
                     <h3 class="title"> Validation:</h3>
                         <div class="textbox"><p style="text-align:center; font-weight: 400">
-                        <i>Analytical results match expectation of stochastic coalescent simulations.</i>
+                        <i>In our model N$_e$ affects probability of event types as well as genealogy lengths.</i>
                     </p></div>
                     <img src="./images/Fig4-final-validation2-2.svg" style="width:70%">
                 </div>
@@ -539,7 +539,7 @@
                 <div class="standard">
                     <h3 class="title"> Validation:</h3>
                         <div class="textbox"><p style="text-align:center; font-weight: 400">
-                        <i>Analytical results match expectation of stochastic coalescent simulations.</i>
+                        <i>Waiting distances vary with N$_e$ more in structured models: more information.</i>
                     </p></div>
                     <img src="./images/Fig4-final-validation2-3.svg" style="width:70%">
                 </div>
@@ -567,7 +567,8 @@
                     <h3 class="title"> Likelihood surface: single N$_e$</h3>
                         <div class="textbox"><p style="text-align:center; font-weight: 400">
                         <i>Topology-change waiting distances contain more information than tree-change 
-                        distances.<br>Example: 50 loci 0.1Mb in length w/ recomb=2e-9</i>
+                        distances.
+                        <br>Example: loci=50, length=0.1Mb, recomb=2e-9, samples-per-lineage=4.</i>
                     </p></div>
                     <img src="./images/likelihood-surface.svg" style="width:90%">
                 </div>
@@ -625,14 +626,12 @@
                     <h3 class="title"> Inference of MSC model parameters</h3>
                     <div class="textbox"><p style="text-align:center; font-weight: 400">
                         <i>Metropolis Hastings MCMC program to jointly infer multiple MSC model 
-                        parameters. <br>Example: 50 loci 0.1Mb in length w/ recomb=2e-9</i>
+                        parameters. 
+                        <br>Example: loci=50, length=0.1Mb, recomb=2e-9, samples-per-lineage=4.</i>
                         </i></div>
                     <!-- <img src="../data-svg/intro-tree-outlines.svg" style="width:70%"> -->
                     <!-- <img src="./images/genealogies-full-A.svg" style="width: 50%"> -->
                     <img src="./images/MCMC-results.svg" style="width:60%">
-                    <div class="textbox"><p class="fragment" style="text-align:center; font-weight: 400">
-                        <!-- Input: 50 unlinked chromosomes, each 1e$^5$ in length (containing ~400 topology changes). -->
-                    </p></div>
                 </div>
             </section>
 
@@ -652,7 +651,7 @@
                     <div class="textbox"><p style="text-align:center; font-weight: 400">
                         <ul>
                             <!-- <li>Summarize current theory for modeling ARGs.</li> -->
-                            <li>We extended method of Deng et al. (2020) to MSC models</li>
+                            <li>We extended method of Deng et al. (2021) to MSC models</li>
                             <li>Analytical solutions for E[waiting distance] to tree or topology change</li>
                             <div class="fragment">
                                 <li>Validated: accurate against stochastic coalescent simulations</li>
@@ -714,44 +713,15 @@
             <!-- ============================================================== -->
             <!-- ====  E3B  =================================================== -->
             <!-- ============================================================== -->
-
             <section class="future" data-transition="none">
                 <div class="standard">
-                    <h2>Acknowledgements</h2>
-                    <!-- GRID OF CIRLCE FACES? -->
-                    <div class=textbox>
-                        <p>
-                        Richard Ree<br>
-                        Dave Boufford<br>
-                        Huang Shuang-Quan<br>
-                        De-Zhu Li<br>
-                        Patrick McKenzie<br>
-                        Jared Meek<br>
-                        Kasi Molina-Velez<br>
-                        Sandra Hoffberg<br>
-                        Isaac Overcast<br>
-                        </p>
-                    </div>
-
-                    <div class=textbox style="font-weight:400">
-                        <p>
-                        NSF DEB<br>
-                        NSF DDIG<br>
-                        NSF EAPSI<br>
-                        Columbia Lenfest Award<br>
-                        </p>
-                    </div>                    
-                    <img src="../data-img/crano-genomeplant.jpg" 
-                    style="position:absolute; width:40%; left:45%; top:170px">
-<!--                     <img src="../data-img/sipho-2009.jpg" 
-                    style="position:absolute; width:18%; left:50%; top:180px">
-                    <img src="../data-img/latituba-small.jpg" 
-                    style="position:absolute; width:18%; left:70%; top:180px">
- -->
-                    <img src="../data-svg/acknowledge-logos.svg"
-                    style="position:absolute; width:40%; left:45%; top:660px">
+                    <img src="./images/acknowledgements.svg" style='width: 70%'>
+                    <!-- <div class="textbox"><p style="text-align:center; font-weight: 400"> -->
+                    <!-- </p></div> -->
                 </div>
             </section>
+
+
 
 
         <!-- SLIDES CLASS ENDING -->
