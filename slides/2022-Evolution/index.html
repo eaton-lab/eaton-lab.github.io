@@ -143,7 +143,7 @@
                             <li>Subsampling unlinked loci effectively discards >99% genomic info.</li>
                             <li>Ignoring linkage introduces bias (<i>concatalescence</i>; Gatesy 2013).</li>
                             <li>Local ancestry is informative about selection and introgression.</li>
-                            <li>We lack a null expectation for spatial genealogical variation.</li>
+                            <li style="font-weight: 800;">We lack a null expectation for spatial genealogical variation.</li>
                         </ul>
                     </p></div>
                 </div>
@@ -209,25 +209,24 @@
 
             <section class="future" data-transition="none">
                 <div class="standard">
-                    <h3 class="title"> Sequentially Markov Coalescent (McVean and Cardin, 2005)</h3>
+                    <h3 class="title"> Sequentially Markov Coalescent <i>(McVean and Cardin, 2005)</i></h3>
 
                     <div class="textbox"><p style="text-align:center; font-weight: 400">
                         <!-- Hudson and Kaplan (1988) described a stochastic process for  -->
                         <i>An approximation of the coalescent with recombination</i>
 
                     <div class="textbox"><p style="font-weight: 400; margin-top: 3%">
-                        Changes between sequential genealogies are modeled as a Markov process
-                        &#8212; one subprune-regraft transition &#8212; which enables a tractable likelihood framework.
-                        <!-- by restricting coalescence to occur  -->
-                        <!-- only with lineages present in the previous interval.  -->
+                        Given a starting genealogy a change to the next genealogy is
+                        modeled as a Markov process &#8212; a single transition &#8212; which 
+                        enables a tractable likelihood framework.
 
                     </p></div>
 
                     <div class="fragment">
                         <div class="textbox"><p style="font-weight: 400; margin-top: 1.5%">                        
-                            Example: recombination at time t$_{1}$ on edge <i>b</i> creates
-                            a detached subtree which re-coalesces at rate $\lambda_k$
-                            to reconnect with any existing lineage lineage above time t$_{1}$.
+                            Process: recombination occurs w/ uniform probability anywhere on a
+                            tree (t$_{1}$), creating a detached subtree, which re-coalesces above
+                            t$_{1}$ with an ancestral lineage.
                             </p></div>
                         <img src="./images/smc.svg" style="width:35%">
                     </div>                            
@@ -263,7 +262,7 @@
 
             <section class="future" data-transition="none">
                 <div class="standard">
-                    <h3 class="title">Four categorical patterns under the SMC'</h3>
+                    <h3 class="title">Categorical event outcomes under the SMC'</h3>
                     <!-- <div class="textbox"><p style="text-align:center; font-weight: 400"> -->
                         <!-- <i>A genealogical variation</i></p></div> -->
                     <div class="textbox"><p style="font-weight: 400; text-align: center">
@@ -290,7 +289,7 @@
                     <div class="textbox"><p style="text-align:center; font-weight: 400">
                         <i>Expected Tree and Topology Distances represent new spatial genetic information.</i>
                     </p></div>
-                <img src="./images/Fig2-recomb-types-ARG-0.svg" style="width:70%">
+                <img src="./images/Fig2-recomb-types-ARG-0b.svg" style="width:70%">
                 </div>
             </section>
 
@@ -352,9 +351,10 @@
                 <div class="standard">
                     <h3 class="title">Extending SMC' waiting distance estimation</h3>
                     <div class="textbox"><p style="text-align:center; font-weight: 400">
-                        <i>Integrate over all positions at which recombination can occur, <br>and all positions at which re-coalescence can occur.</i>
+                        <i>Genealogy embedding table with piecewise constant coal rates in<br>
+                        all intervals between coal events or population intervals.</i>
                     </p></div>
-                    <img src="./images/smc-extension.svg" style="width:50%">
+                    <img src="./images/genealogy-embedding-table-full.svg" style="width:65%">
                 </div>
             </section>                        
 
@@ -418,6 +418,10 @@
                             \int_{t_r}^{t^u_b} \frac{1}{2N(\tau)} e^{-\int_{t_r}^\tau \frac{A(s)}{2N(s)}ds} d\tau
                         \]
                     </div>
+                    <div class="fragment fade-out">
+                        <img src="./images/genealogy-embedding-table-this-tr.svg"
+                         style="width:40%; position: absolute; left: 30%">
+                    </div>
 
                     <div class="fragment">
                         <div class="equation">
@@ -428,6 +432,11 @@
                             \]
                         </div>
                     </div>
+                    <div class="fragment fade-in-then-out">
+                        <img src="./images/genealogy-embedding-table-this-br.svg"
+                         style="width:40%; position: absolute; left: 30%">
+                    </div>                    
+                    <!-- <img src="./images/genealogy-embedding-table-edge2-tr.svg" style="width:65%">"                     -->
 
                     <div class="fragment">
                         <div class="equation">
@@ -445,13 +454,13 @@
 
             <section class="future" data-transition="none">
                 <div class="standard">
-                    <h3 class="title"> <i>Branch specific SMC' probabilities</i></h3>                    
+                    <h3 class="title"> <i>Branch specific SMC' probabilities</i></h3>
+                <div class="textbox"><p style="font-weight: 400; margin-top: 1.5%">                        
+                    Unlike single-pop models which exhibit monotonic probabilities over the 
+                    length of a branch, MSC models exhibit variable rates (both $k$ and N$_e$ can change).
+                    </p></div>
                     <img src="./images/Fig1-embedding-and-probs-fill-final.svg" style="width:80%; margin-top: 3%">
                 </div>
-                <div class="textbox"><p style="font-weight: 400; margin-top: 1.5%">                        
-                    Probabilities of different outcomes along a branch can go up or down 
-                    in complex demographic models, unlike the single-pop scenario.
-                    </p></div>
             </section>
 
 
@@ -459,7 +468,9 @@
            <section class="future" data-transition="none">
                 <div class="standard">
                     <h3 class="title"> <i>Exponentially distributed waiting distances</i></h3>
-
+                <div class="textbox"><p style="font-weight: 400; margin-top: 1.5%; text-align: center;">
+                    <i>Expected number of sites until a recombination event is observed.</i>
+                    </p></div>
 
                     <div class="equation">
                         \[ \lambda_{r} = L(\mathcal{G}) \times r  \]
@@ -519,7 +530,7 @@
                 <div class="standard">
                     <h3 class="title"> Validation:</h3>
                         <div class="textbox"><p style="text-align:center; font-weight: 400">
-                        <i>In single population model (Deng et al.) N$_e$ only affects genealogy lengths.</i>
+                        <i>In single population model (Deng et al.) N$_e$ only affects edge lengths.</i>
                     </p></div>
                     <img src="./images/Fig4-final-validation2-1.svg" style="width:70%">
                 </div>
@@ -529,7 +540,7 @@
                 <div class="standard">
                     <h3 class="title"> Validation:</h3>
                         <div class="textbox"><p style="text-align:center; font-weight: 400">
-                        <i>In our model N$_e$ affects probability of event types as well as genealogy lengths.</i>
+                        <i>In an MSC model N$_e$ affects probability of tree/topology change as well as edge lengths.</i>
                     </p></div>
                     <img src="./images/Fig4-final-validation2-2.svg" style="width:70%">
                 </div>
@@ -550,11 +561,15 @@
                 <div class="standard">
                     <h3 class="title"> Likelihood framework</h3>
                         <div class="textbox"><p style="text-align:center; font-weight: 400">
-                        <i>Likelihood of observed genealogies and lengths from exponential probability densities.</i>
+                        <i>Given an observed/proposed ARG (genealogies and interval lengths)<br>
+                            get expected waiting distance for each ($\lambda_i$)... 
+                        </i>
                     </p></div>
-                    <img src="./images/likelihood-workflow.svg" style="width:80%">
+                    <img src="./images/likelihood-workflow.svg" style="width:70%">
 
                     <div class="fragment">
+                        <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <i>... and calculate likelihood of MSC model $\mathcal{(S)}$ from exponential probability densities.</i>                        
                         <div class="equation" style="margin-top: 2%;">
                             \[ \mathcal{L}(\mathcal{S} | \Lambda_g, X_g) = \sum_i{log (\lambda_i e ^{-\lambda_i x_i}})  \]
                         </div>
@@ -566,8 +581,7 @@
                 <div class="standard">
                     <h3 class="title"> Likelihood surface: single N$_e$</h3>
                         <div class="textbox"><p style="text-align:center; font-weight: 400">
-                        <i>Topology-change waiting distances contain more information than tree-change 
-                        distances.
+                        <i>Topology-changes are more informative than tree-changes; optima at true sim. values.
                         <br>Example: loci=50, length=0.1Mb, recomb=2e-9, samples-per-lineage=4.</i>
                     </p></div>
                     <img src="./images/likelihood-surface.svg" style="width:90%">
@@ -623,10 +637,9 @@
             <!--  -->
             <section class="future" data-transition="none">
                 <div class="standard">
-                    <h3 class="title"> Inference of MSC model parameters</h3>
+                    <h3 class="title"> Joint inference of multiple MSC model parameters</h3>
                     <div class="textbox"><p style="text-align:center; font-weight: 400">
-                        <i>Metropolis Hastings MCMC program to jointly infer multiple MSC model 
-                        parameters. 
+                        <i>Metropolis Hastings MCMC converges on correct w/ increasing data.</i> 
                         <br>Example: loci=50, length=0.1Mb, recomb=2e-9, samples-per-lineage=4.</i>
                         </i></div>
                     <!-- <img src="../data-svg/intro-tree-outlines.svg" style="width:70%"> -->
