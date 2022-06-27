@@ -336,9 +336,9 @@
                         <i>Barriers to coalescence and variable N$_e$ among species tree intervals.</i>
                         </p></div>
                     <img src="./images/Fig2-singlepop-recomb_types_row.svg" style="width:50%">
-                    <img src="./images/Fig2-recomb_types_row.svg" style="width:50%">
 
                     <div class="fragment">
+                        <img src="./images/Fig2-recomb_types_row.svg" style="width:50%">                        
                         <img src="../../images/Patrick-photo2.png" 
                             style="width:10%; position: absolute; left:80%; bottom: 24%; border-radius: 50%;">
                         <p style="position: absolute; left:79%; top:72%; text-align: left; font-size: 0.75em; font-weight: 400">
@@ -414,7 +414,7 @@
 
                     <div class="equation">
                         \[
-                            \mathbb{P}(\text{tree unchanged} | \mathcal{S}, \mathcal{G}, b, t_r) = 
+                            \mathbb{P}(\text{tree-unchanged} | \mathcal{S}, \mathcal{G}, b, t_r) = 
                             \int_{t_r}^{t^u_b} \frac{1}{2N(\tau)} e^{-\int_{t_r}^\tau \frac{A(s)}{2N(s)}ds} d\tau
                         \]
                     </div>
@@ -422,9 +422,9 @@
                     <div class="fragment">
                         <div class="equation">
                             \[
-                                \mathbb{P}(\textrm{no-change} | \mathcal{S},\mathcal{G},b) = 
+                                \mathbb{P}(\textrm{tree-unchanged} | \mathcal{S},\mathcal{G},b) = 
                                 \frac{1}{t^u_b-t^l_b} \int_{t_b^l}^{t_b^u} 
-                                \mathbb{P}(\textrm{no-change} | \mathcal{S},\mathcal{G},b,t)dt
+                                \mathbb{P}(\textrm{tree-unchanged} | \mathcal{S},\mathcal{G},b,t)dt
                             \]
                         </div>
                     </div>
@@ -432,10 +432,10 @@
                     <div class="fragment">
                         <div class="equation">
                             \[
-                                \mathbb{P}(\textrm{no-change} | \mathcal{S},\mathcal{G}) = 
+                                \mathbb{P}(\textrm{tree-unchanged} | \mathcal{S},\mathcal{G}) = 
                                 \sum_{b \in \mathcal{G}}
                                 \left[\frac{t^u_b - t^l_b}{L(\mathcal{G})}\right]
-                                \mathbb{P}(\textrm{no-change} | \mathcal{S},\mathcal{G},b)
+                                \mathbb{P}(\textrm{tree-unchanged} | \mathcal{S},\mathcal{G},b)
                             \]
                         </div>
                     </div>
@@ -473,7 +473,7 @@
                         <div class="equation">
                             \[ 
                                 \lambda_{n} = L(\mathcal{G}) \times r \times 
-                                \mathbb{P}(\text{no-change} | \mathcal{S},\mathcal{G})
+                                \mathbb{P}(\text{tree-unchanged} | \mathcal{S},\mathcal{G})
                             \]
                         </div>
                     </div>
@@ -543,19 +543,78 @@
                     </p></div>
                     <img src="./images/Fig4-final-validation2-3.svg" style="width:70%">
                 </div>
-            </section>            
+            </section>     
 
 
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Likelihood framework</h3>
+                        <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <i>Likelihood of observed genealogies and lengths from exponential probability densities.</i>
+                    </p></div>
+                    <img src="./images/likelihood-workflow.svg" style="width:80%">
+
+                    <div class="fragment">
+                        <div class="equation" style="margin-top: 2%;">
+                            \[ \mathcal{L}(\mathcal{S} | \Lambda_g, X_g) = \sum_i{log (\lambda_i e ^{-\lambda_i x_i}})  \]
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Likelihood surface: single N$_e$</h3>
+                        <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <i>Topology-change waiting distances contain more information than tree-change 
+                        distances.<br>Example: 50 loci 0.1Mb in length w/ recomb=2e-9</i>
+                    </p></div>
+                    <img src="./images/likelihood-surface.svg" style="width:90%">
+                </div>
+            </section>     
+
+
+
+
+<!-- 
             <section class="future" data-transition="none">
                 <div class="standard">
                     <h3 class="title"> MS-SMC' likelihood framework</h3>
                         <div class="textbox"><p style="text-align:center; font-weight: 400">
                         <i>Exponential probability density of waiting distances given $\mathcal{G}$, $\mathcal{S}$.</i>
-                    </p></div>
-                    <!-- <img src="./images/Fig4-final-validation2-3.svg" style="width:70%"> -->
+                        </p></div>
+                    <div class="equation">
+                        \[ G = [\mathcal{G}_1, \mathcal{G}_2, \mathcal{G}_3, \ldots] \]
+                    </div>
+
+                    <div class="equation">
+                        \[ 
+                            \lambda_{g} = L(\mathcal{G}) \times r \times 
+                            \mathbb{P}(\text{tree-unchanged} | \mathcal{S},\mathcal{G})
+                        \]
+                    </div>
+
+                    <div class="equation">
+                        \[\Lambda_g = [\lambda_{g1}, \lambda_{g2}, \lambda_{g3}, \ldots] \]
+                    </div>
+
+                    <div class="equation">
+                        \[ X_g = [x_1, x_2, x_3, \ldots] \]
+                    </div>                    
+
+                    <div class="equation">
+                        \[ \mathcal{L}(\mathcal{S} | \Lambda_g, X_g) = \sum_i{log (\lambda_i e ^{-\lambda_i x_i}})  \]
+                    </div>
+
+                    <div class="equation">
+                        \[ 
+                            \lambda_{t} = L(\mathcal{G}) \times r \times 
+                            \mathbb{P}(\text{topology-unchanged} | \mathcal{S},\mathcal{G})
+                        \]
+                    </div>
                 </div>
             </section>            
-
+ -->
 
 
 
@@ -565,9 +624,8 @@
                 <div class="standard">
                     <h3 class="title"> Inference of MSC model parameters</h3>
                     <div class="textbox"><p style="text-align:center; font-weight: 400">
-                        <i>We implemented a simple Metropolis Hastings MCMC program to jointly infer 
-                        a posterior distribution of multiple MSC model parameters using the
-                        MS-SMC' likelihood.
+                        <i>Metropolis Hastings MCMC program to jointly infer multiple MSC model 
+                        parameters. <br>Example: 50 loci 0.1Mb in length w/ recomb=2e-9</i>
                         </i></div>
                     <!-- <img src="../data-svg/intro-tree-outlines.svg" style="width:70%"> -->
                     <!-- <img src="./images/genealogies-full-A.svg" style="width: 50%"> -->
@@ -594,12 +652,21 @@
                     <div class="textbox"><p style="text-align:center; font-weight: 400">
                         <ul>
                             <!-- <li>Summarize current theory for modeling ARGs.</li> -->
-                            <li>Extended method of Deng et al. (2020) to allow for MSC models</li>
-                            <li>Analytical solutions for waiting distance to tree or topology change</li>
-                            <li>Demonstrated accuracy against stochastic coalescent simulations</li>
-                            <li>Waiting distances provide <i>more</i> information in MSC-type models than
-                            in a single population coalescent.</li>
-                            <li>We can estimate MSC model parameters from <i>linked genome data!</i></li>
+                            <li>We extended method of Deng et al. (2020) to MSC models</li>
+                            <li>Analytical solutions for E[waiting distance] to tree or topology change</li>
+                            <div class="fragment">
+                                <li>Validated: accurate against stochastic coalescent simulations</li>
+                            </div>
+                            <div class="fragment">                            
+                                <li>Waiting distances provide <i>more</i> information in MSC-type models than
+                                in a single population coalescent.</li>
+                            </div>
+                            <div class="fragment">                            
+                                <li>We can estimate MSC model parameters from <i>linked genome data!</i></li>
+                            </div>
+                            <div class="fragment">                            
+                                <li>Topology-changes are easily detactable in sequence data.</i></li>
+                            </div>
                         </ul>
                     </p></div>
                 </div>
@@ -612,11 +679,10 @@
                     <h3 class="title"> Future directions</h3>
                     <div class="textbox"><p style="text-align:center; font-weight: 400">
                         <ul>
-                            <li>Manuscript on biorxiv (within days!)</li>
-                            <li>Code at https://github.com/eaton-lab/ipcoal/ (docs coming!)</li>
+                            <li>Manuscript on biorxiv (hopefully within days!)</li>
+                            <li>Implemented at <a href="https://github.com/eaton-lab/ipcoal/">https://github.com/eaton-lab/ipcoal/</a> (docs coming!)</li>
                             <li>Software to analyze genetic data is a future development</li>
-                            <li>Null expectations for hypothesis tests in sliding window analyses</li>
-                            <li>Incorporating waiting distance likelihoods into ARG inference (e.g., ARGweaver).</li>
+                            <li>Extensions to Multispecies Network Coalescent.</li>                            
                             <li>and more...</li>
                         </ul>
                     </p></div>
@@ -624,11 +690,10 @@
             </section>
 
 
-            <section class="future" data-transition="none">
+<!--             <section class="future" data-transition="none">
                 <div class="standard">
                     <h3 class="title"> Phylogenetic networks</h3>
                     <div class="textbox"><p style="text-align:center; font-weight: 400">
-                        <!-- Hudson and Kaplan (1988) described a stochastic process for  -->
                         <i>What does this have to do with phylogenetic networks?</i>
 
                     <div class="textbox"><p style="text-align:center; font-weight: 400">
@@ -643,8 +708,7 @@
                     </p></div>
                 </div>
             </section>
-
-
+ -->
 
 
             <!-- ============================================================== -->
