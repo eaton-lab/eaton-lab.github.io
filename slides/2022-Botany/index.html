@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolution Conference 2022">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2022-Botany</title>
+
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../eaton-lab.css">
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">    
+    <link rel="stylesheet" href="./custom.css">
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <!-- TITLE SLIDE -->
+            <section 
+                data-background-image="../data-img/landscape-collect.jpg"
+                data-state="dimbg"
+                data-transition="none" 
+                class="present" 
+                hidden="">
+                <div style="margin-left: auto; margin-top: 15%">
+                <h2 class="title" style="color:#262626;line-height: 1.25">
+                Community phylogenomics of a rapid plant radiation: 
+                <br><i>Pedicularis</i> in the Hengduan Mountains</h2>
+                <h4 style="font-size: 1.1em; font-weight: 400; line-height: 1.5"> 
+                    Deren Eaton <br>
+                    <i>Dept. of Ecology, Evolution, and Environmental Biology<br>
+                    Columbia University</i>
+                </h4>
+                </div>
+            </section>
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                <h3 class="title" style="color:#5ab4ac; margin-top:20%; line-height:1.2">
+                How can we most accurately reconstruct the <br><i>evolutionary history</i> 
+                of organisms from their genomes?
+                </h3>
+                </div>
+            </section>
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                <h3 class="title" style="color:#d8b365; margin-top:20%; line-height:1.2">
+                How have ecological interactions shaped evolutionary <br>patterns among species?
+                </h3>
+                </div>
+            </section>
+<!-- 
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Genomics and Botany </h3>
+                <div class="textbox"><p style="text-align:center; font-weight: 400">                    
+                    It's an exciting time for evolutionary genomics and botany. 
+                </p></div>               
+                <img src="../data-svg/intro-phylogenomic-sampling.svg" style="width:70%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Genomics and Botany </h3>
+                <div class="textbox"><p style="text-align:center; font-weight: 400">                    
+                    It's an exciting time for evolutionary genomics and botany. 
+                </p></div>               
+                <img src="../data-img/nsf-award-career.png" style="width:70%">
+                </div>
+            </section>
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Come visit my poster</h3>
+                <img src="../data-img/botany-poster.png" style="width:40%">
+                </div>
+            </section>
+ -->
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> <i>Spatial and Community Phylogenomics of Pedicularis </i></h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <ul>
+                            <li>Background: <i>Pedicularis</i> diversity and distribution.</li>
+                            <li>Case study: Character displacement in <i>P. cranolopha</i></li>
+                            <li>Ongoing work: Comparative Phylogeography.</li>                                
+                            <!-- <li>Ongoing work: Transcriptomics, morphology, and morphometrics.</li> -->
+                            <!-- <li>Ongoing work: Whole genome assemblies.</li> -->
+                        </ul>
+                    </p></div>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+
+                <section data-background-iframe="../data-html/Hengduan.html" 
+                    data-background-interactive data-transition="none"
+                    style="top:-960px; display: block;" class="future" hidden="">
+                </section>
+
+                <!-- with collection points -->
+                <section data-background-iframe="../data-html/Hengduan-Ped-database-full.html" 
+                    data-background-interactive data-transition="none"
+                    style="top:-960px; display: block;" class="future" hidden="">
+                </section>
+
+
+                <section 
+                    data-background-iframe="../data-html/Hengduan-Ped-database.html"
+                    data-background-interactive data-transition="none"
+                    style="display: block;" 
+                    class="future">
+
+                    <h2 style="color:black; text-align: right"><i>Pedicularis</i> L. in China</h2>
+
+                    <div id="part1" style="margin-left:35%; margin-top: 7%; text-align:left">        
+                        <div style="display:flex; flex-wrap:row; justify-content:left;
+                            align-items:center;">
+                            <p style="line-height: 1em">
+                                <span style="font-size:33px; font-weight:400;">Diversity and distribution:</span><br>
+                                <span style="font-size:24px;">
+                                >600 species worldwide, >300 endemic to Hengduan Mountains.<br>
+                                Collecting expeditions starting in 1996 from KIB, HUH, and FMNH.<br>
+                                Our recent <i>Pedicularis</i> focused expeditions in 2018, 2019, and 2021.<br>
+                                >117 species (>2700 specimens) from >350 locations <br>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="part2" style="margin-left:35%; margin-top: 0%; text-align:left">        
+                        <div style="display:flex; flex-wrap:row; justify-content:left;
+                            align-items:center; margin-right: 15%">
+                            <p style="line-height: 1em">
+                                <span style="font-size:33px; font-weight:400;">Morphologically diverse:</span><br>
+                                <span style="font-size:24px;">
+                                Spectacular <i>floral diversity</i> and convergence/homoplasy (Ree 2005, Eaton & Ree 2012).
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="part3" style="margin-left:35%; margin-top: 0%; text-align:left">        
+                        <div style="display:flex; flex-wrap:row; justify-content:left;
+                            align-items:center; margin-right: 15%">
+                            <p style="line-height: 1em">
+                                <span style="font-size:33px; font-weight:400;">
+                                Complex history of assembly:</span><br>
+                                <span style="font-size:24px;">
+                                Mountain uplift, glaciation, river and mountains barriers, and species interactions.
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <h2 style="margin-bottom: 1%">Floral diversity in <i>Pedicularis</i></h2>
+                    <div class="container" style="margin: auto">
+                      <div class="gallery">
+                        <figure class="gallery__item gallery__item--1">
+                          <img src="../data-img/fetisowii.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--2">  
+                          <img src="../data-img/crano-flaghorn.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--3">    
+                          <img src="../data-img/sipho-small.jpg" class="gallery__img">        
+                        </figure>
+                        <figure class="gallery__item gallery__item--4">
+                          <img src="../data-img/decorissima-small.jpg" class="gallery__img"> 
+                        </figure>
+                        <figure class="gallery__item gallery__item--5">
+                          <img src="../data-img/macrosiphon-small.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--6">
+                          <img src="../data-img/latituba-small.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--7">
+                          <img src="../data-img/sipho-2009.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--8">
+                          <img src="../data-img/anas-small.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--9">
+                          <img src="../data-img/longiflora-small.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--10">
+                          <img src="../data-img/davidii-small.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--11">
+                          <img src="../data-img/scolopax-2009.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--12">
+                          <img src="../data-img/oxycarpa-small.jpg" class="gallery__img">
+                        </figure>
+                      </div>
+                    </div>
+                </section>                    
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3 class="title">Reproductive interference</h3>
+                    <div class="textbox"><p style=" font-weight: 400">
+                        Negative fitness consequences imposed by one organism on another 
+                        by disrupting successful reproduction (a form of selection on reproductive traits/timing/behavior)
+                    </p></div>
+                    <img src="../data-img/crano-co-occurrence.jpg" style="width:40%">
+                    </div>
+                </section>                
+
+
+                <section 
+                    data-background-color="black"
+                    data-background-image="../data-img/landscape-3-big.jpg" 
+                    data-background-position="center"
+                    data-background-size="contain"
+                    data-transition="none" 
+                    class="future" 
+                    hidden="">
+                        <h3 class="title" style="text-align: right; color:white; margin-top: 0">
+                        The Hengduan Mountains</h3>
+                </section>
+
+
+                <section 
+                    data-background-color="black"
+                    data-background-image="../data-img/landscape-4-big.jpg" 
+                    data-background-position="center"
+                    data-background-size="contain"
+                    data-transition="none" 
+                    class="future" 
+                    hidden="">
+                        <h3 class="title" style="text-align: right; color:white; margin-top: 0">
+                        The Hengduan Mountains</h3>
+                </section>
+
+                <section 
+                    data-background-color="black"
+                    data-background-image="../data-img/landscape-6-big.jpg" 
+                    data-background-position="center"
+                    data-background-size="contain"
+                    data-transition="none" 
+                    class="future" 
+                    hidden="">
+                        <h3 class="title" style="text-align: right; color:white; margin-top: 0">
+                        The Hengduan Mountains</h3>
+                </section>
+
+                <section 
+                    data-background-color="black"
+                    data-background-image="../data-img/landscape-5-big.jpg" 
+                    data-background-position="center"
+                    data-background-size="contain"
+                    data-transition="none" 
+                    class="future" 
+                    hidden="">
+                        <h3 class="title" style="text-align: right; color:white; margin-top: 0">
+                        The Hengduan Mountains</h3>
+                </section>
+
+                <section data-transition="none" data-background-color=#262626 hidden="">
+                    <div class="standard">
+                        <div style="text-align:center; margin-top:15%; margin-right: 10%; margin-left: 10%">
+                        <p style="color:white; font-weight:400">
+                        Does <i>interspecific</i> competition/interference drive floral divergence?
+                        </p></div>
+
+                        <div style="text-align:center; margin-top:10%; margin-right: 10%; margin-left: 10%">        
+                        <p style="color:white; font-weight:400">
+                        Is floral divergence associated with genetic divergence/speciation?
+                        </p></div>
+                    </div>
+                </section>
+        
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <section class="future" data-transition="none" data-background-image="../../images/pedics/p-decor.jpg">
+                    <div class="standard">
+                    <h3 class='title' style="text-align:left; color:white;">
+                    Morphological terminology
+                    </h3>
+                    </div>
+                </section>
+
+                <section class="future" data-transition="none">
+                    <div class="standard" style="margin-top:0%">
+                    <img src="../data-svg/flower-morphology-1.svg" style="width:75%">
+                    </div>
+                </section>
+
+                <section 
+                    data-background-image="../data-img/pollinator-confert.jpg" 
+                    data-transition="none" 
+                    style="top:-960px; display: block;" 
+                    class="future"
+                    >
+                    <h3 style="font-size:35px; position:absolute;
+                        right:0px; top:700px; color:white; text-align: right">
+                    The <span style="font-style:italic; font-weight: 400">beak</span> 
+                    of the galea directs pollen placement and pickup
+                    </h3>
+                </section>
+
+                <section class="future" data-transition="none" style="margin-top: 5%">
+                    <img data-src="../data-svg/flower-morphology-2.svg">
+                </section>      
+
+                <section data-transition="none" class="future">
+                    <div class="standard">
+                        <h3 class="title">Elongate styles</h3>
+                        <div class="textbox"><p style="font-size:28px; font-weight: 400;">  
+                            Elongate <i>styles</i> have evolved multiple times (Ree 2005)
+                            and facilitate <span style="font-weight: 400; font-style: italic;">
+                            pollen competition</span> among species (Tong and Huang 2016).
+                        </p></div>
+                        <div style="align-items:center">
+                            <img src="../data-img/tube-length-variation.jpg" style="width:35%; object-fit:cover;">
+                            <img src="../data-svg/pollination-Huang.svg" style="width:35%; box-shadow:5px 10px 8px #888888;">
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+
+            <!-- SLIDE 10: Ecology paper -->   
+            <section class="future" data-transition="none">                
+                <section 
+                    data-background-iframe="../data-html/Hengduan-Ped-database.html"
+                    data-transition="none"
+                    style="top:-960px; display: block;"
+                    class="future" 
+                    hidden="">
+                    
+                    <div class="standard">
+                        <h3 class="title" style="margin-left:37%;">Ecological pattern: <i>reproductive interference</i></h3>
+                        <!-- <p style="font-size: 0.9em; margin-left: 37%;"> -->
+                        <div class="textbox"><p style="font-size:24px; font-weight: 400; margin-left: 39%; margin-right: 0;">
+                            We have prevously shown evidence of RI in <i>Pedicularis</i> communities:<br>
+                            Phenotypic overdispersion (<i>co-occurring spp have dissimilar flowers</i>)<br> 
+                            phylogenetic randomness (<i>communities comprise close or distant relatives</i>)<br>
+                            (Eaton & Ree 2012).
+                        </p></div>
+                        <img src="../data-svg/character-displacement-2.svg" 
+                        style="width:32%; margin-left:33%; margin-top: 3%">
+                    </div>
+                </section>
+
+
+                <!-- SLIDE 11: Theory - character displacement -->
+                <section data-transition="none" class="future">
+                    <div class="standard">
+                        <h3 class="title">Evolutionary process: <i>character displacement</i></h3>
+                        <div class="textbox"><p style="font-size:28px; font-weight: 400;">
+                            Divergent selection drives greater differences between populuations 
+                            in sympatry than allopatry (e.g., benthic/limnetic sticklebacks) 
+                            to reduce competition for limited resources.</p></div>
+                        <img src="../data-svg/character-displacement-8.svg" style="width:50%; margin-top:5%">
+                    </div>
+                </section>
+
+                <section data-transition="none" class="future">
+                    <div class="standard">
+                        <h3 class="title">Evolutionary process: <i>character displacement</i></h3>
+                        <div class="textbox"><p style="font-size:28px; font-weight: 400;">
+                            The difficulty for <i>Pedicularis</i> is that there are <i>so many</i> 
+                            species that each interacts with: <br>
+                            who is the <i>focal</i> competitor? We need a 
+                            <span style="font-weight: 600">community model of character displacement
+                            </span>.</p></div>
+                        <img src="../data-svg/character-displacement-7.svg" style="width:45%; margin-top:0%">
+                    </div>
+                </section>
+
+                <!-- cranolopha outline -->
+                <section data-transition="none" class="future">
+                    <div class="standard">
+                        <h3 class="title">Reproductive character displacement</h3>                        
+                        <div class="textbox"><p style="font-size:28px; font-weight: 400;">
+                            <span style="font-weight: 600">Hypothesis:</span>
+                            Differences among populations (within species) are a result of interspecific
+                            interactions driving character displacement in local communities.
+                        </p></div>
+                        <img src="../data-svg/character-displacement-4.svg" style="width:60%; margin-top:2%">
+                    </div>
+                </section>
+
+                <section data-transition="none" class="future" hidden="">
+                    <div class="standard">
+                    <h3 class="title">Case study: <i>Pedicularis cranolopha</i></h3>
+                    <img src="../data-svg/character-displacement-5.svg" style="width:75%; margin-top:0%">
+                    </div>
+                </section>
+
+
+
+                <section data-transition="none" class="future">
+                    <div class="standard">
+                    <h3>Example sampled <i>Pedicularis</i> communities</h3>
+                    <img src="../data-svg/character-displacement-6.svg" style="width:65%; margin-top:0%">
+                    </div>
+                </section>
+
+
+                <section 
+                    data-background-iframe="../data-html/exp-cranolopha.html" 
+                    data-background-interactive 
+                    data-transition="none"
+                    style="top:-960px; display: block;" 
+                    class="future" hidden="">
+
+                    <div class="standard">
+                        <h3 class="title" style="color:black; margin-left: 40%">            
+                            <i>P. cranolopha</i> (widespread)
+                        </h3>
+                        <img src="../data-img/crano-flaghorn.jpg" style="width:25%; margin-left: 40%">
+                    </div>
+                </section>
+
+                <section 
+                    data-background-iframe="../data-html/exp-longiflora.html" 
+                    data-background-interactive 
+                    data-transition="none"
+                    style="top:-960px; display: block;" 
+                    class="future" hidden="">
+
+                    <div class="standard">
+                        <h3 class="title" style="color:black; margin-left: 40%">
+                        <i>P. longiflora</i> (widespread) </h3>
+                        <img src="../data-img/longiflora-small.jpg" style="width:25%; margin-left: 40%">
+                    </div>
+                </section>
+
+
+                <section 
+                    data-background-iframe="../data-html/exp-fetisowii.html" 
+                    data-background-interactive 
+                    data-transition="none"
+                    style="top:-960px; display: block;" 
+                    class="future" hidden="">
+                    <div class="standard">
+                        <h3 class="title" style="color:black; margin-left: 40%">
+                        <i>P. fetisowii</i> (rare)</h3> 
+                        <img src="../data-img/fetisowii.jpg" style="width:25%; margin-left: 40%">
+                    </div>
+                </section>
+            </section>
+
+
+            <!-- SLIDE 15: comparative felsensetin -->
+            <section data-transition="none" class="future" hidden="">
+
+                <section data-transition="none" class="future" hidden="">                
+                    <div class="standard">
+                        <h3 class="title">Testing association between phenotype and <i>(biotic)</i> environment</h3>        
+
+                        <div style="text-align:left; position:absolute; left:10%; width:35%">
+                            <p style="font-size:0.8em">
+                            <span style="font-weight:400">Lande (1976):</span><br>
+                            <span style="color:red;font-weight:400">Selection</span> pulls 
+                            the mean phenotype towards a local optimum, while
+                            <span style="color:blue;font-weight:400">
+                            Gene Flow</span> homogenizes phenotypes among populations, 
+                            and they evolve by stochastic
+                            <span style="color:green; font-weight:400;">
+                            Drift</span>.<br>
+                            </p>
+                            <img src="../data-svg/crano-Lande-equation.svg" style="width:90%;">
+                        </div>
+
+                        <!-- right side -->
+                        <div style="position: absolute; left: 55%">
+                            <img src="../data-svg/Felsenstein-toggle.svg" style="margin-top:10%">
+                        </div>
+
+                        <div class="textbox"><p style="text-align:center;font-size:28px; margin-top: 680px;font-weight: 400;">
+                        Eaton et al. (In Prep)</p></div>
+                    </div>
+                </section>
+
+
+                <section 
+                    data-background-iframe="../data-html/crano-map-colored.html"
+                    data-background-interactive 
+                    data-transition="none"
+                    style="top:-960px; display: block;" 
+                    class="future" hidden="">
+                    <div class="standard"> 
+                        <h3 class="title" style="color:black; margin-left:42%; margin-top: 0%">
+                            <i>P. cranolopha</i> phylogeography</i></h3>
+                        <div class="textbox" style="margin-left: 40%"><p style="font-size: 0.75em; margin-right: 0">
+                            RAD-seq (original) PstI enzyme, ~5M reads per sample;<br>
+                            110 individuals total, 5-8 from each of 15 targeted locations.<br>
+                            <i>ipyrad</i> min50 assembly: 20K loci, 21% missing, 286K SNPs<br>
+                            <i>raxml+structure</i>: 4-6 clades; gene flow at contact zones.
+                        </p></div>
+                        <img src="../data-svg/crano-tree-structure.svg", 
+                        style="width:28%; margin-left: 20%; margin-top: 2%">
+
+                        <img src="../data-svg/cranolopha-PCA-scolors.svg" style="width: 250px;position: absolute; left: 7900px; top:300px">
+                        <img src="../data-svg/cranolopha-TSNE-scolors.svg" style=" width: 270px; position: absolute; left: 1100px; top:300px">
+                    </div>
+                </section>
+
+                <section 
+                    data-background-iframe="../data-html/crano-map-colored.html"
+                    data-background-interactive 
+                    data-transition="none"
+                    style="top:-960px; display: block;" 
+                    class="future" hidden="">
+
+                    <div class="standard"> 
+                        <h3 class="title" style="color:black; margin-left:42%; margin-top: 0%">
+                            <i>P. cranolopha</i> phylogeography</i></h3>
+
+                        <div class="textbox"><p style="font-size:28px; font-weight: 400; margin-left: 40%; margin-right: 0;">
+                            High population structure. PC2 separates east from west. Orange clade is 
+                            undescribed; pink=<i>P. tricolor</i>; blue=<i>P. cranolopha</i>
+                            var. cranolopha; yellow=<i>P. cranolopha</i> longicornuta; and 
+                            green may be <i>P. cranolopha</i> var. garnieri. 
+                        </p></div>                            
+                        <!-- <img src="../data-svg/crano-dimensions-1.svg" style="width:35%"> -->
+
+                    </div>
+                </section>
+
+                <section 
+                    data-background-iframe="../data-html/crano-map-colored.html"
+                    data-background-interactive 
+                    data-transition="none"
+                    style="top:-960px; display: block;" 
+                    class="future" hidden="">
+
+                    <div class="standard"> 
+                        <h3 style="color:black; margin-left:42%; margin-top: 0%">
+                            <i>P. cranolopha RAD-seq genomics</i>
+                        </h3>
+                        <div class="textbox" style="margin-left: 40%">
+                            <p style="font-size: 0.75em">
+                            Style length does not correlate strongly with genetic clades. 
+                            </p>
+                        </div>
+                        <img src="../data-svg/crano-tree-tubes-colors.svg"
+                        style="width:39%; margin-left: 40%; margin-top: 0%">
+                    </div>
+                </section>
+
+                <section 
+                    data-background-iframe="../data-html/crano-map-colored.html"
+                    data-background-interactive 
+                    data-transition="none"
+                    style="top:-960px; display: block;" 
+                    class="future" hidden="">
+
+                    <div class="standard"> 
+                        <h3 style="color:black; margin-left:42%; margin-top: 0%">
+                            <i>P. cranolopha RAD-seq genomics</i>
+                        </h3>
+                        <div class="textbox" style="margin-left: 40%">
+                            <p style="font-size: 0.75em">
+                            Migration estimates are highly asymmetic (<i>migrate-n</i>; 100 loci): 
+                            the southern-most clade (Yunnan) is a sink of gene flow. Very different relation from tree-based inference.
+                            </p>
+                        </div>                    
+                        <img src="../data-svg/crano-migrate-nodes.svg"
+                        style="width:23%; margin-left: 42%; margin-top: 3%">
+                        <img src="../data-svg/crano-tree-tubes-colors.svg"
+                        style="width:25%; margin-left: 2%; margin-top: 3%">
+                    </div>
+                </section>
+            </section>
+
+
+
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%   CONCLUSIONS    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->                                                
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Summary: <i>Multispecies Sequentially Markov Coalescent</i></h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <ul>
+                            <!-- <li>Summarize current theory for modeling ARGs.</li> -->
+                            <li>We extended method of Deng et al. (2021) to MSC models</li>
+                            <li>Analytical solutions for E[waiting distance] to tree or topology change</li>
+                            <div class="fragment">
+                                <li>Validated: accurate against stochastic coalescent simulations</li>
+                            </div>
+                            <div class="fragment">                            
+                                <li>Waiting distances provide <i>more</i> information in MSC-type models than
+                                in a single population coalescent.</li>
+                            </div>
+                            <div class="fragment">                            
+                                <li>We can estimate MSC model parameters from <i>linked genome data!</i></li>
+                            </div>
+                            <div class="fragment">                            
+                                <li>Topology-changes are easily detactable in sequence data.</i></li>
+                            </div>
+                        </ul>
+                    </p></div>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Future directions</h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <ul>
+                            <li>Manuscript on biorxiv (hopefully within days!)</li>
+                            <li>Implemented at <a href="https://github.com/eaton-lab/ipcoal/">https://github.com/eaton-lab/ipcoal/</a> (docs coming!)</li>
+                            <li>Software to analyze genetic data is a future development</li>
+                            <li>Extensions to Multispecies Network Coalescent.</li>                            
+                            <li>and more...</li>
+                        </ul>
+                    </p></div>
+                </div>
+            </section>
+
+
+<!--             <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3 class="title"> Phylogenetic networks</h3>
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <i>What does this have to do with phylogenetic networks?</i>
+
+                    <div class="textbox"><p style="text-align:center; font-weight: 400">
+                        <ul>
+                            <li>Not much, yet...</li>
+                            <li>Admixture analyses remain polarized: MSC model, or model-free sliding windows</li>
+                            <li>I expect the MS-SMC' framework provides powerful future directions,
+                                where waiting distances between topology changes given a MSC network
+                                may be highly informative.
+                            </li>
+                        </ul>
+                    </p></div>
+                </div>
+            </section>
+ -->
+
+
+            <!-- ============================================================== -->
+            <!-- ====  E3B  =================================================== -->
+            <!-- ============================================================== -->
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <img src="./images/acknowledgements.svg" style='width: 70%'>
+                    <!-- <div class="textbox"><p style="text-align:center; font-weight: 400"> -->
+                    <!-- </p></div> -->
+                </div>
+            </section>
+
+
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../reveal/lib/js/head.min.js"></script>        
+    <script src="../reveal/js/reveal.js"></script>
+    <script src="../reveal/plugin/math/math.js"></script>
+    <script type="text/javascript" src="../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: false,        
+            plugins: [ RevealMath ]
+      });
+    </script>
+
+<!--     <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: false,
+            // plugins: [RevealMath.Katex],
+            // slideNumber: "h/v",
+            dependencies: [
+            //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: '../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+            ]
+        });
+    </script> -->
+</body>
+</html>
