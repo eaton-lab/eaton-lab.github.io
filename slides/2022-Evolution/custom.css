@@ -33,6 +33,12 @@
     text-align: left;
 }
 
+.reval ul li::marker {
+  content: "\2714\0020  ";
+  color: #4ac1bb;
+  font-size: 1.5em;
+}
+
 /* my slide block text div class for p elements*/
 .textbox p {
     font-size: 0.9em; 

@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Fundamentals-7</title>
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+    <!-- <link rel="stylesheet" href="./custom.css"> -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal/css/print/pdf.css' : '../../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <!-- SLIDE 0 (TITLE) -->
+            <section id="title" data-background="#262626" style="top:300.5px; display:block;" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 20%">
+                <h1 class="title" style="color:#5D9B84">
+                Fundamentals of Evolution</h1>
+                <h5 style="color: lightgrey"> EEEB G6110</h5>
+                <h4 style="color: white">Session 7: Population Genetics</h4>
+                <br>
+                </div>
+            </section>
+
+            <section id="contents" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Section topics </h2>
+                <br>
+                <p style='font-size:1.2em; font-weight:400; color:#5D9B84; text-align:left; margin-left: 25%; margin-right:10%; line-height: 1.0'>
+                    1. Hardy Weinberg
+                    <br><br>
+                    2. Wright's F-statistics
+                    <br><br>
+                    3. Genealogical ancestors
+                    <br><br>
+                    4. The coalescent
+                    <br><br>
+                    5. Neutral theory (debate)
+                </p>
+                </div>
+            </section>
+
+
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Mendelian segregation and recombination</h3>
+                    <div class="textbox"><p>
+                        Segregation applies to the inheritance of allele copies at a single locus, whereas recombination affects whether copies at <i>two different loci</i> will be inherited together.
+                    </p></div>
+                    <img src=data/recombination.png style="width:29%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Linkage disequilibrium</h3>
+                    <img src=data/linkage-disequilibrium.png style="width:50%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Physical linkage</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        Linkage describes the probability that alleles at two or more positions in the genome will be co-inherited in gametes during Meiosis. It is a measurement of an individual genome, and is influenced by the <i>physical distance</i> separating the alleles (the number of nucleotides in the genome), and the <i>genetic distance</i> (variation in recombination rates across the genome). Loci very close together tend to be in linkage disequilibrium, while those on different chromosomes tend to be in linkage equilibrium. However, selection and recombination can affect this.
+                    </p></div>                    
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Linkage disequilibrium</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        Linkage disequilibrium (LD) describes the statistical association between alleles at two loci in a population, e.g., when an individual has A1 it also has B1. It is a measurement of a population and is influenced by the population history (e.g., selection, recombination), not an individual.
+                        <br><br>
+                        When a new mutation occurs the new allele only exists on the chromosome on which it evolved. It can be replicated and inherited in offspring, but will continue to occur only with the other alleles with which it is physically linked unless recombination breaks this association by crossover events that link it to other chromosomes with other alleles. 
+                    </p></div>                    
+                </div>
+            </section>
+            
+
+
+
+           <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Recombination and Sex</h3>
+                    <div class="textbox"><p>
+                        Recombination re-shuffles variation among individuals in a population and can bring together beneficial alleles more quickly than in asexual populations. 
+                    </p></div>         
+                    <img src="data/clonal-interference-1.png">
+                    <img src="data/clonal-interference-2.png">
+                </div>
+            </section>
+
+
+           <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Recombination and Sex</h3>
+                    <div class="textbox"><p>
+                        Recombination re-shuffles variation among individuals in a population and in doing so can disassociate (linkage equilibrium) beneficial from deleterious alleles. 
+                    </p></div>         
+                    <img src="data/ruby-in-the-rubbish.png" style="width:60%">
+                </div>
+            </section>            
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Hardy Weinberg Equilibrium </h3>
+                    <div class="textbox"><p>
+                    The <a href=https://en.wikipedia.org/wiki/Hardy%E2%80%93Weinberg_principle>Hardy–Weinberg principle (HW)</a> provides the solution to one of Darwin's biggest mysteries: how variation is maintained in a population. Under Mendelian inheritance (independent assortment) <i>the frequencies of alleles (variants at a gene) will remain constant in the absence of 
+                    <span style="font-weight:400">selection, mutation, migration, and/or genetic drift.</span></i>
+                    </p></div>
+                    <img src="data/allele-freqs.png" style="width:20%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Hardy Weinberg Equilibrium </h3>
+                    <div class="textbox"><p>
+                    The <a href=https://en.wikipedia.org/wiki/Hardy%E2%80%93Weinberg_principle>Hardy–Weinberg principle (HW)</a> provides the solution to one of Darwin's biggest mysteries: how variation is maintained in a population. Under Mendelian inheritance (independent assortment) <i>the frequencies of alleles (variants at a gene) will remain constant in the absence of 
+                    <span style="font-weight:400">selection, mutation, migration, and/or genetic drift.</span></i>
+                    <br><br>
+                    In modeling this <i>idealized population</i> we make the  following assumptions, and then we can also ask how allele frequencies would change if one or more of these assumptions is relaxed:<br><br>
+
+                    <p style="margin-left: 25%">
+                    selection=0<br>
+                    mutation=0<br>
+                    migration=0 (i.e., random mating, no population structure)<br>
+                    Ne=infinite (infinite population size = no effect of drift)
+                    </p>
+                    </p></div>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Mendelian segregation and recombination</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        In the absence of evolutionary processes causing allele frequency changes, the frequency of diploid genotypes in a population will change only according to the probability of mating (random sampling).
+                        <br><br>
+                        At any single locus the two copies can be passed on with equal probability (segregation) and so Hardy-Weinberg equilibrium can be reached within a single generation:
+                    </p></div>
+                        <br>
+                        $p^{2} + 2pq + q^{2} = 1$.
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Hardy Weinberg Equilibrium </h3>
+                    <div class="textbox"><p>
+                        The three genotypes for a locus with two alleles will occur at: $p^{2} + 2pq + q^{2} = 1$.
+                    </p></div>
+                    <img src="data/hardy-weinberg.png" style="width:42%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright-Fisher Model </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        By incorporating a finite effective population size (N) into our sampling probabilities we can estimate the expected change in allele frequencies over time (generations). <br><br>
+
+                        A discrete time model in which each generation is composed of 2N copies of each gene. Each subsequent generation 2N new copies are randomly drawn from the previous generation. The probability of obtaining k copies the next generation is:
+                        <br><br>
+                        $$ {{2N \choose k}p^{k}(1-p)^{2N-k}} $$
+                    </p></div>
+                    <br>
+                    <a href=https://en.wikipedia.org/wiki/Genetic_drift#Wright.E2.80.93Fisher_model>
+                    <p style="font-size:0.7em">
+                    https://en.wikipedia.org/wiki/Genetic_drift#Wright.E2.80.93Fisher_model
+                    </p></a>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright-Fisher Model </h3>
+                    <div class="textbox"><p>
+                        A neutral evolutionary process (no selection) can be modeled using the WF model in which allele frequencies change over time by genetic drift. 
+                    </p></div>
+                    <img src=data/WF-genealogy-Drummond.png>
+                    <br>
+                    <a href=https://www.researchgate.net/figure/The-Wright-Fisher-and-Kingman-coalescent-processes-with-generation-time-r-left-K-40_fig1_2853283>
+                    <p style="font-size:0.7em">
+                        Source: Alexei Drummond
+                    </p></a>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright-Fisher Model </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        In addition to estimating the effects of genetic drift on allele frequencies in a single population, Sewall Wright developed a series of estimators for predicting how differences <i>between populations</i> could evolve by genetic drift. 
+                        <i>Wright's F-statistics (fixation indices)</i> describe these probabilities in terms of sampling probabilities (i.e., bean-bag genetics).
+                        <br><br>
+                        A central measurement of F-statistics is the <i>inbreeding coefficient</i> (F). 
+                        <br><br>
+                        $$ F = 1 - \frac{Observed(Aa)}{Expected(Aa)} $$
+                    </p></div>
+                    <br>
+                    <p style="font-size:0.7em">
+                    <a href=https://en.wikipedia.org/wiki/F-statistics>          https://en.wikipedia.org/wiki/F-statistics</a>
+                    </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright's F-statistics </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        Under HW the genotype frequencies in a populations are:
+                        <br><br>
+
+                        $$ AA = p^{2} $$
+                        $$ Aa = 2pq $$
+                        $$ aa = q^{2} $$
+                        <br>
+
+                        In the presence of inbreeding (non-random mating) 
+                        these deviate from HW as:
+                        <br><br>
+
+                        $$ AA = p^{2}(1-F) + pF $$
+                        $$ Aa = 2pq(1 - F) $$
+                        $$ aa = q^{2}(1-F) + qF $$
+                    </p></div>
+                    <p style="font-size:0.7em">
+                    <a href=https://en.wikipedia.org/wiki/F-statistics>          https://en.wikipedia.org/wiki/F-statistics</a>
+                    </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright's F-statistics </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        These statistics become interesting when we start to <i>define what we mean by a population</i>. For example,  comparing sampled individuals from two locations. 
+                        <br><br>
+
+                        Different F-statistics look at different levels of population structure. $F_{IT}$ is the inbreeding coefficient ($F$) of an individual relative to the total population. $F_{IS}$ is the inbreeding coefficient of an individual relative to a subpopulation ($S$), and $F_{ST}$ is the effect of subpopulations relative to total. 
+                        <br>
+                    </p></div>
+                    <img src=https://upload.wikimedia.org/wikipedia/commons/d/db/F-statistics.png style="width:20%">
+
+                    <!-- <img src=https://www.clipartwiki.com/clipimg/detail/79-797929_notes-on-population-genetics-population-fst-0.png style="width:20%"> -->
+                    <p style="font-size:0.7em">
+                    <a href=https://en.wikipedia.org/wiki/F-statistics>          https://en.wikipedia.org/wiki/F-statistics</a>
+                    </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright's F-statistics </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        $F_{ST}$ can be interpreted as a measure of population differentiation. If $F_{ST}$ between two populations is 1 then they are <i>fixed</i> for different alleles (no variation is segregating in both populations). 
+                        <br>
+                    </p></div>
+                    <img src=https://upload.wikimedia.org/wikipedia/commons/d/db/F-statistics.png style="width:20%">
+                    <!-- <img src=https://www.clipartwiki.com/clipimg/detail/79-797929_notes-on-population-genetics-population-fst-0.png style="width:20%"> -->
+                    <p style="font-size:0.7em">
+                    <a href=https://en.wikipedia.org/wiki/F-statistics>          https://en.wikipedia.org/wiki/F-statistics</a>
+                    </p>
+                </div>
+            </section>            
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright's F-statistics </h3>
+                    <br>
+                    <div class="textbox"><p>
+                    For example, large populations among which there is much migration tend to show little differentiation, whereas small populations among which there is little migration tend to be highly differentiated. FST is a convenient measure of this differentiation, and as a result FST and related statistics are among the most widely used descriptive statistics in population and evolutionary genetics.
+                        <br>
+                    </p></div>
+                    <img src=https://upload.wikimedia.org/wikipedia/commons/d/db/F-statistics.png style="width:20%">
+                    <!-- <img src=https://www.clipartwiki.com/clipimg/detail/79-797929_notes-on-population-genetics-population-fst-0.png style="width:20%"> -->
+
+                    <p style="font-size:0.7em">
+                    <a href=https://en.wikipedia.org/wiki/F-statistics>          https://en.wikipedia.org/wiki/F-statistics</a>
+                    </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>$F_{ST}$ applied </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        The most widely used of these statistics is $F_{ST}$, as we are often interested in the effect of <i>population subdivision</i>, and in comparing genetic diversity of subpopulations. There are several definitions of $F_{ST}$:
+                        <br><br>                        
+                        $$ F_{ST} = \frac{\pi_{between}-\pi_{within}}{\pi_{between}} $$
+                        <br>                   
+                        Or, the variance in p <i>across populations</i> over the max variance that could exist among subpopulations.)
+                        <br>
+                        $$ F_{ST} = \frac{var(p)}{p(1-p)} $$
+
+                    </p></div>
+                    <p style="font-size:0.7em">
+                    <a href=https://en.wikipedia.org/wiki/Fixation_index>https://en.wikipedia.org/wiki/Fixation_index</a>
+                    </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>$F_{ST}$ applied </h3>
+                    <br>
+                    <div class="textbox"><p>
+                    The most widely used estimator of $F_{ST}$ from DNA sequence data is:
+                    <br><br>
+                    $$ F_{ST} = \frac{\pi_{between}-\pi_{within}}{\pi_{between}} $$
+                    <br>
+                    Where $\pi_{between}$ and $\pi_{within}$ are the average number of pairwise differences between two individuals sampled from different subpopulations (between) or the same subpop (within). This estimator is also biased and so we typically use another estimator, Watterson's $\Theta$, to estimate the average pairwise distance as <i>population genetic diversity</i> (more on this next time).
+                    <br><br>
+                    </p></div>
+                    <p style="font-size:0.7em">
+                    <a href=https://en.wikipedia.org/wiki/Fixation_index>https://en.wikipedia.org/wiki/Fixation_index</a>
+                    </p>
+                </div>
+            </section>               
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>$F_{ST}$ in humans </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        Genetic diversity in humans is low compared to our close relatives, and most variation is shared among human populations.
+                        <br><br>
+                        Based on three million SNPs, ~12% of the genetic variation is found to occur between continental populations, and ~1% between populations within continents.
+                        <br><br><br><br><br>
+                    </p></div>
+                    <p style="font-size:0.7em">
+                    <a href=https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3504095>Elhaik, E (2012). "Empirical Distributions of FST from Large-Scale Human Polymorphism Data". PLoS ONE. 7 (11): e49837</a>
+                    </p>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright-Fisher Model </h3>
+                    <div class="textbox"><p>
+                        A neutral evolutionary process (no selection) can be modeled using the WF model in which allele frequencies change over time by genetic drift. 
+                    </p></div>
+                    <img src=data/WF-genealogy-Drummond.png>
+                    <br>
+                    <a href=https://www.researchgate.net/figure/The-Wright-Fisher-and-Kingman-coalescent-processes-with-generation-time-r-left-K-40_fig1_2853283>
+                    <p style="font-size:0.7em">
+                        Source: Alexei Drummond
+                    </p></a>
+                </div>
+            </section>
+
+
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Genealogical ancestors </h3>
+                    <div class="textbox"><p>
+                        The number of ancestors doubles every generation. The time backwards until 
+                        n samples share a common genealogical ancestor is surprisingly small.
+                    </p></div>
+                    <img src=data/genealogy-n-ancestors.png>
+<!--                     <br>
+                    <a href=https://www.researchgate.net/figure/The-Wright-Fisher-and-Kingman-coalescent-processes-with-generation-time-r-left-K-40_fig1_2853283>
+                    <p style="font-size:0.7em">
+                        Source: Alexei Drummond
+                    </p></a> -->
+                </div>
+            </section>
+
+
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Genealogical ancestors </h3>
+                    <div class="textbox"><p>
+                        This is true even among samples that include people from distant
+                        geographic regions. Some of their ancestors may have dispersed further
+                        and because each population has so many ancestors, some are likely to be shared.
+                    </p></div>
+                    <img src=data/genealogy-nancestors2.png>
+<!--                     <br>
+                    <a href=https://www.researchgate.net/figure/The-Wright-Fisher-and-Kingman-coalescent-processes-with-generation-time-r-left-K-40_fig1_2853283>
+                    <p style="font-size:0.7em">
+                        Source: Alexei Drummond
+                    </p></a> -->
+                </div>
+            </section>
+
+
+
+
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Genealogical ancestors </h3>
+                    <div class="textbox"><p>
+                        Each genealogical ancestor does not contribute equally to an individuals genome.
+                        In fact, *very few* genealogical ancestors are highly represented genetically. 
+                        Most of your ancestors leave no genetic trace in your genome.
+                    </p></div>
+                    <img src=data/genealogy-n-ancestors3.png>
+<!--                     <br>
+                    <a href=https://www.researchgate.net/figure/The-Wright-Fisher-and-Kingman-coalescent-processes-with-generation-time-r-left-K-40_fig1_2853283>
+                    <p style="font-size:0.7em">
+                        Source: Alexei Drummond
+                    </p></a> -->
+                </div>
+            </section>
+
+
+
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>The neutral theory of molecular evolution</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        <a href=https://en.wikipedia.org/wiki/Neutral_theory_of_molecular_evolutionNeutral>Neutral theory</a> proposes that most genetic variation within species and genetic differences among species are a result of genetic drift acting on selectively neutral alleles. 
+
+                        <br><br>
+                        Most new mutations are deleterious and lost, or weakly deleterious and thus effectively neutral. Beneficial mutations are rare and fix quickly and thus will not be observed as within-population variation. 
+                    </p></div>
+                </div>
+            </section>
+
+
+ 
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>A recent neutral theory debate</h3>
+                    <br>
+                    <div class="textbox"><p>
+                <a href="https://academic.oup.com/mbe/article/35/6/1366/4990884">
+                "The Neutral Theory in Light of Natural Selection." (Kern and Hahn, 2018). 
+                </a>
+                <br><br>
+
+                <a href=https://onlinelibrary.wiley.com/doi/10.1111/evo.13650> "The importance of the Neutral Theory in 1968 and 50 years on: A response to Kern and Hahn 2018." (Jensen et al. 2018).</a>
+
+                <br><br>
+                Summarize the arguments from both sides. Form an opinion.                 
+
+                    </p></div>
+                </div>
+            </section>            
+
+<!-- 
+
+            <section id="reading" class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Reading for next session</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">  
+
+                <span style="font-weight:400">Read both of these:</span>
+                <br>
+                <a href=https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4687486/>
+                “Genetics in Geographically Structured Populations: Defining, Estimating and Interpreting FST.” 
+                </a>
+                <br><br>
+                <a href=https://www.nature.com/articles/nrg795>
+                “Genealogical Trees, Coalescent Theory and the Analysis of Genetic Polymorphisms.”
+                </a>
+
+                <br><br>
+                <span style="font-weight:400">And choose one of these two papers to read:</span>
+                
+                <br>
+                
+                <a href=https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-294X.2012.05730.x>
+                “Genome-Wide Patterns of Divergence and Gene Flow across a Butterfly Radiation.”
+                </a>
+                <br><br>
+                <a href=https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000862>
+                Population Genomics of Parallel Adaptation in Threespine Stickleback using Sequenced RAD Tags</a>
+                <br>
+
+                </div>
+            </section>            
+
+ -->
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../../reveal/lib/js/head.min.js"></script>        
+    <script src="../../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: true,
+            // slideNumber: "h/v",
+
+            dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: '../../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                { src: '../../reveal/plugin/math/math.js', async: true }
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>

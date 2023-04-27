@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Fundamentals-8</title>
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+    <!-- <link rel="stylesheet" href="./custom.css"> -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal/css/print/pdf.css' : '../../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <!-- SLIDE 0 (TITLE) -->
+            <section id="title" data-background="#262626" style="top:300.5px; display:block;" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 20%">
+                <h1 class="title" style="color:#5D9B84">
+                Fundamentals of Evolution</h1>
+                <h5 style="color: lightgrey"> EEEB G6110</h5>
+                <h4 style="color: white">Session 8: Population Genetics II</h4>
+                <br>
+                </div>
+            </section>
+
+            <section id="contents" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Section topics </h2>
+                <br>
+                <p style='font-size:1.2em; font-weight:400; color:#5D9B84; text-align:left; margin-left: 25%; margin-right:10%; line-height: 1.0'>
+                    1. Genetic drift
+                    <br><br>
+                    2. Wright-Fisher process 
+                    <br><br>
+                    3. Genealogies
+                    <br><br>
+                    4. The coalescent
+                    <br><br>
+                    5. Structured coalescent
+                    <br><br>                    
+                    6. Neutral theory (debate)
+                </p>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Hardy Weinberg Equilibrium </h3>
+                    <div class="textbox"><p>
+                    The <a href=https://en.wikipedia.org/wiki/Hardy%E2%80%93Weinberg_principle>Hardy–Weinberg principle (HW)</a> provides the solution to one of Darwin's biggest mysteries: how variation is maintained in a population. Under Mendelian inheritance (independent assortment) <i>the frequencies of alleles (variants at a gene) will remain constant in the absence of 
+                    <span style="font-weight:400">selection, mutation, migration, and/or genetic drift.</span></i>
+                    </p></div>
+                    <img src="../2/data/allele-freqs.png" style="width:20%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Binomial sampling problem</h3>
+                    <div class="textbox"><p>
+                        By relaxing the assumption of infinite-sized populations, this becomes a 
+                        random sampling process. Diploid genotypes can be resampled each generation 
+                        by sampling two alleles from the previous generation based on their frequencies.
+                        The deviations (change) in allele frequency each generation under this process
+                        is an example of genetic drift (sampling error!). 
+                    </p></div>
+                    <img src="./genetic-drift.png" style="width:40%">
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright-Fisher Model </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        By incorporating a finite effective population size (N) into our 
+                        sampling probabilities we can estimate the expected change in allele
+                        frequencies over time (generations). 
+                        <br><br>
+
+                        In addition to randomly sampling alleles from the previous generation, we 
+                        can *also keep track of which parental copies were passed down* (i.e., keep
+                        track of the genealogy). This process is called the Wright-Fisher model.
+                        <br><br>
+
+                        A discrete time model in which each generation is composed of 2N copies of each gene. Each subsequent generation 2N new copies are randomly drawn from the previous generation. 
+                    </p></div>
+                    <br>
+                    <a href=https://en.wikipedia.org/wiki/Genetic_drift#Wright.E2.80.93Fisher_model>
+                    <p style="font-size:0.7em">
+                    https://en.wikipedia.org/wiki/Genetic_drift#Wright.E2.80.93Fisher_model
+                    </p></a>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Wright-Fisher Model </h3>
+                    <div class="textbox"><p>
+                        A neutral evolutionary process (no selection) can be modeled using the WF model in which allele frequencies change over time by genetic drift. 
+                    </p></div>
+                    <img src=../2/data/WF-genealogy-Drummond.png>
+                    <br>
+                    <a href=https://www.researchgate.net/figure/The-Wright-Fisher-and-Kingman-coalescent-processes-with-generation-time-r-left-K-40_fig1_2853283>
+                    <p style="font-size:0.7em">
+                        Source: Alexei Drummond
+                    </p></a>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Breaking down the Wright-Fisher Model </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        <span style="font-weight:400">Genealogies are a representation of
+                        ancestor-descendant relationships.</span>
+                        Individuals have genealogies and genes have genealogies, but
+                        their patterns are different. Whereas the number of ancestors of
+                        an individual increases in each generation back in time, the number
+                        of ancestors of a gene copy in a previous generation is always one.
+                    </p></div>
+                    <img src=./genealogies-1.svg>
+
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Breaking down the Wright-Fisher Model </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        <span style="font-weight:400">Different genes have different genealogies tracing back through different ancestors.</span>
+                        If you continue this process back further in time, to your great-great-great-great grandparents, and so on, you will find that <i>some of your ancestors have left no copies at any of the genes in our genome</i>. This the basis for the concept that ones' genealogical ancestry does not match their genetic ancestry. 
+                    </p></div>
+                    <img src=./genealogies-2.svg>
+                </div>
+            </section>            
+
+           
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Breaking down the Wright-Fisher Model </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        <span style="font-weight:400">Genes.</span> 
+                        A gene (or locus) in this context refers to any non-recombined
+                        region of the genome.
+                        <br><br>
+
+                        <span style="font-weight:400">Gene copies.</span> 
+                        A gene copy refers a single haploid copy a gene. Diploid individuals contain two copies of every gene. A gene copy in one generation may be replicated to leave many copies in the next generation.
+                        We focus on haploids because of the assumptions of our model. 
+                        When mating is random within populations and no selection can act
+                        on diploid genotypes, the diploid phase becomes irrelevant to our 
+                        model. A population of N diploids contains 2N gene copies.
+                        <br><br>                       
+                    </p></div>
+                </div>
+            </section>
+
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Breaking down the Wright-Fisher Model </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        <span style="font-weight:400">Coalescence:</span> 
+                        the merging of multiple gene copies into their common ancestor looking backwards in time. Because 
+                        the probability that two diploid samples share a common ancestor 
+                        increases rapidly backwards in time, the probability that two gene
+                        copies are descended from the same ancestral copy also increases 
+                        rapidly backwards in time.</p>
+                    <img src=./genealogies-3.svg style="width:35%">
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>The coalescent for <span style="font-weight:400">two gene copies</span></h3>
+                    <br>                    
+                    <div class="textbox"><p>
+                        In one generation these two gene copies either came from the same parent ($ \frac{1}{2N}$) <br> or they came from different parents ($1 - \frac{1}{2N}$)
+                        <br><br>
+                        The probability that these two gene copies coalesced t generations ago can be calculated from these two probability statements: 
+                        <br><br>
+
+                        $$ \left(1 - \frac{1}{2N}\right)^{t - 1} \frac{1}{2N} $$
+
+                    </p></div>
+                </div>    
+            </section>
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>The distribution of coalescent times</h3>
+                    <br>                    
+                    <div class="textbox"><p>
+                        $$\mathrm{Pr}(\mathrm{coal}) = \binom{i}{2} \frac{1}{2N} = \frac{i(i-1)}{4N}$$
+                        <br>
+
+                        There are $\binom{i}{2}$ ways pairs of lineages can pick the same parent. Probability of coalescence scales quadratically with lineage count.
+                    </p></div>
+                </div>
+            </section>
+
+
+           <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Expected waiting time to coalescence</h3>
+                    <br>                    
+                    <div class="textbox"><p>
+                        $$\mathrm{E}[T_i] = \frac{4N}{i(i-1)}$$
+                        <br>
+                        This is a <a href="https://en.wikipedia.org/wiki/Geometric_distribution">geometric distribution</a>.
+                        If each generation there is a $\frac{1}{x}$ probability of an event occurring, we expect to
+                        wait $x$ generations for the event to occur.
+                    </p></div>
+                </div>
+            </section>
+
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Structured (multispecies) coalescent </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        So far we have been working under the assumption that all 
+                        samples are from a single panmictic population. But, we 
+                        can also model the genealogy of sampling among multiple 
+                        distinct populations. 
+                    </p>
+                    <img src=./sptree-1.png style="width:30%">
+                    <img src=./sptree-2.png style="width:32%">                    
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Structured (multispecies) coalescent </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        This can be modeled as <span style="font-weight:400">
+                        multiple single population coalescent models combined.
+                        </span> Starting from the tips, we ask have these n 
+                        samples coalesced in this time period, if not, include
+                        them in the next chunk of model up the tree.
+                    </p>
+                    <img src=./coalescent-chunks.png style="width:22%">
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../../reveal/lib/js/head.min.js"></script>        
+    <script src="../../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: true,
+            // slideNumber: "h/v",
+
+            dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: '../../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                { src: '../../reveal/plugin/math/math.js', async: true }
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>

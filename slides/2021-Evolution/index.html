@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2021-Evolution</title>
+
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../eaton-lab.css">
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">    
+    <link rel="stylesheet" href="./custom.css">
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <section 
+                data-background-color="#262626"
+                data-transition="none" 
+                class="present" 
+                hidden="">
+                <div style="standard">
+                <h3 class="title" style="color:#5ab4ac; line-height: 1.25; margin-top:12%">
+                    Inferring super time-calibrated species trees with <i>superbpp</i>
+                </h3>
+                <h5 style="color: white; line-height: 1.5"><i>
+                    Deren Eaton, Assistant Professor<br>
+                    Dept. of Ecology, Evolution, and Environmental Biology<br>
+                    Columbia University</i>
+                    </p>
+                </h4>
+                <p style="color:darkgoldenrod;">
+                    w/ co-authors: Carlos Alonso Maya Lastra,
+                    Sandra Hoffberg, <br>
+                    Henry Landis, and Michael Landis
+                </p>
+
+                </div>
+            </section>
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                    <h3 class="title" style="color:#5ab4ac; margin-top:15%; line-height:1.2">
+                    How can we most accurately reconstruct the <br><i>evolutionary history</i> 
+                    of organisms from their genomes?
+                    </h3>
+                <h5 class="title fragment" style="color:white; margin-top:5%; line-height:1.2">
+                    The order and timing of diversification (node age estimation)
+                </h5>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Phylogenomic sampling</h3>
+                    <div class="textbox"><p style='text-align:center'>
+                    Goal: infer phylogenetic history from <i>a subset</i> 
+                    of sampled genomes (inds/haplos). 
+                    </p></div>
+                    <br>
+                    <img src="../data-svg/intro-phylogenomic-sampling.svg" style="width:70%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h4 class="title">Phylogenomic inference methods</h4>
+                    <img src="images/superbpp-methods-data.svg" style="width:80%">
+                </div>
+            </section>            
+
+
+            <section class="future" data-transition="none" data-background-color="#262626">
+                <div class="standard" style="margin-top:5%;">
+                    <h4 class="title" style="color:#5ab4ac">
+                        Major challenges for phylogenomic node dating 
+                    </h4>
+                    <ol style='text-align:left; line-height: 1.75; margin-left: 18%; 
+                    margin-top:3%; color:#5ab4ac; font-size: 0.9em'>
+                        <li>Concatenation: remains commonly used despite known over-estimation bias (ILS)</li>
+                        <li>Distant/uncertain fossil calibrations: most groups lack good fossils</li>
+                        <!-- <li>Genomic loci are often cherry-picked (affects rate and geneal. var.)</li> -->
+                        <!-- <li>Concatenation within loci (concatalescence) leads to over-estimates</li> -->
+                        <li>MSC approaches are slowww... </li>
+                    </ol>
+                    <img src="images/challenges-2.svg" 
+                    style="width:40%; margin-top: 5%;">                   
+                </div>
+            </section>
+<!-- 
+
+            <section class="future" data-transition="none" data-background-color="#262626">
+                <div class="standard" style="margin-top:5%;">
+                    <h4 class="title" style="color:#5ab4ac">
+                        Major challenges for phylogenomic node dating 
+                    </h4>
+                    <ol style='text-align:left; line-height: 1.75; margin-left: 18%; 
+                    margin-top:3%; color:#5ab4ac; font-size: 0.9em'>
+                        <li>Concatenation is most commonly used (but over-estimates ages)</li>
+                        <li>Fossil calibrations to get absolute ages (but most 
+                        groups lack fossils)</li>
+                        <li>Genomic loci are often cherry-picked (affects rate and geneal. var.)</li>
+                        <li>Concatenation within loci (concatalescence) leads to over-estimates</li>
+                        <li>MSC approaches are slowww... (for many loci, many taxa, and many parameters)</li>
+                    </ol>
+
+                    <h4 class="title" style="color:darkgoldenrod; margin-top: 3%;">
+                        Piece-wise solutions
+                    </h4>
+                    <ol style='text-align:left; line-height: 1.75; margin-left: 18%; 
+                    margin-top:3%; color:darkgoldenrod; font-size: 0.9em'>
+                        <li>MSC instead of concatenation (e.g., BPP, *BEAST)</li>
+                        <li>Molecular clock calibrated from pedigrees</li>
+                        <li>Random genome-wide locus (sub)sampling</li>
+                        <li>Use many small genomic loci or SNPs (<i>sensu</i>, SNAPP)</li>
+                        <li>Parallelization</li>
+                    </ol>                                                        
+                </div>
+            </section>           -->  
+
+
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <img src="images/clocks-without-rocks.png" style="width:65%; 
+                    box-shadow: 10px 10px 10px grey; border: solid black">
+                </div>
+                <a style="font-size: 0.75em" 
+                href="https://www.cell.com/trends/genetics/fulltext/S0168-9525(20)30131-1">
+                Tiley et al. 2020, Trends in Genetics</a>                
+            </section>
+                  
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <img src="images/clocks-without-rocks3.png" style="width:65%; 
+                    box-shadow: 10px 10px 10px grey; border: solid black">
+                </div>
+                <a style="font-size: 0.75em" 
+                href="https://www.cell.com/trends/genetics/fulltext/S0168-9525(20)30131-1">
+                Tiley et al. 2020, Trends in Genetics</a>                
+            </section>
+                  
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <img src="images/clocks-without-rocks2.png" style="width:50%; 
+                    border: solid black; box-shadow: 10px 10px 10px grey;">
+                </div>
+                <a style="font-size: 0.75em" href="https://www.cell.com/trends/genetics/fulltext/S0168-9525(20)30131-1">
+                Tiley et al. 2020, Trends in Genetics</a>                    
+            </section>
+
+
+            <section class="future" data-transition="none" data-background-color="#262626">
+                <div class="standard" style="margin-top:5%;">
+                    <h4 class="title" style="color:#5ab4ac">
+                        Why do so few of us use MSC molecular clock methods?
+                    </h4>
+                    <ol style='text-align:left; line-height: 1.75; margin-left: 27%; 
+                    margin-top:5%; color:white; font-size: 1.1em'>
+                        <li>ILS is not a concern</li>
+                        <li>mu and gentime are too hard to estimate</li>
+                        <li style="color:darkgoldenrod;">It takes too long to run</li>                        
+                    </ol>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none" data-background-color="#262626">
+                <div class="standard" style="margin-top:5%;">
+                    <h4 class="title" style="color:#5ab4ac">
+                        A new approach: <span style="text-decoration: underline"><i>super</i> time-calibrated species trees</span>
+                    </h4>
+                    <ul style='text-align:left; line-height: 1.75; margin-left: 15%; margin-right: 5%;
+                    margin-top:5%; color:white; font-size: 1.1em'>
+                        <li>Inspired by supertree methods (Bininda-Emonds 2004)</li>
+                        <li>Dated supertrees (Jetz et al. 2012, Upham et al. 2019): combine 
+                        many BEAST subtrees to one large calibrated backbone</li>
+                        <br>
+                        <li><span style="text-decoration: underline">Super species trees</span>: Combine many MSC trees into one large dated MSC tree.</li>
+                    </ul>
+                </div>
+            </section>            
+
+
+            <section class="future" data-transition="none" data-background-color="#262626">
+                <div class="standard" style="margin-top:5%;">
+                    <h4 class="title" style="color:#5ab4ac">
+                        <i>superbpp</i> approach to super species tree inference
+                    </h4>
+                    <ul style='text-align:left; line-height: 1.75; margin-left: 15%; margin-right: 15%;
+                    margin-top:5%; color:white; font-size: 1.1em'>
+                        <li>BPP v4.3 (Flouri et al. 2018) fast, easy to use -- does the hard work.</li>
+                        <li>Our new tool <a style="color: darkgoldenrod;" 
+                        href='https://github.com/eaton-lab/superbpp/'>https://github.com/eaton-lab/superbpp/</a></li>
+                    
+                        <ul style='text-align:left; line-height: 1.75; 
+                        margin-left: 5%; color:white; font-size: 0.9em'>
+                            <li> infer MSC div times for large trees (>100 tips) using thousands of loci</li>                           
+                            <li> runs BPP iteratively over replicate subtrees spanning every node</li>
+                            <li> extracts random taxon and locus sets to creates bpp inputs</li>
+                            <li> sets appropriate priors on every subtree by stepwise postorder traversal</li>
+                            <li> summarizes results of subtree analyses.
+                        </ul>
+                        <br>
+                        <!-- <li>subsampling taxa reduces power to jointly estimate $\theta$ and $\tau$, but, massively improves speed</li> -->
+                        <!-- <li>challenge: avoid conflicting ages (descendant older than parent)</li> -->
+                    </ul>
+                </div>
+            </section>            
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h4 class="title">Super species tree inference</h4>
+                    <img src="images/superbpp-prior-updates.svg" style="width:80%">
+                </div>
+            </section>
+
+
+            <section class="present" data-transition="none">
+                <div style="margin-left: auto; margin-top: 2%">    
+                <h4> Phylogenomics of the plant genus <i>Amaranthus</i></h4>
+                <br>
+                <img src="../data-svg/Amaranth-windows.svg" style="width:70%">
+                </div>
+            </section>
+                 
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h4 class="title">Empirical example: <i>Amaranthus</i></h4>
+                    <ul style='text-align:left; line-height: 1.75; margin-left: 15%; 
+                    margin-top:5%; font-size: 0.8em'>
+                        <li>38 ingroup taxa, 172 samples, Genomic 3RAD data</li>
+                        <li>10 replicate random 5-tip subtrees per internal node</li>
+                        <li>1000 random loci per replicate run (0% missing)</li>
+                        <li>Approximately 4 days runtime (15 cores)</li>
+                    </ul>
+                    <img src="images/amtree.svg" style="width:55%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h4 class="title">Empirical example: <i>Amaranthus</i></h4>
+                    <ul style='text-align:left; line-height: 1.75; margin-left: 15%; margin-right: 10%; 
+                    margin-top:3%; font-size: 0.8em'>
+                        <li>gentime=1 (annual plants)</li>
+                        <li>mut rate 99%CI = 1e-9 to 7e-9: crown age estimate (99%CI=2-6 Ma)</li>
+                        <li>much younger than previous (Waselkov 2018; 11-16Ma) based on
+                         Sanger and deep fossil (>65Ma)</li>
+                        <li>Cultivated grain crop clade is appropriately young (<100K)</li>
+                        <li>Known hybrid taxon <i>A. dubius</i> has conflicting age interval.</li>
+                    </ul>
+                    <img src="images/amtree.svg" style="width:55%">
+                </div>
+            </section>            
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h4 class="title">Ongoing and future work: coalescent simulations/tests</h4>
+                    <ul style='text-align:left; line-height: 1.75; margin-left: 15%; margin-right: 15%; 
+                    margin-top:5%; font-size: 0.9em'>
+                        <li>Testing with simulations against concat and MSC methods on large trees</li>
+                        <li>Extracting <i>full tree</i> posteriors from subtree posteriors (GP method)</li>
+                        <li>Incorporation of fossils calibrations.</li>
+                        <li>Testing with high rate variation from Ne and/or G.</li>
+                    </ul>
+                </div>
+            </section>            
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h4 class="title">Conclusions: super species tree inference</h4>
+                    <ul style='text-align:left; line-height: 1.75; margin-left: 15%; margin-right: 15%; 
+                    margin-top:3%; font-size: 0.9em'>
+                        <li>Super species trees combine many small MSC analyses into one 
+                        large node dated tree</li>
+                        <li>MSC is most appropriate when ILS is high (e.g., rapid radiations)</li>
+                        <li>Molecular clock provides an alternative when fossils are scarce</li>
+                        <li>Not suited for all situations, but hopefully useful for some</li>
+                    </ul>
+                    <img src="images/superbpp-prior-updates.svg" style="width:50%; margin-top: 5%;">
+                </div>
+            </section>
+
+
+            <!-- ============================================================== -->
+            <!-- ====  E3B  =================================================== -->
+            <!-- ============================================================== -->
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h2>Acknowledgements</h2>
+                    <div class=textbox>
+                        <p><br>
+                        Kasi Molina-Velez<br>
+                        Sandra Hoffberg<br>
+                        Carlos Alonso Maya Lastra<br>
+                        Henry Landis<br>
+                        Michael Landis<br>
+                        </p>
+                    </div>
+
+                    <div class=textbox style="font-weight:400">
+                        <p>
+                        USDA ARS germplasm 
+                        NSF DEB<br>
+                        NSF PGRP<br>
+                        Columbia Lenfest Award<br>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../reveal/lib/js/head.min.js"></script>        
+    <script src="../reveal/js/reveal.js"></script>
+    <script src="../reveal/plugin/math/math.js"></script>    
+    <script type="text/javascript" src="../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: false,
+            // slideNumber: "h/v",
+            dependencies: [
+            //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: '../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>

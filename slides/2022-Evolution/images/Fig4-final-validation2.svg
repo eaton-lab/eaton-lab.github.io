@@ -25,15 +25,15 @@
      showgrid="false"
      units="px"
      height="400px"
-     inkscape:zoom="0.45674013"
-     inkscape:cx="1175.7233"
-     inkscape:cy="495.90563"
-     inkscape:window-width="1860"
-     inkscape:window-height="1016"
-     inkscape:window-x="60"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"
+     inkscape:zoom="0.3969468"
+     inkscape:cx="1012.7302"
+     inkscape:cy="492.50933"
+     inkscape:window-width="1654"
+     inkscape:window-height="842"
+     inkscape:window-x="158"
+     inkscape:window-y="145"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="td63e9bb77f1b4b88a181ce93bc272aea"
      inkscape:showpageshadow="0"
      inkscape:deskcolor="#d1d1d1">
     <inkscape:grid
@@ -2453,40 +2453,16 @@
                id="g2021045">
               <g
                  transform="translate(22.000198,-12)"
-                 id="g2021031">
-                <text
-                   x="-15.568"
-                   y="0"
-                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
-                   id="text2021029">10.0</text>
-              </g>
+                 id="g2021031" />
               <g
                  transform="translate(88.000132,-12)"
-                 id="g2021035">
-                <text
-                   x="-11.12"
-                   y="0"
-                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
-                   id="text2021033">2.5</text>
-              </g>
+                 id="g2021035" />
               <g
                  transform="translate(154.00007,-12)"
-                 id="g2021039">
-                <text
-                   x="-11.12"
-                   y="0"
-                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
-                   id="text2021037">1.4</text>
-              </g>
+                 id="g2021039" />
               <g
                  transform="translate(220,-12)"
-                 id="g2021043">
-                <text
-                   x="-11.12"
-                   y="0"
-                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
-                   id="text2021041">1.0</text>
-              </g>
+                 id="g2021043" />
             </g>
             <g
                transform="translate(110,-35)"
@@ -4386,40 +4362,16 @@
                id="g1979775">
               <g
                  transform="translate(22.000198,-12)"
-                 id="g1979761">
-                <text
-                   x="-15.568"
-                   y="0"
-                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
-                   id="text1979759">10.0</text>
-              </g>
+                 id="g1979761" />
               <g
                  transform="translate(88.000132,-12)"
-                 id="g1979765">
-                <text
-                   x="-11.12"
-                   y="0"
-                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
-                   id="text1979763">2.5</text>
-              </g>
+                 id="g1979765" />
               <g
                  transform="translate(154.00007,-12)"
-                 id="g1979769">
-                <text
-                   x="-11.12"
-                   y="0"
-                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
-                   id="text1979767">1.4</text>
-              </g>
+                 id="g1979769" />
               <g
                  transform="translate(220,-12)"
-                 id="g1979773">
-                <text
-                   x="-11.12"
-                   y="0"
-                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
-                   id="text1979771">1.0</text>
-              </g>
+                 id="g1979773" />
             </g>
             <g
                transform="translate(110,-35)"
@@ -6369,6 +6321,126 @@
                  style="font-weight:normal;font-size:10px;text-anchor:middle;fill:#6e7f8f;fill-opacity:1;stroke:none"
                  id="text1898207" />
             </g>
+            <g
+               id="g503392"
+               transform="translate(390.56919)">
+              <g
+                 transform="translate(22.000198,-12)"
+                 id="g503378">
+                <text
+                   x="-7.5679998"
+                   y="0"
+                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
+                   id="text503376">inf</text>
+              </g>
+              <g
+                 transform="translate(88.000132,-12)"
+                 id="g503382">
+                <text
+                   x="-9.1199999"
+                   y="0"
+                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
+                   id="text503380">inf</text>
+              </g>
+              <g
+                 transform="translate(154.00007,-12)"
+                 id="g503386">
+                <text
+                   x="-9.1199999"
+                   y="0"
+                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
+                   id="text503384">inf</text>
+              </g>
+              <g
+                 transform="translate(220,-12)"
+                 id="g503390">
+                <text
+                   x="-9.1199999"
+                   y="0"
+                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
+                   id="text503388">inf</text>
+              </g>
+            </g>
+            <g
+               id="g503428"
+               transform="translate(772.69782)">
+              <g
+                 transform="translate(22.000198,-12)"
+                 id="g503414">
+                <text
+                   x="-7.5679998"
+                   y="0"
+                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
+                   id="text503412">inf</text>
+              </g>
+              <g
+                 transform="translate(88.000132,-12)"
+                 id="g503418">
+                <text
+                   x="-9.1199999"
+                   y="0"
+                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
+                   id="text503416">inf</text>
+              </g>
+              <g
+                 transform="translate(154.00007,-12)"
+                 id="g503422">
+                <text
+                   x="-9.1199999"
+                   y="0"
+                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
+                   id="text503420">inf</text>
+              </g>
+              <g
+                 transform="translate(220,-12)"
+                 id="g503426">
+                <text
+                   x="-9.1199999"
+                   y="0"
+                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
+                   id="text503424">inf</text>
+              </g>
+            </g>
+            <g
+               id="g503446"
+               transform="translate(1165.8422)">
+              <g
+                 transform="translate(22.000198,-12)"
+                 id="g503432">
+                <text
+                   x="-7.5679998"
+                   y="0"
+                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
+                   id="text503430">inf</text>
+              </g>
+              <g
+                 transform="translate(88.000132,-12)"
+                 id="g503436">
+                <text
+                   x="-9.1199999"
+                   y="0"
+                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
+                   id="text503434">inf</text>
+              </g>
+              <g
+                 transform="translate(154.00007,-12)"
+                 id="g503440">
+                <text
+                   x="-9.1199999"
+                   y="0"
+                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
+                   id="text503438">inf</text>
+              </g>
+              <g
+                 transform="translate(220,-12)"
+                 id="g503444">
+                <text
+                   x="-9.1199999"
+                   y="0"
+                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
+                   id="text503442">inf</text>
+              </g>
+            </g>
           </g>
         </g>
       </g>
@@ -8230,40 +8302,16 @@
                id="g1938987">
               <g
                  transform="translate(22.000198,-12)"
-                 id="g1938973">
-                <text
-                   x="-15.568"
-                   y="0"
-                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
-                   id="text1938971">10.0</text>
-              </g>
+                 id="g1938973" />
               <g
                  transform="translate(88.000132,-12)"
-                 id="g1938977">
-                <text
-                   x="-11.12"
-                   y="0"
-                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
-                   id="text1938975">2.5</text>
-              </g>
+                 id="g1938977" />
               <g
                  transform="translate(154.00007,-12)"
-                 id="g1938981">
-                <text
-                   x="-11.12"
-                   y="0"
-                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
-                   id="text1938979">1.4</text>
-              </g>
+                 id="g1938981" />
               <g
                  transform="translate(220,-12)"
-                 id="g1938985">
-                <text
-                   x="-11.12"
-                   y="0"
-                   style="font-weight:normal;font-size:16px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none"
-                   id="text1938983">1.0</text>
-              </g>
+                 id="g1938985" />
             </g>
             <g
                transform="translate(110,-35)"

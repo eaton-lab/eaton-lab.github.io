@@ -1,0 +1,1714 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2020-NCstate</title>
+
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../eaton-lab.css">
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">    
+    <link rel="stylesheet" href="./custom.css">
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <section 
+                data-background-image="../data-img/landscape-collect.jpg"
+                data-state="dimbg"
+                data-transition="none" 
+                class="present" 
+                hidden="">
+                <div style="margin-left: auto; margin-top: 15%">
+                <h2 class="title" style="color:#262626;line-height: 1.25">
+                    Isolation, interference, and introgression: genomic perspectives on plant diversification
+                </h2>
+                <h4 style="font-weight: 400; line-height: 1.5"> 
+                    Deren Eaton <br>
+                    <i>Dept. of Ecology, Evolution, and Environmental Biology<br>
+                    Columbia University</i>
+                </h4>
+                </div>
+            </section>
+
+
+
+                <section data-background-color="#262626" data-transition="none" class="future">
+                    <div class="standard">
+                    <h3 class="title" style="color:#5ab4ac; margin-top:20%; line-height:1.2">
+                    How can we most accurately reconstruct the <br><i>evolutionary history</i> 
+                    of organisms from their genomes?
+                    </h3>
+                    </div>
+                </section>
+
+                <section data-background-color="#262626" data-transition="none" class="future">
+                    <div class="standard">
+                    <h3 class="title" style="color:#d8b365; margin-top:20%; line-height:1.2">
+                    How can genomics (i.e., evolutionary inference) <br>
+                    be used to reconstruct historical <br>
+                    <i>ecological interactions</i> among species?
+                    </h3>
+                    </div>
+                </section>
+
+                <section class="future" data-transition="none">
+
+                    <section class="future" data-transition="none">
+                        <div class="standard">
+                        <h3> Phylogenomic sampling </h3>
+                        <br>
+                        <div class="textbox"><p style='text-align:center'>
+                        <!-- It's an exciting time to be asking these questions! Genomic technologies have <i>revolutionized</i> the study of ecology and evolution. -->
+                        Characterize evolutionary history from <i>a subset</i> of sampled genomes (individuals). 
+                        </p></div>
+                        <br>
+                        <img src="../data-svg/intro-phylogenomic-sampling.svg" style="width:70%">
+                        </div>
+                    </section>
+
+
+                    <section class="future" data-transition="none">
+                        <img src="../data-img/1KPG.png" style="width:45%">
+                        <br>
+                        <img src="../data-img/1KPG-tree.png" style="width:45%">
+                    </section>
+
+                    <section class="future" data-transition="none">
+                        <img src="../data-svg/Spriggs.svg" style="width:70%">
+                    </section>
+                </section>
+
+
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Phylogenomic sampling </h3>
+                    <br>
+                    <div class="textbox"><p style="text-align:center">
+                         Characterize whole genomes from <i> a subset</i> of sequenced markers.
+                    <!-- In addition to the increased raw output of genome data, molecular preparation methods allow us to more efficiently sample the genome for <i> comparative studies</i>. -->
+                    </p></div>   
+                    <br>            
+                    <img src="../data-svg/intro-RAD-diagram.svg" style="width:70%">
+                    </div>
+                </section>
+
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Genealogical variation </h3>
+                    <br>
+                    <div class="textbox"><p style="text-align:center">
+                        It is important to examine evolutionary history across the entire genome. 
+                    </p></div>
+                    <img src="../data-svg/intro-tree-outlines.svg" style="width:70%">
+                    </div>
+                </section>
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Historical introgression/admixture </h3>                        
+                    <br>
+                    <div class="textbox"><p style="text-align:center">
+                        Introgression is common throughout the history of many lineages.
+                    </p></div>
+                    <img src="../data-svg/intro-tree-outlines-2.svg" style="width:70%">
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Historical introgression/admixture </h3>                        
+                    <br>
+                    <div class="textbox"><p style="text-align:center">
+                        But there are many potential sources of error in these analyses...
+                    </p></div>
+                    <img src="../data-img/oaks-title.png" style="width:70%">
+                    </div>
+                </section>                
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h3> Genealogical variation </h3>
+                    <img src="../data-svg/genealogies-link-chrom.svg" style="width:70%">
+                    </div>
+                </section>
+            </section>
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                <h3 class="title" style="color:#5ab4ac; margin-top:20%; line-height:1.2">
+                How can we most accurately reconstruct the <br>evolutionary history
+                of organisms from their genomes?
+                </h3>
+                </div>
+            </section>
+
+
+            <!-- SoFtware summary -->
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 0%">
+                <h2> Software development</h2>
+                <img src="../data-svg/software-summary.svg" style="width:60%">
+                </div>
+            </section>
+
+
+
+            <!-- IPYRAD CONCAT STUFF -->
+            <section class="future" data-transition="none">
+
+
+                <!-- 14 OUTLINE II -->
+                <section class="future" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Phylogenomic inference methods</h2>
+                    <img src="../data-svg/consensus-pre.svg" style="width:55%">
+                    </div>
+                </section>
+
+                <!-- 15 -->
+                <section class="future" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Missing data in RAD-seq and other methods</h2>
+                    <img src="../data-svg/consensus-pre2.svg" style="width:55%">
+                    </div>
+                </section>
+
+                <!-- 16 -->
+                <section class="future" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">
+                    <h2> Missing data in RAD-seq and other methods</h2>
+                    <img src="../data-svg/consensus-pre-concat.svg" style="width:55%">
+                    </div>
+                </section>
+
+
+                <!-- 8 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 2%">    
+                    <h2><i>ipyrad-analysis toolkit</i></h2>
+                    <p> Filter or impute missing data; easily distribute massively parallel jobs.</p>
+                    </div>
+                    <pre style="width:60%"><code class="python" style="max-height: 500px; font-size: 24px; line-height:1.35;"> 
+  import ipyrad.analysis as ipa
+
+  # initiate an analysis tool with arguments
+  tool = ipa.pca(data=data, ...)
+
+  # run job (distribute in parallel)
+  tool.run()
+
+  # examine results
+  ...
+                    </code></pre>
+                </section>
+
+
+                <!-- 8 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 2%">
+                    <h2><i>ipyrad-analysis toolkit</i></h2>
+                    <p> Filter or impute missing data; easily distribute massively parallel jobs.</p>
+                    </div>
+                    <pre style="width:60%"><code class="python" style="max-height: 500px; font-size: 24px; line-height:1.35;"> 
+  tool = ipa.pca(data=data, imap=imap, minmap=minmap, mincov=0.5)
+  tool.run(nreplicates=20, seed=123)
+  tool.draw(2, 3);
+                    </code></pre>
+                    <img src="../data-svg/cranolopha-PCA.svg" style="width:33%">
+
+                </section>
+
+
+
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Window_extracter: extract, filter, format.</h2>
+                    <p> Reference mapped RAD loci can be <i>"spatially binned"</i> to form larger loci.</p>
+                    <pre style="width:60%"><code class="python" style="max-height: 500px; font-size: 22px; line-height:1.35;"> 
+  import ipyrad.analysis as ipa
+
+  # initiate an analysis tool with arguments
+  tool = ipa.window_extacter(
+      data=data,
+      scaffold_idx=0, 
+      start=0, 
+      end=1000000,
+  )
+
+  # writes a phylip file
+  tool.run()
+                    </code></pre>
+                    </div>
+                </section>
+
+                <!-- 18 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Window_extracter: extract, filter, format.</h2>
+                    <p> Reference mapped RAD loci can be <i>"spatially binned"</i> to form larger loci.</p>
+                    <img src="../data-svg/window-extracter-min4.svg" style="width:80%">
+                    </div>
+                </section>
+
+
+
+                <!-- 19 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Window_extracter: extract, filter, format.</h2>
+                    <p> Reference mapped RAD loci can be <i>"spatially binned"</i> to form larger loci.</p>
+                    <img src="../data-svg/window-extracter-min8.svg" style="width:80%">
+                    </div>
+                </section>
+
+
+                <!-- 20 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 2%">    
+                    <h2> Herbicide resistance among <i>Amaranthus</i> species.</h2>
+                    <br>
+                    <img src="../data-svg/Amaranth-windows.svg" style="width:70%">
+                    </div>
+                </section>
+            </section>
+
+
+            <!-- IPCOAL STUFF -->
+            <section class="future" data-transition="none">
+
+                <!-- 21 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Phylogenomic methods: gene trees</h2>
+                    <img src="../data-svg/consensus-pre-2step.svg" style="width:55%">
+                    </div>
+                </section>
+
+
+                <!-- 21 -->
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                    <h2>Gene tree inference</h2>   
+                    <br>
+                    <div class="textbox"><p>
+                        Faces two distinct problems: <br>
+                        (1) individual loci (e.g., RAD tags) are often insufficiently  informative;  <br>
+                        (2) most "loci" do not contain a single gene tree.
+                    </p></div>
+                    <img src="../data-svg/concatal.svg" style="width:65%">
+                    <!-- <img src="../data-svg/consensus-pre-2step.svg" style="width:55%"> -->
+                    </div>
+                </section>
+
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                    <h2>Gene tree inference</h2>   
+                    <br>
+                    <div class="textbox"><p>
+                        Faces two distinct problems: <br>
+                        (1) individual loci (e.g., RAD tags) are often insufficiently informative;  <br>
+                        (2) most "loci" do not contain a single gene tree (even short RAD tags).
+                    </p></div>
+                    <img src="../data-svg/concatal.svg" style="width:65%">
+                    <!-- <img src="../data-svg/consensus-pre-2step.svg" style="width:55%"> -->
+                    </div>
+                </section>
+
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                    <h2>Gene tree inference</h2>   
+                    <br>
+                    <div class="textbox"><p>
+                        We have a recent preprint on this topic: phylogenetic half-life
+                    </p></div>
+                    <img src="../data-img/biorxiv-msc.png" style="width:35%">
+                    <img src="../data-img/biorxiv-halflife.png" style="width:35%">
+                    <!-- <img src="../data-svg/consensus-pre-2step.svg" style="width:55%"> -->
+                    </div>
+                </section>
+<!-- 
+
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Missing data: Consensus sampling </h2>
+                    <p> Represent species by the consensus genotype across sampled individuals</p>
+                    <img src="../data-svg/consensus.svg" style="width:80%">    
+                    </div>
+                </section>
+
+
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> treeslider: extract windows across chromosomes.</h2>
+                    <p> Runs raxml on windows and parses results into a "tree_table"<p>
+                    <pre style="width:60%"><code class="python" style="max-height: 600px; font-size: 21px; line-height:1.35;"> 
+  # define population groups
+  imap = {
+      "sp1": ["a0", "a1", "a2", "a3"],
+      "sp2": ["b0", "b1", "b2", "b3"],
+      "sp3": ["c0", "c1", "c2", "c3"],
+      "sp4": ["d0", "d1", "d2", "d3"],
+  }
+
+  # initiate an analysis tool with arguments
+  tool = ipa.treeslider(
+      data=data,
+      window_size=1e6, 
+      slide_size=1e6,
+      imap=imap,
+  )
+
+  # distributes raxml jobs across all 1M windows in data set
+  tool.run()
+                    </code></pre>
+                    </div>
+                </section>
+
+
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2 style="font-size:1.4em"> Consensus sampling yields 3X as many fully sampled loci.</h2>
+                    <p> One specific sample from each species: 12K/57K loci</p>
+                    <p> Any one sample (or consensus) from each species: 32K/57K loci </p>
+                    <img src="../data-svg/oaks-2015-summary.svg" style="width:80%">
+                    <p style="font-size: 0.75em"> 
+                        Eaton et al. (2015); Cavender-Bares et al. (2015)</p>
+                    </div>
+                </section>
+
+ -->
+
+
+<!--
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> But is it a good idea to <i>concat-alesce?</i> </h2>
+                    <div class="textbox"><p>
+                        Data from different parts of the genome have different coalescent histories (different sampled ancestors due to recombination). Nearby (linked) regions share more ancestors
+                        and thus are correlated, but this also decays over time.
+                        How large are <i>real loci</i> that share the same gene tree?
+
+                        <br><br>
+                        We can investigate this question using simulations (e.g., <i>msprime</i> and <i>ipcoal</i>).
+                    </p></div>
+                    </div>
+                </section>
+-->
+
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                        <h2>ipcoal: simulate genealogies and loci in spp. trees</h2>
+                        <div class="textbox"><p style="text-align:center">
+                            At any reasonable <i>phylogenetic</i> scale the size of 
+                            non-recombined loci is small!
+                        </p></div>
+                    <pre style="width:60%"><code class="python" style="max-height: 500px; font-size: 22px; line-height:1.35;"> 
+  import ipcoal
+
+  # simulate data with demographic parameters
+  model = ipcoal.Model(tree=newick, Ne=5e5, mut=1e-8, recomb=1e-9)
+
+  # simulate n loci of a given length
+  model.sim_loci(nloci=1, nsites=500)
+                    </code></pre>
+                    </div>
+                    <img src="../data-svg/ipcoal-demo.svg" style="width:90%">
+                </section>
+
+
+                <!-- 21 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Decaying Phylogenomic methods: SNPs</h2>
+                    <img src="../data-svg/consensus-pre-SNP.svg" style="width:55%">
+                    </div>
+                </section>
+
+
+            </section>
+
+
+
+
+
+            <!-- SIMCAT STUFF -->
+            <section class="future" data-transition="none">
+
+                <!-- 21 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Phylogenomic methods: SNPs</h2>
+                    <img src="../data-svg/consensus-pre-SNP.svg" style="width:55%">
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                        <h2>The <i>Phylogenetic invariants</i> framework</h2>
+                        <br>
+                        <div class="textbox"><p>
+                            <i>Phylogenetic invariants</i> are SNP patterns that are expected to occur in equal proportions given the existence of a split/edge on a tree (e.g., AAGG = GGAA). Some invariant patterns have been of particular interest as a metric for quantifying admixture (e.g., BABA, ABBA). 
+                            <br><br>
+
+                            Identifying invariant patterns for a tree can be difficult, but is easy for small trees. Most invariant methods focus on 4-taxon trees.
+                            <br><br>
+
+                            The <i>SVDquartets</i> species tree inference method organizes SNP patterns into a matrix where algebraic symmetries make it easy to identify the correct unrooted topology for any four taxa. 
+                        </p></div>
+                    </div>
+                </section>
+
+<!-- 
+                <section>
+
+                            Order SNP counts into 3 matrices for each quartet of samples.</p>
+                            <p>One matrix contains <i>more</i> patterns matching the tree (e.g., AABB)</p>
+
+                        <p>The matrix matching the tree aligns along rows/cols (invariants align).</p> 
+                    <p>SVD measures matrix filling (rank), and quickly finds best tree.</p>
+                    </div>
+                    </div>
+                </section>
+ -->
+
+                <section class="present" data-transition="none">
+                 <img src="../data-svg/inv-matrix-null.svg" style="width:55%">    
+                </section>
+
+                <section class="present" data-transition="none">
+                 <img src="../data-svg/inv-matrix-fill.svg" style="width:55%">    
+                </section>
+
+
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                    <h4>SVDquartets reduces SNP matrices to categorical results</h4>
+                    <br>
+                    <img src="../data-svg/svdquartets-extended-1.svg" style="width:71%">    
+                    </div>
+                </section>
+
+
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                    <h4>SVDquartets reduces SNP matrices to categorical results</h4>
+                    <br>
+                    <img src="../data-svg/svdquartets-extended-2.svg" style="width:71%">    
+                    </div>
+                </section>
+
+
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                        <h4>SVDquartets reduces SNP matrices to categorical results</h4>
+                        <br>
+                        <img src="../data-svg/svdquartets-extended-3.svg" style="width:71%">
+                    </div>
+                </section>
+
+
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                        <h2>Shortcoming of the SVDquartets approach</h2>   
+                        <div class="textbox"><p>
+                            By reducing the quantative SNP frequency data to a categorical relevant information for inferring admixture is lost (e.g., ABBA-BABA; Durand et al. 2011).
+                            <br> 
+                        </p></div>
+                        <img src="../data-img/abba-baba.png" style="width:30%">
+                    </div>
+                </section>
+
+
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                        <h2>Moving beyond ABBA-BABA</h2>
+                        <div class="textbox"><p>
+                            Higher level invariants (e.g., 5-taxon patterns) also exist and can provide even more information about admixture (Eaton et al. 2012, 2015). A difficult part of applying 4 or 5-taxon tests to larger tree, however, is that summarizing the results of many non-independent tests has not been automated and becomes difficult. 
+                        </p></div>
+                        <img src="../data-img/partD.png" style="width:45%">
+                    </div>
+                </section>
+
+
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                    <h4>Stacked matrices for inferring admixture edges</h4>
+                    <br>
+                    <img src="../data-svg/svdquartets-extended-1.svg" style="width:71%">    
+                    </div>
+                </section>
+
+
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                    <h4>Stacked matrices for inferring admixture edges</h4>                        
+                    <br>
+                    <img src="../data-svg/svdquartets-extended-2.svg" style="width:71%">    
+                    </div>
+                </section>
+
+
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                    <h4>Stacked matrices for inferring admixture edges</h4>
+                    <br>
+                    <img src="../data-svg/svdquartets-extended-3.svg" style="width:71%">
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h4>Stacked matrices for inferring admixture edges</h4>
+                    <br>
+                    <img src="../data-svg/svdquartets-extended-4.svg" style="width:71%">
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h4>Stacked matrices for inferring admixture edges</h4>
+                    <br>
+                    <img src="../data-svg/svdquartets-extended-5.svg" style="width:71%">
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                        <h3>Stacked count matrices</h3>
+                        <p>Unique fingerprint for different admixture scenarios</p>
+                        <img src="../data-img/patrick-invariants.png" style="width:51%">    
+                        <img src="../data-img/patrick-invariants-2.png" style="width:51%">    
+                    <!-- <img src="../data-img/inv-matrix-stacked.png" style="width:45%">     -->
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                        <h4>simcat: inference of admixture edges from machine <br>learning on phylogenetic invariants</h4>
+                        <br>
+                        <div class="textbox"><p>
+                            ExtraTrees Classifier (scikit-learn) is trained on simulated SNP count data and invariant features extracted from stacked matrices: ABBA-BABA (Durand et al. 2011); Hils statistics (Kubatko and Chifman 2019). 
+                            <br><br>
+                            User inputs a species tree estimate to simcat, and it tests all admixture edge placements, and simulates over variable edge lengths, and demographic parameters. 
+                        </p></div>
+                        <br>
+                        <img src="../../images/Patrick-photo2.png" 
+                            style="width:12%; position:absolute; left:15%; border-radius: 50%;">
+                        
+                        <p style="position: absolute; left:29%; top:100%; text-align: left">
+                            Patrick McKenzie<br>Eaton lab PhD student</p>
+
+                    </div>
+                </section>          
+
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h4>Simulation and training a neural network on SNPs from network topologies</h4>
+                    <br>
+                    <img src="../data-svg/simcat-method.svg" style="width:71%">
+                    </div>
+                </section>
+
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                        <h4>simcat: machine learning on phylogenetic invariants</h4>
+                        <div class="textbox"><p>
+                            The classifier is able to infer the correct placement of admixture
+                            edges at >95% accuracy with only 20K SNPs and <1 day of training for smallish trees (<= 8 taxa). 
+                            <br><br>
+                        </p></div>
+                        <img src="../data-img/patrick-results.png" style="width:40%">    
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                        <h4>The strengths of this approach are both <i>practical and theoretical</i></h4>
+                        <br>
+                        <div class="textbox"><p>                           
+
+                            <span style="font-weight:400">In practice:</span> SNPs are easier to obtain than informative gene trees. And <i>millions</i> of SNPs may be able to detect more subtle patterns than hundreds of genes.
+                            <br><br>
+
+                            <span style="font-weight:400">In theory:</span>, informative gene trees do not exist for distantly related taxa (concat-alescence). And, phylogenetic invariants assume a general Markov Model that does not require optimizing parameters (even branch lengths!). It is a topology test.
+                            <br><br>
+
+                            <span style="font-weight:400">Coming soon:</span> Software tool for application to empirical data. 
+                        </p></div>
+                    </div>
+                </section>
+
+                <section class="future" data-transition="none">
+                    <div class="standard">
+                    <h4>High accuracy despite huge demographic variance. Simcat trains on topologies!</h4>
+                    <br>
+                    <img src="../data-img/simcat-results-1.png" style="width:40%">
+                    </div>
+                </section>
+
+
+
+            </section>
+
+
+            <!-- ============================================================== -->
+            <!-- ====  ORGANISMAL  ============================================ -->
+            <!-- ============================================================== -->
+
+
+            <!-- 20 -->
+            <section id="organismal" class="future" data-transition="none">            
+
+
+                <section data-background-color="#262626" data-transition="none" class="future">
+                    <div class="standard">
+                    <h3 class="title" style="color:#d8b365; margin-top:20%; line-height:1.2">
+                    How can we use genomics to reconstruct historical <br>
+                    <i>ecological interactions</i> among species?
+                    </h3>
+                    </div>
+                </section>
+
+
+                <section data-background-iframe="../data-html/Hengduan.html" 
+                    data-background-interactive data-transition="none"
+                    style="top:-960px; display: block;" class="future" hidden="">
+                </section>
+
+
+                <section 
+                    data-background-color="black"
+                    data-background-image="../data-img/landscape-3-big.jpg" 
+                    data-background-position="center"
+                    data-background-size="contain"
+                    data-transition="none" 
+                    class="future" 
+                    hidden="">
+                        <h3 class="title" style="text-align: right; color:white">
+                        The Hengduan Mountains</h3>
+                </section>
+
+
+                <section 
+                    data-background-color="black"
+                    data-background-image="../data-img/landscape-4-big.jpg" 
+                    data-background-position="center"
+                    data-background-size="contain"
+                    data-transition="none" 
+                    class="future" 
+                    hidden="">
+                        <h3 class="title" style="text-align: right; color:white">
+                        The Hengduan Mountains</h3>
+                </section>
+
+
+
+                <section 
+                    data-background-color="black"
+                    data-background-image="../data-img/landscape-5-big.jpg" 
+                    data-background-position="center"
+                    data-background-size="contain"
+                    data-transition="none" 
+                    class="future" 
+                    hidden="">
+                        <h3 class="title" style="text-align: right; color:white">
+                        The Hengduan Mountains</h3>
+                </section>
+
+
+                <section 
+                    data-background-color="black"
+                    data-background-image="../data-img/landscape-6-big.jpg" 
+                    data-background-position="center"
+                    data-background-size="contain"
+                    data-transition="none" 
+                    class="future" 
+                    hidden="">
+                        <h3 class="title" style="text-align: right; color:white">
+                        The Hengduan Mountains</h3>
+                </section>
+
+
+                <!-- data-background-image="../china-2018/images/deren-flags.jpg"                 -->
+                <section 
+                    data-background-color="black"
+                    data-background-image="../data-img/monks-2019.jpg"
+                    data-background-position="center"
+                    data-background-size="contain"
+                    data-transition="none" 
+                    class="future" 
+                    hidden="">
+                        <h3 class="title" style="text-align: right; color:white">
+                        The Hengduan Mountains</h3>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <h2 style="margin-bottom: 1%">Floral diversity in <i>Pedicularis</i></h2>
+                    <div class="container" style="margin: auto">
+                      <div class="gallery">
+                        <figure class="gallery__item gallery__item--1">
+                          <img src="../data-img/fetisowii.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--2">  
+                          <img src="../data-img/crano-flaghorn.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--3">    
+                          <img src="../data-img/sipho-small.jpg" class="gallery__img">        
+                        </figure>
+                        <figure class="gallery__item gallery__item--4">
+                          <img src="../data-img/decorissima-small.jpg" class="gallery__img"> 
+                        </figure>
+                        <figure class="gallery__item gallery__item--5">
+                          <img src="../data-img/macrosiphon-small.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--6">
+                          <img src="../data-img/latituba-small.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--7">
+                          <img src="../data-img/sipho-2009.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--8">
+                          <img src="../data-img/anas-small.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--9">
+                          <img src="../data-img/longiflora-small.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--10">
+                          <img src="../data-img/davidii-small.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--11">
+                          <img src="../data-img/scolopax-2009.jpg" class="gallery__img">
+                        </figure>
+                        <figure class="gallery__item gallery__item--12">
+                          <img src="../data-img/oxycarpa-small.jpg" class="gallery__img">
+                        </figure>
+                      </div>
+                    </div>
+                </section>            
+
+
+                <!-- ZOOM IN HARVARD COLLECTIONS AND MINE-->
+                <section 
+                    data-background-iframe="../data-html/Hengduan-Ped-database.html"
+                    data-background-interactive data-transition="none"
+                    style="display: block;" 
+                    class="future">
+
+                    <h2 style="color:black; text-align: right"><i>Pedicularis</i> L. in China</h2>
+
+                    <div id="part1" style="margin-left:35%; margin-top: 7%; text-align:left">        
+                        <div style="display:flex; flex-wrap:row; justify-content:left;
+                            align-items:center;">
+                            <p style="line-height: 1em">
+                                <span style="font-size:30px; font-weight:400;">Species rich:</span><br>
+                                <span style="font-size:20px;">
+                                >600 species worldwide, approximately 300 endemic to Hengduan.<br>
+                                We collected >100 species (>2100 specimens) from >300 locations in 2018-2019. 
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="part2" style="margin-left:35%; margin-top: 0%; text-align:left">        
+                        <div style="display:flex; flex-wrap:row; justify-content:left;
+                            align-items:center; margin-right: 15%">
+                            <p style="line-height: 1em">
+                                <span style="font-size:30px; font-weight:400;">Morphologically diverse:</span><br>
+                                <span style="font-size:20px;">
+                                Spectacular <i>floral diversity</i> and abundant homoplasy;
+                                similar forms have evolved repeatedly (Ree 2005)
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="part3" style="margin-left:35%; margin-top: 0%; text-align:left">        
+                        <div style="display:flex; flex-wrap:row; justify-content:left;
+                            align-items:center; margin-right: 15%">
+                            <p style="line-height: 1em">
+                                <span style="font-size:30px; font-weight:400;">
+                                Complex history of assembly:</span><br>
+                                <span style="font-size:20px;">
+                                Mountain uplift over millions of years, glacial cycles over 
+                                thousands of years, river and mountains barriers, lead to
+                                constantly shuffling communities (and species
+                                interactions).
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3 class="title">Reproductive interference</h3>
+                <div class="textbox"><p> 
+                    Negative fitness consequences imposed by one organism on another 
+                    by disrupting successful reproduction.
+                </p></div>
+                <img src="../data-img/crano-co-occurrence.jpg" style="width:40%">
+                </div>
+            </section>
+
+
+
+            <!-- SLIDE 10: Ecology paper -->   
+            <section 
+                data-background-iframe="../data-html/Hengduan-Ped-database.html"
+                data-transition="none"
+                style="top:-960px; display: block;"
+                class="future" 
+                hidden="">
+                
+                <div class="standard">
+                    <h3 style="margin-left:37%;">Ecological pattern: <i>reproductive interference</i></h3>
+                    <p style="font-size: 0.9em; margin-left: 37%;">
+                        Phenotypic overdispersion (<i>limiting similarity</i>) and <br> phylogenetic 
+                        randomness (homoplasy)<br> in assembly of <i>Pedicularis species</i> into communities (Eaton & Ree 2012).
+                    </p>
+                    <img src="../data-svg/character-displacement-2.svg" 
+                    style="width:32%; margin-left:33%; margin-top: 3%">
+                </div>
+            </section>
+
+
+            <!-- SLIDE 11: Theory - character displacement -->
+            <section data-transition="none" class="future" hidden="">
+                <section data-transition="none" class="future">
+                    <div class="standard">
+                        <h3>Evolutionary process: <i>character displacement</i></h3>
+                        <div class="textbox"><p>
+                            Divergent selection drives greater differences between populuations 
+                            in sympatry than allopatry (e.g., benthic/limnetic sticklebacks) 
+                            to reduce competition for limited resources.
+                            </p>
+                        </div>
+                        <img src="../data-svg/character-displacement-8.svg" style="width:60%; margin-top:5%">
+                    </div>
+                </section>
+
+                <section data-transition="none" class="future">
+                    <div class="standard">
+                        <h3>Evolutionary process: <i>character displacement</i></h3>
+                        <div class="textbox"><p>
+                            The difficulty for <i>Pedicularis</i> is that there are <i>so many</i> 
+                            species that each interacts with: who is the <i>focal</i> competitor?
+                            We need a <span style="font-weight: 400">community model
+                            of character displacement</span>.
+                            </p>
+                        </div>
+                        <img src="../data-svg/character-displacement-7.svg" style="width:50%; margin-top:0%">
+                    </div>
+                </section>
+            </section>
+
+
+
+
+            <section class="future" data-transition="none">
+                <section data-transition="none" data-background-color=#262626 hidden="">
+                    <div class="standard">
+                        <div style="text-align:center; margin-top:15%; margin-right: 10%; margin-left: 10%">
+                        <p style="color:white; font-weight:400">
+                        Does <i>interspecific</i> competition/interference drive floral divergence?
+                        </p></div>
+
+                        <div style="text-align:center; margin-top:10%; margin-right: 10%; margin-left: 10%">        
+                        <p style="color:white; font-weight:400">
+                        Is floral divergence associated with genetic divergence/speciation?
+                        </p></div>
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none" data-background-image="../../images/pedics/p-decor.jpg">
+                    <div class="standard">
+                    <h3 class='title' style="text-align:left; color:white;">
+                    Morphological terminology
+                    </h3>
+                    </div>
+                </section>
+
+
+                <section class="future" data-transition="none">
+                    <div class="standard" style="margin-top:5%">
+                    <img src="../data-svg/flower-morphology-1.svg">
+                    </div>
+                </section>
+
+
+                <section 
+                    data-background-image="../data-img/pollinator-confert.jpg" 
+                    data-transition="none" 
+                    style="top:-960px; display: block;" 
+                    class="future"
+                    >
+                    <h3 style="font-size:35px; position:absolute;
+                        right:0px; top:650px; color:white; text-align: right">
+                    The <span style="font-style:italic; font-weight: 400">beak</span> 
+                    of the galea directs pollen placement and pickup
+                    </h3>
+                </section>
+
+
+                <section class="future" data-transition="none" style="margin-top: 5%">
+                    <img data-src="../data-svg/flower-morphology-2.svg">
+                </section>      
+
+
+                <section data-transition="none" class="future">
+                    <div class="standard">
+                        <h3>Elongate styles</h3>
+                        <div class="textbox"><p style="font-size:28px;">  
+                            Elongate <i>styles</i> have evolved multiple times (Ree 2005)
+                            and facilitate <span style="font-weight: 400; font-style: italic;">
+                            pollen competition</span> among species (Tong and Huang 2016).
+                        </p></div>
+
+                        <div style="align-items:center">
+                            <img src="../data-img/tube-length-variation.jpg" style="width:35%; object-fit:cover;">
+                            <img src="../data-svg/pollination-Huang.svg" style="width:35%; box-shadow:5px 10px 8px #888888;">
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+
+
+            <!-- SLIDE 10: Ecology paper -->   
+            <section class="future" data-transition="none">
+
+<!-- 
+                <section
+                    data-background-iframe="../data-html/Hengduan-Ped-database.html"
+                    data-background-interactive 
+                    data-transition="none"
+                    style="top:-960px; display: block;"
+                    class="future" 
+                    hidden="">
+                    <div class="standard">
+                        <h4 style="margin-left:31%;">
+                        Ecological pattern: <i>reproductive interference</i></h4>
+                        <div class="textbox"><p style="font-size: 22px; margin-left: 40%;">
+                            Phenotypic overdispersion (<i>limiting similarity</i>); phylogenetic 
+                            randomness (homoplasy); (Eaton & Ree 2012).
+                        </p></div>
+                    <img src="../data-svg/character-displacement-2.svg" 
+                    style="width:450px; margin-left:38%; margin-top: 5%">
+                    </div>
+                </section>
+-->
+<!--  
+                <section data-transition="none" class="future" hidden="">
+                    <div class="standard">
+                        <h4>Evolutionary process: <i>reproductive character displacement</i></h4>            
+                        <div class="textbox"><p>
+                        Divergent selection drives greater differences between populuations 
+                        in sympatry than allopatry (e.g., benthic/limnetic sticklebacks).
+                        </p></div>
+                        <img src="../data-svg/character-displacement-8.svg" style="width:60%; margin-top:5%">
+                    </div>
+                </section>
+
+                <section data-transition="none" class="future">
+                    <div class="standard">
+                        <h4>Evolutionary process: <i>reproductive character displacement</i></h4>            
+                        <div class="textbox"><p>
+                        The difficulty in <i>Pedicularis</i> is that there are <i>so many</i> 
+                        species.<br>
+                        I set out to develop a <span style="font-weight: 400">community model
+                        of character displacement</span>.
+                        </p></div>
+                        <img src="../data-svg/character-displacement-7.svg" style="width:50%; margin-top:2%">
+                    </div>
+                </section>
+
+-->
+
+                <section data-transition="none" class="future">
+                    <div class="standard">
+                        <h3>Reproductive character displacement</h3>                        
+                        <div class="textbox"><p>
+                            <span style="font-weight: 400">Hypothesis:</span>
+                            Differences among populations (within species) are a result of interspecific
+                            interactions driving character displacement in local communities.
+                        </p></div>
+                        <img src="../data-svg/character-displacement-4.svg" style="width:70%; margin-top:2%">
+                    </div>
+                </section>
+
+
+                <!-- SLIDE 13: Case study P. cranolopha -->
+                <section data-transition="none" class="future" hidden="">
+                    <div class="standard">
+                    <h3>Case study: <i>Pedicularis cranolopha</i></h3>
+                    <img src="../data-svg/character-displacement-5.svg" style="width:80%; margin-top:0%">
+                    </div>
+                </section>
+
+            </section>
+
+
+            <!-- SLIDE 14: Case study P. cranolopha -->
+            <section data-transition="none" class="future" hidden="">
+
+                <section data-transition="none" class="future">
+                    <div class="standard">
+                    <h3>Case study: <i>Pedicularis cranolopha</i></h3>
+                    <img src="../data-svg/character-displacement-6.svg" style="width:65%; margin-top:0%">
+                    </div>
+                </section>
+
+
+                <section 
+                    data-background-iframe="../data-html/exp-cranolopha.html" 
+                    data-background-interactive 
+                    data-transition="none"
+                    style="top:-960px; display: block;" 
+                    class="future" hidden="">
+
+                    <div class="standard">
+                        <h3 class="title" style="color:black; margin-left: 40%">            
+                            <i>P. cranolopha</i>
+                        </h3>
+                        <img src="../data-img/crano-flaghorn.jpg" style="width:25%; margin-left: 40%">
+                    </div>
+                </section>
+
+
+                <section 
+                    data-background-iframe="../data-html/exp-longiflora.html" 
+                    data-background-interactive 
+                    data-transition="none"
+                    style="top:-960px; display: block;" 
+                    class="future" hidden="">
+
+                    <div class="standard">
+                        <h3 class="title" style="color:black; margin-left: 40%">
+                        <i>P. longiflora</i></h3>
+                        <img src="../data-img/longiflora-small.jpg" style="width:25%; margin-left: 40%">
+                    </div>
+                </section>
+
+
+                <section 
+                    data-background-iframe="../data-html/exp-rhinanthoides.html" 
+                    data-background-interactive 
+                    data-transition="none"
+                    style="top:-960px; display: block;" 
+                    class="future" hidden="">
+
+                    <div class="standard">
+                        <h3 class="title" style="color:black; margin-left: 40%">            
+                        <i>P. rhinanthoides</i></h3>
+                        <img src="../data-img/rhinanth-big.jpg" style="width:35%; margin-top: 10%; margin-left: 40%">
+                    </div>
+                </section>
+
+
+                <section 
+                    data-background-iframe="../data-html/exp-fetisowii.html" 
+                    data-background-interactive 
+                    data-transition="none"
+                    style="top:-960px; display: block;" 
+                    class="future" hidden="">
+                    <div class="standard">
+                        <h3 class="title" style="color:black; margin-left: 40%">
+                        <i>P. fetisowii</i></h3>
+                        <img src="../data-img/fetisowii.jpg" style="width:25%; margin-left: 40%">
+                    </div>
+                </section>
+
+            </section>
+
+
+            <!-- SLIDE 15: comparative felsensetin -->
+            <section data-transition="none" class="future" hidden="">
+
+                <section data-transition="none" class="future" hidden="">                
+                    <div class="standard">
+                        <h4>Testing association between phenotype and <i>(biotic)</i> environment</h4>
+                        <img src="../data-svg/Felsenstein-1.svg" style="width:40%; margin-top:10%">
+                    </div>
+                </section>
+
+                <section 
+                    data-background-iframe="../data-html/crano-map-colored.html"
+                    data-background-interactive 
+                    data-transition="none"
+                    style="top:-960px; display: block;" 
+                    class="future" hidden="">
+
+                    <div class="standard"> 
+                        <h3 style="color:black; margin-left:42%; margin-top: 0%">
+                            <i>P. cranolopha RAD-seq genomics</i>
+                        </h3>
+                        <div class="textbox" style="margin-left: 40%"><p style="font-size: 0.75em">
+                            110 individuals from 15 targeted locations.<br>
+                            RAD-seq (original) PstI enzyme, ~5M reads per sample;<br>
+                            <i>ipyrad</i> min50 assembly: 20K loci, 21% missing, 286K SNPs<br>
+                        </p></div>
+                        <img src="../data-svg/crano-tree-structure.svg", 
+                        style="width:28%; margin-left: 40%; margin-top: 2%">
+                    </div>
+                </section>
+
+                <section 
+                    data-background-iframe="../data-html/crano-map-colored.html"
+                    data-background-interactive 
+                    data-transition="none"
+                    style="top:-960px; display: block;" 
+                    class="future" hidden="">
+
+                    <div class="standard"> 
+                        <h3 style="color:black; margin-left:42%; margin-top: 0%">
+                            <i>P. cranolopha RAD-seq genomics</i>
+                        </h3>
+
+                        <!-- <img src="../data-svg/crano-dimensions-1.svg" -->
+                        <img src="../data-svg/cranolopha-PCA-scolors.svg"
+                        style="width:35%; margin-left: 40%; margin-top: 8%">
+                    </div>
+                </section>
+
+                <section 
+                    data-background-iframe="../data-html/crano-map-colored.html"
+                    data-background-interactive 
+                    data-transition="none"
+                    style="top:-960px; display: block;" 
+                    class="future" hidden="">
+
+                    <div class="standard"> 
+                        <h3 style="color:black; margin-left:42%; margin-top: 0%">
+                            <i>P. cranolopha RAD-seq genomics</i>
+                        </h3>
+                        <img src="../data-svg/cranolopha-TSNE-scolors.svg"
+                        style="width:37%; margin-left: 40%; margin-top: 8%">
+                    </div>
+                </section>
+
+                <section 
+                    data-background-iframe="../data-html/crano-map-colored.html"
+                    data-background-interactive 
+                    data-transition="none"
+                    style="top:-960px; display: block;" 
+                    class="future" hidden="">
+
+                    <div class="standard"> 
+                        <h3 style="color:black; margin-left:42%; margin-top: 0%">
+                            <i>P. cranolopha RAD-seq genomics</i>
+                        </h3>
+                        <div class="textbox" style="margin-left: 40%">
+                            <p style="font-size: 0.75em">
+                            Style length does not correlate strongly with genetic clades. 
+                            </p>
+                        </div>
+                        <img src="../data-svg/crano-tree-tubes-colors.svg"
+                        style="width:39%; margin-left: 40%; margin-top: 0%">
+                    </div>
+                </section>
+
+                <section 
+                    data-background-iframe="../data-html/crano-map-colored.html"
+                    data-background-interactive 
+                    data-transition="none"
+                    style="top:-960px; display: block;" 
+                    class="future" hidden="">
+
+                    <div class="standard"> 
+                        <h3 style="color:black; margin-left:42%; margin-top: 0%">
+                            <i>P. cranolopha RAD-seq genomics</i>
+                        </h3>
+                        <div class="textbox" style="margin-left: 40%">
+                            <p style="font-size: 0.75em">
+                            Migration estimates are highly asymmetic (<i>migrate-n</i>; 100 loci): 
+                            the southern-most clade (Yunnan) is a sink of gene flow. Very different relation from tree-based inference.
+                            </p>
+                        </div>                    
+                        <img src="../data-svg/crano-migrate-nodes.svg"
+                        style="width:23%; margin-left: 42%; margin-top: 3%">
+                        <img src="../data-svg/crano-tree-tubes-colors.svg"
+                        style="width:25%; margin-left: 2%; margin-top: 3%">
+                    </div>
+                </section>
+            </section>
+
+
+<!-- 
+            <section class="future" data-transition="none" hidden="">
+                <div class="standard">
+                    <h3>Testing association between phenotype and (biotic) environment</h3>
+                    <br>
+                    <img src="../data-svg/Felsenstein-toggle.svg"
+                        style="width:30%; margin-top: 1%">
+                </div>
+            </section>
+
+ -->
+
+            <section clas="future" data-transition="none" hidden="">
+                <div class="standard">
+                    <h3>Testing association between phenotype and <i>(biotic)</i> environment</h3>
+            
+                    <!-- upper left -->
+                    <div style="text-align:left; position:absolute; left:10%; width:35%">
+                        <p style="font-size:0.8em">
+                        <span style="font-weight:400">Lande (1976):</span><br>
+                        <span style="color:red;font-weight:400">Selection</span> pulls 
+                        the mean phenotype towards a local optimum, while
+                        <span style="color:blue;font-weight:400">
+                        Gene Flow</span> homogenizes phenotypes among populations, 
+                        and they evolve by stochastic
+                        <span style="color:green; font-weight:400;">
+                        Drift</span>.<br>
+                        </p>
+                        <img src="../data-svg/crano-Lande-equation.svg" style="width:90%;">
+                    </div>
+
+                    <!-- right side -->
+                    <div class="fragment fade-in-then-out" data-fragment-index="0" style="position:absolute; left:55%">
+                        <img src="../data-svg/Felsenstein-toggle.svg" style="margin-top:10%">                        
+                    </div>
+
+                    <!-- lower left -->
+                    <div class="fragment" data-fragment-index="1" style="text-align:left; position:absolute; left:10%; top:520px; width:35%">
+                        <p style="font-size:0.8em">
+                        <span style="font-weight:400">Felsenstein (2002):</span><br>
+                        Eigen decomposition of the <i>known</i> migration matrix 
+                        yields a transformation to get <i>independent trait means</i>
+                        (no covariances) and expected variances.
+                        </p>
+                    </div>
+
+                    <!-- right side -->
+                    <div class="fragment fade-in-then-out" data-fragment-index="2" style="position:absolute; left:50%">
+                        <img src="../data-svg/Felsenstein-transformed.svg" style="width:82%; margin-top:5%">
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+
+            <!-- SLIDE 19: Model summary -->
+            <section data-transition="none" class="future" hidden="">
+
+                <div class="standard">
+                    <h3>Model summary: breaking it down</h3>
+                    <br>
+
+                    <div style="text-align:left; position:absolute; width:35%; left:10%" >
+                        <p style="font-size: 0.85em">
+
+                        <span style="font-weight:400">1. Focal phenotype</span> (style length) measure across 15 populations.</span><br><br>
+
+                        <span style="font-weight:400">2. Migration matrix</span> estimated from 
+                        RAD data to model expected covariation of focal phenotypes.</span><br><br>
+
+                        <span style="font-weight:400">3. Local biotic variables</span> 
+                        phenotypic and phylogenetic distance to other <i>Pedicularis</i> in 
+                        each community. We will model <i>local optima</i> as a function of these
+                        measurable variables.
+                        </span><br><br>
+                        </p>
+                    </div>
+
+
+                    <div style="text-align:left; position:absolute; width:42%; left:50%" >
+                        <p style="font-size:0.85em">
+                        <span style="font-weight:400">Implementation:</span> Bayesian hierarchical regression model in <i>pyMC3</i>: Fit residuals between observed and transformed trait means with biotic variables (allowing different slopes for different species).
+                        </p>
+                    </div>
+                    <img src="../data-svg/character-displacement-6.svg" 
+                    style="width:40%; position:absolute; left:50%; top:380px">
+                </div>
+            </section>
+
+
+            <!-- SLIDE 20: Model results -->
+            <section data-transition="none" class="future" hidden="">
+                <div class="standard">
+                    <h4>A community phylogenetic test for character displacement</h4>
+                    <br>
+                    <div class="textbox">
+                        <p>The phylogenetic model is a poor fit to the data whereas 
+                        the phenotypic nearest neighbor distance model fits well.
+                        Posterior distribution of model parameters:
+                        </p>
+                    </div>
+                    <img src="../data-svg/character-displacement-9.svg" style="width:65%; margin-top:0%">
+                    <br>
+                    <div class="textbox">
+                        <p><i>P. cranolopha</i> has a longer style when co-occurring with 
+                        closer relatives; supports gametophytic "arms-race" hypothesis.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- SLIDE 21: Hierarchical hinter -->
+            <section data-transition="none" 
+                data-background-image="../data-img/tube-variation-near-Dege.jpg" 
+                data-transition="none" 
+                class="future" hidden="">
+            </section>
+
+
+
+            <!-- ============================================================== -->
+            <!-- ====  E3B  =================================================== -->
+            <!-- ============================================================== -->
+
+
+
+            <!-- SLIDE 23: EXPERIMENTS -->
+            <section data-transition="none">
+
+                <div class="standard">
+                    <h3>Experiment: Does style length variation affect gene flow?</h3>    
+                    <div>
+                        <img src="../data-img/crano-tube-Yajiang.jpg" style="width:15%;">
+                        <img src="../data-img/crano-tube-Ganze.jpg" style="width:15%;">
+                        <img src="../data-img/pollen-tube-experiment-s4-small.jpg" style="width:30.2%">
+                        <img src="../data-img/pollen-tube-1.jpg" style="width:25%;
+                        position: absolute; top:465px; left:309px">
+                        <img src="../data-img/pollen-tube-2.jpg" style="width:25%;
+                        position: absolute; top:465px; left:718px">
+                        <img src="../data-svg/pollen-tube-data.svg" style="width:14%; 
+                        position:absolute; top:465px; left:1120px">
+                    </div>
+                </div>
+
+                <div class="textbox" style="position:absolute; top:775px;">
+                    <div class="fragment">
+                        <p>Larger pollen grows faster and further, consistent with 10X higher
+                        migration from long to short style populations inferred from genomic
+                        data.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- SLIDE 25: HORNED BILL; TAXONOMY -->
+            <section data-transition="none" class="future" hidden="">
+                <div class="standard">
+                    <h3>Systematics of the <i>P. cranolopha</i> complex</h3>
+                    <div class="textbox" style="position:absolute; width:60%; left:5%; top:150px">
+                        <p style="text-align:left; font-size:0.85em;">
+                        Taxonomically challenging; split into species/subspecies based on style 
+                        length, pubescence, and presence of a <span style="font-weight: 400">
+                        "forked beak"</span>.
+                        </p>
+                    </div>
+
+                    <!-- <img src="../data-img/crano-hybrid-zone-a.jpg" -->
+                    <!-- style="position:absolute; width:35%; left:14%; top:350px"> -->
+
+                    <img src="../data-img/hybrid-fork.jpg" 
+                    style="position:absolute; width:35%; left:14%; top:340px">
+
+                    <img src="../data-svg/crano-tree-structure-K6-hornbill.svg" 
+                    style="position:absolute; width:18%; left:60%; top:155px">
+                </div>
+            </section>
+
+
+            <!-- SLIDE 26: -->
+            <section data-transition="none">
+                <img src="../data-img/crano-square-horn.jpg"
+                style="width:49%; margin-top: 2%">
+                <img src="../data-img/crano-square-no-horn-a.jpg" 
+                style="width:49%; margin-top: 2%">
+            </section>
+
+
+            <!-- SLIDE 27: -->
+            <section data-transition="none" 
+                data-background-image="../data-img/crano-no-horn-pollinator.jpg" 
+                data-transition="none" 
+                class="future" hidden="">
+                <h4 style="color:white; position:absolute; top:350px; left:10%; 
+                width:500px; text-align: left">
+                    Pollen transfer occurs on the right side of bumblebee pollinators
+                </h4>
+            </section>
+
+
+            <!-- SLIDE 28: -->
+            <section data-transition="none" 
+                data-background-image="../data-img/crano-no-horn-pollinator2.jpg" 
+                data-transition="none" 
+                class="future" hidden="">
+                <h4 style="color:white; position:absolute; top:350px; left:50%; 
+                width:500px; text-align: left">
+                    but is not <i>highly precise</i>, bees tend to squirm about.
+                </h4>
+            </section>
+
+
+            <!-- SLIDE 29: -->
+            <section data-transition="none" 
+                data-background-image="../data-img/crano-horn-pollinator.jpg" 
+                data-transition="none" 
+                class="future" hidden="">
+                <h4 style="color:white; position:absolute; top:350px; left:60%; 
+                width:500px; text-align: left">
+                    In <i>forked</i> populations bees are restrained in the "fork",
+                    which may increase precision.
+                </h4>    
+            </section>
+
+
+
+            <section data-transition="none", class="future" hidden="">
+                <div class="standard">
+                    <h3>Systematics of the <i>P. cranolopha</i> complex</h3>
+                    <div class=textbox>
+                        <p style="text-align:center; font-size:0.85em;">
+                        Hybrid zones: contact between populations with 
+                        <i>"forked beak"</i> and without.
+                        </p>
+                    </div>
+                    <iframe style="position:absolute; 
+                        width:500px; height:600px; left:350px; top:225px;"
+                        data-src="../data-html/crano-map-colored-horns.html">
+                    </iframe>
+                    <img src="../data-svg/crano-tree-structure-K6-hornbill.svg" 
+                    style="position:absolute; width:275px; left:900px; top:225px">
+                </div>
+            </section>
+
+
+
+            <section data-transition="none", class="future" hidden="">
+                <div class="standard">
+                    <h3>Systematics of the <i>P. cranolopha</i> complex</h3>
+                    <div class=textbox>
+                        <p style="text-align:center; font-size:0.85em;">
+                        Hybrid zones: contact between populations with 
+                        <i>"forked beak"</i> and without.
+                        </p>
+                    </div>
+                    <iframe style="position:absolute; 
+                        width:500px; height:600px; left:350px; top:225px;"
+                        data-src="../data-html/crano-map-colored-hybrids.html">
+                    </iframe>
+                    <img src="../data-svg/crano-tree-structure-K6-hornbill.svg" 
+                    style="position:absolute; width:275px; left:900px; top:225px">
+
+                    <!-- hybrid zone 1: 11 to 12: sampled extensively -->    
+                    <div class="fragment fade-in-then-out">
+                        <p style="position:absolute; left:1180px; top:655px;">1</p>
+                        <div style="position:absolute; left:1050px; top:650px;">
+                            <div style="
+                                outline:12px solid #262626; outline-width:4px;
+                                width:110px; height:115px;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- hybrid zone 1: 11 to 12: sampled extensively -->    
+                    <div class="fragment fade-in-then-out">
+                        <p style="position:absolute; left:1180px; top:745px;">2</p>
+                        <div style="position:absolute; left:1050px; top:770px;">
+                            <div style="
+                                outline:12px solid #262626; outline-width:4px;
+                                width:110px; height:40px;">
+                            </div>
+                        </div>
+                        <p style="position:absolute; left:1180px; top:500px;">2</p>
+                        <div style="position:absolute; left:1050px; top:532px;">
+                            <div style="
+                                outline:12px solid #262626; outline-width:4px;
+                                width:110px; height:35px;">
+                            </div>
+                        </div>                        
+                    </div>
+
+                    <!-- hybrid zone 1: 11 to 12: sampled extensively -->    
+                    <div class="fragment fade-in-then-out">
+                        <p style="position:absolute; left:1180px; top:400px;">3</p>
+                        <div style="position:absolute; left:1050px; top:417px;">
+                            <div style="
+                                outline:12px solid #262626; outline-width:4px;
+                                width:110px; height:65px;">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>            
+
+
+            <!-- SLIDE 31: -->
+            <section 
+                data-transition="none" 
+                data-background-image="../data-img/horn-hybrid-zone-s10-big.jpg" 
+                class="future" hidden="">
+                <h4 style="color:white;">
+                Horned beak variation <i>within</i> hybrid zone 1. 
+                </h4>    
+            </section>
+
+
+            <section
+                data-background-image="../data-img/landscape-collect.jpg"
+                data-state="dimbg"
+                data-transition="none" 
+                class="present" 
+                hidden="">
+                <div class="standard">
+                    <h2 style="font-weight:600">Summary</h2>
+                    <br>
+                    <div class=textbox>
+                        <p style="font-weight:500;">
+                        The <i>ipyrad-analysis</i> toolkit makes it easy to deal 
+                        with missing data, file formats, replication, and reproducibility.
+                        <br>
+                        <br>
+                        SNP-based tree and network inference methods are the future. While genealogies are real, informative gene trees are not (except plastids).
+                        <br>
+                        <br>
+                        In <i>Pedicularis</i> species interactions drive reproductive character 
+                        displacement which likely accelerates floral evolution and diversification.
+                        </p>                        
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <!-- ============================================================== -->
+            <!-- ====  E3B  =================================================== -->
+            <!-- ============================================================== -->
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h2>Acknowledgements</h2>
+                    <!-- GRID OF CIRLCE FACES? -->
+                    <div class=textbox>
+                        <p>
+                        Richard Ree<br>
+                        Dave Boufford<br>
+                        Huang Shuang-Quan<br>
+                        De-Zhu Li<br>
+                        Patrick McKenzie<br>
+                        Jared Meek<br>
+                        Kasi Molina-Velez<br>
+                        Sandra Hoffberg<br>
+                        Isaac Overcast<br>
+                        </p>
+                    </div>
+
+                    <div class=textbox style="font-weight:400">
+                        <p>
+                        NSF DEB<br>
+                        NSF DDIG<br>
+                        NSF EAPSI<br>
+                        Columbia Lenfest Award<br>
+                        </p>
+                    </div>                    
+                    <img src="../data-img/crano-genomeplant.jpg" 
+                    style="position:absolute; width:40%; left:45%; top:170px">
+<!--                     <img src="../data-img/sipho-2009.jpg" 
+                    style="position:absolute; width:18%; left:50%; top:180px">
+                    <img src="../data-img/latituba-small.jpg" 
+                    style="position:absolute; width:18%; left:70%; top:180px">
+ -->
+                    <img src="../data-svg/acknowledge-logos.svg"
+                    style="position:absolute; width:40%; left:45%; top:660px">
+                </div>
+            </section>
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../reveal/lib/js/head.min.js"></script>        
+    <script src="../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: false,
+            // slideNumber: "h/v",
+            dependencies: [
+            //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: '../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>
