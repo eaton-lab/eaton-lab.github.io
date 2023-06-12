@@ -442,13 +442,106 @@ tool.run()
                 </section>
 
 
-                <!-- 21 -->
+                <!-- 22 -->
                 <section class="present" data-transition="none">
                     <div style="margin-left: auto; margin-top: 5%">    
-                    <h2> Decaying Phylogenomic methods: SNPs</h2>
+                    <h2> Missing data in phylogenetics</h2>
+                    <p> Goal: A distribution of gene trees representing every species.</p>
+                    <img src="../data-svg/intro-phylogenomic-sampling.svg" style="width:75%">
+                    <!-- <img src="../data-svg/intro-tree-outlines.svg" style="width:75%"> -->
+                    </div>
+                </section>
+
+                <!-- 23 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Missing data: Consensus sampling </h2>
+                    <p> Represent species by the consensus genotype across sampled individuals</p>
+                    <img src="../data-svg/consensus.svg" style="width:80%">    
+                    </div>
+                </section>
+
+                <!-- 24 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> treeslider: extract windows across chromosomes.</h2>
+                    <p> Runs raxml on windows and parses results into a "tree_table"<p>
+    <pre style="width:60%"><code class="python" style="max-height: 600px; font-size: 21px; line-height:1.35;"> 
+  # define population groups
+  imap = {
+      "sp1": ["a0", "a1", "a2", "a3"],
+      "sp2": ["b0", "b1", "b2", "b3"],
+      "sp3": ["c0", "c1", "c2", "c3"],
+      "sp4": ["d0", "d1", "d2", "d3"],
+  }
+
+  # initiate an analysis tool with arguments
+  tool = ipa.treeslider(
+      data=data,
+      window_size=1e6, 
+      slide_size=1e6,
+      imap=imap,
+  )
+
+  # distributes raxml jobs across all 1M windows in data set
+  tool.run()
+    </code></pre>
+                    </div>
+                </section>
+
+                <!-- 25 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2 style="font-size:1.4em"> Consensus sampling yields 3X as many fully sampled loci.</h2>
+                    <p> One sample of each species: 12K/57K loci</p>
+                    <p> Consensus for each species: 32K/57K loci </p>
+                    <img src="../data-svg/oaks-2015-summary.svg" style="width:80%">
+                    <p style="font-size: 0.75em"> 
+                        Hipp et al. (2014); Eaton et al. (2015); Cavender-Bares et al. (2015)</p>
+                    </div>
+                </section>
+                <!-- MAXIMIZES USEFULNESS OF SATA -->
+
+                <!-- 26 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Sliding windows</h2>
+                    <p> How well do concatenated RAD windows represent gene tree variation?</p>
+                    <img src="../data-svg/oaks-2step-1.svg" style="width:85%">
+                    <p style="font-size: 0.75em"> 
+                        RAxML gene trees.</p>
+                    </div>
+                </section>
+
+
+                <!-- 27 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Sliding windows</h2>
+                    <p> How well do concatenated RAD windows represent gene tree variation?</p>
+                    <img src="../data-svg/oaks-2step-2.svg" style="width:85%">
+                    <p style="font-size: 0.75em"> 
+                        Astral species trees inferred from gene trees.</p>
+                    </div>
+                </section>
+
+<!-- 
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Clade weights</h2>
+                    <p> Chrom 1 weighted support for a (Cuba, Florida) vs (Cuba, Mexico)</p>
+                    <img src="../data-svg/cuba-slider.svg" style="width:70%">
+                    </div>
+                </section>
+ -->
+                <!-- 29 OUTLINE III -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Missing data in phylogenetics</h2>
                     <img src="../data-svg/consensus-pre-SNP.svg" style="width:55%">
                     </div>
                 </section>
+
 
 
             </section>
