@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2023-RADcamp</title>
+
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../eaton-lab.css">
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">    
+    <link rel="stylesheet" href="./custom.css">
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <section 
+                data-background="#262626" 
+                data-transition="none"     
+                class="present">
+                <div style="margin-left: auto; margin-top: 15%">
+                <h1 class="title" style="color:#5D9B84">
+                    Sliding Windows, Species Trees and SNPs: <br>
+                    <i>RAD applications in phylogenomics</i></h1>
+                <p style="color: lightgrey"> RADCamp NYC2023</p>
+                <h4 style="color: white">Deren Eaton, Columbia University</h4>
+                <br>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Phylogenomic sampling </h3>
+                <br>
+                <div class="textbox"><p style='text-align:center'>
+                <!-- It's an exciting time to be asking these questions! Genomic technologies have <i>revolutionized</i> the study of ecology and evolution. -->
+                Characterize evolutionary history from <i>a subset</i> of sampled genomes (individuals). 
+                </p></div>
+                <br>
+                <img src="../data-svg/intro-phylogenomic-sampling.svg" style="width:70%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Phylogenomic sampling </h3>
+                <br>
+                <div class="textbox"><p style="text-align:center">
+                     Characterize whole genomes from <i> a subset</i> of sequenced markers.
+                <!-- In addition to the increased raw output of genome data, molecular preparation methods allow us to more efficiently sample the genome for <i> comparative studies</i>. -->
+                </p></div>   
+                <br>            
+                <img src="../data-svg/intro-RAD-diagram.svg" style="width:70%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Genealogical variation </h3>
+                <br>
+                <div class="textbox"><p style="text-align:center">
+                    It is important to examine evolutionary history across the entire genome. 
+                </p></div>
+                <img src="../data-svg/intro-tree-outlines.svg" style="width:70%">
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                <h3> Historical introgression/admixture </h3>                        
+                <br>
+                <div class="textbox"><p style="text-align:center">
+                    It is important to examine evolutionary history across the entire genome. 
+                </p></div>
+                <img src="../data-svg/intro-tree-outlines-2.svg" style="width:70%">
+                </div>
+            </section>
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                <h3 class="title" style="color:#5ab4ac; margin-top:20%; line-height:1.2">
+                How can we most accurately reconstruct the <br>evolutionary history
+                of organisms from their genomes?
+                </h3>
+                </div>
+            </section>
+
+
+            <!-- 5 -->
+            <section class="present" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> Can RAD-seq reconstruct genome-wide patterns?</h2>
+                <p> Missing data (big problem for some analyses but not all).</p>
+                <p> Filtering and formatting data for downstream analyses.</p>
+                <img src="../data-img/Calvin-Hobbes-RAD.png" style="width:25%">
+                </div>
+            </section>
+
+
+            <!-- 6 -->
+            <section class="present" data-transition="none" data-background-color="#262626">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2 style="color:#5D9B84; font-weight:400"> Outline: RAD-seq phylogenomics in <i>ipyrad</i> </h2>
+                <br>
+                <br>
+                <div style="text-align: left; margin-left: 25%; color:white; font-size: 1.2em">
+                <p> 1. <i>ipyrad-analysis</i> toolkit</p>
+                <p> 2. Gene tree extraction: concatenation.</p>
+                <p> 3. Gene tree distributions: sliding window consensus.</p>
+                <p> 4. Sticking with SNPs: genome-wide inference.</p>
+                </div>
+                </div>
+            </section>          
+
+
+            <!-- 7 -->
+            <section class="present" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2><i>ipyrad-analysis toolkit (and toytree) and jupyter</i></h2>        
+                <img src="../data-img/ipa.treemix.png" style="width:40%">
+            </section>
+
+
+            <!-- 8 -->
+            <section class="present" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2><i>ipyrad-analysis toolkit (and toytree)</i></h2>
+                <p> Filter or impute missing data; easily distribute massively parallel jobs.</p>
+                </div>
+<pre style="width:60%"><code class="python" style="max-height: 500px; font-size: 24px; line-height:1.35;"> 
+import ipyrad.analysis as ipa
+
+# initiate an analysis tool with arguments
+tool = ipa.pca(data=data, ...)
+
+# run job (distribute in parallel)
+tool.run()
+
+# examine results
+...
+</code></pre>
+            </section>
+
+
+
+
+<!-- 9 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> <i>Quercus</i> section Virentes </h2>    
+    <p>35 samples, 7 species plus outgroups.<p>
+    <p>ipyrad (ref): 58K loci, 51% missing, 484K SNPs. (30 min., 40 cores).</p>
+    <img src="../data-svg/oaks-2015-summary.svg" style="width:70%">
+    <br>
+    <p style="font-size: 0.75em"> 
+        Hipp et al. (2014); Eaton et al. (2015); Cavender-Bares et al. (2015)</p>
+    </div>
+</section>
+
+
+<!-- 10 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> PCA: very sensitive to missing data</h2>
+    <img src="../data-svg/PCA-none.svg" style="width:70%">
+</section>
+
+<!-- 11 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">    
+    <h2> PCA: very sensitive to missing data</h2>        
+    <img src="../data-svg/PCA-none.svg" style="width:70%">
+    <hr style="width: 50%;">
+    <img src="../data-svg/PCA-strict.svg" style="width:70%">
+    </div>
+</section>
+
+<!-- 12 -->
+<section class="present" data-transition="none">
+    <div style="margin-left: auto; margin-top: 5%">
+    <h2> PCA: clear delimitation when (some) data are imputed</h2>
+    <img src="../data-svg/PCA-sample.svg" style="width:70%">
+    <hr style="width: 50%;">
+    <img src="../data-svg/PCA-kmeans7.svg" style="width:70%">
+    </div>
+</section>
+
+
+
+            <!-- IPYRAD CONCAT STUFF -->
+            <section class="future" data-transition="none">
+
+
+                <!-- 14 OUTLINE II -->
+                <section class="future" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Phylogenomic inference methods</h2>
+                    <img src="../data-svg/consensus-pre.svg" style="width:55%">
+                    </div>
+                </section>
+
+                <!-- 15 -->
+                <section class="future" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Missing data in RAD-seq and other methods</h2>
+                    <img src="../data-svg/consensus-pre2.svg" style="width:55%">
+                    </div>
+                </section>
+
+                <section class="future" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">
+                    <h2> Missing data in RAD-seq and other methods</h2>
+                    <img src="../data-svg/consensus-pre-concat.svg" style="width:55%">
+                    </div>
+                </section> 
+
+<!-- 
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 2%">    
+                    <h2><i>ipyrad-analysis toolkit</i></h2>
+                    <p> Filter or impute missing data; easily distribute massively parallel jobs.</p>
+                    </div>
+                    <pre style="width:60%"><code class="python" style="max-height: 500px; font-size: 24px; line-height:1.35;"> 
+  import ipyrad.analysis as ipa
+
+  # initiate an analysis tool with arguments
+  tool = ipa.pca(data=data, ...)
+
+  # run job (distribute in parallel)
+  tool.run()
+
+  # examine results
+  ...
+                    </code></pre>
+                </section>
+ -->
+
+<!-- 
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 2%">
+                    <h2><i>ipyrad-analysis toolkit</i></h2>
+                    <p> Filter or impute missing data; easily distribute massively parallel jobs.</p>
+                    </div>
+                    <pre style="width:60%"><code class="python" style="max-height: 500px; font-size: 24px; line-height:1.35;"> 
+  tool = ipa.pca(data=data, imap=imap, minmap=minmap, mincov=0.5)
+  tool.run(nreplicates=20, seed=123)
+  tool.draw(2, 3);
+                    </code></pre>
+                    <img src="../data-svg/cranolopha-PCA.svg" style="width:33%">
+
+                </section>
+
+ -->
+
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Window_extracter: extract, filter, format.</h2>
+                    <p> Reference mapped RAD loci can be <i>"spatially binned"</i> to form larger loci.</p>
+                    <pre style="width:60%"><code class="python" style="max-height: 500px; font-size: 22px; line-height:1.35;"> 
+  import ipyrad.analysis as ipa
+
+  # initiate an analysis tool with arguments
+  tool = ipa.window_extacter(
+      data=data,
+      scaffold_idx=0, 
+      start=0, 
+      end=1000000,
+  )
+
+  # writes a phylip file
+  tool.run()
+                    </code></pre>
+                    </div>
+                </section>
+
+                <!-- 18 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Window_extracter: extract, filter, format.</h2>
+                    <p> Reference mapped RAD loci can be <i>"spatially binned"</i> to form larger loci.</p>
+                    <img src="../data-svg/window-extracter-min4.svg" style="width:80%">
+                    </div>
+                </section>
+
+
+
+                <!-- 19 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Window_extracter: extract, filter, format.</h2>
+                    <p> Reference mapped RAD loci can be <i>"spatially binned"</i> to form larger loci.</p>
+                    <img src="../data-svg/window-extracter-min8.svg" style="width:80%">
+                    </div>
+                </section>
+
+
+                <!-- 20 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 2%">    
+                    <h2> Herbicide resistance among <i>Amaranthus</i> species.</h2>
+                    <br>
+                    <img src="../data-svg/Amaranth-windows.svg" style="width:70%">
+                    </div>
+                </section>
+            </section>
+
+
+            <!-- IPCOAL STUFF -->
+            <section class="future" data-transition="none">
+
+                <!-- 21 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Phylogenomic methods: gene trees</h2>
+                    <img src="../data-svg/consensus-pre-2step.svg" style="width:55%">
+                    </div>
+                </section>
+
+
+                <!-- 21 -->
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                    <h2>Gene tree inference</h2>   
+                    <br>
+                    <div class="textbox"><p>
+                        Faces two distinct problems: <br>
+                        (1) individual loci (e.g., RAD tags) are often insufficiently  informative;  <br>
+                        (2) most "loci" do not contain a single gene tree.
+                    </p></div>
+                    <!-- <img src="../data-svg/consensus-pre-2step.svg" style="width:55%"> -->
+                    </div>
+                </section>
+<!-- 
+
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Missing data: Consensus sampling </h2>
+                    <p> Represent species by the consensus genotype across sampled individuals</p>
+                    <img src="../data-svg/consensus.svg" style="width:80%">    
+                    </div>
+                </section>
+
+
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> treeslider: extract windows across chromosomes.</h2>
+                    <p> Runs raxml on windows and parses results into a "tree_table"<p>
+                    <pre style="width:60%"><code class="python" style="max-height: 600px; font-size: 21px; line-height:1.35;"> 
+  # define population groups
+  imap = {
+      "sp1": ["a0", "a1", "a2", "a3"],
+      "sp2": ["b0", "b1", "b2", "b3"],
+      "sp3": ["c0", "c1", "c2", "c3"],
+      "sp4": ["d0", "d1", "d2", "d3"],
+  }
+
+  # initiate an analysis tool with arguments
+  tool = ipa.treeslider(
+      data=data,
+      window_size=1e6, 
+      slide_size=1e6,
+      imap=imap,
+  )
+
+  # distributes raxml jobs across all 1M windows in data set
+  tool.run()
+                    </code></pre>
+                    </div>
+                </section>
+
+
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2 style="font-size:1.4em"> Consensus sampling yields 3X as many fully sampled loci.</h2>
+                    <p> One specific sample from each species: 12K/57K loci</p>
+                    <p> Any one sample (or consensus) from each species: 32K/57K loci </p>
+                    <img src="../data-svg/oaks-2015-summary.svg" style="width:80%">
+                    <p style="font-size: 0.75em"> 
+                        Eaton et al. (2015); Cavender-Bares et al. (2015)</p>
+                    </div>
+                </section>
+
+ -->
+
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> But is it a good idea to <i>concat-alesce?</i> </h2>
+                    <div class="textbox"><p>
+                        Data from different parts of the genome have different coalescent histories (different sampled ancestors due to recombination). Nearby (linked) regions share more ancestors
+                        and thus are correlated, but this also decays over time.
+                        How large are <i>real loci</i> that share the same gene tree?
+
+                        <br><br>
+                        We can investigate this question using simulations (e.g., <i>msprime</i> and <i>ipcoal</i>).
+                    </p></div>
+                    </div>
+                </section>
+
+
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                        <h2>ipcoal: simulate genealogies and loci in spp. trees</h2>
+                        <div class="textbox"><p style="text-align:center">
+                            At any reasonable <i>phylogenetic</i> scale the size of 
+                            non-recombined loci is small!
+                        </p></div>
+                    <pre style="width:60%"><code class="python" style="max-height: 500px; font-size: 22px; line-height:1.35;"> 
+  import ipcoal
+
+  # simulate data with demographic parameters
+  model = ipcoal.Model(tree=newick, Ne=5e5, mut=1e-8, recomb=1e-9)
+
+  # simulate n loci of a given length
+  model.sim_loci(nloci=1, nsites=500)
+                    </code></pre>
+                    </div>
+                    <img src="../data-svg/ipcoal-demo.svg" style="width:90%">
+                </section>
+
+
+                <!-- 21 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Decaying Phylogenomic methods: SNPs</h2>
+                    <img src="../data-svg/consensus-pre-SNP.svg" style="width:55%">
+                    </div>
+                </section>
+
+
+            </section>
+
+
+
+
+
+            <!-- SIMCAT STUFF -->
+            <section class="future" data-transition="none">
+
+                <!-- 21 -->
+                <section class="present" data-transition="none">
+                    <div style="margin-left: auto; margin-top: 5%">    
+                    <h2> Phylogenomic methods: SNPs</h2>
+                    <img src="../data-svg/consensus-pre-SNP.svg" style="width:55%">
+                    </div>
+                </section>
+
+
+                <section class="present" data-transition="none">
+                 <img src="../data-svg/inv-matrix-null.svg" style="width:55%">    
+                </section>
+
+                <section class="present" data-transition="none">
+                 <img src="../data-svg/inv-matrix-fill.svg" style="width:55%">    
+                </section>
+
+
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                    <h4>SVDquartets reduces SNP matrices to categorical results</h4>
+                    <br>
+                    <img src="../data-svg/svdquartets-extended-1.svg" style="width:71%">    
+                    </div>
+                </section>
+
+
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                    <h4>SVDquartets reduces SNP matrices to categorical results</h4>
+                    <br>
+                    <img src="../data-svg/svdquartets-extended-2.svg" style="width:71%">    
+                    </div>
+                </section>
+
+
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                        <h4>SVDquartets reduces SNP matrices to categorical results</h4>
+                        <br>
+                        <img src="../data-svg/svdquartets-extended-3.svg" style="width:71%">
+                    </div>
+                </section>
+
+
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                        <h2>Shortcoming of the SVDquartets approach</h2>   
+                        <div class="textbox"><p>
+                            By reducing the quantative SNP frequency data to a categorical relevant information for inferring admixture is lost (e.g., ABBA-BABA; Durand et al. 2011).
+                            <br> 
+                        </p></div>
+                        <img src="../data-img/abba-baba.png" style="width:30%">
+                    </div>
+                </section>
+
+
+                <section class="present" data-transition="none">
+                    <div class="standard">
+                        <h2>Moving beyond ABBA-BABA</h2>
+                        <div class="textbox"><p>
+                            Higher level invariants (e.g., 5-taxon patterns) also exist and can provide even more information about admixture (Eaton et al. 2012, 2015). A difficult part of applying 4 or 5-taxon tests to larger tree, however, is that summarizing the results of many non-independent tests has not been automated and becomes difficult. 
+                        </p></div>
+                        <img src="../data-img/partD.png" style="width:45%">
+                    </div>
+                </section>
+
+
+            </section>
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../reveal/lib/js/head.min.js"></script>        
+    <script src="../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: false,
+            // slideNumber: "h/v",
+            dependencies: [
+            //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: '../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>
