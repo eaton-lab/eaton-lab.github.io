@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Evolutionary Biology">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Fundamentals-8</title>
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../eaton-lab.css">
+    <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">    
+    <!-- <link rel="stylesheet" href="./custom.css"> -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal/css/print/pdf.css' : '../../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <!-- SLIDE 0 (TITLE) -->
+            <section id="title" data-background="#262626" style="top:300.5px; display:block;" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 20%">
+                <h1 class="title" style="color:#5D9B84">
+                Fundamentals of Evolution</h1>
+                <h5 style="color: lightgrey"> EEEB G6110</h5>
+                <h4 style="color: white">Session 9: Phylogenetics I</h4>
+                <br>
+                </div>
+            </section>
+
+            <section id="contents" data-transition="none" class="present">
+                <div style="margin-left: auto; margin-top: 5%">
+                <h2> Section topics </h2>
+                <br>
+                <p style='font-size:1.2em; font-weight:400; color:#5D9B84; text-align:left; margin-left: 25%; margin-right:10%; line-height: 1.0'>
+                    1. Homology 
+                    <br><br>
+                    2. Genealogy, gene trees and species trees
+                    <br><br>
+                    3. Trees as data
+                    <br><br>
+                    4. Phylogenetics research
+                    <br><br>
+                    5. Sequence data and phylogenomics
+                    <br><br>                    
+                    6. Likelihood and model-based inference
+                </p>
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Descent and common ancestry </h3>
+                    <img src=./data/baum-genealogy-1.png style="width:30%">
+                    <img src=./data/baum-genealogy-2.png style="width:30%">                    
+                </div>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Homology, homoplasy and Hemiplasy </h3>
+                    <div class="textbox"><p>
+                        Are the characters descended from a common ancestor? Has the character 
+                        state evolved multiple times? Does the evolutionary relationships of 
+                        genes controlling this trait match the evolutionary relationships of 
+                        the species?
+                    </p>
+                        <img src=../8/sptree-2.png style="width:42%">                            
+                    </div>
+                </div>
+            </section>
+
+
+        <!--
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> Homology: gene copies, genes, and phenotypes</h2>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"> 
+
+                <span style="font-weight: 400">Homologous genes:</span> the ancestor of these gene copies was present in a common ancestor. Copies (<i>orthologs</i>) 
+                were inherited by different descendants.<br><br>
+                
+                <span style="font-weight: 400">Paralogous genes:</span> the ancestor of these gene copies was present in a common ancestor. Copies (<i>paralogs</i>) arose by gene (or genome) duplication and were inherited separately in different.
+                </p>
+                <img src="https://schaechter.asmblog.org/.a/6a00d8341c5e1453ef01a73dde119f970d-800wi" style="width:40%">
+                </div>
+            </section>  
+        -->
+
+
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> Coding characters</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"> 
+                <span style="font-weight: 400">Discrete data:</span> DNA is discrete, there are only four possible states (A,C,G,T). But what about body mass, height, color, etc.<br><br>
+
+                <span style="font-weight: 400">Characters weighting:</span> Is one trait more informative than another? How to avoid biased sampling of characters?<br><br>
+
+                <span style="font-weight: 400">Why not only use DNA?:</span> For phylogenetics of extant taxa we mostly do. But morphology is still very relevant to phylogeny of extinct taxa (e.g., dinosaurs) and placing fossils with extant taxa
+                </p>
+                </div>
+            </section>    
+
+
+        <!--
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> DNA (nucleotides) as characters</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"> 
+                <span style="font-weight: 400">heritable:</span> DNA and amino acid differences are heritable, not plastic.<br><br>
+
+                <span style="font-weight: 400">homology:</span> can be inferred by comparing sequences using alignment algorithms. The spatial location of nucleotides in the genome provides evidence of its homology. <br><br>
+
+                <span style="font-weight: 400">models:</span> informed evolutionary models can be used to estimate rates of character change (e.g., random or non-random rates).<br><br>
+
+                <span style="font-weight: 400">availability and bias:</span> Huge amounts of data are available and there is no inherent bias or expectation that certain parts of the genome (characters) should support one hypothesis more than another.
+                </p>
+                </div>
+            </section>
+        -->
+
+
+
+            <section class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 5%">    
+                <h2> Tree Thinking</h2>
+                <br>
+                <p style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%"> 
+                <span style="font-weight: 400">Essential to all fields of biology.</span>
+                <br><br>
+
+                Simple but commonly done incorrectly.
+                <br><br>
+
+                <span style="font-weight: 400">Common pitfalls:</span><br>
+                - describing taxa as being "basal".<br>
+                - misinterpreting node rotations as meaningful.<br>
+                - misinterpreting relationships.<br>
+                - misinterpreting branch lengths.<br>
+                - misinterpreting rooting of tree. <br>
+                - failing to read figure captions when present.<br>
+                </p>
+                </div>
+            </section>                       
+
+
+
+            <section id="toytree 1" class="future" data-transition="none">
+                <div class="standard">
+                <h3> Tree thinking exercises </h3>
+                <br>
+                <div class="textbox"><p>
+                Reading trees involves interpreting the order in which lineages
+                share common ancestors by tracing relationships backwards from the tips towards the root. <i>Rotating nodes</i> does not affect these relationships, even though the order of the tips changes. 
+                <span style="font-weight:400;color:#5D9B84">Which topology is different?</span>
+                </p></div>
+                <img src="../../data-img/toytree-thinking.png" style="width:70%">
+                <br>
+                </div>
+            </section>
+
+
+
+            <section id="toytree 2" class="future" data-transition="none">
+                <div class="standard">
+                <h3> Trees as data </h3>
+                <br>
+                <div class="textbox"><p>
+                Phylogenetic trees are more than just pictures, they represent a data structure that can be interpreted and used in model-based analyses. Stored in <i>Newick</i> format.
+                </p></div>
+                <img src="../../data-img/toytree-newick-exercise-1.png" style="width:70%">
+                <br>
+                </div>
+            </section>    
+
+
+            <section id="phylo example 1" class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 2%">
+                <h3> Phylogenetic inference: examples</h3>
+                <br>
+                <div style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">
+                <p> Methods of phylogenetic inference, and model-based historical inferences using trees, are both highly active areas of research. 
+                Many new methods are published in the journal of 
+                <a href="https://academic.oup.com/sysbio/issue">Systematic Biology</a>, while countless applied examples are published in various journals, including Evolution, Molecular Biology and Evolution, Molecular Phylogenetics and Evolution, Molecular Ecology, etc.</p>
+                </div>
+                </div>
+            </section>
+
+
+            <section id="sysbio" class="future" data-transition="none" 
+            data-background-iframe="https://academic.oup.com/sysbio/issue"
+            hidden="">
+            </section>
+
+
+
+            <section id="phylo inf 1" class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 2%">
+                <h3> Phylogenetic inference: methods</h3>
+                <br>
+                <div style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">
+                <p> <span style="font-weight:400">Collect/measure homologous characters</span> for some number of taxa. For DNA, identifying homology typically involves targeting regions of the genome using primers, or mapping sequenced reads from the genome to the same region of a reference genome. Either way, it is based on <i>sequence similarity</i>. This is typically followed by a more rigorous <i>multiple sequence alignment</i>.
+                </p>
+                </div>
+                <br>
+                <img src="http://ugene.unipro.ru/wp-content/uploads/2015/03/55.png" style="width:30%">
+                </div>
+            </section>
+
+
+            <section id="phylo inf 2" class="future" data-transition="none">
+                <div style="margin-left: auto; margin-top: 2%">
+                <h3> Phylogenetic inference: methods</h3>
+                <br>
+                <div style="font-size: 0.9em; text-align: left; margin-left: 15%; margin-right: 15%">
+                <p> 
+                A general outline of phylogenetic inference:<br><br>
+                    1. Propose a starting tree (e.g., random or star). <br>
+                    2. Score based on some criterion (e.g., parsimony, likelihood, distance).<br>
+                    3. Modify to propose a new tree, return to step 2.
+                </p>
+                </div>
+                </div>
+            </section>            
+
+
+
+            <!-- describe parsimony, why is this an improvement... -->
+            <section id="parsimony 3" class="future" data-transition="none">
+                <div class="standard">
+                    <h3>Phylogenetic inference: Parsimony</h3>
+                    <br>
+                    <div class="textbox"><p>
+                        A character matrix and a topology. Count the number of character state changes.
+                    </p></div>
+                    <br>
+                </div>
+                <img src="../../data-img/char-felsen-1.png" style="margin-bottom:14%">
+                <img src="../../data-img/tree-felsen-3.png" 
+                    style="width:20%;transform:rotate(-1.5deg);margin-left:5%;">
+            </section>
+
+
+
+            <!-- but, tree search is a huuuuge problem... 
+            spend some time here talking about what an unrooted versus rooted
+            tree shows and why these numbers differ... 
+            -->
+            <section id="phylo inf 4" class="future" data-transition="none">
+                <div class="standard">
+                <h3> Phylogenetic inference: methods</h3>
+                <br>
+                <img src="../../data-img/inferring-trees-space.png">
+                </div>
+            </section>            
+
+
+            <!-- parsimony has fallen out of use for DNA -->
+            <section id="test" class="future" data-transition="none">
+                <div class="standard">
+                    <h3> Parsimony's pitfall </h3>
+                    <div class="textbox">
+                    <p> It does not account for homoplasy (repeated mutations to the same site). 
+                        Or other patterns of varying rates of character change.
+                    </p>
+                    </div>
+                    <img src="../../data-img/dist-homoplasy.png">
+                </div>
+            </section>
+
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- <div class="slide-number"></div> -->
+    <!-- <div class="progress" style="display: block"><span style="width: 0px;"></span> -->
+    <!-- JAVASCRIPT -->
+    <script src="../../reveal/lib/js/head.min.js"></script>        
+    <script src="../../reveal/js/reveal.js"></script>
+    <script type="text/javascript" src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: true,
+            // slideNumber: "h/v",
+
+            dependencies: [
+                //     { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: '../../reveal/plugin/zoom-js/zoom.js', async: !0, condition: function() {return!!document.body.classList }},
+                { src: '../../reveal/plugin/math/math.js', async: true }
+            ]
+        });
+
+        // Reveal.configure({ slideNumber: true })
+        // Reveal.configure({ slideNumber: "c/t" })            
+
+        // Reveal.initialize({controls:!1,progress:!0,history:!0,center:!0,margin:.05,minScale:.1,maxScale:5,width:960,height:720,theme:Reveal.getQueryHash().theme,transition:Reveal.getQueryHash().transition||"linear",math:{mathjax:"http://cdn.mathjax.org/mathjax/latest/MathJax.js",config:"TeX-AMS_HTML-full"},dependencies:[{src:"../reveal/lib/js/classList.js",condition:function(){return!document.body.classList}},{src:"../reveal/plugin/markdown/marked.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/markdown/markdown.js",condition:function(){return!!document.querySelector("[data-markdown]")}},{src:"../reveal/plugin/highlight/highlight.js",async:!0,callback:function(){hljs.initHighlightingOnLoad()}},{src:"../reveal/plugin/zoom-js/zoom.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/notes/notes.js",async:!0,condition:function(){return!!document.body.classList}},{src:"../reveal/plugin/math/math.js",async:!0}]});
+    </script>
+</body>
+</html>

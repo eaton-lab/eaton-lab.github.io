@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    class="toyplot-canvas-Canvas"
    height="300"
    id="t69efcdd7a26049869eecd4d1829f177b"
@@ -15,8 +8,15 @@
    viewBox="0 0 350 300"
    width="350"
    version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="cranolopha-PCA-scolors.svg">
+   inkscape:version="1.2 (1:1.2+202206011327+fc4e4096c5)"
+   sodipodi:docname="cranolopha-PCA-scolors.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata23208">
     <rdf:RDF>
@@ -25,7 +25,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -44,13 +44,16 @@
      inkscape:window-height="882"
      id="namedview23204"
      showgrid="false"
-     inkscape:zoom="0.78666667"
-     inkscape:cx="200"
-     inkscape:cy="150"
+     inkscape:zoom="1.2054501"
+     inkscape:cx="39.404369"
+     inkscape:cy="177.94183"
      inkscape:window-x="623"
      inkscape:window-y="87"
      inkscape:window-maximized="0"
-     inkscape:current-layer="g43108" />
+     inkscape:current-layer="t08a0366dbb2d485d9396583106d300ae"
+     inkscape:showpageshadow="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
   <g
      style="font-size:12px;font-family:Helvetica;opacity:1;fill:#282623;fill-opacity:1;stroke:#282623;stroke-width:1;stroke-opacity:1"
      id="g43108"
@@ -24918,7 +24921,8 @@
            y2="0"
            y1="0"
            x2="220"
-           x1="0" />
+           x1="0"
+           style="stroke-width:2.53484461;stroke-dasharray:none" />
         <g
            id="g42884">
           <line
@@ -24926,19 +24930,22 @@
              y2="-5"
              y1="0"
              x2="31.421898"
-             x1="31.421898" />
+             x1="31.421898"
+             style="stroke-width:2.53484461;stroke-dasharray:none" />
           <line
              id="line42888"
              y2="-5"
              y1="0"
              x2="112.95711"
-             x1="112.95711" />
+             x1="112.95711"
+             style="stroke-width:2.53484461;stroke-dasharray:none" />
           <line
              id="line42890"
              y2="-5"
              y1="0"
              x2="194.49231"
-             x1="194.49231" />
+             x1="194.49231"
+             style="stroke-width:2.53484461;stroke-dasharray:none" />
         </g>
         <g
            id="g42892">
@@ -24949,7 +24956,7 @@
                id="text42896"
                y="8.5550003"
                x="-7.2249999"
-               style="font-weight:normal;font-size:10px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none">-10</text>
+               style="font-weight:normal;font-size:10px;line-height:0%;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none">-10</text>
           </g>
           <g
              id="g42898"
@@ -24958,7 +24965,7 @@
                id="text42900"
                y="8.5550003"
                x="-2.78"
-               style="font-weight:normal;font-size:10px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none">0</text>
+               style="font-weight:normal;font-size:10px;line-height:0%;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none">0</text>
           </g>
           <g
              id="g42902"
@@ -24967,7 +24974,7 @@
                id="text42904"
                y="8.5550003"
                x="-5.5599999"
-               style="font-weight:normal;font-size:10px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none">10</text>
+               style="font-weight:normal;font-size:10px;line-height:0%;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none">10</text>
           </g>
         </g>
         <g
@@ -24977,19 +24984,12 @@
              id="text42908"
              y="10.266"
              x="-60.354"
-             style="font-weight:bold;font-size:12px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none">PC3 (4.1%) explained</text>
+             style="font-weight:bold;font-size:12px;line-height:0%;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none">PC3 (4.1%) explained</text>
         </g>
         <g
            id="g42910"
            style="visibility:hidden"
            class="toyplot-coordinates-Axis-coordinates">
-          <line
-             id="line42912"
-             y2="4.5"
-             y1="-3"
-             x2="0"
-             x1="0"
-             style="stroke:#6e7f8f;stroke-width:1;stroke-opacity:1" />
           <text
              id="text42914"
              y="-6"
@@ -25006,7 +25006,8 @@
            y2="0"
            y1="0"
            x2="200"
-           x1="0" />
+           x1="0"
+           style="stroke-width:2.53484461;stroke-dasharray:none" />
         <g
            id="g42919">
           <line
@@ -25014,19 +25015,22 @@
              y2="5"
              y1="0"
              x2="11.357862"
-             x1="11.357862" />
+             x1="11.357862"
+             style="stroke-width:2.53484461;stroke-dasharray:none" />
           <line
              id="line42923"
              y2="5"
              y1="0"
              x2="90.450935"
-             x1="90.450935" />
+             x1="90.450935"
+             style="stroke-width:2.53484461;stroke-dasharray:none" />
           <line
              id="line42925"
              y2="5"
              y1="0"
              x2="169.54402"
-             x1="169.54402" />
+             x1="169.54402"
+             style="stroke-width:2.53484461;stroke-dasharray:none" />
         </g>
         <g
            id="g42927">
@@ -25037,7 +25041,7 @@
                id="text42931"
                y="-4.4408921e-16"
                x="-7.2249999"
-               style="font-weight:normal;font-size:10px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none">-10</text>
+               style="font-weight:normal;font-size:10px;line-height:0%;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none">-10</text>
           </g>
           <g
              id="g42933"
@@ -25046,7 +25050,7 @@
                id="text42935"
                y="-4.4408921e-16"
                x="-2.78"
-               style="font-weight:normal;font-size:10px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none">0</text>
+               style="font-weight:normal;font-size:10px;line-height:0%;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none">0</text>
           </g>
           <g
              id="g42937"
@@ -25055,7 +25059,7 @@
                id="text42939"
                y="-4.4408921e-16"
                x="-5.5599999"
-               style="font-weight:normal;font-size:10px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none">10</text>
+               style="font-weight:normal;font-size:10px;line-height:0%;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none">10</text>
           </g>
         </g>
         <g
@@ -25065,19 +25069,12 @@
              id="text42943"
              y="0"
              x="-60.354"
-             style="font-weight:bold;font-size:12px;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none">PC2 (8.1%) explained</text>
+             style="font-weight:bold;font-size:12px;line-height:0%;font-family:helvetica;white-space:pre;fill:#282623;fill-opacity:1;stroke:none">PC2 (8.1%) explained</text>
         </g>
         <g
            id="g42945"
            style="visibility:hidden"
            class="toyplot-coordinates-Axis-coordinates">
-          <line
-             id="line42947"
-             y2="-4.5"
-             y1="3"
-             x2="0"
-             x1="0"
-             style="stroke:#6e7f8f;stroke-width:1;stroke-opacity:1" />
           <text
              id="text42949"
              y="6"

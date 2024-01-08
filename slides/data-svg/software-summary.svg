@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -15,7 +13,7 @@
    viewBox="0 0 3188.9764 2480.3149"
    id="svg2"
    version="1.1"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:version="1.0.1 (1.0.1+r73)"
    sodipodi:docname="software-summary.svg">
   <defs
      id="defs4">
@@ -132,7 +130,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497474"
      inkscape:cx="938.97138"
-     inkscape:cy="733.55132"
+     inkscape:cy="2107.3588"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -140,7 +138,8 @@
      inkscape:window-height="861"
      inkscape:window-x="454"
      inkscape:window-y="40"
-     inkscape:window-maximized="0" />
+     inkscape:window-maximized="0"
+     inkscape:document-rotation="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -4801,6 +4800,6 @@
          id="tspan12105"
          x="86.812202"
          y="284.68689"
-         style="font-size:50px;line-height:1.25">(McKenzie &amp; Eaton, In Review)</tspan></text>
+         style="font-size:50px;line-height:1.25">(McKenzie &amp; Eaton 2020)</tspan></text>
   </g>
 </svg>

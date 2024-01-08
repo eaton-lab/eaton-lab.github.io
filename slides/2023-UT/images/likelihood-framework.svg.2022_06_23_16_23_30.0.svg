@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="500"
+   height="500"
+   viewBox="0 0 132.29166 132.29167"
+   version="1.1"
+   id="svg72497"
+   inkscape:version="1.2 (1:1.2+202206011327+fc4e4096c5)"
+   sodipodi:docname="likelihood-framework.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview72499"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.2102413"
+     inkscape:cx="337.70719"
+     inkscape:cy="563.63806"
+     inkscape:window-width="1860"
+     inkscape:window-height="1016"
+     inkscape:window-x="60"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs72494" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#000000;fill-opacity:0.298039;stroke:#000000;stroke-width:1.05833;stroke-linejoin:round"
+       id="rect73053"
+       width="24.401754"
+       height="21.592537"
+       x="7.0242267"
+       y="63.923851" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:Lato;-inkscape-font-specification:Lato;word-spacing:0px;stroke-width:0.264583"
+       x="9.8243389"
+       y="12.377052"
+       id="text73057"><tspan
+         sodipodi:role="line"
+         id="tspan73055"
+         style="stroke-width:0.264583"
+         x="9.8243389"
+         y="12.377052">Vector of genealogies (G) --&gt; table of embeddings</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="9.8243389"
+         y="17.668715"
+         id="tspan73059">Vector of genealogy lengths (L)</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="9.8243389"
+         y="22.960377"
+         id="tspan73061" /><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="9.8243389"
+         y="28.252039"
+         id="tspan73063">Prob</tspan></text>
+  </g>
+</svg>

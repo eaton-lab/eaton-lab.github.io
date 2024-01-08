@@ -8,12 +8,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>RADcamp-1</title>
+    <title>RADcamp-2023</title>
+
     <!-- CSS styling -->
     <link rel="stylesheet" href="../reveal/css/reveal.css">
     <link rel="stylesheet" href="../eaton-lab.css">
     <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">    
-    <!-- <link rel="stylesheet" href="../genomics/custom.css"> -->
+
     <script>
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
@@ -37,11 +38,12 @@
                 <div style="margin-left: auto; margin-top: 20%">
                 <h1 class="title" style="color:#5D9B84">
                 RADcamp NYC</h1>
-                <h5 style="color: lightgrey"> Columbia University, 2019</h5>
-                <h4 style="color: white">Introduction to RAD and the terminal</h4>
+                <h5 style="color: lightgrey"> Columbia University, 2023</h5>
+                <h4 style="color: white">Lecture 1: Introduction to RADseq and the terminal</h4>
                 <br>
                 </div>
             </section>
+
 
             <section id="contents" data-transition="none" class="present">
                 <div style="margin-left: auto; margin-top: 5%">
@@ -50,11 +52,11 @@
                 <p style='font-size:1.0em; font-weight:400; color:#5D9B84; text-align:left; margin-left: 15%; margin-right:10%; line-height: 1.5'>
                 1. Understand and describe the structure and format of RAD-seq data. 
                 <br><br>
-                2. Assemble RAD-seq data sets using ipyrad to produce files for analyses.
+                2. Assemble RAD-seq data sets using <i>ipyrad</i> to produce files for analyses.
                 <br><br>
-                3. Understand the use of jupyter-notebooks for reproducible analyses.
+                3. Learn about evolutionary analyses using RAD-seq data.
                 <br><br>
-                4. Create notebooks for conducting reproducible genomic analyses in Python.
+                4. Learn new bioinformatic skills: bash, linux, Python, jupyter.
                 </p>
                 </div>
             </section>
@@ -63,14 +65,14 @@
             <section id="schedule" data-transition="none" class="present">
                 <h3> Our schedule for today</h3>
                 <br>
-                <p> Please follow along on 
-                <a href="https://radcamp.github.io/NYC2019/">https://radcamp.github.io/NYC2019/</a>
+                <p> Please follow along:
+                <a href="https://radcamp.github.io/NYC2023/">https://radcamp.github.io/NYC2023/</a>
                 <br><br>
-                <img class=plain src="./data/schedule.png" style="width: 80%">
+                <img class=plain src="./data/radcamp-schedule-2023.png" style="width: 80%">
             </section>
 
 
-            <!-- WHO ARE WE? -->
+            <!-- IPYRAD DOCUMENTATION -->
             <section 
                 data-background-iframe="https://ipyrad.readthedocs.io/en/latest/1-ethos.html"
                 data-transition="none"
@@ -79,32 +81,13 @@
             </section>
 
 
-            <section class="future" data-transition="none">                
-                <div class="standard">
-                <h3> My research</h3>
-                <div class="textbox"><p>
-                    Integrating collections based fieldwork, genomics, comparative methods, 
-                    and bioinformatics, to study phylogeny, introgression and speciation
-                    in flowering plants.
-                </p></div>  
-                <br>              
-                <!-- <img src="../data-img/crano-flaghorn.jpg" style="width:19%"> -->
-                <img src="
-                https://lh3.googleusercontent.com/VbI7P_OjEILgxj244xn71mnOZgekE5ThQg2RB1IvSHGuCNDCTQLYnA_vQlbSXDgnFZwwhKCN-F4e3eumqdA5v13BuxHX75tBB6rqVpGd70ae_d0GF2J3JFinYIdi-zEPLcsTrN2XGdH6NLjaldTe9cNfi4Y3ckNql7VwhGxrs_-k75aJz-GBum2p8kaVJ9cIIj186XOXtafqnxOzOVII-lcm6KtSEHR5eyZedOaLaCoiV2R8X7iAfAapYlBFR5NtoF_3jKMnr6VVCoeiOx7HKHzUcpCe-RBF4acR5jU_q3ym-atihmYICAuAMX7DZ-Qv8i51zNZP8t-wD_g6PC6HDWhZUiaSAiNauRKeid7l9FKLcYSt2ZpFbYDJDHkEJhXIa07eMSD_WZHKr5R6WizA6dg4gye0YbYE8QNmE7OU6nmSv5AfQLe1tUdG-WGtcH18y4c9CMr5MjM8KO9DOZZNlccfiKKYxcLo9ZBXQJj-Utd8522midvvFIRP9gC3LNgcNevyo7HLasDpawxjzQLNGYbPFAlr9hzJA-TRf_8q3JyucT-MkZJ2VWEM8QbntsPMLtXEJANQzMV3OwpZbyJzrtS6w9o1GPJo4ViuMkjSYa0ARYWADcCwdk9FoXbGDbn-OdhLU4oDdAyyDn7Z0lLPt9g74cCrjmu4KynJqfoAeBNNBhswn2qE6As=w654-h872-no" style="width:21.45%; margin-right: 2%">
-                <img src="../data-svg/crano-tube-lengths.svg" style="width:29%; margin-right:2%">
-                <img src="../data-img/tetrad-code.png" style="width:26.25%">
-
-                </div>
-            </section>
-
-
             <section class="future" data-transition="none">
                 <div class="standard">
                 <h3> Comparative genomics </h3>
                 <br>
                 <div class="textbox"><p>
-                And it's an exciting time for this! Genomic technologies are 
-                <i>revolutionizing</i> the study of ecology and evolution.
+                It's an exciting time to be working in evolutionary genomics! <br>
+                Genomic technologies are <i>revolutionizing</i> the study of ecology and evolution.
                 </p></div>               
                 <img src="../data-svg/intro-phylogenomic-sampling.svg" style="width:70%">
                 </div>
@@ -115,8 +98,7 @@
                 <h3> Comparative genomics </h3>
                 <br>
                 <div class="textbox"><p>
-                And it's an exciting time for this! Genomic technologies are 
-                <i>revolutionizing</i> the study of ecology and evolution.
+                Methods for efficiently sequencing entire genomes, or subsets of genomes.
                 </p></div>               
                 <img src="../data-svg/intro-RAD-diagram.svg" style="width:70%">
                 </div>
@@ -127,8 +109,9 @@
                 <h3> Comparative genomics </h3>
                 <br>
                 <div class="textbox"><p>
-                And it's an exciting time for this! Genomic technologies are 
-                <i>revolutionizing</i> the study of ecology and evolution.
+                By sampling thousands of genomic loci we can fit complex models of
+                evolution to infer phylogeny, demography, introgression, selection,
+                and more.
                 </p></div>               
                 <img src="../data-svg/intro-tree-outlines.svg" style="width:70%">
                 </div>
@@ -139,57 +122,148 @@
                 <h3> Comparative genomics </h3>                    
                 <br>
                 <div class="textbox"><p>
-                And it's an exciting time for this! Genomic technologies are 
-                <i>revolutionizing</i> the study of ecology and evolution.
+                This has revolutionized our understand of evolution, revealing new insights 
+                into historical biogeography, admixture, speciation and selection.
                 </p></div>               
                 <img src="../data-svg/intro-tree-outlines-2.svg" style="width:70%">
                 </div>
             </section>
 
 
-            <!-- popgen -->
-            <section data-transition="none" class="future">
-                <div class="standard">
-                    <h3> Population genomic analyses </h3>
-                    <img class=plain src="../workshop/data/Andrews-Box2.png" style="width: 50%">
-                    <br>
-                    <div class="textbox"><p>
-                        Reconstruct demography, calculate 
-                        population divergence and introgression. With reference mapped data this 
-                        can be done spatially along chromosomes (e.g., Nadeau et al. 2013).
-                    </p></div>
-                </div>
-            </section>
-
-            <!-- phylo -->
-            <section data-transition="none" class="future">
-                <div class="standard">
-                    <h3> Phylogenomic analyses </h3>
-                    <img class=plain src="../workshop/data/Eaton-2015-fig5.png" style="width: 39%">
-                    <br>
-                    <div class="textbox"><p>
-                        Infer gene trees and species trees, over shallow or
-                        relatively deep evolutionary time scales (<100 Ma); 
-                        e.g., Eaton et al. 2015.
-                    </p></div>
-                </div>
-            </section>
-
-
+            <!-- HISTORY OF RAD-SEQ -->
             <!-- phylo -->
             <section data-transition="none" class="future">
                 <div class="standard">
                     <h3> What is RAD-seq (and its variants)? </h3>
                     <br>
                     <div class="textbox"><p>
-                        The aim of RAD-seq is select a <i>subset</i> (reduced representation)
-                        of orthologous genomic regions across many sampled individuals. 
-                        This concentrates <i>read coverage</i> to regions of the 
-                        genome that can be used in comparative analyses.
-                        In addition, you can multiplex many samples to attain high
-                        efficienty on Illumina machines (e.g., combinatorial indexing).
+                        RAD-seq is a method for subsampling a reduced represenation of a 
+                        genome by selecting and sequencing genomic fragments near restriction
+                        enzyme recognition sites.
+                        The goal is to efficiently obtain orthologous genomic regions/loci 
+                        across many samples to identify genetic variation, without the need
+                        to sequence entire genomes.
                     </p></div>
                     <img src="../data-svg/intro-RAD-diagram.svg" style="width:50%">
+                </div>
+            </section>
+
+
+
+            <!-- HISTORY OF RAD-SEQ -->
+            <!-- phylo -->
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> A brief history of RAD-seq </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        RAD-seq was first developed in 2007 by Miller et al., which introduced the
+                        concept for identifying a large and consistent set of genetic markers for
+                        which a SNP microarray could be designed.<br><br>
+                        <!-- - Miller, Michael R., Joseph P. Dunham, Angel Amores, William A. Cresko, and Eric A. Johnson. 2007. “Rapid and Cost-Effective Polymorphism Identification and Genotyping Using Restriction Site Associated DNA (RAD) Markers.” Genome Research 17 (2): 240–48. https://doi.org/10.1101/gr.5681207. -->
+                        <!-- Several of these researchers went on to form the company Floragenex,  -->
+                        <!-- which was the first to offer RAD-seq as a commercial service. -->
+                    </p></div>
+                    <img src="./data/miller-2007.png" style="width: 70%">
+                </div>
+            </section>
+
+
+            <!-- phylo -->
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> A brief history of RAD-seq </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        A breakthrough came in 2008 when Baird et al. designed RAD-seq 
+                        markers for Illumina sequencing. They applied RAD-seq to a crossing population
+                        of 96 sticklebacks using >13K SNPs to identify variants associated with
+                        armored plating.
+                    </p></div>
+                    <img src="./data/baird-2008.png" style="width:50%">
+                    <img src="./data/baird-2008-figure.png" style="width:40%">                    
+                </div>
+            </section>
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> A brief history of RAD-seq </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        In 2010 Emerson et al. applied RAD-sequencing to identify variants in 
+                        natural populations of a mosquito to reconstruct recent phylogeography.
+                        This was the first application of RAD-seq to study natural variation, as
+                        opposed to genotyping crosses. They also introduced the <i>stacks</i>
+                        software tool to assemble RAD data.
+                    </p></div>
+                    <img src="./data/emerson-2010.png" style="width:40%">
+                    <img src="./data/emerson-2010-figure.png" style="width:40%">                    
+                </div>
+            </section>
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> A brief history of RAD-seq </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        In 2011 and 2012, respectively, the GBS and ddRAD variants of RAD-seq
+                        were introduced, providing new approaches to generating
+                        RAD-seq libraries were cheaper and more efficient.
+                    </p></div>
+                    <img src="./data/elshire-2011.png" style="width:40%">
+                    <img src="./data/peterson-2012.png" style="width:40%">                    
+                </div>
+            </section>
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> A brief history of RAD-seq </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        In 2013 two paper by Eaton and Wagner, respectively, applied
+                        RAD-seq to study phylogeny and introgression in multi-species datasets,
+                        showing that RAD-seq can be applied to highly divergent samples.
+                    </p></div>
+                    <img src="./data/wagner-2013.png" style="width:40%">
+                    <img src="./data/eaton-2013.png" style="width:40%">                    
+                </div>
+            </section>
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> A brief history of RAD-seq </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        In 2013/2014 Eaton introduced <i>pyrad</i> as a software tool to 
+                        <i>de novo</i> assemble RAD-seq datasets, providing much 
+                        improved assembly of phylogenetic-scale datasets compared
+                        to the stacks approach.
+                    </p></div>
+                    <img src="./data/eaton-2013.png" style="width:40%">
+                    <img src="./data/eaton-2014.png" style="width:40%">                    
+                </div>
+            </section>
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> A brief history of RAD-seq </h3>
+                    <br>
+                    <div class="textbox"><p>
+                        In 2016-2017 the Glen lab at UGA introduced the Adapterama
+                        series introducing a new generation of cheaper and more 
+                        efficient RAD-seq methods.
+
+                        aton introduced <i>pyrad</i> as a software tool to 
+                        <i>de novo</i> assemble RAD-seq datasets, providing much 
+                        improved assembly of phylogenetic-scale datasets compared
+                        to the stacks approach.
+                    </p></div>
+                    <img src="./data/glenn-2019.png" style="width:60%">
                 </div>
             </section>
 
@@ -199,8 +273,8 @@
                     <h3> What is RAD-seq (and its variants)? </h3>
                     <div class="textbox"><p>
                         Variant methods differ in their cost, complexity, 
-                        and efficiency. We used the 3RAD method, a very inexpensive and 
-                        accurate new variant of RAD-seq
+                        and efficiency. We used the 3RAD method, an inexpensive and 
+                        efficient variant of RAD-seq.
                     </p></div>
                     <img class=plain src="../workshop/data/RAD-variants.png" style="width: 55%">
                 </div>
@@ -212,15 +286,19 @@
                     <h3> Frequently asked questions </h3>
                     <br>
                     <div class="textbox"><p>
-                        <i>Why not just sequence the entire genome at low-coverage?</i>
-                        <br><br>
-                        Many genomes are very large and so the cost is expensive. In addition, 
-                        most population/phylogenetic questions can be answered using a subsample
-                        of many loci from the genome.
-                        <br><br>
-                        Low coverage data can be powerful for studying very closely related
-                        populations where missing data can be imputed, but when comparing distant
-                        relatives it is important to obtain higher coverage per sample.                       
+                        <span style="font-weight:400;"><i>Why not just sequence the entire genome at low-coverage?</i></span>
+                        <br>
+                        Low coverage whole genome sequencing (WGS) has had a resurgence in popularity
+                        as the cost of sequencing has decreased, and new imputation methods have been
+                        developed for genotyping very low coverage data.<br><br>
+
+                        However, many organisms have very large genomes which can make the cost prohibitive.
+                        Also, the analysis of WGS data requires a good reference genome, and imputation of
+                        low coverage data additionally requires a high quality/depth reference panel, which
+                        is a large additional cost.<br><br>
+
+                        For biodiversity research on non-model organisms it is faster, easier, and usually
+                        sufficient, to use RAD-seq rather than develop many other additional genetic resources.
                     </p></div>
                 </div>
             </section>
@@ -231,55 +309,106 @@
                     <h3> Frequently asked questions </h3>
                     <br>                    
                     <div class="textbox"><p>
-                        <i>What's the deal with missing data in RAD-seq?</i>
+                        <span style="font-weight:400;"><i>Why is missing data a problem in RAD-seq?</i></span>
+                        <br>
+                        Part of the efficiency of RAD-seq is accomplished through multiplexing samples, and 
+                        errors in this step can lead to variable coverage across samples. In addition, some 
+                        restriction fragments will be present in only some samples and not others. As a 
+                        consequence, assembled RAD data sets are often sparse, containing many loci that are
+                        present in only a subset of samples, and fewer loci present in every single sample.
                         <br><br>
-                        Many genomes are very large and so the cost is expensive. In addition, 
-                        most population/phylogenetic questions can be answered using a subsample
-                        of many loci from the genome.
-                        <br><br>
-                        Low coverage data can be powerful for studying very closely related
-                        populations where missing data can be imputed, but when comparing distant
-                        relatives it is important to obtain higher coverage per sample.                       
+                        This problem is not unique to RAD-seq, but has received significant attention. It
+                        does need to be accommodated in many downstream analyses.
+                        We will discuss methods for this tomorrow in our analysis
+                        workshop. 
                     </p></div>
                 </div>
             </section>
 
 
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> Frequently asked questions </h3>
+                    <br>                    
+                    <div class="textbox"><p>
+                        <span style="font-weight:400;"><i>Can I detect selection, or perform GWAS using RAD-seq?</i></span>
+                        <br>
+                        Yes, RAD-seq can be used for both of these goals (e.g., Nadeau et al. 2013). 
+                        However, the goal of your study are important determinants of whether or not RAD-seq
+                        is more efficient than WGS. Detecting selection or trait associations is much better
+                        when mapping RAD or WGS to a reference genome, as opposed to anonymous de novo loci.
+                    </p></div>
+                    <img class=plain src="../workshop/data/Andrews-Box2.png" style="width: 35%">                    
+                </div>
+            </section>
+
 
             <section data-transition="none" class="future">
                 <div class="standard">
                     <h3> Frequently asked questions </h3>
+                    <br>                    
+                    <div class="textbox"><p>
+                        <span style="font-weight:400;"><i>At what phylogenetic scale can I use RAD-seq?</i></span>
+                        <br>
+                        RAD-seq data generated for distantly related samples are expected to share
+                        fewer orthologous fragments in common, leading to increased missing data. At what
+                        scale is RAD-seq no longer useful? It depends on many factors: rate of 
+                        substitutions and genome size change between samples; how many fragments, i.e.,
+                        which enzymes are used; the type of protocol (shearing vs digestion); and sequencing
+                        coverage.
+                        <br><br> However, RAD-seq has been successfully applied to phylogenetic 
+                        questions spanning >30 Mya (oaks; Eaton et al. 2015), >60 Mya (Viburnum; Eaton et al. 2017).
+                        <br><br>
+                        The efficiency of RAD vs. [others] depends on the scale and density of your taxon 
+                        sampling, and planned analyses.
+                    </p></div>
+                </div>
+            </section>
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> RAD-seq as a clade-level genomic dataset </h3>
                     <br>
                     <div class="textbox"><p>
-                        <i>At what phylogenetic scale can I use RAD-seq?</i>
-                        <br><br>
-                        It depends. Different library types have different rates of 
-                        allele dropout. And other sources of missing data like seq. 
-                        coverage can be relevant too.
-                        <br><br>
-                        RAD-seq methods have been successfully applied <i>in silico</i>
-                        and empirically up to ~100Ma. However, the <i>efficiency</i> of 
-                        RAD-seq compared to other methods is lower at this scale, and you
-                        are often better off choosing a different method. 
-                        <br><br>
-                        A strength of RAD-seq is that one type of data can be used 
-                        across many scales, from studying pedigrees to millions of years
-                        of divergence. 
+                        RAD-seq can be an efficient method for generating both population-scale and 
+                        phylogenetic-scale datasets simultaneously. This is especially useful for
+                        biodiversity research on clades. 
+
+                        <br><br>For example, you may obtain tens of thousands
+                        of loci with shared data among close relatives, allowing for fine-scale 
+                        inference of population structure, admixture, phylogeography, and selection.
+
+                        <br><br>Among more distant clades perhaps only a few thousand loci are
+                        shared on average among samples, but this still sufficient to infer 
+                        phylogenetic relationships.
                     </p></div>
+                </div>
+            </section>
+
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> A brief introduction to the command line </h3>
+                    <i>Basic concepts: terminal and filesystems</i>
+                      
                 </div>
             </section>            
 
 
             <section data-transition="none" class="future">
                 <div class="standard">
-                    <h3> A quick introduction to the command line </h3>
+                    <h3> A brief introduction to the command line </h3>
                     <i>Lines starting with (#) are only comments, not executed</i>
                       
                     <pre><code class="bash">
-  # This is the general format of unix command line tools
+  # This is the general format of unix command line program
   $ program -option1 -option2 target
                     </pre></code>
 
+                    <div class="fragment">
                     <i> Example, returned results of program shown in grey.</i>
                     <pre><code class="bash">
   # e.g., the 'pwd' program with no option or target prints your cur dir
@@ -289,9 +418,81 @@
                     <pre><code class="bash" style="background: grey">    
   /home/deren/        
                     </code></pre>
+                    </div>
+                </div>
+            </section>
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> A brief introduction to the command line </h3>
+                    <i>Lines starting with (#) are only comments, not executed</i>
+                      
+                    <pre><code class="bash">
+  # This is the general format of unix command line program
+  $ program -option1 -option2 target
+                    </pre></code>
+
+                    <i> Example, returned results of program shown in grey.</i>
+                    <pre><code class="bash">
+  # the 'ls' program lists contents of the current directory
+  $ ls
+                    </code></pre>
+
+                    <pre><code class="bash" style="background: grey">    
+  file1.txt   file2.txt
+                    </code></pre>
+                </div>
+            </section>
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> A brief introduction to the command line </h3>
+                    <i>Lines starting with (#) are only comments, not executed</i>
+                      
+                    <pre><code class="bash">
+  # This is the general format of unix command line program
+  $ program -option1 -option2 target
+                    </pre></code>
+
+                    <i> Example, returned results of program shown in grey.</i>
+                    <pre><code class="bash">
+  # the -l option of the 'ls' program changes the format of the result
+  $ ls -l
+                    </code></pre>
+
+                    <pre><code class="bash" style="background: grey">    
+  -rw-rw-r--  1 deren deren  2046 Nov 17  2021 file1.txt
+  -rw-rw-r--  1 deren deren  1596 Sep 30  2020 file2.txt
+                    </code></pre>
                 </div>
             </section>            
 
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> A brief introduction to the command line </h3>
+                    <i>Lines starting with (#) are only comments, not executed</i>
+                      
+                    <pre><code class="bash">
+  # This is the general format of unix command line program
+  $ program -option1 -option2 target
+                    </pre></code>
+
+                    <i> Example, returned results of program shown in grey.</i>
+                    <pre><code class="bash">
+  # providing a target to the 'ls' program lists the contents of a differnt dir
+  $ ls -l ../data
+                    </code></pre>
+
+                    <pre><code class="bash" style="background: grey">    
+  -rw-rw-r--  1 deren deren  2046 Dec 12  2023 big-file-1.txt
+  -rw-rw-r--  1 deren deren  1596 Nov 22  2023 big-file-2.txt
+  -rw-rw-r--  1 deren deren  1596 Nov 22  2023 big-file-3.txt  
+                    </code></pre>
+                </div>
+            </section>            
 
 
             <section data-transition="none" class="future">
@@ -300,11 +501,11 @@
                     <i>Lines starting with (#) are only comments, not executed</i>
                       
                     <pre><code class="bash">
-  # This is the general format of unix command line tools
+  # This is the general format of unix command line program
   $ program -option1 -option2 target
                     </pre></code>
 
-                    ipyrad works the same way:
+                    <i>ipyrad</i> is a program that works the same way:
                     <pre><code class="bash">
   # The ipyrad CLI can be used in a terminal
   $ ipyrad -p params-data.txt -s 123 -t 4 -c 16 
@@ -339,13 +540,18 @@
                     <br>
                     <img class=plain src="../workshop/data/Unix-filesystem.png" style="width: 50%">
                 </div>
+                <div class="fragment">
+                    <pre><code class="bash" style="background: grey">    
+  /home/deren/data/sequences.fastq
+                    </code></pre>
+                </div>           
             </section>            
 
 
             <section data-transition="none" class="future">                
                 <div class="standard">
                     <h3> Hierarchical File System</h3>
-                    <i> Always know where you are and where your files are.</i>
+                    <i> The program 'ls' (list) shows the contents at a path.</i>
                     <pre><code class="bash">
   # show the files and folders in a location (default target is cur dir)
   $ ls 
@@ -366,7 +572,7 @@
 
             <section data-transition="none" class="future">
                 <div class="standard">
-                    <h3> File paths </h3>
+                    <h3> Print working directory (pwd) </h3>
                     <br>
                     <div class="textbox"><p>
                     Your location (current directory) starts from / (the root) 
@@ -386,7 +592,7 @@
 
             <section data-transition="none" class="future">
                 <div class="standard">
-                    <h3> File paths </h3>
+                    <h3> Directories (folders) </h3>
                     <br>
                     You can make new directories and change your location. 
                     <pre><code class="bash">
@@ -404,11 +610,60 @@
             </section>            
 
 
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> Reading/viewing files </h3>
+                    <br>
+                    Viewing data is fundamental to data analysis, but 
+                    can be challenging when data files are very large.
+                    <pre><code class="bash">
+  # the less command shows just the beginning of a file interactively
+  $ less very_large_file.txt
+
+  # the cat command streams the entire contents of a file
+  $ cat very_large_file.txt
+
+  # gzip (or zcat or zless) to decompress files 
+  $ zcat very_large_file.txt.gz
+
+  # pipes (|) are used to pass results of one command to the next
+  $ zcat very_large_file.txt.gz | grep "ATCCG"
+                    </code></pre>
+                </div>
+            </section>
+
+
+            <section data-transition="none" class="future">
+                <div class="standard">
+                    <h3> Why is this important? HPC/Servers</h3>
+                    <br>
+                    1. It is efficient. 2. On a server it may be the only or simplest option.
+                    <pre><code class="bash">
+  # connect to a remote server (large computer)
+  $ (laptop) ssh username@university.hpc.edu
+
+  # change directory to where your files are located
+  $ (remote) cd /user/deren/
+
+  # create a directory for your new research
+  $ (remote) mkdir genomics/
+
+  # download your data into the directory
+  $ (remote) wget https://novogene.com/user/password/...
+
+  # run assembly of your data
+  $ (remote) ipyrad -n test ...
+                    </code></pre>
+                </div>
+            </section>            
+
         <!-- SLIDES CLASS ENDING -->
         </div>
 
     <!-- REVEAL LINEAR CENTER CLASS ENDING -->
     </div>
+
+
 
 
     <!-- <div class="slide-number"></div> -->
